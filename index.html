@@ -461,6 +461,25 @@
       color: var(--primary);
     }
 
+    .title-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .title-link:hover {
+      color: var(--primary);
+    }
+
+    .user-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .user-link:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
     .prose-block {
       display: grid;
       gap: 14px;
@@ -750,6 +769,14 @@
     return `<span class="title-with-icon"><span class="title-icon" aria-hidden="true">${iconSvg(fullName)}</span><span>${escapeHtml(label)}</span></span>`;
   }
 
+  function titleLinkMarkup(repo) {
+    return `<a class="title-link" href="${repo.html_url}">${titleMarkup(repo.name, repo.full_name)}</a>`;
+  }
+
+  function ownerLinkMarkup(owner) {
+    return `<a class="user-link" href="https://github.com/${encodeURIComponent(owner.login)}">${escapeHtml(owner.login)}</a>`;
+  }
+
   function repoCard(repo, featured = false) {
     const homepage = repoHomepage(repo);
     const language = repo.language || 'Unspecified';
@@ -757,8 +784,8 @@
       <article class="repo-card">
         <div class="repo-top">
           <div>
-            <h3>${titleMarkup(repo.name, repo.full_name)}</h3>
-            <div class="muted">${escapeHtml(repo.owner.login)}</div>
+            <h3>${titleLinkMarkup(repo)}</h3>
+            <div class="muted">${ownerLinkMarkup(repo.owner)}</div>
           </div>
           ${featured ? '<span class="pill featured">Related</span>' : ''}
         </div>
@@ -782,8 +809,8 @@
       <article class="spotlight-card">
         <div class="repo-top">
           <div>
-            <h3>${titleMarkup(repo.name, repo.full_name)}</h3>
-            <div class="muted">${escapeHtml(repo.owner.login)}</div>
+            <h3>${titleLinkMarkup(repo)}</h3>
+            <div class="muted">${ownerLinkMarkup(repo.owner)}</div>
           </div>
           <span class="feature-label">Spotlight</span>
         </div>
@@ -812,7 +839,7 @@
       <div class="feature-main">
         <span class="feature-label">Featured Repo</span>
         <div class="feature-kicker">What if WordPress had a Linux-like sudo mode?</div>
-        <h2 id="lead-feature-title">${titleMarkup(repo.name, repo.full_name)}</h2>
+        <h2 id="lead-feature-title">${titleLinkMarkup(repo)}</h2>
         <p class="feature-summary">${repoDescriptionHtml(repo)}</p>
         <div class="meta">
           <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
@@ -840,7 +867,7 @@
         <div class="account-top">
           <img class="account-avatar" src="${avatar}" alt="${account.user} avatar">
           <div>
-            <h3>${escapeHtml(account.user)}</h3>
+            <h3><a class="title-link" href="https://github.com/${encodeURIComponent(account.user)}">${escapeHtml(account.user)}</a></h3>
             <div class="muted">${formatNumber(account.total_repos)} public non-fork repos</div>
           </div>
         </div>
