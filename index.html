@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Local Media</title>
+  <meta name="description" content="Design. Build. Sustain.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-accent: #131b33;
+      --text: #f5f7ff;
+      --muted: #b9c1dd;
+      --line: rgba(255,255,255,0.12);
+      --brand: #7dd3fc;
+      --brand-2: #a78bfa;
+      --card: rgba(19, 27, 51, 0.75);
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(125, 211, 252, 0.2), transparent 28%),
+        radial-gradient(circle at top right, rgba(167, 139, 250, 0.18), transparent 28%),
+        linear-gradient(180deg, #101933 0%, var(--bg) 55%, #080b16 100%);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+    }
+
+    .card {
+      width: min(920px, 100%);
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+
+    .content {
+      padding: 56px;
+      display: grid;
+      gap: 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      box-shadow: 0 0 24px rgba(125, 211, 252, 0.7);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 8vw, 5.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      max-width: 42rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 140ms ease, opacity 140ms ease, background 140ms ease;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+
+    .button-primary {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #08111f;
+    }
+
+    .button-secondary {
+      color: var(--text);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .panel strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .panel span {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 18px 56px 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 800px) {
+      .content, footer { padding: 28px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" aria-label="New Local Media landing page">
+      <div class="content">
+        <div class="eyebrow"><span class="dot" aria-hidden="true"></span> New Local Media</div>
+        <h1>Design. Build. Sustain.</h1>
+        <p>
+          This site is now live on GitHub Pages. It can stay as a simple holding page,
+          or grow into a full static site with additional pages, branding, and content.
+        </p>
+        <div class="actions">
+          <a class="button button-primary" href="mailto:dan@newlocalmedia.com">Get in touch</a>
+          <a class="button button-secondary" href="https://github.com/newlocalmedia/newlocalmedia.github.io">View repo</a>
+        </div>
+        <div class="grid" aria-label="Highlights">
+          <div class="panel">
+            <strong>Fast</strong>
+            <span>Served directly from GitHub Pages with no app server required.</span>
+          </div>
+          <div class="panel">
+            <strong>Simple</strong>
+            <span>One lightweight HTML file makes updates easy and reliable.</span>
+          </div>
+          <div class="panel">
+            <strong>Ready to grow</strong>
+            <span>Add CSS, JavaScript, pages, or a static site generator later.</span>
+          </div>
+        </div>
+      </div>
+      <footer>
+        © <span id="year"></span> New Local Media
+      </footer>
+    </section>
+  </main>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
