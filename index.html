@@ -369,6 +369,11 @@
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
 
+    .ai-docs-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
     .feature-grid .repo-card {
       min-height: 300px;
     }
@@ -445,16 +450,30 @@
       text-decoration: underline;
     }
 
-    .forks-inline {
-      margin-top: 18px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
+    .forks-card {
+      grid-column: span 3;
+      min-height: 300px;
+      align-content: start;
     }
 
-    .forks-inline h3 {
-      margin: 0 0 8px;
+    .forks-card h3 {
+      margin: 0;
       font-size: 1.1rem;
       letter-spacing: -0.02em;
+    }
+
+    .forks-card .prose-block {
+      max-width: none;
+    }
+
+    @media (max-width: 1080px) {
+      .ai-docs-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .forks-card {
+        grid-column: span 2;
+      }
     }
 
     .empty,
@@ -471,6 +490,10 @@
     @media (max-width: 860px) {
       .stats,
       .account-grid { grid-template-columns: 1fr; }
+      .ai-docs-grid,
+      .repo-grid,
+      .feature-grid { grid-template-columns: 1fr; }
+      .forks-card { grid-column: span 1; }
       .shell { width: min(calc(100% - 18px), var(--max)); }
       .hero,
       .section,
@@ -533,27 +556,8 @@
             <p>A practical exploration of how AI can help write, review, and maintain technical documentation without losing rigor, accuracy, or editorial judgment.</p>
           </div>
         </div>
-        <div class="feature-grid" id="ai-docs-grid">
+        <div class="feature-grid ai-docs-grid" id="ai-docs-grid">
           <p class="loading">Loading AI-assisted docs related repositories…</p>
-        </div>
-        <div classems I like working on.</p>
-          </div>
-        </div>
-        <div class="prose-block">
-          <p>
-            I want to modernize and revive a few oldies but goodies among the community and canonical plugins for WordPress.
-            <a href="https://github.com/dknauss/authorship">Authorship</a> explores a well-architected approach to multi-author attribution.
-            <a href="https://github.com/dknauss/comment-popularity">Comment Popularity</a> is a simple method for letting users rate comments and using those ratings predictively to automate which comments get promoted or moderated.
-            <a href="https://github.com/dknauss/two-factor">Two-Factor</a> is vital to WordPress core and my <a href="https://github.com/dknauss/wp-sudo">Sudo</a> plugin, so I have been studying it and trying to contribute where I can.
-          </p>
-          <p>
-            Agentic tooling is now part of my workflows, so I have borrowed and built on others&rsquo; <a href="https://github.com/dknauss/agent-skills">agent-skills</a>,
-            <a href="https://github.com/dknauss/claude-wordpress-skills">Claude WordPress skills</a>,
-            <a href="https://github.com/dknauss/skills">general skills</a>, and
-            my own <a href="https://github.com/dknauss/ai-assisted-docs">AI-assisted docs</a> for writing and maintaining technical docs, plus broader WordPress and AI-assisted development workflows.
-            You&rsquo;ll also see some learning-oriented projects in my forked repos for workshops with the Edmonton WordPress Meetup, including
-            <a href="https://github.com/dknauss/Headless-WordPress-SvelteKit-Site">Headless WordPress SvelteKit Site</a>.
-          </p>
         </div>
       </section>
 
@@ -757,6 +761,42 @@
     `;
   }
 
+  function renderForksCard() {
+    return `
+      <article class="repo-card forks-card">
+        <h3>Forks I keep coming back to</h3>
+        <div class="prose-block">
+          <p>
+            I want to modernize and revive a few oldies but goodies among the community and canonical plugins for WordPress.
+            <a href="https://github.com/dknauss/authorship">Authorship</a> explores a well-architected approach to multi-author attribution.
+            <a href="https://github.com/dknauss/comment-popularity">Comment Popularity</a> is a simple method for letting users rate comments and using those ratings predictively to automate which comments get promoted or moderated.
+            <a href="https://github.com/dknauss/two-factor">Two-Factor</a> is vital to WordPress core and my <a href="https://github.com/dknauss/wp-sudo">Sudo</a> plugin, so I have been studying it and trying to contribute where I can.
+          </p>
+          <p>
+            Agentic tooling is now part of my workflows, so I have borrowed and built on others&rsquo; <a href="https://github.com/dknauss/agent-skills">agent-skills</a>,
+            <a href="https://github.com/dknauss/claude-wordpress-skills">Claude WordPress skills</a>,
+            <a href="https://github.com/dknauss/skills">general skills</a>, and
+            my own <a href="https://github.com/dknauss/ai-assisted-docs">AI-assisted docs</a> for writing and maintaining technical docs, plus broader WordPress and AI-assisted development workflows.
+            You&rsquo;ll also see some learning-oriented projects in my forked repos for workshops with the Edmonton WordPress Meetup, including
+            <a href="https://github.com/dknauss/Headless-WordPress-SvelteKit-Site">Headless WordPress SvelteKit Site</a>.
+          </p>
+        </div>
+      </article>
+    `;
+  }
+
+  function renderAiDocs() {
+    const target = document.getElementById('ai-docs-grid');
+    const repos = AI_DOCS_GROUP.map((fullName) => state.get(fullName.toLowerCase())).filter(Boolean);
+    if (!repos.length) {
+      target.innerHTML = '<p class="empty">Nothing to show right now.</p>';
+      return;
+    }
+    repos.forEach(countRepo);
+    target.innerHTML = repos.map((repo) => repoCard(repo, true)).join('') + renderForksCard();
+    updateStats();
+  }
+
   function renderList(list, targetId, featured = false) {
     const target = document.getElementById(targetId);
     const repos = list.map((fullName) => state.get(fullName.toLowerCase())).filter(Boolean);
@@ -794,7 +834,7 @@
         .join('');
 
       renderLead(state.get(LEAD_REPO.toLowerCase()));
-      renderList(AI_DOCS_GROUP, 'ai-docs-grid', true);
+      renderAiDocs();
       renderList(SELECTED, 'selected-grid', false);
       updateStats(snapshot.generated_at);
     } catch (error) {
