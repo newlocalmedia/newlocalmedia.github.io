@@ -661,6 +661,12 @@
   const totals = { selectedCount: 0, selectedStars: 0 };
   const state = new Map();
   const counted = new Set();
+  const REPO_OVERRIDES = {
+    'newlocalmedia/capm-for-agencies': {
+      descriptionHtml: 'Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics. <a class="text-link" href="https://newlocalmedia.github.io/capm-for-agencies/">Try it!</a> Small agency and freelancer version.',
+      homepage: 'https://newlocalmedia.github.io/capm-for-agencies/'
+    }
+  };
 
   function escapeHtml(value) {
     return String(value).replace(/[&<>"']/g, (char) => ({
@@ -706,6 +712,23 @@
     return response.json();
   }
 
+  function repoOverride(repo) {
+    return REPO_OVERRIDES[repo.full_name.toLowerCase()] || null;
+  }
+
+  function repoHomepage(repo) {
+    const override = repoOverride(repo);
+    const homepage = override?.homepage || repo.homepage;
+    return homepage && homepage.trim() && homepage.trim() !== repo.html_url
+      ? homepage.trim()
+      : null;
+  }
+
+  function repoDescriptionHtml(repo) {
+    const override = repoOverride(repo);
+    return override?.descriptionHtml || escapeHtml(repo.description || 'No description yet.');
+  }
+
   function iconSvg(name) {
     const icons = {
       'dknauss/wp-sudo': '<svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-2.8 8.3-7 10-4.2-1.7-7-5.5-7-10V6z"/><path d="M9.5 12l1.7 1.7L15.5 9.5"/></svg>',
@@ -728,9 +751,7 @@
   }
 
   function repoCard(repo, featured = false) {
-    const homepage = repo.homepage && repo.homepage.trim() && repo.homepage.trim() !== repo.html_url
-      ? repo.homepage.trim()
-      : null;
+    const homepage = repoHomepage(repo);
     const language = repo.language || 'Unspecified';
     return `
       <article class="repo-card">
@@ -741,7 +762,7 @@
           </div>
           ${featured ? '<span class="pill featured">Related</span>' : ''}
         </div>
-        <p class="repo-desc">${escapeHtml(repo.description || 'No description yet.')}</p>
+        <p class="repo-desc">${repoDescriptionHtml(repo)}</p>
         <div class="meta">
           <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
           <span class="pill">${escapeHtml(language)}</span>
@@ -756,9 +777,7 @@
   }
 
   function renderSpotlightCard(repo) {
-    const homepage = repo.homepage && repo.homepage.trim() && repo.homepage.trim() !== repo.html_url
-      ? repo.homepage.trim()
-      : null;
+    const homepage = repoHomepage(repo);
     return `
       <article class="spotlight-card">
         <div class="repo-top">
@@ -768,7 +787,7 @@
           </div>
           <span class="feature-label">Spotlight</span>
         </div>
-        <p class="repo-desc">${escapeHtml(repo.description || 'No description yet.')}</p>
+        <p class="repo-desc">${repoDescriptionHtml(repo)}</p>
         <div class="meta">
           <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
           <span class="pill">${escapeHtml(repo.language || 'Unspecified')}</span>
@@ -794,7 +813,7 @@
         <span class="feature-label">Featured Repo</span>
         <div class="feature-kicker">What if WordPress had a Linux-like sudo mode?</div>
         <h2 id="lead-feature-title">${titleMarkup(repo.name, repo.full_name)}</h2>
-        <p class="feature-summary">${escapeHtml(repo.description || 'No description yet.')}</p>
+        <p class="feature-summary">${repoDescriptionHtml(repo)}</p>
         <div class="meta">
           <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
           <span class="pill">${escapeHtml(repo.language || 'Unspecified')}</span>
