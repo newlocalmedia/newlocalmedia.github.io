@@ -50,8 +50,12 @@
       backdrop-filter: blur(12px);
     }
 
+    .hero,
+    .section {
+      padding: 24px;
+    }
+
     .hero {
-      padding: 30px;
       position: relative;
       overflow: hidden;
     }
@@ -66,14 +70,24 @@
       pointer-events: none;
     }
 
-    .hero-top {
+    .hero-top,
+    .section-head,
+    .feature-shell,
+    .account-top,
+    .repo-top {
       display: flex;
+      gap: 16px;
+    }
+
+    .hero-top,
+    .section-head,
+    .feature-shell {
       justify-content: space-between;
       align-items: center;
-      gap: 18px;
       flex-wrap: wrap;
-      margin-bottom: 30px;
     }
+
+    .hero-top { margin-bottom: 28px; }
 
     .brand {
       display: inline-flex;
@@ -107,17 +121,27 @@
       letter-spacing: -0.02em;
     }
 
-    .brand-copy span:last-child {
+    .brand-copy span:last-child,
+    .muted,
+    .lede,
+    .section-head p,
+    .stat span,
+    .repo-desc,
+    .empty,
+    .loading,
+    footer,
+    .feature-kicker,
+    .feature-note {
       color: var(--foreground);
-      font-size: 0.98rem;
     }
 
     .hero-actions,
-    .cta-row,
     .repo-actions,
-    .account-actions {
+    .account-actions,
+    .feature-actions,
+    .meta {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
@@ -142,10 +166,18 @@
     .button:hover,
     .repo-link:hover { transform: translateY(-1px); }
 
-    .button.primary {
+    .button.primary,
+    .repo-link.primary {
       background: rgba(129,130,255,0.18);
       color: var(--secondary);
       border-color: rgba(129,130,255,0.35);
+    }
+
+    .repo-link.alt,
+    .button.alt {
+      color: var(--primary);
+      border-color: rgba(129,130,255,0.35);
+      background: rgba(129,130,255,0.12);
     }
 
     h1 {
@@ -156,16 +188,22 @@
       max-width: 12ch;
     }
 
+    h2 {
+      margin: 0;
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
     .lede {
       margin: 18px 0 0;
       max-width: 60rem;
-      color: var(--foreground);
       font-size: clamp(1.04rem, 1.8vw, 1.18rem);
     }
 
     .stats,
     .account-grid,
-    .repo-grid {
+    .repo-grid,
+    .feature-grid {
       display: grid;
       gap: 14px;
     }
@@ -175,17 +213,27 @@
       margin-top: 28px;
     }
 
+    .stack {
+      display: grid;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .section-head {
+      align-items: end;
+      margin-bottom: 18px;
+    }
+
     .stat,
     .account-card,
-    .repo-card {
+    .repo-card,
+    .feature-card {
       border-radius: 22px;
       border: 1px solid var(--line);
       background: var(--surface-3);
     }
 
-    .stat {
-      padding: 18px;
-    }
+    .stat { padding: 18px; }
 
     .stat strong {
       display: block;
@@ -193,55 +241,81 @@
       letter-spacing: -0.04em;
     }
 
-    .stat span {
-      color: var(--foreground);
-      font-size: 0.94rem;
-    }
-
-    .stack {
-      display: grid;
-      gap: 18px;
-      margin-top: 20px;
-    }
-
-    .section {
+    .feature-card {
       padding: 24px;
+      background: linear-gradient(135deg, rgba(129,130,255,0.12), rgba(255,255,255,0.04));
     }
 
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
+    .feature-shell {
+      align-items: stretch;
     }
 
-    .section-head h2 {
+    .feature-main {
+      flex: 1 1 540px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .feature-side {
+      flex: 0 1 300px;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(11,18,30,0.5);
+      border: 1px solid var(--line);
+    }
+
+    .feature-label {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(129,130,255,0.18);
+      border: 1px solid rgba(129,130,255,0.35);
+      color: var(--secondary);
+    }
+
+    .feature-card h2 {
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1;
+    }
+
+    .feature-summary {
       margin: 0;
-      font-size: 1.55rem;
-      letter-spacing: -0.03em;
+      font-size: 1.02rem;
+      color: var(--secondary);
     }
 
-    .section-head p {
-      margin: 5px 0 0;
-      color: var(--foreground);
+    .feature-kicker,
+    .feature-note { margin: 0; }
+
+    .feature-note strong {
+      color: var(--secondary);
+      display: block;
+      margin-bottom: 4px;
     }
 
     .account-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .account-card {
-      padding: 20px;
+    .account-card,
+    .repo-card {
+      padding: 18px;
       display: grid;
       gap: 14px;
     }
 
     .account-top {
-      display: flex;
       align-items: center;
-      gap: 14px;
     }
 
     .account-avatar {
@@ -258,41 +332,31 @@
       letter-spacing: -0.02em;
     }
 
-    .muted { color: var(--foreground); }
-
     .repo-grid {
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
+    .feature-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
     .repo-card {
-      display: grid;
-      gap: 14px;
-      padding: 18px;
       min-height: 230px;
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
     }
 
     .repo-top {
-      display: flex;
       align-items: start;
       justify-content: space-between;
-      gap: 12px;
     }
 
     .repo-desc {
       margin: 0;
-      color: var(--foreground);
       font-size: 0.97rem;
       display: -webkit-box;
       -webkit-line-clamp: 4;
       -webkit-box-orient: vertical;
       overflow: hidden;
-    }
-
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
     }
 
     .pill {
@@ -322,22 +386,14 @@
       color: var(--primary);
     }
 
-    .repo-link.alt {
-      color: var(--primary);
-      border-color: rgba(129,130,255,0.35);
-      background: rgba(129,130,255,0.12);
-    }
-
     .empty,
     .loading {
-      color: var(--foreground);
       padding: 8px 2px;
     }
 
     footer {
       padding: 12px 4px 0;
       text-align: center;
-      color: var(--foreground);
       font-size: 0.94rem;
     }
 
@@ -346,7 +402,8 @@
       .account-grid { grid-template-columns: 1fr; }
       .shell { width: min(calc(100% - 18px), var(--max)); }
       .hero,
-      .section { padding: 20px; }
+      .section,
+      .feature-card { padding: 20px; }
       .panel { border-radius: 22px; }
     }
   </style>
@@ -392,6 +449,24 @@
     </section>
 
     <div class="stack">
+      <section class="feature-card" aria-labelledby="lead-feature-title">
+        <div class="feature-shell" id="lead-feature-shell">
+          <p class="loading">Loading lead feature…</p>
+        </div>
+      </section>
+
+      <section class="panel section" aria-labelledby="ai-docs-title">
+        <div class="section-head">
+          <div>
+            <h2 id="ai-docs-title">AI-assisted docs and related work</h2>
+            <p>A dedicated block for the ai-assisted-docs repo and closely related documentation projects.</p>
+          </div>
+        </div>
+        <div class="feature-grid" id="ai-docs-grid">
+          <p class="loading">Loading AI-assisted docs related repositories…</p>
+        </div>
+      </section>
+
       <section class="panel section" aria-labelledby="accounts-title">
         <div class="section-head">
           <div>
@@ -404,23 +479,11 @@
         </div>
       </section>
 
-      <section class="panel section" aria-labelledby="featured-title">
-        <div class="section-head">
-          <div>
-            <h2 id="featured-title">Featured repositories</h2>
-            <p>Pinned work first, plus the current New Local Media repo.</p>
-          </div>
-        </div>
-        <div class="repo-grid" id="featured-grid">
-          <p class="loading">Loading featured repositories…</p>
-        </div>
-      </section>
-
       <section class="panel section" aria-labelledby="selected-title">
         <div class="section-head">
           <div>
             <h2 id="selected-title">More selected work</h2>
-            <p>A smaller curated set instead of a long undifferentiated repo dump.</p>
+            <p>Additional highlighted repositories outside the wp-sudo lead feature and docs block.</p>
           </div>
         </div>
         <div class="repo-grid" id="selected-grid">
@@ -436,18 +499,16 @@
 
   <script>
     const ACCOUNT_ORDER = ['newlocalmedia', 'dknauss'];
-
-    const FEATURED = [
-      'newlocalmedia/capm-for-agencies',
-      'dknauss/wp-sudo',
+    const LEAD_REPO = 'dknauss/wp-sudo';
+    const AI_DOCS_GROUP = [
       'dknauss/ai-assisted-docs',
       'dknauss/wordpress-runbook-template',
       'dknauss/wp-security-hardening-guide',
       'dknauss/wp-security-benchmark',
       'dknauss/wp-security-style-guide'
     ];
-
     const SELECTED = [
+      'newlocalmedia/capm-for-agencies',
       'dknauss/author-identity',
       'dknauss/fedibots',
       'dknauss/wordpress-2fa-ecosystem',
@@ -456,6 +517,7 @@
 
     const totals = { selectedCount: 0, selectedStars: 0 };
     const state = new Map();
+    const counted = new Set();
 
     function escapeHtml(value) {
       return String(value).replace(/[&<>"']/g, (char) => ({
@@ -475,6 +537,14 @@
 
     function formatNumber(value) {
       return new Intl.NumberFormat('en-CA').format(value);
+    }
+
+    function countRepo(repo) {
+      const key = repo.full_name.toLowerCase();
+      if (counted.has(key)) return;
+      counted.add(key);
+      totals.selectedCount += 1;
+      totals.selectedStars += repo.stargazers_count;
     }
 
     function cleanRepos(user, repos) {
@@ -512,7 +582,7 @@
               <h3>${escapeHtml(repo.name)}</h3>
               <div class="muted">${escapeHtml(repo.owner.login)}</div>
             </div>
-            ${featured ? '<span class="pill featured">Featured</span>' : ''}
+            ${featured ? '<span class="pill featured">Related</span>' : ''}
           </div>
           <p class="repo-desc">${escapeHtml(repo.description || 'No description yet.')}</p>
           <div class="meta">
@@ -526,6 +596,37 @@
           </div>
         </article>
       `;
+    }
+
+    function renderLead(repo) {
+      const target = document.getElementById('lead-feature-shell');
+      if (!repo) {
+        target.innerHTML = '<p class="empty">Could not load the lead feature right now.</p>';
+        return;
+      }
+      countRepo(repo);
+      target.innerHTML = `
+        <div class="feature-main">
+          <span class="feature-label">Lead feature</span>
+          <div class="feature-kicker">Most prominent project</div>
+          <h2 id="lead-feature-title">${escapeHtml(repo.name)}</h2>
+          <p class="feature-summary">${escapeHtml(repo.description || 'No description yet.')}</p>
+          <div class="meta">
+            <span class="pill">★ ${formatNumber(repo.stargazers_count)}</span>
+            <span class="pill">${escapeHtml(repo.language || 'Unspecified')}</span>
+            <span class="pill">Updated ${escapeHtml(formatDate(repo.updated_at))}</span>
+          </div>
+          <div class="feature-actions">
+            <a class="repo-link primary" href="${repo.html_url}">View wp-sudo →</a>
+            <a class="repo-link alt" href="https://github.com/dknauss?tab=repositories">More from dknauss →</a>
+          </div>
+        </div>
+        <aside class="feature-side" aria-label="wp-sudo details">
+          <p class="feature-note"><strong>Why it is featured</strong>It is the flagship project on this page, so it gets the largest presentation and its own dedicated call to action.</p>
+          <p class="feature-note"><strong>Focus</strong>WordPress reauthentication and risky-action gating with support across REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.</p>
+        </aside>
+      `;
+      updateStats();
     }
 
     function renderAccountCard(user, repos) {
@@ -552,20 +653,15 @@
       `;
     }
 
-    function renderCurated(list, targetId, featured = false) {
+    function renderList(list, targetId, featured = false, gridCard = true) {
       const target = document.getElementById(targetId);
-      const repos = list
-        .map((fullName) => state.get(fullName.toLowerCase()))
-        .filter(Boolean);
-
+      const repos = list.map((fullName) => state.get(fullName.toLowerCase())).filter(Boolean);
       if (!repos.length) {
         target.innerHTML = '<p class="empty">Nothing to show right now.</p>';
         return;
       }
-
-      totals.selectedCount += repos.length;
-      totals.selectedStars += repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
-      target.innerHTML = repos.map((repo) => repoCard(repo, featured)).join('');
+      repos.forEach(countRepo);
+      target.innerHTML = repos.map((repo) => repoCard(repo, featured && gridCard)).join('');
       updateStats();
     }
 
@@ -587,12 +683,14 @@
           .map((repos, index) => renderAccountCard(ACCOUNT_ORDER[index], repos))
           .join('');
 
-        renderCurated(FEATURED, 'featured-grid', true);
-        renderCurated(SELECTED, 'selected-grid', false);
+        renderLead(state.get(LEAD_REPO.toLowerCase()));
+        renderList(AI_DOCS_GROUP, 'ai-docs-grid', true, true);
+        renderList(SELECTED, 'selected-grid', false, true);
       } catch (error) {
         console.error(error);
+        document.getElementById('lead-feature-shell').innerHTML = '<p class="empty">Could not load the lead feature right now.</p>';
         document.getElementById('account-grid').innerHTML = '<p class="empty">Could not load account summaries right now.</p>';
-        document.getElementById('featured-grid').innerHTML = '<p class="empty">Could not load featured repositories right now.</p>';
+        document.getElementById('ai-docs-grid').innerHTML = '<p class="empty">Could not load the AI-assisted docs block right now.</p>';
         document.getElementById('selected-grid').innerHTML = '<p class="empty">Could not load selected repositories right now.</p>';
       }
     }
