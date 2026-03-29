@@ -232,6 +232,7 @@
 
     .stats,
     .account-grid,
+    .spotlight-grid,
     .repo-grid,
     .feature-grid {
       display: grid;
@@ -360,6 +361,31 @@
     .repo-card h3 {
       margin: 0;
       letter-spacing: -0.02em;
+    }
+
+    .spotlight-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .spotlight-card {
+      min-height: 250px;
+      padding: 20px;
+      display: grid;
+      gap: 14px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(129,130,255,0.1), rgba(255,255,255,0.03));
+    }
+
+    .spotlight-card h3 {
+      margin: 0;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .spotlight-card .repo-desc {
+      -webkit-line-clamp: unset;
+      overflow: visible;
     }
 
     .repo-grid {
@@ -496,7 +522,8 @@
 
     @media (max-width: 860px) {
       .stats,
-      .account-grid { grid-template-columns: 1fr; }
+      .account-grid,
+      .spotlight-grid { grid-template-columns: 1fr; }
       .ai-docs-grid,
       .repo-grid,
       .feature-grid { grid-template-columns: 1fr; }
@@ -580,6 +607,18 @@
         </div>
       </section>
 
+      <section class="panel section" aria-labelledby="spotlight-title">
+        <div class="section-head">
+          <div>
+            <h2 id="spotlight-title">Spotlight projects</h2>
+            <p>A closer look at two projects I want to foreground alongside the main feature work.</p>
+          </div>
+        </div>
+        <div class="spotlight-grid" id="spotlight-grid">
+          <p class="loading">Loading spotlight projects…</p>
+        </div>
+      </section>
+
       <section class="panel section" aria-labelledby="selected-title">
         <div class="section-head">
           <div>
@@ -609,9 +648,11 @@
     'dknauss/wp-security-benchmark',
     'dknauss/wp-security-style-guide'
   ];
-  const SELECTED = [
+  const SPOTLIGHT = [
     'newlocalmedia/capm-for-agencies',
-    'dknauss/author-identity',
+    'dknauss/author-identity'
+  ];
+  const SELECTED = [
     'dknauss/fedibots',
     'dknauss/wordpress-2fa-ecosystem',
     'dknauss/the-drafting-table'
@@ -714,6 +755,33 @@
     `;
   }
 
+  function renderSpotlightCard(repo) {
+    const homepage = repo.homepage && repo.homepage.trim() && repo.homepage.trim() !== repo.html_url
+      ? repo.homepage.trim()
+      : null;
+    return `
+      <article class="spotlight-card">
+        <div class="repo-top">
+          <div>
+            <h3>${titleMarkup(repo.name, repo.full_name)}</h3>
+            <div class="muted">${escapeHtml(repo.owner.login)}</div>
+          </div>
+          <span class="feature-label">Spotlight</span>
+        </div>
+        <p class="repo-desc">${escapeHtml(repo.description || 'No description yet.')}</p>
+        <div class="meta">
+          <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
+          <span class="pill">${escapeHtml(repo.language || 'Unspecified')}</span>
+          <span class="pill">Updated ${escapeHtml(formatDate(repo.updated_at))}</span>
+        </div>
+        <div class="repo-actions">
+          <a class="repo-link" href="${repo.html_url}">GitHub →</a>
+          ${homepage ? `<a class="repo-link alt" href="${homepage}">Homepage →</a>` : ''}
+        </div>
+      </article>
+    `;
+  }
+
   function renderLead(repo) {
     const target = document.getElementById('lead-feature-shell');
     if (!repo) {
@@ -806,6 +874,18 @@
     updateStats();
   }
 
+  function renderSpotlight() {
+    const target = document.getElementById('spotlight-grid');
+    const repos = SPOTLIGHT.map((fullName) => state.get(fullName.toLowerCase())).filter(Boolean);
+    if (!repos.length) {
+      target.innerHTML = '<p class="empty">Nothing to show right now.</p>';
+      return;
+    }
+    repos.forEach(countRepo);
+    target.innerHTML = repos.map((repo) => renderSpotlightCard(repo)).join('');
+    updateStats();
+  }
+
   function renderList(list, targetId, featured = false) {
     const target = document.getElementById(targetId);
     const repos = list.map((fullName) => state.get(fullName.toLowerCase())).filter(Boolean);
@@ -844,6 +924,7 @@
 
       renderLead(state.get(LEAD_REPO.toLowerCase()));
       renderAiDocs();
+      renderSpotlight();
       renderList(SELECTED, 'selected-grid', false);
       updateStats(snapshot.generated_at);
     } catch (error) {
@@ -851,6 +932,7 @@
       document.getElementById('lead-feature-shell').innerHTML = '<p class="empty">Could not load the lead feature right now.</p>';
       document.getElementById('account-grid').innerHTML = '<p class="empty">Could not load account summaries right now.</p>';
       document.getElementById('ai-docs-grid').innerHTML = '<p class="empty">Could not load the AI-assisted docs block right now.</p>';
+      document.getElementById('spotlight-grid').innerHTML = '<p class="empty">Could not load spotlight projects right now.</p>';
       document.getElementById('selected-grid').innerHTML = '<p class="empty">Could not load selected repositories right now.</p>';
     }
   }
