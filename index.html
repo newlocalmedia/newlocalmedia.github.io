@@ -12,6 +12,7 @@
       --foreground: #c8d2d4;
       --background: #272938;
       --tertiary: #0b121e;
+      --star: #f2c46d;
       --surface: rgba(39, 41, 56, 0.88);
       --surface-2: rgba(11, 18, 30, 0.88);
       --surface-3: rgba(255, 255, 255, 0.04);
@@ -404,6 +405,7 @@
     .pill {
       display: inline-flex;
       align-items: center;
+      gap: 0.38rem;
       min-height: 28px;
       padding: 0 10px;
       border-radius: 999px;
@@ -412,6 +414,11 @@
       color: var(--foreground);
       font-size: 0.82rem;
       white-space: nowrap;
+    }
+
+    .star-icon {
+      color: var(--star);
+      line-height: 1;
     }
 
     .pill.featured {
@@ -695,7 +702,7 @@
         </div>
         <p class="repo-desc">${escapeHtml(repo.description || 'No description yet.')}</p>
         <div class="meta">
-          <span class="pill">★ ${formatNumber(repo.stargazers_count)}</span>
+          <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
           <span class="pill">${escapeHtml(language)}</span>
           <span class="pill">Updated ${escapeHtml(formatDate(repo.updated_at))}</span>
         </div>
@@ -721,7 +728,7 @@
         <h2 id="lead-feature-title">${titleMarkup(repo.name, repo.full_name)}</h2>
         <p class="feature-summary">${escapeHtml(repo.description || 'No description yet.')}</p>
         <div class="meta">
-          <span class="pill">★ ${formatNumber(repo.stargazers_count)}</span>
+          <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
           <span class="pill">${escapeHtml(repo.language || 'Unspecified')}</span>
           <span class="pill">Updated ${escapeHtml(formatDate(repo.updated_at))}</span>
         </div>
@@ -751,7 +758,7 @@
           </div>
         </div>
         <div class="meta">
-          <span class="pill">★ ${formatNumber(account.total_stars)} total stars</span>
+          <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(account.total_stars)} total stars</span>
           ${latest ? `<span class="pill">Latest: ${escapeHtml(latest.name)}</span>` : ''}
         </div>
         <div class="account-actions">
