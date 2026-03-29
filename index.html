@@ -386,6 +386,28 @@
       color: var(--primary);
     }
 
+    .prose-block {
+      display: grid;
+      gap: 14px;
+      max-width: 70rem;
+    }
+
+    .prose-block p {
+      margin: 0;
+      color: var(--foreground);
+      font-size: 1rem;
+    }
+
+    .prose-block a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .prose-block a:hover {
+      text-decoration: underline;
+    }
+
     .empty,
     .loading {
       padding: 8px 2px;
@@ -464,6 +486,30 @@
         </div>
         <div class="feature-grid" id="ai-docs-grid">
           <p class="loading">Loading AI-assisted docs related repositories…</p>
+        </div>
+      </section>
+
+      <section class="panel section" aria-labelledby="forks-title">
+        <div class="section-head">
+          <div>
+            <h2 id="forks-title">Forks I keep coming back to</h2>
+            <p>A few of the forked projects that best show the kinds of problems I like working on.</p>
+          </div>
+        </div>
+        <div class="prose-block">
+          <p>
+            On the WordPress side, <a href="https://github.com/dknauss/authorship">authorship</a> is about modern author attribution,
+            <a href="https://github.com/dknauss/comment-popularity">comment-popularity</a> revisits comment voting with updated quality workflows,
+            and <a href="https://github.com/dknauss/two-factor">two-factor</a> stays close to the long-running challenge of better authentication
+            and account protection in WordPress.
+          </p>
+          <p>
+            On the tooling side, <a href="https://github.com/dknauss/agent-skills">agent-skills</a>,
+            <a href="https://github.com/dknauss/claude-wordpress-skills">claude-wordpress-skills</a>, and
+            <a href="https://github.com/dknauss/skills">skills</a> are all about making AI-assisted development more practical for real WordPress,
+            GitHub, and documentation workflows. And <a href="https://github.com/dknauss/Headless-WordPress-SvelteKit-Site">Headless-WordPress-SvelteKit-Site</a>
+            is the crossover project in the mix: a headless WordPress architecture paired with SvelteKit and GraphQL.
+          </p>
         </div>
       </section>
 
