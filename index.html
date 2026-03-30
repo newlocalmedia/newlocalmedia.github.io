@@ -13,6 +13,8 @@
       --background: #272938;
       --tertiary: #0b121e;
       --star: #f2c46d;
+      --repo-icon: #7fb1ff;
+      --date-icon: #74d4a3;
       --surface: rgba(39, 41, 56, 0.88);
       --surface-2: rgba(11, 18, 30, 0.88);
       --surface-3: rgba(255, 255, 255, 0.04);
@@ -267,10 +269,38 @@
     .stat { padding: 18px; }
 
     .stat strong {
-      display: block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
       font-size: 1.8rem;
       letter-spacing: -0.04em;
     }
+
+    .stat-icon {
+      width: 1.05em;
+      height: 1.05em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      color: var(--foreground);
+    }
+
+    .stat-icon svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: visible;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .stat-icon.repo { color: var(--repo-icon); }
+    .stat-icon.star { color: var(--star); }
+    .stat-icon.date { color: var(--date-icon); }
 
     .feature-card {
       padding: 24px;
@@ -581,16 +611,16 @@
 
       <div class="stats" aria-label="Repository summary">
         <div class="stat">
-          <strong id="selected-count">—</strong>
+          <strong id="selected-count"><span class="stat-icon repo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H10l2 2h6.5A2.5 2.5 0 0 1 21 9.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5z"/></svg></span><span class="stat-value">—</span></strong>
           <span>curated repositories shown on this page</span>
         </div>
         <div class="stat">
-          <strong id="selected-stars">—</strong>
+          <strong id="selected-stars"><span class="stat-icon star" aria-hidden="true">★</span><span class="stat-value">—</span></strong>
           <span>combined stars across the curated set</span>
         </div>
         <div class="stat">
-          <strong id="last-refresh">Live</strong>
-          <span>data refreshed from GitHub in your browser</span>
+          <strong id="last-refresh"><span class="stat-icon date" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3v4"/><path d="M17 3v4"/><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 10h16"/></svg></span><span class="stat-value">Live</span></strong>
+          <span>latest GitHub snapshot shown in your local time</span>
         </div>
       </div>
     </section>
@@ -705,6 +735,12 @@
 
   function formatNumber(value) {
     return new Intl.NumberFormat('en-CA').format(value);
+  }
+
+  function formatSnapshotTimestamp(value) {
+    return new Intl.DateTimeFormat('en-CA', {
+      year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
+    }).format(new Date(value)).replace(/, (?=\d{1,2}:)/, ' ');
   }
 
   function countRepo(repo) {
@@ -945,12 +981,11 @@
   }
 
   function updateStats(snapshotGeneratedAt = null) {
-    document.getElementById('selected-count').textContent = formatNumber(totals.selectedCount);
-    document.getElementById('selected-stars').textContent = formatNumber(totals.selectedStars);
-    const timestamp = snapshotGeneratedAt ? new Date(snapshotGeneratedAt) : new Date();
-    document.getElementById('last-refresh').textContent = new Intl.DateTimeFormat('en-CA', {
-      year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
-    }).format(timestamp);
+    document.querySelector('#selected-count .stat-value').textContent = formatNumber(totals.selectedCount);
+    document.querySelector('#selected-stars .stat-value').textContent = formatNumber(totals.selectedStars);
+    document.querySelector('#last-refresh .stat-value').textContent = snapshotGeneratedAt
+      ? formatSnapshotTimestamp(snapshotGeneratedAt)
+      : 'Live';
   }
 
   async function init() {
