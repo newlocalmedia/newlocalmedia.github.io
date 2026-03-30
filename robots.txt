@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://newlocalmedia.github.io/sitemap.xml

@@ -1,0 +1,46 @@
+name: Site Quality
+
+on:
+  push:
+    paths:
+      - 'index.html'
+      - 'assets/**'
+      - 'site.webmanifest'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - 'scripts/check-site.mjs'
+      - '.htmlvalidate.json'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/site-quality.yml'
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'assets/**'
+      - 'site.webmanifest'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - 'scripts/check-site.mjs'
+      - '.htmlvalidate.json'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/site-quality.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run site quality checks
+        run: npm run check

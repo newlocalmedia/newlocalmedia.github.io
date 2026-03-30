@@ -1,10 +1,96 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>New Local Media | Open Projects</title>
-  <meta name="description" content="A curated showcase of public repositories from New Local Media and Dan Knauss.">
+  <meta name="description" content="Work in Progress is a curated showcase of public repositories from New Local Media and Dan Knauss, spanning WordPress security, technical documentation, identity, automation, and experiments.">
+  <meta name="author" content="New Local Media and Dan Knauss">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#272938">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://newlocalmedia.github.io/">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="New Local Media">
+  <meta property="og:title" content="Work in Progress | New Local Media">
+  <meta property="og:description" content="A curated showcase of public repositories from New Local Media and Dan Knauss, spanning WordPress security, technical documentation, identity, automation, and experiments.">
+  <meta property="og:url" content="https://newlocalmedia.github.io/">
+  <meta property="og:image" content="https://newlocalmedia.github.io/assets/og-image.png">
+  <meta property="og:image:secure_url" content="https://newlocalmedia.github.io/assets/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Work in Progress by New Local Media — open projects from New Local Media and Dan Knauss.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Work in Progress | New Local Media">
+  <meta name="twitter:description" content="A curated showcase of public repositories from New Local Media and Dan Knauss, spanning WordPress security, technical documentation, identity, automation, and experiments.">
+  <meta name="twitter:image" content="https://newlocalmedia.github.io/assets/og-image.png">
+  <meta name="twitter:image:alt" content="Work in Progress by New Local Media — open projects from New Local Media and Dan Knauss.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://newlocalmedia.com/#organization",
+        "name": "New Local Media",
+        "url": "https://newlocalmedia.com/",
+        "logo": "https://newlocalmedia.github.io/assets/icon-512.png",
+        "sameAs": [
+          "https://github.com/newlocalmedia"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://github.com/dknauss#person",
+        "name": "Dan Knauss",
+        "url": "https://github.com/dknauss",
+        "sameAs": [
+          "https://github.com/dknauss"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://newlocalmedia.github.io/#website",
+        "url": "https://newlocalmedia.github.io/",
+        "name": "Work in Progress",
+        "description": "A curated showcase of public repositories from New Local Media and Dan Knauss, spanning WordPress security, technical documentation, identity, automation, and experiments.",
+        "publisher": {
+          "@id": "https://newlocalmedia.com/#organization"
+        }
+      },
+      {
+        "@type": "CollectionPage",
+        "@id": "https://newlocalmedia.github.io/#webpage",
+        "url": "https://newlocalmedia.github.io/",
+        "name": "Work in Progress | New Local Media",
+        "description": "A curated showcase of public repositories from New Local Media and Dan Knauss, spanning WordPress security, technical documentation, identity, automation, and experiments.",
+        "isPartOf": {
+          "@id": "https://newlocalmedia.github.io/#website"
+        },
+        "about": [
+          {
+            "@id": "https://newlocalmedia.com/#organization"
+          },
+          {
+            "@id": "https://github.com/dknauss#person"
+          }
+        ],
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://newlocalmedia.github.io/assets/og-image.png",
+          "width": 1200,
+          "height": 630
+        }
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       --primary: #8182ff;
@@ -39,6 +125,30 @@
     }
 
     a { color: inherit; }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(129,130,255,0.85);
+      outline-offset: 3px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 14px;
+      top: -48px;
+      z-index: 1000;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: var(--secondary);
+      color: var(--tertiary);
+      font-weight: 700;
+      text-decoration: none;
+      transition: top 120ms ease;
+    }
+
+    .skip-link:focus {
+      top: 14px;
+    }
 
     .shell {
       width: min(calc(100% - 28px), var(--max));
@@ -578,6 +688,13 @@
       font-size: 0.94rem;
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *,
+      *::before,
+      *::after { transition: none !important; }
+    }
+
     @media (max-width: 860px) {
       .stats,
       .account-grid,
@@ -595,7 +712,9 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="shell">
+    <main id="main-content">
     <section class="panel hero" aria-labelledby="page-title">
       <div class="hero-top">
         <a class="brand" href="https://newlocalmedia.com/" aria-label="Visit New Local Media">
@@ -618,7 +737,7 @@
         A live showcase of public repositories from <strong><a class="text-link" href="https://github.com/newlocalmedia">@newlocalmedia</a></strong> and <strong><a class="text-link" href="https://github.com/dknauss">@dknauss</a></strong>, pulled directly from GitHub.
       </p>
 
-      <div class="stats" aria-label="Repository summary">
+      <div class="stats">
         <div class="stat">
           <strong id="selected-count"><span class="stat-icon repo" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H10l2 2h6.5A2.5 2.5 0 0 1 21 9.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5z"/></svg></span><span class="stat-value">—</span></strong>
           <span>Curated repositories shown on this page.</span>
@@ -689,6 +808,7 @@
         </div>
       </section>
     </div>
+    </main>
 
     <footer>
       © <span id="year"></span> <a class="text-link" href="https://newlocalmedia.com/">New Local Media</a>
