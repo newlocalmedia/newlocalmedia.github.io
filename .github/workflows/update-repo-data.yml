@@ -10,6 +10,8 @@ on:
     paths:
       - '.github/workflows/update-repo-data.yml'
       - 'scripts/update-repo-data.mjs'
+      - 'scripts/build-project-pages.mjs'
+      - 'scripts/site-config.mjs'
 
 permissions:
   contents: write
@@ -29,16 +31,18 @@ jobs:
       - name: Generate repo snapshot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/update-repo-data.mjs
+        run: |
+          node scripts/update-repo-data.mjs
+          node scripts/build-project-pages.mjs
 
       - name: Commit updated snapshot
         run: |
-          if git diff --quiet -- data/repos.json; then
+          if git diff --quiet -- data/repos.json sitemap.xml projects; then
             echo "No snapshot changes to commit"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/repos.json
+          git add data/repos.json sitemap.xml projects
           git commit -m "chore: update repo data snapshot"
           git push

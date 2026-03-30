@@ -73,6 +73,22 @@
         "isPartOf": {
           "@id": "https://newlocalmedia.github.io/#website"
         },
+        "mainEntity": {
+          "@id": "https://newlocalmedia.github.io/#curated-projects"
+        },
+        "hasPart": [
+          {"@id": "https://newlocalmedia.github.io/projects/dknauss/wp-sudo/"},
+          {"@id": "https://newlocalmedia.github.io/projects/dknauss/ai-assisted-docs/"},
+          {"@id": "https://newlocalmedia.github.io/projects/dknauss/wordpress-runbook-template/"},
+          {"@id": "https://newlocalmedia.github.io/projects/dknauss/wp-security-hardening-guide/"},
+          {"@id": "https://newlocalmedia.github.io/projects/dknauss/wp-security-benchmark/"},
+          {"@id": "https://newlocalmedia.github.io/projects/dknauss/wp-security-style-guide/"},
+          {"@id": "https://newlocalmedia.github.io/projects/newlocalmedia/capm-for-agencies/"},
+          {"@id": "https://newlocalmedia.github.io/projects/dknauss/author-identity/"},
+          {"@id": "https://newlocalmedia.github.io/projects/dknauss/fedibots/"},
+          {"@id": "https://newlocalmedia.github.io/projects/dknauss/wordpress-2fa-ecosystem/"},
+          {"@id": "https://newlocalmedia.github.io/projects/dknauss/the-drafting-table/"}
+        ],
         "about": [
           {
             "@id": "https://newlocalmedia.com/#organization"
@@ -88,6 +104,29 @@
           "height": 630
         }
       }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://newlocalmedia.github.io/#curated-projects",
+    "name": "Curated projects in Work in Progress",
+    "itemListOrder": "https://schema.org/ItemListOrderAscending",
+    "numberOfItems": 11,
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "url": "https://newlocalmedia.github.io/projects/dknauss/wp-sudo/", "name": "wp-sudo"},
+      {"@type": "ListItem", "position": 2, "url": "https://newlocalmedia.github.io/projects/dknauss/ai-assisted-docs/", "name": "ai-assisted-docs"},
+      {"@type": "ListItem", "position": 3, "url": "https://newlocalmedia.github.io/projects/dknauss/wordpress-runbook-template/", "name": "wordpress-runbook-template"},
+      {"@type": "ListItem", "position": 4, "url": "https://newlocalmedia.github.io/projects/dknauss/wp-security-hardening-guide/", "name": "wp-security-hardening-guide"},
+      {"@type": "ListItem", "position": 5, "url": "https://newlocalmedia.github.io/projects/dknauss/wp-security-benchmark/", "name": "wp-security-benchmark"},
+      {"@type": "ListItem", "position": 6, "url": "https://newlocalmedia.github.io/projects/dknauss/wp-security-style-guide/", "name": "wp-security-style-guide"},
+      {"@type": "ListItem", "position": 7, "url": "https://newlocalmedia.github.io/projects/newlocalmedia/capm-for-agencies/", "name": "capm-for-agencies"},
+      {"@type": "ListItem", "position": 8, "url": "https://newlocalmedia.github.io/projects/dknauss/author-identity/", "name": "author-identity"},
+      {"@type": "ListItem", "position": 9, "url": "https://newlocalmedia.github.io/projects/dknauss/fedibots/", "name": "fedibots"},
+      {"@type": "ListItem", "position": 10, "url": "https://newlocalmedia.github.io/projects/dknauss/wordpress-2fa-ecosystem/", "name": "wordpress-2fa-ecosystem"},
+      {"@type": "ListItem", "position": 11, "url": "https://newlocalmedia.github.io/projects/dknauss/the-drafting-table/", "name": "the-drafting-table"}
     ]
   }
   </script>
@@ -835,6 +874,12 @@
     'dknauss/wordpress-2fa-ecosystem',
     'dknauss/the-drafting-table'
   ];
+  const PROJECT_PAGE_SET = new Set([
+    LEAD_REPO,
+    ...AI_DOCS_GROUP,
+    ...SPOTLIGHT,
+    ...SELECTED
+  ].map((name) => name.toLowerCase()));
 
   const totals = { selectedCount: 0, selectedStars: 0 };
   const state = new Map();
@@ -937,8 +982,16 @@
     return `<span class="title-with-icon"><span class="title-icon" aria-hidden="true">${iconSvg(fullName)}</span><span>${escapeHtml(label)}</span></span>`;
   }
 
+  function projectPageUrl(repo) {
+    const key = repo.full_name.toLowerCase();
+    if (!PROJECT_PAGE_SET.has(key)) {
+      return null;
+    }
+    return `projects/${encodeURIComponent(repo.owner.login)}/${encodeURIComponent(repo.name)}/`;
+  }
+
   function titleLinkMarkup(repo) {
-    return `<a class="title-link" href="${repo.html_url}">${titleMarkup(repo.name, repo.full_name)}</a>`;
+    return `<a class="title-link" href="${projectPageUrl(repo) || repo.html_url}">${titleMarkup(repo.name, repo.full_name)}</a>`;
   }
 
   function ownerLinkMarkup(owner) {
@@ -948,6 +1001,7 @@
   function repoCard(repo, featured = false) {
     const homepage = repoHomepage(repo);
     const language = repo.language || 'Unspecified';
+    const details = projectPageUrl(repo);
     return `
       <article class="repo-card">
         <div class="repo-top">
@@ -964,6 +1018,7 @@
           <span class="pill">Updated ${escapeHtml(formatDate(repo.updated_at))}</span>
         </div>
         <div class="repo-actions">
+          ${details ? `<a class="repo-link primary" href="${details}">Details →</a>` : ''}
           <a class="repo-link" href="${repo.html_url}">GitHub →</a>
           ${homepage ? `<a class="repo-link alt" href="${homepage}">Homepage →</a>` : ''}
         </div>
@@ -973,6 +1028,7 @@
 
   function renderSpotlightCard(repo) {
     const homepage = repoHomepage(repo);
+    const details = projectPageUrl(repo);
     return `
       <article class="spotlight-card">
         <div class="repo-top">
@@ -989,6 +1045,7 @@
           <span class="pill">Updated ${escapeHtml(formatDate(repo.updated_at))}</span>
         </div>
         <div class="repo-actions">
+          ${details ? `<a class="repo-link primary" href="${details}">Details →</a>` : ''}
           <a class="repo-link" href="${repo.html_url}">GitHub →</a>
           ${homepage ? `<a class="repo-link alt" href="${homepage}">Homepage →</a>` : ''}
         </div>
@@ -1002,6 +1059,7 @@
       target.innerHTML = '<p class="empty">Could not load the lead feature right now.</p>';
       return;
     }
+    const details = projectPageUrl(repo);
     countRepo(repo);
     target.innerHTML = `
       <div class="feature-main">
@@ -1015,8 +1073,8 @@
           <span class="pill">Updated ${escapeHtml(formatDate(repo.updated_at))}</span>
         </div>
         <div class="feature-actions">
-          <a class="repo-link primary" href="${repo.html_url}">View wp-sudo →</a>
-          <a class="repo-link alt" href="https://github.com/dknauss?tab=repositories">More from dknauss →</a>
+          ${details ? `<a class="repo-link primary" href="${details}">Project page →</a>` : ''}
+          <a class="repo-link" href="${repo.html_url}">GitHub →</a>
         </div>
       </div>
       <aside class="feature-side" aria-label="wp-sudo details">

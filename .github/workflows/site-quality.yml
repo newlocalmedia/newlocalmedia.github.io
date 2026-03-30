@@ -5,10 +5,15 @@ on:
     paths:
       - 'index.html'
       - 'assets/**'
+      - 'projects/**'
+      - 'data/repos.json'
       - 'site.webmanifest'
       - 'robots.txt'
       - 'sitemap.xml'
       - 'scripts/check-site.mjs'
+      - 'scripts/build-project-pages.mjs'
+      - 'scripts/site-config.mjs'
+      - 'scripts/update-repo-data.mjs'
       - '.htmlvalidate.json'
       - 'package.json'
       - 'package-lock.json'
@@ -17,10 +22,15 @@ on:
     paths:
       - 'index.html'
       - 'assets/**'
+      - 'projects/**'
+      - 'data/repos.json'
       - 'site.webmanifest'
       - 'robots.txt'
       - 'sitemap.xml'
       - 'scripts/check-site.mjs'
+      - 'scripts/build-project-pages.mjs'
+      - 'scripts/site-config.mjs'
+      - 'scripts/update-repo-data.mjs'
       - '.htmlvalidate.json'
       - 'package.json'
       - 'package-lock.json'
@@ -44,3 +54,6 @@ jobs:
 
       - name: Run site quality checks
         run: npm run check
+
+      - name: Verify generated files are up to date
+        run: git diff --exit-code

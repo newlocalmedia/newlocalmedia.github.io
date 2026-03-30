@@ -3,8 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check": "npm run check:html && npm run check:seo",
-    "check:html": "html-validate index.html",
+    "build": "node scripts/build-project-pages.mjs",
+    "check": "npm run build && npm run check:html && npm run check:seo",
+    "check:html": "html-validate index.html projects/*/*/index.html",
     "check:seo": "node scripts/check-site.mjs"
   },
   "devDependencies": {

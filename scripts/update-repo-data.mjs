@@ -1,6 +1,6 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
+import { ACCOUNT_ORDER } from './site-config.mjs';
 
-const ACCOUNT_ORDER = ['newlocalmedia', 'dknauss'];
 const API_BASE = 'https://api.github.com';
 const OUTFILE = new URL('../data/repos.json', import.meta.url);
 
