@@ -1,146 +1,143 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none" role="img" aria-labelledby="title desc">
-  <title id="title">Author Identity architecture illustration</title>
-  <desc id="desc">A diagram-style illustration showing WordPress as a personal data server for authors, normalizing author data and publishing it to feeds, JSON-LD, fediverse metadata, and AI-rights signals.</desc>
+  <title id="title">Author Identity systems diagram</title>
+  <desc id="desc">A technical architecture-style diagram for Author Identity, showing WordPress adapters feeding a normalized author contract that powers feed metadata, JSON-LD, fediverse identity, and AI-rights signaling.</desc>
   <defs>
-    <linearGradient id="bg" x1="160" y1="90" x2="1420" y2="820" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="150" y1="80" x2="1450" y2="830" gradientUnits="userSpaceOnUse">
       <stop stop-color="#343758"/>
-      <stop offset="0.52" stop-color="#272938"/>
+      <stop offset="0.55" stop-color="#272938"/>
       <stop offset="1" stop-color="#0B121E"/>
-    </linearGradient>
-    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="rgba(255,255,255,0.12)"/>
-      <stop offset="1" stop-color="rgba(255,255,255,0.04)"/>
     </linearGradient>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
       <stop stop-color="#A6A7FF"/>
       <stop offset="1" stop-color="#8182FF"/>
     </linearGradient>
-    <linearGradient id="accentSoft" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#6BD3C0"/>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#73D7C7"/>
       <stop offset="1" stop-color="#4AA3E2"/>
     </linearGradient>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity="0.28"/>
     </filter>
     <style>
-      .label{font:700 24px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; fill:#FFFFFF}
-      .body{font:500 19px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; fill:#C8D2D4}
-      .mini{font:700 15px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; letter-spacing:.08em; text-transform:uppercase; fill:#AEBAD1}
-      .chip{font:700 17px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; fill:#EAF0FF}
-      .small{font:600 16px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; fill:#D5DDF0}
-      .mono{font:700 16px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; fill:#8F97B5}
+      .eyebrow{font:700 14px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.16em;text-transform:uppercase;fill:#AEBAD1}
+      .title{font:700 25px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#FFF}
+      .subtitle{font:500 19px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#C8D2D4}
+      .chip{font:700 16px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#EEF2FF}
+      .small{font:600 15px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#D2DBEE}
+      .mono{font:700 15px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#93A1BF}
+      .body{font:500 17px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#D5DDF0}
     </style>
   </defs>
 
   <rect width="1600" height="900" rx="36" fill="url(#bg)"/>
-  <circle cx="1360" cy="132" r="210" fill="#8182FF" opacity="0.10"/>
-  <circle cx="210" cy="760" r="240" fill="#4AA3E2" opacity="0.08"/>
+  <circle cx="1390" cy="138" r="215" fill="#8182FF" opacity="0.10"/>
+  <circle cx="205" cy="780" r="250" fill="#4AA3E2" opacity="0.08"/>
+
+  <text x="120" y="116" class="eyebrow">Author Identity</text>
+  <text x="120" y="164" class="title">Portable authorship system for WordPress</text>
+  <text x="120" y="198" class="subtitle">Normalize author data once, then emit structured identity across feeds, schema, federation, and rights metadata.</text>
 
   <g filter="url(#shadow)">
-    <rect x="430" y="170" width="740" height="520" rx="34" fill="#151D2C" stroke="rgba(255,255,255,0.10)"/>
-    <rect x="466" y="210" width="668" height="142" rx="26" fill="rgba(129,130,255,0.16)" stroke="rgba(129,130,255,0.34)"/>
-    <text x="500" y="255" class="mini">WordPress as a personal data server for authors</text>
-    <text x="500" y="305" class="label">Normalized author identity</text>
-    <text x="500" y="338" class="body">One source of truth for multi-author attribution, profiles, perspective,</text>
-    <text x="500" y="366" class="body">fediverse handles, and machine-readable rights signals.</text>
+    <rect x="426" y="160" width="752" height="554" rx="34" fill="#151D2C" stroke="rgba(255,255,255,0.10)"/>
+    <rect x="462" y="198" width="680" height="128" rx="24" fill="rgba(129,130,255,0.14)" stroke="rgba(129,130,255,0.36)"/>
+    <text x="496" y="236" class="eyebrow">Core model</text>
+    <text x="496" y="284" class="title">Normalized author contract</text>
+    <text x="496" y="314" class="subtitle">WordPress as a personal data server for authors.</text>
 
     <g>
-      <rect x="486" y="398" width="292" height="116" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
-      <circle cx="532" cy="438" r="20" fill="url(#accent)"/>
-      <path d="M532 427a11 11 0 1 1 0 22a11 11 0 0 1 0-22Zm0 27c12 0 22 6 26 15h-52c4-9 14-15 26-15Z" fill="#151D2C"/>
-      <text x="568" y="432" class="chip">Jane Editor</text>
-      <text x="568" y="458" class="small">author · profile · now · uses</text>
-      <text x="514" y="492" class="mono">sameAs · perspective · consent</text>
+      <rect x="484" y="364" width="300" height="134" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+      <text x="516" y="398" class="eyebrow">Identity fields</text>
+      <text x="516" y="436" class="chip">display_name · role · profiles</text>
+      <text x="516" y="466" class="chip">now_url · uses_url · sameAs</text>
+      <text x="516" y="496" class="chip">fediverse handle · actor URL</text>
     </g>
 
     <g>
-      <rect x="822" y="398" width="292" height="116" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
-      <circle cx="868" cy="438" r="20" fill="url(#accentSoft)"/>
-      <path d="M868 427a11 11 0 1 1 0 22a11 11 0 0 1 0-22Zm0 27c12 0 22 6 26 15h-52c4-9 14-15 26-15Z" fill="#151D2C"/>
-      <text x="904" y="432" class="chip">Sam Guest</text>
-      <text x="904" y="458" class="small">guest author · fediverse handle</text>
-      <text x="846" y="492" class="mono">role · attribution · rights</text>
+      <rect x="818" y="364" width="324" height="134" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.10)"/>
+      <text x="850" y="398" class="eyebrow">Editorial / rights fields</text>
+      <text x="850" y="436" class="chip">byline:perspective</text>
+      <text x="850" y="466" class="chip">author consent · post overrides</text>
+      <text x="850" y="496" class="chip">audit logging · denied-item state</text>
     </g>
 
     <g>
-      <rect x="486" y="550" width="628" height="98" rx="24" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
-      <text x="520" y="590" class="mini">Output channels are reactive — none of them own the data</text>
-      <g transform="translate(520 608)">
-        <rect width="118" height="22" rx="11" fill="rgba(129,130,255,0.22)"/>
-        <text x="17" y="16" class="small">RSS / Atom</text>
+      <rect x="484" y="536" width="658" height="142" rx="26" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+      <text x="516" y="572" class="eyebrow">Output rule</text>
+      <text x="516" y="612" class="title">Outputs are reactive to the same normalized data</text>
+      <text x="516" y="644" class="body">Feeds, schema, and federation layers render different views of the same author model.</text>
+      <g transform="translate(516 655)">
+        <rect width="124" height="24" rx="12" fill="rgba(129,130,255,0.22)"/>
+        <text x="17" y="17" class="small">read-only feeds</text>
       </g>
-      <g transform="translate(654 608)">
-        <rect width="126" height="22" rx="11" fill="rgba(74,163,226,0.20)"/>
-        <text x="18" y="16" class="small">JSON Feed</text>
+      <g transform="translate(654 655)">
+        <rect width="126" height="24" rx="12" fill="rgba(74,163,226,0.22)"/>
+        <text x="16" y="17" class="small">search / AI</text>
       </g>
-      <g transform="translate(796 608)">
-        <rect width="110" height="22" rx="11" fill="rgba(129,130,255,0.22)"/>
-        <text x="17" y="16" class="small">JSON-LD</text>
+      <g transform="translate(794 655)">
+        <rect width="122" height="24" rx="12" fill="rgba(129,130,255,0.22)"/>
+        <text x="16" y="17" class="small">fediverse</text>
       </g>
-      <g transform="translate(922 608)">
-        <rect width="160" height="22" rx="11" fill="rgba(74,163,226,0.20)"/>
-        <text x="16" y="16" class="small">fediverse:creator</text>
+      <g transform="translate(930 655)">
+        <rect width="164" height="24" rx="12" fill="rgba(74,163,226,0.22)"/>
+        <text x="15" y="17" class="small">rights signaling</text>
       </g>
     </g>
-  </g>
-
-  <g stroke-linecap="round" stroke-linejoin="round">
-    <g opacity="0.92">
-      <rect x="84" y="210" width="250" height="86" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
-      <text x="114" y="246" class="mini">Adapters</text>
-      <text x="114" y="278" class="chip">Core WordPress</text>
-    </g>
-    <g opacity="0.92">
-      <rect x="84" y="322" width="250" height="86" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
-      <text x="114" y="358" class="mini">Adapters</text>
-      <text x="114" y="390" class="chip">Co-Authors Plus</text>
-    </g>
-    <g opacity="0.92">
-      <rect x="84" y="434" width="250" height="86" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
-      <text x="114" y="470" class="mini">Adapters</text>
-      <text x="114" y="502" class="chip">PublishPress Authors</text>
-    </g>
-    <g opacity="0.92">
-      <rect x="84" y="546" width="250" height="86" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
-      <text x="114" y="582" class="mini">Adapters</text>
-      <text x="114" y="614" class="chip">HM Authorship</text>
-    </g>
-
-    <path d="M334 254C382 254 392 248 430 248" stroke="url(#accent)" stroke-width="4"/>
-    <path d="M334 366C382 366 392 326 430 326" stroke="url(#accent)" stroke-width="4"/>
-    <path d="M334 478C382 478 392 438 430 438" stroke="url(#accent)" stroke-width="4"/>
-    <path d="M334 590C382 590 392 550 430 550" stroke="url(#accent)" stroke-width="4"/>
-
-    <g opacity="0.95">
-      <rect x="1238" y="210" width="286" height="88" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
-      <text x="1270" y="246" class="mini">Syndication</text>
-      <text x="1270" y="278" class="chip">Structured feeds</text>
-    </g>
-    <g opacity="0.95">
-      <rect x="1238" y="322" width="286" height="88" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
-      <text x="1270" y="358" class="mini">Search &amp; AI</text>
-      <text x="1270" y="390" class="chip">JSON-LD Article + Person</text>
-    </g>
-    <g opacity="0.95">
-      <rect x="1238" y="434" width="286" height="88" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
-      <text x="1270" y="470" class="mini">Fediverse</text>
-      <text x="1270" y="502" class="chip">fediverse:creator</text>
-    </g>
-    <g opacity="0.95">
-      <rect x="1238" y="546" width="286" height="88" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
-      <text x="1270" y="582" class="mini">Rights signaling</text>
-      <text x="1270" y="614" class="chip">robots · TDMRep · ai.txt</text>
-    </g>
-
-    <path d="M1170 254C1212 254 1216 254 1238 254" stroke="url(#accentSoft)" stroke-width="4"/>
-    <path d="M1170 366C1212 366 1216 366 1238 366" stroke="url(#accentSoft)" stroke-width="4"/>
-    <path d="M1170 478C1212 478 1216 478 1238 478" stroke="url(#accentSoft)" stroke-width="4"/>
-    <path d="M1170 590C1212 590 1216 590 1238 590" stroke="url(#accentSoft)" stroke-width="4"/>
   </g>
 
   <g>
-    <text x="120" y="118" class="mini">Author Identity</text>
-    <text x="120" y="168" class="label">Structured authorship that travels with the work</text>
-    <text x="120" y="204" class="body">From one normalized author model to feeds, schema, federated identity, and AI-rights metadata.</text>
+    <rect x="86" y="230" width="260" height="86" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+    <text x="116" y="266" class="eyebrow">Adapter</text>
+    <text x="116" y="298" class="chip">Core WordPress</text>
+
+    <rect x="86" y="344" width="260" height="86" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+    <text x="116" y="380" class="eyebrow">Adapter</text>
+    <text x="116" y="412" class="chip">Co-Authors Plus</text>
+
+    <rect x="86" y="458" width="260" height="86" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+    <text x="116" y="494" class="eyebrow">Adapter</text>
+    <text x="116" y="526" class="chip">PublishPress Authors</text>
+
+    <rect x="86" y="572" width="260" height="86" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+    <text x="116" y="608" class="eyebrow">Adapter</text>
+    <text x="116" y="640" class="chip">HM Authorship</text>
+  </g>
+
+  <g>
+    <rect x="1238" y="214" width="286" height="88" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+    <text x="1270" y="248" class="eyebrow">Feed outputs</text>
+    <text x="1270" y="282" class="chip">Byline in RSS / Atom / JSON Feed</text>
+
+    <rect x="1238" y="330" width="286" height="88" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+    <text x="1270" y="364" class="eyebrow">Schema outputs</text>
+    <text x="1270" y="398" class="chip">JSON-LD Article + Person</text>
+
+    <rect x="1238" y="446" width="286" height="88" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+    <text x="1270" y="480" class="eyebrow">Federation outputs</text>
+    <text x="1270" y="514" class="chip">fediverse:creator + actor identity</text>
+
+    <rect x="1238" y="562" width="286" height="88" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.10)"/>
+    <text x="1270" y="596" class="eyebrow">Rights outputs</text>
+    <text x="1270" y="630" class="chip">robots · TDMRep · ai.txt</text>
+  </g>
+
+  <g stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M346 273C383 273 397 248 426 248" stroke="url(#accent)" stroke-width="4"/>
+    <path d="M346 387C386 387 399 311 426 311" stroke="url(#accent)" stroke-width="4"/>
+    <path d="M346 501C386 501 399 430 426 430" stroke="url(#accent)" stroke-width="4"/>
+    <path d="M346 615C386 615 399 548 426 548" stroke="url(#accent)" stroke-width="4"/>
+
+    <path d="M1178 258C1211 258 1218 258 1238 258" stroke="url(#teal)" stroke-width="4"/>
+    <path d="M1178 374C1211 374 1218 374 1238 374" stroke="url(#teal)" stroke-width="4"/>
+    <path d="M1178 490C1211 490 1218 490 1238 490" stroke="url(#teal)" stroke-width="4"/>
+    <path d="M1178 606C1211 606 1218 606 1238 606" stroke="url(#teal)" stroke-width="4"/>
+
+    <path d="M600 500V536" stroke="rgba(255,255,255,0.18)" stroke-width="3" stroke-dasharray="8 10"/>
+    <path d="M980 500V536" stroke="rgba(255,255,255,0.18)" stroke-width="3" stroke-dasharray="8 10"/>
+  </g>
+
+  <g>
+    <rect x="120" y="744" width="1360" height="82" rx="22" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="156" y="776" class="eyebrow">Design principle</text>
+    <text x="156" y="810" class="body">Separate authorship from presentation: adapters normalize source systems, outputs remain additive, and identity metadata travels with the work instead of collapsing at syndication.</text>
   </g>
 </svg>
