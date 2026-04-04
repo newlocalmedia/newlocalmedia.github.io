@@ -451,7 +451,7 @@ ${JSON.stringify(graph, null, 2)}
         </span>
       </a>
       <div class="actions">
-        <a class="button" href="/">Back to collection</a>
+        <a class="button" href="/">← Back</a>
         <a class="button primary" href="${repo.html_url}">View on GitHub</a>
         ${homepage ? `<a class="button" href="${homepage}">Visit homepage</a>` : ''}
       </div>
