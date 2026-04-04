@@ -87,7 +87,8 @@ export const PROJECT_META = {
     schemaType: 'SoftwareSourceCode',
     summaryHtml: 'Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics. <a href="https://newlocalmedia.github.io/capm-for-agencies/">Main App</a> · <a href="https://newlocalmedia.github.io/capm-for-agencies/project-risk-check/index.html">Small agency and freelancer version</a>',
     summary: 'Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics.',
-    narrative: 'CAPM for Agencies adapts financial-economics thinking into pricing tools for agencies, B-Corps, and smaller consultancies. It matters here because it shows a product-minded line of work that sits alongside WordPress and documentation projects rather than inside them.',
+    whyHeading: 'What is this?',
+    narrative: 'CAPM has its haters in finance, including Warren Buffett and Charlie Munger — and for good reasons. We’re not using it to help you diversity your portfolio or price a possible acquisition. It works well for anyone bidding on projects where a price is needed before planning can be done. Connect risk to costs and deal pricing in a disciplined way you can learn from over time.',
     omitRelatedNarrative: true,
     relatedProjects: [
       {

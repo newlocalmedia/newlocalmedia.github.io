@@ -64,6 +64,10 @@ function displayTitle(repo) {
   return PROJECT_META[repo.full_name]?.displayTitle || repo.name;
 }
 
+function whyHeading(repo) {
+  return PROJECT_META[repo.full_name]?.whyHeading || 'Why This Project Is Here';
+}
+
 function imageMimeType(url) {
   if (url.endsWith('.png')) return 'image/png';
   if (url.endsWith('.jpg') || url.endsWith('.jpeg')) return 'image/jpeg';
@@ -470,7 +474,7 @@ ${JSON.stringify(graph, null, 2)}
       <section class="panel section" aria-labelledby="why-title">
         <div class="section-head">
           <div>
-            <h2 id="why-title">Why This Project Is Here</h2>
+            <h2 id="why-title">${escapeHtml(whyHeading(repo))}</h2>
           </div>
         </div>
         ${paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n        ')}
