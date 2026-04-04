@@ -55,8 +55,8 @@ export const PROJECT_META = {
     whyHeading: 'Gate Any Privileged Action',
     narrative: 'When a user attempts a gated action, Sudo intercepts the request at `admin_init`. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.',
     omitGenericNarrative: true,
-    focus: 'Gate & Log Dangerous Actions',
-    subfocus: 'Protects Every Surface'
+    focus: 'Sudo for WordPress! 🥪',
+    subfocus: 'Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️'
   },
   'dknauss/ai-assisted-docs': {
     displayTitle: 'AI-Assisted Docs',
