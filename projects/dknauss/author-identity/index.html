@@ -20,15 +20,16 @@
   <meta property="og:title" content="Author Identity | Work in Progress">
   <meta property="og:description" content="Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.">
   <meta property="og:url" content="https://newlocalmedia.github.io/projects/dknauss/author-identity/">
-  <meta property="og:image" content="https://newlocalmedia.github.io/assets/author-identity-preview.svg">
-  <meta property="og:image:secure_url" content="https://newlocalmedia.github.io/assets/author-identity-preview.svg">
+  <meta property="og:image" content="https://newlocalmedia.github.io/assets/author-identity-preview.png">
+  <meta property="og:image:secure_url" content="https://newlocalmedia.github.io/assets/author-identity-preview.png">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Diagram-style preview of Author Identity showing normalized author data in WordPress flowing to feeds, JSON-LD, fediverse metadata, and AI-rights signals.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Author Identity | Work in Progress">
   <meta name="twitter:description" content="Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.">
-  <meta name="twitter:image" content="https://newlocalmedia.github.io/assets/author-identity-preview.svg">
+  <meta name="twitter:image" content="https://newlocalmedia.github.io/assets/author-identity-preview.png">
   <meta name="twitter:image:alt" content="Diagram-style preview of Author Identity showing normalized author data in WordPress flowing to feeds, JSON-LD, fediverse metadata, and AI-rights signals.">
   <script type="application/ld+json">
 {
@@ -96,7 +97,7 @@
       ],
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://newlocalmedia.github.io/assets/author-identity-preview.svg",
+        "url": "https://newlocalmedia.github.io/assets/author-identity-preview.png",
         "width": 1200,
         "height": 630
       }
@@ -201,7 +202,13 @@
     .related-list { display: grid; gap: 10px; padding-left: 1.2rem; margin: 0; }
     .summary-box { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
     .summary-box-media { margin: 0 0 14px; }
-    .summary-box-media img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(11,18,30,0.5); }
+    .image-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; border-radius: 16px; }
+    .summary-box-media img, .image-trigger img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(11,18,30,0.5); }
+    .image-modal[hidden] { display: none; }
+    .image-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 28px; background: rgba(6,10,18,0.82); backdrop-filter: blur(10px); }
+    .image-modal-dialog { position: relative; width: min(1100px, 100%); max-height: calc(100vh - 56px); }
+    .image-modal-close { position: absolute; top: -14px; right: -14px; width: 42px; height: 42px; border: 0; border-radius: 999px; cursor: pointer; font-size: 1.5rem; line-height: 1; color: var(--secondary); background: rgba(11,18,30,0.92); box-shadow: var(--shadow); }
+    .image-modal img { display: block; width: 100%; height: auto; max-height: calc(100vh - 56px); object-fit: contain; border-radius: 18px; border: 1px solid var(--line); background: rgba(11,18,30,0.96); }
     .summary-box strong { display: block; margin-bottom: 6px; }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (max-width: 760px) {
@@ -272,7 +279,7 @@
             <dt>Owner</dt><dd><a href="/projects/dknauss/">@dknauss</a></dd><dt>Source</dt><dd><a href="https://github.com/dknauss/author-identity">dknauss/author-identity</a></dd><dt>Homepage</dt><dd><a href="https://dan.knauss.ca">https://dan.knauss.ca</a></dd><dt>CI</dt><dd><a href="https://github.com/dknauss/author-identity/actions">GitHub Actions</a></dd><dt>Last updated</dt><dd><time datetime="2026-04-04T05:46:00Z">Apr 4, 2026</time></dd><dt>Primary language</dt><dd>PHP</dd><dt>Stars</dt><dd><span class="star-icon" aria-hidden="true">★</span>0</dd>
           </dl>
           <div class="summary-box">
-            <figure class="summary-box-media"><img src="https://newlocalmedia.github.io/assets/author-identity-preview.svg" alt="Diagram-style preview of Author Identity showing normalized author data in WordPress flowing to feeds, JSON-LD, fediverse metadata, and AI-rights signals." loading="eager" decoding="async"></figure>
+            <figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="https://newlocalmedia.github.io/assets/author-identity-preview.png" data-modal-alt="Diagram-style preview of Author Identity showing normalized author data in WordPress flowing to feeds, JSON-LD, fediverse metadata, and AI-rights signals." aria-label="Open larger image for Author Identity"><img src="https://newlocalmedia.github.io/assets/author-identity-preview.png" alt="Diagram-style preview of Author Identity showing normalized author data in WordPress flowing to feeds, JSON-LD, fediverse metadata, and AI-rights signals." loading="eager" decoding="async"></button></figure>
             <strong>Spotlight projects</strong>
             <p>Two projects I especially want to foreground right now.</p>
 
@@ -296,5 +303,52 @@
       © 2026 <a href="https://newlocalmedia.com/">New Local Media</a>
     </footer>
   </div>
+  <div class="image-modal" id="image-modal" hidden>
+    <div class="image-modal-dialog" role="dialog" aria-modal="true" aria-label="Expanded image view">
+      <button class="image-modal-close" type="button" aria-label="Close image">×</button>
+      <img id="image-modal-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
+    </div>
+  </div>
+  <script>
+    (() => {
+      const modal = document.getElementById('image-modal');
+      const modalImage = document.getElementById('image-modal-img');
+      const closeButton = modal?.querySelector('.image-modal-close');
+      if (!modal || !modalImage || !closeButton) return;
+
+      let lastTrigger = null;
+
+      function closeModal() {
+        modal.hidden = true;
+        modalImage.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACw=';
+        modalImage.alt = '';
+        document.body.style.overflow = '';
+        lastTrigger?.focus?.();
+      }
+
+      document.addEventListener('click', (event) => {
+        const trigger = event.target.closest('[data-modal-image]');
+        if (trigger) {
+          lastTrigger = trigger;
+          modalImage.src = trigger.getAttribute('data-modal-image') || '';
+          modalImage.alt = trigger.getAttribute('data-modal-alt') || '';
+          modal.hidden = false;
+          document.body.style.overflow = 'hidden';
+          closeButton.focus();
+          return;
+        }
+
+        if (event.target === modal || event.target === closeButton) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !modal.hidden) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

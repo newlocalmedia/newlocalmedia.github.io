@@ -124,7 +124,7 @@ export const PROJECT_META = {
     displayTitle: 'Author Identity',
     schemaType: 'SoftwareSourceCode',
     primaryImage: {
-      url: 'https://newlocalmedia.github.io/assets/author-identity-preview.svg',
+      url: 'https://newlocalmedia.github.io/assets/author-identity-preview.png',
       alt: 'Diagram-style preview of Author Identity showing normalized author data in WordPress flowing to feeds, JSON-LD, fediverse metadata, and AI-rights signals.'
     },
     narrative: 'Author Identity explores structured author data that can travel with the work across feeds, search, the fediverse, and AI systems, with WordPress acting as the source of truth.'

@@ -64,6 +64,14 @@ function displayTitle(repo) {
   return PROJECT_META[repo.full_name]?.displayTitle || repo.name;
 }
 
+function imageMimeType(url) {
+  if (url.endsWith('.png')) return 'image/png';
+  if (url.endsWith('.jpg') || url.endsWith('.jpeg')) return 'image/jpeg';
+  if (url.endsWith('.webp')) return 'image/webp';
+  if (url.endsWith('.svg')) return 'image/svg+xml';
+  return null;
+}
+
 function ownerEntity(repo) {
   if (repo.owner.login === 'newlocalmedia') {
     return {
@@ -238,6 +246,7 @@ function renderPage(repo, lookup) {
   const primaryImage = projectPrimaryImage(repo);
   const ogImageUrl = primaryImage?.url || defaultOgImageUrl;
   const ogImageAlt = primaryImage?.alt || `${label} in Work in Progress by New Local Media.`;
+  const ogImageType = imageMimeType(ogImageUrl);
   const paragraphs = narrativeParagraphs(repo, related);
   const details = detailItems(repo);
   const breadcrumb = {
@@ -328,6 +337,7 @@ function renderPage(repo, lookup) {
   <meta property="og:url" content="${pageUrl}">
   <meta property="og:image" content="${ogImageUrl}">
   <meta property="og:image:secure_url" content="${ogImageUrl}">
+  ${ogImageType ? `<meta property="og:image:type" content="${ogImageType}">` : ''}
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="${escapeHtml(ogImageAlt)}">
@@ -402,7 +412,13 @@ ${JSON.stringify(graph, null, 2)}
     .related-list { display: grid; gap: 10px; padding-left: 1.2rem; margin: 0; }
     .summary-box { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
     .summary-box-media { margin: 0 0 14px; }
-    .summary-box-media img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(11,18,30,0.5); }
+    .image-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; border-radius: 16px; }
+    .summary-box-media img, .image-trigger img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(11,18,30,0.5); }
+    .image-modal[hidden] { display: none; }
+    .image-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 28px; background: rgba(6,10,18,0.82); backdrop-filter: blur(10px); }
+    .image-modal-dialog { position: relative; width: min(1100px, 100%); max-height: calc(100vh - 56px); }
+    .image-modal-close { position: absolute; top: -14px; right: -14px; width: 42px; height: 42px; border: 0; border-radius: 999px; cursor: pointer; font-size: 1.5rem; line-height: 1; color: var(--secondary); background: rgba(11,18,30,0.92); box-shadow: var(--shadow); }
+    .image-modal img { display: block; width: 100%; height: auto; max-height: calc(100vh - 56px); object-fit: contain; border-radius: 18px; border: 1px solid var(--line); background: rgba(11,18,30,0.96); }
     .summary-box strong { display: block; margin-bottom: 6px; }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (max-width: 760px) {
@@ -471,7 +487,7 @@ ${JSON.stringify(graph, null, 2)}
             ${details.map(([term, value]) => `<dt>${escapeHtml(term)}</dt><dd>${value}</dd>`).join('')}
           </dl>
           <div class="summary-box">
-            ${primaryImage ? `<figure class="summary-box-media"><img src="${primaryImage.url}" alt="${escapeHtml(primaryImage.alt || `${label} preview image.`)}" loading="eager" decoding="async"></figure>` : ''}
+            ${primaryImage ? `<figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${escapeHtml(primaryImage.alt || `${label} preview image.`)}" aria-label="Open larger image for ${escapeHtml(label)}"><img src="${primaryImage.url}" alt="${escapeHtml(primaryImage.alt || `${label} preview image.`)}" loading="eager" decoding="async"></button></figure>` : ''}
             <strong>${escapeHtml(meta.focus || section.title)}</strong>
             <p>${escapeHtml(meta.subfocus || section.description)}</p>
             ${meta.extraLinks?.length && !meta.omitSummaryBoxLinks ? `<p>${meta.extraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')}</p>` : ''}
@@ -495,6 +511,53 @@ ${JSON.stringify(graph, null, 2)}
       © ${new Date().getFullYear()} <a href="${MAIN_SITE_URL}">${escapeHtml(ORGANIZATION_NAME)}</a>
     </footer>
   </div>
+  <div class="image-modal" id="image-modal" hidden>
+    <div class="image-modal-dialog" role="dialog" aria-modal="true" aria-label="Expanded image view">
+      <button class="image-modal-close" type="button" aria-label="Close image">×</button>
+      <img id="image-modal-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
+    </div>
+  </div>
+  <script>
+    (() => {
+      const modal = document.getElementById('image-modal');
+      const modalImage = document.getElementById('image-modal-img');
+      const closeButton = modal?.querySelector('.image-modal-close');
+      if (!modal || !modalImage || !closeButton) return;
+
+      let lastTrigger = null;
+
+      function closeModal() {
+        modal.hidden = true;
+        modalImage.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACw=';
+        modalImage.alt = '';
+        document.body.style.overflow = '';
+        lastTrigger?.focus?.();
+      }
+
+      document.addEventListener('click', (event) => {
+        const trigger = event.target.closest('[data-modal-image]');
+        if (trigger) {
+          lastTrigger = trigger;
+          modalImage.src = trigger.getAttribute('data-modal-image') || '';
+          modalImage.alt = trigger.getAttribute('data-modal-alt') || '';
+          modal.hidden = false;
+          document.body.style.overflow = 'hidden';
+          closeButton.focus();
+          return;
+        }
+
+        if (event.target === modal || event.target === closeButton) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !modal.hidden) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
 `.replace(/[ \t]+$/gm, '').trimEnd() + '\n';
