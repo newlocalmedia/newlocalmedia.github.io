@@ -89,6 +89,12 @@ export const PROJECT_META = {
     summary: 'Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics.',
     narrative: 'CAPM for Agencies adapts financial-economics thinking into pricing tools for agencies, B-Corps, and smaller consultancies. It matters here because it shows a product-minded line of work that sits alongside WordPress and documentation projects rather than inside them.',
     omitRelatedNarrative: true,
+    version: '0.1.1',
+    tests: '46 automated Node tests',
+    license: {
+      label: 'CC BY-SA 4.0',
+      url: 'https://creativecommons.org/licenses/by-sa/4.0/'
+    },
     extraLinks: [
       {
         label: 'Try the main model',

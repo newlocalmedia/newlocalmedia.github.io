@@ -141,19 +141,51 @@ function relatedRepos(fullName, lookup) {
 }
 
 function detailItems(repo) {
+  const meta = PROJECT_META[repo.full_name] || {};
   const items = [
     ['Owner', `<a href="https://github.com/${encodeURIComponent(repo.owner.login)}">@${escapeHtml(repo.owner.login)}</a>`],
-    ['Source', `<a href="${repo.html_url}">${escapeHtml(repo.full_name)}</a>`],
-    ['Last updated', `<time datetime="${escapeHtml(repo.updated_at)}">${escapeHtml(formatDate(repo.updated_at))}</time>`],
-    ['Stars', escapeHtml(String(repo.stargazers_count))]
+    ['Source', `<a href="${repo.html_url}">${escapeHtml(repo.full_name)}</a>`]
   ];
+
+  if (meta.extraLinks?.length) {
+    items.push([
+      'Apps',
+      meta.extraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')
+    ]);
+  } else {
+    const homepage = repoHomepage(repo);
+    if (homepage) {
+      items.push(['Homepage', `<a href="${homepage}">${escapeHtml(homepage)}</a>`]);
+    }
+  }
+
+  if (meta.version) {
+    items.push(['Version', escapeHtml(meta.version)]);
+  }
+
+  items.push(['CI', `<a href="${repo.html_url}/actions">GitHub Actions</a>`]);
+
+  if (meta.tests) {
+    items.push(['Tests', escapeHtml(meta.tests)]);
+  }
+
+  if (meta.license?.label) {
+    items.push([
+      'License',
+      meta.license.url
+        ? `<a href="${meta.license.url}">${escapeHtml(meta.license.label)}</a>`
+        : escapeHtml(meta.license.label)
+    ]);
+  }
+
+  items.push(['Last updated', `<time datetime="${escapeHtml(repo.updated_at)}">${escapeHtml(formatDate(repo.updated_at))}</time>`]);
+
   if (repo.language) {
-    items.splice(3, 0, ['Primary language', escapeHtml(repo.language)]);
+    items.push(['Primary language', escapeHtml(repo.language)]);
   }
-  const homepage = repoHomepage(repo);
-  if (homepage) {
-    items.push(['Homepage', `<a href="${homepage}">${escapeHtml(homepage)}</a>`]);
-  }
+
+  items.push(['Stars', `<span class="star-icon" aria-hidden="true">★</span>${escapeHtml(String(repo.stargazers_count))}`]);
+
   return items;
 }
 
