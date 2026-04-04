@@ -386,8 +386,8 @@ ${JSON.stringify(graph, null, 2)}
         linear-gradient(180deg, #303348 0%, var(--background) 46%, var(--tertiary) 100%);
       line-height: 1.65;
     }
-    a { color: inherit; }
-    a:focus-visible { outline: 3px solid rgba(129,130,255,0.85); outline-offset: 3px; }
+    a { color: inherit; text-underline-offset: 0.16em; text-decoration-thickness: 0.08em; }
+    a:focus-visible, button:focus-visible { outline: 3px solid rgba(129,130,255,0.85); outline-offset: 3px; }
     .skip-link {
       position: absolute; left: 14px; top: -48px; z-index: 1000; padding: 10px 14px; border-radius: 12px;
       background: var(--secondary); color: var(--tertiary); font-weight: 700; text-decoration: none;
@@ -417,8 +417,10 @@ ${JSON.stringify(graph, null, 2)}
     .details-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; align-items: start; }
     .detail-list { display: grid; grid-template-columns: minmax(120px, 160px) 1fr; gap: 8px 12px; margin: 16px 0 0; }
     .detail-list dt, .detail-list dd { margin: 0; }
-    .detail-list a, .section a, .breadcrumbs a { color: var(--primary); text-decoration: none; }
-    .detail-list a:hover, .section a:hover, .breadcrumbs a:hover { text-decoration: underline; }
+    .detail-list a, .section a, .breadcrumbs a, footer a { color: var(--primary); }
+    .section a, footer a { text-decoration: underline; }
+    .detail-list a { text-decoration: none; }
+    .detail-list a:hover, .detail-list a:focus-visible, .section a:hover, .section a:focus-visible, .breadcrumbs a:hover, .breadcrumbs a:focus-visible, footer a:hover, footer a:focus-visible { color: var(--secondary); text-decoration: underline; }
     .related-list { display: grid; gap: 10px; padding-left: 1.2rem; margin: 0; }
     .summary-box { margin-top: -10px; padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
     .summary-box-media { margin: 0 0 14px; }
@@ -426,11 +428,17 @@ ${JSON.stringify(graph, null, 2)}
     .summary-box-media img, .image-trigger img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(11,18,30,0.5); }
     .image-modal[hidden] { display: none; }
     .image-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 28px; background: rgba(6,10,18,0.82); backdrop-filter: blur(10px); }
-    .image-modal-dialog { position: relative; width: min(1100px, 100%); max-height: calc(100vh - 56px); }
+    .modal-open { overflow: hidden; }
+    .image-modal-dialog { position: relative; width: min(1100px, 100%); max-height: calc(100vh - 56px); outline: none; }
     .image-modal-close { position: absolute; top: -14px; right: -14px; width: 42px; height: 42px; border: 0; border-radius: 999px; cursor: pointer; font-size: 1.5rem; line-height: 1; color: var(--secondary); background: rgba(11,18,30,0.92); box-shadow: var(--shadow); }
     .image-modal img { display: block; width: 100%; height: auto; max-height: calc(100vh - 56px); object-fit: contain; border-radius: 18px; border: 1px solid var(--line); background: rgba(11,18,30,0.96); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .summary-box strong { display: block; margin-bottom: 6px; }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
+    @media (prefers-contrast: more) {
+      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #e3ebff; }
+      .button, .pill, .summary-box, .panel { border-width: 2px; }
+    }
     @media (max-width: 760px) {
       .topbar, .hero, .section { padding: 20px; }
       .details-grid { grid-template-columns: 1fr; }
@@ -440,7 +448,7 @@ ${JSON.stringify(graph, null, 2)}
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="shell">
+  <div class="shell" id="site-shell">
     <header class="panel topbar">
       <a class="brand" href="${SITE_URL}/">
         <img src="/assets/new-local-media-logo.png" alt="New Local Media logo">
@@ -460,7 +468,7 @@ ${JSON.stringify(graph, null, 2)}
       <nav class="panel section breadcrumbs" aria-label="Breadcrumb">
         <a href="/">${escapeHtml(SITE_NAME)}</a>
         <span aria-hidden="true">/</span>
-        <span>${escapeHtml(label)}</span>
+        <span aria-current="page">${escapeHtml(label)}</span>
       </nav>
 
       <article class="panel hero">
@@ -522,7 +530,9 @@ ${JSON.stringify(graph, null, 2)}
     </footer>
   </div>
   <div class="image-modal" id="image-modal" hidden>
-    <div class="image-modal-dialog" role="dialog" aria-modal="true" aria-label="Expanded image view">
+    <div class="image-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="image-modal-title" aria-describedby="image-modal-description" tabindex="-1">
+      <h2 class="sr-only" id="image-modal-title">Expanded image view</h2>
+      <p class="sr-only" id="image-modal-description">Press Escape to close this dialog and return to the previous control.</p>
       <button class="image-modal-close" type="button" aria-label="Close image">×</button>
       <img id="image-modal-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
     </div>
@@ -530,17 +540,42 @@ ${JSON.stringify(graph, null, 2)}
   <script>
     (() => {
       const modal = document.getElementById('image-modal');
+      const siteShell = document.getElementById('site-shell');
+      const dialog = modal?.querySelector('.image-modal-dialog');
       const modalImage = document.getElementById('image-modal-img');
       const closeButton = modal?.querySelector('.image-modal-close');
-      if (!modal || !modalImage || !closeButton) return;
+      if (!modal || !modalImage || !closeButton || !dialog || !siteShell) return;
 
       let lastTrigger = null;
+      const focusableSelector = ['a[href]','button:not([disabled])','input:not([disabled])','select:not([disabled])','textarea:not([disabled])','[tabindex]:not([tabindex="-1"])'].join(',');
+
+      function trapFocus(event) {
+        if (event.key !== 'Tab' || modal.hidden) return;
+        const focusable = [...dialog.querySelectorAll(focusableSelector)].filter((element) => !element.hidden);
+        if (!focusable.length) {
+          event.preventDefault();
+          dialog.focus();
+          return;
+        }
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
 
       function closeModal() {
         modal.hidden = true;
         modalImage.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACw=';
         modalImage.alt = '';
-        document.body.style.overflow = '';
+        document.body.classList.remove('modal-open');
+        siteShell.inert = false;
+        siteShell.removeAttribute('aria-hidden');
+        document.removeEventListener('keydown', trapFocus);
         lastTrigger?.focus?.();
       }
 
@@ -551,8 +586,11 @@ ${JSON.stringify(graph, null, 2)}
           modalImage.src = trigger.getAttribute('data-modal-image') || '';
           modalImage.alt = trigger.getAttribute('data-modal-alt') || '';
           modal.hidden = false;
-          document.body.style.overflow = 'hidden';
-          closeButton.focus();
+          document.body.classList.add('modal-open');
+          siteShell.inert = true;
+          siteShell.setAttribute('aria-hidden', 'true');
+          document.addEventListener('keydown', trapFocus);
+          dialog.focus();
           return;
         }
 
@@ -692,8 +730,10 @@ ${JSON.stringify(graph, null, 2)}
         linear-gradient(180deg, #303348 0%, var(--background) 46%, var(--tertiary) 100%);
       line-height: 1.65;
     }
-    a { color: inherit; }
+    a { color: inherit; text-underline-offset: 0.16em; text-decoration-thickness: 0.08em; }
     a:focus-visible { outline: 3px solid rgba(129,130,255,0.85); outline-offset: 3px; }
+    .skip-link { position: absolute; left: 14px; top: -48px; z-index: 1000; padding: 10px 14px; border-radius: 12px; background: var(--secondary); color: var(--tertiary); font-weight: 700; text-decoration: none; }
+    .skip-link:focus { top: 14px; }
     .shell { width: min(calc(100% - 28px), var(--max)); margin: 18px auto 40px; }
     .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: blur(12px); }
     .topbar, .hero, .section { padding: 24px; }
@@ -712,10 +752,15 @@ ${JSON.stringify(graph, null, 2)}
     .lede { margin: 14px 0 0; font-size: 1.05rem; }
     .owner-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
     .owner-list li { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
-    .owner-list a { color: var(--primary); text-decoration: none; font-weight: 700; }
-    .owner-list a:hover, .breadcrumbs a:hover { text-decoration: underline; }
+    .owner-list a, footer a, .breadcrumbs a { color: var(--primary); }
+    .owner-list a, footer a { text-decoration: underline; font-weight: 700; }
+    .owner-list a:hover, .owner-list a:focus-visible, .breadcrumbs a:hover, .breadcrumbs a:focus-visible, footer a:hover, footer a:focus-visible { color: var(--secondary); text-decoration: underline; }
     .repo-meta { margin-top: 8px; color: var(--foreground); font-size: 0.95rem; }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
+    @media (prefers-contrast: more) {
+      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #e3ebff; }
+      .button, .owner-list li, .panel { border-width: 2px; }
+    }
     @media (max-width: 760px) {
       .topbar, .hero, .section { padding: 20px; }
       .shell { width: min(calc(100% - 18px), var(--max)); }
@@ -723,6 +768,7 @@ ${JSON.stringify(graph, null, 2)}
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="shell">
     <header class="panel topbar">
       <a class="brand" href="${SITE_URL}/">
@@ -737,11 +783,11 @@ ${JSON.stringify(graph, null, 2)}
         <a class="button" href="/">Back to collection</a>
       </div>
     </header>
-    <main class="stack">
+    <main id="main-content" class="stack">
       <nav class="panel section breadcrumbs" aria-label="Breadcrumb">
         <a href="/">${escapeHtml(SITE_NAME)}</a>
         <span aria-hidden="true">/</span>
-        <span>${escapeHtml(ownerLabel)}</span>
+        <span aria-current="page">${escapeHtml(ownerLabel)}</span>
       </nav>
 
       <section class="panel hero">
@@ -856,7 +902,10 @@ ${JSON.stringify(graph, null, 2)}
     }
     * { box-sizing: border-box; }
     body { margin: 0; min-height: 100vh; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--secondary); background: radial-gradient(circle at top left, rgba(129, 130, 255, 0.18), transparent 26%), radial-gradient(circle at top right, rgba(255, 255, 255, 0.06), transparent 22%), linear-gradient(180deg, #303348 0%, var(--background) 46%, var(--tertiary) 100%); line-height: 1.65; }
-    a { color: inherit; }
+    a { color: inherit; text-underline-offset: 0.16em; text-decoration-thickness: 0.08em; }
+    a:focus-visible { outline: 3px solid rgba(129,130,255,0.85); outline-offset: 3px; }
+    .skip-link { position: absolute; left: 14px; top: -48px; z-index: 1000; padding: 10px 14px; border-radius: 12px; background: var(--secondary); color: var(--tertiary); font-weight: 700; text-decoration: none; }
+    .skip-link:focus { top: 14px; }
     .shell { width: min(calc(100% - 28px), var(--max)); margin: 18px auto 40px; }
     .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: blur(12px); }
     .topbar, .hero, .section { padding: 24px; }
@@ -874,13 +923,18 @@ ${JSON.stringify(graph, null, 2)}
     .lede { margin: 14px 0 0; font-size: 1.05rem; }
     .owner-groups { display: grid; gap: 18px; }
     .owner-card { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
-    .owner-card a { color: var(--primary); text-decoration: none; font-weight: 700; }
-    .owner-card a:hover { text-decoration: underline; }
+    .owner-card a, footer a { color: var(--primary); text-decoration: underline; font-weight: 700; }
+    .owner-card a:hover, .owner-card a:focus-visible, footer a:hover, footer a:focus-visible { color: var(--secondary); text-decoration: underline; }
     .owner-card ul { margin: 10px 0 0; padding-left: 1.2rem; color: var(--foreground); }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
+    @media (prefers-contrast: more) {
+      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #e3ebff; }
+      .button, .owner-card, .panel { border-width: 2px; }
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="shell">
     <header class="panel topbar">
       <a class="brand" href="${SITE_URL}/">
@@ -893,7 +947,7 @@ ${JSON.stringify(graph, null, 2)}
       </a>
       <a class="button" href="/">Back to collection</a>
     </header>
-    <main class="stack">
+    <main id="main-content" class="stack">
       <section class="panel hero">
         <div class="eyebrow">Project directories</div>
         <h1>Projects</h1>

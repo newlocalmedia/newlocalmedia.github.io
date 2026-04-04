@@ -87,7 +87,10 @@
     }
     * { box-sizing: border-box; }
     body { margin: 0; min-height: 100vh; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--secondary); background: radial-gradient(circle at top left, rgba(129, 130, 255, 0.18), transparent 26%), radial-gradient(circle at top right, rgba(255, 255, 255, 0.06), transparent 22%), linear-gradient(180deg, #303348 0%, var(--background) 46%, var(--tertiary) 100%); line-height: 1.65; }
-    a { color: inherit; }
+    a { color: inherit; text-underline-offset: 0.16em; text-decoration-thickness: 0.08em; }
+    a:focus-visible { outline: 3px solid rgba(129,130,255,0.85); outline-offset: 3px; }
+    .skip-link { position: absolute; left: 14px; top: -48px; z-index: 1000; padding: 10px 14px; border-radius: 12px; background: var(--secondary); color: var(--tertiary); font-weight: 700; text-decoration: none; }
+    .skip-link:focus { top: 14px; }
     .shell { width: min(calc(100% - 28px), var(--max)); margin: 18px auto 40px; }
     .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: blur(12px); }
     .topbar, .hero, .section { padding: 24px; }
@@ -105,13 +108,18 @@
     .lede { margin: 14px 0 0; font-size: 1.05rem; }
     .owner-groups { display: grid; gap: 18px; }
     .owner-card { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
-    .owner-card a { color: var(--primary); text-decoration: none; font-weight: 700; }
-    .owner-card a:hover { text-decoration: underline; }
+    .owner-card a, footer a { color: var(--primary); text-decoration: underline; font-weight: 700; }
+    .owner-card a:hover, .owner-card a:focus-visible, footer a:hover, footer a:focus-visible { color: var(--secondary); text-decoration: underline; }
     .owner-card ul { margin: 10px 0 0; padding-left: 1.2rem; color: var(--foreground); }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
+    @media (prefers-contrast: more) {
+      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #e3ebff; }
+      .button, .owner-card, .panel { border-width: 2px; }
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="shell">
     <header class="panel topbar">
       <a class="brand" href="https://newlocalmedia.github.io/">
@@ -124,7 +132,7 @@
       </a>
       <a class="button" href="/">Back to collection</a>
     </header>
-    <main class="stack">
+    <main id="main-content" class="stack">
       <section class="panel hero">
         <div class="eyebrow">Project directories</div>
         <h1>Projects</h1>

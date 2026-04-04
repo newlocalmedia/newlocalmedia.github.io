@@ -163,7 +163,11 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 0.08em;
+    }
 
     a:focus-visible,
     button:focus-visible {
@@ -620,10 +624,15 @@
       backdrop-filter: blur(10px);
     }
 
+    .modal-open {
+      overflow: hidden;
+    }
+
     .image-modal-dialog {
       position: relative;
       width: min(1100px, 100%);
       max-height: calc(100vh - 56px);
+      outline: none;
     }
 
     .image-modal-close {
@@ -652,6 +661,18 @@
       border: 1px solid var(--line);
       background: rgba(11, 18, 30, 0.96);
       aspect-ratio: auto;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .spotlight-card h3 {
@@ -733,7 +754,7 @@
     .repo-actions { margin-top: auto; }
 
     .text-link {
-      text-decoration: none;
+      text-decoration: underline;
       font-weight: 700;
       color: var(--primary);
     }
@@ -743,18 +764,44 @@
       text-decoration: none;
     }
 
-    .title-link:hover {
+    .title-link:hover,
+    .title-link:focus-visible {
       color: var(--primary);
     }
 
     .user-link {
       color: inherit;
-      text-decoration: none;
+      text-decoration: underline;
     }
 
-    .user-link:hover {
+    .user-link:hover,
+    .user-link:focus-visible {
+      color: var(--primary);
+    }
+
+    .lede a,
+    .repo-desc a,
+    .feature-summary a,
+    .feature-note a,
+    .prose-block a,
+    footer a {
       color: var(--primary);
       text-decoration: underline;
+    }
+
+    .lede a:hover,
+    .repo-desc a:hover,
+    .feature-summary a:hover,
+    .feature-note a:hover,
+    .prose-block a:hover,
+    footer a:hover,
+    .lede a:focus-visible,
+    .repo-desc a:focus-visible,
+    .feature-summary a:focus-visible,
+    .feature-note a:focus-visible,
+    .prose-block a:focus-visible,
+    footer a:focus-visible {
+      color: var(--secondary);
     }
 
     .prose-block {
@@ -823,6 +870,25 @@
       *::after { transition: none !important; }
     }
 
+    @media (prefers-contrast: more) {
+      :root {
+        --line: rgba(255, 255, 255, 0.28);
+        --foreground: #e3ebff;
+      }
+
+      .button,
+      .repo-link,
+      .pill,
+      .stat,
+      .repo-card,
+      .account-card,
+      .feature-card,
+      .spotlight-card,
+      .forks-card {
+        border-width: 2px;
+      }
+    }
+
     @media (max-width: 860px) {
       .stats,
       .account-grid,
@@ -841,7 +907,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
-  <div class="shell">
+  <div class="shell" id="site-shell">
     <main id="main-content">
     <section class="panel hero" aria-labelledby="page-title">
       <div class="hero-top">
@@ -883,7 +949,7 @@
 
     <div class="stack">
       <section class="feature-card" aria-labelledby="lead-feature-title">
-        <div class="feature-shell" id="lead-feature-shell">
+        <div class="feature-shell" id="lead-feature-shell" aria-live="polite" aria-busy="true">
           <p class="loading">Loading lead feature…</p>
         </div>
       </section>
@@ -895,7 +961,7 @@
             <p>A practical exploration of how AI can help write, review, and maintain technical documentation without sacrificing rigor, accuracy, or editorial judgment.</p>
           </div>
         </div>
-        <div class="feature-grid ai-docs-grid" id="ai-docs-grid">
+        <div class="feature-grid ai-docs-grid" id="ai-docs-grid" aria-live="polite" aria-busy="true">
           <p class="loading">Loading AI-assisted docs related repositories…</p>
         </div>
       </section>
@@ -907,7 +973,7 @@
 
           </div>
         </div>
-        <div class="spotlight-grid" id="spotlight-grid">
+        <div class="spotlight-grid" id="spotlight-grid" aria-live="polite" aria-busy="true">
           <p class="loading">Loading spotlight projects…</p>
         </div>
       </section>
@@ -919,7 +985,7 @@
             <p>Other things I&#39;ve been working on.</p>
           </div>
         </div>
-        <div class="repo-grid" id="selected-grid">
+        <div class="repo-grid" id="selected-grid" aria-live="polite" aria-busy="true">
           <p class="loading">Loading selected repositories…</p>
         </div>
       </section>
@@ -931,7 +997,7 @@
             <p>Browse the full public repository lists behind this curated selection.</p>
           </div>
         </div>
-        <div class="account-grid" id="account-grid">
+        <div class="account-grid" id="account-grid" aria-live="polite" aria-busy="true">
           <p class="loading">Loading account summaries…</p>
         </div>
       </section>
@@ -943,7 +1009,9 @@
     </footer>
   </div>
   <div class="image-modal" id="image-modal" hidden>
-    <div class="image-modal-dialog" role="dialog" aria-modal="true" aria-label="Expanded image view">
+    <div class="image-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="image-modal-title" aria-describedby="image-modal-description" tabindex="-1">
+      <h2 class="sr-only" id="image-modal-title">Expanded image view</h2>
+      <p class="sr-only" id="image-modal-description">Press Escape to close this dialog and return to the previous control.</p>
       <button class="image-modal-close" type="button" aria-label="Close image">×</button>
       <img id="image-modal-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
     </div>
@@ -1233,6 +1301,7 @@
         <p class="feature-note"><strong>Protects Every Surface</strong>WordPress reauthentication and risky-action gating with support across REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.</p>
       </aside>
     `;
+    target.setAttribute('aria-busy', 'false');
     updateStats();
   }
 
@@ -1296,6 +1365,7 @@
     }
     repos.forEach(countRepo);
     target.innerHTML = repos.map((repo) => repoCard(repo, true, false)).join('') + renderForksCard();
+    target.setAttribute('aria-busy', 'false');
     updateStats();
   }
 
@@ -1308,6 +1378,7 @@
     }
     repos.forEach(countRepo);
     target.innerHTML = repos.map((repo) => renderSpotlightCard(repo)).join('');
+    target.setAttribute('aria-busy', 'false');
     updateStats();
   }
 
@@ -1320,6 +1391,7 @@
     }
     repos.forEach(countRepo);
     target.innerHTML = repos.map((repo) => repoCard(repo, featured)).join('');
+    target.setAttribute('aria-busy', 'false');
     updateStats();
   }
 
@@ -1333,17 +1405,49 @@
 
   function initImageModal() {
     const modal = document.getElementById('image-modal');
+    const siteShell = document.getElementById('site-shell');
+    const dialog = modal?.querySelector('.image-modal-dialog');
     const modalImage = document.getElementById('image-modal-img');
     const closeButton = modal?.querySelector('.image-modal-close');
-    if (!modal || !modalImage || !closeButton) return;
+    if (!modal || !modalImage || !closeButton || !dialog || !siteShell) return;
 
     let lastTrigger = null;
+    const focusableSelector = [
+      'a[href]',
+      'button:not([disabled])',
+      'input:not([disabled])',
+      'select:not([disabled])',
+      'textarea:not([disabled])',
+      '[tabindex]:not([tabindex="-1"])'
+    ].join(',');
+
+    function trapFocus(event) {
+      if (event.key !== 'Tab' || modal.hidden) return;
+      const focusable = [...dialog.querySelectorAll(focusableSelector)].filter((element) => !element.hidden);
+      if (!focusable.length) {
+        event.preventDefault();
+        dialog.focus();
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
 
     function closeModal() {
       modal.hidden = true;
       modalImage.src = 'data:image/gif;base64,R0lGODlhAQABAAAAACw=';
       modalImage.alt = '';
-      document.body.style.overflow = '';
+      document.body.classList.remove('modal-open');
+      siteShell.inert = false;
+      siteShell.removeAttribute('aria-hidden');
+      document.removeEventListener('keydown', trapFocus);
       lastTrigger?.focus?.();
     }
 
@@ -1354,8 +1458,11 @@
         modalImage.src = trigger.getAttribute('data-modal-image') || '';
         modalImage.alt = trigger.getAttribute('data-modal-alt') || '';
         modal.hidden = false;
-        document.body.style.overflow = 'hidden';
-        closeButton.focus();
+        document.body.classList.add('modal-open');
+        siteShell.inert = true;
+        siteShell.setAttribute('aria-hidden', 'true');
+        document.addEventListener('keydown', trapFocus);
+        dialog.focus();
         return;
       }
 
@@ -1380,11 +1487,13 @@
       storeSnapshot(snapshot);
 
       const accountsByUser = new Map((snapshot.accounts || []).map((account) => [account.user, account]));
-      document.getElementById('account-grid').innerHTML = ACCOUNT_ORDER
+      const accountGrid = document.getElementById('account-grid');
+      accountGrid.innerHTML = ACCOUNT_ORDER
         .map((user) => accountsByUser.get(user))
         .filter(Boolean)
         .map((account) => renderAccountCard(account))
         .join('');
+      accountGrid.setAttribute('aria-busy', 'false');
 
       renderLead(state.get(LEAD_REPO.toLowerCase()));
       renderAiDocs();
@@ -1398,6 +1507,11 @@
       document.getElementById('ai-docs-grid').innerHTML = '<p class="empty">Could not load the AI-assisted docs block right now.</p>';
       document.getElementById('spotlight-grid').innerHTML = '<p class="empty">Could not load spotlight projects right now.</p>';
       document.getElementById('selected-grid').innerHTML = '<p class="empty">Could not load selected repositories right now.</p>';
+      document.getElementById('lead-feature-shell').setAttribute('aria-busy', 'false');
+      document.getElementById('account-grid').setAttribute('aria-busy', 'false');
+      document.getElementById('ai-docs-grid').setAttribute('aria-busy', 'false');
+      document.getElementById('spotlight-grid').setAttribute('aria-busy', 'false');
+      document.getElementById('selected-grid').setAttribute('aria-busy', 'false');
     }
   }
 
