@@ -46,6 +46,8 @@ function repoHomepage(repo) {
 }
 
 function summaryHtml(repo) {
+  const htmlOverride = PROJECT_META[repo.full_name]?.summaryHtml;
+  if (htmlOverride) return htmlOverride;
   const override = PROJECT_META[repo.full_name]?.summary;
   return escapeHtml(override || repo.description || 'No description yet.');
 }
