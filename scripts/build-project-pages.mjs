@@ -16,7 +16,7 @@ import {
 const root = process.cwd();
 const dataPath = resolve(root, 'data/repos.json');
 const projectsRoot = resolve(root, 'projects');
-const ogImageUrl = `${SITE_URL}/assets/og-image.png`;
+const defaultOgImageUrl = `${SITE_URL}/assets/og-image.png`;
 const iconUrl = `${SITE_URL}/assets/icon-512.png`;
 
 function ownerPath(owner) {
@@ -148,6 +148,10 @@ function ownerDisplayName(owner) {
   return owner === 'newlocalmedia' ? ORGANIZATION_NAME : owner;
 }
 
+function projectPrimaryImage(repo) {
+  return PROJECT_META[repo.full_name]?.primaryImage || null;
+}
+
 function detailItems(repo) {
   const meta = PROJECT_META[repo.full_name] || {};
   const items = [
@@ -206,6 +210,9 @@ function renderPage(repo, lookup) {
   const related = relatedRepos(repo.full_name, lookup);
   const title = `${label} | ${SITE_NAME}`;
   const description = descriptionText(repo);
+  const primaryImage = projectPrimaryImage(repo);
+  const ogImageUrl = primaryImage?.url || defaultOgImageUrl;
+  const ogImageAlt = primaryImage?.alt || `${label} in Work in Progress by New Local Media.`;
   const paragraphs = narrativeParagraphs(repo, related);
   const details = detailItems(repo);
   const breadcrumb = {
@@ -298,12 +305,12 @@ function renderPage(repo, lookup) {
   <meta property="og:image:secure_url" content="${ogImageUrl}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="${escapeHtml(label)} in Work in Progress by New Local Media.">
+  <meta property="og:image:alt" content="${escapeHtml(ogImageAlt)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
   <meta name="twitter:image" content="${ogImageUrl}">
-  <meta name="twitter:image:alt" content="${escapeHtml(label)} in Work in Progress by New Local Media.">
+  <meta name="twitter:image:alt" content="${escapeHtml(ogImageAlt)}">
   <script type="application/ld+json">
 ${JSON.stringify(graph, null, 2)}
   </script>
@@ -369,6 +376,8 @@ ${JSON.stringify(graph, null, 2)}
     .detail-list a:hover, .section a:hover, .breadcrumbs a:hover { text-decoration: underline; }
     .related-list { display: grid; gap: 10px; padding-left: 1.2rem; margin: 0; }
     .summary-box { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
+    .summary-box-media { margin: 0 0 14px; }
+    .summary-box-media img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(11,18,30,0.5); }
     .summary-box strong { display: block; margin-bottom: 6px; }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (max-width: 760px) {
@@ -437,6 +446,7 @@ ${JSON.stringify(graph, null, 2)}
             ${details.map(([term, value]) => `<dt>${escapeHtml(term)}</dt><dd>${value}</dd>`).join('')}
           </dl>
           <div class="summary-box">
+            ${primaryImage ? `<figure class="summary-box-media"><img src="${primaryImage.url}" alt="${escapeHtml(primaryImage.alt || `${label} preview image.`)}" loading="eager" decoding="async"></figure>` : ''}
             <strong>${escapeHtml(meta.focus || section.title)}</strong>
             <p>${escapeHtml(meta.subfocus || section.description)}</p>
             ${meta.extraLinks?.length ? `<p>${meta.extraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')}</p>` : ''}
@@ -516,7 +526,7 @@ function renderOwnerPage(owner, repos) {
         isPartOf: { '@id': `${SITE_URL}/#website` },
         primaryImageOfPage: {
           '@type': 'ImageObject',
-          url: ogImageUrl,
+          url: defaultOgImageUrl,
           width: 1200,
           height: 630
         }
@@ -546,15 +556,15 @@ function renderOwnerPage(owner, repos) {
   <meta property="og:title" content="${escapeHtml(title)}">
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${pageUrl}">
-  <meta property="og:image" content="${ogImageUrl}">
-  <meta property="og:image:secure_url" content="${ogImageUrl}">
+  <meta property="og:image" content="${defaultOgImageUrl}">
+  <meta property="og:image:secure_url" content="${defaultOgImageUrl}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="${escapeHtml(ownerLabel)} projects in Work in Progress by New Local Media.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
-  <meta name="twitter:image" content="${ogImageUrl}">
+  <meta name="twitter:image" content="${defaultOgImageUrl}">
   <meta name="twitter:image:alt" content="${escapeHtml(ownerLabel)} projects in Work in Progress by New Local Media.">
   <script type="application/ld+json">
 ${JSON.stringify(graph, null, 2)}
@@ -658,10 +668,160 @@ ${JSON.stringify(graph, null, 2)}
 `.replace(/[ \t]+$/gm, '').trimEnd() + '\n';
 }
 
+function renderProjectsIndex(reposByOwner) {
+  const pageUrl = `${SITE_URL}/projects/`;
+  const title = `Projects | ${SITE_NAME}`;
+  const description = 'Browse owner groups and project pages in the Work in Progress collection.';
+  const owners = [...reposByOwner.entries()].sort(([a], [b]) => a.localeCompare(b));
+  const graph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        '@id': `${MAIN_SITE_URL}#organization`,
+        name: ORGANIZATION_NAME,
+        url: MAIN_SITE_URL,
+        logo: iconUrl,
+        sameAs: ['https://github.com/newlocalmedia']
+      },
+      {
+        '@type': 'WebSite',
+        '@id': `${SITE_URL}/#website`,
+        url: `${SITE_URL}/`,
+        name: SITE_NAME,
+        publisher: { '@id': `${MAIN_SITE_URL}#organization` }
+      },
+      {
+        '@type': 'CollectionPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: title,
+        description,
+        isPartOf: { '@id': `${SITE_URL}/#website` },
+        primaryImageOfPage: {
+          '@type': 'ImageObject',
+          url: defaultOgImageUrl,
+          width: 1200,
+          height: 630
+        }
+      }
+    ]
+  };
+
+  return `<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${escapeHtml(title)}</title>
+  <meta name="description" content="${escapeHtml(description)}">
+  <meta name="author" content="${escapeHtml(ORGANIZATION_NAME)}">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#272938">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="${pageUrl}">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="${escapeHtml(ORGANIZATION_NAME)}">
+  <meta property="og:title" content="${escapeHtml(title)}">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:url" content="${pageUrl}">
+  <meta property="og:image" content="${defaultOgImageUrl}">
+  <meta property="og:image:secure_url" content="${defaultOgImageUrl}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Projects in Work in Progress by New Local Media.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeHtml(title)}">
+  <meta name="twitter:description" content="${escapeHtml(description)}">
+  <meta name="twitter:image" content="${defaultOgImageUrl}">
+  <meta name="twitter:image:alt" content="Projects in Work in Progress by New Local Media.">
+  <script type="application/ld+json">
+${JSON.stringify(graph, null, 2)}
+  </script>
+  <style>
+    :root {
+      --primary: #8182ff;
+      --secondary: #ffffff;
+      --foreground: #c8d2d4;
+      --background: #272938;
+      --tertiary: #0b121e;
+      --surface: rgba(39, 41, 56, 0.88);
+      --line: rgba(255, 255, 255, 0.12);
+      --shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
+      --radius: 28px;
+      --max: 980px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--secondary); background: radial-gradient(circle at top left, rgba(129, 130, 255, 0.18), transparent 26%), radial-gradient(circle at top right, rgba(255, 255, 255, 0.06), transparent 22%), linear-gradient(180deg, #303348 0%, var(--background) 46%, var(--tertiary) 100%); line-height: 1.65; }
+    a { color: inherit; }
+    .shell { width: min(calc(100% - 28px), var(--max)); margin: 18px auto 40px; }
+    .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: blur(12px); }
+    .topbar, .hero, .section { padding: 24px; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
+    .brand img { width: 56px; height: 56px; border-radius: 18px; background: rgba(255,255,255,0.06); }
+    .brand-copy { display: grid; gap: 2px; }
+    .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--foreground); }
+    .muted, .lede { color: var(--foreground); }
+    .stack { display: grid; gap: 18px; margin-top: 18px; }
+    .button { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(11,18,30,0.55); text-decoration: none; font-weight: 700; }
+    h1, h2 { margin: 0; letter-spacing: -0.03em; }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.02; }
+    h2 { font-size: 1.35rem; }
+    .lede { margin: 14px 0 0; font-size: 1.05rem; }
+    .owner-groups { display: grid; gap: 18px; }
+    .owner-card { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
+    .owner-card a { color: var(--primary); text-decoration: none; font-weight: 700; }
+    .owner-card a:hover { text-decoration: underline; }
+    .owner-card ul { margin: 10px 0 0; padding-left: 1.2rem; color: var(--foreground); }
+    footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="panel topbar">
+      <a class="brand" href="${MAIN_SITE_URL}">
+        <img src="/assets/new-local-media-logo.png" alt="New Local Media logo">
+        <span class="brand-copy">
+          <span class="eyebrow">New Local Media</span>
+          <strong>${escapeHtml(SITE_NAME)}</strong>
+          <span class="muted">Open projects, products, and experiments.</span>
+        </span>
+      </a>
+      <a class="button" href="/">Back to collection</a>
+    </header>
+    <main class="stack">
+      <section class="panel hero">
+        <div class="eyebrow">Project directories</div>
+        <h1>Projects</h1>
+        <p class="lede">Browse the owner groups and project pages in this collection.</p>
+      </section>
+      <section class="panel section" aria-labelledby="owner-groups-title">
+        <h2 id="owner-groups-title">Owner groups</h2>
+        <div class="owner-groups">
+          ${owners.map(([owner, repos]) => `<div class="owner-card"><a href="${ownerPath(owner)}">${escapeHtml(ownerDisplayName(owner))}</a><ul>${repos.map((repo) => `<li><a href="${projectPath(repo.full_name)}">${escapeHtml(displayTitle(repo))}</a></li>`).join('')}</ul></div>`).join('')}
+        </div>
+      </section>
+    </main>
+    <footer>
+      © ${new Date().getFullYear()} <a href="${MAIN_SITE_URL}">${escapeHtml(ORGANIZATION_NAME)}</a>
+    </footer>
+  </div>
+</body>
+</html>
+`.replace(/[ \t]+$/gm, '').trimEnd() + '\n';
+}
+
 function buildSitemap() {
   const owners = [...new Set(CURATED_REPOS.map((fullName) => fullName.split('/')[0]))];
   const urls = [
     `${SITE_URL}/`,
+    `${SITE_URL}/projects/`,
     ...owners.map((owner) => `${SITE_URL}${ownerPath(owner)}`),
     ...CURATED_REPOS.map((fullName) => projectUrl(fullName))
   ];
@@ -707,6 +867,8 @@ for (const [owner, repos] of reposByOwner) {
   mkdirSync(dirname(filepath), { recursive: true });
   writeFileSync(filepath, renderOwnerPage(owner, repos));
 }
+
+writeFileSync(resolve(root, './projects/index.html'), renderProjectsIndex(reposByOwner));
 
 writeFileSync(resolve(root, 'sitemap.xml'), buildSitemap());
 console.log(`Built ${CURATED_REPOS.length} project pages and sitemap.`);
