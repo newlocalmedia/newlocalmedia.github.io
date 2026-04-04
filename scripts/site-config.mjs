@@ -85,7 +85,7 @@ export const PROJECT_META = {
   'newlocalmedia/capm-for-agencies': {
     displayTitle: 'CAPM for Agencies',
     schemaType: 'SoftwareSourceCode',
-    summaryHtml: 'Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics. <a href="https://newlocalmedia.github.io/capm-for-agencies/">Try the main model</a> · <a href="https://newlocalmedia.github.io/capm-for-agencies/project-risk-check/index.html">Try the small agency and freelancer version</a>',
+    summaryHtml: 'Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics. <a href="https://newlocalmedia.github.io/capm-for-agencies/">Main App</a> · <a href="https://newlocalmedia.github.io/capm-for-agencies/project-risk-check/index.html">Small agency and freelancer version</a>',
     summary: 'Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics.',
     narrative: 'CAPM for Agencies adapts financial-economics thinking into pricing tools for agencies, B-Corps, and smaller consultancies. It matters here because it shows a product-minded line of work that sits alongside WordPress and documentation projects rather than inside them.',
     omitRelatedNarrative: true,
@@ -97,11 +97,11 @@ export const PROJECT_META = {
     },
     extraLinks: [
       {
-        label: 'Try the main model',
+        label: 'Main App',
         url: 'https://newlocalmedia.github.io/capm-for-agencies/'
       },
       {
-        label: 'Try the small agency and freelancer version',
+        label: 'Small agency and freelancer version',
         url: 'https://newlocalmedia.github.io/capm-for-agencies/project-risk-check/index.html'
       }
     ]

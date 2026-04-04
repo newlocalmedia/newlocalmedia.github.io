@@ -6,6 +6,16 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://newlocalmedia.github.io/projects/dknauss/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://newlocalmedia.github.io/projects/newlocalmedia/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/wp-sudo/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
