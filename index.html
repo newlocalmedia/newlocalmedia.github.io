@@ -1127,7 +1127,7 @@
     return `<a class="title-link" href="${projectPageUrl(repo) || repo.html_url}">${titleMarkup(repoDisplayTitle(repo), repo.full_name)}</a>`;
   }
 
-  function repoCard(repo, featured = false) {
+  function repoCard(repo, featured = false, showLanguage = true) {
     const homepage = repoHomepage(repo);
     const language = repo.language || 'Unspecified';
     const details = projectPageUrl(repo);
@@ -1142,7 +1142,7 @@
         <p class="repo-desc">${repoDescriptionHtml(repo)}</p>
         <div class="meta">
           <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
-          <span class="pill">${escapeHtml(language)}</span>
+          ${showLanguage ? `<span class="pill">${escapeHtml(language)}</span>` : ''}
           <span class="pill">Updated ${escapeHtml(formatDate(repo.updated_at))}</span>
         </div>
         <div class="repo-actions">
@@ -1272,7 +1272,7 @@
       return;
     }
     repos.forEach(countRepo);
-    target.innerHTML = repos.map((repo) => repoCard(repo, true)).join('') + renderForksCard();
+    target.innerHTML = repos.map((repo) => repoCard(repo, true, false)).join('') + renderForksCard();
     updateStats();
   }
 
