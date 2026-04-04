@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>wp-sudo | Work in Progress | New Local Media</title>
+  <title>wp-sudo | Work in Progress</title>
   <meta name="description" content="WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.">
   <meta name="author" content="Dan Knauss">
   <meta name="robots" content="index,follow,max-image-preview:large">
@@ -17,7 +17,7 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="New Local Media">
-  <meta property="og:title" content="wp-sudo | Work in Progress | New Local Media">
+  <meta property="og:title" content="wp-sudo | Work in Progress">
   <meta property="og:description" content="WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.">
   <meta property="og:url" content="https://newlocalmedia.github.io/projects/dknauss/wp-sudo/">
   <meta property="og:image" content="https://newlocalmedia.github.io/assets/og-image.png">
@@ -26,7 +26,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="wp-sudo in Work in Progress by New Local Media.">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="wp-sudo | Work in Progress | New Local Media">
+  <meta name="twitter:title" content="wp-sudo | Work in Progress">
   <meta name="twitter:description" content="WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.">
   <meta name="twitter:image" content="https://newlocalmedia.github.io/assets/og-image.png">
   <meta name="twitter:image:alt" content="wp-sudo in Work in Progress by New Local Media.">
@@ -84,7 +84,7 @@
       "@type": "WebPage",
       "@id": "https://newlocalmedia.github.io/projects/dknauss/wp-sudo/#webpage",
       "url": "https://newlocalmedia.github.io/projects/dknauss/wp-sudo/",
-      "name": "wp-sudo | Work in Progress | New Local Media",
+      "name": "wp-sudo | Work in Progress",
       "description": "WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.",
       "isPartOf": {
         "@id": "https://newlocalmedia.github.io/#website"
@@ -124,6 +124,7 @@
       "keywords": [
         "Featured Repo",
         "dknauss",
+        "wp-sudo",
         "wp-sudo"
       ],
       "programmingLanguage": "PHP"
@@ -141,6 +142,7 @@
       --surface: rgba(39, 41, 56, 0.88);
       --surface-2: rgba(11, 18, 30, 0.88);
       --line: rgba(255, 255, 255, 0.12);
+      --star: #f2c46d;
       --shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
       --radius: 28px;
       --max: 980px;
@@ -184,6 +186,7 @@
     .hero-copy { display: grid; gap: 14px; }
     .meta { margin-top: 18px; }
     .pill { color: var(--foreground); }
+    .star-icon { color: var(--star); line-height: 1; }
     .details-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; }
     .detail-list { display: grid; grid-template-columns: minmax(120px, 160px) 1fr; gap: 8px 12px; margin: 0; }
     .detail-list dt, .detail-list dd { margin: 0; }
@@ -233,7 +236,7 @@
           <div class="meta">
             <span class="pill">@dknauss</span>
             <span class="pill">PHP</span>
-            <span class="pill">41 stars</span>
+            <span class="pill"><span class="star-icon" aria-hidden="true">★</span>41</span>
             <span class="pill">Updated Apr 1, 2026</span>
           </div>
         </div>

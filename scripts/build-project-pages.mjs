@@ -54,6 +54,10 @@ function descriptionText(repo) {
   return stripTags(summaryHtml(repo));
 }
 
+function displayTitle(repo) {
+  return PROJECT_META[repo.full_name]?.displayTitle || repo.name;
+}
+
 function ownerEntity(repo) {
   if (repo.owner.login === 'newlocalmedia') {
     return {
@@ -75,10 +79,11 @@ function ownerEntity(repo) {
 
 function softwareSchema(repo, pageUrl) {
   const schemaType = PROJECT_META[repo.full_name]?.schemaType || 'SoftwareSourceCode';
+  const label = displayTitle(repo);
   const entity = {
     '@type': schemaType,
     '@id': `${pageUrl}#primary`,
-    name: repo.name,
+    name: label,
     description: descriptionText(repo),
     url: pageUrl,
     isPartOf: { '@id': `${SITE_URL}/#website` },
@@ -87,7 +92,7 @@ function softwareSchema(repo, pageUrl) {
     dateModified: repo.updated_at,
     codeRepository: repo.html_url,
     sameAs: [repo.html_url],
-    keywords: [SECTION_META[sectionForRepo(repo.full_name)].title, repo.owner.login, repo.name]
+    keywords: [SECTION_META[sectionForRepo(repo.full_name)].title, repo.owner.login, label, repo.name]
   };
 
   if (repo.language) {
@@ -99,7 +104,7 @@ function softwareSchema(repo, pageUrl) {
     entity.targetProduct = {
       '@type': 'WebApplication',
       url: homepage,
-      name: repo.name
+      name: label
     };
     entity.sameAs.push(homepage);
   }
@@ -116,12 +121,13 @@ function softwareSchema(repo, pageUrl) {
 function narrativeParagraphs(repo, related) {
   const meta = PROJECT_META[repo.full_name] || {};
   const section = SECTION_META[sectionForRepo(repo.full_name)];
+  const label = displayTitle(repo);
   const paragraphs = [
     meta.narrative || section.narrative,
-    `${repo.name} is featured here as part of ${section.title.toLowerCase()}. ${descriptionText(repo)}`
+    `${label} is featured here as part of ${section.title.toLowerCase()}. ${descriptionText(repo)}`
   ];
   if (related.length) {
-    paragraphs.push(`Related projects in this same part of the collection include ${related.map((item) => item.name).join(', ')}.`);
+    paragraphs.push(`Related projects in this same part of the collection include ${related.map((item) => displayTitle(item)).join(', ')}.`);
   }
   return paragraphs;
 }
@@ -153,9 +159,10 @@ function renderPage(repo, lookup) {
   const pageUrl = projectUrl(repo.full_name);
   const section = SECTION_META[sectionForRepo(repo.full_name)];
   const meta = PROJECT_META[repo.full_name] || {};
+  const label = displayTitle(repo);
   const homepage = repoHomepage(repo);
   const related = relatedRepos(repo.full_name, lookup);
-  const title = `${repo.name} | ${SITE_NAME} | ${ORGANIZATION_NAME}`;
+  const title = `${label} | ${SITE_NAME}`;
   const description = descriptionText(repo);
   const paragraphs = narrativeParagraphs(repo, related);
   const details = detailItems(repo);
@@ -172,7 +179,7 @@ function renderPage(repo, lookup) {
       {
         '@type': 'ListItem',
         position: 2,
-        name: repo.name,
+        name: label,
         item: pageUrl
       }
     ]
@@ -249,12 +256,12 @@ function renderPage(repo, lookup) {
   <meta property="og:image:secure_url" content="${ogImageUrl}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="${escapeHtml(repo.name)} in Work in Progress by New Local Media.">
+  <meta property="og:image:alt" content="${escapeHtml(label)} in Work in Progress by New Local Media.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
   <meta name="twitter:image" content="${ogImageUrl}">
-  <meta name="twitter:image:alt" content="${escapeHtml(repo.name)} in Work in Progress by New Local Media.">
+  <meta name="twitter:image:alt" content="${escapeHtml(label)} in Work in Progress by New Local Media.">
   <script type="application/ld+json">
 ${JSON.stringify(graph, null, 2)}
   </script>
@@ -268,6 +275,7 @@ ${JSON.stringify(graph, null, 2)}
       --surface: rgba(39, 41, 56, 0.88);
       --surface-2: rgba(11, 18, 30, 0.88);
       --line: rgba(255, 255, 255, 0.12);
+      --star: #f2c46d;
       --shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
       --radius: 28px;
       --max: 980px;
@@ -311,6 +319,7 @@ ${JSON.stringify(graph, null, 2)}
     .hero-copy { display: grid; gap: 14px; }
     .meta { margin-top: 18px; }
     .pill { color: var(--foreground); }
+    .star-icon { color: var(--star); line-height: 1; }
     .details-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; }
     .detail-list { display: grid; grid-template-columns: minmax(120px, 160px) 1fr; gap: 8px 12px; margin: 0; }
     .detail-list dt, .detail-list dd { margin: 0; }
@@ -349,18 +358,18 @@ ${JSON.stringify(graph, null, 2)}
       <nav class="panel section breadcrumbs" aria-label="Breadcrumb">
         <a href="/">${escapeHtml(SITE_NAME)}</a>
         <span aria-hidden="true">/</span>
-        <span>${escapeHtml(repo.name)}</span>
+        <span>${escapeHtml(label)}</span>
       </nav>
 
       <article class="panel hero">
         <div class="hero-copy">
           <div class="eyebrow">${escapeHtml(section.title)}</div>
-          <h1>${escapeHtml(repo.name)}</h1>
+          <h1>${escapeHtml(label)}</h1>
           <p class="lede">${summaryHtml(repo)}</p>
           <div class="meta">
             <span class="pill">@${escapeHtml(repo.owner.login)}</span>
             ${repo.language ? `<span class="pill">${escapeHtml(repo.language)}</span>` : ''}
-            <span class="pill">${escapeHtml(String(repo.stargazers_count))} stars</span>
+            <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${escapeHtml(String(repo.stargazers_count))}</span>
             <span class="pill">Updated ${escapeHtml(formatDate(repo.updated_at))}</span>
           </div>
         </div>
@@ -401,7 +410,7 @@ ${JSON.stringify(graph, null, 2)}
           </div>
         </div>
         <ul class="related-list">
-          ${related.map((item) => `<li><a href="${projectPath(item.full_name)}">${escapeHtml(item.name)}</a> — ${escapeHtml(descriptionText(item))}</li>`).join('')}
+          ${related.map((item) => `<li><a href="${projectPath(item.full_name)}">${escapeHtml(displayTitle(item))}</a> — ${escapeHtml(descriptionText(item))}</li>`).join('')}
         </ul>
       </section>` : ''}
     </main>
