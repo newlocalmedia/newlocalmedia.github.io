@@ -139,9 +139,30 @@ function narrativeParagraphs(repo, related) {
 }
 
 function relatedRepos(fullName, lookup) {
+  const meta = PROJECT_META[fullName] || {};
+  if (meta.relatedProjects?.length) {
+    return meta.relatedProjects
+      .map((item) => {
+        const repo = lookup.get(item.fullName);
+        if (!repo) return null;
+        return {
+          ...repo,
+          relatedLabel: item.label || displayTitle(repo),
+          relatedDescription: item.description || descriptionText(repo)
+        };
+      })
+      .filter(Boolean);
+  }
   const section = sectionForRepo(fullName);
   const pool = CURATED_REPOS.filter((name) => name !== fullName && sectionForRepo(name) === section);
-  return pool.map((name) => lookup.get(name)).filter(Boolean);
+  return pool
+    .map((name) => lookup.get(name))
+    .filter(Boolean)
+    .map((repo) => ({
+      ...repo,
+      relatedLabel: displayTitle(repo),
+      relatedDescription: descriptionText(repo)
+    }));
 }
 
 function ownerDisplayName(owner) {
@@ -462,7 +483,7 @@ ${JSON.stringify(graph, null, 2)}
           </div>
         </div>
         <ul class="related-list">
-          ${related.map((item) => `<li><a href="${projectPath(item.full_name)}">${escapeHtml(displayTitle(item))}</a> — ${escapeHtml(descriptionText(item))}</li>`).join('')}
+          ${related.map((item) => `<li><a href="${projectPath(item.full_name)}">${escapeHtml(item.relatedLabel || displayTitle(item))}</a> — ${escapeHtml(item.relatedDescription || descriptionText(item))}</li>`).join('')}
         </ul>
       </section>` : ''}
     </main>

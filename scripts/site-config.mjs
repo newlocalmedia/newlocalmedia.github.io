@@ -89,6 +89,13 @@ export const PROJECT_META = {
     summary: 'Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics.',
     narrative: 'CAPM for Agencies adapts financial-economics thinking into pricing tools for agencies, B-Corps, and smaller consultancies. It matters here because it shows a product-minded line of work that sits alongside WordPress and documentation projects rather than inside them.',
     omitRelatedNarrative: true,
+    relatedProjects: [
+      {
+        fullName: 'dknauss/ai-assisted-docs',
+        label: 'AI-Assisted Documentation',
+        description: 'Methodology and process documentation for AI-assisted technical writing and review — a practical exploration.'
+      }
+    ],
     primaryImage: {
       url: 'https://newlocalmedia.github.io/capm-for-agencies/theory/figures/capm-comparison.png',
       alt: 'CAPM for Agencies comparison chart screenshot.'
