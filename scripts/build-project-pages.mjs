@@ -140,10 +140,10 @@ function narrativeParagraphs(repo, related) {
   const meta = PROJECT_META[repo.full_name] || {};
   const section = SECTION_META[sectionForRepo(repo.full_name)];
   const label = displayTitle(repo);
-  const paragraphs = [
-    meta.narrative || section.narrative,
-    `${label} is featured here as part of ${section.title.toLowerCase()}. ${descriptionText(repo)}`
-  ];
+  const paragraphs = [meta.narrative || section.narrative];
+  if (!meta.omitGenericNarrative) {
+    paragraphs.push(`${label} is featured here as part of ${section.title.toLowerCase()}. ${descriptionText(repo)}`);
+  }
   if (related.length && !meta.omitRelatedNarrative) {
     paragraphs.push(`Related projects in this same part of the collection include ${related.map((item) => displayTitle(item)).join(', ')}.`);
   }
