@@ -128,7 +128,7 @@ function narrativeParagraphs(repo, related) {
     meta.narrative || section.narrative,
     `${label} is featured here as part of ${section.title.toLowerCase()}. ${descriptionText(repo)}`
   ];
-  if (related.length) {
+  if (related.length && !meta.omitRelatedNarrative) {
     paragraphs.push(`Related projects in this same part of the collection include ${related.map((item) => displayTitle(item)).join(', ')}.`);
   }
   return paragraphs;
