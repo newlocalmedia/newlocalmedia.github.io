@@ -900,7 +900,26 @@
   const state = new Map();
   const counted = new Set();
   const REPO_OVERRIDES = {
+    'dknauss/wp-sudo': {
+      displayTitle: 'wp-sudo'
+    },
+    'dknauss/ai-assisted-docs': {
+      displayTitle: 'AI-assisted docs'
+    },
+    'dknauss/wordpress-runbook-template': {
+      displayTitle: 'WordPress runbook template'
+    },
+    'dknauss/wp-security-hardening-guide': {
+      displayTitle: 'WordPress security hardening guide'
+    },
+    'dknauss/wp-security-benchmark': {
+      displayTitle: 'WordPress security benchmark'
+    },
+    'dknauss/wp-security-style-guide': {
+      displayTitle: 'WordPress security style guide'
+    },
     'newlocalmedia/capm-for-agencies': {
+      displayTitle: 'CAPM for Agencies',
       descriptionHtml: 'Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics. <a class="text-link" href="https://newlocalmedia.github.io/capm-for-agencies/">Try it!</a>&nbsp; <a class="text-link" href="https://newlocalmedia.github.io/capm-for-agencies/project-risk-check/index.html">There&rsquo;s also a simpler small agency and freelancer version.</a>',
       homepage: 'https://newlocalmedia.github.io/capm-for-agencies/',
       primaryImage: {
@@ -908,8 +927,18 @@
         alt: 'CAPM for Agencies comparison chart screenshot.'
       }
     },
+    'dknauss/author-identity': {
+      displayTitle: 'Author Identity'
+    },
     'dknauss/fedibots': {
+      displayTitle: 'Fedibots',
       descriptionHtml: 'PHP framework for creating write-only ActivityPub fediverse bots. Based on <a class="text-link" href="https://github.com/edent">Terence Eden&rsquo;s (@edent)</a> model.'
+    },
+    'dknauss/wordpress-2fa-ecosystem': {
+      displayTitle: 'WordPress 2FA ecosystem'
+    },
+    'dknauss/the-drafting-table': {
+      displayTitle: 'The Drafting Table'
     }
   };
 
@@ -991,6 +1020,10 @@
     return repoOverride(repo)?.primaryImage || null;
   }
 
+  function repoDisplayTitle(repo) {
+    return repoOverride(repo)?.displayTitle || repo.name;
+  }
+
   function iconSvg(name) {
     const icons = {
       'dknauss/wp-sudo': '<svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-2.8 8.3-7 10-4.2-1.7-7-5.5-7-10V6z"/><path d="M9.5 12l1.7 1.7L15.5 9.5"/></svg>',
@@ -1021,7 +1054,7 @@
   }
 
   function titleLinkMarkup(repo) {
-    return `<a class="title-link" href="${projectPageUrl(repo) || repo.html_url}">${titleMarkup(repo.name, repo.full_name)}</a>`;
+    return `<a class="title-link" href="${projectPageUrl(repo) || repo.html_url}">${titleMarkup(repoDisplayTitle(repo), repo.full_name)}</a>`;
   }
 
   function ownerLinkMarkup(owner) {
@@ -1062,7 +1095,7 @@
     const primaryImage = repoPrimaryImage(repo);
     return `
       <article class="spotlight-card">
-        ${primaryImage ? `<figure class="spotlight-media"><img src="${primaryImage.url}" alt="${escapeHtml(primaryImage.alt || `${repo.name} preview image.`)}" loading="lazy" decoding="async"></figure>` : ''}
+        ${primaryImage ? `<figure class="spotlight-media"><img src="${primaryImage.url}" alt="${escapeHtml(primaryImage.alt || `${repoDisplayTitle(repo)} preview image.`)}" loading="lazy" decoding="async"></figure>` : ''}
         <div class="repo-top">
           <div>
             <h3>${titleLinkMarkup(repo)}</h3>
