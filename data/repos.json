@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-04T03:17:46.499Z",
+  "generated_at": "2026-04-04T06:56:19.891Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -58,7 +58,25 @@
           "homepage": "https://github.com/dknauss/wp-sudo",
           "stargazers_count": 41,
           "language": "PHP",
-          "updated_at": "2026-04-01T00:24:25Z",
+          "updated_at": "2026-04-04T06:14:45Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1175597908,
+          "name": "author-identity",
+          "full_name": "dknauss/author-identity",
+          "html_url": "https://github.com/dknauss/author-identity",
+          "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
+          "homepage": "https://dan.knauss.ca",
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-04-04T05:46:00Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -140,14 +158,14 @@
           }
         },
         {
-          "id": 1160457512,
-          "name": "wordpress-runbook-template",
-          "full_name": "dknauss/wordpress-runbook-template",
-          "html_url": "https://github.com/dknauss/wordpress-runbook-template",
-          "description": "WordPress operations runbook template: production procedures for deployment, maintenance, backup, incident response, and recovery.",
-          "homepage": "https://github.com/dknauss/wordpress-runbook-template",
-          "stargazers_count": 3,
-          "language": null,
+          "id": 1159501867,
+          "name": "wordpress-2fa-ecosystem",
+          "full_name": "dknauss/wordpress-2fa-ecosystem",
+          "html_url": "https://github.com/dknauss/wordpress-2fa-ecosystem",
+          "description": "Developer reference: how major WordPress 2FA plugins store secrets, detect users, and validate codes. Includes Sudo bridge examples for WP 2FA, Wordfence, and AIOS.",
+          "homepage": "https://github.com/dknauss/wordpress-2fa-ecosystem",
+          "stargazers_count": 1,
+          "language": "PHP",
           "updated_at": "2026-03-25T21:38:08Z",
           "fork": false,
           "archived": false,
@@ -158,14 +176,14 @@
           }
         },
         {
-          "id": 1159501867,
-          "name": "wordpress-2fa-ecosystem",
-          "full_name": "dknauss/wordpress-2fa-ecosystem",
-          "html_url": "https://github.com/dknauss/wordpress-2fa-ecosystem",
-          "description": "Developer reference: how major WordPress 2FA plugins store secrets, detect users, and validate codes. Includes Sudo bridge examples for WP 2FA, Wordfence, and AIOS.",
-          "homepage": "https://github.com/dknauss/wordpress-2fa-ecosystem",
-          "stargazers_count": 1,
-          "language": "PHP",
+          "id": 1160457512,
+          "name": "wordpress-runbook-template",
+          "full_name": "dknauss/wordpress-runbook-template",
+          "html_url": "https://github.com/dknauss/wordpress-runbook-template",
+          "description": "WordPress operations runbook template: production procedures for deployment, maintenance, backup, incident response, and recovery.",
+          "homepage": "https://github.com/dknauss/wordpress-runbook-template",
+          "stargazers_count": 3,
+          "language": null,
           "updated_at": "2026-03-25T21:38:08Z",
           "fork": false,
           "archived": false,
@@ -212,24 +230,6 @@
           }
         },
         {
-          "id": 1175597908,
-          "name": "author-identity",
-          "full_name": "dknauss/author-identity",
-          "html_url": "https://github.com/dknauss/author-identity",
-          "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
-          "homepage": "https://dan.knauss.ca",
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-03-25T21:37:56Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
           "id": 23970719,
           "name": "newlocalmedia.github.io",
           "full_name": "dknauss/newlocalmedia.github.io",
@@ -259,7 +259,7 @@
         "homepage": "https://github.com/dknauss/wp-sudo",
         "stargazers_count": 41,
         "language": "PHP",
-        "updated_at": "2026-04-01T00:24:25Z",
+        "updated_at": "2026-04-04T06:14:45Z",
         "fork": false,
         "archived": false,
         "owner": {
