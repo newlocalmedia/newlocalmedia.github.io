@@ -486,6 +486,19 @@
       border: 1px solid var(--line);
     }
 
+    .feature-media {
+      margin: 0 0 4px;
+    }
+
+    .feature-media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(11,18,30,0.6);
+    }
+
     .feature-label {
       display: inline-flex;
       align-items: center;
@@ -967,7 +980,11 @@
   const counted = new Set();
   const REPO_OVERRIDES = {
     'dknauss/wp-sudo': {
-      displayTitle: 'Sudo'
+      displayTitle: 'Sudo',
+      primaryImage: {
+        url: 'https://newlocalmedia.github.io/assets/wp-sudo-preview.png',
+        alt: 'Sudo for WordPress preview image using the Fuwa no Seki graphic.'
+      }
     },
     'dknauss/ai-assisted-docs': {
       displayTitle: 'AI-Assisted Docs'
@@ -1190,6 +1207,8 @@
       return;
     }
     const details = projectPageUrl(repo);
+    const primaryImage = repoPrimaryImage(repo);
+    const imageAlt = escapeHtml(primaryImage?.alt || `${repoDisplayTitle(repo)} preview image.`);
     countRepo(repo);
     target.innerHTML = `
       <div class="feature-main">
@@ -1208,6 +1227,7 @@
         </div>
       </div>
       <aside class="feature-side" aria-label="wp-sudo details">
+        ${primaryImage ? `<figure class="feature-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(repoDisplayTitle(repo))}"><img src="${primaryImage.url}" alt="${imageAlt}" loading="lazy" decoding="async"></button></figure>` : ''}
         <p class="feature-note"><strong>Gate & Log Dangerous Actions</strong>When a user attempts a gated action, Sudo intercepts the request at <code>admin_init</code>.</p>
         <p class="feature-note"><strong>Protects Every Surface</strong>WordPress reauthentication and risky-action gating with support across REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.</p>
       </aside>
