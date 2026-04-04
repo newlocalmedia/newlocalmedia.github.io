@@ -42,7 +42,7 @@ export const SECTION_META = {
   },
   selected: {
     title: 'More Projects',
-    description: 'Additional highlighted repositories spanning automation, identity, authentication, and editorial experiments.',
+    description: 'Other things I've been working on.',
     narrative: 'This project is part of the selected work section, which rounds out the collection with adjacent experiments in automation, identity, authentication, and publishing design.'
   }
 };
