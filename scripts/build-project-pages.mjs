@@ -169,6 +169,10 @@ function ownerDisplayName(owner) {
   return owner === 'newlocalmedia' ? ORGANIZATION_NAME : owner;
 }
 
+function ownerLink(owner) {
+  return ownerPath(owner);
+}
+
 function projectPrimaryImage(repo) {
   return PROJECT_META[repo.full_name]?.primaryImage || null;
 }
@@ -176,7 +180,7 @@ function projectPrimaryImage(repo) {
 function detailItems(repo) {
   const meta = PROJECT_META[repo.full_name] || {};
   const items = [
-    ['Owner', `<a href="https://github.com/${encodeURIComponent(repo.owner.login)}">@${escapeHtml(repo.owner.login)}</a>`],
+    ['Owner', `<a href="${ownerLink(repo.owner.login)}">@${escapeHtml(repo.owner.login)}</a>`],
     ['Source', `<a href="${repo.html_url}">${escapeHtml(repo.full_name)}</a>`]
   ];
 
@@ -439,7 +443,7 @@ ${JSON.stringify(graph, null, 2)}
           <h1>${escapeHtml(label)}</h1>
           <p class="lede">${summaryHtml(repo)}</p>
           <div class="meta">
-            <span class="pill">@${escapeHtml(repo.owner.login)}</span>
+            <a class="pill" href="${ownerLink(repo.owner.login)}">@${escapeHtml(repo.owner.login)}</a>
             ${repo.language ? `<span class="pill">${escapeHtml(repo.language)}</span>` : ''}
             <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${escapeHtml(String(repo.stargazers_count))}</span>
             <span class="pill">Updated ${escapeHtml(formatDate(repo.updated_at))}</span>
