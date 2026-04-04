@@ -41,7 +41,7 @@ export const SECTION_META = {
     narrative: 'This project sits in the spotlight section because it opens up a broader line of product, pricing, or identity work beyond the core WordPress security and documentation track.'
   },
   selected: {
-    title: 'More Selected Work',
+    title: 'More Projects',
     description: 'Additional highlighted repositories spanning automation, identity, authentication, and editorial experiments.',
     narrative: 'This project is part of the selected work section, which rounds out the collection with adjacent experiments in automation, identity, authentication, and publishing design.'
   }
