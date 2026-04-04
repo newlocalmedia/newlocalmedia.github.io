@@ -70,7 +70,17 @@ export const PROJECT_META = {
     displayTitle: 'AI-Assisted Docs',
     schemaType: 'TechArticle',
     summary: 'Methodology and process documentation for AI-assisted technical writing and review — a practical exploration of how AI can help without sacrificing rigor, accuracy, or editorial judgment.',
-    narrative: 'This repo is the anchor for a broader documentation practice: using AI as support for drafting, review, and maintenance while keeping human editorial judgment, verification, and technical precision in charge.'
+    whyHeading: 'Build an Agentic Editorial Team',
+    narrativeHtml: [
+      'Create and maintain technical documentation with multi-model or multi-agent editorial teams.',
+      'This repository contains a methodology, process documentation, and working scripts for AI-assisted technical writing and editorial review. It includes agent roles, skills, and Behavior-Driven Development (BDD) scenarios for researching, updating, verifying, aligning, and cross-referencing complex technical documents for different audiences and use cases.'
+    ],
+    omitGenericNarrative: true,
+    omitRelatedNarrative: true,
+    primaryImage: {
+      url: 'https://newlocalmedia.github.io/assets/ai-assisted-docs-preview.png',
+      alt: 'Diagram-style preview of AI-Assisted Docs showing agentic editorial roles, review stages, and BDD scenarios for technical documentation.'
+    }
   },
   'dknauss/wordpress-runbook-template': {
     displayTitle: 'WordPress Runbook Template',
