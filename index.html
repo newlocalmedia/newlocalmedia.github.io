@@ -1127,10 +1127,6 @@
     return `<a class="title-link" href="${projectPageUrl(repo) || repo.html_url}">${titleMarkup(repoDisplayTitle(repo), repo.full_name)}</a>`;
   }
 
-  function ownerLinkMarkup(owner) {
-    return `<a class="user-link" href="https://github.com/${encodeURIComponent(owner.login)}">${escapeHtml(owner.login)}</a>`;
-  }
-
   function repoCard(repo, featured = false) {
     const homepage = repoHomepage(repo);
     const language = repo.language || 'Unspecified';
@@ -1140,7 +1136,6 @@
         <div class="repo-top">
           <div>
             <h3>${titleLinkMarkup(repo)}</h3>
-            <div class="muted">${ownerLinkMarkup(repo.owner)}</div>
           </div>
           ${featured ? '<span class="pill featured">Related</span>' : ''}
         </div>
@@ -1170,7 +1165,6 @@
         <div class="repo-top">
           <div>
             <h3>${titleLinkMarkup(repo)}</h3>
-            <div class="muted">${ownerLinkMarkup(repo.owner)}</div>
           </div>
           <span class="feature-label">Spotlight</span>
         </div>
