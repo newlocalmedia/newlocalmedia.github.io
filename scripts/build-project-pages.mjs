@@ -68,6 +68,10 @@ function whyHeading(repo) {
   return PROJECT_META[repo.full_name]?.whyHeading || 'Why This Project Is Here';
 }
 
+function inlineCodeHtml(text) {
+  return escapeHtml(text).replace(/`([^`]+)`/g, '<code>$1</code>');
+}
+
 function imageMimeType(url) {
   if (url.endsWith('.png')) return 'image/png';
   if (url.endsWith('.jpg') || url.endsWith('.jpeg')) return 'image/jpeg';
@@ -477,7 +481,7 @@ ${JSON.stringify(graph, null, 2)}
             <h2 id="why-title">${escapeHtml(whyHeading(repo))}</h2>
           </div>
         </div>
-        ${paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n        ')}
+        ${paragraphs.map((paragraph) => `<p>${inlineCodeHtml(paragraph)}</p>`).join('\n        ')}
       </section>
 
       <section class="panel section" aria-labelledby="details-title">

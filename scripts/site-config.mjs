@@ -52,7 +52,9 @@ export const PROJECT_META = {
     displayTitle: 'Sudo',
     schemaType: 'SoftwareSourceCode',
     summary: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.',
-    narrative: 'When a user attempts a gated action, Sudo intercepts the request at admin_init. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.',
+    whyHeading: 'Gate Any Privileged Action',
+    narrative: 'When a user attempts a gated action, Sudo intercepts the request at `admin_init`. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.',
+    omitGenericNarrative: true,
     focus: 'Gate & Log Dangerous Actions',
     subfocus: 'Protects Every Surface'
   },
