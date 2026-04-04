@@ -470,7 +470,7 @@ ${JSON.stringify(graph, null, 2)}
       <section class="panel section" aria-labelledby="why-title">
         <div class="section-head">
           <div>
-            <h2 id="why-title">Why this project is here</h2>
+            <h2 id="why-title">Why This Project Is Here</h2>
           </div>
         </div>
         ${paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('\n        ')}
@@ -479,7 +479,7 @@ ${JSON.stringify(graph, null, 2)}
       <section class="panel section" aria-labelledby="details-title">
         <div class="section-head">
           <div>
-            <h2 id="details-title">Repository details</h2>
+            <h2 id="details-title">Repository Details</h2>
           </div>
         </div>
         <div class="details-grid">
@@ -499,7 +499,7 @@ ${JSON.stringify(graph, null, 2)}
       <section class="panel section" aria-labelledby="related-title">
         <div class="section-head">
           <div>
-            <h2 id="related-title">Related projects in this collection</h2>
+            <h2 id="related-title">Related Projects in This Collection</h2>
           </div>
         </div>
         <ul class="related-list">
@@ -890,7 +890,7 @@ ${JSON.stringify(graph, null, 2)}
         <p class="lede">Browse the owner groups and project pages in this collection.</p>
       </section>
       <section class="panel section" aria-labelledby="owner-groups-title">
-        <h2 id="owner-groups-title">Owner groups</h2>
+        <h2 id="owner-groups-title">Owner Groups</h2>
         <div class="owner-groups">
           ${owners.map(([owner, repos]) => `<div class="owner-card"><a href="${ownerPath(owner)}">${escapeHtml(ownerDisplayName(owner))}</a><ul>${repos.map((repo) => `<li><a href="${projectPath(repo.full_name)}">${escapeHtml(displayTitle(repo))}</a></li>`).join('')}</ul></div>`).join('')}
         </div>

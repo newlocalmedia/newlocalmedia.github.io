@@ -31,17 +31,17 @@ export const SECTION_META = {
     narrative: 'This project leads the collection because it shows the clearest intersection of WordPress security architecture, risky-action gating, and careful operational design.'
   },
   ai_docs: {
-    title: 'AI-assisted docs and related work',
+    title: 'AI-Assisted Docs and Related Work',
     description: 'A practical exploration of how AI can help write, review, and maintain technical documentation without sacrificing rigor, accuracy, or editorial judgment.',
     narrative: 'This project sits in the AI-assisted docs block, where the focus is on documentation systems, editorial standards, and durable operations guidance that can still benefit from AI-assisted workflows.'
   },
   spotlight: {
-    title: 'Spotlight projects',
+    title: 'Spotlight Projects',
     description: 'Two projects I especially want to foreground right now.',
     narrative: 'This project sits in the spotlight section because it opens up a broader line of product, pricing, or identity work beyond the core WordPress security and documentation track.'
   },
   selected: {
-    title: 'More selected work',
+    title: 'More Selected Work',
     description: 'Additional highlighted repositories spanning automation, identity, authentication, and editorial experiments.',
     narrative: 'This project is part of the selected work section, which rounds out the collection with adjacent experiments in automation, identity, authentication, and publishing design.'
   }
@@ -57,28 +57,28 @@ export const PROJECT_META = {
     subfocus: 'Protects Every Surface'
   },
   'dknauss/ai-assisted-docs': {
-    displayTitle: 'AI-assisted docs',
+    displayTitle: 'AI-Assisted Docs',
     schemaType: 'TechArticle',
     summary: 'Methodology and process documentation for AI-assisted technical writing and review — a practical exploration of how AI can help without sacrificing rigor, accuracy, or editorial judgment.',
     narrative: 'This repo is the anchor for a broader documentation practice: using AI as support for drafting, review, and maintenance while keeping human editorial judgment, verification, and technical precision in charge.'
   },
   'dknauss/wordpress-runbook-template': {
-    displayTitle: 'WordPress runbook template',
+    displayTitle: 'WordPress Runbook Template',
     schemaType: 'TechArticle',
     narrative: 'This runbook template turns operational knowledge into repeatable, reviewable procedures for deployment, maintenance, backup, incident response, and recovery in WordPress environments.'
   },
   'dknauss/wp-security-hardening-guide': {
-    displayTitle: 'WordPress security hardening guide',
+    displayTitle: 'WordPress Security Hardening Guide',
     schemaType: 'TechArticle',
     narrative: 'This guide focuses on security architecture and hardening as a system, connecting authentication, infrastructure, plugin risk, and supply chain defense into a more complete WordPress security posture.'
   },
   'dknauss/wp-security-benchmark': {
-    displayTitle: 'WordPress security benchmark',
+    displayTitle: 'WordPress Security Benchmark',
     schemaType: 'TechArticle',
     narrative: 'This benchmark translates hardening guidance into a more prescriptive control set for supported WordPress releases on Linux, making it easier to assess and improve a stack consistently.'
   },
   'dknauss/wp-security-style-guide': {
-    displayTitle: 'WordPress security style guide',
+    displayTitle: 'WordPress Security Style Guide',
     schemaType: 'TechArticle',
     narrative: 'This style guide supports the other documentation work by tightening security terminology, voice, and editorial standards so technical guidance stays accurate and clear.'
   },
@@ -136,7 +136,7 @@ export const PROJECT_META = {
     narrative: 'Fedibots highlights a lighter-weight automation track in the collection: practical publishing tooling built around ActivityPub, write-only bots, and a clear borrowing-and-building lineage from other open work.'
   },
   'dknauss/wordpress-2fa-ecosystem': {
-    displayTitle: 'WordPress 2FA ecosystem',
+    displayTitle: 'WordPress 2FA Ecosystem',
     schemaType: 'SoftwareSourceCode',
     narrative: 'This developer reference documents how major WordPress 2FA plugins store secrets, identify users, and validate codes. It directly supports the design and interoperability work around Sudo.'
   },
