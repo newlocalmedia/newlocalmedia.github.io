@@ -32,7 +32,7 @@ export const SECTION_META = {
   },
   ai_docs: {
     title: 'AI-Assisted Docs and Related Work',
-    description: 'A practical exploration of how AI can help write, review, and maintain technical documentation without sacrificing rigor, accuracy, or editorial judgment.',
+    description: 'Agentic tools and processes to help write, review, and maintain technical documentation without sacrificing rigor, accuracy, or editorial judgment.',
     narrative: 'This project sits in the AI-assisted docs block, where the focus is on documentation systems, editorial standards, and durable operations guidance that can still benefit from AI-assisted workflows.'
   },
   spotlight: {
