@@ -432,7 +432,7 @@ ${JSON.stringify(graph, null, 2)}
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="shell">
     <header class="panel topbar">
-      <a class="brand" href="${MAIN_SITE_URL}">
+      <a class="brand" href="${SITE_URL}/">
         <img src="/assets/new-local-media-logo.png" alt="New Local Media logo">
         <span class="brand-copy">
           <span class="eyebrow">New Local Media</span>
@@ -715,7 +715,7 @@ ${JSON.stringify(graph, null, 2)}
 <body>
   <div class="shell">
     <header class="panel topbar">
-      <a class="brand" href="${MAIN_SITE_URL}">
+      <a class="brand" href="${SITE_URL}/">
         <img src="/assets/new-local-media-logo.png" alt="New Local Media logo">
         <span class="brand-copy">
           <span class="eyebrow">New Local Media</span>
@@ -873,7 +873,7 @@ ${JSON.stringify(graph, null, 2)}
 <body>
   <div class="shell">
     <header class="panel topbar">
-      <a class="brand" href="${MAIN_SITE_URL}">
+      <a class="brand" href="${SITE_URL}/">
         <img src="/assets/new-local-media-logo.png" alt="New Local Media logo">
         <span class="brand-copy">
           <span class="eyebrow">New Local Media</span>
