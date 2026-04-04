@@ -102,7 +102,7 @@ export const PROJECT_META = {
       url: 'https://newlocalmedia.github.io/capm-for-agencies/theory/figures/capm-comparison.png',
       alt: 'CAPM for Agencies comparison chart screenshot.'
     },
-    focus: 'Multiple variations on the CAPM model',
+    focus: 'CAPM Adapted for Agencies, Consultants, and B-Corps',
     subfocus: 'Visualize how baseline, market, and risk-adjusted pricing move apart as project and delivery risk increase.',
     omitSummaryBoxLinks: true,
     version: '0.1.1',
