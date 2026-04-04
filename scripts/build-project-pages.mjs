@@ -449,7 +449,7 @@ ${JSON.stringify(graph, null, 2)}
             ${primaryImage ? `<figure class="summary-box-media"><img src="${primaryImage.url}" alt="${escapeHtml(primaryImage.alt || `${label} preview image.`)}" loading="eager" decoding="async"></figure>` : ''}
             <strong>${escapeHtml(meta.focus || section.title)}</strong>
             <p>${escapeHtml(meta.subfocus || section.description)}</p>
-            ${meta.extraLinks?.length ? `<p>${meta.extraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')}</p>` : ''}
+            ${meta.extraLinks?.length && !meta.omitSummaryBoxLinks ? `<p>${meta.extraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')}</p>` : ''}
           </div>
         </div>
       </section>
