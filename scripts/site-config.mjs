@@ -54,6 +54,10 @@ export const PROJECT_META = {
     summary: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.',
     whyHeading: 'Gate Any Privileged Action',
     narrative: 'When a user attempts a gated action, Sudo intercepts the request at `admin_init`. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.',
+    narrativeHtml: [
+      'When a user attempts a gated action, Sudo intercepts the request at <code>admin_init</code>. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.',
+      'Key docs worth reading here include the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/security-model.md">Security Model</a>, the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/developer-reference.md">Developer Reference</a>, the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/two-factor-integration.md">Two-Factor Integration</a> guide, and the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/sudo-architecture-comparison-matrix.md">Sudo Architecture Comparison Matrix</a>.'
+    ],
     omitGenericNarrative: true,
     primaryImage: {
       url: 'https://newlocalmedia.github.io/assets/wp-sudo-preview.png',

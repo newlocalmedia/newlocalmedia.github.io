@@ -144,12 +144,14 @@ function narrativeParagraphs(repo, related) {
   const meta = PROJECT_META[repo.full_name] || {};
   const section = SECTION_META[sectionForRepo(repo.full_name)];
   const label = displayTitle(repo);
-  const paragraphs = [meta.narrative || section.narrative];
+  const paragraphs = meta.narrativeHtml?.length
+    ? meta.narrativeHtml.map((html) => ({ html }))
+    : [{ text: meta.narrative || section.narrative }];
   if (!meta.omitGenericNarrative) {
-    paragraphs.push(`${label} is featured here as part of ${section.title.toLowerCase()}. ${descriptionText(repo)}`);
+    paragraphs.push({ text: `${label} is featured here as part of ${section.title.toLowerCase()}. ${descriptionText(repo)}` });
   }
   if (related.length && !meta.omitRelatedNarrative) {
-    paragraphs.push(`Related projects in this same part of the collection include ${related.map((item) => displayTitle(item)).join(', ')}.`);
+    paragraphs.push({ text: `Related projects in this same part of the collection include ${related.map((item) => displayTitle(item)).join(', ')}.` });
   }
   return paragraphs;
 }
@@ -481,7 +483,7 @@ ${JSON.stringify(graph, null, 2)}
             <h2 id="why-title">${escapeHtml(whyHeading(repo))}</h2>
           </div>
         </div>
-        ${paragraphs.map((paragraph) => `<p>${inlineCodeHtml(paragraph)}</p>`).join('\n        ')}
+        ${paragraphs.map((paragraph) => `<p>${paragraph.html || inlineCodeHtml(paragraph.text)}</p>`).join('\n        ')}
       </section>
 
       <section class="panel section" aria-labelledby="details-title">
