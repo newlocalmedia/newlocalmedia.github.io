@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-05T19:05:07.801Z",
+  "generated_at": "2026-04-06T03:42:59.454Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,15 +50,105 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
-          "id": 1154983208,
-          "name": "wp-sudo",
-          "full_name": "dknauss/wp-sudo",
-          "html_url": "https://github.com/dknauss/wp-sudo",
-          "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
-          "homepage": "https://github.com/dknauss/wp-sudo",
-          "stargazers_count": 41,
+          "id": 1159560867,
+          "name": "wp-security-benchmark",
+          "full_name": "dknauss/wp-security-benchmark",
+          "html_url": "https://github.com/dknauss/wp-security-benchmark",
+          "description": "WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on Linux.",
+          "homepage": "https://github.com/dknauss/wp-security-benchmark",
+          "stargazers_count": 2,
+          "language": null,
+          "updated_at": "2026-04-05T21:44:28Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1159560835,
+          "name": "wp-security-style-guide",
+          "full_name": "dknauss/wp-security-style-guide",
+          "html_url": "https://github.com/dknauss/wp-security-style-guide",
+          "description": "WordPress security style guide: terminology, voice, and editorial standards for accurate security communication.",
+          "homepage": "https://github.com/dknauss/wp-security-style-guide",
+          "stargazers_count": 1,
+          "language": null,
+          "updated_at": "2026-04-05T20:23:41Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1160457512,
+          "name": "wordpress-runbook-template",
+          "full_name": "dknauss/wordpress-runbook-template",
+          "html_url": "https://github.com/dknauss/wordpress-runbook-template",
+          "description": "WordPress operations runbook template: production procedures for deployment, maintenance, backup, incident response, and recovery.",
+          "homepage": "https://github.com/dknauss/wordpress-runbook-template",
+          "stargazers_count": 3,
+          "language": null,
+          "updated_at": "2026-04-05T20:23:40Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1159682753,
+          "name": "wp-security-hardening-guide",
+          "full_name": "dknauss/wp-security-hardening-guide",
+          "html_url": "https://github.com/dknauss/wp-security-hardening-guide",
+          "description": "WordPress security architecture and hardening guide: enterprise practices for threat mitigation, authentication, and supply chain defense.",
+          "homepage": "https://github.com/dknauss/wp-security-hardening-guide",
+          "stargazers_count": 2,
+          "language": null,
+          "updated_at": "2026-04-05T20:23:23Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1182666119,
+          "name": "fedibots",
+          "full_name": "dknauss/fedibots",
+          "html_url": "https://github.com/dknauss/fedibots",
+          "description": "PHP framework for creating write-only ActivityPub fediverse bots",
+          "homepage": "https://github.com/dknauss/fedibots",
+          "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-04-04T06:14:45Z",
+          "updated_at": "2026-04-05T20:19:38Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1159501867,
+          "name": "wordpress-2fa-ecosystem",
+          "full_name": "dknauss/wordpress-2fa-ecosystem",
+          "html_url": "https://github.com/dknauss/wordpress-2fa-ecosystem",
+          "description": "Developer reference: how major WordPress 2FA plugins store secrets, detect users, and validate codes. Includes Sudo bridge examples for WP 2FA, Wordfence, and AIOS.",
+          "homepage": "https://github.com/dknauss/wordpress-2fa-ecosystem",
+          "stargazers_count": 1,
+          "language": "PHP",
+          "updated_at": "2026-04-05T20:19:37Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -76,7 +166,25 @@
           "homepage": "https://dan.knauss.ca",
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-04-04T05:46:00Z",
+          "updated_at": "2026-04-05T20:18:07Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1154983208,
+          "name": "wp-sudo",
+          "full_name": "dknauss/wp-sudo",
+          "html_url": "https://github.com/dknauss/wp-sudo",
+          "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
+          "homepage": "https://github.com/dknauss/wp-sudo",
+          "stargazers_count": 41,
+          "language": "PHP",
+          "updated_at": "2026-04-04T06:14:45Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -104,96 +212,6 @@
           }
         },
         {
-          "id": 1159560835,
-          "name": "wp-security-style-guide",
-          "full_name": "dknauss/wp-security-style-guide",
-          "html_url": "https://github.com/dknauss/wp-security-style-guide",
-          "description": "WordPress security style guide: terminology, voice, and editorial standards for accurate security communication.",
-          "homepage": "https://github.com/dknauss/wp-security-style-guide",
-          "stargazers_count": 1,
-          "language": null,
-          "updated_at": "2026-03-25T21:38:15Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1159682753,
-          "name": "wp-security-hardening-guide",
-          "full_name": "dknauss/wp-security-hardening-guide",
-          "html_url": "https://github.com/dknauss/wp-security-hardening-guide",
-          "description": "WordPress security architecture and hardening guide: enterprise practices for threat mitigation, authentication, and supply chain defense.",
-          "homepage": "https://github.com/dknauss/wp-security-hardening-guide",
-          "stargazers_count": 2,
-          "language": null,
-          "updated_at": "2026-03-25T21:38:12Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1159560867,
-          "name": "wp-security-benchmark",
-          "full_name": "dknauss/wp-security-benchmark",
-          "html_url": "https://github.com/dknauss/wp-security-benchmark",
-          "description": "WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on Linux.",
-          "homepage": "https://github.com/dknauss/wp-security-benchmark",
-          "stargazers_count": 1,
-          "language": null,
-          "updated_at": "2026-03-25T21:38:10Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1159501867,
-          "name": "wordpress-2fa-ecosystem",
-          "full_name": "dknauss/wordpress-2fa-ecosystem",
-          "html_url": "https://github.com/dknauss/wordpress-2fa-ecosystem",
-          "description": "Developer reference: how major WordPress 2FA plugins store secrets, detect users, and validate codes. Includes Sudo bridge examples for WP 2FA, Wordfence, and AIOS.",
-          "homepage": "https://github.com/dknauss/wordpress-2fa-ecosystem",
-          "stargazers_count": 1,
-          "language": "PHP",
-          "updated_at": "2026-03-25T21:38:08Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1160457512,
-          "name": "wordpress-runbook-template",
-          "full_name": "dknauss/wordpress-runbook-template",
-          "html_url": "https://github.com/dknauss/wordpress-runbook-template",
-          "description": "WordPress operations runbook template: production procedures for deployment, maintenance, backup, incident response, and recovery.",
-          "homepage": "https://github.com/dknauss/wordpress-runbook-template",
-          "stargazers_count": 3,
-          "language": null,
-          "updated_at": "2026-03-25T21:38:08Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
           "id": 1165510944,
           "name": "the-drafting-table",
           "full_name": "dknauss/the-drafting-table",
@@ -203,24 +221,6 @@
           "stargazers_count": 0,
           "language": "PHP",
           "updated_at": "2026-03-25T21:38:05Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1182666119,
-          "name": "fedibots",
-          "full_name": "dknauss/fedibots",
-          "html_url": "https://github.com/dknauss/fedibots",
-          "description": "PHP framework for creating write-only ActivityPub fediverse bots",
-          "homepage": "https://github.com/dknauss/fedibots",
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-03-25T21:38:04Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -249,17 +249,17 @@
         }
       ],
       "total_repos": 11,
-      "total_stars": 52,
+      "total_stars": 53,
       "latest_repo": {
-        "id": 1154983208,
-        "name": "wp-sudo",
-        "full_name": "dknauss/wp-sudo",
-        "html_url": "https://github.com/dknauss/wp-sudo",
-        "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
-        "homepage": "https://github.com/dknauss/wp-sudo",
-        "stargazers_count": 41,
-        "language": "PHP",
-        "updated_at": "2026-04-04T06:14:45Z",
+        "id": 1159560867,
+        "name": "wp-security-benchmark",
+        "full_name": "dknauss/wp-security-benchmark",
+        "html_url": "https://github.com/dknauss/wp-security-benchmark",
+        "description": "WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on Linux.",
+        "homepage": "https://github.com/dknauss/wp-security-benchmark",
+        "stargazers_count": 2,
+        "language": null,
+        "updated_at": "2026-04-05T21:44:28Z",
         "fork": false,
         "archived": false,
         "owner": {
