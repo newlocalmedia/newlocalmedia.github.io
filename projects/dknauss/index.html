@@ -8,7 +8,7 @@
   <meta name="author" content="dknauss">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#272938">
+  <meta name="theme-color" content="#0D1B2A">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://newlocalmedia.github.io/projects/dknauss/">
   <link rel="manifest" href="/site.webmanifest">
@@ -92,12 +92,12 @@
   </script>
   <style>
     :root {
-      --primary: #8182ff;
+      --primary: #29ABE0;
       --secondary: #ffffff;
-      --foreground: #c8d2d4;
-      --background: #272938;
-      --tertiary: #0b121e;
-      --surface: rgba(39, 41, 56, 0.88);
+      --foreground: #DCF0F9;
+      --background: #0D1B2A;
+      --tertiary: #071018;
+      --surface: rgba(20, 45, 70, 0.88);
       --line: rgba(255, 255, 255, 0.12);
       --shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
       --radius: 28px;
@@ -110,13 +110,13 @@
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--secondary);
       background:
-        radial-gradient(circle at top left, rgba(129, 130, 255, 0.18), transparent 26%),
+        radial-gradient(circle at top left, rgba(41,171,224,0.18), transparent 26%),
         radial-gradient(circle at top right, rgba(255, 255, 255, 0.06), transparent 22%),
-        linear-gradient(180deg, #303348 0%, var(--background) 46%, var(--tertiary) 100%);
+        linear-gradient(180deg, #0F2035 0%, var(--background) 46%, var(--tertiary) 100%);
       line-height: 1.65;
     }
     a { color: inherit; text-underline-offset: 0.16em; text-decoration-thickness: 0.08em; }
-    a:focus-visible { outline: 3px solid rgba(129,130,255,0.85); outline-offset: 3px; }
+    a:focus-visible { outline: 3px solid rgba(41,171,224,0.85); outline-offset: 3px; }
     .skip-link { position: absolute; left: 14px; top: -48px; z-index: 1000; padding: 10px 14px; border-radius: 12px; background: var(--secondary); color: var(--tertiary); font-weight: 700; text-decoration: none; }
     .skip-link:focus { top: 14px; }
     .shell { width: min(calc(100% - 28px), var(--max)); margin: 18px auto 40px; }
@@ -130,20 +130,20 @@
     .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--foreground); }
     .muted, .breadcrumbs a, .breadcrumbs span, .lede { color: var(--foreground); }
     .stack { display: grid; gap: 18px; margin-top: 18px; }
-    .button { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(11,18,30,0.55); text-decoration: none; font-weight: 700; }
+    .button { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,27,42,0.55); text-decoration: none; font-weight: 700; }
     h1, h2 { margin: 0; letter-spacing: -0.03em; }
     h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.02; }
     h2 { font-size: 1.35rem; }
     .lede { margin: 14px 0 0; font-size: 1.05rem; }
     .owner-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
     .owner-list li { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
-    .owner-list a, footer a, .breadcrumbs a { color: var(--primary); }
+    .owner-list a, footer a, .breadcrumbs a { color: var(--accent); }
     .owner-list a, footer a { text-decoration: underline; font-weight: 700; }
     .owner-list a:hover, .owner-list a:focus-visible, .breadcrumbs a:hover, .breadcrumbs a:focus-visible, footer a:hover, footer a:focus-visible { color: var(--secondary); text-decoration: underline; }
     .repo-meta { margin-top: 8px; color: var(--foreground); font-size: 0.95rem; }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
-      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #e3ebff; }
+      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
       .button, .owner-list li, .panel { border-width: 2px; }
     }
     @media (max-width: 760px) {

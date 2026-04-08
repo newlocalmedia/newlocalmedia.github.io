@@ -8,7 +8,7 @@
   <meta name="author" content="New Local Media and Dan Knauss">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#272938">
+  <meta name="theme-color" content="#0D1B2A">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="https://newlocalmedia.github.io/">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
@@ -132,16 +132,17 @@
   </script>
   <style>
     :root {
-      --primary: #8182ff;
+      --primary: #29ABE0;
       --secondary: #ffffff;
-      --foreground: #c8d2d4;
-      --background: #272938;
-      --tertiary: #0b121e;
-      --star: #f2c46d;
-      --repo-icon: #7fb1ff;
+      --foreground: #DCF0F9;
+      --background: #0D1B2A;
+      --tertiary: #071018;
+      --accent: #F5A623;
+      --star: #F5A623;
+      --repo-icon: #5BC4E8;
       --date-icon: #74d4a3;
-      --surface: rgba(39, 41, 56, 0.88);
-      --surface-2: rgba(11, 18, 30, 0.88);
+      --surface: rgba(20, 45, 70, 0.88);
+      --surface-2: rgba(13, 27, 42, 0.88);
       --surface-3: rgba(255, 255, 255, 0.04);
       --line: rgba(255, 255, 255, 0.12);
       --shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
@@ -157,9 +158,9 @@
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--secondary);
       background:
-        radial-gradient(circle at top left, rgba(129, 130, 255, 0.18), transparent 26%),
+        radial-gradient(circle at top left, rgba(41,171,224,0.18), transparent 26%),
         radial-gradient(circle at top right, rgba(255, 255, 255, 0.06), transparent 22%),
-        linear-gradient(180deg, #303348 0%, var(--background) 46%, var(--tertiary) 100%);
+        linear-gradient(180deg, #0F2035 0%, var(--background) 46%, var(--tertiary) 100%);
       line-height: 1.6;
     }
 
@@ -171,7 +172,7 @@
 
     a:focus-visible,
     button:focus-visible {
-      outline: 3px solid rgba(129,130,255,0.85);
+      outline: 3px solid rgba(41,171,224,0.85);
       outline-offset: 3px;
     }
 
@@ -222,7 +223,7 @@
       inset: auto -60px -70px auto;
       width: 260px;
       height: 260px;
-      background: radial-gradient(circle, rgba(129,130,255,0.26), transparent 66%);
+      background: radial-gradient(circle, rgba(41,171,224,0.26), transparent 66%);
       pointer-events: none;
     }
 
@@ -310,7 +311,7 @@
       padding: 0 12px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(11,18,30,0.55);
+      background: rgba(13,27,42,0.55);
       text-decoration: none;
       font-weight: 700;
       font-size: 0.88rem;
@@ -325,16 +326,16 @@
 
     .button.primary,
     .repo-link.primary {
-      background: rgba(129,130,255,0.18);
+      background: rgba(41,171,224,0.18);
       color: var(--secondary);
-      border-color: rgba(129,130,255,0.35);
+      border-color: rgba(41,171,224,0.35);
     }
 
     .repo-link.alt,
     .button.alt {
-      color: var(--primary);
-      border-color: rgba(129,130,255,0.35);
-      background: rgba(129,130,255,0.12);
+      color: var(--accent);
+      border-color: rgba(245,166,35,0.4);
+      background: rgba(245,166,35,0.1);
     }
 
     h1 {
@@ -467,7 +468,7 @@
 
     .feature-card {
       padding: 24px;
-      background: linear-gradient(135deg, rgba(129,130,255,0.12), rgba(255,255,255,0.04));
+      background: linear-gradient(135deg, rgba(41,171,224,0.12), rgba(255,255,255,0.04));
     }
 
     .feature-shell {
@@ -487,7 +488,7 @@
       align-content: start;
       padding: 18px;
       border-radius: 18px;
-      background: rgba(11,18,30,0.5);
+      background: rgba(13,27,42,0.5);
       border: 1px solid var(--line);
     }
 
@@ -501,7 +502,7 @@
       height: auto;
       border-radius: 14px;
       border: 1px solid var(--line);
-      background: rgba(11,18,30,0.6);
+      background: rgba(13,27,42,0.6);
     }
 
     .feature-label {
@@ -515,8 +516,8 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      background: rgba(129,130,255,0.18);
-      border: 1px solid rgba(129,130,255,0.35);
+      background: rgba(41,171,224,0.18);
+      border: 1px solid rgba(41,171,224,0.35);
       color: var(--secondary);
     }
 
@@ -579,8 +580,8 @@
       display: grid;
       gap: 14px;
       border-radius: 24px;
-      border: 1px solid var(--line);
-      background: linear-gradient(135deg, rgba(129,130,255,0.1), rgba(255,255,255,0.03));
+      border: 1px solid rgba(41,171,224,0.35);
+      background: linear-gradient(135deg, rgba(41,171,224,0.12), rgba(255,255,255,0.04));
     }
 
     .spotlight-media {
@@ -606,7 +607,7 @@
       object-fit: cover;
       border-radius: 16px;
       border: 1px solid var(--line);
-      background: rgba(11,18,30,0.5);
+      background: rgba(13,27,42,0.5);
     }
 
     .image-modal[hidden] {
@@ -620,7 +621,7 @@
       display: grid;
       place-items: center;
       padding: 28px;
-      background: rgba(6, 10, 18, 0.82);
+      background: rgba(7,10,18,0.82);
       backdrop-filter: blur(10px);
     }
 
@@ -647,7 +648,7 @@
       font-size: 1.5rem;
       line-height: 1;
       color: var(--secondary);
-      background: rgba(11, 18, 30, 0.92);
+      background: rgba(13,27,42,0.92);
       box-shadow: var(--shadow);
     }
 
@@ -659,7 +660,7 @@
       object-fit: contain;
       border-radius: 18px;
       border: 1px solid var(--line);
-      background: rgba(11, 18, 30, 0.96);
+      background: rgba(13,27,42,0.96);
       aspect-ratio: auto;
     }
 
@@ -734,7 +735,7 @@
       padding: 0 10px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(11,18,30,0.55);
+      background: rgba(13,27,42,0.55);
       color: var(--foreground);
       font-size: 0.82rem;
       white-space: nowrap;
@@ -747,8 +748,8 @@
 
     .pill.featured {
       color: var(--secondary);
-      background: rgba(129,130,255,0.18);
-      border-color: rgba(129,130,255,0.35);
+      background: rgba(41,171,224,0.18);
+      border-color: rgba(41,171,224,0.35);
     }
 
     .repo-actions { margin-top: auto; }
@@ -756,7 +757,7 @@
     .text-link {
       text-decoration: underline;
       font-weight: 700;
-      color: var(--primary);
+      color: var(--accent);
     }
 
     .title-link {
@@ -766,7 +767,7 @@
 
     .title-link:hover,
     .title-link:focus-visible {
-      color: var(--primary);
+      color: var(--accent);
     }
 
     .user-link {
@@ -776,7 +777,7 @@
 
     .user-link:hover,
     .user-link:focus-visible {
-      color: var(--primary);
+      color: var(--accent);
     }
 
     .lede a,
@@ -785,7 +786,7 @@
     .feature-note a,
     .prose-block a,
     footer a {
-      color: var(--primary);
+      color: var(--accent);
       text-decoration: underline;
     }
 
@@ -817,7 +818,7 @@
     }
 
     .prose-block a {
-      color: var(--primary);
+      color: var(--accent);
       font-weight: 700;
       text-decoration: none;
     }
@@ -873,7 +874,7 @@
     @media (prefers-contrast: more) {
       :root {
         --line: rgba(255, 255, 255, 0.28);
-        --foreground: #e3ebff;
+        --foreground: #ffffff;
       }
 
       .button,

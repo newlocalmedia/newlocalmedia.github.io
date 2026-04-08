@@ -333,7 +333,7 @@ function renderPage(repo, lookup) {
   <meta name="author" content="${escapeHtml(repo.owner.login === 'newlocalmedia' ? ORGANIZATION_NAME : 'Dan Knauss')}">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#272938">
+  <meta name="theme-color" content="#0D1B2A">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="${pageUrl}">
   <link rel="manifest" href="/site.webmanifest">
@@ -361,15 +361,16 @@ ${JSON.stringify(graph, null, 2)}
   </script>
   <style>
     :root {
-      --primary: #8182ff;
+      --primary: #29ABE0;
       --secondary: #ffffff;
-      --foreground: #c8d2d4;
-      --background: #272938;
-      --tertiary: #0b121e;
-      --surface: rgba(39, 41, 56, 0.88);
-      --surface-2: rgba(11, 18, 30, 0.88);
+      --foreground: #DCF0F9;
+      --background: #0D1B2A;
+      --tertiary: #071018;
+      --surface: rgba(20, 45, 70, 0.88);
+      --surface-2: rgba(13, 27, 42, 0.88);
       --line: rgba(255, 255, 255, 0.12);
-      --star: #f2c46d;
+      --star: #F5A623;
+      --accent: #F5A623;
       --shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
       --radius: 28px;
       --max: 980px;
@@ -381,13 +382,13 @@ ${JSON.stringify(graph, null, 2)}
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--secondary);
       background:
-        radial-gradient(circle at top left, rgba(129, 130, 255, 0.18), transparent 26%),
+        radial-gradient(circle at top left, rgba(41,171,224,0.18), transparent 26%),
         radial-gradient(circle at top right, rgba(255, 255, 255, 0.06), transparent 22%),
-        linear-gradient(180deg, #303348 0%, var(--background) 46%, var(--tertiary) 100%);
+        linear-gradient(180deg, #0F2035 0%, var(--background) 46%, var(--tertiary) 100%);
       line-height: 1.65;
     }
     a { color: inherit; text-underline-offset: 0.16em; text-decoration-thickness: 0.08em; }
-    a:focus-visible, button:focus-visible { outline: 3px solid rgba(129,130,255,0.85); outline-offset: 3px; }
+    a:focus-visible, button:focus-visible { outline: 3px solid rgba(41,171,224,0.85); outline-offset: 3px; }
     .skip-link {
       position: absolute; left: 14px; top: -48px; z-index: 1000; padding: 10px 14px; border-radius: 12px;
       background: var(--secondary); color: var(--tertiary); font-weight: 700; text-decoration: none;
@@ -404,8 +405,8 @@ ${JSON.stringify(graph, null, 2)}
     .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--foreground); }
     .muted, .lede, .breadcrumbs a, .breadcrumbs span, .section p, .detail-list dt { color: var(--foreground); }
     .stack { display: grid; gap: 18px; margin-top: 18px; }
-    .button, .pill { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(11,18,30,0.55); text-decoration: none; font-weight: 700; }
-    .button.primary { background: rgba(129,130,255,0.18); border-color: rgba(129,130,255,0.35); }
+    .button, .pill { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,27,42,0.55); text-decoration: none; font-weight: 700; }
+    .button.primary { background: rgba(41,171,224,0.18); border-color: rgba(41,171,224,0.35); }
     h1, h2 { margin: 0; letter-spacing: -0.03em; }
     h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 0.98; }
     h2 { font-size: 1.35rem; }
@@ -417,7 +418,7 @@ ${JSON.stringify(graph, null, 2)}
     .details-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; align-items: start; }
     .detail-list { display: grid; grid-template-columns: minmax(120px, 160px) 1fr; gap: 8px 12px; margin: 16px 0 0; }
     .detail-list dt, .detail-list dd { margin: 0; }
-    .detail-list a, .section a, .breadcrumbs a, footer a { color: var(--primary); }
+    .detail-list a, .section a, .breadcrumbs a, footer a { color: var(--accent); }
     .section a, footer a { text-decoration: underline; }
     .detail-list a { text-decoration: none; }
     .detail-list a:hover, .detail-list a:focus-visible, .section a:hover, .section a:focus-visible, .breadcrumbs a:hover, .breadcrumbs a:focus-visible, footer a:hover, footer a:focus-visible { color: var(--secondary); text-decoration: underline; }
@@ -425,18 +426,18 @@ ${JSON.stringify(graph, null, 2)}
     .summary-box { margin-top: -10px; padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
     .summary-box-media { margin: 0 0 14px; }
     .image-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; border-radius: 16px; }
-    .summary-box-media img, .image-trigger img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(11,18,30,0.5); }
+    .summary-box-media img, .image-trigger img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(13,27,42,0.5); }
     .image-modal[hidden] { display: none; }
     .image-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 28px; background: rgba(6,10,18,0.82); backdrop-filter: blur(10px); }
     .modal-open { overflow: hidden; }
     .image-modal-dialog { position: relative; width: min(1100px, 100%); max-height: calc(100vh - 56px); outline: none; }
-    .image-modal-close { position: absolute; top: -14px; right: -14px; width: 42px; height: 42px; border: 0; border-radius: 999px; cursor: pointer; font-size: 1.5rem; line-height: 1; color: var(--secondary); background: rgba(11,18,30,0.92); box-shadow: var(--shadow); }
-    .image-modal img { display: block; width: 100%; height: auto; max-height: calc(100vh - 56px); object-fit: contain; border-radius: 18px; border: 1px solid var(--line); background: rgba(11,18,30,0.96); }
+    .image-modal-close { position: absolute; top: -14px; right: -14px; width: 42px; height: 42px; border: 0; border-radius: 999px; cursor: pointer; font-size: 1.5rem; line-height: 1; color: var(--secondary); background: rgba(13,27,42,0.92); box-shadow: var(--shadow); }
+    .image-modal img { display: block; width: 100%; height: auto; max-height: calc(100vh - 56px); object-fit: contain; border-radius: 18px; border: 1px solid var(--line); background: rgba(13,27,42,0.96); }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .summary-box strong { display: block; margin-bottom: 6px; }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
-      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #e3ebff; }
+      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
       .button, .pill, .summary-box, .panel { border-width: 2px; }
     }
     @media (max-width: 760px) {
@@ -680,7 +681,7 @@ function renderOwnerPage(owner, repos) {
   <meta name="author" content="${escapeHtml(ownerLabel)}">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#272938">
+  <meta name="theme-color" content="#0D1B2A">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="${pageUrl}">
   <link rel="manifest" href="/site.webmanifest">
@@ -707,12 +708,12 @@ ${JSON.stringify(graph, null, 2)}
   </script>
   <style>
     :root {
-      --primary: #8182ff;
+      --primary: #29ABE0;
       --secondary: #ffffff;
-      --foreground: #c8d2d4;
-      --background: #272938;
-      --tertiary: #0b121e;
-      --surface: rgba(39, 41, 56, 0.88);
+      --foreground: #DCF0F9;
+      --background: #0D1B2A;
+      --tertiary: #071018;
+      --surface: rgba(20, 45, 70, 0.88);
       --line: rgba(255, 255, 255, 0.12);
       --shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
       --radius: 28px;
@@ -725,13 +726,13 @@ ${JSON.stringify(graph, null, 2)}
       font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--secondary);
       background:
-        radial-gradient(circle at top left, rgba(129, 130, 255, 0.18), transparent 26%),
+        radial-gradient(circle at top left, rgba(41,171,224,0.18), transparent 26%),
         radial-gradient(circle at top right, rgba(255, 255, 255, 0.06), transparent 22%),
-        linear-gradient(180deg, #303348 0%, var(--background) 46%, var(--tertiary) 100%);
+        linear-gradient(180deg, #0F2035 0%, var(--background) 46%, var(--tertiary) 100%);
       line-height: 1.65;
     }
     a { color: inherit; text-underline-offset: 0.16em; text-decoration-thickness: 0.08em; }
-    a:focus-visible { outline: 3px solid rgba(129,130,255,0.85); outline-offset: 3px; }
+    a:focus-visible { outline: 3px solid rgba(41,171,224,0.85); outline-offset: 3px; }
     .skip-link { position: absolute; left: 14px; top: -48px; z-index: 1000; padding: 10px 14px; border-radius: 12px; background: var(--secondary); color: var(--tertiary); font-weight: 700; text-decoration: none; }
     .skip-link:focus { top: 14px; }
     .shell { width: min(calc(100% - 28px), var(--max)); margin: 18px auto 40px; }
@@ -745,20 +746,20 @@ ${JSON.stringify(graph, null, 2)}
     .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--foreground); }
     .muted, .breadcrumbs a, .breadcrumbs span, .lede { color: var(--foreground); }
     .stack { display: grid; gap: 18px; margin-top: 18px; }
-    .button { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(11,18,30,0.55); text-decoration: none; font-weight: 700; }
+    .button { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,27,42,0.55); text-decoration: none; font-weight: 700; }
     h1, h2 { margin: 0; letter-spacing: -0.03em; }
     h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.02; }
     h2 { font-size: 1.35rem; }
     .lede { margin: 14px 0 0; font-size: 1.05rem; }
     .owner-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
     .owner-list li { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
-    .owner-list a, footer a, .breadcrumbs a { color: var(--primary); }
+    .owner-list a, footer a, .breadcrumbs a { color: var(--accent); }
     .owner-list a, footer a { text-decoration: underline; font-weight: 700; }
     .owner-list a:hover, .owner-list a:focus-visible, .breadcrumbs a:hover, .breadcrumbs a:focus-visible, footer a:hover, footer a:focus-visible { color: var(--secondary); text-decoration: underline; }
     .repo-meta { margin-top: 8px; color: var(--foreground); font-size: 0.95rem; }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
-      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #e3ebff; }
+      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
       .button, .owner-list li, .panel { border-width: 2px; }
     }
     @media (max-width: 760px) {
@@ -862,7 +863,7 @@ function renderProjectsIndex(reposByOwner) {
   <meta name="author" content="${escapeHtml(ORGANIZATION_NAME)}">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#272938">
+  <meta name="theme-color" content="#0D1B2A">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="canonical" href="${pageUrl}">
   <link rel="manifest" href="/site.webmanifest">
@@ -889,21 +890,21 @@ ${JSON.stringify(graph, null, 2)}
   </script>
   <style>
     :root {
-      --primary: #8182ff;
+      --primary: #29ABE0;
       --secondary: #ffffff;
-      --foreground: #c8d2d4;
-      --background: #272938;
-      --tertiary: #0b121e;
-      --surface: rgba(39, 41, 56, 0.88);
+      --foreground: #DCF0F9;
+      --background: #0D1B2A;
+      --tertiary: #071018;
+      --surface: rgba(20, 45, 70, 0.88);
       --line: rgba(255, 255, 255, 0.12);
       --shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
       --radius: 28px;
       --max: 980px;
     }
     * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--secondary); background: radial-gradient(circle at top left, rgba(129, 130, 255, 0.18), transparent 26%), radial-gradient(circle at top right, rgba(255, 255, 255, 0.06), transparent 22%), linear-gradient(180deg, #303348 0%, var(--background) 46%, var(--tertiary) 100%); line-height: 1.65; }
+    body { margin: 0; min-height: 100vh; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--secondary); background: radial-gradient(circle at top left, rgba(41,171,224,0.18), transparent 26%), radial-gradient(circle at top right, rgba(255, 255, 255, 0.06), transparent 22%), linear-gradient(180deg, #0F2035 0%, var(--background) 46%, var(--tertiary) 100%); line-height: 1.65; }
     a { color: inherit; text-underline-offset: 0.16em; text-decoration-thickness: 0.08em; }
-    a:focus-visible { outline: 3px solid rgba(129,130,255,0.85); outline-offset: 3px; }
+    a:focus-visible { outline: 3px solid rgba(41,171,224,0.85); outline-offset: 3px; }
     .skip-link { position: absolute; left: 14px; top: -48px; z-index: 1000; padding: 10px 14px; border-radius: 12px; background: var(--secondary); color: var(--tertiary); font-weight: 700; text-decoration: none; }
     .skip-link:focus { top: 14px; }
     .shell { width: min(calc(100% - 28px), var(--max)); margin: 18px auto 40px; }
@@ -916,19 +917,19 @@ ${JSON.stringify(graph, null, 2)}
     .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--foreground); }
     .muted, .lede { color: var(--foreground); }
     .stack { display: grid; gap: 18px; margin-top: 18px; }
-    .button { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(11,18,30,0.55); text-decoration: none; font-weight: 700; }
+    .button { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,27,42,0.55); text-decoration: none; font-weight: 700; }
     h1, h2 { margin: 0; letter-spacing: -0.03em; }
     h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.02; }
     h2 { font-size: 1.35rem; }
     .lede { margin: 14px 0 0; font-size: 1.05rem; }
     .owner-groups { display: grid; gap: 18px; }
     .owner-card { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
-    .owner-card a, footer a { color: var(--primary); text-decoration: underline; font-weight: 700; }
+    .owner-card a, footer a { color: var(--accent); text-decoration: underline; font-weight: 700; }
     .owner-card a:hover, .owner-card a:focus-visible, footer a:hover, footer a:focus-visible { color: var(--secondary); text-decoration: underline; }
     .owner-card ul { margin: 10px 0 0; padding-left: 1.2rem; color: var(--foreground); }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
-      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #e3ebff; }
+      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
       .button, .owner-card, .panel { border-width: 2px; }
     }
   </style>
