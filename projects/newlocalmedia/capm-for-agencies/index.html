@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CAPM for Agencies | Work in Progress</title>
-  <meta name="description" content="Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics. Main App · Small agency and freelancer version">
+  <meta name="description" content="Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics.">
   <meta name="author" content="New Local Media">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="color-scheme" content="dark">
@@ -18,7 +18,7 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="New Local Media">
   <meta property="og:title" content="CAPM for Agencies | Work in Progress">
-  <meta property="og:description" content="Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics. Main App · Small agency and freelancer version">
+  <meta property="og:description" content="Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics.">
   <meta property="og:url" content="https://newlocalmedia.github.io/projects/newlocalmedia/capm-for-agencies/">
   <meta property="og:image" content="https://newlocalmedia.github.io/assets/capm-for-agencies-preview.png">
   <meta property="og:image:secure_url" content="https://newlocalmedia.github.io/assets/capm-for-agencies-preview.png">
@@ -28,7 +28,7 @@
   <meta property="og:image:alt" content="Generated preview image for CAPM for Agencies showing the two pricing tools and the project risk model.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CAPM for Agencies | Work in Progress">
-  <meta name="twitter:description" content="Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics. Main App · Small agency and freelancer version">
+  <meta name="twitter:description" content="Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics.">
   <meta name="twitter:image" content="https://newlocalmedia.github.io/assets/capm-for-agencies-preview.png">
   <meta name="twitter:image:alt" content="Generated preview image for CAPM for Agencies showing the two pricing tools and the project risk model.">
   <script type="application/ld+json">
@@ -86,7 +86,7 @@
       "@id": "https://newlocalmedia.github.io/projects/newlocalmedia/capm-for-agencies/#webpage",
       "url": "https://newlocalmedia.github.io/projects/newlocalmedia/capm-for-agencies/",
       "name": "CAPM for Agencies | Work in Progress",
-      "description": "Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics. Main App · Small agency and freelancer version",
+      "description": "Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics.",
       "isPartOf": {
         "@id": "https://newlocalmedia.github.io/#website"
       },
@@ -106,7 +106,7 @@
       "@type": "SoftwareSourceCode",
       "@id": "https://newlocalmedia.github.io/projects/newlocalmedia/capm-for-agencies/#primary",
       "name": "CAPM for Agencies",
-      "description": "Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics. Main App · Small agency and freelancer version",
+      "description": "Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics.",
       "url": "https://newlocalmedia.github.io/projects/newlocalmedia/capm-for-agencies/",
       "isPartOf": {
         "@id": "https://newlocalmedia.github.io/#website"
@@ -222,6 +222,17 @@
     .download-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
     .download-btn { gap: 7px; font-size: 0.88rem; }
     .download-btn svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .poem-block { margin-top: 22px; }
+    .poem-cite { display: block; font-size: 0.88rem; font-style: italic; color: var(--foreground); margin-top: 8px; padding-left: 25px; }
+    .below-details-quote { margin-top: 18px; }
+    .download-links a.button { text-decoration: none; }
+    .docs-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+    .docs-table td { padding: 8px 12px; vertical-align: top; border-top: 1px solid var(--line); }
+    .docs-table td:first-child { white-space: nowrap; padding-right: 20px; }
+    .docs-table td:first-child a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .docs-table td:first-child a:hover, .docs-table td:first-child a:focus-visible { color: var(--secondary); text-decoration: underline; }
+    .docs-table td:last-child { color: var(--foreground); font-size: 0.93rem; }
+    @media (max-width: 580px) { .docs-table tr { display: block; border-top: 1px solid var(--line); padding: 10px 0; } .docs-table td { display: block; padding: 4px 0; border-top: none; } .docs-table td:first-child { white-space: normal; } }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
       :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
@@ -283,8 +294,6 @@
         <p>This repository ships two related apps: the fuller <a href="https://newlocalmedia.github.io/capm-for-agencies/"><strong>Decision Cards</strong></a> model and <a href="https://newlocalmedia.github.io/capm-for-agencies/project-risk-check/index.html"><strong>Project Risk Check</strong></a>, a simpler model for small agencies and freelancers. Together they translate systematic risk, engagement risk, and pricing discipline into something a working agency can actually use.</p>
       </section>
 
-
-
       <section class="panel section" aria-labelledby="details-title">
         <div class="section-head">
           <div>
@@ -292,9 +301,12 @@
           </div>
         </div>
         <div class="details-grid">
-          <dl class="detail-list">
-            <dt>Owner</dt><dd><a href="/projects/newlocalmedia/">@newlocalmedia</a></dd><dt>Source</dt><dd><a href="https://github.com/newlocalmedia/capm-for-agencies">newlocalmedia/capm-for-agencies</a></dd><dt>Apps</dt><dd><a href="https://newlocalmedia.github.io/capm-for-agencies/">Main App</a> · <a href="https://newlocalmedia.github.io/capm-for-agencies/project-risk-check/index.html">Small agency and freelancer version</a></dd><dt>Version</dt><dd>0.1.1</dd><dt>CI</dt><dd><a href="https://github.com/newlocalmedia/capm-for-agencies/actions">GitHub Actions</a></dd><dt>Tests</dt><dd>46 automated Node tests</dd><dt>License</dt><dd><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></dd><dt>Last updated</dt><dd><time datetime="2026-03-31T23:53:19Z">Mar 31, 2026</time></dd><dt>Primary language</dt><dd>HTML</dd><dt>Stars</dt><dd><span class="star-icon" aria-hidden="true">★</span>1</dd>
-          </dl>
+          <div>
+            <dl class="detail-list">
+              <dt>Owner</dt><dd><a href="/projects/newlocalmedia/">@newlocalmedia</a></dd><dt>Source</dt><dd><a href="https://github.com/newlocalmedia/capm-for-agencies">newlocalmedia/capm-for-agencies</a></dd><dt>Apps</dt><dd><a href="https://newlocalmedia.github.io/capm-for-agencies/">Main App</a> · <a href="https://newlocalmedia.github.io/capm-for-agencies/project-risk-check/index.html">Small agency and freelancer version</a></dd><dt>Version</dt><dd>0.1.1</dd><dt>CI</dt><dd><a href="https://github.com/newlocalmedia/capm-for-agencies/actions">GitHub Actions</a></dd><dt>Tests</dt><dd>46 automated Node tests</dd><dt>License</dt><dd><a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></dd><dt>Last updated</dt><dd><time datetime="2026-03-31T23:53:19Z">Mar 31, 2026</time></dd><dt>Primary language</dt><dd>HTML</dd><dt>Stars</dt><dd><span class="star-icon" aria-hidden="true">★</span>1</dd>
+            </dl>
+
+          </div>
           <div class="summary-box">
             <figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="https://newlocalmedia.github.io/assets/capm-for-agencies-preview.png" data-modal-alt="Generated preview image for CAPM for Agencies showing the two pricing tools and the project risk model." aria-label="Open larger image for CAPM for Agencies"><img src="https://newlocalmedia.github.io/assets/capm-for-agencies-preview.png" alt="Generated preview image for CAPM for Agencies showing the two pricing tools and the project risk model." loading="eager" decoding="async"></button></figure>
             <strong>CAPM Adapted for Agencies, Consultants, and B-Corps</strong>
@@ -303,7 +315,12 @@
 
           </div>
         </div>
+
       </section>
+
+
+
+
 
 
       <section class="panel section" aria-labelledby="related-title">

@@ -179,6 +179,27 @@ SPECS = {
         ],
         'footer': 'Plugin survey • Bridge patterns • Verification paths',
     },
+    'ai-assisted-docs-preview.png': {
+        'title': 'AI-Assisted Docs',
+        'subtitle': 'Methodology, agent roles, and editorial workflows for AI-assisted technical writing and documentation review.',
+        'pills': [('Agent Roles', ACCENT), ('BDD Scenarios', GOLD), ('Review Pipeline', GREEN)],
+        'left_title': 'What It Includes',
+        'left_bullets': [
+            'Multi-model editorial review pipeline',
+            'Defined agent roles and responsibilities',
+            'BDD scenarios for doc validation',
+            'WordPress-specific skills and workflows',
+        ],
+        'right_title': 'Why It Matters',
+        'right_bullets': [
+            'Preserve rigor, accuracy, and editorial judgment.',
+            'Audit trails and cross-model synthesis.',
+            'Reusable skill configurations for any project.',
+            'AI helps \u2014 your judgment leads.',
+        ],
+        'footer': 'Editorial methodology \u2022 Agent skills \u2022 Structured documentation review',
+        'center': True,
+    },
     'the-drafting-table-preview.png': {
         'title': 'The Drafting Table',
         'subtitle': 'A full-site-editing WordPress theme inspired by the architect\'s studio: parchment, blueprint borders, and refined typography.',
@@ -255,10 +276,22 @@ def generate(filename, spec):
     draw = ImageDraw.Draw(img)
     background(draw)
 
+    center = spec.get('center', False)
     x0 = 72
-    draw.text((x0, 60), spec['title'], font=TITLE, fill=WHITE)
-    subtitle_lines = wrap_text(draw, spec['subtitle'], SUBTITLE, 1040)
-    subtitle_bottom = draw_lines(draw, subtitle_lines, SUBTITLE, MUTED, x0, 126, line_gap=6)
+
+    if center:
+        draw.text((W / 2, 60), spec['title'], font=TITLE, fill=WHITE, anchor='mt')
+        subtitle_lines = wrap_text(draw, spec['subtitle'], SUBTITLE, 1040)
+        y = 126
+        for line in subtitle_lines:
+            draw.text((W / 2, y), line, font=SUBTITLE, fill=MUTED, anchor='mt')
+            bb = draw.textbbox((W / 2, y), line, font=SUBTITLE, anchor='mt')
+            y = bb[3] + 6
+        subtitle_bottom = y
+    else:
+        draw.text((x0, 60), spec['title'], font=TITLE, fill=WHITE)
+        subtitle_lines = wrap_text(draw, spec['subtitle'], SUBTITLE, 1040)
+        subtitle_bottom = draw_lines(draw, subtitle_lines, SUBTITLE, MUTED, x0, 126, line_gap=6)
 
     # Derive pill position from actual subtitle height so long subtitles never
     # bleed into the pills. 184 is the minimum (matches original 1-line layout).

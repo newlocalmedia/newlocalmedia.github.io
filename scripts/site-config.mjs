@@ -35,7 +35,7 @@ export const SECTION_META = {
   },
   ai_docs: {
     title: 'AI-Assisted Docs and Related Work',
-    description: 'Agentic tools and processes to help humans write, review, and maintain technical documentation. Don\'t sacrifice — *increase* — your rigor, accuracy, and editorial judgment.',
+    description: 'Agentic tools and processes to help humans write, review, and maintain technical documentation. Don\u2019t sacrifice \u2014 increase \u2014 your rigor, accuracy, and editorial judgment.',
     narrative: 'This project sits in the AI-assisted docs block, where the focus is on documentation systems, editorial standards, and durable operations guidance that can still benefit from AI-assisted workflows.'
   },
   spotlight: {
@@ -58,8 +58,10 @@ export const SECTION_META = {
 export const PROJECT_META = {
   'dknauss/wp-sudo': {
     displayTitle: 'Sudo',
+    pageTitle: 'Sudo \u26E9\uFE0F',
     schemaType: 'SoftwareSourceCode',
     summary: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.',
+    summaryHtml: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across <code>wp-admin</code> <code>REST</code> <code>WP-CLI</code> <code>Cron</code> <code>WPGraphQL</code> <code>XML-RPC</code>.',
     whyHeading: 'Gate Any Privileged Action',
     narrative: 'When a user attempts a gated action, Sudo intercepts the request at `admin_init`. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.',
     narrativeHtml: [
@@ -78,7 +80,18 @@ export const PROJECT_META = {
       attributionHtml: 'Abatsu-ni, <em>Diary of the Waning Moon</em>'
     },
     focus: 'Sudo for WordPress! 🥪',
-    subfocus: 'Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️',
+    subfocus: 'Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate.',
+    subfocusHtml: 'Risky actions \u2014 activating plugins, deleting users, changing key settings \u2014 are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for <code>REST</code> <code>WP-CLI</code> <code>Cron</code> <code>WPGraphQL</code> <code>XML-RPC</code>. No role escalation, no new permissions \u2014 just a gate.',
+    docs: [
+      { label: 'WordPress Core Authentication', description: 'How WordPress authentication works \u2014 request flow, session handling, cookies, and the nonce system.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/wordpress-core-authentication.md' },
+      { label: 'Two-Factor Authentication Flow', description: 'The full 2FA request lifecycle with a flowchart \u2014 and where Sudo intercepts.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/two-factor-authentication-flow.md' },
+      { label: 'Security Model', description: 'Threat model and design decisions behind Sudo\u2019s reauthentication architecture.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/security-model.md' },
+      { label: 'Developer Reference', description: 'Hooks, filters, API surface, and integration patterns for building on Sudo.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/developer-reference.md' },
+      { label: 'Two-Factor Integration', description: 'Bridging Sudo with WP 2FA, Wordfence, AIOS, and other plugins for delegated code verification.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/two-factor-integration.md' },
+      { label: 'FAQ', description: 'Answers to common questions about configuration, behavior, and edge cases.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/FAQ.md' },
+      { label: 'Architecture Comparison Matrix', description: 'How Sudo compares to other re-auth and session-gating approaches.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/sudo-architecture-comparison-matrix.md' },
+      { label: 'README', description: 'Installation, configuration, and usage overview.', url: 'https://github.com/dknauss/wp-sudo/blob/main/readme.md' }
+    ],
     relatedProjects: [
       {
         fullName: 'dknauss/wordpress-2fa-ecosystem',
@@ -101,11 +114,27 @@ export const PROJECT_META = {
     primaryImage: {
       url: 'https://newlocalmedia.github.io/assets/ai-assisted-docs-preview.png',
       alt: 'Diagram-style preview of AI-Assisted Docs showing agentic editorial roles, review stages, and BDD scenarios for technical documentation.'
+    },
+    subfocus: 'Agentic tools and processes to help humans write, review, and maintain technical documentation. Don\u2019t sacrifice \u2014 increase \u2014 your rigor, accuracy, and editorial judgment.',
+    subfocusHtml: 'Agentic tools and processes to help humans write, review, and maintain technical documentation. Don\u2019t sacrifice \u2014 <em>increase</em> \u2014 your rigor, accuracy, and editorial judgment.',
+    docs: [
+      { label: 'README', description: 'Overview of the methodology, agent roles, and how to use this repository.', url: 'https://github.com/dknauss/ai-assisted-docs/blob/main/README.md' },
+      { label: 'AGENTS.md', description: 'Agent configuration, roles, and capabilities for the editorial review team.', url: 'https://github.com/dknauss/ai-assisted-docs/blob/main/AGENTS.md' },
+      { label: 'Review Methodology', description: 'How multi-model editorial review works \u2014 rounds, synthesis, and audit trails.', url: 'https://github.com/dknauss/ai-assisted-docs/blob/main/reviews/README.md' },
+      { label: 'Architecture', description: 'Technical architecture of the multi-model documentation review pipeline.', url: 'https://github.com/dknauss/ai-assisted-docs/blob/main/.planning/codebase/ARCHITECTURE.md' },
+      { label: 'WordPress Docs Skills', description: 'Reusable agent skill configurations for WordPress documentation tasks.', url: 'https://github.com/dknauss/ai-assisted-docs/tree/main/wp-docs-skills' },
+      { label: 'BDD Scenarios', description: 'Behavior-driven test scenarios for researching, reviewing, and validating technical docs.', url: 'https://github.com/dknauss/ai-assisted-docs/tree/main/scenarios' }
+    ],
+    quote: {
+      text: 'The tech writer isn\u2019t being replaced by AI, but rather augmented by AI as a co-partner in developing documentation.',
+      attribution: 'Tom Johnson, Google \u2014 I\u2019d Rather Be Writing',
+      attributionHtml: 'Tom Johnson, Google \u2014 <a href="https://idratherbewriting.com/blog/cyborg-model-emerging-talk"><em>I\u2019d Rather Be Writing</em></a>'
     }
   },
   'dknauss/wordpress-runbook-template': {
     displayTitle: 'WordPress Runbook Template',
     schemaType: 'TechArticle',
+    release: { tag: 'v3.1.0', url: 'https://github.com/dknauss/wordpress-runbook-template/releases/tag/v3.1.0' },
     whyHeading: 'Run WordPress with a Playbook',
     narrativeHtml: [
       'This template answers <strong>“how do I do it?”</strong> for a specific WordPress installation: numbered procedures, expected outcomes, rollback instructions, and copy-pasteable commands for the people running the site.',
@@ -129,6 +158,7 @@ export const PROJECT_META = {
   'dknauss/wp-security-hardening-guide': {
     displayTitle: 'WordPress Security Hardening Guide',
     schemaType: 'TechArticle',
+    release: { tag: 'v1.1.0', url: 'https://github.com/dknauss/wp-security-hardening-guide/releases/tag/v1.1.0' },
     whyHeading: 'Design a Defensible WordPress Stack',
     narrativeHtml: [
       'This guide answers <strong>“what should I implement and why?”</strong> It brings WordPress core security, server hardening, authentication, supply chain defense, and emerging AI risk into one architecture-level document.',
@@ -152,6 +182,7 @@ export const PROJECT_META = {
   'dknauss/wp-security-benchmark': {
     displayTitle: 'WordPress Security Benchmark',
     schemaType: 'TechArticle',
+    release: { tag: 'v1.1.0', url: 'https://github.com/dknauss/wp-security-benchmark/releases/tag/v1.1.0' },
     summary: 'WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on the LEMP/LAMP stack.',
     whyHeading: 'Audit the Stack Control by Control',
     narrativeHtml: [
@@ -176,6 +207,7 @@ export const PROJECT_META = {
   'dknauss/wp-security-style-guide': {
     displayTitle: 'WordPress Security Style Guide',
     schemaType: 'TechArticle',
+    release: { tag: 'v1.1.0', url: 'https://github.com/dknauss/wp-security-style-guide/releases/tag/v1.1.0' },
     whyHeading: 'Write About Security Without FUD',
     narrativeHtml: [
       'For open source software providers, this editorial reference answers the question, <strong>”How should I write about security?”</strong> It sets voice, tone, terminology, and technical formatting rules for people communicating about risk and vulnerability, with a special emphasis on the WordPress ecosystem. Build trust. Reduce fear, uncertainty, and doubt (FUD).',
@@ -197,7 +229,8 @@ export const PROJECT_META = {
     ],
     quote: {
       text: 'As cybersecurity leaders, we have to create our message of influence because security is a culture, and you need the business to take place and be part of that security culture.',
-      attribution: 'Britney Hommertzheim'
+      attribution: 'Britney Hommertzheim',
+      belowDetails: true
     }
   },
   'newlocalmedia/capm-for-agencies': {

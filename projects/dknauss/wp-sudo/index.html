@@ -216,6 +216,17 @@
     .download-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
     .download-btn { gap: 7px; font-size: 0.88rem; }
     .download-btn svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .poem-block { margin-top: 22px; }
+    .poem-cite { display: block; font-size: 0.88rem; font-style: italic; color: var(--foreground); margin-top: 8px; padding-left: 25px; }
+    .below-details-quote { margin-top: 18px; }
+    .download-links a.button { text-decoration: none; }
+    .docs-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+    .docs-table td { padding: 8px 12px; vertical-align: top; border-top: 1px solid var(--line); }
+    .docs-table td:first-child { white-space: nowrap; padding-right: 20px; }
+    .docs-table td:first-child a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .docs-table td:first-child a:hover, .docs-table td:first-child a:focus-visible { color: var(--secondary); text-decoration: underline; }
+    .docs-table td:last-child { color: var(--foreground); font-size: 0.93rem; }
+    @media (max-width: 580px) { .docs-table tr { display: block; border-top: 1px solid var(--line); padding: 10px 0; } .docs-table td { display: block; padding: 4px 0; border-top: none; } .docs-table td:first-child { white-space: normal; } }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
       :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
@@ -256,8 +267,8 @@
       <article class="panel hero">
         <div class="hero-copy">
           <div class="eyebrow">Featured Repo</div>
-          <h1>Sudo</h1>
-          <p class="lede">WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.</p>
+          <h1>Sudo ⛩️</h1>
+          <p class="lede">WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across <code>wp-admin</code> <code>REST</code> <code>WP-CLI</code> <code>Cron</code> <code>WPGraphQL</code> <code>XML-RPC</code>.</p>
           <div class="meta">
             <a class="pill" href="/projects/dknauss/">@dknauss</a>
             <span class="pill">PHP</span>
@@ -278,8 +289,6 @@
         <p>Related projects in this same part of the collection include WordPress 2FA Ecosystem.</p>
       </section>
 
-
-
       <section class="panel section" aria-labelledby="details-title">
         <div class="section-head">
           <div>
@@ -287,17 +296,40 @@
           </div>
         </div>
         <div class="details-grid">
-          <dl class="detail-list">
-            <dt>Owner</dt><dd><a href="/projects/dknauss/">@dknauss</a></dd><dt>Source</dt><dd><a href="https://github.com/dknauss/wp-sudo">dknauss/wp-sudo</a></dd><dt>CI</dt><dd><a href="https://github.com/dknauss/wp-sudo/actions">GitHub Actions</a></dd><dt>Last updated</dt><dd><time datetime="2026-04-04T06:14:45Z">Apr 4, 2026</time></dd><dt>Primary language</dt><dd>PHP</dd><dt>Stars</dt><dd><span class="star-icon" aria-hidden="true">★</span>41</dd>
-          </dl>
+          <div>
+            <dl class="detail-list">
+              <dt>Owner</dt><dd><a href="/projects/dknauss/">@dknauss</a></dd><dt>Source</dt><dd><a href="https://github.com/dknauss/wp-sudo">dknauss/wp-sudo</a></dd><dt>CI</dt><dd><a href="https://github.com/dknauss/wp-sudo/actions">GitHub Actions</a></dd><dt>Last updated</dt><dd><time datetime="2026-04-04T06:14:45Z">Apr 4, 2026</time></dd><dt>Primary language</dt><dd>PHP</dd><dt>Stars</dt><dd><span class="star-icon" aria-hidden="true">★</span>41</dd>
+            </dl>
+            <div class="poem-block"><blockquote class="pull-quote pull-quote--poem"><p>So full of cracks,<br>the barrier gatehouse of Fuwa<br>lets both rain and moonlight in—<br>quietly exposed, yet enduring.</p></blockquote><cite class="poem-cite">Abatsu-ni, <em>Diary of the Waning Moon</em></cite></div>
+          </div>
           <div class="summary-box">
             <figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="https://newlocalmedia.github.io/assets/wp-sudo-preview.png" data-modal-alt="Sudo for WordPress preview image using the Fuwa no Seki graphic." aria-label="Open larger image for Sudo"><img src="https://newlocalmedia.github.io/assets/wp-sudo-preview.png" alt="Sudo for WordPress preview image using the Fuwa no Seki graphic." loading="eager" decoding="async"></button></figure>
             <strong>Sudo for WordPress! 🥪</strong>
-            <p>Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, &amp; XML-RPC. No role escalation, no new permissions — just a gate. ⛩️</p>
+            <p>Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for <code>REST</code> <code>WP-CLI</code> <code>Cron</code> <code>WPGraphQL</code> <code>XML-RPC</code>. No role escalation, no new permissions — just a gate.</p>
 
-            <blockquote class="pull-quote pull-quote--poem"><p>So full of cracks,<br>the barrier gatehouse of Fuwa<br>lets both rain and moonlight in—<br>quietly exposed, yet enduring.</p><cite>Abatsu-ni, <em>Diary of the Waning Moon</em></cite></blockquote>
+
           </div>
         </div>
+
+      </section>
+
+
+
+
+      <section class="panel section" aria-labelledby="docs-title">
+        <div class="section-head"><div><h2 id="docs-title">Documentation</h2></div></div>
+        <table class="docs-table">
+          <tbody>
+            <tr><td><a href="https://github.com/dknauss/wp-sudo/blob/main/docs/wordpress-core-authentication.md">WordPress Core Authentication</a></td><td>How WordPress authentication works — request flow, session handling, cookies, and the nonce system.</td></tr>
+            <tr><td><a href="https://github.com/dknauss/wp-sudo/blob/main/docs/two-factor-authentication-flow.md">Two-Factor Authentication Flow</a></td><td>The full 2FA request lifecycle with a flowchart — and where Sudo intercepts.</td></tr>
+            <tr><td><a href="https://github.com/dknauss/wp-sudo/blob/main/docs/security-model.md">Security Model</a></td><td>Threat model and design decisions behind Sudo’s reauthentication architecture.</td></tr>
+            <tr><td><a href="https://github.com/dknauss/wp-sudo/blob/main/docs/developer-reference.md">Developer Reference</a></td><td>Hooks, filters, API surface, and integration patterns for building on Sudo.</td></tr>
+            <tr><td><a href="https://github.com/dknauss/wp-sudo/blob/main/docs/two-factor-integration.md">Two-Factor Integration</a></td><td>Bridging Sudo with WP 2FA, Wordfence, AIOS, and other plugins for delegated code verification.</td></tr>
+            <tr><td><a href="https://github.com/dknauss/wp-sudo/blob/main/docs/FAQ.md">FAQ</a></td><td>Answers to common questions about configuration, behavior, and edge cases.</td></tr>
+            <tr><td><a href="https://github.com/dknauss/wp-sudo/blob/main/docs/sudo-architecture-comparison-matrix.md">Architecture Comparison Matrix</a></td><td>How Sudo compares to other re-auth and session-gating approaches.</td></tr>
+            <tr><td><a href="https://github.com/dknauss/wp-sudo/blob/main/readme.md">README</a></td><td>Installation, configuration, and usage overview.</td></tr>
+          </tbody>
+        </table>
       </section>
 
 

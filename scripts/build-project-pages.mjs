@@ -57,6 +57,8 @@ function summaryHtml(repo) {
 }
 
 function descriptionText(repo) {
+  const plain = PROJECT_META[repo.full_name]?.summary;
+  if (plain) return plain;
   return stripTags(summaryHtml(repo));
 }
 
@@ -219,6 +221,15 @@ function detailItems(repo) {
 
   if (meta.version) {
     items.push(['Version', escapeHtml(meta.version)]);
+  }
+
+  if (meta.release) {
+    items.push([
+      'Latest release',
+      meta.release.url
+        ? `<a href="${meta.release.url}">${escapeHtml(meta.release.tag)}</a>`
+        : escapeHtml(meta.release.tag)
+    ]);
   }
 
   items.push(['CI', `<a href="${repo.html_url}/actions">GitHub Actions</a>`]);
@@ -458,6 +469,17 @@ ${JSON.stringify(graph, null, 2)}
     .download-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
     .download-btn { gap: 7px; font-size: 0.88rem; }
     .download-btn svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .poem-block { margin-top: 22px; }
+    .poem-cite { display: block; font-size: 0.88rem; font-style: italic; color: var(--foreground); margin-top: 8px; padding-left: 25px; }
+    .below-details-quote { margin-top: 18px; }
+    .download-links a.button { text-decoration: none; }
+    .docs-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+    .docs-table td { padding: 8px 12px; vertical-align: top; border-top: 1px solid var(--line); }
+    .docs-table td:first-child { white-space: nowrap; padding-right: 20px; }
+    .docs-table td:first-child a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .docs-table td:first-child a:hover, .docs-table td:first-child a:focus-visible { color: var(--secondary); text-decoration: underline; }
+    .docs-table td:last-child { color: var(--foreground); font-size: 0.93rem; }
+    @media (max-width: 580px) { .docs-table tr { display: block; border-top: 1px solid var(--line); padding: 10px 0; } .docs-table td { display: block; padding: 4px 0; border-top: none; } .docs-table td:first-child { white-space: normal; } }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
       :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
@@ -498,7 +520,7 @@ ${JSON.stringify(graph, null, 2)}
       <article class="panel hero">
         <div class="hero-copy">
           <div class="eyebrow">${escapeHtml(section.title)}</div>
-          <h1>${escapeHtml(label)}</h1>
+          <h1>${escapeHtml(meta.pageTitle || label)}</h1>
           <p class="lede">${summaryHtml(repo)}</p>
           <div class="meta">
             <a class="pill" href="${ownerLink(repo.owner.login)}">@${escapeHtml(repo.owner.login)}</a>
@@ -518,18 +540,6 @@ ${JSON.stringify(graph, null, 2)}
         ${paragraphs.map((paragraph) => `<p>${paragraph.html || inlineCodeHtml(paragraph.text)}</p>`).join('\n        ')}
       </section>
 
-      ${meta.downloads?.length ? `
-      <section class="panel section" aria-labelledby="downloads-title">
-        <div class="section-head"><div><h2 id="downloads-title">Download</h2></div></div>
-        <div class="download-links">
-          ${meta.downloads.map((d) => {
-            const isPdf = d.label === 'PDF';
-            const cls = isPdf ? 'button primary download-btn' : 'button download-btn';
-            return `<a class="${cls}" href="${d.url}" download>${iconForFormat(d.label)}${escapeHtml(d.label)}</a>`;
-          }).join('')}
-        </div>
-      </section>` : ''}
-
       <section class="panel section" aria-labelledby="details-title">
         <div class="section-head">
           <div>
@@ -537,23 +547,60 @@ ${JSON.stringify(graph, null, 2)}
           </div>
         </div>
         <div class="details-grid">
-          <dl class="detail-list">
-            ${details.map(([term, value]) => `<dt>${escapeHtml(term)}</dt><dd>${value}</dd>`).join('')}
-          </dl>
-          <div class="summary-box">
-            ${primaryImage ? `<figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${escapeHtml(primaryImage.alt || `${label} preview image.`)}" aria-label="Open larger image for ${escapeHtml(label)}"><img src="${primaryImage.url}" alt="${escapeHtml(primaryImage.alt || `${label} preview image.`)}" loading="eager" decoding="async"></button></figure>` : ''}
-            <strong>${escapeHtml(meta.focus || section.title)}</strong>
-            <p>${escapeHtml(meta.subfocus || section.description)}</p>
-            ${meta.extraLinks?.length && !meta.omitSummaryBoxLinks ? `<p>${meta.extraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')}</p>` : ''}
-            ${meta.quote ? (() => {
+          <div>
+            <dl class="detail-list">
+              ${details.map(([term, value]) => `<dt>${escapeHtml(term)}</dt><dd>${value}</dd>`).join('')}
+            </dl>
+            ${meta.quote?.poem ? (() => {
               const q = meta.quote;
               const textHtml = q.html || (q.noMarks ? escapeHtml(q.text) : `\u201C${escapeHtml(q.text)}\u201D`);
               const citeHtml = q.attributionHtml || `\u2014 ${escapeHtml(q.attribution)}`;
-              return `<blockquote class="pull-quote${q.poem ? ' pull-quote--poem' : ''}"><p>${textHtml}</p><cite>${citeHtml}</cite></blockquote>`;
+              return `<div class="poem-block"><blockquote class="pull-quote pull-quote--poem"><p>${textHtml}</p></blockquote><cite class="poem-cite">${citeHtml}</cite></div>`;
+            })() : ''}
+          </div>
+          <div class="summary-box">
+            ${primaryImage ? `<figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${escapeHtml(primaryImage.alt || `${label} preview image.`)}" aria-label="Open larger image for ${escapeHtml(label)}"><img src="${primaryImage.url}" alt="${escapeHtml(primaryImage.alt || `${label} preview image.`)}" loading="eager" decoding="async"></button></figure>` : ''}
+            <strong>${escapeHtml(meta.focus || section.title)}</strong>
+            <p>${meta.subfocusHtml || escapeHtml(meta.subfocus || section.description)}</p>
+            ${meta.extraLinks?.length && !meta.omitSummaryBoxLinks ? `<p>${meta.extraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')}</p>` : ''}
+            ${meta.quote && !meta.quote.poem && !meta.quote.belowDetails ? (() => {
+              const q = meta.quote;
+              const textHtml = q.html || (q.noMarks ? escapeHtml(q.text) : `\u201C${escapeHtml(q.text)}\u201D`);
+              const citeHtml = q.attributionHtml || `\u2014 ${escapeHtml(q.attribution)}`;
+              return `<blockquote class="pull-quote"><p>${textHtml}</p><cite>${citeHtml}</cite></blockquote>`;
             })() : ''}
           </div>
         </div>
+        ${meta.quote?.belowDetails ? (() => {
+          const q = meta.quote;
+          const textHtml = q.html || (q.noMarks ? escapeHtml(q.text) : `\u201C${escapeHtml(q.text)}\u201D`);
+          const citeHtml = q.attributionHtml || `\u2014 ${escapeHtml(q.attribution)}`;
+          return `<blockquote class="pull-quote below-details-quote"><p>${textHtml}</p><cite>${citeHtml}</cite></blockquote>`;
+        })() : ''}
       </section>
+
+      ${meta.downloads?.length ? `
+      <section class="panel section" aria-labelledby="downloads-title">
+        <div class="section-head"><div><h2 id="downloads-title">Get the Latest Edition</h2></div></div>
+        <div class="download-links">
+          ${meta.downloads.map((d) => {
+            const isPdf = d.label === 'PDF';
+            const cls = isPdf ? 'button primary download-btn' : 'button download-btn';
+            const dlabel = ({ PDF: '.pdf', DOCX: '.docx', EPUB: '.epub', Markdown: '.md' }[d.label] || `.${d.label.toLowerCase()}`);
+            return `<a class="${cls}" href="${d.url}" download>${iconForFormat(d.label)}${escapeHtml(dlabel)}</a>`;
+          }).join('')}
+        </div>
+      </section>` : ''}
+
+      ${meta.docs?.length ? `
+      <section class="panel section" aria-labelledby="docs-title">
+        <div class="section-head"><div><h2 id="docs-title">Documentation</h2></div></div>
+        <table class="docs-table">
+          <tbody>
+            ${meta.docs.map((d) => `<tr><td><a href="${d.url}">${escapeHtml(d.label)}</a></td><td>${escapeHtml(d.description)}</td></tr>`).join('\n            ')}
+          </tbody>
+        </table>
+      </section>` : ''}
 
       ${related.length ? `
       <section class="panel section" aria-labelledby="related-title">

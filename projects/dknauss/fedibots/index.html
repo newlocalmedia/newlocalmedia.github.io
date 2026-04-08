@@ -216,6 +216,17 @@
     .download-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
     .download-btn { gap: 7px; font-size: 0.88rem; }
     .download-btn svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+    .poem-block { margin-top: 22px; }
+    .poem-cite { display: block; font-size: 0.88rem; font-style: italic; color: var(--foreground); margin-top: 8px; padding-left: 25px; }
+    .below-details-quote { margin-top: 18px; }
+    .download-links a.button { text-decoration: none; }
+    .docs-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+    .docs-table td { padding: 8px 12px; vertical-align: top; border-top: 1px solid var(--line); }
+    .docs-table td:first-child { white-space: nowrap; padding-right: 20px; }
+    .docs-table td:first-child a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .docs-table td:first-child a:hover, .docs-table td:first-child a:focus-visible { color: var(--secondary); text-decoration: underline; }
+    .docs-table td:last-child { color: var(--foreground); font-size: 0.93rem; }
+    @media (max-width: 580px) { .docs-table tr { display: block; border-top: 1px solid var(--line); padding: 10px 0; } .docs-table td { display: block; padding: 4px 0; border-top: none; } .docs-table td:first-child { white-space: normal; } }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
       :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
@@ -277,8 +288,6 @@
         <p>It deliberately keeps the stack small — no database, no Composer dependencies at runtime, no containers — while still handling HTTPS identity, HTTP signatures, cron posting, and delivery to followers’ inboxes.</p>
       </section>
 
-
-
       <section class="panel section" aria-labelledby="details-title">
         <div class="section-head">
           <div>
@@ -286,9 +295,12 @@
           </div>
         </div>
         <div class="details-grid">
-          <dl class="detail-list">
-            <dt>Owner</dt><dd><a href="/projects/dknauss/">@dknauss</a></dd><dt>Source</dt><dd><a href="https://github.com/dknauss/fedibots">dknauss/fedibots</a></dd><dt>CI</dt><dd><a href="https://github.com/dknauss/fedibots/actions">GitHub Actions</a></dd><dt>Last updated</dt><dd><time datetime="2026-04-05T20:19:38Z">Apr 5, 2026</time></dd><dt>Primary language</dt><dd>PHP</dd><dt>Stars</dt><dd><span class="star-icon" aria-hidden="true">★</span>0</dd>
-          </dl>
+          <div>
+            <dl class="detail-list">
+              <dt>Owner</dt><dd><a href="/projects/dknauss/">@dknauss</a></dd><dt>Source</dt><dd><a href="https://github.com/dknauss/fedibots">dknauss/fedibots</a></dd><dt>CI</dt><dd><a href="https://github.com/dknauss/fedibots/actions">GitHub Actions</a></dd><dt>Last updated</dt><dd><time datetime="2026-04-05T20:19:38Z">Apr 5, 2026</time></dd><dt>Primary language</dt><dd>PHP</dd><dt>Stars</dt><dd><span class="star-icon" aria-hidden="true">★</span>0</dd>
+            </dl>
+
+          </div>
           <div class="summary-box">
             <figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="https://newlocalmedia.github.io/assets/fedibots-preview.png" data-modal-alt="Generated preview image for Fedibots showing the lightweight ActivityPub bot framework and its architecture." aria-label="Open larger image for Fedibots"><img src="https://newlocalmedia.github.io/assets/fedibots-preview.png" alt="Generated preview image for Fedibots showing the lightweight ActivityPub bot framework and its architecture." loading="eager" decoding="async"></button></figure>
             <strong>Write-Only ActivityPub Bots</strong>
@@ -297,7 +309,12 @@
 
           </div>
         </div>
+
       </section>
+
+
+
+
 
 
     </main>
