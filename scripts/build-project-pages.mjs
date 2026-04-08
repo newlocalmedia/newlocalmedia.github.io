@@ -438,6 +438,9 @@ ${JSON.stringify(graph, null, 2)}
     .stack { display: grid; gap: 18px; margin-top: 18px; }
     .button, .pill { display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,27,42,0.55); text-decoration: none; font-weight: 600; white-space: nowrap; line-height: 1; }
     .button.primary { background: rgba(41,171,224,0.18); border-color: rgba(41,171,224,0.35); }
+    .button.release-btn { background: rgba(245,166,35,0.14); border-color: rgba(245,166,35,0.40); }
+    .button.demo-btn { background: rgba(72,198,150,0.14); border-color: rgba(72,198,150,0.40); }
+    .topbar-btn-icon { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-right: 5px; }
     h1, h2 { margin: 0; letter-spacing: -0.03em; }
     h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 0.98; }
     h2 { font-size: 1.35rem; }
@@ -519,6 +522,8 @@ ${JSON.stringify(graph, null, 2)}
         <a class="button" href="/">← Back</a>
         <a class="button primary" href="${repo.html_url}">View on GitHub</a>
         ${homepage ? `<a class="button" href="${homepage}">Visit homepage</a>` : ''}
+        ${meta.release && !meta.downloadCta ? `<a class="button release-btn" href="${meta.release.url}"><svg class="topbar-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download ${escapeHtml(meta.release.tag)}</a>` : ''}
+        ${meta.playground ? `<a class="button demo-btn" href="${meta.playground}"><svg class="topbar-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>Demo</a>` : ''}
       </div>
     </header>
     <main id="main-content" class="stack">

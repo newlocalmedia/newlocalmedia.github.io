@@ -187,6 +187,9 @@
     .stack { display: grid; gap: 18px; margin-top: 18px; }
     .button, .pill { display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,27,42,0.55); text-decoration: none; font-weight: 600; white-space: nowrap; line-height: 1; }
     .button.primary { background: rgba(41,171,224,0.18); border-color: rgba(41,171,224,0.35); }
+    .button.release-btn { background: rgba(245,166,35,0.14); border-color: rgba(245,166,35,0.40); }
+    .button.demo-btn { background: rgba(72,198,150,0.14); border-color: rgba(72,198,150,0.40); }
+    .topbar-btn-icon { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-right: 5px; }
     h1, h2 { margin: 0; letter-spacing: -0.03em; }
     h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 0.98; }
     h2 { font-size: 1.35rem; }
@@ -268,6 +271,8 @@
         <a class="button" href="/">← Back</a>
         <a class="button primary" href="https://github.com/dknauss/author-identity">View on GitHub</a>
         <a class="button" href="https://dan.knauss.ca">Visit homepage</a>
+
+        <a class="button demo-btn" href="https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Fdknauss%2Fauthor-identity%2Fcodex%2Fplayground-assets%2Fplayground%2Fpublic%2Foutput-demo.blueprint.json&url=%2F%3Fp%3D1&mode=browser-full-screen&login=no"><svg class="topbar-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>Demo</a>
       </div>
     </header>
     <main id="main-content" class="stack">
