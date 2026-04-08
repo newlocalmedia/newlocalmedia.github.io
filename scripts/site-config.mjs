@@ -163,8 +163,8 @@ export const PROJECT_META = {
       url: 'https://newlocalmedia.github.io/assets/wp-security-style-guide-preview.png',
       alt: 'Generated preview image for the WordPress Security Style Guide showing editorial focus areas and communication principles.'
     },
-    focus: 'How Do You Write About It?',
-    subfocus: 'Editorial standards for voice, terminology, formatting, and responsible vulnerability communication in WordPress security.'
+    focus: 'How Do You Write About Security, Risk, and Vulnerability?',
+    subfocus: 'Following these editorial standards for voice, tone, terminology, formatting, and responsible vulnerability disclosure will improve how you communicate about security in WordPress or any open source software.'
   },
   'newlocalmedia/capm-for-agencies': {
     displayTitle: 'CAPM for Agencies',
