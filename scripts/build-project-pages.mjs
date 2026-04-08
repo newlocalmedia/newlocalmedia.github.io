@@ -273,6 +273,31 @@ function iconForFormat(label) {
   return `<span class="download-btn-icon">${svg}</span>`;
 }
 
+function renderWhyCards(cards = []) {
+  if (!cards.length) return '';
+  return `<div class="why-card-grid">${cards.map((card) => `<div class="why-card"><div class="why-card-head"><h3 class="why-card-title">${escapeHtml(card.title)}</h3>${card.logo ? `<img class="why-card-logo" src="${card.logo.src}" alt="${escapeHtml(card.logo.alt || '')}" loading="lazy" decoding="async">` : ''}</div><p>${card.html || escapeHtml(card.text)}</p></div>`).join('')}</div>`;
+}
+
+function renderDocsTable(docs = [], label = 'this project') {
+  if (!docs.length) return '';
+  return `
+      <section class="panel section" aria-labelledby="docs-title">
+        <div class="section-head"><div><h2 id="docs-title">Documentation</h2></div></div>
+        <table class="docs-table">
+          <caption class="sr-only">Documentation links and descriptions for ${escapeHtml(label)}.</caption>
+          <thead class="sr-only">
+            <tr>
+              <th scope="col">Document</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${docs.map((d) => `<tr><th scope="row"><a href="${d.url}">${escapeHtml(d.label)}</a></th><td>${escapeHtml(d.description)}</td></tr>`).join('\n            ')}
+          </tbody>
+        </table>
+      </section>`;
+}
+
 function renderPage(repo, lookup) {
   const pageUrl = projectUrl(repo.full_name);
   const section = SECTION_META[sectionForRepo(repo.full_name)];
@@ -475,7 +500,7 @@ ${JSON.stringify(graph, null, 2)}
     .image-modal-dialog { position: relative; width: min(1100px, 100%); max-height: calc(100vh - 56px); outline: none; }
     .image-modal-close { position: absolute; top: -14px; right: -14px; width: 42px; height: 42px; border: 0; border-radius: 999px; cursor: pointer; font-size: 1.5rem; line-height: 1; color: var(--secondary); background: rgba(13,27,42,0.92); box-shadow: var(--shadow); }
     .image-modal img { display: block; width: 100%; height: auto; max-height: calc(100vh - 56px); object-fit: contain; border-radius: 18px; border: 1px solid var(--line); background: rgba(13,27,42,0.96); }
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; word-wrap: normal !important; }
     .summary-box strong { display: block; margin-bottom: 6px; }
     .pull-quote { margin: 22px 0 0; border-left: 3px solid var(--accent); padding-left: 22px; }
     .pull-quote p { margin: 0 0 10px; font-size: 1.1rem; font-style: italic; line-height: 1.7; color: var(--secondary); }
@@ -546,7 +571,7 @@ ${JSON.stringify(graph, null, 2)}
     .interior-aside .pull-quote { margin: 0; }
     .why-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
     .why-card { display: flex; flex-direction: column; padding: 18px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; }
-    .why-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; min-height: 3.25rem; margin-bottom: 16px; }
+    .why-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; min-height: 2.75rem; margin-bottom: 10px; }
     .why-card-title { margin: 0; font-size: 0.9rem; line-height: 1.35; letter-spacing: -0.01em; color: var(--secondary); }
     .why-card-logo { display: block; height: 22px; width: auto; max-width: 108px; margin-top: 2px; opacity: 0.88; }
     .why-card p { margin: 0; color: var(--foreground); font-size: 0.95rem; }
@@ -565,12 +590,12 @@ ${JSON.stringify(graph, null, 2)}
     .downloads-heading { margin: 0 0 12px; font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; color: var(--foreground); }
     .download-links a.button { text-decoration: none; }
     .docs-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
-    .docs-table td { padding: 8px 12px; vertical-align: top; border-top: 1px solid var(--line); }
-    .docs-table td:first-child { white-space: nowrap; padding-right: 20px; }
-    .docs-table td:first-child a { color: var(--accent); text-decoration: none; font-weight: 600; }
-    .docs-table td:first-child a:hover, .docs-table td:first-child a:focus-visible { color: var(--secondary); text-decoration: underline; }
-    .docs-table td:last-child { color: var(--foreground); font-size: 0.93rem; }
-    @media (max-width: 580px) { .docs-table tr { display: block; border-top: 1px solid var(--line); padding: 10px 0; } .docs-table td { display: block; padding: 4px 0; border-top: none; } .docs-table td:first-child { white-space: normal; } }
+    .docs-table th, .docs-table td { padding: 8px 12px; vertical-align: top; border-top: 1px solid var(--line); text-align: left; }
+    .docs-table tbody th { white-space: nowrap; padding-right: 20px; font-weight: 600; }
+    .docs-table tbody th a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .docs-table tbody th a:hover, .docs-table tbody th a:focus-visible { color: var(--secondary); text-decoration: underline; }
+    .docs-table td { color: var(--foreground); font-size: 0.93rem; }
+    @media (max-width: 580px) { .docs-table tr { display: block; border-top: 1px solid var(--line); padding: 10px 0; } .docs-table th, .docs-table td { display: block; padding: 4px 0; border-top: none; } .docs-table tbody th { white-space: normal; } }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
       :root { --line: rgba(255, 255, 255, 0.32); --foreground: #ffffff; }
@@ -639,7 +664,7 @@ ${JSON.stringify(graph, null, 2)}
           </div>
         ${meta.whyInsetHtml?.length ? `<aside class="interior-aside${meta.whyInsetClass ? ` ${escapeHtml(meta.whyInsetClass)}` : ''}">${meta.whyInsetHtml.join('')}</aside>` : ''}
         </div>
-        ${meta.whyCards?.length ? `<div class="why-card-grid">${meta.whyCards.map((card) => `<div class="why-card"><div class="why-card-head"><h3 class="why-card-title">${escapeHtml(card.title)}</h3>${card.logo ? `<img class="why-card-logo" src="${card.logo.src}" alt="${escapeHtml(card.logo.alt || '')}" loading="lazy" decoding="async">` : ''}</div><p>${card.html || escapeHtml(card.text)}</p></div>`).join('')}</div>` : ''}
+        ${renderWhyCards(meta.whyCards)}
         ${meta.docExcerpts?.length ? `<div class="excerpt-grid">${meta.docExcerpts.map((ex) => `<div class="excerpt-card"><h3 class="excerpt-card-heading">${escapeHtml(ex.heading)}</h3>${ex.intro ? `<p>${escapeHtml(ex.intro)}</p>` : ''}${ex.bullets?.length ? `<ul>${ex.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>` : ''}</div>`).join('')}</div>` : ''}
       </section>
 
@@ -689,15 +714,7 @@ ${JSON.stringify(graph, null, 2)}
         ${meta.downloads?.length ? `<div class="downloads-inset"><h3 id="downloads-title" class="downloads-heading">Get the Latest Edition</h3><div class="download-links">${meta.downloads.map((d) => { const isPdf = d.label === 'PDF'; const cls = isPdf ? 'button primary download-btn' : 'button download-btn'; const dlabel = ({ PDF: '.pdf', DOCX: '.docx', EPUB: '.epub', Markdown: '.md' }[d.label] || `.${d.label.toLowerCase()}`); const behavior = isPdf ? '' : ' download'; return `<a class="${cls}" href="${d.url}"${behavior}>${iconForFormat(d.label)}${escapeHtml(dlabel)}</a>`; }).join('')}</div></div>` : ''}
       </section>
 
-      ${meta.docs?.length ? `
-      <section class="panel section" aria-labelledby="docs-title">
-        <div class="section-head"><div><h2 id="docs-title">Documentation</h2></div></div>
-        <table class="docs-table">
-          <tbody>
-            ${meta.docs.map((d) => `<tr><td><a href="${d.url}">${escapeHtml(d.label)}</a></td><td>${escapeHtml(d.description)}</td></tr>`).join('\n            ')}
-          </tbody>
-        </table>
-      </section>` : ''}
+      ${renderDocsTable(meta.docs, label)}
 
       ${related.length ? `
       <section class="panel section" aria-labelledby="related-title">
