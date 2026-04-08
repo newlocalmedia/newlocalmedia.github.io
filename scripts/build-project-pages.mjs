@@ -530,9 +530,12 @@ ${JSON.stringify(graph, null, 2)}
     .interior-aside.break-glass-aside::after {
       opacity: 0.9;
       background:
-        radial-gradient(circle at 82% 18%, rgba(255,255,255,0.9), transparent 0 3px),
-        radial-gradient(circle at 82% 18%, rgba(220,240,249,0.26), transparent 0 28px),
-        radial-gradient(circle at 82% 18%, transparent 0 32px, rgba(220,240,249,0.14) 33px, transparent 35px);
+        radial-gradient(circle at 81.8% 18.3%, rgba(255,255,255,0.92), transparent 0 3px),
+        radial-gradient(circle at 82.2% 17.9%, rgba(220,240,249,0.22), transparent 0 11px),
+        radial-gradient(circle at 81.6% 18.4%, transparent 0 17px, rgba(220,240,249,0.18) 18px, transparent 20px),
+        radial-gradient(circle at 80.9% 19.2%, transparent 0 29px, rgba(220,240,249,0.12) 30px, transparent 32px),
+        radial-gradient(circle at 82.7% 16.8%, transparent 0 41px, rgba(220,240,249,0.1) 42px, transparent 44px),
+        radial-gradient(circle at 79.9% 20.1%, transparent 0 8px, rgba(220,240,249,0.14) 9px, transparent 11px);
     }
     .interior-aside-heading { margin: 0 0 12px; font-size: 1rem; line-height: 1.3; letter-spacing: -0.01em; }
     .interior-aside > * { position: relative; z-index: 1; }
