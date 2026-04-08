@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-08T22:16:50.333Z",
+  "generated_at": "2026-04-08T22:19:18.710Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,24 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1203393463,
+          "name": "wp-bibliography-block",
+          "full_name": "dknauss/wp-bibliography-block",
+          "html_url": "https://github.com/dknauss/wp-bibliography-block",
+          "description": "WordPress block plugin: DOI/BibTeX to semantically rich, auto-sorted bibliography.",
+          "homepage": null,
+          "stargazers_count": 0,
+          "language": "JavaScript",
+          "updated_at": "2026-04-08T22:17:08Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1154983208,
           "name": "wp-sudo",
           "full_name": "dknauss/wp-sudo",
@@ -95,24 +113,6 @@
           "stargazers_count": 0,
           "language": "PHP",
           "updated_at": "2026-04-08T18:14:59Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1203393463,
-          "name": "wp-bibliography-block",
-          "full_name": "dknauss/wp-bibliography-block",
-          "html_url": "https://github.com/dknauss/wp-bibliography-block",
-          "description": "WordPress block plugin: DOI/BibTeX to semantically rich, auto-sorted bibliography.",
-          "homepage": null,
-          "stargazers_count": 0,
-          "language": "JavaScript",
-          "updated_at": "2026-04-08T13:40:36Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -269,15 +269,15 @@
       "total_repos": 12,
       "total_stars": 53,
       "latest_repo": {
-        "id": 1154983208,
-        "name": "wp-sudo",
-        "full_name": "dknauss/wp-sudo",
-        "html_url": "https://github.com/dknauss/wp-sudo",
-        "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
-        "homepage": "https://github.com/dknauss/wp-sudo",
-        "stargazers_count": 41,
-        "language": "PHP",
-        "updated_at": "2026-04-08T21:58:10Z",
+        "id": 1203393463,
+        "name": "wp-bibliography-block",
+        "full_name": "dknauss/wp-bibliography-block",
+        "html_url": "https://github.com/dknauss/wp-bibliography-block",
+        "description": "WordPress block plugin: DOI/BibTeX to semantically rich, auto-sorted bibliography.",
+        "homepage": null,
+        "stargazers_count": 0,
+        "language": "JavaScript",
+        "updated_at": "2026-04-08T22:17:08Z",
         "fork": false,
         "archived": false,
         "owner": {
