@@ -71,6 +71,12 @@ export const PROJECT_META = {
       url: 'https://newlocalmedia.github.io/assets/wp-sudo-preview.png',
       alt: 'Sudo for WordPress preview image using the Fuwa no Seki graphic.'
     },
+    quote: {
+      poem: true,
+      noMarks: true,
+      html: 'So full of cracks,<br>the barrier gatehouse of Fuwa<br>lets both rain and moonlight in\u2014<br>quietly exposed, yet enduring.',
+      attributionHtml: 'Abatsu-ni, <em>Diary of the Waning Moon</em>'
+    },
     focus: 'Sudo for WordPress! 🥪',
     subfocus: 'Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️',
     relatedProjects: [
@@ -112,7 +118,13 @@ export const PROJECT_META = {
       alt: 'Generated preview image for the WordPress Runbook Template showing operational coverage and runbook features.'
     },
     focus: 'How Do I Do It?',
-    subfocus: 'A runbook template for real operational work: numbered steps, expected outcomes, rollback paths, and copy-pasteable procedures for WordPress environments.'
+    subfocus: 'A runbook template for real operational work: numbered steps, expected outcomes, rollback paths, and copy-pasteable procedures for WordPress environments.',
+    downloads: [
+      { label: 'PDF',      url: 'https://raw.githubusercontent.com/dknauss/wordpress-runbook-template/main/WP-Operations-Runbook.pdf' },
+      { label: 'DOCX',     url: 'https://raw.githubusercontent.com/dknauss/wordpress-runbook-template/main/WP-Operations-Runbook.docx' },
+      { label: 'EPUB',     url: 'https://raw.githubusercontent.com/dknauss/wordpress-runbook-template/main/WP-Operations-Runbook.epub' },
+      { label: 'Markdown', url: 'https://raw.githubusercontent.com/dknauss/wordpress-runbook-template/main/WP-Operations-Runbook.md' }
+    ]
   },
   'dknauss/wp-security-hardening-guide': {
     displayTitle: 'WordPress Security Hardening Guide',
@@ -129,7 +141,13 @@ export const PROJECT_META = {
       alt: 'Generated preview image for the WordPress Security Hardening Guide showing key focus areas and guidance themes.'
     },
     focus: 'What Should You Implement — and Why?',
-    subfocus: 'Threat context, architecture guidance, and practical hardening advice for modern WordPress stacks.'
+    subfocus: 'Threat context, architecture guidance, and practical hardening advice for modern WordPress stacks.',
+    downloads: [
+      { label: 'PDF',      url: 'https://raw.githubusercontent.com/dknauss/wp-security-hardening-guide/main/WordPress-Security-Hardening-Guide.pdf' },
+      { label: 'DOCX',     url: 'https://raw.githubusercontent.com/dknauss/wp-security-hardening-guide/main/WordPress-Security-Hardening-Guide.docx' },
+      { label: 'EPUB',     url: 'https://raw.githubusercontent.com/dknauss/wp-security-hardening-guide/main/WordPress-Security-Hardening-Guide.epub' },
+      { label: 'Markdown', url: 'https://raw.githubusercontent.com/dknauss/wp-security-hardening-guide/main/WordPress-Security-Hardening-Guide.md' }
+    ]
   },
   'dknauss/wp-security-benchmark': {
     displayTitle: 'WordPress Security Benchmark',
@@ -147,7 +165,13 @@ export const PROJECT_META = {
       alt: 'Generated preview image for the WordPress Security Benchmark showing auditable control areas and benchmark structure.'
     },
     focus: 'What Do You Verify?',
-    subfocus: 'A prescriptive benchmark with pass-fail controls, audit commands, remediation steps, and target versions for current supported stacks.'
+    subfocus: 'A prescriptive benchmark with pass-fail controls, audit commands, remediation steps, and target versions for current supported stacks.',
+    downloads: [
+      { label: 'PDF',      url: 'https://raw.githubusercontent.com/dknauss/wp-security-benchmark/main/WordPress-Security-Benchmark.pdf' },
+      { label: 'DOCX',     url: 'https://raw.githubusercontent.com/dknauss/wp-security-benchmark/main/WordPress-Security-Benchmark.docx' },
+      { label: 'EPUB',     url: 'https://raw.githubusercontent.com/dknauss/wp-security-benchmark/main/WordPress-Security-Benchmark.epub' },
+      { label: 'Markdown', url: 'https://raw.githubusercontent.com/dknauss/wp-security-benchmark/main/WordPress-Security-Benchmark.md' }
+    ]
   },
   'dknauss/wp-security-style-guide': {
     displayTitle: 'WordPress Security Style Guide',
@@ -163,12 +187,18 @@ export const PROJECT_META = {
       url: 'https://newlocalmedia.github.io/assets/wp-security-style-guide-preview.png',
       alt: 'Generated preview image for the WordPress Security Style Guide showing editorial focus areas and communication principles.'
     },
+    focus: 'How Do You Write About Security, Risk, and Vulnerability?',
+    subfocus: 'Following these editorial standards for voice, tone, terminology, formatting, and responsible vulnerability disclosure will improve how you communicate about security in WordPress or any open source software.',
+    downloads: [
+      { label: 'PDF',      url: 'https://raw.githubusercontent.com/dknauss/wp-security-style-guide/main/WP-Security-Style-Guide.pdf' },
+      { label: 'DOCX',     url: 'https://raw.githubusercontent.com/dknauss/wp-security-style-guide/main/WP-Security-Style-Guide.docx' },
+      { label: 'EPUB',     url: 'https://raw.githubusercontent.com/dknauss/wp-security-style-guide/main/WP-Security-Style-Guide.epub' },
+      { label: 'Markdown', url: 'https://raw.githubusercontent.com/dknauss/wp-security-style-guide/main/WP-Security-Style-Guide.md' }
+    ],
     quote: {
       text: 'As cybersecurity leaders, we have to create our message of influence because security is a culture, and you need the business to take place and be part of that security culture.',
       attribution: 'Britney Hommertzheim'
-    },
-    focus: 'How Do You Write About Security, Risk, and Vulnerability?',
-    subfocus: 'Following these editorial standards for voice, tone, terminology, formatting, and responsible vulnerability disclosure will improve how you communicate about security in WordPress or any open source software.'
+    }
   },
   'newlocalmedia/capm-for-agencies': {
     displayTitle: 'CAPM for Agencies',

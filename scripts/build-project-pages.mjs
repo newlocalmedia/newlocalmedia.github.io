@@ -247,6 +247,17 @@ function detailItems(repo) {
   return items;
 }
 
+function iconForFormat(label) {
+  const icons = {
+    PDF:      '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>',
+    DOCX:     '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/><line x1="9" y1="9" x2="11" y2="9"/></svg>',
+    EPUB:     '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
+    Markdown: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 15V9l3 3 3-3v6"/><path d="M17 13l-2 2-2-2"/></svg>',
+  };
+  const svg = icons[label] || icons.Markdown;
+  return `<span class="download-btn-icon">${svg}</span>`;
+}
+
 function renderPage(repo, lookup) {
   const pageUrl = projectUrl(repo.full_name);
   const section = SECTION_META[sectionForRepo(repo.full_name)];
@@ -440,9 +451,13 @@ ${JSON.stringify(graph, null, 2)}
     .image-modal img { display: block; width: 100%; height: auto; max-height: calc(100vh - 56px); object-fit: contain; border-radius: 18px; border: 1px solid var(--line); background: rgba(13,27,42,0.96); }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .summary-box strong { display: block; margin-bottom: 6px; }
-    .pull-quote { margin: 4px 0 0; border-left: 3px solid var(--accent); padding-left: 22px; }
-    .pull-quote p { margin: 0 0 10px; font-size: 1.15rem; font-style: italic; line-height: 1.7; color: var(--secondary); }
-    .pull-quote cite { display: block; font-size: 0.9rem; font-style: normal; color: var(--foreground); }
+    .pull-quote { margin: 22px 0 0; border-left: 3px solid var(--accent); padding-left: 22px; }
+    .pull-quote p { margin: 0 0 10px; font-size: 1.1rem; font-style: italic; line-height: 1.7; color: var(--secondary); }
+    .pull-quote cite { display: block; font-size: 0.88rem; font-style: normal; color: var(--foreground); }
+    .pull-quote--poem p { font-style: normal; line-height: 1.85; font-size: 1.05rem; }
+    .download-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+    .download-btn { gap: 7px; font-size: 0.88rem; }
+    .download-btn svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
       :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
@@ -503,12 +518,16 @@ ${JSON.stringify(graph, null, 2)}
         ${paragraphs.map((paragraph) => `<p>${paragraph.html || inlineCodeHtml(paragraph.text)}</p>`).join('\n        ')}
       </section>
 
-      ${meta.quote ? `
-      <section class="panel section" aria-label="Quote">
-        <blockquote class="pull-quote">
-          <p>\u201C${escapeHtml(meta.quote.text)}\u201D</p>
-          <cite>\u2014 ${escapeHtml(meta.quote.attribution)}</cite>
-        </blockquote>
+      ${meta.downloads?.length ? `
+      <section class="panel section" aria-labelledby="downloads-title">
+        <div class="section-head"><div><h2 id="downloads-title">Download</h2></div></div>
+        <div class="download-links">
+          ${meta.downloads.map((d) => {
+            const isPdf = d.label === 'PDF';
+            const cls = isPdf ? 'button primary download-btn' : 'button download-btn';
+            return `<a class="${cls}" href="${d.url}" download>${iconForFormat(d.label)}${escapeHtml(d.label)}</a>`;
+          }).join('')}
+        </div>
       </section>` : ''}
 
       <section class="panel section" aria-labelledby="details-title">
@@ -526,6 +545,12 @@ ${JSON.stringify(graph, null, 2)}
             <strong>${escapeHtml(meta.focus || section.title)}</strong>
             <p>${escapeHtml(meta.subfocus || section.description)}</p>
             ${meta.extraLinks?.length && !meta.omitSummaryBoxLinks ? `<p>${meta.extraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')}</p>` : ''}
+            ${meta.quote ? (() => {
+              const q = meta.quote;
+              const textHtml = q.html || (q.noMarks ? escapeHtml(q.text) : `\u201C${escapeHtml(q.text)}\u201D`);
+              const citeHtml = q.attributionHtml || `\u2014 ${escapeHtml(q.attribution)}`;
+              return `<blockquote class="pull-quote${q.poem ? ' pull-quote--poem' : ''}"><p>${textHtml}</p><cite>${citeHtml}</cite></blockquote>`;
+            })() : ''}
           </div>
         </div>
       </section>

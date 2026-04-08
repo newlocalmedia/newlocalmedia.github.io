@@ -209,9 +209,13 @@
     .image-modal img { display: block; width: 100%; height: auto; max-height: calc(100vh - 56px); object-fit: contain; border-radius: 18px; border: 1px solid var(--line); background: rgba(13,27,42,0.96); }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .summary-box strong { display: block; margin-bottom: 6px; }
-    .pull-quote { margin: 4px 0 0; border-left: 3px solid var(--accent); padding-left: 22px; }
-    .pull-quote p { margin: 0 0 10px; font-size: 1.15rem; font-style: italic; line-height: 1.7; color: var(--secondary); }
-    .pull-quote cite { display: block; font-size: 0.9rem; font-style: normal; color: var(--foreground); }
+    .pull-quote { margin: 22px 0 0; border-left: 3px solid var(--accent); padding-left: 22px; }
+    .pull-quote p { margin: 0 0 10px; font-size: 1.1rem; font-style: italic; line-height: 1.7; color: var(--secondary); }
+    .pull-quote cite { display: block; font-size: 0.88rem; font-style: normal; color: var(--foreground); }
+    .pull-quote--poem p { font-style: normal; line-height: 1.85; font-size: 1.05rem; }
+    .download-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+    .download-btn { gap: 7px; font-size: 0.88rem; }
+    .download-btn svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
       :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
@@ -289,6 +293,7 @@
             <figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="https://newlocalmedia.github.io/assets/wp-bibliography-block-preview.png" data-modal-alt="WordPress block editor screenshot showing the Bibliography Block with three formatted citations rendered in edit mode." aria-label="Open larger image for Bibliography Block"><img src="https://newlocalmedia.github.io/assets/wp-bibliography-block-preview.png" alt="WordPress block editor screenshot showing the Bibliography Block with three formatted citations rendered in edit mode." loading="eager" decoding="async"></button></figure>
             <strong>Academic Citations in the Block Editor</strong>
             <p>DOI lookups and BibTeX input converted to semantically rich, auto-sorted bibliography lists — structured citations that travel with the work.</p>
+
 
           </div>
         </div>
