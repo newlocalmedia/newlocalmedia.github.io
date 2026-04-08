@@ -428,8 +428,10 @@ ${JSON.stringify(graph, null, 2)}
     .shell { width: min(calc(100% - 28px), var(--max)); margin: 18px auto 40px; }
     .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: blur(12px); }
     .topbar, .hero, .section { padding: 24px; }
-    .topbar, .meta, .actions, .section-head, .breadcrumbs { display: flex; gap: 12px; flex-wrap: wrap; }
+    .topbar, .meta, .actions, .section-head { display: flex; gap: 12px; flex-wrap: wrap; }
     .topbar, .section-head { justify-content: space-between; align-items: center; }
+    .hero-top-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .breadcrumbs { display: flex; gap: 8px; align-items: center; flex-shrink: 0; font-size: 0.82rem; }
     .brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
     .brand img { width: 56px; height: 56px; border-radius: 18px; background: rgba(255,255,255,0.06); }
     .brand-copy { display: grid; gap: 2px; }
@@ -530,15 +532,16 @@ ${JSON.stringify(graph, null, 2)}
       </a>
     </header>
     <main id="main-content" class="stack">
-      <nav class="panel section breadcrumbs" aria-label="Breadcrumb">
-        <a href="/">${escapeHtml(SITE_NAME)}</a>
-        <span aria-hidden="true">/</span>
-        <span aria-current="page">${escapeHtml(label)}</span>
-      </nav>
-
       <article class="panel hero">
         <div class="hero-copy">
-          <div class="eyebrow">${escapeHtml(section.title)}</div>
+          <div class="hero-top-row">
+            <div class="eyebrow">${escapeHtml(section.title)}</div>
+            <nav class="breadcrumbs" aria-label="Breadcrumb">
+              <a href="/">${escapeHtml(SITE_NAME)}</a>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">${escapeHtml(label)}</span>
+            </nav>
+          </div>
           <h1>${escapeHtml(meta.pageTitle || label)}</h1>
           <p class="lede">${summaryHtml(repo)}</p>
           <div class="meta">
