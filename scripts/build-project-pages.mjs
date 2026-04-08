@@ -492,13 +492,41 @@ ${JSON.stringify(graph, null, 2)}
     .section-copy-main > p:first-child { margin-top: 0; }
     .section-copy-main > p:last-child { margin-bottom: 0; }
     .interior-aside {
+      position: relative;
+      overflow: hidden;
       width: 100%;
       margin: 0;
       padding: 18px 20px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 82% 18%, rgba(255,255,255,0.08), transparent 0 26px),
+        linear-gradient(180deg, rgba(7,16,24,0.96), rgba(10,22,34,0.94));
+      border: 1px solid rgba(255,255,255,0.14);
       border-radius: 18px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
     }
+    .interior-aside::before,
+    .interior-aside::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.34;
+    }
+    .interior-aside::before {
+      background:
+        linear-gradient(112deg, transparent 0 46%, rgba(220,240,249,0.2) 46.6%, transparent 47.2%) 78% 16% / 54% 54% no-repeat,
+        linear-gradient(146deg, transparent 0 48%, rgba(220,240,249,0.16) 48.6%, transparent 49.2%) 70% 18% / 44% 42% no-repeat,
+        linear-gradient(84deg, transparent 0 49%, rgba(220,240,249,0.16) 49.5%, transparent 50.2%) 74% 10% / 34% 66% no-repeat,
+        linear-gradient(24deg, transparent 0 49%, rgba(220,240,249,0.14) 49.5%, transparent 50.2%) 74% 24% / 50% 36% no-repeat,
+        linear-gradient(172deg, transparent 0 49%, rgba(220,240,249,0.12) 49.5%, transparent 50.2%) 78% 16% / 26% 58% no-repeat;
+    }
+    .interior-aside::after {
+      background:
+        radial-gradient(circle at 82% 18%, rgba(255,255,255,0.16), transparent 0 5px),
+        radial-gradient(circle at 82% 18%, rgba(220,240,249,0.08), transparent 0 24px);
+    }
+    .interior-aside-heading { margin: 0 0 12px; font-size: 1rem; line-height: 1.3; letter-spacing: -0.01em; }
+    .interior-aside > * { position: relative; z-index: 1; }
     .interior-aside p { margin: 0 0 12px; }
     .interior-aside p:last-child { margin-bottom: 0; }
     .excerpt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
