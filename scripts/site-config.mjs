@@ -205,9 +205,17 @@ export const PROJECT_META = {
     downloadCta: 'Get the Guide 📘',
     whyHeading: 'Design a Defensible WordPress Stack',
     narrativeHtml: [
-      'This guide answers the question, <strong>\u201CWhat security measures should I implement and why?\u201D</strong> It summarizes the threat landscape, WordPress core security architecture, OWASP Top 10 coverage, server and application hardening, user authentication and session security, backup and recovery, supply chain risk, organizational security practices, and emerging AI-integration risks.',
-      'It is written for developers, sysadmins, and security teams who need the rationale behind security decisions, not just a checklist of controls. The editorial baseline is alignment with official WordPress Developer Documentation \u2014 especially the Advanced Administration Handbook and its security and hardening materials \u2014 with supporting reference to WordPress security documentation, the WordPress Security White Paper, WordPress Code Reference and core behavior, and standard industry sources such as OWASP, MDN, and CIS Benchmarks.',
-      'The repository also documents a human-reviewed, AI-assisted editorial process across the related security document set: multiple models independently review for factual drift, outdated guidance, and cross-document misalignment, but every change is accepted, revised, or rejected by a human editor before publication.'
+      'This guide answers the question, <strong>\u201CWhat security measures should I implement and why?\u201D</strong> It summarizes the threat landscape, WordPress core security architecture, OWASP Top 10 coverage, server and application hardening, user authentication and session security, backup and recovery, supply chain risk, organizational security practices, and emerging AI-integration risks.'
+    ],
+    whyCards: [
+      {
+        title: 'Editorial Baseline & Sources',
+        html: 'It is written for developers, sysadmins, and security teams who need the rationale behind security decisions, not just a checklist of controls. The editorial baseline is alignment with official WordPress Developer Documentation \u2014 especially the Advanced Administration Handbook and its security and hardening materials \u2014 with supporting reference to WordPress security documentation, the WordPress Security White Paper, WordPress Code Reference and core behavior, and standard industry sources such as OWASP, MDN, and CIS Benchmarks.'
+      },
+      {
+        title: 'Human-Reviewed AI Process',
+        html: 'The repository also documents a human-reviewed, AI-assisted editorial process across the related security document set: multiple models independently review for factual drift, outdated guidance, and cross-document misalignment, but every change is accepted, revised, or rejected by a human editor before publication.'
+      }
     ],
     omitGenericNarrative: true,
     omitRelatedNarrative: true,
@@ -279,8 +287,7 @@ export const PROJECT_META = {
     downloadCta: 'Get the Style Guide',
     quote: {
       text: 'As cybersecurity leaders, we have to create our message of influence because security is a culture, and you need the business to take place and be part of that security culture.',
-      attribution: 'Britney Hommertzheim',
-      leftColumn: true
+      attribution: 'Britney Hommertzheim, BISO, Cardinal Health'
     }
   },
   'newlocalmedia/capm-for-agencies': {

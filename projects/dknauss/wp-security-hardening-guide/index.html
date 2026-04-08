@@ -283,13 +283,17 @@
     .interior-aside > * { position: relative; z-index: 1; }
     .interior-aside p { margin: 0 0 12px; }
     .interior-aside p:last-child { margin-bottom: 0; }
+    .why-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .why-card { padding: 18px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; }
+    .why-card-title { margin: 0 0 10px; font-size: 0.9rem; line-height: 1.35; letter-spacing: -0.01em; color: var(--secondary); }
+    .why-card p { margin: 0; color: var(--foreground); font-size: 0.95rem; }
     .excerpt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
     .excerpt-card { padding: 18px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; }
     .excerpt-card-heading { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary); margin: 0 0 10px; font-weight: 700; }
     .excerpt-card > p { margin: 0 0 10px; font-size: 0.92rem; }
     .excerpt-card ul { margin: 0; padding-left: 1.1rem; font-size: 0.92rem; line-height: 1.65; }
     .excerpt-card li { margin-bottom: 3px; color: var(--foreground); }
-    @media (max-width: 580px) { .excerpt-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 580px) { .excerpt-grid, .why-card-grid { grid-template-columns: 1fr; } }
     .left-column-quote { margin-top: 24px; padding: 16px 20px; background: rgba(255,255,255,0.05); border: 1px solid var(--line); border-radius: 16px; border-left: none; }
     .panel.hero { border-top: 3px solid var(--primary); }
     .hero .eyebrow { color: var(--primary); }
@@ -370,11 +374,10 @@
         <div class="section-copy">
           <div class="section-copy-main">
         <p>This guide answers the question, <strong>“What security measures should I implement and why?”</strong> It summarizes the threat landscape, WordPress core security architecture, OWASP Top 10 coverage, server and application hardening, user authentication and session security, backup and recovery, supply chain risk, organizational security practices, and emerging AI-integration risks.</p>
-        <p>It is written for developers, sysadmins, and security teams who need the rationale behind security decisions, not just a checklist of controls. The editorial baseline is alignment with official WordPress Developer Documentation — especially the Advanced Administration Handbook and its security and hardening materials — with supporting reference to WordPress security documentation, the WordPress Security White Paper, WordPress Code Reference and core behavior, and standard industry sources such as OWASP, MDN, and CIS Benchmarks.</p>
-        <p>The repository also documents a human-reviewed, AI-assisted editorial process across the related security document set: multiple models independently review for factual drift, outdated guidance, and cross-document misalignment, but every change is accepted, revised, or rejected by a human editor before publication.</p>
           </div>
 
         </div>
+        <div class="why-card-grid"><div class="why-card"><h3 class="why-card-title">Editorial Baseline &amp; Sources</h3><p>It is written for developers, sysadmins, and security teams who need the rationale behind security decisions, not just a checklist of controls. The editorial baseline is alignment with official WordPress Developer Documentation — especially the Advanced Administration Handbook and its security and hardening materials — with supporting reference to WordPress security documentation, the WordPress Security White Paper, WordPress Code Reference and core behavior, and standard industry sources such as OWASP, MDN, and CIS Benchmarks.</p></div><div class="why-card"><h3 class="why-card-title">Human-Reviewed AI Process</h3><p>The repository also documents a human-reviewed, AI-assisted editorial process across the related security document set: multiple models independently review for factual drift, outdated guidance, and cross-document misalignment, but every change is accepted, revised, or rejected by a human editor before publication.</p></div></div>
 
       </section>
 

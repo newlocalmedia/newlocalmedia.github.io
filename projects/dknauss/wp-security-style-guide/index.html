@@ -283,13 +283,17 @@
     .interior-aside > * { position: relative; z-index: 1; }
     .interior-aside p { margin: 0 0 12px; }
     .interior-aside p:last-child { margin-bottom: 0; }
+    .why-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .why-card { padding: 18px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; }
+    .why-card-title { margin: 0 0 10px; font-size: 0.9rem; line-height: 1.35; letter-spacing: -0.01em; color: var(--secondary); }
+    .why-card p { margin: 0; color: var(--foreground); font-size: 0.95rem; }
     .excerpt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
     .excerpt-card { padding: 18px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; }
     .excerpt-card-heading { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary); margin: 0 0 10px; font-weight: 700; }
     .excerpt-card > p { margin: 0 0 10px; font-size: 0.92rem; }
     .excerpt-card ul { margin: 0; padding-left: 1.1rem; font-size: 0.92rem; line-height: 1.65; }
     .excerpt-card li { margin-bottom: 3px; color: var(--foreground); }
-    @media (max-width: 580px) { .excerpt-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 580px) { .excerpt-grid, .why-card-grid { grid-template-columns: 1fr; } }
     .left-column-quote { margin-top: 24px; padding: 16px 20px; background: rgba(255,255,255,0.05); border: 1px solid var(--line); border-radius: 16px; border-left: none; }
     .panel.hero { border-top: 3px solid var(--primary); }
     .hero .eyebrow { color: var(--primary); }
@@ -375,6 +379,7 @@
 
         </div>
 
+
       </section>
 
       <section class="panel section" aria-labelledby="details-title">
@@ -389,14 +394,14 @@
               <dt>Owner</dt><dd><a href="/projects/dknauss/">@dknauss</a></dd><dt>Source</dt><dd><a href="https://github.com/dknauss/wp-security-style-guide">dknauss/wp-security-style-guide</a></dd><dt>Latest release</dt><dd><a href="https://github.com/dknauss/wp-security-style-guide/releases/tag/v1.1.0">v1.1.0</a></dd><dt>CI</dt><dd><a href="https://github.com/dknauss/wp-security-style-guide/actions">GitHub Actions</a></dd><dt>License</dt><dd><a href="https://github.com/dknauss/wp-security-style-guide/blob/main/LICENSE">CC BY-SA 4.0</a></dd><dt>Last updated</dt><dd><time datetime="2026-04-05T20:23:41Z">Apr 5, 2026</time></dd><dt>Stars</dt><dd><span class="star-icon" aria-hidden="true">★</span>1</dd>
             </dl>
 
-            <blockquote class="pull-quote left-column-quote"><p>“As cybersecurity leaders, we have to create our message of influence because security is a culture, and you need the business to take place and be part of that security culture.”</p><cite>— Britney Hommertzheim</cite></blockquote>
+
           </div>
           <div class="summary-box">
             <figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="https://newlocalmedia.github.io/assets/wp-security-style-guide-preview.png" data-modal-alt="Generated preview image for the WordPress Security Style Guide showing editorial focus areas and communication principles." aria-label="Open larger image for WordPress Security Style Guide"><img src="https://newlocalmedia.github.io/assets/wp-security-style-guide-preview.png" alt="Generated preview image for the WordPress Security Style Guide showing editorial focus areas and communication principles." loading="eager" decoding="async"></button></figure>
             <strong>How Do You Write About Security, Risk, and Vulnerability?</strong>
             <p>Following these editorial standards for voice, tone, terminology, formatting, and responsible vulnerability disclosure will improve how you communicate about security in WordPress or any open source software.</p>
 
-
+            <blockquote class="pull-quote"><p>“As cybersecurity leaders, we have to create our message of influence because security is a culture, and you need the business to take place and be part of that security culture.”</p><cite>— Britney Hommertzheim, BISO, Cardinal Health</cite></blockquote>
           </div>
         </div>
 
