@@ -1,10 +1,16 @@
 import { mkdirSync, writeFileSync, rmSync, readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import {
+  ACCOUNT_ORDER,
+  AI_DOCS_GROUP,
+  BLOCKS_SHOWCASE,
   CURATED_REPOS,
+  LEAD_REPO,
   PROJECT_META,
+  SELECTED,
   SECTION_META,
   SITE_URL,
+  SPOTLIGHT,
   MAIN_SITE_URL,
   SITE_NAME,
   ORGANIZATION_NAME,
@@ -43,6 +49,23 @@ function formatDate(value) {
   }).format(new Date(value));
 }
 
+function formatNumber(value) {
+  return new Intl.NumberFormat('en-CA').format(value);
+}
+
+function formatSnapshotTimestamp(value) {
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    day: '2-digit',
+    month: '2-digit',
+    year: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  }).formatToParts(new Date(value));
+  const get = (type) => parts.find((part) => part.type === type)?.value ?? '';
+  return `${get('day')}-${get('month')}-${get('year')} ${get('hour')}:${get('minute')}`;
+}
+
 function repoHomepage(repo) {
   const override = PROJECT_META[repo.full_name]?.extraLinks?.[0]?.url;
   const homepage = override || repo.homepage;
@@ -60,6 +83,11 @@ function descriptionText(repo) {
   const plain = PROJECT_META[repo.full_name]?.summary;
   if (plain) return plain;
   return stripTags(summaryHtml(repo));
+}
+
+function metaDescription(repo) {
+  const override = PROJECT_META[repo.full_name]?.seoDescription;
+  return override || descriptionText(repo);
 }
 
 function displayTitle(repo) {
@@ -200,6 +228,203 @@ function projectPrimaryImage(repo) {
   return PROJECT_META[repo.full_name]?.primaryImage || null;
 }
 
+function homeDescriptionHtml(repo) {
+  const meta = PROJECT_META[repo.full_name] || {};
+  if (meta.homeDescriptionHtml) return meta.homeDescriptionHtml;
+  if (meta.summaryHtml) return meta.summaryHtml;
+  return escapeHtml(meta.summary || repo.description || 'No description yet.');
+}
+
+function homepageLabel(repo) {
+  return PROJECT_META[repo.full_name]?.homepageLabel || 'Homepage';
+}
+
+function iconSvg(fullName) {
+  const icons = {
+    'dknauss/wp-sudo': '<svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-2.8 8.3-7 10-4.2-1.7-7-5.5-7-10V6z"/><path d="M9.5 12l1.7 1.7L15.5 9.5"/></svg>',
+    'dknauss/ai-assisted-docs': '<svg viewBox="0 0 24 24"><path d="M7 4h7l5 5v11H7z"/><path d="M14 4v5h5"/><path d="M10 13h6"/><path d="M10 17h4"/></svg>',
+    'dknauss/wordpress-runbook-template': '<svg viewBox="0 0 24 24"><path d="M6 5.5A2.5 2.5 0 0 1 8.5 3H19v16H8.5A2.5 2.5 0 0 0 6 21z"/><path d="M6 5.5V21"/><path d="M10 8h5"/><path d="M10 11h4"/><path d="M13.5 15.5l3-3"/><path d="M15 14l1.5 1.5"/><path d="M12.5 16.5l-1 2 2-1"/></svg>',
+    'dknauss/wp-security-hardening-guide': '<svg viewBox="0 0 24 24"><rect x="6" y="11" width="12" height="9" rx="2"/><path d="M9 11V8a3 3 0 1 1 6 0v3"/><path d="M12 15h.01"/></svg>',
+    'dknauss/wp-security-benchmark': '<svg viewBox="0 0 24 24"><path d="M5 19h14"/><path d="M8 16v-4"/><path d="M12 16V9"/><path d="M16 16v-6"/></svg>',
+    'dknauss/wp-security-style-guide': '<svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16l6-6 3 3-6 6H7z"/><path d="M14 9l2-2 3 3-2 2"/></svg>',
+    'newlocalmedia/capm-for-agencies': '<svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M6 15l4-4 3 2 5-6"/><path d="M18 7h-3"/><path d="M18 7v3"/></svg>',
+    'dknauss/author-identity': '<svg viewBox="0 0 24 24"><path d="M5 5h14v14H5z"/><path d="M12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/><path d="M8 17c1-1.5 2.3-2.2 4-2.2s3 .7 4 2.2"/></svg>',
+    'dknauss/fedibots': '<svg viewBox="0 0 24 24"><rect x="7" y="8" width="10" height="9" rx="2"/><path d="M10 8V6"/><path d="M14 8V6"/><path d="M10 12h.01"/><path d="M14 12h.01"/><path d="M5 11H3"/><path d="M21 11h-2"/></svg>',
+    'dknauss/wordpress-2fa-ecosystem': '<svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="10" rx="2"/><path d="M8 12h.01"/><path d="M11 12h.01"/><path d="M14 12h.01"/><path d="M17 12h.01"/><path d="M9 17v2"/><path d="M15 17v2"/></svg>',
+    'dknauss/the-drafting-table': '<svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16l8-8 2 2-8 8H7z"/><path d="M14 7l2 2"/></svg>',
+    'dknauss/wp-bibliography-block': '<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8"/><path d="M8 12h8"/><path d="M8 15h5"/><path d="M4 4v16"/><path d="M7 4v16"/></svg>'
+  };
+  return icons[fullName] || '<svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>';
+}
+
+function titleMarkup(repo) {
+  return `<span class="title-with-icon"><span class="title-icon" aria-hidden="true">${iconSvg(repo.full_name)}</span><span>${escapeHtml(displayTitle(repo))}</span></span>`;
+}
+
+function titleLinkMarkup(repo) {
+  return `<a class="title-link" href="${projectPath(repo.full_name)}">${titleMarkup(repo)}</a>`;
+}
+
+function updatedPillMarkup(value) {
+  const formatted = formatDate(value);
+  return `<span class="pill" title="Last updated ${escapeHtml(formatted)}"><span aria-hidden="true">🔄</span><span class="sr-only">Last updated </span><time datetime="${escapeHtml(value)}">${escapeHtml(formatted)}</time></span>`;
+}
+
+function projectLinkMarkup(href, label = 'Project', showIcon = true) {
+  const withIcon = showIcon && label !== 'Docs';
+  return `<a class="repo-link primary" href="${href}">${withIcon ? '<span aria-hidden="true">📄</span>' : ''}<span>${escapeHtml(label)}</span></a>`;
+}
+
+function githubLinkMarkup(href) {
+  return `<a class="repo-link" href="${href}">GitHub →</a>`;
+}
+
+function repoMetaMarkup(repo, extraClass = '') {
+  return `<div class="meta${extraClass ? ` ${extraClass}` : ''}"><span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>${updatedPillMarkup(repo.updated_at)}</div>`;
+}
+
+function repoActionsMarkup(repo, options = {}) {
+  const {
+    label = 'Project',
+    showProjectIcon = true,
+    includeGithub = true,
+    includeHomepage = true
+  } = options;
+  const homepage = includeHomepage ? repoHomepage(repo) : null;
+  return `<div class="repo-actions">${projectLinkMarkup(projectPath(repo.full_name), label, showProjectIcon)}${includeGithub ? githubLinkMarkup(repo.html_url) : ''}${homepage ? `<a class="repo-link alt" href="${homepage}">${escapeHtml(homepageLabel(repo))} →</a>` : ''}</div>`;
+}
+
+function homeRepoCard(repo, badgeLabel = '') {
+  return `
+      <article class="repo-card repo-card--${repo.full_name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}">
+        <div class="repo-top">
+          <div>
+            <h3>${titleLinkMarkup(repo)}</h3>
+          </div>${badgeLabel ? `
+          <span class="pill featured"><span class="pill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4h7l5 5v11H7z"/><path d="M14 4v5h5"/><path d="M10 13h6"/><path d="M10 17h4"/></svg></span><span>${escapeHtml(badgeLabel)}</span></span>` : ''}
+        </div>
+        <p class="repo-desc">${homeDescriptionHtml(repo)}</p>
+        ${repoMetaMarkup(repo)}
+        ${repoActionsMarkup(repo, { label: badgeLabel === 'Docs' ? 'Docs' : 'Project', showProjectIcon: badgeLabel !== 'Docs' })}
+      </article>
+    `.trim();
+}
+
+function homeSpotlightCard(repo) {
+  const primaryImage = projectPrimaryImage(repo);
+  const imageAlt = escapeHtml(primaryImage?.alt || `${displayTitle(repo)} preview image.`);
+  return `
+      <article class="spotlight-card">
+        ${primaryImage ? `<figure class="spotlight-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(displayTitle(repo))}"><img src="${primaryImage.url}" alt="${imageAlt}" loading="lazy" decoding="async"></button></figure>` : ''}
+        <div class="repo-top">
+          <div>
+            <h3>${titleLinkMarkup(repo)}</h3>
+          </div>
+          <span class="feature-label">Spotlight</span>
+        </div>
+        <p class="repo-desc">${homeDescriptionHtml(repo)}</p>
+        ${repoMetaMarkup(repo)}
+        ${repoActionsMarkup(repo)}
+      </article>
+    `.trim();
+}
+
+function homeLeadMarkup(repo) {
+  const primaryImage = projectPrimaryImage(repo);
+  const imageAlt = escapeHtml(primaryImage?.alt || `${displayTitle(repo)} preview image.`);
+  return `
+      <div class="feature-main">
+        <span class="feature-label">Featured Repo</span>
+        <div class="feature-kicker"><strong>What if WordPress had a Linux-like sudo mode?</strong></div>
+        <h2 id="lead-feature-title">${titleLinkMarkup(repo)}</h2>
+        <p class="feature-summary">${homeDescriptionHtml(repo)}</p>
+        <div class="meta feature-meta">
+          <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
+          ${updatedPillMarkup(repo.updated_at)}
+          ${projectLinkMarkup(projectPath(repo.full_name))}
+          ${githubLinkMarkup(repo.html_url)}
+        </div>
+      </div>
+      <aside class="feature-side" aria-label="${escapeHtml(displayTitle(repo))} details">
+        ${primaryImage ? `<figure class="feature-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(displayTitle(repo))}"><img src="${primaryImage.url}" alt="${imageAlt}" loading="lazy" decoding="async"></button></figure>` : ''}
+        <p class="feature-note"><strong>Gate &amp; Log Dangerous Actions</strong>When a user attempts a gated action, Sudo intercepts the request at <code>admin_init</code>.</p>
+        <p class="feature-note"><strong>Protects Every Surface</strong>WordPress reauthentication and risky-action gating with support across REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.</p>
+      </aside>
+    `.trim();
+}
+
+function accountCardMarkup(account) {
+  const latest = account.latest_repo;
+  const avatar = account.repos?.[0]?.owner?.avatar_url || `https://github.com/${account.user}.png?size=108`;
+  return `
+      <article class="account-card">
+        <div class="account-top">
+          <img class="account-avatar" src="${avatar}" alt="${account.user} avatar">
+          <div>
+            <h3><a class="title-link" href="https://github.com/${encodeURIComponent(account.user)}">${escapeHtml(account.user)}</a></h3>
+            <div class="muted">${formatNumber(account.total_repos)} public non-fork repos</div>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(account.total_stars)} total stars</span>
+          ${latest ? `<span class="pill">Latest: ${escapeHtml(latest.name)}</span>` : ''}
+        </div>
+        <div class="account-actions">
+          <a class="repo-link" href="https://github.com/${account.user}?tab=repositories">Browse repos →</a>
+        </div>
+      </article>
+    `.trim();
+}
+
+function renderForksCard() {
+  return `
+      <article class="repo-card forks-card">
+        <h3><span class="title-with-icon"><span class="title-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 6a2 2 0 1 0 0 .01"/><path d="M17 18a2 2 0 1 0 0 .01"/><path d="M17 6a2 2 0 1 0 0 .01"/><path d="M9 6h6"/><path d="M17 8v4"/><path d="M17 12c0 3-2 6-6 6h-2"/></svg></span><span>Forks</span></span></h3>
+        <div class="prose-block">
+          <p>There are a few oldies but goodies among the community and canonical plugins for WordPress that I&rsquo;m exploring to scratch some old itches.</p>
+          <p><a href="https://github.com/dknauss/authorship">Authorship</a> has a well-architected approach to multi-author attribution. I&rsquo;m modernizing it and adding an adapter layer for it in <a href="https://github.com/dknauss/author-identity/tree/main/byline-feed">Byline Feeds</a> so every author has and is included in semantically rich metadata.</p>
+          <p><a href="https://github.com/dknauss/comment-popularity">Comment Popularity</a> is a simple plugin that lets users rate comments. I&rsquo;ve added a simple, tried, and true method using those ratings predictively to automate which comments get promoted or moderated.</p>
+          <p><a href="https://github.com/dknauss/two-factor">Two-Factor</a> is vital to WordPress core and my <a href="https://github.com/dknauss/wp-sudo">Sudo</a> plugin, so I have been studying it and trying to contribute where I can. There are a lot of good docs in my security repos, including the most current and comprehensive overview of <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/wordpress-core-authentication.md">how user sessions and authentication work today in WordPress</a>.</p>
+          <p>Agentic tools are part of my research, development, and writing/editing workflows, thanks to others&rsquo; efforts I&rsquo;ve built on and shared: <a href="https://github.com/dknauss/agent-skills">agent-skills</a>, <a href="https://github.com/dknauss/claude-wordpress-skills">Claude WordPress skills</a>, and <a href="https://github.com/dknauss/skills">general skills</a>. I&rsquo;ve used some of these sources within and alongside my own agent and skill files. For example, check out my <a href="https://github.com/dknauss/ai-assisted-docs">AI-assisted docs</a> project for writing and maintaining technical documentation.</p>
+          <p>You&rsquo;ll also see some learning-oriented projects in my forked repos for workshops with the Edmonton WordPress Meetup, including a <a href="https://github.com/dknauss/Headless-WordPress-SvelteKit-Site">Headless WordPress SvelteKit Site</a>. These are open for anyone to fork, use, and improve.</p>
+        </div>
+      </article>
+    `.trim();
+}
+
+function replaceGeneratedRegion(html, marker, content) {
+  const pattern = new RegExp(`(<!-- GENERATED:${marker}_START -->)([\\s\\S]*?)(<!-- GENERATED:${marker}_END -->)`);
+  if (!pattern.test(html)) {
+    throw new Error(`Missing generated region marker: ${marker}`);
+  }
+  return html.replace(pattern, `$1${content}$3`);
+}
+
+function renderHomePage(snapshot, lookup) {
+  const homePath = resolve(root, 'index.html');
+  let html = readFileSync(homePath, 'utf8');
+  const repos = CURATED_REPOS.map((fullName) => lookup.get(fullName)).filter(Boolean);
+  const totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+  const accountsByUser = new Map((snapshot.accounts || []).map((account) => [account.user, account]));
+  html = replaceGeneratedRegion(html, 'SELECTED_COUNT', String(CURATED_REPOS.length));
+  html = replaceGeneratedRegion(html, 'SELECTED_STARS', formatNumber(totalStars));
+  html = replaceGeneratedRegion(html, 'LAST_REFRESH', formatSnapshotTimestamp(snapshot.generated_at));
+  html = replaceGeneratedRegion(html, 'LEAD_FEATURE', `\n${homeLeadMarkup(lookup.get(LEAD_REPO))}\n        `);
+  html = replaceGeneratedRegion(html, 'AI_DOCS', `\n${AI_DOCS_GROUP.map((fullName) => homeRepoCard(lookup.get(fullName), 'Docs')).join('\n')}\n${renderForksCard()}\n        `);
+  html = replaceGeneratedRegion(html, 'SPOTLIGHT', `\n${SPOTLIGHT.map((fullName) => homeSpotlightCard(lookup.get(fullName))).join('\n')}\n        `);
+  html = replaceGeneratedRegion(html, 'BLOCKS', `\n${BLOCKS_SHOWCASE.map((fullName) => homeSpotlightCard(lookup.get(fullName))).join('\n')}\n        `);
+  html = replaceGeneratedRegion(html, 'SELECTED', `\n${SELECTED.map((fullName) => homeRepoCard(lookup.get(fullName))).join('\n')}\n        `);
+  html = replaceGeneratedRegion(html, 'ACCOUNTS', `\n${ACCOUNT_ORDER.map((user) => accountsByUser.get(user)).filter(Boolean).map((account) => accountCardMarkup(account)).join('\n')}\n        `);
+  return html;
+}
+
+function ownerPageDescription(owner) {
+  if (owner === 'newlocalmedia') {
+    return 'Curated New Local Media project pages featuring pricing tools, apps, and product experiments in the Work in Progress collection.';
+  }
+  return 'Curated Dan Knauss project pages on WordPress security, technical documentation, identity, automation, and publishing experiments.';
+}
+
 function detailItems(repo) {
   const meta = PROJECT_META[repo.full_name] || {};
   const items = [
@@ -306,7 +531,7 @@ function renderPage(repo, lookup) {
   const homepage = repoHomepage(repo);
   const related = relatedRepos(repo.full_name, lookup);
   const title = `${label} | ${SITE_NAME}`;
-  const description = descriptionText(repo);
+  const description = metaDescription(repo);
   const primaryImage = projectPrimaryImage(repo);
   const ogImageUrl = primaryImage?.url || defaultOgImageUrl;
   const ogImageAlt = primaryImage?.alt || `${label} in Work in Progress by New Local Media.`;
@@ -817,8 +1042,8 @@ ${JSON.stringify(graph, null, 2)}
 function renderOwnerPage(owner, repos) {
   const pageUrl = `${SITE_URL}${ownerPath(owner)}`;
   const ownerLabel = ownerDisplayName(owner);
-  const title = `${ownerLabel} projects | ${SITE_NAME}`;
-  const description = `Projects in this collection from ${ownerLabel}.`;
+  const title = `${ownerLabel} Projects | ${SITE_NAME}`;
+  const description = ownerPageDescription(owner);
   const breadcrumb = {
     '@type': 'BreadcrumbList',
     '@id': `${pageUrl}#breadcrumb`,
@@ -997,7 +1222,7 @@ ${JSON.stringify(graph, null, 2)}
       <section class="panel hero">
         <div class="eyebrow">Owner projects</div>
         <h1>${escapeHtml(ownerLabel)}</h1>
-        <p class="lede">A small project list for ${escapeHtml(ownerLabel)} in this collection.</p>
+        <p class="lede">${escapeHtml(description)}</p>
       </section>
 
       <section class="panel section" aria-labelledby="owner-projects-title">
@@ -1019,7 +1244,7 @@ ${JSON.stringify(graph, null, 2)}
 function renderProjectsIndex(reposByOwner) {
   const pageUrl = `${SITE_URL}/projects/`;
   const title = `Projects | ${SITE_NAME}`;
-  const description = 'Browse owner groups and project pages in the Work in Progress collection.';
+  const description = 'Browse project directories and curated pages from New Local Media and Dan Knauss, including WordPress security, docs, identity, automation, and experiments.';
   const owners = [...reposByOwner.entries()].sort(([a], [b]) => a.localeCompare(b));
   const graph = {
     '@context': 'https://schema.org',
@@ -1156,7 +1381,7 @@ ${JSON.stringify(graph, null, 2)}
       <section class="panel hero">
         <div class="eyebrow">Project directories</div>
         <h1>Projects</h1>
-        <p class="lede">Browse the owner groups and project pages in this collection.</p>
+        <p class="lede">${escapeHtml(description)}</p>
       </section>
       <section class="panel section" aria-labelledby="owner-groups-title">
         <h2 id="owner-groups-title">Owner Groups</h2>
@@ -1174,17 +1399,22 @@ ${JSON.stringify(graph, null, 2)}
 `.replace(/[ \t]+$/gm, '').trimEnd() + '\n';
 }
 
-function buildSitemap() {
+function buildSitemap(lookup, snapshot) {
   const owners = [...new Set(CURATED_REPOS.map((fullName) => fullName.split('/')[0]))];
+  const ownerLastmod = new Map(owners.map((owner) => {
+    const dates = CURATED_REPOS.filter((fullName) => fullName.startsWith(`${owner}/`)).map((fullName) => lookup.get(fullName)?.updated_at).filter(Boolean);
+    return [owner, dates.sort().at(-1) || snapshot.generated_at];
+  }));
+  const allProjectDates = CURATED_REPOS.map((fullName) => lookup.get(fullName)?.updated_at).filter(Boolean).sort();
   const urls = [
-    `${SITE_URL}/`,
-    `${SITE_URL}/projects/`,
-    ...owners.map((owner) => `${SITE_URL}${ownerPath(owner)}`),
-    ...CURATED_REPOS.map((fullName) => projectUrl(fullName))
+    { loc: `${SITE_URL}/`, lastmod: snapshot.generated_at, changefreq: 'daily', priority: '1.0' },
+    { loc: `${SITE_URL}/projects/`, lastmod: allProjectDates.at(-1) || snapshot.generated_at, changefreq: 'weekly', priority: '0.8' },
+    ...owners.map((owner) => ({ loc: `${SITE_URL}${ownerPath(owner)}`, lastmod: ownerLastmod.get(owner), changefreq: 'weekly', priority: '0.8' })),
+    ...CURATED_REPOS.map((fullName) => ({ loc: projectUrl(fullName), lastmod: lookup.get(fullName)?.updated_at || snapshot.generated_at, changefreq: 'weekly', priority: '0.8' }))
   ];
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((url, index) => `  <url>\n    <loc>${url}</loc>\n    <changefreq>${index === 0 ? 'daily' : 'weekly'}</changefreq>\n    <priority>${index === 0 ? '1.0' : '0.8'}</priority>\n  </url>`).join('\n')}
+${urls.map((entry) => `  <url>\n    <loc>${entry.loc}</loc>\n    <lastmod>${entry.lastmod}</lastmod>\n    <changefreq>${entry.changefreq}</changefreq>\n    <priority>${entry.priority}</priority>\n  </url>`).join('\n')}
 </urlset>
 `;
 }
@@ -1227,5 +1457,6 @@ for (const [owner, repos] of reposByOwner) {
 
 writeFileSync(resolve(root, './projects/index.html'), renderProjectsIndex(reposByOwner));
 
-writeFileSync(resolve(root, 'sitemap.xml'), buildSitemap());
-console.log(`Built ${CURATED_REPOS.length} project pages and sitemap.`);
+writeFileSync(resolve(root, 'index.html'), renderHomePage(snapshot, lookup));
+writeFileSync(resolve(root, 'sitemap.xml'), buildSitemap(lookup, snapshot));
+console.log(`Built homepage, ${CURATED_REPOS.length} project pages, archive pages, and sitemap.`);

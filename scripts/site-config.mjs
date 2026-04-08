@@ -64,6 +64,7 @@ export const PROJECT_META = {
     tests: 'PHPUnit + Playwright e2e',
     license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/wp-sudo/blob/main/LICENSE' },
     playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/wp-sudo/main/blueprint.json',
+    seoDescription: 'WordPress risky-action gating with reauthentication, 2FA support, time-bounded sessions, rate limiting, and policy controls across WordPress surfaces.',
     summary: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.',
     summaryHtml: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across <code>wp-admin</code>, <code>REST</code>, <code>WP-CLI</code>, <code>Cron</code>, <code>WPGraphQL</code>, and <code>XML-RPC</code>.',
     whyHeading: 'Gate Any Privileged Action',
@@ -107,6 +108,7 @@ export const PROJECT_META = {
     displayTitle: 'AI-Assisted Docs',
     schemaType: 'TechArticle',
     license: { label: 'CC BY-SA 4.0', url: 'https://github.com/dknauss/ai-assisted-docs/blob/main/LICENSE' },
+    seoDescription: 'Methodology and process docs for AI-assisted technical writing and review that increase rigor, accuracy, and editorial judgment.',
     summary: 'Methodology and process documentation for AI-assisted technical writing and review — a practical exploration of how AI can help without sacrificing rigor, accuracy, or editorial judgment.',
     whyHeading: 'Build an Agentic Editorial Team',
     narrativeHtml: [
@@ -294,6 +296,8 @@ export const PROJECT_META = {
   'newlocalmedia/capm-for-agencies': {
     displayTitle: 'CAPM for Agencies',
     schemaType: 'SoftwareSourceCode',
+    homepageLabel: 'App',
+    homeDescriptionHtml: 'Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics. <a href="https://newlocalmedia.github.io/capm-for-agencies/">Main App</a> · <a href="https://newlocalmedia.github.io/capm-for-agencies/project-risk-check/index.html">Small agency and freelancer version</a>',
     summaryHtml: 'Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics. <a href="https://newlocalmedia.github.io/capm-for-agencies/">Main App</a> · <a href="https://newlocalmedia.github.io/capm-for-agencies/project-risk-check/index.html">Small agency and freelancer version</a>',
     summary: 'Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics.',
     whyHeading: 'What is CAPM?',
@@ -364,6 +368,7 @@ export const PROJECT_META = {
     displayTitle: 'Fedibots',
     schemaType: 'SoftwareSourceCode',
     license: { label: 'MIT', url: 'https://github.com/dknauss/fedibots/blob/main/LICENSE' },
+    homeDescriptionHtml: 'PHP framework for creating write-only ActivityPub fediverse bots. Based on <a href="https://github.com/edent">Terence Eden&rsquo;s (@edent)</a> model.',
     summary: 'PHP framework for creating write-only ActivityPub fediverse bots. Based on Terence Eden\u2019s (@edent) model.',
     relatedProjects: [],
     whyHeading: 'Publish to the Fediverse with Minimal Machinery',
@@ -384,6 +389,7 @@ export const PROJECT_META = {
     displayTitle: 'WordPress 2FA Ecosystem',
     schemaType: 'SoftwareSourceCode',
     license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/wordpress-2fa-ecosystem/blob/main/LICENSE' },
+    seoDescription: 'Developer reference for how major WordPress 2FA plugins store secrets, detect configured users, and validate codes for safe integrations.',
     summary: 'This is a developer reference exploring how major WordPress 2FA plugins store secrets, detect users, and validate codes. It includes Sudo bridge examples for WP 2FA, Wordfence, and AIOS.',
     summaryHtml: 'This is a developer reference exploring how major WordPress 2FA plugins store secrets, detect users, and validate codes. It includes <a href="https://newlocalmedia.github.io/projects/dknauss/wp-sudo/">Sudo</a> bridge examples for WP 2FA, Wordfence, and AIOS.',
     whyHeading: 'Bridge the WordPress 2FA Plugin Maze',
@@ -413,6 +419,7 @@ export const PROJECT_META = {
     release: { tag: 'v0.6.1', url: 'https://github.com/dknauss/the-drafting-table/releases/tag/v0.6.1' },
     tests: 'Playwright smoke, PHPUnit coverage',
     license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/the-drafting-table/blob/main/LICENSE' },
+    seoDescription: 'WordPress block theme with parchment textures, blueprint framing, refined typography, and portfolio-ready full-site editing patterns.',
     whyHeading: 'Build an Architect\u2019s Notebook in WordPress',
     relatedProjects: [
       {

@@ -7,9 +7,11 @@ const html = readFileSync(resolve(root, 'index.html'), 'utf8');
 const sitemap = readFileSync(resolve(root, 'sitemap.xml'), 'utf8');
 
 const requiredSnippets = [
+  '<title>Work in Progress | New Local Media</title>',
   '<link rel="canonical" href="https://newlocalmedia.github.io/">',
-  '<meta name="description" content="Work in Progress is a curated showcase of public repositories from New Local Media and Dan Knauss, spanning WordPress security, technical documentation, identity, automation, and experiments.">',
+  '<meta name="description" content="Curated open-source projects from New Local Media and Dan Knauss on WordPress security, technical docs, identity, automation, and experiments.">',
   '<meta property="og:title" content="Work in Progress | New Local Media">',
+  '<meta name="twitter:title" content="Work in Progress | New Local Media">',
   '<meta property="og:image" content="https://newlocalmedia.github.io/assets/og-image.png">',
   '<meta name="twitter:card" content="summary_large_image">',
   '<script type="application/ld+json">',
@@ -58,6 +60,10 @@ for (const fullName of CURATED_REPOS) {
   if (!sitemap.includes(`https://newlocalmedia.github.io${projectPath(fullName)}`)) {
     throw new Error(`Sitemap missing project URL: ${fullName}`);
   }
+}
+
+if (!sitemap.includes('<lastmod>')) {
+  throw new Error('Sitemap missing lastmod entries.');
 }
 
 console.log('Site metadata/assets checks passed.');

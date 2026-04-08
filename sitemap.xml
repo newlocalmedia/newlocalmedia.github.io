@@ -2,81 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://newlocalmedia.github.io/</loc>
+    <lastmod>2026-04-08T21:48:29.229Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/</loc>
+    <lastmod>2026-04-08T21:13:19Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/</loc>
+    <lastmod>2026-04-08T21:13:19Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/newlocalmedia/</loc>
+    <lastmod>2026-03-31T23:53:19Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/wp-sudo/</loc>
+    <lastmod>2026-04-04T06:14:45Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/ai-assisted-docs/</loc>
+    <lastmod>2026-03-29T02:47:00Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/wordpress-runbook-template/</loc>
+    <lastmod>2026-04-05T20:23:40Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/wp-security-hardening-guide/</loc>
+    <lastmod>2026-04-05T20:23:23Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/wp-security-benchmark/</loc>
+    <lastmod>2026-04-05T21:44:28Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/wp-security-style-guide/</loc>
+    <lastmod>2026-04-05T20:23:41Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/newlocalmedia/capm-for-agencies/</loc>
+    <lastmod>2026-03-31T23:53:19Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/author-identity/</loc>
+    <lastmod>2026-04-08T18:14:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/fedibots/</loc>
+    <lastmod>2026-04-05T20:19:38Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/wordpress-2fa-ecosystem/</loc>
+    <lastmod>2026-04-08T21:13:19Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/the-drafting-table/</loc>
+    <lastmod>2026-03-25T21:38:05Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/wp-bibliography-block/</loc>
+    <lastmod>2026-04-08T13:40:36Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

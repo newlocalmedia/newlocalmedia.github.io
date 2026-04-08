@@ -42,6 +42,10 @@ npm run check
 - `npm run build` regenerates project pages and the sitemap from `/data/repos.json`
 - `npm run check` rebuilds generated files, validates HTML, and checks required SEO/site metadata
 
+## Audit docs
+
+- Accessibility gap checklist: [WCAG-GAP-AUDIT-CHECKLIST.md](WCAG-GAP-AUDIT-CHECKLIST.md)
+
 ## Repository structure
 
 ```text
