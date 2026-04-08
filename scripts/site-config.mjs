@@ -151,6 +151,7 @@ export const PROJECT_META = {
       'Break-glass procedures are a natural fit for this format \u2014 the steps you take when normal access paths have failed. A break-glass entry names the trigger condition, the recovery path, and copy-pasteable commands.',
       'It is designed for sysadmins, DevOps engineers, and WordPress developers responsible for deployment, maintenance, backup verification, incident response, and disaster recovery.'
     ],
+    whyInsetClass: 'break-glass-aside',
     whyInsetHtml: [
       '<h3 class="interior-aside-heading">What is a \u201CBreak-Glass\u201D procedure?</h3>',
       '<p>For example, a lost admin password entry might read:</p>',
