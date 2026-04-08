@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Live Site](https://img.shields.io/badge/site-live-29ABE0)](https://newlocalmedia.github.io/)
 
-Curated GitHub Pages showcase for New Local Media and Dan Knauss public projects, documentation, experiments, and demos.
+Curated GitHub Pages showcase for our public projects, documentation, experiments, and demos.
 
 ## What this repo is
 
@@ -13,12 +13,12 @@ This repository powers the public site at [newlocalmedia.github.io](https://newl
 
 The site:
 
-- showcases selected repositories from [`@newlocalmedia`](https://github.com/newlocalmedia) and [`@dknauss`](https://github.com/dknauss)
-- rebuilds project detail pages from a GitHub data snapshot
-- publishes a lightweight static site with no framework dependency
-- includes basic quality checks for HTML, metadata, and generated outputs
+- showcases selected repositories from [`@newlocalmedia`](https://github.com/newlocalmedia) and [`@dknauss`](https://github.com/dknauss).
+- rebuilds project detail pages from a GitHub data snapshot.
+- publishes a lightweight static site with no framework dependency.
+- includes basic quality checks for HTML, metadata, and generated outputs.
 
-## Quick start
+## Local testing 
 
 ```bash
 npm install
@@ -71,9 +71,9 @@ The workflow:
 
 Issues and pull requests are welcome for:
 
-- content fixes
+- content corrections and improvements
 - layout or accessibility improvements
-- metadata or SEO corrections
+- metadata or SEO corrections and improvements
 - automation and build improvements
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for workflow details.
