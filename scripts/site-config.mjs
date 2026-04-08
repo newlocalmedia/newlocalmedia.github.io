@@ -61,6 +61,9 @@ export const PROJECT_META = {
     pageTitle: 'Sudo \u26E9\uFE0F',
     schemaType: 'SoftwareSourceCode',
     release: { tag: 'v2.14.0', url: 'https://github.com/dknauss/wp-sudo/releases/tag/v2.14.0' },
+    tests: 'PHPUnit + Playwright e2e',
+    license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/wp-sudo/blob/main/LICENSE' },
+    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/wp-sudo/main/blueprint.json',
     summary: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.',
     summaryHtml: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across <code>wp-admin</code> <code>REST</code> <code>WP-CLI</code> <code>Cron</code> <code>WPGraphQL</code> <code>XML-RPC</code>.',
     whyHeading: 'Gate Any Privileged Action',
@@ -106,6 +109,7 @@ export const PROJECT_META = {
   'dknauss/ai-assisted-docs': {
     displayTitle: 'AI-Assisted Docs',
     schemaType: 'TechArticle',
+    license: { label: 'CC BY-SA 4.0', url: 'https://github.com/dknauss/ai-assisted-docs/blob/main/LICENSE' },
     summary: 'Methodology and process documentation for AI-assisted technical writing and review — a practical exploration of how AI can help without sacrificing rigor, accuracy, or editorial judgment.',
     whyHeading: 'Build an Agentic Editorial Team',
     narrativeHtml: [
@@ -138,6 +142,7 @@ export const PROJECT_META = {
     displayTitle: 'WordPress Runbook Template',
     schemaType: 'TechArticle',
     release: { tag: 'v3.1.0', url: 'https://github.com/dknauss/wordpress-runbook-template/releases/tag/v3.1.0' },
+    license: { label: 'CC BY-SA 4.0', url: 'https://github.com/dknauss/wordpress-runbook-template/blob/main/LICENSE' },
     downloadCta: 'Get the Runbook',
     whyHeading: 'Run WordPress with a Playbook',
     narrativeHtml: [
@@ -164,6 +169,7 @@ export const PROJECT_META = {
     displayTitle: 'WordPress Security Hardening Guide',
     schemaType: 'TechArticle',
     release: { tag: 'v1.1.0', url: 'https://github.com/dknauss/wp-security-hardening-guide/releases/tag/v1.1.0' },
+    license: { label: 'CC BY-SA 4.0', url: 'https://github.com/dknauss/wp-security-hardening-guide/blob/main/LICENSE' },
     downloadCta: 'Get the Guide',
     whyHeading: 'Design a Defensible WordPress Stack',
     narrativeHtml: [
@@ -189,6 +195,7 @@ export const PROJECT_META = {
     displayTitle: 'WordPress Security Benchmark',
     schemaType: 'TechArticle',
     release: { tag: 'v1.1.0', url: 'https://github.com/dknauss/wp-security-benchmark/releases/tag/v1.1.0' },
+    license: { label: 'CC BY-SA 4.0', url: 'https://github.com/dknauss/wp-security-benchmark/blob/main/LICENSE' },
     downloadCta: 'Get the Benchmark',
     summary: 'WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on the LEMP/LAMP stack.',
     whyHeading: 'Audit the Stack Control by Control',
@@ -216,6 +223,7 @@ export const PROJECT_META = {
     displayTitle: 'WordPress Security Style Guide',
     schemaType: 'TechArticle',
     release: { tag: 'v1.1.0', url: 'https://github.com/dknauss/wp-security-style-guide/releases/tag/v1.1.0' },
+    license: { label: 'CC BY-SA 4.0', url: 'https://github.com/dknauss/wp-security-style-guide/blob/main/LICENSE' },
     whyHeading: 'Write About Security Without FUD',
     narrativeHtml: [
       'For open source software providers, this editorial reference answers the question, <strong>”How should I write about security?”</strong> It sets voice, tone, terminology, and technical formatting rules for people communicating about risk and vulnerability, with a special emphasis on the WordPress ecosystem. Build trust. Reduce fear, uncertainty, and doubt (FUD).',
@@ -288,6 +296,8 @@ export const PROJECT_META = {
   'dknauss/author-identity': {
     displayTitle: 'Author Identity',
     schemaType: 'SoftwareSourceCode',
+    license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/author-identity/blob/main/LICENSE' },
+    playground: 'https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Fdknauss%2Fauthor-identity%2Fcodex%2Fplayground-assets%2Fplayground%2Fpublic%2Foutput-demo.blueprint.json&url=%2F%3Fp%3D1&mode=browser-full-screen&login=no',
     whyHeading: 'Make Authorship Portable',
     relatedProjects: [
       {
@@ -312,6 +322,7 @@ export const PROJECT_META = {
   'dknauss/fedibots': {
     displayTitle: 'Fedibots',
     schemaType: 'SoftwareSourceCode',
+    license: { label: 'MIT', url: 'https://github.com/dknauss/fedibots/blob/main/LICENSE' },
     summary: 'PHP framework for creating write-only ActivityPub fediverse bots. Based on Terence Eden\u2019s (@edent) model.',
     relatedProjects: [],
     whyHeading: 'Publish to the Fediverse with Minimal Machinery',
@@ -331,6 +342,7 @@ export const PROJECT_META = {
   'dknauss/wordpress-2fa-ecosystem': {
     displayTitle: 'WordPress 2FA Ecosystem',
     schemaType: 'SoftwareSourceCode',
+    license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/wordpress-2fa-ecosystem/blob/main/LICENSE' },
     summary: 'This is a developer reference exploring how major WordPress 2FA plugins store secrets, detect users, and validate codes. It includes Sudo bridge examples for WP 2FA, Wordfence, and AIOS.',
     summaryHtml: 'This is a developer reference exploring how major WordPress 2FA plugins store secrets, detect users, and validate codes. It includes <a href="https://newlocalmedia.github.io/projects/dknauss/wp-sudo/">Sudo</a> bridge examples for WP 2FA, Wordfence, and AIOS.',
     whyHeading: 'Bridge the WordPress 2FA Plugin Maze',
@@ -358,6 +370,8 @@ export const PROJECT_META = {
     displayTitle: 'The Drafting Table',
     schemaType: 'SoftwareSourceCode',
     release: { tag: 'v0.6.1', url: 'https://github.com/dknauss/the-drafting-table/releases/tag/v0.6.1' },
+    tests: 'Playwright smoke, PHPUnit coverage',
+    license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/the-drafting-table/blob/main/LICENSE' },
     whyHeading: 'Build an Architect\u2019s Notebook in WordPress',
     relatedProjects: [
       {
@@ -385,6 +399,9 @@ export const PROJECT_META = {
     displayTitle: 'Bibliography Block',
     schemaType: 'SoftwareSourceCode',
     release: { tag: 'v1.0.0', url: 'https://github.com/dknauss/wp-bibliography-block/releases/tag/v1.0.0' },
+    tests: 'Playwright smoke, PHP/WP runtime matrix',
+    license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/wp-bibliography-block/blob/main/LICENSE' },
+    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/playground/blueprint.json',
     summary: 'WordPress block plugin that converts DOI and BibTeX citations into semantically rich, auto-sorted bibliography lists.',
     whyHeading: 'Structured Citations in the Block Editor',
     narrativeHtml: [

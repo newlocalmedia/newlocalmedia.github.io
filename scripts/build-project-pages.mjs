@@ -247,6 +247,10 @@ function detailItems(repo) {
     ]);
   }
 
+  if (meta.playground) {
+    items.push(['Try it', `<a href="${meta.playground}">WordPress Playground</a>`]);
+  }
+
   items.push(['Last updated', `<time datetime="${escapeHtml(repo.updated_at)}">${escapeHtml(formatDate(repo.updated_at))}</time>`]);
 
   if (repo.language) {
