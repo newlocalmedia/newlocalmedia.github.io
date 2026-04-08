@@ -1107,6 +1107,7 @@
     },
     'dknauss/author-identity': {
       displayTitle: 'Author Identity',
+      homepage: null,
       primaryImage: {
         url: 'https://newlocalmedia.github.io/assets/author-identity-preview.png',
         alt: 'Diagram-style preview of Author Identity showing normalized author data in WordPress flowing to feeds, JSON-LD, fediverse metadata, and AI-rights signals.'
@@ -1194,7 +1195,9 @@
 
   function repoHomepage(repo) {
     const override = repoOverride(repo);
-    const homepage = override?.homepage || repo.homepage;
+    // Explicit null/empty in the override means "suppress homepage button".
+    // Only fall through to repo.homepage when override has no homepage key.
+    const homepage = (override && 'homepage' in override) ? override.homepage : repo.homepage;
     return homepage && homepage.trim() && homepage.trim() !== repo.html_url
       ? homepage.trim()
       : null;
