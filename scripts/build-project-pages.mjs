@@ -590,8 +590,9 @@ ${JSON.stringify(graph, null, 2)}
           </div>
         </div>
         <div class="section-copy">
+        ${meta.whyInsetFirst && meta.whyInsetHtml?.length ? `<aside class="interior-aside">${meta.whyInsetHtml.join('')}</aside>` : ''}
         ${paragraphs.map((paragraph) => `<p>${paragraph.html || inlineCodeHtml(paragraph.text)}</p>`).join('\n        ')}
-        ${meta.whyInsetHtml?.length ? `<aside class="interior-aside">${meta.whyInsetHtml.join('')}</aside>` : ''}
+        ${!meta.whyInsetFirst && meta.whyInsetHtml?.length ? `<aside class="interior-aside">${meta.whyInsetHtml.join('')}</aside>` : ''}
         </div>
         ${meta.docExcerpts?.length ? `<div class="excerpt-grid">${meta.docExcerpts.map((ex) => `<div class="excerpt-card"><h3 class="excerpt-card-heading">${escapeHtml(ex.heading)}</h3>${ex.intro ? `<p>${escapeHtml(ex.intro)}</p>` : ''}${ex.bullets?.length ? `<ul>${ex.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>` : ''}</div>`).join('')}</div>` : ''}
       </section>

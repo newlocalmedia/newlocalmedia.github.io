@@ -146,6 +146,7 @@ export const PROJECT_META = {
     license: { label: 'CC BY-SA 4.0', url: 'https://github.com/dknauss/wordpress-runbook-template/blob/main/LICENSE' },
     downloadCta: 'Get the Runbook \uD83C\uDFC3',
     whyHeading: 'Run WordPress with a Playbook',
+    whyInsetFirst: true,
     narrativeHtml: [
       'This runbook template is a 100-hour head start to help your team answer the question, <strong>\u201CHow do I do X?\u201D</strong> for a specific WordPress instance: numbered procedures, expected outcomes, rollback instructions, and copy-pasteable commands for the people running the site.',
       'It is designed for sysadmins, DevOps engineers, and WordPress developers responsible for deployment, maintenance, backup verification, incident response, and disaster recovery.'
