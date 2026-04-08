@@ -7,6 +7,7 @@ import {
   CURATED_REPOS,
   LEAD_REPO,
   PROJECT_META,
+  PROJECTS_INDEX_DESCRIPTION,
   SELECTED,
   SECTION_META,
   SITE_URL,
@@ -14,6 +15,7 @@ import {
   MAIN_SITE_URL,
   SITE_NAME,
   ORGANIZATION_NAME,
+  ownerArchiveDescription,
   sectionForRepo,
   projectPath,
   projectUrl,
@@ -239,6 +241,37 @@ function homepageLabel(repo) {
   return PROJECT_META[repo.full_name]?.homepageLabel || 'Homepage';
 }
 
+function homeRuntimeConfig() {
+  const repoOverrides = Object.fromEntries(
+    CURATED_REPOS.map((fullName) => {
+      const meta = PROJECT_META[fullName] || {};
+      const override = {};
+      if (meta.displayTitle) override.displayTitle = meta.displayTitle;
+      if (meta.homeDescriptionHtml) {
+        override.descriptionHtml = meta.homeDescriptionHtml;
+      } else if (meta.summaryHtml) {
+        override.descriptionHtml = meta.summaryHtml;
+      }
+      if (Object.prototype.hasOwnProperty.call(meta, 'homepage')) {
+        override.homepage = meta.homepage;
+      }
+      if (meta.homepageLabel) override.homepageLabel = meta.homepageLabel;
+      if (meta.primaryImage) override.primaryImage = meta.primaryImage;
+      return Object.keys(override).length ? [fullName.toLowerCase(), override] : null;
+    }).filter(Boolean)
+  );
+
+  return {
+    accountOrder: ACCOUNT_ORDER,
+    leadRepo: LEAD_REPO,
+    aiDocsGroup: AI_DOCS_GROUP,
+    spotlight: SPOTLIGHT,
+    selected: SELECTED,
+    blocksShowcase: BLOCKS_SHOWCASE,
+    repoOverrides
+  };
+}
+
 function iconSvg(fullName) {
   const icons = {
     'dknauss/wp-sudo': '<svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-2.8 8.3-7 10-4.2-1.7-7-5.5-7-10V6z"/><path d="M9.5 12l1.7 1.7L15.5 9.5"/></svg>',
@@ -409,6 +442,7 @@ function renderHomePage(snapshot, lookup) {
   html = replaceGeneratedRegion(html, 'SELECTED_COUNT', String(CURATED_REPOS.length));
   html = replaceGeneratedRegion(html, 'SELECTED_STARS', formatNumber(totalStars));
   html = replaceGeneratedRegion(html, 'LAST_REFRESH', formatSnapshotTimestamp(snapshot.generated_at));
+  html = replaceGeneratedRegion(html, 'HOME_CONFIG', `\n${JSON.stringify(homeRuntimeConfig(), null, 2)}\n`);
   html = replaceGeneratedRegion(html, 'LEAD_FEATURE', `\n${homeLeadMarkup(lookup.get(LEAD_REPO))}\n        `);
   html = replaceGeneratedRegion(html, 'AI_DOCS', `\n${AI_DOCS_GROUP.map((fullName) => homeRepoCard(lookup.get(fullName), 'Docs')).join('\n')}\n${renderForksCard()}\n        `);
   html = replaceGeneratedRegion(html, 'SPOTLIGHT', `\n${SPOTLIGHT.map((fullName) => homeSpotlightCard(lookup.get(fullName))).join('\n')}\n        `);
@@ -416,13 +450,6 @@ function renderHomePage(snapshot, lookup) {
   html = replaceGeneratedRegion(html, 'SELECTED', `\n${SELECTED.map((fullName) => homeRepoCard(lookup.get(fullName))).join('\n')}\n        `);
   html = replaceGeneratedRegion(html, 'ACCOUNTS', `\n${ACCOUNT_ORDER.map((user) => accountsByUser.get(user)).filter(Boolean).map((account) => accountCardMarkup(account)).join('\n')}\n        `);
   return html;
-}
-
-function ownerPageDescription(owner) {
-  if (owner === 'newlocalmedia') {
-    return 'Curated New Local Media project pages featuring pricing tools, apps, and product experiments in the Work in Progress collection.';
-  }
-  return 'Curated Dan Knauss project pages on WordPress security, technical documentation, identity, automation, and publishing experiments.';
 }
 
 function detailItems(repo) {
@@ -1043,7 +1070,7 @@ function renderOwnerPage(owner, repos) {
   const pageUrl = `${SITE_URL}${ownerPath(owner)}`;
   const ownerLabel = ownerDisplayName(owner);
   const title = `${ownerLabel} Projects | ${SITE_NAME}`;
-  const description = ownerPageDescription(owner);
+  const description = ownerArchiveDescription(owner);
   const breadcrumb = {
     '@type': 'BreadcrumbList',
     '@id': `${pageUrl}#breadcrumb`,
@@ -1244,7 +1271,7 @@ ${JSON.stringify(graph, null, 2)}
 function renderProjectsIndex(reposByOwner) {
   const pageUrl = `${SITE_URL}/projects/`;
   const title = `Projects | ${SITE_NAME}`;
-  const description = 'Browse project directories and curated pages from New Local Media and Dan Knauss, including WordPress security, docs, identity, automation, and experiments.';
+  const description = PROJECTS_INDEX_DESCRIPTION;
   const owners = [...reposByOwner.entries()].sort(([a], [b]) => a.localeCompare(b));
   const graph = {
     '@context': 'https://schema.org',

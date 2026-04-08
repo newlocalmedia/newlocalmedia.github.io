@@ -1,17 +1,17 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { CURATED_REPOS, projectPath } from './site-config.mjs';
+import { CURATED_REPOS, HOME_DESCRIPTION, HOME_TITLE, projectPath } from './site-config.mjs';
 
 const root = process.cwd();
 const html = readFileSync(resolve(root, 'index.html'), 'utf8');
 const sitemap = readFileSync(resolve(root, 'sitemap.xml'), 'utf8');
 
 const requiredSnippets = [
-  '<title>Work in Progress | New Local Media</title>',
+  `<title>${HOME_TITLE}</title>`,
   '<link rel="canonical" href="https://newlocalmedia.github.io/">',
-  '<meta name="description" content="Curated open-source projects from New Local Media and Dan Knauss on WordPress security, technical docs, identity, automation, and experiments.">',
-  '<meta property="og:title" content="Work in Progress | New Local Media">',
-  '<meta name="twitter:title" content="Work in Progress | New Local Media">',
+  `<meta name="description" content="${HOME_DESCRIPTION}">`,
+  `<meta property="og:title" content="${HOME_TITLE}">`,
+  `<meta name="twitter:title" content="${HOME_TITLE}">`,
   '<meta property="og:image" content="https://newlocalmedia.github.io/assets/og-image.png">',
   '<meta name="twitter:card" content="summary_large_image">',
   '<script type="application/ld+json">',

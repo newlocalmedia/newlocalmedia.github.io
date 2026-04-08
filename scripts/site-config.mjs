@@ -3,6 +3,9 @@ export const MAIN_SITE_URL = 'https://newlocalmedia.com/';
 export const SITE_NAME = 'Work in Progress';
 export const ORGANIZATION_NAME = 'New Local Media';
 export const ACCOUNT_ORDER = ['newlocalmedia', 'dknauss'];
+export const HOME_TITLE = `${SITE_NAME} | ${ORGANIZATION_NAME}`;
+export const HOME_DESCRIPTION = 'Curated open-source projects from New Local Media and Dan Knauss on WordPress security, technical docs, identity, automation, and experiments.';
+export const PROJECTS_INDEX_DESCRIPTION = 'Browse project directories and curated pages from New Local Media and Dan Knauss, including WordPress security, docs, identity, automation, and experiments.';
 
 export const LEAD_REPO = 'dknauss/wp-sudo';
 export const AI_DOCS_GROUP = [
@@ -26,6 +29,13 @@ export const BLOCKS_SHOWCASE = [
 ];
 
 export const CURATED_REPOS = [LEAD_REPO, ...AI_DOCS_GROUP, ...SPOTLIGHT, ...SELECTED, ...BLOCKS_SHOWCASE];
+
+export function ownerArchiveDescription(owner) {
+  if (owner === 'newlocalmedia') {
+    return 'Curated New Local Media project pages featuring pricing tools, apps, and product experiments in the Work in Progress collection.';
+  }
+  return 'Curated Dan Knauss project pages on WordPress security, technical documentation, identity, automation, and publishing experiments.';
+}
 
 export const SECTION_META = {
   lead: {
@@ -342,6 +352,7 @@ export const PROJECT_META = {
     displayTitle: 'Author Identity',
     schemaType: 'SoftwareSourceCode',
     license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/author-identity/blob/main/LICENSE' },
+    homepage: null,
     playground: 'https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Fdknauss%2Fauthor-identity%2Fcodex%2Fplayground-assets%2Fplayground%2Fpublic%2Foutput-demo.blueprint.json&url=%2F%3Fp%3D1&mode=browser-full-screen&login=no',
     whyHeading: 'Make Authorship Portable',
     relatedProjects: [
