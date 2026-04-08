@@ -94,9 +94,9 @@ export const PROJECT_META = {
       { label: 'Security Model', description: 'Threat model and design decisions behind Sudo\u2019s reauthentication architecture.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/security-model.md' },
       { label: 'Developer Reference', description: 'Hooks, filters, API surface, and integration patterns for building on Sudo.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/developer-reference.md' },
       { label: 'Two-Factor Integration', description: 'Bridging Sudo with WP 2FA, Wordfence, AIOS, and other plugins for delegated code verification.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/two-factor-integration.md' },
-      { label: 'FAQ', description: 'Answers to common questions about configuration, behavior, and edge cases.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/FAQ.md' },
       { label: 'Architecture Comparison Matrix', description: 'How Sudo compares to other re-auth and session-gating approaches.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/sudo-architecture-comparison-matrix.md' },
-      { label: 'README', description: 'Installation, configuration, and usage overview.', url: 'https://github.com/dknauss/wp-sudo/blob/main/readme.md' }
+      { label: 'README', description: 'Installation, configuration, and usage overview.', url: 'https://github.com/dknauss/wp-sudo/blob/main/readme.md' },
+      { label: 'FAQ', description: 'Answers to common questions about configuration, behavior, and edge cases.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/FAQ.md' }
     ],
     relatedProjects: [
       {

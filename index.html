@@ -1320,7 +1320,7 @@
 
   function updatedPill(value) {
     const formatted = formatDate(value);
-    return `<span class="pill" aria-label="Last updated ${escapeHtml(formatted)}" title="Last updated ${escapeHtml(formatted)}"><span aria-hidden="true">🔄</span>${escapeHtml(formatted)}</span>`;
+    return `<span class="pill" aria-label="Last updated ${escapeHtml(formatted)}" title="Last updated ${escapeHtml(formatted)}"><span aria-hidden="true">🔄</span> ${escapeHtml(formatted)}</span>`;
   }
 
   function projectLinkMarkup(href, label = 'Project') {
