@@ -472,6 +472,8 @@ ${JSON.stringify(graph, null, 2)}
     .poem-block { margin-top: 32px; margin-bottom: 10px; display: flex; flex-direction: column; align-items: flex-start; padding-left: 10%; }
     .poem-cite { display: block; font-size: 0.88rem; font-style: normal; color: var(--foreground); margin-top: 12px; }
     .below-details-quote { margin-top: 18px; }
+    .downloads-inset { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--line); }
+    .downloads-heading { margin: 0 0 12px; font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; color: var(--foreground); }
     .download-links a.button { text-decoration: none; }
     .docs-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
     .docs-table td { padding: 8px 12px; vertical-align: top; border-top: 1px solid var(--line); }
@@ -577,20 +579,8 @@ ${JSON.stringify(graph, null, 2)}
           const citeHtml = q.attributionHtml || `\u2014 ${escapeHtml(q.attribution)}`;
           return `<blockquote class="pull-quote below-details-quote"><p>${textHtml}</p><cite>${citeHtml}</cite></blockquote>`;
         })() : ''}
+        ${meta.downloads?.length ? `<div class="downloads-inset"><h3 class="downloads-heading">Get the Latest Edition</h3><div class="download-links">${meta.downloads.map((d) => { const isPdf = d.label === 'PDF'; const cls = isPdf ? 'button primary download-btn' : 'button download-btn'; const dlabel = ({ PDF: '.pdf', DOCX: '.docx', EPUB: '.epub', Markdown: '.md' }[d.label] || `.${d.label.toLowerCase()}`); return `<a class="${cls}" href="${d.url}" download>${iconForFormat(d.label)}${escapeHtml(dlabel)}</a>`; }).join('')}</div></div>` : ''}
       </section>
-
-      ${meta.downloads?.length ? `
-      <section class="panel section" aria-labelledby="downloads-title">
-        <div class="section-head"><div><h2 id="downloads-title">Get the Latest Edition</h2></div></div>
-        <div class="download-links">
-          ${meta.downloads.map((d) => {
-            const isPdf = d.label === 'PDF';
-            const cls = isPdf ? 'button primary download-btn' : 'button download-btn';
-            const dlabel = ({ PDF: '.pdf', DOCX: '.docx', EPUB: '.epub', Markdown: '.md' }[d.label] || `.${d.label.toLowerCase()}`);
-            return `<a class="${cls}" href="${d.url}" download>${iconForFormat(d.label)}${escapeHtml(dlabel)}</a>`;
-          }).join('')}
-        </div>
-      </section>` : ''}
 
       ${meta.docs?.length ? `
       <section class="panel section" aria-labelledby="docs-title">
