@@ -20,6 +20,9 @@
     </filter>
     <style>
       .eyebrow{font:700 11px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.18em;text-transform:uppercase;fill:#9D613C}
+      .hero-title{font:700 58px Baskerville,"Libre Baskerville","Times New Roman",serif;fill:#2F2A26;letter-spacing:-0.6px}
+      .hero-subtitle{font:400 28px Baskerville,"Libre Baskerville","Times New Roman",serif;fill:#7C614E;letter-spacing:0.1px}
+      .hero-third{font:400 28px Baskerville,"Libre Baskerville","Times New Roman",serif;fill:#A56A41;letter-spacing:0.1px}
       .title{font:700 21px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#2F2A26}
       .subtitle{font:500 15px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#5D5148}
       .chip{font:700 13px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#402E23}
@@ -33,9 +36,9 @@
   <circle cx="150" cy="560" r="170" fill="#D05538" opacity="0.08"/>
   <circle cx="1090" cy="545" r="118" fill="#D8A94B" opacity="0.08"/>
 
-  <text x="72" y="76" class="eyebrow">Author Identity</text>
-  <text x="72" y="116" class="title">Portable authorship system for WordPress</text>
-  <text x="72" y="144" class="subtitle">Normalize author data once, then emit structured identity across feeds, schema, federation, and rights metadata.</text>
+  <text x="72" y="88" class="hero-title">Author Identity</text>
+  <text x="72" y="128" class="hero-subtitle">Portable authorship</text>
+  <text x="72" y="160" class="hero-third">for WordPress</text>
 
   <g filter="url(#shadow)">
     <rect x="330" y="118" width="536" height="382" rx="26" fill="#FFF9F2" stroke="#D9B899"/>

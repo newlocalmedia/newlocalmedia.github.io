@@ -378,7 +378,7 @@ export const PROJECT_META = {
     omitGenericNarrative: true,
     omitRelatedNarrative: true,
     primaryImage: {
-      url: 'https://newlocalmedia.github.io/assets/author-identity-preview.png',
+      url: 'https://newlocalmedia.github.io/assets/author-identity-preview.svg',
       alt: 'Diagram-style preview of Author Identity showing normalized author data in WordPress flowing to feeds, JSON-LD, fediverse metadata, and AI-rights signals.'
     },
     focus: 'WordPress as a Personal Data Server for Authors',
