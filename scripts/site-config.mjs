@@ -355,7 +355,7 @@ export const PROJECT_META = {
       }
     ],
     narrativeHtml: [
-      'This reference maps how major WordPress 2FA plugins store secrets, detect configured users, and validate codes so other plugins can integrate with them safely.',
+      'These reference documents map how major WordPress 2FA plugins store secrets, detect configured users, and validate codes so other plugins can integrate with them safely.',
       'It includes an ecosystem survey, a bridge-development guide, and example bridges for WP 2FA, Wordfence, and AIOS — especially useful for <a href="https://newlocalmedia.github.io/projects/dknauss/wp-sudo/">Sudo</a> and other plugins that need to delegate code verification.'
     ],
     omitGenericNarrative: true,
