@@ -154,7 +154,7 @@ export const PROJECT_META = {
     schemaType: 'TechArticle',
     whyHeading: 'Write About Security Without FUD',
     narrativeHtml: [
-      'This editorial reference answers <strong>“how do I write about it?”</strong> It sets voice, tone, terminology, and technical formatting rules for people communicating about WordPress security.',
+      'For open source software providers, this editorial reference answers the question, <strong>”How should I write about security?”</strong> It sets voice, tone, terminology, and technical formatting rules for people communicating about risk and vulnerability, with a special emphasis on the WordPress ecosystem. Build trust. Reduce fear, uncertainty, and doubt (FUD).',
       'Make your security writing clear, direct, and empowering — especially when you\u2019re explaining vulnerabilities, risk, remediation, and why our trust in open source is well-founded.'
     ],
     omitGenericNarrative: true,
