@@ -1,6 +1,6 @@
 # Overview: newlocalmedia.github.io
 
-This is the "Work in Progress" project portfolio for @dknauss and @newlocalmedia hosted here on GitHub Pages. Go to [newlocalmedia.github.io](newlocalmedia.github.io) for all the demos and details.
+This is the "Work in Progress" project portfolio for @dknauss and @newlocalmedia hosted here on GitHub Pages. Go to [newlocalmedia.github.io](https://newlocalmedia.github.io) for all the demos and details.
 
 ## Local Preview
 
