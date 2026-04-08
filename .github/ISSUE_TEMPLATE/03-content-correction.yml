@@ -1,0 +1,32 @@
+name: Content correction
+description: Report inaccurate repository descriptions, labels, project details, or metadata.
+title: "[Content]: "
+labels:
+  - content
+body:
+  - type: input
+    id: item
+    attributes:
+      label: Affected repository or page
+      placeholder: dknauss/wp-sudo or https://newlocalmedia.github.io/projects/...
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: Current content
+      description: What is wrong right now?
+    validations:
+      required: true
+  - type: textarea
+    id: corrected
+    attributes:
+      label: Suggested correction
+      description: What should it say instead?
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source or supporting link
+      description: Optional, but helpful for verification.

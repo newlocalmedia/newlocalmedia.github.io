@@ -431,9 +431,10 @@
     }
 
     .stat strong {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.55rem;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: start;
+      column-gap: 0.55rem;
       font-size: 1.8rem;
       letter-spacing: -0.04em;
     }
@@ -448,8 +449,16 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      align-self: start;
       flex: 0 0 auto;
+      margin-top: 0.08em;
       color: var(--foreground);
+    }
+
+    .stat-value {
+      display: block;
+      min-width: 0;
+      line-height: 1.06;
     }
 
     .stat-icon svg {

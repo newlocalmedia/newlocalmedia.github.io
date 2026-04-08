@@ -1,0 +1,8 @@
+* text=auto eol=lf
+
+.github/ export-ignore
+.claude/ export-ignore
+.planning/ export-ignore
+node_modules/ export-ignore
+palette-preview.html export-ignore
+.DS_Store export-ignore

@@ -1,0 +1,39 @@
+name: Feature request
+description: Suggest an improvement to the site, workflow, or repository presentation.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What should improve, and why?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the solution you want.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Homepage
+        - Generated project pages
+        - Content curation
+        - SEO / metadata
+        - GitHub workflows
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Links, screenshots, references, or examples.
