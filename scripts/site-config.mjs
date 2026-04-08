@@ -147,7 +147,7 @@ export const PROJECT_META = {
     downloadCta: 'Get the Runbook',
     whyHeading: 'Run WordPress with a Playbook',
     narrativeHtml: [
-      'This template answers <strong>”how do I do it?”</strong> for a specific WordPress installation: numbered procedures, expected outcomes, rollback instructions, and copy-pasteable commands for the people running the site.',
+      'This runbook template is a 100-hour head start to help your team answer the question, <strong>\u201CHow do I do X?\u201D</strong> for a specific WordPress instance: numbered procedures, expected outcomes, rollback instructions, and copy-pasteable commands for the people running the site.',
       'It is designed for sysadmins, DevOps engineers, and WordPress developers responsible for deployment, maintenance, backup verification, incident response, and disaster recovery.',
       'Break-glass procedures are a natural fit for this format \u2014 the steps you take when normal access paths have failed. A break-glass entry names the trigger condition, the recovery path, and copy-pasteable commands. For example, a lost admin password entry might read: <span class="inline-example">SSH into the server and run <code>wp user update admin --user_pass=\'&hellip;\'</code> via WP-CLI, then verify login succeeds before closing the incident.</span> The runbook template has a section for these alongside your regular incident response procedures.'
     ],
