@@ -138,6 +138,7 @@ export const PROJECT_META = {
     displayTitle: 'WordPress Runbook Template',
     schemaType: 'TechArticle',
     release: { tag: 'v3.1.0', url: 'https://github.com/dknauss/wordpress-runbook-template/releases/tag/v3.1.0' },
+    downloadCta: 'Get the Runbook',
     whyHeading: 'Run WordPress with a Playbook',
     narrativeHtml: [
       'This template answers <strong>“how do I do it?”</strong> for a specific WordPress installation: numbered procedures, expected outcomes, rollback instructions, and copy-pasteable commands for the people running the site.',
@@ -162,6 +163,7 @@ export const PROJECT_META = {
     displayTitle: 'WordPress Security Hardening Guide',
     schemaType: 'TechArticle',
     release: { tag: 'v1.1.0', url: 'https://github.com/dknauss/wp-security-hardening-guide/releases/tag/v1.1.0' },
+    downloadCta: 'Get the Guide',
     whyHeading: 'Design a Defensible WordPress Stack',
     narrativeHtml: [
       'This guide answers <strong>“what should I implement and why?”</strong> It brings WordPress core security, server hardening, authentication, supply chain defense, and emerging AI risk into one architecture-level document.',
@@ -186,6 +188,7 @@ export const PROJECT_META = {
     displayTitle: 'WordPress Security Benchmark',
     schemaType: 'TechArticle',
     release: { tag: 'v1.1.0', url: 'https://github.com/dknauss/wp-security-benchmark/releases/tag/v1.1.0' },
+    downloadCta: 'Get the Benchmark',
     summary: 'WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on the LEMP/LAMP stack.',
     whyHeading: 'Audit the Stack Control by Control',
     narrativeHtml: [
@@ -231,10 +234,11 @@ export const PROJECT_META = {
       { label: 'EPUB',     url: 'https://raw.githubusercontent.com/dknauss/wp-security-style-guide/main/WP-Security-Style-Guide.epub' },
       { label: 'Markdown', url: 'https://raw.githubusercontent.com/dknauss/wp-security-style-guide/main/WP-Security-Style-Guide.md' }
     ],
+    downloadCta: 'Get the Style Guide',
     quote: {
       text: 'As cybersecurity leaders, we have to create our message of influence because security is a culture, and you need the business to take place and be part of that security culture.',
       attribution: 'Britney Hommertzheim',
-      belowDetails: true
+      leftColumn: true
     }
   },
   'newlocalmedia/capm-for-agencies': {

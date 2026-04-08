@@ -472,6 +472,11 @@ ${JSON.stringify(graph, null, 2)}
     .poem-block { margin-top: 32px; margin-bottom: 10px; display: flex; flex-direction: column; align-items: flex-start; padding-left: 10%; }
     .poem-cite { display: block; font-size: 0.88rem; font-style: normal; color: var(--foreground); margin-top: 12px; }
     .below-details-quote { margin-top: 18px; }
+    .left-column-quote { margin-top: 22px; }
+    .panel.hero { border-top: 3px solid var(--primary); }
+    .hero .eyebrow { color: var(--primary); }
+    .hero-cta { margin-top: 10px; }
+    .hero-cta-btn { font-size: 0.96rem; padding: 0 18px; height: 38px; }
     .downloads-inset { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--line); }
     .downloads-heading { margin: 0 0 12px; font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; color: var(--foreground); }
     .download-links a.button { text-decoration: none; }
@@ -530,6 +535,7 @@ ${JSON.stringify(graph, null, 2)}
             <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${escapeHtml(String(repo.stargazers_count))}</span>
             <span class="pill">Updated ${escapeHtml(formatDate(repo.updated_at))}</span>
           </div>
+          ${meta.downloadCta ? `<div class="hero-cta"><a class="button primary hero-cta-btn" href="#downloads-title">${escapeHtml(meta.downloadCta)}</a></div>` : ''}
         </div>
       </article>
 
@@ -559,13 +565,19 @@ ${JSON.stringify(graph, null, 2)}
               const citeHtml = q.attributionHtml || `\u2014 ${escapeHtml(q.attribution)}`;
               return `<div class="poem-block"><blockquote class="pull-quote pull-quote--poem"><p>${textHtml}</p></blockquote><cite class="poem-cite">${citeHtml}</cite></div>`;
             })() : ''}
+            ${meta.quote?.leftColumn ? (() => {
+              const q = meta.quote;
+              const textHtml = q.html || (q.noMarks ? escapeHtml(q.text) : `\u201C${escapeHtml(q.text)}\u201D`);
+              const citeHtml = q.attributionHtml || `\u2014 ${escapeHtml(q.attribution)}`;
+              return `<blockquote class="pull-quote left-column-quote"><p>${textHtml}</p><cite>${citeHtml}</cite></blockquote>`;
+            })() : ''}
           </div>
           <div class="summary-box">
             ${primaryImage ? `<figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${escapeHtml(primaryImage.alt || `${label} preview image.`)}" aria-label="Open larger image for ${escapeHtml(label)}"><img src="${primaryImage.url}" alt="${escapeHtml(primaryImage.alt || `${label} preview image.`)}" loading="eager" decoding="async"></button></figure>` : ''}
             <strong>${escapeHtml(meta.focus || section.title)}</strong>
             <p>${meta.subfocusHtml || escapeHtml(meta.subfocus || section.description)}</p>
             ${meta.extraLinks?.length && !meta.omitSummaryBoxLinks ? `<p>${meta.extraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')}</p>` : ''}
-            ${meta.quote && !meta.quote.poem && !meta.quote.belowDetails ? (() => {
+            ${meta.quote && !meta.quote.poem && !meta.quote.leftColumn && !meta.quote.belowDetails ? (() => {
               const q = meta.quote;
               const textHtml = q.html || (q.noMarks ? escapeHtml(q.text) : `\u201C${escapeHtml(q.text)}\u201D`);
               const citeHtml = q.attributionHtml || `\u2014 ${escapeHtml(q.attribution)}`;
@@ -579,7 +591,7 @@ ${JSON.stringify(graph, null, 2)}
           const citeHtml = q.attributionHtml || `\u2014 ${escapeHtml(q.attribution)}`;
           return `<blockquote class="pull-quote below-details-quote"><p>${textHtml}</p><cite>${citeHtml}</cite></blockquote>`;
         })() : ''}
-        ${meta.downloads?.length ? `<div class="downloads-inset"><h3 class="downloads-heading">Get the Latest Edition</h3><div class="download-links">${meta.downloads.map((d) => { const isPdf = d.label === 'PDF'; const cls = isPdf ? 'button primary download-btn' : 'button download-btn'; const dlabel = ({ PDF: '.pdf', DOCX: '.docx', EPUB: '.epub', Markdown: '.md' }[d.label] || `.${d.label.toLowerCase()}`); return `<a class="${cls}" href="${d.url}" download>${iconForFormat(d.label)}${escapeHtml(dlabel)}</a>`; }).join('')}</div></div>` : ''}
+        ${meta.downloads?.length ? `<div class="downloads-inset"><h3 id="downloads-title" class="downloads-heading">Get the Latest Edition</h3><div class="download-links">${meta.downloads.map((d) => { const isPdf = d.label === 'PDF'; const cls = isPdf ? 'button primary download-btn' : 'button download-btn'; const dlabel = ({ PDF: '.pdf', DOCX: '.docx', EPUB: '.epub', Markdown: '.md' }[d.label] || `.${d.label.toLowerCase()}`); return `<a class="${cls}" href="${d.url}" download>${iconForFormat(d.label)}${escapeHtml(dlabel)}</a>`; }).join('')}</div></div>` : ''}
       </section>
 
       ${meta.docs?.length ? `
