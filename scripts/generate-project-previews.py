@@ -258,9 +258,12 @@ def generate(filename, spec):
     x0 = 72
     draw.text((x0, 60), spec['title'], font=TITLE, fill=WHITE)
     subtitle_lines = wrap_text(draw, spec['subtitle'], SUBTITLE, 1040)
-    draw_lines(draw, subtitle_lines, SUBTITLE, MUTED, x0, 126, line_gap=6)
+    subtitle_bottom = draw_lines(draw, subtitle_lines, SUBTITLE, MUTED, x0, 126, line_gap=6)
 
-    pill_y = 184
+    # Derive pill position from actual subtitle height so long subtitles never
+    # bleed into the pills. 184 is the minimum (matches original 1-line layout).
+    pill_y = max(184, subtitle_bottom + 14)
+
     pill_specs = spec['pills']
     pill_widths = []
     for label, _color in pill_specs:
@@ -274,16 +277,18 @@ def generate(filename, spec):
         draw.text((x + width / 2, pill_y + 19), label, font=PILL, fill=WHITE, anchor='mm')
         x += width + gap
 
-    left = (72, 252, 560, 560)
-    right = (640, 252, 1128, 560)
+    # Card top sits 20 px below pill bottom; card bottom stays fixed at 560.
+    card_top = pill_y + 38 + 20
+    left = (72, card_top, 560, 560)
+    right = (640, card_top, 1128, 560)
     rr(draw, left, 26, BOX, outline=LINE)
     rr(draw, right, 26, BOX, outline=LINE)
 
-    draw.text((96, 278), spec['left_title'], font=CARD_TITLE, fill=GOLD)
-    bullet_list(draw, spec['left_bullets'], 102, 120, 320, 400, GOLD)
+    draw.text((96, card_top + 26), spec['left_title'], font=CARD_TITLE, fill=GOLD)
+    bullet_list(draw, spec['left_bullets'], 102, 120, card_top + 68, 400, GOLD)
 
-    draw.text((664, 278), spec['right_title'], font=CARD_TITLE, fill=ACCENT)
-    bullet_list(draw, spec['right_bullets'], 670, 688, 320, 400, ACCENT)
+    draw.text((664, card_top + 26), spec['right_title'], font=CARD_TITLE, fill=ACCENT)
+    bullet_list(draw, spec['right_bullets'], 670, 688, card_top + 68, 400, ACCENT)
 
     draw.text((W / 2, 586), spec['footer'], font=SMALL, fill=MUTED_2, anchor='mm')
     img.save(ASSETS / filename)
