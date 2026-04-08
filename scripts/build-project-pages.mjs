@@ -488,10 +488,12 @@ ${JSON.stringify(graph, null, 2)}
     .poem-cite { display: block; font-size: 0.88rem; font-style: normal; color: var(--foreground); margin-top: 12px; }
     .below-details-quote { margin-top: 18px; }
     .inline-example { display: block; margin: 10px 0 6px; padding: 10px 16px; background: rgba(0,0,0,0.22); border-radius: 10px; font-size: 0.94rem; }
+    .section-copy--split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 390px); gap: 22px; align-items: start; }
+    .section-copy-main > p:first-child { margin-top: 0; }
+    .section-copy-main > p:last-child { margin-bottom: 0; }
     .interior-aside {
-      float: right;
-      width: min(390px, 100%);
-      margin: 4px 0 20px 22px;
+      width: 100%;
+      margin: 0;
       padding: 18px 20px;
       background: rgba(255,255,255,0.05);
       border: 1px solid var(--line);
@@ -499,7 +501,6 @@ ${JSON.stringify(graph, null, 2)}
     }
     .interior-aside p { margin: 0 0 12px; }
     .interior-aside p:last-child { margin-bottom: 0; }
-    .section-copy::after { content: ""; display: block; clear: both; }
     .excerpt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
     .excerpt-card { padding: 18px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; }
     .excerpt-card-heading { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary); margin: 0 0 10px; font-weight: 700; }
@@ -528,13 +529,8 @@ ${JSON.stringify(graph, null, 2)}
     }
     @media (max-width: 760px) {
       .topbar, .hero, .section { padding: 20px; }
-      .details-grid { grid-template-columns: 1fr; }
+      .details-grid, .section-copy--split { grid-template-columns: 1fr; }
       .shell { width: min(calc(100% - 18px), var(--max)); }
-      .interior-aside {
-        float: none;
-        width: 100%;
-        margin: 18px 0 0;
-      }
     }
   </style>
 </head>
@@ -589,10 +585,11 @@ ${JSON.stringify(graph, null, 2)}
             <h2 id="why-title">${escapeHtml(whyHeading(repo))}</h2>
           </div>
         </div>
-        <div class="section-copy">
-        ${meta.whyInsetFirst && meta.whyInsetHtml?.length ? `<aside class="interior-aside">${meta.whyInsetHtml.join('')}</aside>` : ''}
+        <div class="section-copy${meta.whyInsetHtml?.length ? ' section-copy--split' : ''}">
+          <div class="section-copy-main">
         ${paragraphs.map((paragraph) => `<p>${paragraph.html || inlineCodeHtml(paragraph.text)}</p>`).join('\n        ')}
-        ${!meta.whyInsetFirst && meta.whyInsetHtml?.length ? `<aside class="interior-aside">${meta.whyInsetHtml.join('')}</aside>` : ''}
+          </div>
+        ${meta.whyInsetHtml?.length ? `<aside class="interior-aside">${meta.whyInsetHtml.join('')}</aside>` : ''}
         </div>
         ${meta.docExcerpts?.length ? `<div class="excerpt-grid">${meta.docExcerpts.map((ex) => `<div class="excerpt-card"><h3 class="excerpt-card-heading">${escapeHtml(ex.heading)}</h3>${ex.intro ? `<p>${escapeHtml(ex.intro)}</p>` : ''}${ex.bullets?.length ? `<ul>${ex.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>` : ''}</div>`).join('')}</div>` : ''}
       </section>
