@@ -128,7 +128,7 @@ SPECS = {
             'Principles and practices for security writing',
             'WordPress-specific terminology and definitions',
             'Audience-aware tone and explanation depth',
-            'Formatting rules for code, acronyms, and risk',
+            'Formatting rules for code, acronyms, and severity scores',
         ],
         'right_title': 'Why It Matters',
         'right_bullets': [
