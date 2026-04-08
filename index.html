@@ -1324,7 +1324,8 @@
   }
 
   function projectLinkMarkup(href, label = 'Project', showIcon = true) {
-    return `<a class="repo-link primary" href="${href}">${showIcon ? '<span aria-hidden="true">📄</span>' : ''}<span>${escapeHtml(label)}</span></a>`;
+    const withIcon = showIcon && label !== 'Docs';
+    return `<a class="repo-link primary" href="${href}">${withIcon ? '<span aria-hidden="true">📄</span>' : ''}<span>${escapeHtml(label)}</span></a>`;
   }
 
   function githubLinkMarkup(href) {
