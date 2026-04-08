@@ -134,19 +134,19 @@
   </script>
   <style>
     :root {
-      --primary: #29ABE0;
+      --primary: #5FD3FF;
       --secondary: #ffffff;
-      --foreground: #DCF0F9;
+      --foreground: #F2F8FF;
       --background: #0D1B2A;
       --tertiary: #071018;
       --accent: #F5A623;
       --star: #F5A623;
       --repo-icon: #5BC4E8;
       --date-icon: #74d4a3;
-      --surface: rgba(20, 45, 70, 0.88);
-      --surface-2: rgba(13, 27, 42, 0.88);
-      --surface-3: rgba(255, 255, 255, 0.04);
-      --line: rgba(255, 255, 255, 0.12);
+      --surface: rgba(20, 45, 70, 0.96);
+      --surface-2: rgba(13, 27, 42, 0.96);
+      --surface-3: rgba(255, 255, 255, 0.08);
+      --line: rgba(255, 255, 255, 0.18);
       --shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
       --max: 1180px;
       --radius: 28px;
@@ -314,7 +314,7 @@
       padding: 0 12px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(13,27,42,0.55);
+      background: rgba(13,27,42,0.78);
       text-decoration: none;
       font-weight: 700;
       font-size: 0.88rem;
@@ -329,16 +329,16 @@
 
     .button.primary,
     .repo-link.primary {
-      background: rgba(41,171,224,0.18);
+      background: rgba(95,211,255,0.24);
       color: var(--secondary);
-      border-color: rgba(41,171,224,0.35);
+      border-color: rgba(95,211,255,0.5);
     }
 
     .repo-link.alt,
     .button.alt {
       color: var(--accent);
       border-color: rgba(245,166,35,0.4);
-      background: rgba(245,166,35,0.1);
+      background: rgba(245,166,35,0.18);
     }
 
     h1 {
@@ -500,7 +500,7 @@
       align-content: start;
       padding: 18px;
       border-radius: 18px;
-      background: rgba(13,27,42,0.5);
+      background: rgba(13,27,42,0.82);
       border: 1px solid var(--line);
     }
 
@@ -514,7 +514,7 @@
       height: auto;
       border-radius: 14px;
       border: 1px solid var(--line);
-      background: rgba(13,27,42,0.6);
+      background: rgba(13,27,42,0.9);
     }
 
     .feature-label {
@@ -529,8 +529,8 @@
       line-height: 1;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      background: rgba(41,171,224,0.18);
-      border: 1px solid rgba(41,171,224,0.35);
+      background: rgba(95,211,255,0.24);
+      border: 1px solid rgba(95,211,255,0.5);
       color: var(--secondary);
     }
 
@@ -624,7 +624,7 @@
       object-fit: cover;
       border-radius: 16px;
       border: 1px solid var(--line);
-      background: rgba(13,27,42,0.5);
+      background: rgba(13,27,42,0.82);
     }
 
     .image-modal[hidden] {
@@ -753,7 +753,7 @@
       padding: 0 12px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(13,27,42,0.55);
+      background: rgba(13,27,42,0.82);
       color: var(--foreground);
       font-size: 0.82rem;
       font-weight: 600;
@@ -969,7 +969,7 @@
     <main id="main-content">
     <section class="panel hero" aria-labelledby="page-title">
       <div class="hero-top">
-        <a class="brand" href="https://newlocalmedia.github.io/" aria-label="Go to Work in Progress home">
+        <a class="brand" href="https://newlocalmedia.github.io/">
           <img src="assets/new-local-media-logo.png" alt="New Local Media logo">
           <span class="brand-copy">
             <span class="eyebrow">New Local Media</span>
@@ -1320,7 +1320,7 @@
 
   function updatedPill(value) {
     const formatted = formatDate(value);
-    return `<span class="pill" aria-label="Last updated ${escapeHtml(formatted)}" title="Last updated ${escapeHtml(formatted)}"><span aria-hidden="true">🔄</span> ${escapeHtml(formatted)}</span>`;
+    return `<span class="pill" title="Last updated ${escapeHtml(formatted)}"><span aria-hidden="true">🔄</span><span class="sr-only">Last updated </span>${escapeHtml(formatted)}</span>`;
   }
 
   function projectLinkMarkup(href, label = 'Project', showIcon = true) {

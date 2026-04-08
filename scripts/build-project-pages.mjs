@@ -392,14 +392,14 @@ ${JSON.stringify(graph, null, 2)}
   </script>
   <style>
     :root {
-      --primary: #29ABE0;
+      --primary: #5FD3FF;
       --secondary: #ffffff;
-      --foreground: #DCF0F9;
+      --foreground: #F2F8FF;
       --background: #0D1B2A;
       --tertiary: #071018;
-      --surface: rgba(20, 45, 70, 0.88);
-      --surface-2: rgba(13, 27, 42, 0.88);
-      --line: rgba(255, 255, 255, 0.12);
+      --surface: rgba(20, 45, 70, 0.96);
+      --surface-2: rgba(13, 27, 42, 0.96);
+      --line: rgba(255, 255, 255, 0.18);
       --star: #F5A623;
       --accent: #F5A623;
       --shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
@@ -438,10 +438,10 @@ ${JSON.stringify(graph, null, 2)}
     .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--foreground); }
     .muted, .lede, .breadcrumbs a, .breadcrumbs span, .section p, .detail-list dt { color: var(--foreground); }
     .stack { display: grid; gap: 18px; margin-top: 18px; }
-    .button, .pill { display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,27,42,0.55); text-decoration: none; font-weight: 600; white-space: nowrap; line-height: 1; }
-    .button.primary { background: rgba(41,171,224,0.18); border-color: rgba(41,171,224,0.35); }
-    .button.release-btn { background: rgba(245,166,35,0.14); border-color: rgba(245,166,35,0.40); }
-    .button.demo-btn { background: rgba(72,198,150,0.14); border-color: rgba(72,198,150,0.40); }
+    .button, .pill { display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,27,42,0.78); text-decoration: none; font-weight: 600; white-space: nowrap; line-height: 1; }
+    .button.primary { background: rgba(95,211,255,0.24); border-color: rgba(95,211,255,0.5); }
+    .button.release-btn { background: rgba(245,166,35,0.18); border-color: rgba(245,166,35,0.45); }
+    .button.demo-btn { background: rgba(72,198,150,0.22); border-color: rgba(72,198,150,0.45); }
     .topbar-btn-icon { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-right: 5px; }
     .github-icon { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; margin-right: 5px; }
     .button-emoji { display: inline-flex; align-items: center; flex-shrink: 0; margin-right: 5px; }
@@ -465,7 +465,7 @@ ${JSON.stringify(graph, null, 2)}
     .detail-list a { text-decoration: none; }
     .detail-list a:hover, .detail-list a:focus-visible, .section a:hover, .section a:focus-visible, .breadcrumbs a:hover, .breadcrumbs a:focus-visible, footer a:hover, footer a:focus-visible { color: var(--secondary); text-decoration: underline; }
     .related-list { display: grid; gap: 10px; padding-left: 1.2rem; margin: 0; }
-    .summary-box { margin-top: -10px; padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
+    .summary-box { margin-top: -10px; padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.08); }
     .summary-box-media { margin: 0 0 14px; }
     .image-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; border-radius: 16px; }
     .summary-box-media img, .image-trigger img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(13,27,42,0.5); }
@@ -568,7 +568,7 @@ ${JSON.stringify(graph, null, 2)}
     @media (max-width: 580px) { .docs-table tr { display: block; border-top: 1px solid var(--line); padding: 10px 0; } .docs-table td { display: block; padding: 4px 0; border-top: none; } .docs-table td:first-child { white-space: normal; } }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
-      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
+      :root { --line: rgba(255, 255, 255, 0.32); --foreground: #ffffff; }
       .button, .pill, .summary-box, .panel { border-width: 2px; }
     }
     @media (max-width: 760px) {
@@ -889,13 +889,14 @@ ${JSON.stringify(graph, null, 2)}
   </script>
   <style>
     :root {
-      --primary: #29ABE0;
+      --primary: #5FD3FF;
       --secondary: #ffffff;
-      --foreground: #DCF0F9;
+      --foreground: #F2F8FF;
       --background: #0D1B2A;
       --tertiary: #071018;
-      --surface: rgba(20, 45, 70, 0.88);
-      --line: rgba(255, 255, 255, 0.12);
+      --surface: rgba(20, 45, 70, 0.96);
+      --line: rgba(255, 255, 255, 0.18);
+      --accent: #5FD3FF;
       --shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
       --radius: 28px;
       --max: 980px;
@@ -927,20 +928,20 @@ ${JSON.stringify(graph, null, 2)}
     .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--foreground); }
     .muted, .breadcrumbs a, .breadcrumbs span, .lede { color: var(--foreground); }
     .stack { display: grid; gap: 18px; margin-top: 18px; }
-    .button { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,27,42,0.55); text-decoration: none; font-weight: 700; }
+    .button { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,27,42,0.78); text-decoration: none; font-weight: 700; }
     h1, h2 { margin: 0; letter-spacing: -0.03em; }
     h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.02; }
     h2 { font-size: 1.35rem; }
     .lede { margin: 14px 0 0; font-size: 1.05rem; }
     .owner-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
-    .owner-list li { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
+    .owner-list li { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.08); }
     .owner-list a, footer a, .breadcrumbs a { color: var(--accent); }
     .owner-list a, footer a { text-decoration: underline; font-weight: 700; }
     .owner-list a:hover, .owner-list a:focus-visible, .breadcrumbs a:hover, .breadcrumbs a:focus-visible, footer a:hover, footer a:focus-visible { color: var(--secondary); text-decoration: underline; }
     .repo-meta { margin-top: 8px; color: var(--foreground); font-size: 0.95rem; }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
-      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
+      :root { --line: rgba(255, 255, 255, 0.32); --foreground: #ffffff; }
       .button, .owner-list li, .panel { border-width: 2px; }
     }
     @media (max-width: 760px) {
@@ -1071,13 +1072,14 @@ ${JSON.stringify(graph, null, 2)}
   </script>
   <style>
     :root {
-      --primary: #29ABE0;
+      --primary: #5FD3FF;
       --secondary: #ffffff;
-      --foreground: #DCF0F9;
+      --foreground: #F2F8FF;
       --background: #0D1B2A;
       --tertiary: #071018;
-      --surface: rgba(20, 45, 70, 0.88);
-      --line: rgba(255, 255, 255, 0.12);
+      --surface: rgba(20, 45, 70, 0.96);
+      --line: rgba(255, 255, 255, 0.18);
+      --accent: #5FD3FF;
       --shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
       --radius: 28px;
       --max: 980px;
@@ -1098,19 +1100,19 @@ ${JSON.stringify(graph, null, 2)}
     .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--foreground); }
     .muted, .lede { color: var(--foreground); }
     .stack { display: grid; gap: 18px; margin-top: 18px; }
-    .button { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,27,42,0.55); text-decoration: none; font-weight: 700; }
+    .button { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,27,42,0.78); text-decoration: none; font-weight: 700; }
     h1, h2 { margin: 0; letter-spacing: -0.03em; }
     h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.02; }
     h2 { font-size: 1.35rem; }
     .lede { margin: 14px 0 0; font-size: 1.05rem; }
     .owner-groups { display: grid; gap: 18px; }
-    .owner-card { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
+    .owner-card { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.08); }
     .owner-card a, footer a { color: var(--accent); text-decoration: underline; font-weight: 700; }
     .owner-card a:hover, .owner-card a:focus-visible, footer a:hover, footer a:focus-visible { color: var(--secondary); text-decoration: underline; }
     .owner-card ul { margin: 10px 0 0; padding-left: 1.2rem; color: var(--foreground); }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
-      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
+      :root { --line: rgba(255, 255, 255, 0.32); --foreground: #ffffff; }
       .button, .owner-card, .panel { border-width: 2px; }
     }
   </style>

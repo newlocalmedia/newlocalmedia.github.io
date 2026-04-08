@@ -74,13 +74,14 @@
   </script>
   <style>
     :root {
-      --primary: #29ABE0;
+      --primary: #5FD3FF;
       --secondary: #ffffff;
-      --foreground: #DCF0F9;
+      --foreground: #F2F8FF;
       --background: #0D1B2A;
       --tertiary: #071018;
-      --surface: rgba(20, 45, 70, 0.88);
-      --line: rgba(255, 255, 255, 0.12);
+      --surface: rgba(20, 45, 70, 0.96);
+      --line: rgba(255, 255, 255, 0.18);
+      --accent: #5FD3FF;
       --shadow: 0 32px 90px rgba(0, 0, 0, 0.35);
       --radius: 28px;
       --max: 980px;
@@ -101,19 +102,19 @@
     .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--foreground); }
     .muted, .lede { color: var(--foreground); }
     .stack { display: grid; gap: 18px; margin-top: 18px; }
-    .button { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,27,42,0.55); text-decoration: none; font-weight: 700; }
+    .button { display: inline-flex; align-items: center; min-height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(13,27,42,0.78); text-decoration: none; font-weight: 700; }
     h1, h2 { margin: 0; letter-spacing: -0.03em; }
     h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.02; }
     h2 { font-size: 1.35rem; }
     .lede { margin: 14px 0 0; font-size: 1.05rem; }
     .owner-groups { display: grid; gap: 18px; }
-    .owner-card { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.04); }
+    .owner-card { padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.08); }
     .owner-card a, footer a { color: var(--accent); text-decoration: underline; font-weight: 700; }
     .owner-card a:hover, .owner-card a:focus-visible, footer a:hover, footer a:focus-visible { color: var(--secondary); text-decoration: underline; }
     .owner-card ul { margin: 10px 0 0; padding-left: 1.2rem; color: var(--foreground); }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
-      :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
+      :root { --line: rgba(255, 255, 255, 0.32); --foreground: #ffffff; }
       .button, .owner-card, .panel { border-width: 2px; }
     }
   </style>
