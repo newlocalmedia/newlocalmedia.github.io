@@ -186,8 +186,9 @@ export const PROJECT_META = {
     summary: 'WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on the LEMP/LAMP stack.',
     whyHeading: 'Audit the Stack Control by Control',
     narrativeHtml: [
-      'This benchmark answers <strong>”what do I verify?”</strong> Each control includes a description, a rationale, an audit command, and a remediation step for supported WordPress releases on the LEMP/LAMP stack.',
-      'It is meant for security engineers, auditors, and sysadmins who need prescriptive controls they can assess consistently across a real stack.'
+      'This benchmark answers the question, <strong>\u201CWhat do I verify?\u201D</strong> It is meant for security engineers, auditors, and sysadmins who need prescriptive controls they can assess consistently across a real stack.',
+      'Controls are organized in two tiers. <strong>Essential Hardening</strong> covers the baseline configurations required for any WordPress site on this stack \u2014 the minimum standard for a defensible deployment. <strong>Defense-in-Depth</strong> covers additional controls that reduce attack surface, limit lateral movement, and increase resilience \u2014 recommended for production environments or any site where the cost of compromise is high.',
+      'Each control includes a description, a rationale, an audit command, and a remediation step for supported WordPress releases on the LEMP/LAMP stack.'
     ],
     omitGenericNarrative: true,
     omitRelatedNarrative: true,
