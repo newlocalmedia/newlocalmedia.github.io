@@ -173,7 +173,7 @@ export const PROJECT_META = {
     whyHeading: 'What is CAPM?',
     narrativeHtml: [
       'CAPM has its haters in finance, including Warren Buffett and Charlie Munger — and for good reasons. We’re not using it to help you diversity your portfolio or price a possible acquisition. It works well for anyone bidding on projects where a price is needed before planning can be done. Connect risk to costs and deal pricing in a disciplined way you can learn from over time.',
-      'This repository ships two related apps: the fuller <strong>Decision Cards</strong> model and the simpler <strong>Project Risk Check</strong>. Together they translate systematic risk, engagement risk, and pricing discipline into something a working agency can actually use.'
+      'This repository ships two related apps: the fuller <a href="https://newlocalmedia.github.io/capm-for-agencies/"><strong>Decision Cards</strong></a> model and <a href="https://newlocalmedia.github.io/capm-for-agencies/project-risk-check/index.html"><strong>Project Risk Check</strong></a>, a simpler model for small agencies and freelancers. Together they translate systematic risk, engagement risk, and pricing discipline into something a working agency can actually use.'
     ],
     omitGenericNarrative: true,
     omitRelatedNarrative: true,
