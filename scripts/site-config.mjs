@@ -470,10 +470,10 @@ export const PROJECT_META = {
     omitGenericNarrative: true,
     omitRelatedNarrative: true,
     primaryImage: {
-      url: 'https://newlocalmedia.github.io/assets/wp-bibliography-block-preview.png',
-      alt: 'WordPress block editor screenshot showing the Bibliography Block with three formatted citations rendered in edit mode.',
-      width: 1280,
-      height: 900
+      url: 'https://newlocalmedia.github.io/assets/wp-bibliography-block-brand.svg',
+      alt: 'Bibliography brand graphic showing three books on a shelf with the subtitle Scholarly references for WordPress.',
+      width: 960,
+      height: 280
     },
     relatedProjects: [
       {
