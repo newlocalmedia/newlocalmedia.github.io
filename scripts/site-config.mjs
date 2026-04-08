@@ -134,9 +134,10 @@ export const PROJECT_META = {
   'dknauss/wp-security-benchmark': {
     displayTitle: 'WordPress Security Benchmark',
     schemaType: 'TechArticle',
+    summary: 'WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on the LEMP/LAMP stack.',
     whyHeading: 'Audit the Stack Control by Control',
     narrativeHtml: [
-      'This benchmark answers <strong>“what do I verify?”</strong> Each control includes a description, a rationale, an audit command, and a remediation step for supported WordPress releases on Linux.',
+      'This benchmark answers <strong>”what do I verify?”</strong> Each control includes a description, a rationale, an audit command, and a remediation step for supported WordPress releases on the LEMP/LAMP stack.',
       'It is meant for security engineers, auditors, and sysadmins who need prescriptive controls they can assess consistently across a real stack.'
     ],
     omitGenericNarrative: true,
