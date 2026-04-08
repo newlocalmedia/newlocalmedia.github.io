@@ -148,8 +148,13 @@ export const PROJECT_META = {
     whyHeading: 'Run WordPress with a Playbook',
     narrativeHtml: [
       'This runbook template is a 100-hour head start to help your team answer the question, <strong>\u201CHow do I do X?\u201D</strong> for a specific WordPress instance: numbered procedures, expected outcomes, rollback instructions, and copy-pasteable commands for the people running the site.',
-      'It is designed for sysadmins, DevOps engineers, and WordPress developers responsible for deployment, maintenance, backup verification, incident response, and disaster recovery.',
-      'Break-glass procedures are a natural fit for this format \u2014 the steps you take when normal access paths have failed. A break-glass entry names the trigger condition, the recovery path, and copy-pasteable commands. For example, a lost admin password entry might read: <span class="inline-example">SSH into the server and run <code>wp user update admin --user_pass=\'&hellip;\'</code> via WP-CLI, then verify login succeeds before closing the incident.</span> The runbook template has a section for these break-glass scenarios alongside your regular incident response procedures.'
+      'It is designed for sysadmins, DevOps engineers, and WordPress developers responsible for deployment, maintenance, backup verification, incident response, and disaster recovery.'
+    ],
+    whyInsetHtml: [
+      '<p>Break-glass procedures are a natural fit for this format \u2014 the steps you take when normal access paths have failed. A break-glass entry names the trigger condition, the recovery path, and copy-pasteable commands.</p>',
+      '<p>For example, a lost admin password entry might read:</p>',
+      '<div class="inline-example">SSH into the server and run <code>wp user update admin --user_pass=\'&hellip;\'</code> via WP-CLI, then verify login succeeds before closing the incident.</div>',
+      '<p>The runbook template has a section for these break-glass scenarios alongside your regular incident response procedures.</p>'
     ],
     docExcerpts: [
       {
@@ -195,7 +200,7 @@ export const PROJECT_META = {
     schemaType: 'TechArticle',
     release: { tag: 'v1.1.0', url: 'https://github.com/dknauss/wp-security-hardening-guide/releases/tag/v1.1.0' },
     license: { label: 'CC BY-SA 4.0', url: 'https://github.com/dknauss/wp-security-hardening-guide/blob/main/LICENSE' },
-    downloadCta: 'Get the Guide',
+    downloadCta: 'Get the Guide 📘',
     whyHeading: 'Design a Defensible WordPress Stack',
     narrativeHtml: [
       'This guide answers the question, <strong>\u201CWhat security measures should I implement and why?\u201D</strong>',

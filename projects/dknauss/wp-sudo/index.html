@@ -228,6 +228,18 @@
     .poem-cite { display: block; font-size: 0.88rem; font-style: normal; color: var(--foreground); margin-top: 12px; }
     .below-details-quote { margin-top: 18px; }
     .inline-example { display: block; margin: 10px 0 6px; padding: 10px 16px; background: rgba(0,0,0,0.22); border-radius: 10px; font-size: 0.94rem; }
+    .interior-aside {
+      float: right;
+      width: min(390px, 100%);
+      margin: 4px 0 20px 22px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+    .interior-aside p { margin: 0 0 12px; }
+    .interior-aside p:last-child { margin-bottom: 0; }
+    .section-copy::after { content: ""; display: block; clear: both; }
     .excerpt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
     .excerpt-card { padding: 18px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; }
     .excerpt-card-heading { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary); margin: 0 0 10px; font-weight: 700; }
@@ -258,6 +270,11 @@
       .topbar, .hero, .section { padding: 20px; }
       .details-grid { grid-template-columns: 1fr; }
       .shell { width: min(calc(100% - 18px), var(--max)); }
+      .interior-aside {
+        float: none;
+        width: 100%;
+        margin: 18px 0 0;
+      }
     }
   </style>
 </head>
@@ -312,9 +329,12 @@
             <h2 id="why-title">Gate Any Privileged Action</h2>
           </div>
         </div>
+        <div class="section-copy">
         <p>When a user attempts a gated action, Sudo intercepts the request at <code>admin_init</code>. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.</p>
         <p>Key docs worth reading here include the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/security-model.md">Security Model</a>, the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/developer-reference.md">Developer Reference</a>, the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/two-factor-integration.md">Two-Factor Integration</a> guide, and the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/sudo-architecture-comparison-matrix.md">Sudo Architecture Comparison Matrix</a>.</p>
         <p><strong>Related Repo:</strong> <a href="https://newlocalmedia.github.io/projects/dknauss/wordpress-2fa-ecosystem/">WordPress 2FA Ecosystem Documentation</a>.</p>
+
+        </div>
 
       </section>
 
