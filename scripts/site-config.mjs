@@ -65,7 +65,7 @@ export const PROJECT_META = {
     license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/wp-sudo/blob/main/LICENSE' },
     playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/wp-sudo/main/blueprint.json',
     summary: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.',
-    summaryHtml: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across <code>wp-admin</code> <code>REST</code> <code>WP-CLI</code> <code>Cron</code> <code>WPGraphQL</code> <code>XML-RPC</code>.',
+    summaryHtml: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across <code>wp-admin</code>, <code>REST</code>, <code>WP-CLI</code>, <code>Cron</code>, <code>WPGraphQL</code>, and <code>XML-RPC</code>.',
     whyHeading: 'Gate Any Privileged Action',
     narrative: 'When a user attempts a gated action, Sudo intercepts the request at `admin_init`. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.',
     narrativeHtml: [
@@ -84,7 +84,7 @@ export const PROJECT_META = {
     },
     focus: 'Sudo for WordPress! 🥪',
     subfocus: 'Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate.',
-    subfocusHtml: 'Risky actions \u2014 activating plugins, deleting users, changing key settings \u2014 are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for <code>REST</code> <code>WP-CLI</code> <code>Cron</code> <code>WPGraphQL</code> <code>XML-RPC</code>. No role escalation, no new permissions \u2014 just a gate.',
+    subfocusHtml: 'Risky actions \u2014 activating plugins, deleting users, changing key settings \u2014 are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for <code>REST</code>, <code>WP-CLI</code>, <code>Cron</code>, <code>WPGraphQL</code>, and <code>XML-RPC</code>. No role escalation, no new permissions \u2014 just a gate.',
     docs: [
       { label: 'WordPress Core Authentication', description: 'How WordPress authentication works \u2014 request flow, session handling, cookies, and the nonce system.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/wordpress-core-authentication.md' },
       { label: 'Two-Factor Authentication Flow', description: 'The full 2FA request lifecycle with a flowchart \u2014 and where Sudo intercepts.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/two-factor-authentication-flow.md' },
