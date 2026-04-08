@@ -730,6 +730,11 @@
       background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
     }
 
+    .repo-card--dknauss-wp-security-style-guide {
+      align-self: start;
+      min-height: 0;
+    }
+
     .repo-top {
       align-items: start;
       justify-content: space-between;
@@ -1332,11 +1337,15 @@
     return `<a class="repo-link" href="${href}">GitHub →</a>`;
   }
 
+  function repoCardClassName(repo) {
+    return `repo-card repo-card--${repo.full_name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+  }
+
   function repoCard(repo, badgeLabel = '') {
     const homepage = repoHomepage(repo);
     const details = projectPageUrl(repo);
     return `
-      <article class="repo-card">
+      <article class="${repoCardClassName(repo)}">
         <div class="repo-top">
           <div>
             <h3>${titleLinkMarkup(repo)}</h3>
@@ -1401,11 +1410,9 @@
         <div class="feature-kicker"><strong>What if WordPress had a Linux-like sudo mode?</strong></div>
         <h2 id="lead-feature-title">${titleLinkMarkup(repo)}</h2>
         <p class="feature-summary">${repoDescriptionHtml(repo)}</p>
-        <div class="meta">
+        <div class="meta feature-meta">
           <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
           ${updatedPill(repo.updated_at)}
-        </div>
-        <div class="feature-actions">
           ${details ? projectLinkMarkup(details) : ''}
           ${githubLinkMarkup(repo.html_url)}
         </div>

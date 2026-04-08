@@ -205,12 +205,17 @@ export const PROJECT_META = {
     downloadCta: 'Get the Guide 📘',
     whyHeading: 'Design a Defensible WordPress Stack',
     narrativeHtml: [
-      'This guide answers the question, <strong>\u201CWhat security measures should I implement and why?\u201D</strong> It summarizes the threat landscape, WordPress core security architecture, OWASP Top 10 coverage, server and application hardening, user authentication and session security, backup and recovery, supply chain risk, organizational security practices, and emerging AI-integration risks.'
+      'This guide answers the question, <strong>\u201CWhat security measures should I implement and why?\u201D</strong> It summarizes the threat landscape, WordPress core security architecture, OWASP Top 10 coverage, server and application hardening, user authentication and session security, backup and recovery, supply chain risk, organizational security practices, and emerging AI-integration risks.',
+      'It is written for developers, sysadmins, and security teams who need the rationale behind security decisions, not just a checklist of controls.'
     ],
     whyCards: [
       {
         title: 'Editorial Baseline & Sources',
-        html: 'It is written for developers, sysadmins, and security teams who need the rationale behind security decisions, not just a checklist of controls. The editorial baseline is alignment with official WordPress Developer Documentation \u2014 especially the Advanced Administration Handbook and its security and hardening materials \u2014 with supporting reference to WordPress security documentation, the WordPress Security White Paper, WordPress Code Reference and core behavior, and standard industry sources such as OWASP, MDN, and CIS Benchmarks.'
+        logo: {
+          src: '/assets/owasp-black-logo.svg',
+          alt: 'OWASP logo'
+        },
+        html: 'The editorial baseline is alignment with official WordPress Developer Documentation \u2014 especially the Advanced Administration Handbook and its security and hardening materials \u2014 with supporting reference to WordPress security documentation, the WordPress Security White Paper, WordPress Code Reference and core behavior, and standard industry sources such as OWASP, MDN, and CIS Benchmarks.'
       },
       {
         title: 'Human-Reviewed AI Process',
