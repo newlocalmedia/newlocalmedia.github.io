@@ -60,15 +60,18 @@ export const PROJECT_META = {
     displayTitle: 'Sudo',
     pageTitle: 'Sudo \u26E9\uFE0F',
     schemaType: 'SoftwareSourceCode',
+    release: { tag: 'v2.14.0', url: 'https://github.com/dknauss/wp-sudo/releases/tag/v2.14.0' },
     summary: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.',
     summaryHtml: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across <code>wp-admin</code> <code>REST</code> <code>WP-CLI</code> <code>Cron</code> <code>WPGraphQL</code> <code>XML-RPC</code>.',
     whyHeading: 'Gate Any Privileged Action',
     narrative: 'When a user attempts a gated action, Sudo intercepts the request at `admin_init`. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.',
     narrativeHtml: [
       'When a user attempts a gated action, Sudo intercepts the request at <code>admin_init</code>. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.',
-      'Key docs worth reading here include the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/security-model.md">Security Model</a>, the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/developer-reference.md">Developer Reference</a>, the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/two-factor-integration.md">Two-Factor Integration</a> guide, and the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/sudo-architecture-comparison-matrix.md">Sudo Architecture Comparison Matrix</a>.'
+      'Key docs worth reading here include the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/security-model.md">Security Model</a>, the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/developer-reference.md">Developer Reference</a>, the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/two-factor-integration.md">Two-Factor Integration</a> guide, and the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/sudo-architecture-comparison-matrix.md">Sudo Architecture Comparison Matrix</a>.',
+      'Related Project: <a href="https://newlocalmedia.github.io/projects/dknauss/wordpress-2fa-ecosystem/">WordPress 2FA Ecosystem Documentation</a>.'
     ],
     omitGenericNarrative: true,
+    omitRelatedNarrative: true,
     primaryImage: {
       url: 'https://newlocalmedia.github.io/assets/wp-sudo-preview.png',
       alt: 'Sudo for WordPress preview image using the Fuwa no Seki graphic.'
@@ -323,6 +326,8 @@ export const PROJECT_META = {
   'dknauss/wordpress-2fa-ecosystem': {
     displayTitle: 'WordPress 2FA Ecosystem',
     schemaType: 'SoftwareSourceCode',
+    summary: 'This is a developer reference exploring how major WordPress 2FA plugins store secrets, detect users, and validate codes. It includes Sudo bridge examples for WP 2FA, Wordfence, and AIOS.',
+    summaryHtml: 'This is a developer reference exploring how major WordPress 2FA plugins store secrets, detect users, and validate codes. It includes <a href="https://newlocalmedia.github.io/projects/dknauss/wp-sudo/">Sudo</a> bridge examples for WP 2FA, Wordfence, and AIOS.',
     whyHeading: 'Bridge the WordPress 2FA Plugin Maze',
     relatedProjects: [
       {
@@ -347,7 +352,8 @@ export const PROJECT_META = {
   'dknauss/the-drafting-table': {
     displayTitle: 'The Drafting Table',
     schemaType: 'SoftwareSourceCode',
-    whyHeading: 'Build an Architect’s Notebook in WordPress',
+    release: { tag: 'v0.6.1', url: 'https://github.com/dknauss/the-drafting-table/releases/tag/v0.6.1' },
+    whyHeading: 'Build an Architect\u2019s Notebook in WordPress',
     relatedProjects: [
       {
         fullName: 'dknauss/wp-bibliography-block',
@@ -373,6 +379,7 @@ export const PROJECT_META = {
   'dknauss/wp-bibliography-block': {
     displayTitle: 'Bibliography Block',
     schemaType: 'SoftwareSourceCode',
+    release: { tag: 'v1.0.0', url: 'https://github.com/dknauss/wp-bibliography-block/releases/tag/v1.0.0' },
     summary: 'WordPress block plugin that converts DOI and BibTeX citations into semantically rich, auto-sorted bibliography lists.',
     whyHeading: 'Structured Citations in the Block Editor',
     narrativeHtml: [
