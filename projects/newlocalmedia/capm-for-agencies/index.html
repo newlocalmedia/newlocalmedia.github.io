@@ -20,17 +20,17 @@
   <meta property="og:title" content="CAPM for Agencies | Work in Progress">
   <meta property="og:description" content="Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics.">
   <meta property="og:url" content="https://newlocalmedia.github.io/projects/newlocalmedia/capm-for-agencies/">
-  <meta property="og:image" content="https://newlocalmedia.github.io/assets/capm-for-agencies-preview.png">
-  <meta property="og:image:secure_url" content="https://newlocalmedia.github.io/assets/capm-for-agencies-preview.png">
+  <meta property="og:image" content="https://newlocalmedia.github.io/capm-for-agencies/theory/figures/capm-comparison.png">
+  <meta property="og:image:secure_url" content="https://newlocalmedia.github.io/capm-for-agencies/theory/figures/capm-comparison.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Generated preview image for CAPM for Agencies showing the two pricing tools and the project risk model.">
+  <meta property="og:image:alt" content="CAPM for Agencies comparison chart screenshot.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CAPM for Agencies | Work in Progress">
   <meta name="twitter:description" content="Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics.">
-  <meta name="twitter:image" content="https://newlocalmedia.github.io/assets/capm-for-agencies-preview.png">
-  <meta name="twitter:image:alt" content="Generated preview image for CAPM for Agencies showing the two pricing tools and the project risk model.">
+  <meta name="twitter:image" content="https://newlocalmedia.github.io/capm-for-agencies/theory/figures/capm-comparison.png">
+  <meta name="twitter:image:alt" content="CAPM for Agencies comparison chart screenshot.">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -97,7 +97,7 @@
       ],
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://newlocalmedia.github.io/assets/capm-for-agencies-preview.png",
+        "url": "https://newlocalmedia.github.io/capm-for-agencies/theory/figures/capm-comparison.png",
         "width": 1200,
         "height": 630
       }
@@ -218,6 +218,10 @@
     .summary-box-media { margin: 0 0 14px; }
     .image-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; border-radius: 16px; }
     .summary-box-media img, .image-trigger img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(13,27,42,0.5); }
+    .screenshot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .screenshot-card { margin: 0; display: grid; gap: 10px; }
+    .screenshot-card img { aspect-ratio: 1200 / 630; object-fit: cover; }
+    .screenshot-card figcaption { color: var(--foreground); font-size: 0.92rem; line-height: 1.5; }
     .image-modal[hidden] { display: none; }
     .image-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 28px; background: rgba(6,10,18,0.82); backdrop-filter: blur(10px); }
     .modal-open { overflow: hidden; }
@@ -328,6 +332,7 @@
     @media (max-width: 760px) {
       .topbar, .hero, .section { padding: 20px; }
       .details-grid, .section-copy--split { grid-template-columns: 1fr; }
+      .screenshot-grid { grid-template-columns: 1fr; }
       .shell { width: min(calc(100% - 18px), var(--max)); }
     }
   </style>
@@ -408,7 +413,7 @@
 
           </div>
           <div class="summary-box">
-            <figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="https://newlocalmedia.github.io/assets/capm-for-agencies-preview.png" data-modal-alt="Generated preview image for CAPM for Agencies showing the two pricing tools and the project risk model." aria-label="Open larger image for CAPM for Agencies"><img src="https://newlocalmedia.github.io/assets/capm-for-agencies-preview.png" alt="Generated preview image for CAPM for Agencies showing the two pricing tools and the project risk model." loading="eager" decoding="async"></button></figure>
+            <figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="https://newlocalmedia.github.io/capm-for-agencies/theory/figures/capm-comparison.png" data-modal-alt="CAPM for Agencies comparison chart screenshot." aria-label="Open larger image for CAPM for Agencies"><img src="https://newlocalmedia.github.io/capm-for-agencies/theory/figures/capm-comparison.png" alt="CAPM for Agencies comparison chart screenshot." loading="eager" decoding="async"></button></figure>
             <strong>CAPM Adapted for Agencies, Consultants, and B-Corps</strong>
             <p>Visualize how baseline, market, and risk-adjusted pricing move apart as project and delivery risk increase.</p>
 
@@ -418,6 +423,8 @@
 
 
       </section>
+
+
 
 
 

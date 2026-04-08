@@ -106,6 +106,15 @@ export const PROJECT_META = {
       { label: 'README', description: 'Installation, configuration, and usage overview.', url: 'https://github.com/dknauss/wp-sudo/blob/main/readme.md' },
       { label: 'FAQ', description: 'Answers to common questions about configuration, behavior, and edge cases.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/FAQ.md' }
     ],
+    screenshots: [
+      { url: 'https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-1.png', alt: 'Sudo challenge page showing the reauthentication interstitial with password field.', caption: 'Challenge page — reauthentication interstitial with password field.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-2.png', alt: 'Sudo two-factor authentication step after password confirmation.', caption: 'Two-factor authentication — after password confirmation, users with 2FA enabled enter their authentication code.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-3.png', alt: 'Sudo settings page with session duration and entry point policies.', caption: 'Settings page — configure session duration and entry point policies.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-4.png', alt: 'Sudo gate notice on the plugins page when no sudo session is active.', caption: 'Gate notice (plugins) — when no sudo session is active, a persistent notice links to the challenge page.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-5.png', alt: 'Sudo gate notice on the themes page.', caption: 'Gate notice (themes) — the same gating notice appears on the themes page.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-6.png', alt: 'Sudo settings page listing all gated actions with categories and surfaces.', caption: 'Gated actions — the settings page lists all gated operations with their categories and surfaces.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-7.png', alt: 'WordPress admin bar showing an active Sudo session with a green countdown timer.', caption: 'Active sudo session — the admin bar shows a green countdown timer.' }
+    ],
     relatedProjects: [
       {
         fullName: 'dknauss/wordpress-2fa-ecosystem',
@@ -325,8 +334,8 @@ export const PROJECT_META = {
       }
     ],
     primaryImage: {
-      url: 'https://newlocalmedia.github.io/assets/capm-for-agencies-preview.png',
-      alt: 'Generated preview image for CAPM for Agencies showing the two pricing tools and the project risk model.'
+      url: 'https://newlocalmedia.github.io/capm-for-agencies/theory/figures/capm-comparison.png',
+      alt: 'CAPM for Agencies comparison chart screenshot.'
     },
     focus: 'CAPM Adapted for Agencies, Consultants, and B-Corps',
     subfocus: 'Visualize how baseline, market, and risk-adjusted pricing move apart as project and delivery risk increase.',
@@ -472,9 +481,16 @@ export const PROJECT_META = {
     primaryImage: {
       url: 'https://newlocalmedia.github.io/assets/wp-bibliography-block-brand.svg',
       alt: 'Bibliography brand graphic showing three books on a shelf with the subtitle Scholarly references for WordPress.',
-      width: 960,
-      height: 280
+      width: 1200,
+      height: 630
     },
+    screenshots: [
+      { url: 'https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-1.png', alt: 'Bibliography block shown in the WordPress block inserter.', caption: 'Discover the Bibliography block in the inserter.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-2.png', alt: 'Bibliography default import form with DOI, BibTeX, and citation text input.', caption: 'Paste DOI, BibTeX, or supported citation text into the default import form.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-3.png', alt: 'Bibliography manual entry interface with Publication Type and structured fields.', caption: 'Use Manual Entry to build a citation with Publication Type and structured fields.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-4.png', alt: 'Bibliography block settings sidebar with citation style, metadata output, and export actions.', caption: 'Configure citation style, metadata output, and export actions in the block settings sidebar.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-5.png', alt: 'Rendered Bibliography block on the front end with linked URLs and semantic output.', caption: 'View the rendered bibliography on the site front end with linked URLs and semantic output.' }
+    ],
     relatedProjects: [
       {
         fullName: 'dknauss/the-drafting-table',

@@ -212,6 +212,10 @@
     .summary-box-media { margin: 0 0 14px; }
     .image-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; border-radius: 16px; }
     .summary-box-media img, .image-trigger img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(13,27,42,0.5); }
+    .screenshot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .screenshot-card { margin: 0; display: grid; gap: 10px; }
+    .screenshot-card img { aspect-ratio: 1200 / 630; object-fit: cover; }
+    .screenshot-card figcaption { color: var(--foreground); font-size: 0.92rem; line-height: 1.5; }
     .image-modal[hidden] { display: none; }
     .image-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 28px; background: rgba(6,10,18,0.82); backdrop-filter: blur(10px); }
     .modal-open { overflow: hidden; }
@@ -322,6 +326,7 @@
     @media (max-width: 760px) {
       .topbar, .hero, .section { padding: 20px; }
       .details-grid, .section-copy--split { grid-template-columns: 1fr; }
+      .screenshot-grid { grid-template-columns: 1fr; }
       .shell { width: min(calc(100% - 18px), var(--max)); }
     }
   </style>
@@ -412,6 +417,19 @@
         </div>
 
 
+      </section>
+
+
+      <section class="panel section" aria-labelledby="screenshots-title">
+        <div class="section-head">
+          <div>
+            <h2 id="screenshots-title">Screenshot Gallery</h2>
+            <p>Selected screenshots from Sudo. Click any image to enlarge it.</p>
+          </div>
+        </div>
+        <div class="screenshot-grid">
+          <figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-1.png" data-modal-alt="Sudo challenge page showing the reauthentication interstitial with password field." aria-label="Open larger image for Challenge page — reauthentication interstitial with password field."><img src="https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-1.png" alt="Sudo challenge page showing the reauthentication interstitial with password field." loading="lazy" decoding="async"></button><figcaption>Challenge page — reauthentication interstitial with password field.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-2.png" data-modal-alt="Sudo two-factor authentication step after password confirmation." aria-label="Open larger image for Two-factor authentication — after password confirmation, users with 2FA enabled enter their authentication code."><img src="https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-2.png" alt="Sudo two-factor authentication step after password confirmation." loading="lazy" decoding="async"></button><figcaption>Two-factor authentication — after password confirmation, users with 2FA enabled enter their authentication code.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-3.png" data-modal-alt="Sudo settings page with session duration and entry point policies." aria-label="Open larger image for Settings page — configure session duration and entry point policies."><img src="https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-3.png" alt="Sudo settings page with session duration and entry point policies." loading="lazy" decoding="async"></button><figcaption>Settings page — configure session duration and entry point policies.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-4.png" data-modal-alt="Sudo gate notice on the plugins page when no sudo session is active." aria-label="Open larger image for Gate notice (plugins) — when no sudo session is active, a persistent notice links to the challenge page."><img src="https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-4.png" alt="Sudo gate notice on the plugins page when no sudo session is active." loading="lazy" decoding="async"></button><figcaption>Gate notice (plugins) — when no sudo session is active, a persistent notice links to the challenge page.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-5.png" data-modal-alt="Sudo gate notice on the themes page." aria-label="Open larger image for Gate notice (themes) — the same gating notice appears on the themes page."><img src="https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-5.png" alt="Sudo gate notice on the themes page." loading="lazy" decoding="async"></button><figcaption>Gate notice (themes) — the same gating notice appears on the themes page.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-6.png" data-modal-alt="Sudo settings page listing all gated actions with categories and surfaces." aria-label="Open larger image for Gated actions — the settings page lists all gated operations with their categories and surfaces."><img src="https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-6.png" alt="Sudo settings page listing all gated actions with categories and surfaces." loading="lazy" decoding="async"></button><figcaption>Gated actions — the settings page lists all gated operations with their categories and surfaces.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-7.png" data-modal-alt="WordPress admin bar showing an active Sudo session with a green countdown timer." aria-label="Open larger image for Active sudo session — the admin bar shows a green countdown timer."><img src="https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-7.png" alt="WordPress admin bar showing an active Sudo session with a green countdown timer." loading="lazy" decoding="async"></button><figcaption>Active sudo session — the admin bar shows a green countdown timer.</figcaption></figure>
+        </div>
       </section>
 
 

@@ -545,6 +545,22 @@ function renderWhyCards(cards = []) {
   return `<div class="why-card-grid">${cards.map((card) => `<div class="why-card"><div class="why-card-head"><h3 class="why-card-title">${escapeHtml(card.title)}</h3>${card.logo ? `<img class="why-card-logo" src="${card.logo.src}" alt="${escapeHtml(card.logo.alt || '')}" loading="lazy" decoding="async">` : ''}</div><p>${card.html || escapeHtml(card.text)}</p></div>`).join('')}</div>`;
 }
 
+function renderScreenshotGallery(screenshots = [], label = 'this project') {
+  if (!screenshots.length) return '';
+  return `
+      <section class="panel section" aria-labelledby="screenshots-title">
+        <div class="section-head">
+          <div>
+            <h2 id="screenshots-title">Screenshot Gallery</h2>
+            <p>Selected screenshots from ${escapeHtml(label)}. Click any image to enlarge it.</p>
+          </div>
+        </div>
+        <div class="screenshot-grid">
+          ${screenshots.map((shot, index) => `<figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="${shot.url}" data-modal-alt="${escapeHtml(shot.alt || shot.caption || `${label} screenshot ${index + 1}`)}" aria-label="Open larger image for ${escapeHtml(shot.caption || `${label} screenshot ${index + 1}`)}"><img src="${shot.url}" alt="${escapeHtml(shot.alt || shot.caption || `${label} screenshot ${index + 1}`)}" loading="lazy" decoding="async"></button>${shot.caption ? `<figcaption>${escapeHtml(shot.caption)}</figcaption>` : ''}</figure>`).join('')}
+        </div>
+      </section>`;
+}
+
 function renderDocsTable(docs = [], label = 'this project') {
   if (!docs.length) return '';
   return `
@@ -761,6 +777,10 @@ ${JSON.stringify(graph, null, 2)}
     .summary-box-media { margin: 0 0 14px; }
     .image-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; border-radius: 16px; }
     .summary-box-media img, .image-trigger img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(13,27,42,0.5); }
+    .screenshot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .screenshot-card { margin: 0; display: grid; gap: 10px; }
+    .screenshot-card img { aspect-ratio: 1200 / 630; object-fit: cover; }
+    .screenshot-card figcaption { color: var(--foreground); font-size: 0.92rem; line-height: 1.5; }
     .image-modal[hidden] { display: none; }
     .image-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 28px; background: rgba(6,10,18,0.82); backdrop-filter: blur(10px); }
     .modal-open { overflow: hidden; }
@@ -871,6 +891,7 @@ ${JSON.stringify(graph, null, 2)}
     @media (max-width: 760px) {
       .topbar, .hero, .section { padding: 20px; }
       .details-grid, .section-copy--split { grid-template-columns: 1fr; }
+      .screenshot-grid { grid-template-columns: 1fr; }
       .shell { width: min(calc(100% - 18px), var(--max)); }
     }
   </style>
@@ -980,6 +1001,8 @@ ${JSON.stringify(graph, null, 2)}
         })() : ''}
         ${meta.downloads?.length ? `<div class="downloads-inset"><h3 id="downloads-title" class="downloads-heading">Get the Latest Edition</h3><div class="download-links">${meta.downloads.map((d) => { const isPdf = d.label === 'PDF'; const cls = isPdf ? 'button primary download-btn' : 'button download-btn'; const dlabel = ({ PDF: '.pdf', DOCX: '.docx', EPUB: '.epub', Markdown: '.md' }[d.label] || `.${d.label.toLowerCase()}`); const behavior = isPdf ? '' : ' download'; return `<a class="${cls}" href="${d.url}"${behavior}>${iconForFormat(d.label)}${escapeHtml(dlabel)}</a>`; }).join('')}</div></div>` : ''}
       </section>
+
+      ${renderScreenshotGallery(meta.screenshots, label)}
 
       ${renderDocsTable(meta.docs, label)}
 

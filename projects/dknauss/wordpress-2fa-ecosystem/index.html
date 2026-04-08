@@ -212,6 +212,10 @@
     .summary-box-media { margin: 0 0 14px; }
     .image-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; border-radius: 16px; }
     .summary-box-media img, .image-trigger img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(13,27,42,0.5); }
+    .screenshot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .screenshot-card { margin: 0; display: grid; gap: 10px; }
+    .screenshot-card img { aspect-ratio: 1200 / 630; object-fit: cover; }
+    .screenshot-card figcaption { color: var(--foreground); font-size: 0.92rem; line-height: 1.5; }
     .image-modal[hidden] { display: none; }
     .image-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 28px; background: rgba(6,10,18,0.82); backdrop-filter: blur(10px); }
     .modal-open { overflow: hidden; }
@@ -322,6 +326,7 @@
     @media (max-width: 760px) {
       .topbar, .hero, .section { padding: 20px; }
       .details-grid, .section-copy--split { grid-template-columns: 1fr; }
+      .screenshot-grid { grid-template-columns: 1fr; }
       .shell { width: min(calc(100% - 18px), var(--max)); }
     }
   </style>
@@ -412,6 +417,8 @@
 
 
       </section>
+
+
 
 
 

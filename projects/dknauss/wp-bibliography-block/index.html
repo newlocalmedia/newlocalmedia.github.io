@@ -23,8 +23,8 @@
   <meta property="og:image" content="https://newlocalmedia.github.io/assets/wp-bibliography-block-brand.svg">
   <meta property="og:image:secure_url" content="https://newlocalmedia.github.io/assets/wp-bibliography-block-brand.svg">
   <meta property="og:image:type" content="image/svg+xml">
-  <meta property="og:image:width" content="960">
-  <meta property="og:image:height" content="280">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Bibliography brand graphic showing three books on a shelf with the subtitle Scholarly references for WordPress.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Bibliography Block | Work in Progress">
@@ -98,8 +98,8 @@
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://newlocalmedia.github.io/assets/wp-bibliography-block-brand.svg",
-        "width": 960,
-        "height": 280
+        "width": 1200,
+        "height": 630
       }
     },
     {
@@ -212,6 +212,10 @@
     .summary-box-media { margin: 0 0 14px; }
     .image-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; border-radius: 16px; }
     .summary-box-media img, .image-trigger img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(13,27,42,0.5); }
+    .screenshot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .screenshot-card { margin: 0; display: grid; gap: 10px; }
+    .screenshot-card img { aspect-ratio: 1200 / 630; object-fit: cover; }
+    .screenshot-card figcaption { color: var(--foreground); font-size: 0.92rem; line-height: 1.5; }
     .image-modal[hidden] { display: none; }
     .image-modal { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 28px; background: rgba(6,10,18,0.82); backdrop-filter: blur(10px); }
     .modal-open { overflow: hidden; }
@@ -322,6 +326,7 @@
     @media (max-width: 760px) {
       .topbar, .hero, .section { padding: 20px; }
       .details-grid, .section-copy--split { grid-template-columns: 1fr; }
+      .screenshot-grid { grid-template-columns: 1fr; }
       .shell { width: min(calc(100% - 18px), var(--max)); }
     }
   </style>
@@ -411,6 +416,19 @@
         </div>
 
 
+      </section>
+
+
+      <section class="panel section" aria-labelledby="screenshots-title">
+        <div class="section-head">
+          <div>
+            <h2 id="screenshots-title">Screenshot Gallery</h2>
+            <p>Selected screenshots from Bibliography Block. Click any image to enlarge it.</p>
+          </div>
+        </div>
+        <div class="screenshot-grid">
+          <figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-1.png" data-modal-alt="Bibliography block shown in the WordPress block inserter." aria-label="Open larger image for Discover the Bibliography block in the inserter."><img src="https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-1.png" alt="Bibliography block shown in the WordPress block inserter." loading="lazy" decoding="async"></button><figcaption>Discover the Bibliography block in the inserter.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-2.png" data-modal-alt="Bibliography default import form with DOI, BibTeX, and citation text input." aria-label="Open larger image for Paste DOI, BibTeX, or supported citation text into the default import form."><img src="https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-2.png" alt="Bibliography default import form with DOI, BibTeX, and citation text input." loading="lazy" decoding="async"></button><figcaption>Paste DOI, BibTeX, or supported citation text into the default import form.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-3.png" data-modal-alt="Bibliography manual entry interface with Publication Type and structured fields." aria-label="Open larger image for Use Manual Entry to build a citation with Publication Type and structured fields."><img src="https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-3.png" alt="Bibliography manual entry interface with Publication Type and structured fields." loading="lazy" decoding="async"></button><figcaption>Use Manual Entry to build a citation with Publication Type and structured fields.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-4.png" data-modal-alt="Bibliography block settings sidebar with citation style, metadata output, and export actions." aria-label="Open larger image for Configure citation style, metadata output, and export actions in the block settings sidebar."><img src="https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-4.png" alt="Bibliography block settings sidebar with citation style, metadata output, and export actions." loading="lazy" decoding="async"></button><figcaption>Configure citation style, metadata output, and export actions in the block settings sidebar.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-5.png" data-modal-alt="Rendered Bibliography block on the front end with linked URLs and semantic output." aria-label="Open larger image for View the rendered bibliography on the site front end with linked URLs and semantic output."><img src="https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-5.png" alt="Rendered Bibliography block on the front end with linked URLs and semantic output." loading="lazy" decoding="async"></button><figcaption>View the rendered bibliography on the site front end with linked URLs and semantic output.</figcaption></figure>
+        </div>
       </section>
 
 
