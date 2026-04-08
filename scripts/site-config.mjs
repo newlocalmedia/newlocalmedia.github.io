@@ -314,8 +314,17 @@ export const PROJECT_META = {
     omitRelatedNarrative: true,
     primaryImage: {
       url: 'https://newlocalmedia.github.io/assets/wp-bibliography-block-preview.png',
-      alt: 'Preview image for the Bibliography Block plugin showing structured citation input and formatted bibliography output.'
+      alt: 'WordPress block editor screenshot showing the Bibliography Block with three formatted citations rendered in edit mode.',
+      width: 1280,
+      height: 900
     },
+    relatedProjects: [
+      {
+        fullName: 'dknauss/the-drafting-table',
+        label: 'The Drafting Table',
+        description: 'A WordPress block theme with architectural design motifs — parchment textures, blueprint borders, and refined typography for portfolio and editorial work.'
+      }
+    ],
     focus: 'Academic Citations in the Block Editor',
     subfocus: 'DOI lookups and BibTeX input converted to semantically rich, auto-sorted bibliography lists — structured citations that travel with the work.'
   }
