@@ -21,8 +21,11 @@ export const SELECTED = [
   'dknauss/wordpress-2fa-ecosystem',
   'dknauss/the-drafting-table'
 ];
+export const BLOCKS_SHOWCASE = [
+  'dknauss/wp-bibliography-block'
+];
 
-export const CURATED_REPOS = [LEAD_REPO, ...AI_DOCS_GROUP, ...SPOTLIGHT, ...SELECTED];
+export const CURATED_REPOS = [LEAD_REPO, ...AI_DOCS_GROUP, ...SPOTLIGHT, ...SELECTED, ...BLOCKS_SHOWCASE];
 
 export const SECTION_META = {
   lead: {
@@ -44,6 +47,11 @@ export const SECTION_META = {
     title: 'More Projects',
     description: 'Other things I\'ve been working on.',
     narrative: 'This project is part of the selected work section, which rounds out the collection with adjacent experiments in automation, identity, authentication, and publishing design.'
+  },
+  blocks: {
+    title: 'WordPress Block Plugins',
+    description: 'Block editor plugins that bring specialized content types and structured data to WordPress.',
+    narrative: 'This project extends the WordPress block editor with structured content capabilities that go beyond what core blocks provide.'
   }
 };
 
@@ -64,7 +72,14 @@ export const PROJECT_META = {
       alt: 'Sudo for WordPress preview image using the Fuwa no Seki graphic.'
     },
     focus: 'Sudo for WordPress! 🥪',
-    subfocus: 'Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️'
+    subfocus: 'Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️',
+    relatedProjects: [
+      {
+        fullName: 'dknauss/wordpress-2fa-ecosystem',
+        label: 'WordPress 2FA Ecosystem',
+        description: 'Reference mapping how major WordPress 2FA plugins store secrets, detect users, and validate codes — the bridge guide for Sudo 2FA integration.'
+      }
+    ]
   },
   'dknauss/ai-assisted-docs': {
     displayTitle: 'AI-Assisted Docs',
@@ -197,6 +212,13 @@ export const PROJECT_META = {
     displayTitle: 'Author Identity',
     schemaType: 'SoftwareSourceCode',
     whyHeading: 'Make Authorship Portable',
+    relatedProjects: [
+      {
+        fullName: 'dknauss/wp-bibliography-block',
+        label: 'Bibliography Block',
+        description: 'WordPress block plugin that converts DOI and BibTeX citations into semantically rich, auto-sorted bibliography lists — a natural companion for structured content authorship.'
+      }
+    ],
     narrativeHtml: [
       'Author Identity treats WordPress as a source of truth for richer author data that can travel with the work across feeds, search, the fediverse, and AI systems.',
       'The repository combines planning and research with the <code>byline-feed</code> plugin, which normalizes author data from core WordPress and major multi-author plugins, then emits structured outputs like feeds, JSON-LD, <code>fediverse:creator</code>, and AI-consent signals.'
@@ -213,7 +235,8 @@ export const PROJECT_META = {
   'dknauss/fedibots': {
     displayTitle: 'Fedibots',
     schemaType: 'SoftwareSourceCode',
-    summary: 'PHP framework for creating write-only ActivityPub fediverse bots. Based on Terence Eden’s (@edent) model.',
+    summary: 'PHP framework for creating write-only ActivityPub fediverse bots. Based on Terence Eden\u2019s (@edent) model.',
+    relatedProjects: [],
     whyHeading: 'Publish to the Fediverse with Minimal Machinery',
     narrativeHtml: [
       'Fedibots is a clean-room PHP framework for write-only ActivityPub bots: each bot is a standalone server that followers can discover, follow, and receive posts from.',
@@ -232,6 +255,13 @@ export const PROJECT_META = {
     displayTitle: 'WordPress 2FA Ecosystem',
     schemaType: 'SoftwareSourceCode',
     whyHeading: 'Bridge the WordPress 2FA Plugin Maze',
+    relatedProjects: [
+      {
+        fullName: 'dknauss/wp-sudo',
+        label: 'Sudo',
+        description: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls.'
+      }
+    ],
     narrativeHtml: [
       'This reference maps how major WordPress 2FA plugins store secrets, detect configured users, and validate codes so other plugins can integrate with them safely.',
       'It includes an ecosystem survey, a bridge-development guide, and example bridges for WP 2FA, Wordfence, and AIOS — especially useful for Sudo and other plugins that need to delegate code verification.'
@@ -249,6 +279,7 @@ export const PROJECT_META = {
     displayTitle: 'The Drafting Table',
     schemaType: 'SoftwareSourceCode',
     whyHeading: 'Build an Architect’s Notebook in WordPress',
+    relatedProjects: [],
     narrativeHtml: [
       'The Drafting Table turns a block theme into an architect’s studio: aged parchment, dot-grid overlays, blueprint borders, and refined typography inspired by Frank Lloyd Wright-era materials.',
       'It pairs a strong visual system with practical theme work — full-site editing, style variations, patterns, page templates, and accessibility-minded defaults.'
@@ -261,6 +292,24 @@ export const PROJECT_META = {
     },
     focus: 'An Architect’s Notebook as a WordPress Theme',
     subfocus: 'A full-site editing theme with parchment textures, blueprint framing, strong typography, and portfolio-ready patterns.'
+  },
+  'dknauss/wp-bibliography-block': {
+    displayTitle: 'Bibliography Block',
+    schemaType: 'SoftwareSourceCode',
+    summary: 'WordPress block plugin that converts DOI and BibTeX citations into semantically rich, auto-sorted bibliography lists.',
+    whyHeading: 'Structured Citations in the Block Editor',
+    narrativeHtml: [
+      'The Bibliography Block plugin brings proper academic and reference citations to the WordPress block editor — converting DOI lookups and BibTeX entries into clean, auto-sorted bibliography lists with semantic HTML.',
+      'It extends WordPress content authorship with structured, reusable citations that hold up to scrutiny in research, journalism, and technical writing contexts.'
+    ],
+    omitGenericNarrative: true,
+    omitRelatedNarrative: true,
+    primaryImage: {
+      url: 'https://newlocalmedia.github.io/assets/wp-bibliography-block-preview.png',
+      alt: 'Preview image for the Bibliography Block plugin showing structured citation input and formatted bibliography output.'
+    },
+    focus: 'Academic Citations in the Block Editor',
+    subfocus: 'DOI lookups and BibTeX input converted to semantically rich, auto-sorted bibliography lists — structured citations that travel with the work.'
   }
 };
 
@@ -269,6 +318,7 @@ export function sectionForRepo(fullName) {
   if (AI_DOCS_GROUP.includes(fullName)) return 'ai_docs';
   if (SPOTLIGHT.includes(fullName)) return 'spotlight';
   if (SELECTED.includes(fullName)) return 'selected';
+  if (BLOCKS_SHOWCASE.includes(fullName)) return 'blocks';
   return 'selected';
 }
 

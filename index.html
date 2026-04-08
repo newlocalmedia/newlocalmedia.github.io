@@ -87,7 +87,8 @@
           {"@id": "https://newlocalmedia.github.io/projects/dknauss/author-identity/"},
           {"@id": "https://newlocalmedia.github.io/projects/dknauss/fedibots/"},
           {"@id": "https://newlocalmedia.github.io/projects/dknauss/wordpress-2fa-ecosystem/"},
-          {"@id": "https://newlocalmedia.github.io/projects/dknauss/the-drafting-table/"}
+          {"@id": "https://newlocalmedia.github.io/projects/dknauss/the-drafting-table/"},
+          {"@id": "https://newlocalmedia.github.io/projects/dknauss/wp-bibliography-block/"}
         ],
         "about": [
           {
@@ -114,7 +115,7 @@
     "@id": "https://newlocalmedia.github.io/#curated-projects",
     "name": "Curated projects in Work in Progress",
     "itemListOrder": "https://schema.org/ItemListOrderAscending",
-    "numberOfItems": 11,
+    "numberOfItems": 12,
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "url": "https://newlocalmedia.github.io/projects/dknauss/wp-sudo/", "name": "wp-sudo"},
       {"@type": "ListItem", "position": 2, "url": "https://newlocalmedia.github.io/projects/dknauss/ai-assisted-docs/", "name": "ai-assisted-docs"},
@@ -126,7 +127,8 @@
       {"@type": "ListItem", "position": 8, "url": "https://newlocalmedia.github.io/projects/dknauss/author-identity/", "name": "author-identity"},
       {"@type": "ListItem", "position": 9, "url": "https://newlocalmedia.github.io/projects/dknauss/fedibots/", "name": "fedibots"},
       {"@type": "ListItem", "position": 10, "url": "https://newlocalmedia.github.io/projects/dknauss/wordpress-2fa-ecosystem/", "name": "wordpress-2fa-ecosystem"},
-      {"@type": "ListItem", "position": 11, "url": "https://newlocalmedia.github.io/projects/dknauss/the-drafting-table/", "name": "the-drafting-table"}
+      {"@type": "ListItem", "position": 11, "url": "https://newlocalmedia.github.io/projects/dknauss/the-drafting-table/", "name": "the-drafting-table"},
+      {"@type": "ListItem", "position": 12, "url": "https://newlocalmedia.github.io/projects/dknauss/wp-bibliography-block/", "name": "wp-bibliography-block"}
     ]
   }
   </script>
@@ -752,6 +754,13 @@
       border-color: rgba(41,171,224,0.35);
     }
 
+    .octocat-icon {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+      flex-shrink: 0;
+    }
+
     .repo-actions { margin-top: auto; }
 
     .text-link {
@@ -922,8 +931,8 @@
         </a>
         <nav class="hero-actions" aria-label="Primary links">
           <a class="button primary" href="https://newlocalmedia.com/">Get in Touch</a>
-          <a class="button" href="https://github.com/newlocalmedia">@newlocalmedia</a>
-          <a class="button" href="https://github.com/dknauss">@dknauss</a>
+          <a class="button" href="https://github.com/newlocalmedia"><svg class="octocat-icon" viewBox="0 0 98 96" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/></svg>@newlocalmedia</a>
+          <a class="button" href="https://github.com/dknauss"><svg class="octocat-icon" viewBox="0 0 98 96" width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/></svg>@dknauss</a>
         </nav>
       </div>
 
@@ -976,6 +985,18 @@
         </div>
         <div class="spotlight-grid" id="spotlight-grid" aria-live="polite" aria-busy="true">
           <p class="loading">Loading spotlight projects…</p>
+        </div>
+      </section>
+
+      <section class="panel section" aria-labelledby="blocks-title">
+        <div class="section-head">
+          <div>
+            <h2 id="blocks-title"><span class="title-with-icon"><span class="title-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8"/><path d="M8 12h8"/><path d="M8 15h5"/><path d="M4 4v16"/><path d="M7 4v16"/></svg></span><span>WordPress Block Plugins</span></span></h2>
+            <p>Block editor plugins that bring specialized content types and structured data to WordPress.</p>
+          </div>
+        </div>
+        <div class="spotlight-grid" id="blocks-grid" aria-live="polite" aria-busy="true">
+          <p class="loading">Loading WordPress block plugins…</p>
         </div>
       </section>
 
@@ -1038,11 +1059,15 @@
     'dknauss/wordpress-2fa-ecosystem',
     'dknauss/the-drafting-table'
   ];
+  const BLOCKS_SHOWCASE = [
+    'dknauss/wp-bibliography-block'
+  ];
   const PROJECT_PAGE_SET = new Set([
     LEAD_REPO,
     ...AI_DOCS_GROUP,
     ...SPOTLIGHT,
-    ...SELECTED
+    ...SELECTED,
+    ...BLOCKS_SHOWCASE
   ].map((name) => name.toLowerCase()));
 
   const totals = { selectedCount: 0, selectedStars: 0 };
@@ -1096,6 +1121,13 @@
     },
     'dknauss/the-drafting-table': {
       displayTitle: 'The Drafting Table'
+    },
+    'dknauss/wp-bibliography-block': {
+      displayTitle: 'Bibliography Block',
+      primaryImage: {
+        url: 'https://newlocalmedia.github.io/assets/wp-bibliography-block-preview.png',
+        alt: 'Preview image for the Bibliography Block plugin showing structured citation input and formatted bibliography output.'
+      }
     }
   };
 
@@ -1193,7 +1225,8 @@
       'dknauss/author-identity': '<svg viewBox="0 0 24 24"><path d="M5 5h14v14H5z"/><path d="M12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/><path d="M8 17c1-1.5 2.3-2.2 4-2.2s3 .7 4 2.2"/></svg>',
       'dknauss/fedibots': '<svg viewBox="0 0 24 24"><rect x="7" y="8" width="10" height="9" rx="2"/><path d="M10 8V6"/><path d="M14 8V6"/><path d="M10 12h.01"/><path d="M14 12h.01"/><path d="M5 11H3"/><path d="M21 11h-2"/></svg>',
       'dknauss/wordpress-2fa-ecosystem': '<svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="10" rx="2"/><path d="M8 12h.01"/><path d="M11 12h.01"/><path d="M14 12h.01"/><path d="M17 12h.01"/><path d="M9 17v2"/><path d="M15 17v2"/></svg>',
-      'dknauss/the-drafting-table': '<svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16l8-8 2 2-8 8H7z"/><path d="M14 7l2 2"/></svg>'
+      'dknauss/the-drafting-table': '<svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16l8-8 2 2-8 8H7z"/><path d="M14 7l2 2"/></svg>',
+      'dknauss/wp-bibliography-block': '<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8"/><path d="M8 12h8"/><path d="M8 15h5"/><path d="M4 4v16"/><path d="M7 4v16"/></svg>'
     };
     return icons[name] || '<svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>';
   }
@@ -1383,6 +1416,19 @@
     updateStats();
   }
 
+  function renderBlocks() {
+    const target = document.getElementById('blocks-grid');
+    const repos = BLOCKS_SHOWCASE.map((fullName) => state.get(fullName.toLowerCase())).filter(Boolean);
+    if (!repos.length) {
+      target.innerHTML = '<p class="empty">Nothing to show right now.</p>';
+      return;
+    }
+    repos.forEach(countRepo);
+    target.innerHTML = repos.map((repo) => renderSpotlightCard(repo)).join('');
+    target.setAttribute('aria-busy', 'false');
+    updateStats();
+  }
+
   function renderList(list, targetId, featured = false) {
     const target = document.getElementById(targetId);
     const repos = list.map((fullName) => state.get(fullName.toLowerCase())).filter(Boolean);
@@ -1499,6 +1545,7 @@
       renderLead(state.get(LEAD_REPO.toLowerCase()));
       renderAiDocs();
       renderSpotlight();
+      renderBlocks();
       renderList(SELECTED, 'selected-grid', false);
       updateStats(snapshot.generated_at);
     } catch (error) {
@@ -1507,11 +1554,13 @@
       document.getElementById('account-grid').innerHTML = '<p class="empty">Could not load account summaries right now.</p>';
       document.getElementById('ai-docs-grid').innerHTML = '<p class="empty">Could not load the AI-assisted docs block right now.</p>';
       document.getElementById('spotlight-grid').innerHTML = '<p class="empty">Could not load spotlight projects right now.</p>';
+      document.getElementById('blocks-grid').innerHTML = '<p class="empty">Could not load WordPress block plugins right now.</p>';
       document.getElementById('selected-grid').innerHTML = '<p class="empty">Could not load selected repositories right now.</p>';
       document.getElementById('lead-feature-shell').setAttribute('aria-busy', 'false');
       document.getElementById('account-grid').setAttribute('aria-busy', 'false');
       document.getElementById('ai-docs-grid').setAttribute('aria-busy', 'false');
       document.getElementById('spotlight-grid').setAttribute('aria-busy', 'false');
+      document.getElementById('blocks-grid').setAttribute('aria-busy', 'false');
       document.getElementById('selected-grid').setAttribute('aria-busy', 'false');
     }
   }

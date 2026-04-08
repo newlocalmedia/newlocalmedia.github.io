@@ -158,7 +158,10 @@ function narrativeParagraphs(repo, related) {
 
 function relatedRepos(fullName, lookup) {
   const meta = PROJECT_META[fullName] || {};
-  if (meta.relatedProjects?.length) {
+  // Explicit relatedProjects array (even empty) overrides section-pool auto-discovery.
+  // relatedProjects: [] means "no related section".
+  if (meta.relatedProjects !== undefined) {
+    if (!meta.relatedProjects.length) return [];
     return meta.relatedProjects
       .map((item) => {
         const repo = lookup.get(item.fullName);
