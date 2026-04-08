@@ -290,10 +290,10 @@
     .interior-aside p:last-child { margin-bottom: 0; }
     .interior-aside .pull-quote { margin: 0; }
     .why-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
-    .why-card { padding: 18px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; }
-    .why-card-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 10px; }
+    .why-card { display: flex; flex-direction: column; padding: 18px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; }
+    .why-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; min-height: 3.25rem; margin-bottom: 16px; }
     .why-card-title { margin: 0; font-size: 0.9rem; line-height: 1.35; letter-spacing: -0.01em; color: var(--secondary); }
-    .why-card-logo { display: block; height: 22px; width: auto; max-width: 108px; opacity: 0.88; }
+    .why-card-logo { display: block; height: 22px; width: auto; max-width: 108px; margin-top: 2px; opacity: 0.88; }
     .why-card p { margin: 0; color: var(--foreground); font-size: 0.95rem; }
     .excerpt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
     .excerpt-card { padding: 18px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; }
@@ -385,7 +385,7 @@
           </div>
 
         </div>
-        <div class="why-card-grid"><div class="why-card"><div class="why-card-head"><h3 class="why-card-title">Editorial Baseline &amp; Sources</h3><img class="why-card-logo" src="/assets/owasp-white-logo.svg" alt="OWASP logo" loading="lazy" decoding="async"></div><p>The editorial baseline is alignment with official WordPress Developer Documentation — especially the Advanced Administration Handbook and its security and hardening materials — with supporting reference to WordPress security documentation, the WordPress Security White Paper, WordPress Code Reference and core behavior, and standard industry sources such as OWASP, MDN, and CIS Benchmarks.</p></div><div class="why-card"><h3 class="why-card-title">Human-Reviewed AI Process</h3><p>The repository also documents a human-reviewed, AI-assisted editorial process across the related security document set: multiple models independently review for factual drift, outdated guidance, and cross-document misalignment, but every change is accepted, revised, or rejected by a human editor before publication.</p></div></div>
+        <div class="why-card-grid"><div class="why-card"><div class="why-card-head"><h3 class="why-card-title">Editorial Baseline &amp; Sources</h3><img class="why-card-logo" src="/assets/owasp-white-logo.svg" alt="OWASP logo" loading="lazy" decoding="async"></div><p>The editorial baseline is alignment with official WordPress Developer Documentation — especially the Advanced Administration Handbook and its security and hardening materials — with supporting reference to WordPress security documentation, the WordPress Security White Paper, WordPress Code Reference and core behavior, and standard industry sources such as OWASP, MDN, and CIS Benchmarks.</p></div><div class="why-card"><div class="why-card-head"><h3 class="why-card-title">Human-Reviewed AI Process</h3></div><p>The repository also documents a human-reviewed, AI-assisted editorial process across the related security document set: multiple models independently review for factual drift, outdated guidance, and cross-document misalignment, but every change is accepted, revised, or rejected by a human editor before publication.</p></div></div>
 
       </section>
 

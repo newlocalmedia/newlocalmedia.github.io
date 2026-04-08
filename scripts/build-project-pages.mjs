@@ -545,10 +545,10 @@ ${JSON.stringify(graph, null, 2)}
     .interior-aside p:last-child { margin-bottom: 0; }
     .interior-aside .pull-quote { margin: 0; }
     .why-card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
-    .why-card { padding: 18px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; }
-    .why-card-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 10px; }
+    .why-card { display: flex; flex-direction: column; padding: 18px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; }
+    .why-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; min-height: 3.25rem; margin-bottom: 16px; }
     .why-card-title { margin: 0; font-size: 0.9rem; line-height: 1.35; letter-spacing: -0.01em; color: var(--secondary); }
-    .why-card-logo { display: block; height: 22px; width: auto; max-width: 108px; opacity: 0.88; }
+    .why-card-logo { display: block; height: 22px; width: auto; max-width: 108px; margin-top: 2px; opacity: 0.88; }
     .why-card p { margin: 0; color: var(--foreground); font-size: 0.95rem; }
     .excerpt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
     .excerpt-card { padding: 18px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; }
@@ -639,7 +639,7 @@ ${JSON.stringify(graph, null, 2)}
           </div>
         ${meta.whyInsetHtml?.length ? `<aside class="interior-aside${meta.whyInsetClass ? ` ${escapeHtml(meta.whyInsetClass)}` : ''}">${meta.whyInsetHtml.join('')}</aside>` : ''}
         </div>
-        ${meta.whyCards?.length ? `<div class="why-card-grid">${meta.whyCards.map((card) => `<div class="why-card">${card.logo ? `<div class="why-card-head"><h3 class="why-card-title">${escapeHtml(card.title)}</h3><img class="why-card-logo" src="${card.logo.src}" alt="${escapeHtml(card.logo.alt || '')}" loading="lazy" decoding="async">` : `<h3 class="why-card-title">${escapeHtml(card.title)}</h3>`}${card.logo ? `</div>` : ''}<p>${card.html || escapeHtml(card.text)}</p></div>`).join('')}</div>` : ''}
+        ${meta.whyCards?.length ? `<div class="why-card-grid">${meta.whyCards.map((card) => `<div class="why-card"><div class="why-card-head"><h3 class="why-card-title">${escapeHtml(card.title)}</h3>${card.logo ? `<img class="why-card-logo" src="${card.logo.src}" alt="${escapeHtml(card.logo.alt || '')}" loading="lazy" decoding="async">` : ''}</div><p>${card.html || escapeHtml(card.text)}</p></div>`).join('')}</div>` : ''}
         ${meta.docExcerpts?.length ? `<div class="excerpt-grid">${meta.docExcerpts.map((ex) => `<div class="excerpt-card"><h3 class="excerpt-card-heading">${escapeHtml(ex.heading)}</h3>${ex.intro ? `<p>${escapeHtml(ex.intro)}</p>` : ''}${ex.bullets?.length ? `<ul>${ex.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>` : ''}</div>`).join('')}</div>` : ''}
       </section>
 
