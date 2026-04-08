@@ -135,7 +135,8 @@ export const PROJECT_META = {
     quote: {
       text: 'The tech writer isn\u2019t being replaced by AI, but rather augmented by AI as a co-partner in developing documentation.',
       attribution: 'Tom Johnson, Google \u2014 I\u2019d Rather Be Writing',
-      attributionHtml: 'Tom Johnson, Google \u2014 <a href="https://idratherbewriting.com/blog/cyborg-model-emerging-talk"><em>I\u2019d Rather Be Writing</em></a>'
+      attributionHtml: 'Tom Johnson, Google \u2014 <a href="https://idratherbewriting.com/blog/cyborg-model-emerging-talk"><em>I\u2019d Rather Be Writing</em></a>',
+      leftColumn: true
     }
   },
   'dknauss/wordpress-runbook-template': {
