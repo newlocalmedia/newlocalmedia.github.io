@@ -174,7 +174,7 @@ export const PROJECT_META = {
     downloadCta: 'Get the Guide',
     whyHeading: 'Design a Defensible WordPress Stack',
     narrativeHtml: [
-      'This guide answers <strong>“what should I implement and why?”</strong> It brings WordPress core security, server hardening, authentication, supply chain defense, and emerging AI risk into one architecture-level document.',
+      'This guide answers the question, <strong>\u201CWhat security measures should I implement and why?\u201D</strong>',
       'It is written for developers, sysadmins, and security teams who need the rationale behind security decisions, not just a checklist of controls.'
     ],
     omitGenericNarrative: true,
