@@ -279,7 +279,13 @@ export const PROJECT_META = {
     displayTitle: 'The Drafting Table',
     schemaType: 'SoftwareSourceCode',
     whyHeading: 'Build an Architect’s Notebook in WordPress',
-    relatedProjects: [],
+    relatedProjects: [
+      {
+        fullName: 'dknauss/wp-bibliography-block',
+        label: 'Bibliography Block',
+        description: 'WordPress block plugin for structured DOI and BibTeX citations — semantic, auto-sorted bibliography lists for the block editor.'
+      }
+    ],
     narrativeHtml: [
       'The Drafting Table turns a block theme into an architect’s studio: aged parchment, dot-grid overlays, blueprint borders, and refined typography inspired by Frank Lloyd Wright-era materials.',
       'It pairs a strong visual system with practical theme work — full-site editing, style variations, patterns, page templates, and accessibility-minded defaults.'
@@ -288,7 +294,9 @@ export const PROJECT_META = {
     omitRelatedNarrative: true,
     primaryImage: {
       url: 'https://newlocalmedia.github.io/assets/the-drafting-table-preview.png',
-      alt: 'Generated preview image for The Drafting Table theme showing its architectural design motifs and full-site editing features.'
+      alt: 'The Drafting Table WordPress block theme — aged parchment textures, blueprint borders, dot-grid overlays, and refined typography in a full-site editing layout.',
+      width: 1200,
+      height: 900
     },
     focus: 'An Architect’s Notebook as a WordPress Theme',
     subfocus: 'A full-site editing theme with parchment textures, blueprint framing, strong typography, and portfolio-ready patterns.'

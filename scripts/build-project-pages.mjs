@@ -260,6 +260,8 @@ function renderPage(repo, lookup) {
   const ogImageUrl = primaryImage?.url || defaultOgImageUrl;
   const ogImageAlt = primaryImage?.alt || `${label} in Work in Progress by New Local Media.`;
   const ogImageType = imageMimeType(ogImageUrl);
+  const ogImageWidth = primaryImage?.width || 1200;
+  const ogImageHeight = primaryImage?.height || 630;
   const paragraphs = narrativeParagraphs(repo, related);
   const details = detailItems(repo);
   const breadcrumb = {
@@ -291,8 +293,8 @@ function renderPage(repo, lookup) {
     primaryImageOfPage: {
       '@type': 'ImageObject',
       url: ogImageUrl,
-      width: 1200,
-      height: 630
+      width: ogImageWidth,
+      height: ogImageHeight
     }
   };
   const graph = {
@@ -351,8 +353,8 @@ function renderPage(repo, lookup) {
   <meta property="og:image" content="${ogImageUrl}">
   <meta property="og:image:secure_url" content="${ogImageUrl}">
   ${ogImageType ? `<meta property="og:image:type" content="${ogImageType}">` : ''}
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="${ogImageWidth}">
+  <meta property="og:image:height" content="${ogImageHeight}">
   <meta property="og:image:alt" content="${escapeHtml(ogImageAlt)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(title)}">
