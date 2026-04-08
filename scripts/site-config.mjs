@@ -155,7 +155,7 @@ export const PROJECT_META = {
     whyHeading: 'Write About Security Without FUD',
     narrativeHtml: [
       'This editorial reference answers <strong>“how do I write about it?”</strong> It sets voice, tone, terminology, and technical formatting rules for people communicating about WordPress security.',
-      'Make your security writing clear, direct, and empowering — especially when explaining vulnerabilities, risk, remediation, and why our trust in open source is well-founded.'
+      'Make your security writing clear, direct, and empowering — especially when you\u2019re explaining vulnerabilities, risk, remediation, and why our trust in open source is well-founded.'
     ],
     omitGenericNarrative: true,
     omitRelatedNarrative: true,
