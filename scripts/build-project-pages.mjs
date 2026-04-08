@@ -480,6 +480,13 @@ ${JSON.stringify(graph, null, 2)}
     .poem-cite { display: block; font-size: 0.88rem; font-style: normal; color: var(--foreground); margin-top: 12px; }
     .below-details-quote { margin-top: 18px; }
     .inline-example { display: block; margin: 10px 0 6px; padding: 10px 16px; background: rgba(0,0,0,0.22); border-radius: 10px; font-size: 0.94rem; }
+    .excerpt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .excerpt-card { padding: 18px 20px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 16px; }
+    .excerpt-card-heading { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--primary); margin: 0 0 10px; font-weight: 700; }
+    .excerpt-card > p { margin: 0 0 10px; font-size: 0.92rem; }
+    .excerpt-card ul { margin: 0; padding-left: 1.1rem; font-size: 0.92rem; line-height: 1.65; }
+    .excerpt-card li { margin-bottom: 3px; color: var(--foreground); }
+    @media (max-width: 580px) { .excerpt-grid { grid-template-columns: 1fr; } }
     .left-column-quote { margin-top: 24px; padding: 16px 20px; background: rgba(255,255,255,0.05); border: 1px solid var(--line); border-radius: 16px; border-left: none; }
     .panel.hero { border-top: 3px solid var(--primary); }
     .hero .eyebrow { color: var(--primary); }
@@ -555,6 +562,7 @@ ${JSON.stringify(graph, null, 2)}
           </div>
         </div>
         ${paragraphs.map((paragraph) => `<p>${paragraph.html || inlineCodeHtml(paragraph.text)}</p>`).join('\n        ')}
+        ${meta.docExcerpts?.length ? `<div class="excerpt-grid">${meta.docExcerpts.map((ex) => `<div class="excerpt-card"><h3 class="excerpt-card-heading">${escapeHtml(ex.heading)}</h3>${ex.intro ? `<p>${escapeHtml(ex.intro)}</p>` : ''}${ex.bullets?.length ? `<ul>${ex.bullets.map((b) => `<li>${escapeHtml(b)}</li>`).join('')}</ul>` : ''}</div>`).join('')}</div>` : ''}
       </section>
 
       <section class="panel section" aria-labelledby="details-title">
