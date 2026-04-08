@@ -209,6 +209,9 @@
     .image-modal img { display: block; width: 100%; height: auto; max-height: calc(100vh - 56px); object-fit: contain; border-radius: 18px; border: 1px solid var(--line); background: rgba(13,27,42,0.96); }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
     .summary-box strong { display: block; margin-bottom: 6px; }
+    .pull-quote { margin: 4px 0 0; border-left: 3px solid var(--accent); padding-left: 22px; }
+    .pull-quote p { margin: 0 0 10px; font-size: 1.15rem; font-style: italic; line-height: 1.7; color: var(--secondary); }
+    .pull-quote cite { display: block; font-size: 0.9rem; font-style: normal; color: var(--foreground); }
     footer { padding: 12px 4px 0; text-align: center; color: var(--foreground); }
     @media (prefers-contrast: more) {
       :root { --line: rgba(255, 255, 255, 0.28); --foreground: #ffffff; }
@@ -269,6 +272,8 @@
         <p>This reference maps how major WordPress 2FA plugins store secrets, detect configured users, and validate codes so other plugins can integrate with them safely.</p>
         <p>It includes an ecosystem survey, a bridge-development guide, and example bridges for WP 2FA, Wordfence, and AIOS — especially useful for Sudo and other plugins that need to delegate code verification.</p>
       </section>
+
+
 
       <section class="panel section" aria-labelledby="details-title">
         <div class="section-head">
