@@ -203,61 +203,61 @@ function projectPrimaryImage(repo) {
 function detailItems(repo) {
   const meta = PROJECT_META[repo.full_name] || {};
   const items = [
-    ['Owner', `<a href="${ownerLink(repo.owner.login)}">@${escapeHtml(repo.owner.login)}</a>`],
-    ['Source', `<a href="${repo.html_url}">${escapeHtml(repo.full_name)}</a>`]
+    { term: 'Owner', value: `<a href="${ownerLink(repo.owner.login)}">@${escapeHtml(repo.owner.login)}</a>` },
+    { term: 'Source', value: `<a href="${repo.html_url}">${escapeHtml(repo.full_name)}</a>` }
   ];
 
   if (meta.extraLinks?.length) {
-    items.push([
-      'Apps',
-      meta.extraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')
-    ]);
+    items.push({
+      term: 'Apps',
+      value: meta.extraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')
+    });
   } else {
     const homepage = repoHomepage(repo);
     if (homepage) {
-      items.push(['Homepage', `<a href="${homepage}">${escapeHtml(homepage)}</a>`]);
+      items.push({ term: 'Homepage', value: `<a href="${homepage}">${escapeHtml(homepage)}</a>` });
     }
   }
 
   if (meta.version) {
-    items.push(['Version', escapeHtml(meta.version)]);
+    items.push({ term: 'Version', value: escapeHtml(meta.version) });
   }
 
   if (meta.release) {
-    items.push([
-      'Latest release',
-      meta.release.url
+    items.push({
+      term: 'Latest release',
+      value: meta.release.url
         ? `<a href="${meta.release.url}">${escapeHtml(meta.release.tag)}</a>`
         : escapeHtml(meta.release.tag)
-    ]);
+    });
   }
 
-  items.push(['CI', `<a href="${repo.html_url}/actions">GitHub Actions</a>`]);
+  items.push({ term: 'CI', value: `<a href="${repo.html_url}/actions">GitHub Actions</a>` });
 
   if (meta.tests) {
-    items.push(['Tests', escapeHtml(meta.tests)]);
+    items.push({ term: 'Tests', value: escapeHtml(meta.tests) });
   }
 
   if (meta.license?.label) {
-    items.push([
-      'License',
-      meta.license.url
+    items.push({
+      term: 'License',
+      value: meta.license.url
         ? `<a href="${meta.license.url}">${escapeHtml(meta.license.label)}</a>`
         : escapeHtml(meta.license.label)
-    ]);
+    });
   }
 
   if (meta.playground) {
-    items.push(['Try it', `<a href="${meta.playground}">WordPress Playground</a>`]);
+    items.push({ term: 'Try It! →', value: `<a href="${meta.playground}">WordPress Playground</a>`, highlight: true });
   }
 
-  items.push(['Last updated', `<time datetime="${escapeHtml(repo.updated_at)}">${escapeHtml(formatDate(repo.updated_at))}</time>`]);
+  items.push({ term: 'Last updated', value: `<time datetime="${escapeHtml(repo.updated_at)}">${escapeHtml(formatDate(repo.updated_at))}</time>` });
 
   if (repo.language) {
-    items.push(['Primary language', escapeHtml(repo.language)]);
+    items.push({ term: 'Primary language', value: escapeHtml(repo.language) });
   }
 
-  items.push(['Stars', `<span class="star-icon" aria-hidden="true">★</span>${escapeHtml(String(repo.stargazers_count))}`]);
+  items.push({ term: 'Stars', value: `<span class="star-icon" aria-hidden="true">★</span>${escapeHtml(String(repo.stargazers_count))}` });
 
   return items;
 }
@@ -455,8 +455,24 @@ ${JSON.stringify(graph, null, 2)}
     .pill { color: var(--foreground); }
     .star-icon { color: var(--star); line-height: 1; }
     .details-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; align-items: start; }
-    .detail-list { display: grid; grid-template-columns: minmax(120px, 160px) 1fr; gap: 8px 12px; margin: 16px 0 0; }
-    .detail-list dt, .detail-list dd { margin: 0; }
+    .detail-list { display: grid; grid-template-columns: minmax(120px, 160px) 1fr; gap: 0 12px; margin: 16px 0 0; }
+    .detail-list dt, .detail-list dd { margin: 0; padding: 10px 0; border-bottom: 1px solid rgba(7, 16, 24, 0.55); }
+    .detail-list dt { font-weight: 700; }
+    .detail-list dt.detail-highlight,
+    .detail-list dt.detail-highlight + dd {
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .detail-list dt.detail-highlight {
+      color: var(--secondary);
+      padding-left: 10px;
+      border-top-left-radius: 12px;
+      border-bottom-left-radius: 12px;
+    }
+    .detail-list dt.detail-highlight + dd {
+      padding-right: 10px;
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
     .detail-list a, .section a, .breadcrumbs a, footer a { color: var(--accent); }
     .section a, footer a { text-decoration: underline; }
     .detail-list a { text-decoration: none; }
@@ -569,7 +585,7 @@ ${JSON.stringify(graph, null, 2)}
           <div class="meta">
             <a class="pill" href="${ownerLink(repo.owner.login)}"><svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>@${escapeHtml(repo.owner.login)}</a>
             <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${escapeHtml(String(repo.stargazers_count))}</span>
-            <span class="pill">Updated ${escapeHtml(formatDate(repo.updated_at))}</span>
+            <span class="pill" title="Last updated ${escapeHtml(formatDate(repo.updated_at))}"><span aria-hidden="true">🔄</span><span class="sr-only">Last updated </span>${escapeHtml(formatDate(repo.updated_at))}</span>
             <span class="meta-sep" aria-hidden="true"></span>
             <a class="button primary" href="${repo.html_url}"><svg class="repo-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H10l2 2h6.5A2.5 2.5 0 0 1 21 9.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5z"/></svg>View on GitHub</a>
             ${homepage ? `<a class="button" href="${homepage}">Visit homepage</a>` : ''}
@@ -602,7 +618,7 @@ ${JSON.stringify(graph, null, 2)}
         <div class="details-grid">
           <div>
             <dl class="detail-list">
-              ${details.map(([term, value]) => `<dt>${escapeHtml(term)}</dt><dd>${value}</dd>`).join('')}
+              ${details.map((item) => `<dt${item.highlight ? ' class="detail-highlight"' : ''}>${escapeHtml(item.term)}</dt><dd>${item.value}</dd>`).join('')}
             </dl>
             ${meta.quote?.poem ? (() => {
               const q = meta.quote;
