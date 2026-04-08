@@ -273,7 +273,7 @@ def generate(filename, spec):
     total = sum(pill_widths) + gap * (len(pill_widths) - 1)
     x = (W - total) // 2
     for (label, color), width in zip(pill_specs, pill_widths):
-        rr(draw, (x, pill_y, x + width, pill_y + 38), 19, color, outline=(255, 255, 255, 26))
+        rr(draw, (x, pill_y, x + width, pill_y + 38), 10, color, outline=(255, 255, 255, 26))
         draw.text((x + width / 2, pill_y + 19), label, font=PILL, fill=WHITE, anchor='mm')
         x += width + gap
 
