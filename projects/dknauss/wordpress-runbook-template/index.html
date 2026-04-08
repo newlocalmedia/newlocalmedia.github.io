@@ -221,6 +221,7 @@
     .poem-block { margin-top: 32px; margin-bottom: 10px; display: flex; flex-direction: column; align-items: flex-start; padding-left: 10%; }
     .poem-cite { display: block; font-size: 0.88rem; font-style: normal; color: var(--foreground); margin-top: 12px; }
     .below-details-quote { margin-top: 18px; }
+    .inline-example { display: block; margin: 10px 0 6px; padding: 10px 16px; background: rgba(0,0,0,0.22); border-radius: 10px; font-size: 0.94rem; }
     .left-column-quote { margin-top: 24px; padding: 16px 20px; background: rgba(255,255,255,0.05); border: 1px solid var(--line); border-radius: 16px; border-left: none; }
     .panel.hero { border-top: 3px solid var(--primary); }
     .hero .eyebrow { color: var(--primary); }
@@ -296,7 +297,7 @@
         </div>
         <p>This template answers <strong>”how do I do it?”</strong> for a specific WordPress installation: numbered procedures, expected outcomes, rollback instructions, and copy-pasteable commands for the people running the site.</p>
         <p>It is designed for sysadmins, DevOps engineers, and WordPress developers responsible for deployment, maintenance, backup verification, incident response, and disaster recovery.</p>
-        <p>Break-glass procedures are a natural fit for this format — the steps you take when normal access paths have failed. A break-glass entry names the trigger condition, the recovery path, and copy-pasteable commands. For example, a lost admin password entry might read: SSH into the server and run <code>wp user update admin --user_pass='&hellip;'</code> via WP-CLI, then verify login succeeds before closing the incident. The runbook template has a section for these alongside your regular incident response procedures.</p>
+        <p>Break-glass procedures are a natural fit for this format — the steps you take when normal access paths have failed. A break-glass entry names the trigger condition, the recovery path, and copy-pasteable commands. For example, a lost admin password entry might read: <span class="inline-example">SSH into the server and run <code>wp user update admin --user_pass='&hellip;'</code> via WP-CLI, then verify login succeeds before closing the incident.</span> The runbook template has a section for these alongside your regular incident response procedures.</p>
       </section>
 
       <section class="panel section" aria-labelledby="details-title">
