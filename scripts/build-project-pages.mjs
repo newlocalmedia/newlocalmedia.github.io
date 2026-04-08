@@ -84,7 +84,8 @@ function formatSnapshotTimestamp(value) {
     year: '2-digit',
     hour: '2-digit',
     minute: '2-digit',
-    hour12: false
+    hour12: false,
+    timeZone: 'UTC'
   }).formatToParts(new Date(value));
   const get = (type) => parts.find((part) => part.type === type)?.value ?? '';
   return `${get('day')}-${get('month')}-${get('year')} ${get('hour')}:${get('minute')}`;
