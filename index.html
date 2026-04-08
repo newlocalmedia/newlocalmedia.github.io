@@ -1323,8 +1323,8 @@
     return `<span class="pill" aria-label="Last updated ${escapeHtml(formatted)}" title="Last updated ${escapeHtml(formatted)}"><span aria-hidden="true">🔄</span> ${escapeHtml(formatted)}</span>`;
   }
 
-  function projectLinkMarkup(href, label = 'Project') {
-    return `<a class="repo-link primary" href="${href}"><span aria-hidden="true">📄</span><span>${escapeHtml(label)}</span></a>`;
+  function projectLinkMarkup(href, label = 'Project', showIcon = true) {
+    return `<a class="repo-link primary" href="${href}">${showIcon ? '<span aria-hidden="true">📄</span>' : ''}<span>${escapeHtml(label)}</span></a>`;
   }
 
   function githubLinkMarkup(href) {
@@ -1348,7 +1348,7 @@
           ${updatedPill(repo.updated_at)}
         </div>
         <div class="repo-actions">
-          ${details ? projectLinkMarkup(details) : ''}
+          ${details ? projectLinkMarkup(details, badgeLabel === 'Docs' ? 'Docs' : 'Project', badgeLabel !== 'Docs') : ''}
           ${githubLinkMarkup(repo.html_url)}
           ${homepage ? `<a class="repo-link alt" href="${homepage}">${escapeHtml(repoHomepageLabel(repo))} →</a>` : ''}
         </div>
