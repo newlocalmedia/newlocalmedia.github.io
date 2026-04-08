@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none" role="img" aria-labelledby="title desc">
-  <title id="title">Author Identity systems diagram</title>
-  <desc id="desc">A warm-toned architecture-style diagram for Author Identity, showing WordPress adapters feeding a normalized author contract that powers feed metadata, JSON-LD, fediverse identity, and AI-rights signaling.</desc>
+  <title id="title">The Author Identity Project systems diagram</title>
+  <desc id="desc">A warm-toned architecture-style diagram for The Author Identity Project, showing WordPress adapters feeding a normalized author contract that powers feed metadata, JSON-LD, fediverse identity, and AI-rights signaling.</desc>
   <defs>
     <linearGradient id="bg" x1="120" y1="40" x2="1080" y2="590" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FAF4EA"/>
@@ -38,7 +38,7 @@
   <circle cx="150" cy="560" r="170" fill="#D05538" opacity="0.08"/>
   <circle cx="1090" cy="545" r="118" fill="#D8A94B" opacity="0.08"/>
 
-  <text x="72" y="104" class="hero-title">Author Identity</text>
+  <text x="72" y="104" class="hero-title">The Author Identity Project</text>
   <text x="918" y="154" class="hero-subtitle">Portable authorship</text>
   <text x="918" y="186" class="hero-third">for WordPress</text>
 
@@ -143,7 +143,7 @@
   </g>
 
   <g>
-    <rect x="132" y="536" width="936" height="72" rx="16" fill="#FFF8F0" stroke="#DFC1A5"/>
+    <rect x="249" y="536" width="702" height="72" rx="16" fill="#FFF8F0" stroke="#DFC1A5"/>
     <text x="600" y="559" text-anchor="middle" class="eyebrow">Design principle</text>
     <text x="600" y="581" text-anchor="middle" class="body">Separate authorship from presentation: adapters normalize source systems, outputs stay additive,</text>
     <text x="600" y="599" text-anchor="middle" class="body">and identity metadata travels with the work instead of collapsing at syndication.</text>
