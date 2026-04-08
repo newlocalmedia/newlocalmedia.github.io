@@ -7,8 +7,6 @@
 
 Curated GitHub Pages showcase for New Local Media and Dan Knauss public projects, documentation, experiments, and demos.
 
-![Work in Progress preview](assets/og-image.png)
-
 ## What this repo is
 
 This repository powers the public site at [newlocalmedia.github.io](https://newlocalmedia.github.io/).
