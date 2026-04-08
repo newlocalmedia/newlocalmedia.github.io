@@ -270,6 +270,9 @@ export const PROJECT_META = {
       'For open source software providers, this editorial reference answers the question, <strong>”How should I write about security?”</strong> It sets voice, tone, terminology, and technical formatting rules for people communicating about risk and vulnerability, with a special emphasis on the WordPress ecosystem. Build trust. Reduce fear, uncertainty, and doubt (FUD).',
       'Make your security writing clear, direct, and empowering — especially when you\u2019re explaining vulnerabilities, risk, remediation, and why our trust in open source is well-founded.'
     ],
+    whyInsetHtml: [
+      '<blockquote class="pull-quote"><p>“As cybersecurity leaders, we have to create our message of influence because security is a culture, and you need the business to take place and be part of that security culture.”</p><cite>— Britney Hommertzheim, BISO, Cardinal Health</cite></blockquote>'
+    ],
     omitGenericNarrative: true,
     omitRelatedNarrative: true,
     primaryImage: {
@@ -284,11 +287,7 @@ export const PROJECT_META = {
       { label: 'EPUB',     url: 'https://raw.githubusercontent.com/dknauss/wp-security-style-guide/main/WP-Security-Style-Guide.epub' },
       { label: 'Markdown', url: 'https://raw.githubusercontent.com/dknauss/wp-security-style-guide/main/WP-Security-Style-Guide.md' }
     ],
-    downloadCta: 'Get the Style Guide',
-    quote: {
-      text: 'As cybersecurity leaders, we have to create our message of influence because security is a culture, and you need the business to take place and be part of that security culture.',
-      attribution: 'Britney Hommertzheim, BISO, Cardinal Health'
-    }
+    downloadCta: 'Get the Style Guide'
   },
   'newlocalmedia/capm-for-agencies': {
     displayTitle: 'CAPM for Agencies',
