@@ -73,17 +73,14 @@ export const PROJECT_META = {
       'Key docs worth reading here include the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/security-model.md">Security Model</a>, the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/developer-reference.md">Developer Reference</a>, the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/two-factor-integration.md">Two-Factor Integration</a> guide, and the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/sudo-architecture-comparison-matrix.md">Sudo Architecture Comparison Matrix</a>.',
       '<strong>Related Repo:</strong> <a href="https://newlocalmedia.github.io/projects/dknauss/wordpress-2fa-ecosystem/">WordPress 2FA Ecosystem Documentation</a>.'
     ],
+    whyInsetHtml: [
+      '<blockquote class="pull-quote pull-quote--poem"><p>So full of cracks,<br>the barrier gatehouse of Fuwa<br>lets both rain and moonlight in&mdash;<br>quietly exposed, yet enduring.</p><cite>Abatsu-ni, <em>Diary of the Waning Moon</em></cite></blockquote>'
+    ],
     omitGenericNarrative: true,
     omitRelatedNarrative: true,
     primaryImage: {
       url: 'https://newlocalmedia.github.io/assets/wp-sudo-preview.png',
       alt: 'Sudo for WordPress preview image using the Fuwa no Seki graphic.'
-    },
-    quote: {
-      poem: true,
-      noMarks: true,
-      html: 'So full of cracks,<br>the barrier gatehouse of Fuwa<br>lets both rain and moonlight in\u2014<br>quietly exposed, yet enduring.',
-      attributionHtml: 'Abatsu-ni, <em>Diary of the Waning Moon</em>'
     },
     focus: 'Sudo for WordPress! 🥪',
     subfocus: 'Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate.',
@@ -212,7 +209,7 @@ export const PROJECT_META = {
       {
         title: 'Editorial Baseline & Sources',
         logo: {
-          src: '/assets/owasp-black-logo.svg',
+          src: '/assets/owasp-white-logo.svg',
           alt: 'OWASP logo'
         },
         html: 'The editorial baseline is alignment with official WordPress Developer Documentation \u2014 especially the Advanced Administration Handbook and its security and hardening materials \u2014 with supporting reference to WordPress security documentation, the WordPress Security White Paper, WordPress Code Reference and core behavior, and standard industry sources such as OWASP, MDN, and CIS Benchmarks.'
