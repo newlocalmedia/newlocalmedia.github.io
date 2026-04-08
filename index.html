@@ -1148,6 +1148,7 @@
       displayTitle: 'CAPM for Agencies',
       descriptionHtml: 'Risk-based pricing tools for global agencies and B-Corps built around the Capital Asset Pricing Model (CAPM) adapted from financial economics. <a class="text-link" href="https://newlocalmedia.github.io/capm-for-agencies/">Try it!</a>&nbsp; <a class="text-link" href="https://newlocalmedia.github.io/capm-for-agencies/project-risk-check/index.html">There&rsquo;s also a simpler small agency and freelancer version.</a>',
       homepage: 'https://newlocalmedia.github.io/capm-for-agencies/',
+      homepageLabel: 'App',
       primaryImage: {
         url: 'https://newlocalmedia.github.io/capm-for-agencies/theory/figures/capm-comparison.png',
         alt: 'CAPM for Agencies comparison chart screenshot.'
@@ -1251,6 +1252,10 @@
       : null;
   }
 
+  function repoHomepageLabel(repo) {
+    return repoOverride(repo)?.homepageLabel || 'Homepage';
+  }
+
   function repoDescriptionHtml(repo) {
     const override = repoOverride(repo);
     return override?.descriptionHtml || escapeHtml(repo.description || 'No description yet.');
@@ -1322,8 +1327,8 @@
     return `<a class="repo-link primary" href="${href}"><span aria-hidden="true">📄</span><span>${escapeHtml(label)}</span></a>`;
   }
 
-  function githubLinkMarkup(href, withIcon = false) {
-    return `<a class="repo-link" href="${href}">${withIcon ? `${iconMarkup('github', 'action-icon')}<span>GitHub</span>` : 'GitHub →'}</a>`;
+  function githubLinkMarkup(href) {
+    return `<a class="repo-link" href="${href}">GitHub →</a>`;
   }
 
   function repoCard(repo, badgeLabel = '') {
@@ -1345,7 +1350,7 @@
         <div class="repo-actions">
           ${details ? projectLinkMarkup(details) : ''}
           ${githubLinkMarkup(repo.html_url)}
-          ${homepage ? `<a class="repo-link alt" href="${homepage}">Homepage →</a>` : ''}
+          ${homepage ? `<a class="repo-link alt" href="${homepage}">${escapeHtml(repoHomepageLabel(repo))} →</a>` : ''}
         </div>
       </article>
     `;
@@ -1373,7 +1378,7 @@
         <div class="repo-actions">
           ${details ? projectLinkMarkup(details) : ''}
           ${githubLinkMarkup(repo.html_url)}
-          ${homepage ? `<a class="repo-link alt" href="${homepage}">Homepage →</a>` : ''}
+          ${homepage ? `<a class="repo-link alt" href="${homepage}">${escapeHtml(repoHomepageLabel(repo))} →</a>` : ''}
         </div>
       </article>
     `;
@@ -1401,7 +1406,7 @@
         </div>
         <div class="feature-actions">
           ${details ? projectLinkMarkup(details) : ''}
-          ${githubLinkMarkup(repo.html_url, true)}
+          ${githubLinkMarkup(repo.html_url)}
         </div>
       </div>
       <aside class="feature-side" aria-label="wp-sudo details">
