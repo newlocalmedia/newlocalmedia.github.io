@@ -441,6 +441,9 @@ ${JSON.stringify(graph, null, 2)}
     .button.release-btn { background: rgba(245,166,35,0.14); border-color: rgba(245,166,35,0.40); }
     .button.demo-btn { background: rgba(72,198,150,0.14); border-color: rgba(72,198,150,0.40); }
     .topbar-btn-icon { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-right: 5px; }
+    .github-icon { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; margin-right: 5px; }
+    .repo-icon { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; margin-right: 5px; }
+    .meta-sep { width: 1px; height: 22px; background: var(--line); align-self: center; margin: 0 2px; }
     h1, h2 { margin: 0; letter-spacing: -0.03em; }
     h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 0.98; }
     h2 { font-size: 1.35rem; }
@@ -525,13 +528,6 @@ ${JSON.stringify(graph, null, 2)}
           <span class="muted">Open projects, products, and experiments.</span>
         </span>
       </a>
-      <div class="actions">
-        <a class="button" href="/">← Back</a>
-        <a class="button primary" href="${repo.html_url}">View on GitHub</a>
-        ${homepage ? `<a class="button" href="${homepage}">Visit homepage</a>` : ''}
-        ${meta.release && !meta.downloadCta ? `<a class="button release-btn" href="${meta.release.url}"><svg class="topbar-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download ${escapeHtml(meta.release.tag)}</a>` : ''}
-        ${meta.playground ? `<a class="button demo-btn" href="${meta.playground}"><svg class="topbar-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>Demo</a>` : ''}
-      </div>
     </header>
     <main id="main-content" class="stack">
       <nav class="panel section breadcrumbs" aria-label="Breadcrumb">
@@ -546,10 +542,15 @@ ${JSON.stringify(graph, null, 2)}
           <h1>${escapeHtml(meta.pageTitle || label)}</h1>
           <p class="lede">${summaryHtml(repo)}</p>
           <div class="meta">
-            <a class="pill" href="${ownerLink(repo.owner.login)}">@${escapeHtml(repo.owner.login)}</a>
+            <a class="pill" href="${ownerLink(repo.owner.login)}"><svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>@${escapeHtml(repo.owner.login)}</a>
             ${repo.language ? `<span class="pill">${escapeHtml(repo.language)}</span>` : ''}
             <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${escapeHtml(String(repo.stargazers_count))}</span>
             <span class="pill">Updated ${escapeHtml(formatDate(repo.updated_at))}</span>
+            <span class="meta-sep" aria-hidden="true"></span>
+            <a class="button primary" href="${repo.html_url}"><svg class="repo-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5A2.5 2.5 0 0 1 5.5 5H10l2 2h6.5A2.5 2.5 0 0 1 21 9.5v9a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5z"/></svg>View on GitHub</a>
+            ${homepage ? `<a class="button" href="${homepage}">Visit homepage</a>` : ''}
+            ${meta.release && !meta.downloadCta ? `<a class="button release-btn" href="${meta.release.url}"><svg class="topbar-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Download ${escapeHtml(meta.release.tag)}</a>` : ''}
+            ${meta.playground ? `<a class="button demo-btn" href="${meta.playground}"><svg class="topbar-btn-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>Demo</a>` : ''}
             ${meta.downloadCta ? `<a class="button primary hero-cta-btn" href="#downloads-title">${escapeHtml(meta.downloadCta)}</a>` : ''}
           </div>
         </div>
