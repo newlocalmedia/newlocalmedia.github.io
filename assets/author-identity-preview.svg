@@ -20,14 +20,16 @@
     </filter>
     <style>
       .eyebrow{font:700 11px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:.18em;text-transform:uppercase;fill:#9D613C}
-      .hero-title{font:700 76px Baskerville,"Libre Baskerville","Times New Roman",serif;fill:#2F2A26;letter-spacing:-0.9px}
-      .hero-subtitle{font:400 34px Baskerville,"Libre Baskerville","Times New Roman",serif;fill:#7C614E;letter-spacing:0.1px}
+      .hero-title{font:700 72px Baskerville,"Libre Baskerville","Times New Roman",serif;fill:#2F2A26;letter-spacing:-0.9px}
+      .hero-subtitle{font:400 30px Baskerville,"Libre Baskerville","Times New Roman",serif;fill:#7C614E;letter-spacing:0.1px}
       .hero-third{font:400 30px Baskerville,"Libre Baskerville","Times New Roman",serif;fill:#A56A41;letter-spacing:0.1px}
       .title{font:700 21px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#2F2A26}
       .subtitle{font:500 15px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#5D5148}
       .chip{font:700 13px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#402E23}
       .small{font:700 12px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#5D4330}
+      .output-title{font:700 19px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#2F2A26}
       .body{font:500 14px ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;fill:#5E5145}
+      .code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
     </style>
   </defs>
 
@@ -36,9 +38,9 @@
   <circle cx="150" cy="560" r="170" fill="#D05538" opacity="0.08"/>
   <circle cx="1090" cy="545" r="118" fill="#D8A94B" opacity="0.08"/>
 
-  <text x="72" y="96" class="hero-title">Author Identity</text>
-  <text x="72" y="145" class="hero-subtitle">Portable authorship</text>
-  <text x="72" y="182" class="hero-third">for WordPress</text>
+  <text x="72" y="104" class="hero-title">Author Identity</text>
+  <text x="520" y="92" class="hero-subtitle">Portable authorship</text>
+  <text x="520" y="126" class="hero-third">for WordPress</text>
 
   <g filter="url(#shadow)">
     <rect x="330" y="140" width="536" height="360" rx="26" fill="#FFF9F2" stroke="#D9B899"/>
@@ -51,40 +53,41 @@
       <rect x="372" y="270" width="208" height="96" rx="18" fill="#FFF7ED" stroke="#E5C5A6"/>
       <text x="394" y="294" class="eyebrow">Identity fields</text>
       <text x="394" y="321" class="chip">display_name · role</text>
-      <text x="394" y="342" class="chip">profiles · sameAs</text>
-      <text x="394" y="363" class="chip">actor URL · handles</text>
+      <text x="394" y="342" class="chip">profiles · <tspan class="code">sameAs</tspan></text>
+      <text x="394" y="363" class="chip"><tspan class="code">actor URL</tspan> · handles</text>
     </g>
 
     <g>
       <rect x="608" y="270" width="216" height="96" rx="18" fill="#FFF7ED" stroke="#E5C5A6"/>
       <text x="630" y="294" class="eyebrow">Editorial / rights</text>
-      <text x="630" y="321" class="chip">byline:perspective</text>
+      <text x="630" y="321" class="chip"><tspan class="code">byline:perspective</tspan></text>
       <text x="630" y="342" class="chip">consent · overrides</text>
       <text x="630" y="363" class="chip">audit log · denials</text>
     </g>
 
     <g>
-      <rect x="372" y="386" width="452" height="82" rx="18" fill="#FFF3E5" stroke="#E2BA97"/>
+      <rect x="372" y="386" width="452" height="92" rx="18" fill="#FFF3E5" stroke="#E2BA97"/>
       <text x="394" y="409" class="eyebrow">Output rule</text>
-      <text x="394" y="438" class="title">Outputs react to one normalized data model</text>
-      <text x="394" y="458" class="body">Feeds, schema, federation, and rights signals render different views of the same author contract.</text>
+      <text x="394" y="435" class="output-title">Outputs react to one normalized data model</text>
+      <text x="394" y="455" class="body">Feeds, schema, federation, and rights signals render</text>
+      <text x="394" y="473" class="body">different views of the same author contract.</text>
     </g>
 
-    <g transform="translate(394 476)">
+    <g transform="translate(394 486)">
       <rect width="94" height="22" rx="11" fill="#F6DDC6"/>
-      <text x="13" y="15" class="small">feeds</text>
+      <text x="47" y="15" text-anchor="middle" class="small">feeds</text>
     </g>
-    <g transform="translate(498 476)">
+    <g transform="translate(498 486)">
       <rect width="98" height="22" rx="11" fill="#F8E7B8"/>
-      <text x="14" y="15" class="small">schema</text>
+      <text x="49" y="15" text-anchor="middle" class="small">schema</text>
     </g>
-    <g transform="translate(606 476)">
+    <g transform="translate(606 486)">
       <rect width="110" height="22" rx="11" fill="#F4D5BE"/>
-      <text x="14" y="15" class="small">fediverse</text>
+      <text x="55" y="15" text-anchor="middle" class="small">fediverse</text>
     </g>
-    <g transform="translate(726 476)">
+    <g transform="translate(726 486)">
       <rect width="98" height="22" rx="11" fill="#F1DDC7"/>
-      <text x="15" y="15" class="small">AI / rights</text>
+      <text x="49" y="15" text-anchor="middle" class="small">AI / rights</text>
     </g>
   </g>
 
@@ -113,7 +116,7 @@
 
     <rect x="918" y="274" width="222" height="60" rx="18" fill="#FFF7ED" stroke="#DFC1A5"/>
     <text x="942" y="296" class="eyebrow">Schema outputs</text>
-    <text x="942" y="319" class="chip">JSON-LD Article + Person</text>
+    <text x="942" y="319" class="chip"><tspan class="code">JSON-LD</tspan> Article + Person</text>
 
     <rect x="918" y="350" width="222" height="60" rx="18" fill="#FFF7ED" stroke="#DFC1A5"/>
     <text x="942" y="372" class="eyebrow">Federation outputs</text>
@@ -121,7 +124,7 @@
 
     <rect x="918" y="426" width="222" height="60" rx="18" fill="#FFF7ED" stroke="#DFC1A5"/>
     <text x="942" y="448" class="eyebrow">Rights outputs</text>
-    <text x="942" y="471" class="chip">robots · TDMRep · ai.txt</text>
+    <text x="942" y="471" class="chip">robots · <tspan class="code">TDMRep</tspan> · <tspan class="code">ai.txt</tspan></text>
   </g>
 
   <g stroke-linecap="round" stroke-linejoin="round" fill="none">
@@ -140,9 +143,9 @@
   </g>
 
   <g>
-    <rect x="72" y="538" width="1056" height="68" rx="16" fill="#FFF8F0" stroke="#DFC1A5"/>
-    <text x="96" y="560" class="eyebrow">Design principle</text>
-    <text x="96" y="582" class="body">Separate authorship from presentation: adapters normalize source systems, outputs stay additive,</text>
-    <text x="96" y="600" class="body">and identity metadata travels with the work instead of collapsing at syndication.</text>
+    <rect x="132" y="536" width="936" height="72" rx="16" fill="#FFF8F0" stroke="#DFC1A5"/>
+    <text x="600" y="559" text-anchor="middle" class="eyebrow">Design principle</text>
+    <text x="600" y="581" text-anchor="middle" class="body">Separate authorship from presentation: adapters normalize source systems, outputs stay additive,</text>
+    <text x="600" y="599" text-anchor="middle" class="body">and identity metadata travels with the work instead of collapsing at syndication.</text>
   </g>
 </svg>
