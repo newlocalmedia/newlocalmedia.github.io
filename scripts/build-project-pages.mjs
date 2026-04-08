@@ -26,6 +26,28 @@ const dataPath = resolve(root, 'data/repos.json');
 const projectsRoot = resolve(root, 'projects');
 const defaultOgImageUrl = `${SITE_URL}/assets/og-image.png`;
 const iconUrl = `${SITE_URL}/assets/icon-512.png`;
+const REPO_ICON_SVGS = {
+  'dknauss/wp-sudo': '<svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-2.8 8.3-7 10-4.2-1.7-7-5.5-7-10V6z"/><path d="M9.5 12l1.7 1.7L15.5 9.5"/></svg>',
+  'dknauss/ai-assisted-docs': '<svg viewBox="0 0 24 24"><path d="M7 4h7l5 5v11H7z"/><path d="M14 4v5h5"/><path d="M10 13h6"/><path d="M10 17h4"/></svg>',
+  'dknauss/wordpress-runbook-template': '<svg viewBox="0 0 24 24"><path d="M6 5.5A2.5 2.5 0 0 1 8.5 3H19v16H8.5A2.5 2.5 0 0 0 6 21z"/><path d="M6 5.5V21"/><path d="M10 8h5"/><path d="M10 11h4"/><path d="M13.5 15.5l3-3"/><path d="M15 14l1.5 1.5"/><path d="M12.5 16.5l-1 2 2-1"/></svg>',
+  'dknauss/wp-security-hardening-guide': '<svg viewBox="0 0 24 24"><rect x="6" y="11" width="12" height="9" rx="2"/><path d="M9 11V8a3 3 0 1 1 6 0v3"/><path d="M12 15h.01"/></svg>',
+  'dknauss/wp-security-benchmark': '<svg viewBox="0 0 24 24"><path d="M5 19h14"/><path d="M8 16v-4"/><path d="M12 16V9"/><path d="M16 16v-6"/></svg>',
+  'dknauss/wp-security-style-guide': '<svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16l6-6 3 3-6 6H7z"/><path d="M14 9l2-2 3 3-2 2"/></svg>',
+  'newlocalmedia/capm-for-agencies': '<svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M6 15l4-4 3 2 5-6"/><path d="M18 7h-3"/><path d="M18 7v3"/></svg>',
+  'dknauss/author-identity': '<svg viewBox="0 0 24 24"><path d="M5 5h14v14H5z"/><path d="M12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/><path d="M8 17c1-1.5 2.3-2.2 4-2.2s3 .7 4 2.2"/></svg>',
+  'dknauss/fedibots': '<svg viewBox="0 0 24 24"><rect x="7" y="8" width="10" height="9" rx="2"/><path d="M10 8V6"/><path d="M14 8V6"/><path d="M10 12h.01"/><path d="M14 12h.01"/><path d="M5 11H3"/><path d="M21 11h-2"/></svg>',
+  'dknauss/wordpress-2fa-ecosystem': '<svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="10" rx="2"/><path d="M8 12h.01"/><path d="M11 12h.01"/><path d="M14 12h.01"/><path d="M17 12h.01"/><path d="M9 17v2"/><path d="M15 17v2"/></svg>',
+  'dknauss/the-drafting-table': '<svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16l8-8 2 2-8 8H7z"/><path d="M14 7l2 2"/></svg>',
+  'dknauss/wp-bibliography-block': '<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8"/><path d="M8 12h8"/><path d="M8 15h5"/><path d="M4 4v16"/><path d="M7 4v16"/></svg>'
+};
+const DEFAULT_REPO_ICON_SVG = '<svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>';
+const UI_ICON_SVGS = {
+  docs: '<svg viewBox="0 0 24 24"><path d="M7 4h7l5 5v11H7z"/><path d="M14 4v5h5"/><path d="M10 13h6"/><path d="M10 17h4"/></svg>',
+  project: '<svg viewBox="0 0 24 24"><path d="M7 4h7l5 5v11H7z"/><path d="M14 4v5h5"/><path d="M10 14h6"/><path d="M13 11l3 3-3 3"/></svg>',
+  github: '<svg viewBox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/></svg>',
+  history: '<svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/><path d="M12 7v5l3 2"/></svg>',
+  forks: '<svg viewBox="0 0 24 24"><path d="M7 6a2 2 0 1 0 0 .01"/><path d="M17 18a2 2 0 1 0 0 .01"/><path d="M17 6a2 2 0 1 0 0 .01"/><path d="M9 6h6"/><path d="M17 8v4"/><path d="M17 12c0 3-2 6-6 6h-2"/></svg>'
+};
 
 function ownerPath(owner) {
   return `/projects/${encodeURIComponent(owner)}/`;
@@ -268,26 +290,19 @@ function homeRuntimeConfig() {
     spotlight: SPOTLIGHT,
     selected: SELECTED,
     blocksShowcase: BLOCKS_SHOWCASE,
-    repoOverrides
+    repoOverrides,
+    repoIcons: REPO_ICON_SVGS,
+    uiIcons: UI_ICON_SVGS,
+    forksCardHtml: renderForksCard()
   };
 }
 
 function iconSvg(fullName) {
-  const icons = {
-    'dknauss/wp-sudo': '<svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-2.8 8.3-7 10-4.2-1.7-7-5.5-7-10V6z"/><path d="M9.5 12l1.7 1.7L15.5 9.5"/></svg>',
-    'dknauss/ai-assisted-docs': '<svg viewBox="0 0 24 24"><path d="M7 4h7l5 5v11H7z"/><path d="M14 4v5h5"/><path d="M10 13h6"/><path d="M10 17h4"/></svg>',
-    'dknauss/wordpress-runbook-template': '<svg viewBox="0 0 24 24"><path d="M6 5.5A2.5 2.5 0 0 1 8.5 3H19v16H8.5A2.5 2.5 0 0 0 6 21z"/><path d="M6 5.5V21"/><path d="M10 8h5"/><path d="M10 11h4"/><path d="M13.5 15.5l3-3"/><path d="M15 14l1.5 1.5"/><path d="M12.5 16.5l-1 2 2-1"/></svg>',
-    'dknauss/wp-security-hardening-guide': '<svg viewBox="0 0 24 24"><rect x="6" y="11" width="12" height="9" rx="2"/><path d="M9 11V8a3 3 0 1 1 6 0v3"/><path d="M12 15h.01"/></svg>',
-    'dknauss/wp-security-benchmark': '<svg viewBox="0 0 24 24"><path d="M5 19h14"/><path d="M8 16v-4"/><path d="M12 16V9"/><path d="M16 16v-6"/></svg>',
-    'dknauss/wp-security-style-guide': '<svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16l6-6 3 3-6 6H7z"/><path d="M14 9l2-2 3 3-2 2"/></svg>',
-    'newlocalmedia/capm-for-agencies': '<svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M6 15l4-4 3 2 5-6"/><path d="M18 7h-3"/><path d="M18 7v3"/></svg>',
-    'dknauss/author-identity': '<svg viewBox="0 0 24 24"><path d="M5 5h14v14H5z"/><path d="M12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/><path d="M8 17c1-1.5 2.3-2.2 4-2.2s3 .7 4 2.2"/></svg>',
-    'dknauss/fedibots': '<svg viewBox="0 0 24 24"><rect x="7" y="8" width="10" height="9" rx="2"/><path d="M10 8V6"/><path d="M14 8V6"/><path d="M10 12h.01"/><path d="M14 12h.01"/><path d="M5 11H3"/><path d="M21 11h-2"/></svg>',
-    'dknauss/wordpress-2fa-ecosystem': '<svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="10" rx="2"/><path d="M8 12h.01"/><path d="M11 12h.01"/><path d="M14 12h.01"/><path d="M17 12h.01"/><path d="M9 17v2"/><path d="M15 17v2"/></svg>',
-    'dknauss/the-drafting-table': '<svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16l8-8 2 2-8 8H7z"/><path d="M14 7l2 2"/></svg>',
-    'dknauss/wp-bibliography-block': '<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8"/><path d="M8 12h8"/><path d="M8 15h5"/><path d="M4 4v16"/><path d="M7 4v16"/></svg>'
-  };
-  return icons[fullName] || '<svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>';
+  return REPO_ICON_SVGS[fullName] || DEFAULT_REPO_ICON_SVG;
+}
+
+function uiIconSvg(name) {
+  return UI_ICON_SVGS[name] || UI_ICON_SVGS.docs;
 }
 
 function titleMarkup(repo) {
@@ -334,7 +349,7 @@ function homeRepoCard(repo, badgeLabel = '') {
           <div>
             <h3>${titleLinkMarkup(repo)}</h3>
           </div>${badgeLabel ? `
-          <span class="pill featured"><span class="pill-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4h7l5 5v11H7z"/><path d="M14 4v5h5"/><path d="M10 13h6"/><path d="M10 17h4"/></svg></span><span>${escapeHtml(badgeLabel)}</span></span>` : ''}
+          <span class="pill featured"><span class="pill-icon" aria-hidden="true">${uiIconSvg('docs')}</span><span>${escapeHtml(badgeLabel)}</span></span>` : ''}
         </div>
         <p class="repo-desc">${homeDescriptionHtml(repo)}</p>
         ${repoMetaMarkup(repo)}
@@ -412,7 +427,7 @@ function accountCardMarkup(account) {
 function renderForksCard() {
   return `
       <article class="repo-card forks-card">
-        <h3><span class="title-with-icon"><span class="title-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 6a2 2 0 1 0 0 .01"/><path d="M17 18a2 2 0 1 0 0 .01"/><path d="M17 6a2 2 0 1 0 0 .01"/><path d="M9 6h6"/><path d="M17 8v4"/><path d="M17 12c0 3-2 6-6 6h-2"/></svg></span><span>Forks</span></span></h3>
+        <h3><span class="title-with-icon"><span class="title-icon" aria-hidden="true">${uiIconSvg('forks')}</span><span>Forks</span></span></h3>
         <div class="prose-block">
           <p>There are a few oldies but goodies among the community and canonical plugins for WordPress that I&rsquo;m exploring to scratch some old itches.</p>
           <p><a href="https://github.com/dknauss/authorship">Authorship</a> has a well-architected approach to multi-author attribution. I&rsquo;m modernizing it and adding an adapter layer for it in <a href="https://github.com/dknauss/author-identity/tree/main/byline-feed">Byline Feeds</a> so every author has and is included in semantically rich metadata.</p>

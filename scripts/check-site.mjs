@@ -15,6 +15,7 @@ const requiredSnippets = [
   '<meta property="og:image" content="https://newlocalmedia.github.io/assets/og-image.png">',
   '<meta name="twitter:card" content="summary_large_image">',
   '<script type="application/ld+json">',
+  '<script src="assets/home.js"></script>',
   '"@type": "ItemList"',
   '<link rel="manifest" href="site.webmanifest">',
   '<a class="skip-link" href="#main-content">Skip to content</a>',
@@ -29,6 +30,7 @@ for (const snippet of requiredSnippets) {
 
 const requiredFiles = [
   'assets/og-image.png',
+  'assets/home.js',
   'assets/icon-512.png',
   'assets/apple-touch-icon.png',
   'assets/favicon-32.png',
