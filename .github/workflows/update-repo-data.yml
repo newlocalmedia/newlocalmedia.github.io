@@ -37,12 +37,12 @@ jobs:
 
       - name: Commit updated snapshot
         run: |
-          if git diff --quiet -- data/repos.json sitemap.xml projects; then
+          if git diff --quiet -- data/repos.json index.html sitemap.xml projects; then
             echo "No snapshot changes to commit"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/repos.json sitemap.xml projects
+          git add data/repos.json index.html sitemap.xml projects
           git commit -m "chore: update repo data snapshot"
           git push
