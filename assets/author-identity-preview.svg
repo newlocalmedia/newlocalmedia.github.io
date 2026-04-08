@@ -39,8 +39,8 @@
   <circle cx="1090" cy="545" r="118" fill="#D8A94B" opacity="0.08"/>
 
   <text x="72" y="104" class="hero-title">Author Identity</text>
-  <text x="520" y="92" class="hero-subtitle">Portable authorship</text>
-  <text x="520" y="126" class="hero-third">for WordPress</text>
+  <text x="700" y="92" class="hero-subtitle">Portable authorship</text>
+  <text x="700" y="126" class="hero-third">for WordPress</text>
 
   <g filter="url(#shadow)">
     <rect x="330" y="140" width="536" height="360" rx="26" fill="#FFF9F2" stroke="#D9B899"/>
