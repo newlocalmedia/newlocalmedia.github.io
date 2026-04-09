@@ -338,6 +338,7 @@ export const PROJECT_META = {
       url: 'https://newlocalmedia.github.io/capm-for-agencies/social/capm-for-agencies-banner.png',
       alt: 'CAPM for Agencies banner logo showing the hurdle-rate mark and wordmark.'
     },
+    homeImageClass: 'spotlight-media--capm-banner',
     primaryImage: {
       url: 'https://newlocalmedia.github.io/capm-for-agencies/theory/figures/capm-comparison.png',
       alt: 'CAPM for Agencies comparison chart screenshot.'
