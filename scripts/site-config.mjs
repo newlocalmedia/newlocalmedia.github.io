@@ -403,6 +403,11 @@ export const PROJECT_META = {
       url: 'https://newlocalmedia.github.io/assets/author-identity-preview.svg',
       alt: 'Diagram-style preview of Author Identity showing normalized author data in WordPress flowing to feeds, JSON-LD, fediverse metadata, and AI-rights signals.'
     },
+    homePrimaryImage: {
+      url: 'https://newlocalmedia.github.io/assets/author-identity-banner-home-v3.webp',
+      alt: 'Editorial banner for Author Identity and Byline Feeds with protocol badges in the lower right.'
+    },
+    homeImageClass: 'spotlight-media--banner',
     focus: 'WordPress as a Personal Data Server for Authors',
     subfocus: 'Structured author identity that can travel with the work across feeds, schema, fediverse metadata, and AI-rights signals.'
   },
