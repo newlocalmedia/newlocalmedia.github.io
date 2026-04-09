@@ -375,7 +375,7 @@ export const PROJECT_META = {
     homeDescriptionHtml: 'Exploring structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.',
     summary: 'Exploring structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.',
     playground: 'https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Fdknauss%2Fauthor-identity%2Fcodex%2Fplayground-assets%2Fplayground%2Fpublic%2Foutput-demo.blueprint.json&url=%2F%3Fp%3D1&mode=browser-full-screen&login=no',
-    whyHeading: 'Make Authorship Portable',
+    whyHeading: 'Make Authorship Portable: An Exploration',
     relatedProjects: [
       {
         fullName: 'dknauss/wp-bibliography-block',
