@@ -361,7 +361,8 @@ function repoActionsMarkup(repo, options = {}) {
   return `<div class="repo-actions">${projectLinkMarkup(projectPath(repo.full_name), label, showProjectIcon)}${includeGithub ? githubLinkMarkup(repo.html_url) : ''}${homepage ? `<a class="repo-link alt" href="${homepage}">${escapeHtml(homepageLabel(repo))} →</a>` : ''}</div>`;
 }
 
-function homeRepoCard(repo, badgeLabel = '') {
+function homeRepoCard(repo, options = {}) {
+  const { badgeLabel = '', actionLabel = 'Project', showProjectIcon = true } = options;
   return `
       <article class="repo-card repo-card--${repo.full_name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}">
         <div class="repo-top">
@@ -372,10 +373,11 @@ function homeRepoCard(repo, badgeLabel = '') {
         </div>
         <p class="repo-desc">${homeDescriptionHtml(repo)}</p>
         ${repoMetaMarkup(repo)}
-        ${repoActionsMarkup(repo, { label: badgeLabel === 'Docs' ? 'Docs' : 'Project', showProjectIcon: badgeLabel !== 'Docs' })}
+        ${repoActionsMarkup(repo, { label: actionLabel, showProjectIcon })}
       </article>
     `.trim();
 }
+
 
 function homeSpotlightCard(repo) {
   const primaryImage = projectPrimaryImage(repo);
@@ -395,7 +397,6 @@ function homeSpotlightCard(repo) {
       </article>
     `.trim();
 }
-
 function homeLeadMarkup(repo) {
   const primaryImage = projectPrimaryImage(repo);
   const homepage = repoHomepage(repo);
@@ -481,7 +482,7 @@ function renderHomePage(snapshot, lookup) {
   html = replaceGeneratedRegion(html, 'LAST_REFRESH', formatSnapshotTimestamp(snapshot.generated_at));
   html = replaceGeneratedRegion(html, 'HOME_CONFIG', `\n${JSON.stringify(homeRuntimeConfig(), null, 2)}\n`);
   html = replaceGeneratedRegion(html, 'LEAD_FEATURE', `\n${homeLeadMarkup(lookup.get(LEAD_REPO))}\n        `);
-  html = replaceGeneratedRegion(html, 'AI_DOCS', `\n${AI_DOCS_GROUP.map((fullName) => homeRepoCard(lookup.get(fullName), 'Docs')).join('\n')}\n${renderForksCard()}\n        `);
+  html = replaceGeneratedRegion(html, 'AI_DOCS', `\n${AI_DOCS_GROUP.map((fullName) => homeRepoCard(lookup.get(fullName), { actionLabel: 'Learn More', showProjectIcon: false })).join('\n')}\n${renderForksCard()}\n        `);
   html = replaceGeneratedRegion(html, 'SPOTLIGHT', `\n${SPOTLIGHT.map((fullName) => homeSpotlightCard(lookup.get(fullName))).join('\n')}\n        `);
   html = replaceGeneratedRegion(html, 'BLOCKS', `\n${BLOCKS_SHOWCASE.map((fullName) => homeSpotlightCard(lookup.get(fullName))).join('\n')}\n        `);
   html = replaceGeneratedRegion(html, 'SELECTED', `\n${SELECTED.map((fullName) => homeRepoCard(lookup.get(fullName))).join('\n')}\n        `);
@@ -501,11 +502,6 @@ function detailItems(repo) {
       term: 'Apps',
       value: meta.extraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')
     });
-  } else {
-    const homepage = repoHomepage(repo);
-    if (homepage) {
-      items.push({ term: 'Homepage', value: `<a href="${homepage}">${escapeHtml(homepage)}</a>` });
-    }
   }
 
   if (meta.version) {
