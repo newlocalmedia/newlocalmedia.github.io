@@ -377,7 +377,7 @@ export const PROJECT_META = {
     playground: 'https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Fdknauss%2Fauthor-identity%2Fcodex%2Fplayground-assets%2Fplayground%2Fpublic%2Foutput-demo.blueprint.json&url=%2F%3Fp%3D1&mode=browser-full-screen&login=no',
     whyHeading: 'Make Authorship Portable: An Exploration',
     extraLinks: [
-      { label: 'Key docs ↓', url: '#docs-title' }
+      { label: 'Key Docs ↓', url: '#docs-title' }
     ],
     omitSummaryBoxLinks: true,
     docs: [
