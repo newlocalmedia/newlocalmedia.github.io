@@ -547,10 +547,11 @@ function detailItems(repo) {
     { term: 'Source', value: `<a href="${repo.html_url}">${escapeHtml(repo.full_name)}</a>` }
   ];
 
-  if (meta.extraLinks?.length) {
+  const detailExtraLinks = meta.extraLinks?.filter((link) => !String(link.url || '').startsWith('#')) || [];
+  if (detailExtraLinks.length) {
     items.push({
       term: 'Apps',
-      value: meta.extraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')
+      value: detailExtraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')
     });
   }
 
