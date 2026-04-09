@@ -54,7 +54,7 @@ export const SECTION_META = {
     narrative: 'This project sits in the spotlight section because it opens up a broader line of product, pricing, or identity work beyond the core WordPress security and documentation track.'
   },
   selected: {
-    title: 'More Projects',
+    title: 'More Projects!',
     description: 'Other things I\'ve been working on.',
     narrative: 'This project is part of the selected work section, which rounds out the collection with adjacent experiments in automation, identity, authentication, and publishing design.'
   },

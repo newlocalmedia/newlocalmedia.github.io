@@ -463,6 +463,20 @@ function renderForksCard() {
     `.trim();
 }
 
+function homeSectionHeadMarkup(sectionKey) {
+  const section = SECTION_META[sectionKey];
+  if (!section) throw new Error(`Unknown home section: ${sectionKey}`);
+  if (sectionKey === 'ai_docs') {
+    return `<h2 id="ai-docs-title"><span class="title-with-icon"><span class="title-icon" aria-hidden="true">${uiIconSvg('docs')}</span><span>${escapeHtml(section.title)}</span></span></h2>
+            <p>${section.descriptionHtml || escapeHtml(section.description)}</p>`;
+  }
+  if (sectionKey === 'selected') {
+    return `<h2 id="selected-title">${escapeHtml(section.title)}</h2>
+            <p>${escapeHtml(section.description)}</p>`;
+  }
+  throw new Error(`Unhandled home section: ${sectionKey}`);
+}
+
 function replaceGeneratedRegion(html, marker, content) {
   const pattern = new RegExp(`(<!-- GENERATED:${marker}_START -->)([\\s\\S]*?)(<!-- GENERATED:${marker}_END -->)`);
   if (!pattern.test(html)) {
