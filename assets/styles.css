@@ -516,7 +516,7 @@
     .spotlight-media--banner .image-trigger img,
     .spotlight-media--capm-banner .image-trigger img {
       width: 100%;
-      aspect-ratio: 1600 / 520;
+      aspect-ratio: 1014 / 426;
       object-fit: contain;
       margin: 0 auto;
       background: rgba(255,253,249,0.98);
