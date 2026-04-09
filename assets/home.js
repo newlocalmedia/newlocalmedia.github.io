@@ -291,6 +291,7 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
           ${updatedPill(repo.updated_at)}
           ${details ? projectLinkMarkup(details) : ''}
           ${githubLinkMarkup(repo.html_url)}
+          ${repoHomepage(repo) ? `<a class="repo-link alt" href="${repoHomepage(repo)}">${escapeHtml(repoHomepageLabel(repo))} →</a>` : ''}
         </div>
       </div>
       <aside class="feature-side" aria-label="${escapeHtml(repoDisplayTitle(repo))} details">
