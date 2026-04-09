@@ -95,10 +95,10 @@ function repoHomepage(repo) {
     return meta.extraLinks[0].url || null;
   }
   if (Object.prototype.hasOwnProperty.call(meta, 'homepage')) {
-    const h = meta.homepage;
+    const h = meta.homepage || meta.playground;
     return h && h.trim() && h.trim() !== repo.html_url ? h.trim() : null;
   }
-  const homepage = repo.homepage;
+  const homepage = meta.playground || repo.homepage;
   return homepage && homepage.trim() && homepage.trim() !== repo.html_url ? homepage.trim() : null;
 }
 
@@ -266,7 +266,12 @@ function homeDescriptionHtml(repo) {
 }
 
 function homepageLabel(repo) {
-  return PROJECT_META[repo.full_name]?.homepageLabel || 'Homepage';
+  const meta = PROJECT_META[repo.full_name] || {};
+  if (meta.homepageLabel) return meta.homepageLabel;
+  if (meta.playground && (!Object.prototype.hasOwnProperty.call(meta, 'homepage') || !meta.homepage)) {
+    return '🛝 Playground Demo';
+  }
+  return 'Homepage';
 }
 
 function homeRuntimeConfig() {
@@ -281,9 +286,12 @@ function homeRuntimeConfig() {
         override.descriptionHtml = meta.summaryHtml;
       }
       if (Object.prototype.hasOwnProperty.call(meta, 'homepage')) {
-        override.homepage = meta.homepage;
+        override.homepage = meta.homepage || meta.playground || null;
+      } else if (meta.playground) {
+        override.homepage = meta.playground;
       }
       if (meta.homepageLabel) override.homepageLabel = meta.homepageLabel;
+      else if (meta.playground) override.homepageLabel = '🛝 Playground Demo';
       if (meta.primaryImage) override.primaryImage = meta.primaryImage;
       return Object.keys(override).length ? [fullName.toLowerCase(), override] : null;
     }).filter(Boolean)
@@ -385,6 +393,7 @@ function homeSpotlightCard(repo) {
 
 function homeLeadMarkup(repo) {
   const primaryImage = projectPrimaryImage(repo);
+  const homepage = repoHomepage(repo);
   const imageAlt = escapeHtml(primaryImage?.alt || `${displayTitle(repo)} preview image.`);
   return `
       <div class="feature-main">
@@ -397,6 +406,7 @@ function homeLeadMarkup(repo) {
           ${updatedPillMarkup(repo.updated_at)}
           ${projectLinkMarkup(projectPath(repo.full_name))}
           ${githubLinkMarkup(repo.html_url)}
+          ${homepage ? `<a class="repo-link alt" href="${homepage}">${escapeHtml(homepageLabel(repo))} →</a>` : ''}
         </div>
       </div>
       <aside class="feature-side" aria-label="${escapeHtml(displayTitle(repo))} details">
@@ -940,7 +950,7 @@ ${JSON.stringify(graph, null, 2)}
             <a class="button primary" href="${repo.html_url}"><svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>View Source</a>
             ${homepage ? `<a class="button" href="${homepage}">Visit homepage</a>` : ''}
             ${meta.release && !meta.downloadCta ? `<a class="button release-btn" href="${meta.release.url}">Download ${escapeHtml(meta.release.tag)}</a>` : ''}
-            ${meta.playground ? `<a class="button demo-btn" href="${meta.playground}"><span class="button-emoji" aria-hidden="true">🛝</span>Demo</a>` : ''}
+            ${meta.playground ? `<a class="button demo-btn" href="${meta.playground}"><span class="button-emoji" aria-hidden="true">🛝</span>Playground Demo</a>` : ''}
             ${meta.downloadCta ? `<a class="button primary hero-cta-btn" href="#downloads-title">${escapeHtml(meta.downloadCta)}</a>` : ''}
           </div>
         </div>

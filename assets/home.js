@@ -124,7 +124,10 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
   }
 
   function repoHomepageLabel(repo) {
-    return repoOverride(repo)?.homepageLabel || 'Homepage';
+    const override = repoOverride(repo);
+    if (override?.homepageLabel) return override.homepageLabel;
+    if (repoHomepage(repo)?.includes('playground.wordpress.net/')) return '🛝 Playground Demo';
+    return 'Homepage';
   }
 
   function repoDescriptionHtml(repo) {
