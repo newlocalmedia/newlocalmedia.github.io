@@ -171,12 +171,12 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
 
   function updatedPill(value) {
     const formatted = formatDate(value);
-    return `<span class="pill" title="Last updated ${escapeHtml(formatted)}"><span aria-hidden="true">🔄</span><span class="sr-only">Last updated </span><time datetime="${escapeHtml(value)}">${escapeHtml(formatted)}</time></span>`;
+    return `<span class="pill" title="Last updated ${escapeHtml(formatted)}"><span class="sr-only">Last updated </span><time datetime="${escapeHtml(value)}">${escapeHtml(formatted)}</time></span>`;
   }
 
   function projectLinkMarkup(href, label = 'Project', showIcon = true) {
     const withIcon = showIcon && label !== 'Docs';
-    return `<a class="repo-link primary" href="${href}">${withIcon ? '<span aria-hidden="true">📄</span>' : ''}<span>${escapeHtml(label)}</span></a>`;
+    return `<a class="repo-link primary" href="${href}"><span>${escapeHtml(label)}</span></a>`;
   }
 
   function githubLinkMarkup(href) {
