@@ -84,8 +84,12 @@
       overflow: hidden;
     }
 
+    .shell#site-shell {
+      margin-top: 0;
+    }
+
     .shell > header.hero {
-      padding-top: 10px;
+      padding-top: 4px;
     }
 
     .hero::after {
