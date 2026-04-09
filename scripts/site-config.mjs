@@ -261,7 +261,7 @@ export const PROJECT_META = {
     schemaType: 'TechArticle',
     release: { tag: 'v1.1.0', url: 'https://github.com/dknauss/wp-security-benchmark/releases/tag/v1.1.0' },
     license: { label: 'CC BY-SA 4.0', url: 'https://github.com/dknauss/wp-security-benchmark/blob/main/LICENSE' },
-    downloadCta: 'Get the Benchmark',
+    downloadCta: '📏 Get the Benchmark',
     summary: 'WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on the LEMP/LAMP stack.',
     whyHeading: 'Audit the Stack Control by Control',
     narrativeHtml: [
