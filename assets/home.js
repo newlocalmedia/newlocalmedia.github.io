@@ -43,6 +43,13 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     }[char]));
   }
 
+  function pictureMarkup(url, alt) {
+    const isLocalPng = url.includes('/assets/') && url.endsWith('.png');
+    if (!isLocalPng) return `<img src="${url}" alt="${alt}" loading="lazy" decoding="async">`;
+    const webpUrl = url.replace(/\.png$/, '.webp');
+    return `<picture><source srcset="${webpUrl}" type="image/webp"><img src="${url}" alt="${alt}" loading="lazy" decoding="async"></picture>`;
+  }
+
   function formatDate(value) {
     return new Intl.DateTimeFormat('en-CA', {
       year: 'numeric', month: 'short', day: 'numeric'
@@ -83,7 +90,7 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
   }
 
   async function loadSnapshot() {
-    const response = await fetch('data/repos.json', { cache: 'no-store' });
+    const response = await fetch('data/repos.json', { cache: 'default' });
     if (!response.ok) {
       throw new Error(`Snapshot request failed with ${response.status}`);
     }
@@ -235,7 +242,7 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     const imageAlt = escapeHtml(primaryImage?.alt || `${repoDisplayTitle(repo)} preview image.`);
     return `
       <article class="spotlight-card">
-        ${primaryImage ? `<figure class="spotlight-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(repoDisplayTitle(repo))}"><img src="${primaryImage.url}" alt="${imageAlt}" loading="lazy" decoding="async"></button></figure>` : ''}
+        ${primaryImage ? `<figure class="spotlight-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(repoDisplayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</button></figure>` : ''}
         <div class="repo-top">
           <div>
             <h3>${titleLinkMarkup(repo)}</h3>
@@ -274,9 +281,9 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
         </div>
       </div>
       <aside class="feature-side" aria-label="${escapeHtml(repoDisplayTitle(repo))} details">
-        ${primaryImage ? `<figure class="feature-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(repoDisplayTitle(repo))}"><img src="${primaryImage.url}" alt="${imageAlt}" loading="lazy" decoding="async"></button></figure>` : ''}
-        <p class="feature-note"><strong>Gate & Log Dangerous Actions</strong>When a user attempts a gated action, Sudo intercepts the request at <code>admin_init</code>.</p>
-        <p class="feature-note"><strong>Protects Every Surface</strong>WordPress reauthentication and risky-action gating with support across REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.</p>
+        ${primaryImage ? `<figure class="feature-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(repoDisplayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</button></figure>` : ''}
+        <p class="feature-note"><strong>Gate &amp; Log Dangerous Actions</strong> When a user attempts a gated action, Sudo intercepts the request at <code>admin_init</code>.</p>
+        <p class="feature-note"><strong>Protects Every Surface</strong> WordPress reauthentication and risky-action gating with support across REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.</p>
       </aside>
     `;
     setBusyState('lead-feature-shell', false);
@@ -445,6 +452,15 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
 
     try {
       const snapshot = await loadSnapshot();
+
+      // Pre-rendered content is already current — skip re-rendering to avoid
+      // aria-live regions announcing identical content to screen reader users.
+      const preRenderedTimestamp = document.querySelector('#last-refresh .stat-value')?.textContent?.trim();
+      if (preRenderedTimestamp && preRenderedTimestamp === formatSnapshotTimestamp(snapshot.generated_at)) {
+        resetBusyStates();
+        return;
+      }
+
       storeSnapshot(snapshot);
 
       const accountsByUser = new Map((snapshot.accounts || []).map((account) => [account.user, account]));

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found | New Local Media</title>
+  <meta name="description" content="The page you were looking for could not be found.">
+  <meta name="robots" content="noindex,follow">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0D1B2A">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <style>
+    :root {
+      --primary: #5FD3FF;
+      --secondary: #ffffff;
+      --foreground: #F2F8FF;
+      --background: #0D1B2A;
+      --tertiary: #071018;
+      --surface: rgba(20, 45, 70, 0.96);
+      --line: rgba(255, 255, 255, 0.18);
+      --max: 1180px;
+      --radius: 28px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--secondary);
+      background:
+        radial-gradient(circle at top left, rgba(41,171,224,0.18), transparent 26%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.06), transparent 22%),
+        linear-gradient(180deg, #0F2035 0%, var(--background) 46%, var(--tertiary) 100%);
+      line-height: 1.6;
+    }
+    .shell {
+      width: min(calc(100% - 28px), 640px);
+      padding: 48px 0 64px;
+      text-align: center;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+    }
+    .code {
+      font-size: 5rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--primary);
+      margin: 0 0 12px;
+      letter-spacing: -0.04em;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+    p {
+      color: rgba(255,255,255,0.7);
+      margin: 0 0 32px;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      color: var(--secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: rgba(255,255,255,0.06);
+      transition: background 120ms ease, border-color 120ms ease;
+    }
+    .button.primary {
+      background: var(--primary);
+      color: var(--background);
+      border-color: var(--primary);
+    }
+    .button:hover { background: rgba(255,255,255,0.12); }
+    .button.primary:hover { background: #7DDEFF; }
+    .button:focus-visible {
+      outline: 3px solid rgba(41,171,224,0.85);
+      outline-offset: 3px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .brand img { width: 40px; height: 40px; border-radius: 8px; }
+    .brand-name { font-size: 0.95rem; font-weight: 600; opacity: 0.7; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button { transition: none; }
+    }
+    @media print {
+      body { background: #fff; color: #000; }
+      .panel { border: 1px solid #ccc; background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <a class="brand" href="/">
+      <img src="/assets/new-local-media-logo.svg" alt="New Local Media logo" width="200" height="200">
+      <span class="brand-name">New Local Media</span>
+    </a>
+    <div class="panel">
+      <p class="code" aria-hidden="true">404</p>
+      <h1>Page not found</h1>
+      <p>The page you were looking for doesn't exist or has moved.</p>
+      <div class="actions">
+        <a class="button primary" href="/">Back to Projects</a>
+        <a class="button" href="https://github.com/newlocalmedia">GitHub →</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

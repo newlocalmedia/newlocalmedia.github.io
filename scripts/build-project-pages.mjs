@@ -19,6 +19,7 @@ import {
   sectionForRepo,
   projectPath,
   projectUrl,
+  escapeHtml,
 } from './site-config.mjs';
 
 const root = process.cwd();
@@ -53,14 +54,11 @@ function ownerPath(owner) {
   return `/projects/${encodeURIComponent(owner)}/`;
 }
 
-function escapeHtml(value) {
-  return String(value).replace(/[&<>"']/g, (char) => ({
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#39;'
-  }[char]));
+function pictureMarkup(url, alt, { loading = 'lazy' } = {}) {
+  const isLocalPng = url.startsWith(SITE_URL + '/assets/') && url.endsWith('.png');
+  const img = `<img src="${url}" alt="${alt}" loading="${loading}" decoding="async">`;
+  if (!isLocalPng) return img;
+  return `<picture><source srcset="${url.replace(/\.png$/, '.webp')}" type="image/webp">${img}</picture>`;
 }
 
 function stripTags(value) {
@@ -92,8 +90,15 @@ function formatSnapshotTimestamp(value) {
 }
 
 function repoHomepage(repo) {
-  const override = PROJECT_META[repo.full_name]?.extraLinks?.[0]?.url;
-  const homepage = override || repo.homepage;
+  const meta = PROJECT_META[repo.full_name] || {};
+  if (meta.extraLinks?.length) {
+    return meta.extraLinks[0].url || null;
+  }
+  if (Object.prototype.hasOwnProperty.call(meta, 'homepage')) {
+    const h = meta.homepage;
+    return h && h.trim() && h.trim() !== repo.html_url ? h.trim() : null;
+  }
+  const homepage = repo.homepage;
   return homepage && homepage.trim() && homepage.trim() !== repo.html_url ? homepage.trim() : null;
 }
 
@@ -364,7 +369,7 @@ function homeSpotlightCard(repo) {
   const imageAlt = escapeHtml(primaryImage?.alt || `${displayTitle(repo)} preview image.`);
   return `
       <article class="spotlight-card">
-        ${primaryImage ? `<figure class="spotlight-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(displayTitle(repo))}"><img src="${primaryImage.url}" alt="${imageAlt}" loading="lazy" decoding="async"></button></figure>` : ''}
+        ${primaryImage ? `<figure class="spotlight-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(displayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</button></figure>` : ''}
         <div class="repo-top">
           <div>
             <h3>${titleLinkMarkup(repo)}</h3>
@@ -395,9 +400,9 @@ function homeLeadMarkup(repo) {
         </div>
       </div>
       <aside class="feature-side" aria-label="${escapeHtml(displayTitle(repo))} details">
-        ${primaryImage ? `<figure class="feature-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(displayTitle(repo))}"><img src="${primaryImage.url}" alt="${imageAlt}" loading="lazy" decoding="async"></button></figure>` : ''}
-        <p class="feature-note"><strong>Gate &amp; Log Dangerous Actions</strong>When a user attempts a gated action, Sudo intercepts the request at <code>admin_init</code>.</p>
-        <p class="feature-note"><strong>Protects Every Surface</strong>WordPress reauthentication and risky-action gating with support across REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.</p>
+        ${primaryImage ? `<figure class="feature-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(displayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</button></figure>` : ''}
+        <p class="feature-note"><strong>Gate &amp; Log Dangerous Actions</strong> When a user attempts a gated action, Sudo intercepts the request at <code>admin_init</code>.</p>
+        <p class="feature-note"><strong>Protects Every Surface</strong> WordPress reauthentication and risky-action gating with support across REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.</p>
       </aside>
     `.trim();
 }
@@ -408,7 +413,7 @@ function accountCardMarkup(account) {
   return `
       <article class="account-card">
         <div class="account-top">
-          <img class="account-avatar" src="${avatar}" alt="${account.user} avatar">
+          <img class="account-avatar" src="${avatar}" alt="${account.user} avatar" width="54" height="54" loading="lazy" decoding="async">
           <div>
             <h3><a class="title-link" href="https://github.com/${encodeURIComponent(account.user)}">${escapeHtml(account.user)}</a></h3>
             <div class="muted">${formatNumber(account.total_repos)} public non-fork repos</div>
@@ -557,7 +562,7 @@ function renderScreenshotGallery(screenshots = [], label = 'this project') {
           </div>
         </div>
         <div class="screenshot-grid">
-          ${screenshots.map((shot, index) => `<figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="${shot.url}" data-modal-alt="${escapeHtml(shot.alt || shot.caption || `${label} screenshot ${index + 1}`)}" aria-label="Open larger image for ${escapeHtml(shot.caption || `${label} screenshot ${index + 1}`)}"><img src="${shot.url}" alt="${escapeHtml(shot.alt || shot.caption || `${label} screenshot ${index + 1}`)}" loading="lazy" decoding="async"></button>${shot.caption ? `<figcaption>${escapeHtml(shot.caption)}</figcaption>` : ''}</figure>`).join('')}
+          ${screenshots.map((shot, index) => { const alt = escapeHtml(shot.alt || shot.caption || `${label} screenshot ${index + 1}`); return `<figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="${shot.url}" data-modal-alt="${alt}" aria-label="Open larger image for ${escapeHtml(shot.caption || `${label} screenshot ${index + 1}`)}">${pictureMarkup(shot.url, alt)}</button>${shot.caption ? `<figcaption>${escapeHtml(shot.caption)}</figcaption>` : ''}</figure>`; }).join('')}
         </div>
       </section>`;
 }
@@ -902,7 +907,7 @@ ${JSON.stringify(graph, null, 2)}
   <div class="shell" id="site-shell">
     <header class="panel topbar">
       <a class="brand" href="${SITE_URL}/">
-        <img src="/assets/new-local-media-logo.png" alt="New Local Media logo">
+        <img src="/assets/new-local-media-logo.svg" alt="New Local Media logo" width="200" height="200">
         <span class="brand-copy">
           <span class="eyebrow">New Local Media</span>
           <strong>${escapeHtml(SITE_NAME)}</strong>
@@ -982,7 +987,7 @@ ${JSON.stringify(graph, null, 2)}
             })() : ''}
           </div>
           <div class="summary-box">
-            ${primaryImage ? `<figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${escapeHtml(primaryImage.alt || `${label} preview image.`)}" aria-label="Open larger image for ${escapeHtml(label)}"><img src="${primaryImage.url}" alt="${escapeHtml(primaryImage.alt || `${label} preview image.`)}" loading="eager" decoding="async"></button></figure>` : ''}
+            ${primaryImage ? `<figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${escapeHtml(primaryImage.alt || `${label} preview image.`)}" aria-label="Open larger image for ${escapeHtml(label)}">${pictureMarkup(primaryImage.url, escapeHtml(primaryImage.alt || `${label} preview image.`), { loading: 'eager' })}</button></figure>` : ''}
             <strong>${escapeHtml(meta.focus || section.title)}</strong>
             <p>${meta.subfocusHtml || escapeHtml(meta.subfocus || section.description)}</p>
             ${meta.extraLinks?.length && !meta.omitSummaryBoxLinks ? `<p>${meta.extraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')}</p>` : ''}
@@ -1267,7 +1272,7 @@ ${JSON.stringify(graph, null, 2)}
   <div class="shell">
     <header class="panel topbar">
       <a class="brand" href="${SITE_URL}/">
-        <img src="/assets/new-local-media-logo.png" alt="New Local Media logo">
+        <img src="/assets/new-local-media-logo.svg" alt="New Local Media logo" width="200" height="200">
         <span class="brand-copy">
           <span class="eyebrow">New Local Media</span>
           <strong>${escapeHtml(SITE_NAME)}</strong>
@@ -1434,7 +1439,7 @@ ${JSON.stringify(graph, null, 2)}
   <div class="shell">
     <header class="panel topbar">
       <a class="brand" href="${SITE_URL}/">
-        <img src="/assets/new-local-media-logo.png" alt="New Local Media logo">
+        <img src="/assets/new-local-media-logo.svg" alt="New Local Media logo" width="200" height="200">
         <span class="brand-copy">
           <span class="eyebrow">New Local Media</span>
           <strong>${escapeHtml(SITE_NAME)}</strong>

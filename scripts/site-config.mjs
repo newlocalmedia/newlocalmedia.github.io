@@ -520,3 +520,13 @@ export function projectPath(fullName) {
 export function projectUrl(fullName) {
   return `${SITE_URL}${projectPath(fullName)}`;
 }
+
+export function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (char) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[char]));
+}
