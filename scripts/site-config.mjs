@@ -311,7 +311,7 @@ export const PROJECT_META = {
       { label: 'EPUB',     url: 'https://raw.githubusercontent.com/dknauss/wp-security-style-guide/main/WP-Security-Style-Guide.epub' },
       { label: 'Markdown', url: 'https://raw.githubusercontent.com/dknauss/wp-security-style-guide/main/WP-Security-Style-Guide.md' }
     ],
-    downloadCta: 'Get the Style Guide'
+    downloadCta: '📒 Get the Style Guide'
   },
   'newlocalmedia/capm-for-agencies': {
     displayTitle: 'CAPM for Agencies',
