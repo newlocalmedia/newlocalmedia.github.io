@@ -93,12 +93,12 @@
     }
 
     .shell#site-shell {
-      margin-top: -8px;
+      margin-top: 12px;
     }
 
     .shell#site-shell > header.hero {
       margin-top: 0;
-      padding-top: 0;
+      padding-top: 14px;
     }
 
     .hero::after {
