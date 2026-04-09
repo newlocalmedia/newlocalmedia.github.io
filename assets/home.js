@@ -135,6 +135,10 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     return override?.descriptionHtml || escapeHtml(repo.description || 'No description yet.');
   }
 
+  function repoHomeLeadExtraHtml(repo) {
+    return repoOverride(repo)?.homeLeadExtraHtml || '';
+  }
+
   function repoPrimaryImage(repo) {
     return repoOverride(repo)?.primaryImage || null;
   }
@@ -221,7 +225,12 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     return `repo-card repo-card--${repo.full_name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
   }
 
-  function repoCard(repo, badgeLabel = '') {
+  function repoCard(repo, options = {}) {
+    const {
+      badgeLabel = '',
+      actionLabel = 'Project',
+      showProjectIcon = true
+    } = options;
     return `
       <article class="${repoCardClassName(repo)}">
         <div class="repo-top">
@@ -233,8 +242,8 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
         <p class="repo-desc">${repoDescriptionHtml(repo)}</p>
         ${repoMetaMarkup(repo)}
         ${repoActionsMarkup(repo, {
-          label: badgeLabel === 'Docs' ? 'Docs' : 'Project',
-          showProjectIcon: badgeLabel !== 'Docs'
+          label: actionLabel,
+          showProjectIcon
         })}
       </article>
     `;
@@ -276,6 +285,7 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
         <div class="feature-kicker"><strong>What if WordPress had a Linux-like sudo mode?</strong></div>
         <h2 id="lead-feature-title">${titleLinkMarkup(repo)}</h2>
         <p class="feature-summary">${repoDescriptionHtml(repo)}</p>
+        ${repoHomeLeadExtraHtml(repo) ? `<p class="feature-summary feature-summary-secondary">${repoHomeLeadExtraHtml(repo)}</p>` : ''}
         <div class="meta feature-meta">
           <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
           ${updatedPill(repo.updated_at)}
@@ -338,7 +348,7 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     renderRepoSection({
       targetId: 'ai-docs-grid',
       fullNames: AI_DOCS_GROUP,
-      renderer: (repo) => repoCard(repo, 'Docs'),
+      renderer: (repo) => repoCard(repo, { actionLabel: 'Learn More', showProjectIcon: false }),
       suffixHtml: renderForksCard()
     });
   }
@@ -363,7 +373,7 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     renderRepoSection({
       targetId,
       fullNames: list,
-      renderer: (repo) => repoCard(repo, badgeLabel)
+      renderer: (repo) => repoCard(repo, { badgeLabel, actionLabel: 'Project', showProjectIcon: badgeLabel !== 'Docs' })
     });
   }
 
