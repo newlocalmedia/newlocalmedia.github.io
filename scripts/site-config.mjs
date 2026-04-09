@@ -353,8 +353,12 @@ export const PROJECT_META = {
         url: 'https://newlocalmedia.github.io/capm-for-agencies/'
       },
       {
-        label: 'Small agency and freelancer version',
+        label: 'Small Agency App',
         url: 'https://newlocalmedia.github.io/capm-for-agencies/project-risk-check/index.html'
+      },
+      {
+        label: 'Overview',
+        url: 'https://newlocalmedia.github.io/capm-for-agencies/overview/index.html'
       }
     ]
   },
