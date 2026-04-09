@@ -313,7 +313,8 @@ function homeRuntimeConfig() {
     repoOverrides,
     repoIcons: REPO_ICON_SVGS,
     uiIcons: UI_ICON_SVGS,
-    forksCardHtml: renderForksCard()
+    forksCardHtml: renderForksCard(),
+    blocksPlaceholderHtml: renderBlocksPlaceholderCard()
   };
 }
 
@@ -444,6 +445,28 @@ function accountCardMarkup(account) {
         <div class="account-actions">
           <a class="repo-link" href="https://github.com/${account.user}?tab=repositories">Browse repos →</a>
         </div>
+      </article>
+    `.trim();
+}
+
+
+function renderBlocksPlaceholderCard() {
+  return `
+      <article class="spotlight-card spotlight-card--placeholder" aria-label="Coming soon block plugin">
+        <figure class="spotlight-media spotlight-media--placeholder" aria-hidden="true">
+          <div class="spotlight-placeholder-media">
+            <span class="spotlight-placeholder-icon">✦</span>
+            <span class="spotlight-placeholder-text">Coming Soon</span>
+          </div>
+        </figure>
+        <div class="repo-top">
+          <div>
+            <h3><span class="title-with-icon"><span class="title-icon" aria-hidden="true">${uiIconSvg('blocks')}</span><span>Mystery Plugin</span></span></h3>
+          </div>
+          <span class="feature-label">Coming Soon</span>
+        </div>
+        <p class="repo-desc">Another block plugin is on the way. I’m keeping this one under wraps for now, but it’s meant to sit alongside Bibliography as another structured-content tool for WordPress.</p>
+        <div class="meta"><span class="pill">More soon</span></div>
       </article>
     `.trim();
 }

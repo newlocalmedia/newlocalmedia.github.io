@@ -19,6 +19,7 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
   const REPO_ICONS = HOME_CONFIG.repoIcons || {};
   const UI_ICONS = HOME_CONFIG.uiIcons || {};
   const FORKS_CARD_HTML = HOME_CONFIG.forksCardHtml || '';
+  const BLOCKS_PLACEHOLDER_HTML = HOME_CONFIG.blocksPlaceholderHtml || '';
   const DEFAULT_REPO_ICON_SVG = '<svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>';
   const BUSY_TARGET_IDS = [
     'lead-feature-shell',
@@ -366,7 +367,8 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     renderRepoSection({
       targetId: 'blocks-grid',
       fullNames: BLOCKS_SHOWCASE,
-      renderer: renderSpotlightCard
+      renderer: renderSpotlightCard,
+      suffixHtml: BLOCKS_PLACEHOLDER_HTML
     });
   }
 
