@@ -284,6 +284,11 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     const primaryImage = repoPrimaryImage(repo);
     const imageAlt = escapeHtml(primaryImage?.alt || `${repoDisplayTitle(repo)} preview image.`);
     countRepo(repo);
+    if (target?.children.length) {
+      setBusyState('lead-feature-shell', false);
+      updateStats();
+      return;
+    }
     target.innerHTML = `
       <div class="feature-main">
         <span class="feature-label">Featured Repo</span>
@@ -336,7 +341,7 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     return FORKS_CARD_HTML;
   }
 
-  function renderRepoSection({ targetId, fullNames, renderer, emptyMessage = 'Nothing to show right now.', suffixHtml = '' }) {
+  function renderRepoSection({ targetId, fullNames, renderer, emptyMessage = 'Nothing to show right now.', suffixHtml = '', preserveServerMarkup = false }) {
     const target = document.getElementById(targetId);
     const repos = reposFor(fullNames);
     if (!repos.length) {
@@ -345,6 +350,11 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
       return;
     }
     repos.forEach(countRepo);
+    if (preserveServerMarkup && target && target.children.length) {
+      setBusyState(targetId, false);
+      updateStats();
+      return;
+    }
     target.innerHTML = repos.map((repo) => renderer(repo)).join('') + suffixHtml;
     setBusyState(targetId, false);
     updateStats();
@@ -355,7 +365,8 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
       targetId: 'ai-docs-grid',
       fullNames: AI_DOCS_GROUP,
       renderer: (repo) => repoCard(repo, { actionLabel: 'Learn More', showProjectIcon: false }),
-      suffixHtml: renderForksCard()
+      suffixHtml: renderForksCard(),
+      preserveServerMarkup: true
     });
   }
 
@@ -363,7 +374,8 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     renderRepoSection({
       targetId: 'spotlight-grid',
       fullNames: SPOTLIGHT,
-      renderer: renderSpotlightCard
+      renderer: renderSpotlightCard,
+      preserveServerMarkup: true
     });
   }
 
@@ -372,7 +384,8 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
       targetId: 'blocks-grid',
       fullNames: BLOCKS_SHOWCASE,
       renderer: renderSpotlightCard,
-      suffixHtml: BLOCKS_PLACEHOLDER_HTML
+      suffixHtml: BLOCKS_PLACEHOLDER_HTML,
+      preserveServerMarkup: true
     });
   }
 
@@ -380,7 +393,8 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     renderRepoSection({
       targetId,
       fullNames: list,
-      renderer: (repo) => repoCard(repo, { badgeLabel, actionLabel: 'Project', showProjectIcon: badgeLabel !== 'Docs' })
+      renderer: (repo) => repoCard(repo, { badgeLabel, actionLabel: 'Project', showProjectIcon: badgeLabel !== 'Docs' }),
+      preserveServerMarkup: true
     });
   }
 
