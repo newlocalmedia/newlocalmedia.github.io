@@ -739,7 +739,7 @@ ${JSON.stringify(graph, null, 2)}
       background: var(--secondary); color: var(--tertiary); font-weight: 700; text-decoration: none;
     }
     .skip-link:focus { top: 14px; }
-    .shell { width: min(calc(100% - 28px), var(--max)); margin: 18px auto 40px; }
+    .shell { width: min(calc(100% - 28px), var(--max)); margin: 6px auto 40px; }
     .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: blur(12px); }
     .topbar, .hero, .section { padding: 24px; }
     .topbar, .meta, .actions, .section-head { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -1234,7 +1234,7 @@ ${JSON.stringify(graph, null, 2)}
     a:focus-visible { outline: 3px solid rgba(41,171,224,0.85); outline-offset: 3px; }
     .skip-link { position: absolute; left: 14px; top: -48px; z-index: 1000; padding: 10px 14px; border-radius: 12px; background: var(--secondary); color: var(--tertiary); font-weight: 700; text-decoration: none; }
     .skip-link:focus { top: 14px; }
-    .shell { width: min(calc(100% - 28px), var(--max)); margin: 18px auto 40px; }
+    .shell { width: min(calc(100% - 28px), var(--max)); margin: 6px auto 40px; }
     .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: blur(12px); }
     .topbar, .hero, .section { padding: 24px; }
     .topbar, .breadcrumbs { display: flex; gap: 12px; flex-wrap: wrap; }
@@ -1407,7 +1407,7 @@ ${JSON.stringify(graph, null, 2)}
     a:focus-visible { outline: 3px solid rgba(41,171,224,0.85); outline-offset: 3px; }
     .skip-link { position: absolute; left: 14px; top: -48px; z-index: 1000; padding: 10px 14px; border-radius: 12px; background: var(--secondary); color: var(--tertiary); font-weight: 700; text-decoration: none; }
     .skip-link:focus { top: 14px; }
-    .shell { width: min(calc(100% - 28px), var(--max)); margin: 18px auto 40px; }
+    .shell { width: min(calc(100% - 28px), var(--max)); margin: 6px auto 40px; }
     .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: blur(12px); }
     .topbar, .hero, .section { padding: 24px; }
     .topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
