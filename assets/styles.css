@@ -71,7 +71,7 @@
 
     .shell {
       width: min(calc(100% - 28px), var(--max));
-      margin: 0 auto 40px;
+      margin: 10px auto 40px;
     }
 
     .panel {
@@ -90,15 +90,6 @@
     .hero {
       position: relative;
       overflow: hidden;
-    }
-
-    .shell#site-shell {
-      margin-top: 12px;
-    }
-
-    .shell#site-shell > header.hero {
-      margin-top: 0;
-      padding-top: 14px;
     }
 
     .hero::after {
