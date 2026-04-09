@@ -63,7 +63,7 @@
 
     .shell {
       width: min(calc(100% - 28px), var(--max));
-      margin: 6px auto 40px;
+      margin: 0 auto 40px;
     }
 
     .panel {
