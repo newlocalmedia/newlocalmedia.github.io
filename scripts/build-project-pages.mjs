@@ -534,7 +534,7 @@ function renderHomePage(snapshot, lookup) {
   html = replaceGeneratedRegion(html, 'LEAD_FEATURE', `\n${homeLeadMarkup(lookup.get(LEAD_REPO))}\n        `);
   html = replaceGeneratedRegion(html, 'AI_DOCS', `\n${AI_DOCS_GROUP.map((fullName) => homeRepoCard(lookup.get(fullName), { actionLabel: 'Learn More', showProjectIcon: false })).join('\n')}\n${renderForksCard()}\n        `);
   html = replaceGeneratedRegion(html, 'SPOTLIGHT', `\n${SPOTLIGHT.map((fullName) => homeSpotlightCard(lookup.get(fullName))).join('\n')}\n        `);
-  html = replaceGeneratedRegion(html, 'BLOCKS', `\n${BLOCKS_SHOWCASE.map((fullName) => homeSpotlightCard(lookup.get(fullName))).join('\n')}\n        `);
+  html = replaceGeneratedRegion(html, 'BLOCKS', `\n${BLOCKS_SHOWCASE.map((fullName) => homeSpotlightCard(lookup.get(fullName))).join('\n')}\n${renderBlocksPlaceholderCard()}\n        `);
   html = replaceGeneratedRegion(html, 'SELECTED', `\n${SELECTED.map((fullName) => homeRepoCard(lookup.get(fullName))).join('\n')}\n        `);
   html = replaceGeneratedRegion(html, 'ACCOUNTS', `\n${ACCOUNT_ORDER.map((user) => accountsByUser.get(user)).filter(Boolean).map((account) => accountCardMarkup(account)).join('\n')}\n        `);
   return html;
