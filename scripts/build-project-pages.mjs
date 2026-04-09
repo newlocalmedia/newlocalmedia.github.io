@@ -258,6 +258,11 @@ function projectPrimaryImage(repo) {
   return PROJECT_META[repo.full_name]?.primaryImage || null;
 }
 
+function homePrimaryImage(repo) {
+  const meta = PROJECT_META[repo.full_name] || {};
+  return meta.homePrimaryImage || meta.primaryImage || null;
+}
+
 function homeDescriptionHtml(repo) {
   const meta = PROJECT_META[repo.full_name] || {};
   if (meta.homeDescriptionHtml) return meta.homeDescriptionHtml;
@@ -297,7 +302,8 @@ function homeRuntimeConfig() {
       }
       if (meta.homepageLabel) override.homepageLabel = meta.homepageLabel;
       else if (meta.playground) override.homepageLabel = '🛝 Playground Demo';
-      if (meta.primaryImage) override.primaryImage = meta.primaryImage;
+      if (meta.homePrimaryImage) override.primaryImage = meta.homePrimaryImage;
+      else if (meta.primaryImage) override.primaryImage = meta.primaryImage;
       if (meta.homeLeadExtraHtml) override.homeLeadExtraHtml = meta.homeLeadExtraHtml;
       return Object.keys(override).length ? [fullName.toLowerCase(), override] : null;
     }).filter(Boolean)
@@ -382,7 +388,7 @@ function homeRepoCard(repo, options = {}) {
 
 
 function homeSpotlightCard(repo) {
-  const primaryImage = projectPrimaryImage(repo);
+  const primaryImage = homePrimaryImage(repo);
   const imageAlt = escapeHtml(primaryImage?.alt || `${displayTitle(repo)} preview image.`);
   return `
       <article class="spotlight-card">
@@ -400,7 +406,7 @@ function homeSpotlightCard(repo) {
     `.trim();
 }
 function homeLeadMarkup(repo) {
-  const primaryImage = projectPrimaryImage(repo);
+  const primaryImage = homePrimaryImage(repo);
   const homepage = repoHomepage(repo);
   const imageAlt = escapeHtml(primaryImage?.alt || `${displayTitle(repo)} preview image.`);
   return `

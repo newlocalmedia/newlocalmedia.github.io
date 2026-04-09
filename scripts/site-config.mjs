@@ -334,6 +334,10 @@ export const PROJECT_META = {
         description: 'Methodology and process documentation for AI-assisted technical writing and review — a practical exploration.'
       }
     ],
+    homePrimaryImage: {
+      url: 'https://newlocalmedia.github.io/capm-for-agencies/social/capm-for-agencies-banner.png',
+      alt: 'CAPM for Agencies banner logo showing the hurdle-rate mark and wordmark.'
+    },
     primaryImage: {
       url: 'https://newlocalmedia.github.io/capm-for-agencies/theory/figures/capm-comparison.png',
       alt: 'CAPM for Agencies comparison chart screenshot.'
