@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#FCF7F0"/>
+  <rect x="42" y="42" width="1116" height="546" rx="28" fill="#FFFBF7" stroke="#E6D9CB"/>
+  <line x1="88" y1="102.5" x2="1112" y2="102.5" stroke="#C9A060"/>
+  <circle cx="90" cy="104" r="6" fill="#C9A060"/><circle cx="1110" cy="104" r="6" fill="#C9A060"/>
+  <text x="88" y="78" style="font:500 15px Inter, sans-serif; fill:#C9A060">Author metadata across protocols</text>
+  <text x="90" y="250" style="font:700 132px Newsreader, Georgia, serif; fill:#213047; letter-spacing:-1.5px">Author Identity</text>
+  <line x1="96" y1="318.5" x2="350" y2="318.5" stroke="#C9A060"/>
+  <text x="96" y="358" style="font:500 26px Inter, sans-serif; fill:#5A4B44; letter-spacing:3px">BYLINE FEEDS</text>
+</svg>

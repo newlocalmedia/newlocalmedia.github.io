@@ -508,10 +508,12 @@
       background: rgba(13,27,42,0.82);
     }
 
+    .spotlight-media--banner .image-trigger,
     .spotlight-media--capm-banner .image-trigger {
       padding: 12px;
     }
 
+    .spotlight-media--banner .image-trigger img,
     .spotlight-media--capm-banner .image-trigger img {
       width: 100%;
       aspect-ratio: 1014 / 426;
