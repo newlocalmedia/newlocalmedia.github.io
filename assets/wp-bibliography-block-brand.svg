@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="title desc">
   <title id="title">Bibliography brand graphic</title>
-  <desc id="desc">Three books on a shelf above the Bibliography wordmark and the subtitle Scholarly references for WordPress.</desc>
+  <desc id="desc">Bibliography wordmark and subtitle beside a three-book shelf mark, based on the latest plugin banner artwork.</desc>
 
   <rect width="1200" height="630" fill="#F5F3EF"/>
 
-  <g transform="translate(480, 46) scale(1.45)">
-    <rect x="0" y="168" width="140" height="7" rx="1" fill="#9B9EA3"/>
+  <g transform="translate(118, 162) scale(1.45)">
+    <rect x="0" y="168" width="360" height="7" rx="1.5" fill="#C4973E"/>
 
-    <g transform="rotate(4, 42, 148)">
+    <g transform="rotate(-4, 42, 148)">
       <rect x="0" y="8" width="38" height="160" rx="2" fill="#2D3136"/>
       <rect x="0" y="8" width="5" height="160" rx="1" fill="#23272B"/>
       <rect x="11" y="78" width="18" height="7" rx="1.5" fill="#FFFFFF" opacity="0.85"/>
@@ -28,26 +28,22 @@
   </g>
 
   <text
-    x="600"
-    y="430"
-    text-anchor="middle"
+    x="420"
+    y="286"
     font-family="Baskerville, 'Libre Baskerville', 'Times New Roman', serif"
-    font-size="88"
+    font-size="118"
     font-weight="400"
     fill="#2D3136"
-    letter-spacing="-0.6"
+    letter-spacing="-0.7"
   >Bibliography</text>
 
   <text
-    x="600"
-    y="482"
-    text-anchor="middle"
+    x="422"
+    y="378"
     font-family="Baskerville, 'Libre Baskerville', 'Times New Roman', serif"
-    font-size="32"
+    font-size="44"
     font-weight="400"
     fill="#7B8FA1"
-    letter-spacing="0.3"
+    letter-spacing="0.2"
   >Scholarly references for WordPress</text>
-
-  <rect x="445" y="506" width="310" height="6" rx="3" fill="#C4973E"/>
 </svg>
