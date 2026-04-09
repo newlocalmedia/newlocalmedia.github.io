@@ -508,6 +508,18 @@
       background: rgba(13,27,42,0.82);
     }
 
+    .spotlight-media--capm-banner .image-trigger {
+      padding: 12px;
+    }
+
+    .spotlight-media--capm-banner .image-trigger img {
+      width: 100%;
+      aspect-ratio: 1014 / 426;
+      object-fit: contain;
+      margin: 0 auto;
+      background: rgba(255,253,249,0.98);
+    }
+
     .image-modal[hidden] {
       display: none;
     }

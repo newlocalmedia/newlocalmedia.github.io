@@ -309,6 +309,7 @@ function homeRuntimeConfig() {
       else if (meta.playground) override.homepageLabel = '🛝 Playground Demo';
       if (meta.homePrimaryImage) override.primaryImage = meta.homePrimaryImage;
       else if (meta.primaryImage) override.primaryImage = meta.primaryImage;
+      if (meta.homeImageClass) override.homeImageClass = meta.homeImageClass;
       if (meta.homeLeadExtraHtml) override.homeLeadExtraHtml = meta.homeLeadExtraHtml;
       return Object.keys(override).length ? [fullName.toLowerCase(), override] : null;
     }).filter(Boolean)
@@ -844,7 +845,8 @@ ${JSON.stringify(graph, null, 2)}
     .summary-box-media { margin: 0 0 14px; }
     .image-trigger { display: block; width: 100%; padding: 0; border: 0; background: transparent; cursor: zoom-in; border-radius: 16px; }
     .summary-box-media img, .image-trigger img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line); background: rgba(13,27,42,0.5); }
-    .spotlight-media--capm-banner .image-trigger img { width: 90%; margin: 0 auto; }
+    .spotlight-media--capm-banner .image-trigger { padding: 12px; }
+    .spotlight-media--capm-banner .image-trigger img { width: 100%; aspect-ratio: 1014 / 426; object-fit: contain; margin: 0 auto; background: rgba(255,253,249,0.98); }
     .screenshot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
     .screenshot-card { margin: 0; display: grid; gap: 10px; }
     .screenshot-card img { aspect-ratio: 1200 / 630; object-fit: cover; }

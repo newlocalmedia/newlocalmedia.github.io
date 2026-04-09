@@ -144,6 +144,10 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     return repoOverride(repo)?.primaryImage || null;
   }
 
+  function repoHomeImageClass(repo) {
+    return repoOverride(repo)?.homeImageClass || '';
+  }
+
   function repoDisplayTitle(repo) {
     return repoOverride(repo)?.displayTitle || repo.name;
   }
@@ -255,7 +259,7 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     const imageAlt = escapeHtml(primaryImage?.alt || `${repoDisplayTitle(repo)} preview image.`);
     return `
       <article class="spotlight-card">
-        ${primaryImage ? `<figure class="spotlight-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(repoDisplayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</button></figure>` : ''}
+        ${primaryImage ? `<figure class="spotlight-media${repoHomeImageClass(repo) ? ` ${repoHomeImageClass(repo)}` : ''}"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(repoDisplayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</button></figure>` : ''}
         <div class="repo-top">
           <div>
             <h3>${titleLinkMarkup(repo)}</h3>
