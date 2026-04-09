@@ -265,6 +265,11 @@ function homeDescriptionHtml(repo) {
   return escapeHtml(meta.summary || repo.description || 'No description yet.');
 }
 
+function homeLeadExtraHtml(repo) {
+  const meta = PROJECT_META[repo.full_name] || {};
+  return meta.homeLeadExtraHtml || '';
+}
+
 function homepageLabel(repo) {
   const meta = PROJECT_META[repo.full_name] || {};
   if (meta.homepageLabel) return meta.homepageLabel;
@@ -401,6 +406,7 @@ function homeLeadMarkup(repo) {
         <div class="feature-kicker"><strong>What if WordPress had a Linux-like sudo mode?</strong></div>
         <h2 id="lead-feature-title">${titleLinkMarkup(repo)}</h2>
         <p class="feature-summary">${homeDescriptionHtml(repo)}</p>
+        ${homeLeadExtraHtml(repo) ? `<p class="feature-summary feature-summary-secondary">${homeLeadExtraHtml(repo)}</p>` : ''}
         <div class="meta feature-meta">
           <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
           ${updatedPillMarkup(repo.updated_at)}

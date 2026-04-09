@@ -77,6 +77,7 @@ export const PROJECT_META = {
     seoDescription: 'WordPress risky-action gating with reauthentication, 2FA support, time-bounded sessions, rate limiting, and policy controls across WordPress surfaces.',
     summary: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.',
     summaryHtml: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across <code>wp-admin</code>, <code>REST</code>, <code>WP-CLI</code>, <code>Cron</code>, <code>WPGraphQL</code>, and <code>XML-RPC</code>.',
+    homeLeadExtraHtml: 'Patchstack reported Broken Access Control as 57% of real-world WordPress exploitation attempts in 2026, with privilege escalation and broken authentication pushing that risk concentration even higher. Sudo is built for the moment after prevention fails: when an attacker already has a session and tries to install plugins, create admins, or change settings, it forces reauthentication before the damage can happen.',
     whyHeading: 'Gate Any Privileged Action',
     narrative: 'When a user attempts a gated action, Sudo intercepts the request at `admin_init`. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.',
     narrativeHtml: [

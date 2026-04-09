@@ -411,6 +411,12 @@
       color: var(--secondary);
     }
 
+    .feature-summary-secondary {
+      margin-top: 12px;
+      max-width: 62ch;
+      color: var(--foreground);
+    }
+
     .feature-kicker,
     .feature-note { margin: 0; }
 
