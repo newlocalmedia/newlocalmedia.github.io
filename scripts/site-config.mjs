@@ -376,6 +376,16 @@ export const PROJECT_META = {
     summary: 'Exploring structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.',
     playground: 'https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Fdknauss%2Fauthor-identity%2Fcodex%2Fplayground-assets%2Fplayground%2Fpublic%2Foutput-demo.blueprint.json&url=%2F%3Fp%3D1&mode=browser-full-screen&login=no',
     whyHeading: 'Make Authorship Portable: An Exploration',
+    extraLinks: [
+      { label: 'Key docs ↓', url: '#docs-title' }
+    ],
+    omitSummaryBoxLinks: true,
+    docs: [
+      { label: 'Vision', url: 'https://github.com/dknauss/author-identity/blob/main/docs/vision/author-identity-vision.md', description: 'High-level framing for the project: problem statement, goals, intended direction, and why author identity should travel with the work.' },
+      { label: 'Architecture', url: 'https://github.com/dknauss/author-identity/blob/main/docs/research/exploratory/wordpress-semantic-publishing-architecture.md', description: 'Exploratory architecture for how WordPress can act as a source of truth for richer publishing metadata and portable authorship.' },
+      { label: 'Ecosystem', url: 'https://github.com/dknauss/author-identity/blob/main/docs/research/exploratory/publishing-metadata-ecosystem.md', description: 'Landscape scan of the metadata standards, publishing systems, and discovery surfaces this project needs to fit into.' },
+      { label: 'Protocol Coverage', url: 'https://github.com/dknauss/author-identity/blob/main/docs/research/current/protocol-coverage-map.md', description: 'Current map of which protocols, outputs, and identity surfaces are already covered, partially covered, or still open.' }
+    ],
     relatedProjects: [
       {
         fullName: 'dknauss/wp-bibliography-block',
