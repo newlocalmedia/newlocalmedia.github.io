@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-09T05:42:34.638Z",
+  "generated_at": "2026-04-09T07:56:09.563Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -49,6 +49,24 @@
       "user": "dknauss",
       "profile_url": "https://github.com/dknauss",
       "repos": [
+        {
+          "id": 1170971819,
+          "name": "ai-assisted-docs",
+          "full_name": "dknauss/ai-assisted-docs",
+          "html_url": "https://github.com/dknauss/ai-assisted-docs",
+          "description": "Methodology and process documentation for AI-assisted technical writing and review — a practical exploration.",
+          "homepage": "https://github.com/dknauss/ai-assisted-docs",
+          "stargazers_count": 2,
+          "language": "Shell",
+          "updated_at": "2026-04-09T06:03:04Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
         {
           "id": 1203393463,
           "name": "wp-bibliography-block",
@@ -230,24 +248,6 @@
           }
         },
         {
-          "id": 1170971819,
-          "name": "ai-assisted-docs",
-          "full_name": "dknauss/ai-assisted-docs",
-          "html_url": "https://github.com/dknauss/ai-assisted-docs",
-          "description": "Methodology and process documentation for AI-assisted technical writing and review — a practical exploration.",
-          "homepage": "https://github.com/dknauss/ai-assisted-docs",
-          "stargazers_count": 2,
-          "language": "Shell",
-          "updated_at": "2026-03-29T02:47:00Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
           "id": 23970719,
           "name": "newlocalmedia.github.io",
           "full_name": "dknauss/newlocalmedia.github.io",
@@ -269,15 +269,15 @@
       "total_repos": 12,
       "total_stars": 53,
       "latest_repo": {
-        "id": 1203393463,
-        "name": "wp-bibliography-block",
-        "full_name": "dknauss/wp-bibliography-block",
-        "html_url": "https://github.com/dknauss/wp-bibliography-block",
-        "description": "WordPress block plugin: DOI/BibTeX to semantically rich, auto-sorted bibliography.",
-        "homepage": null,
-        "stargazers_count": 0,
-        "language": "JavaScript",
-        "updated_at": "2026-04-09T02:12:50Z",
+        "id": 1170971819,
+        "name": "ai-assisted-docs",
+        "full_name": "dknauss/ai-assisted-docs",
+        "html_url": "https://github.com/dknauss/ai-assisted-docs",
+        "description": "Methodology and process documentation for AI-assisted technical writing and review — a practical exploration.",
+        "homepage": "https://github.com/dknauss/ai-assisted-docs",
+        "stargazers_count": 2,
+        "language": "Shell",
+        "updated_at": "2026-04-09T06:03:04Z",
         "fork": false,
         "archived": false,
         "owner": {
