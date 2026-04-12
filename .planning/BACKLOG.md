@@ -177,3 +177,4 @@ Items here are scoped, not scheduled. Move to a phase plan when ready to act.
   3. B-006 — Performance and Core Web Vitals Audit
   4. B-007 — SEO Monitoring and Search Console Follow-Through
   5. B-008 — Final Homepage Rendering Consolidation
+  6. B-001 — The Drafting Table: WordPress Playground Blueprint

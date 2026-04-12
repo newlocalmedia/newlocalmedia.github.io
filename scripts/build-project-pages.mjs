@@ -839,7 +839,7 @@ ${JSON.stringify(graph, null, 2)}
     .detail-list dt.detail-highlight { color: var(--secondary); }
     .detail-list a, .section a, .breadcrumbs a, footer a { color: var(--accent); }
     .section a, footer a { text-decoration: underline; }
-    .detail-list a { text-decoration: none; }
+    .detail-list a { text-decoration: underline; }
     .detail-list a:hover, .detail-list a:focus-visible, .section a:hover, .section a:focus-visible, .breadcrumbs a:hover, .breadcrumbs a:focus-visible, footer a:hover, footer a:focus-visible { color: var(--secondary); text-decoration: underline; }
     .related-list { display: grid; gap: 10px; padding-left: 1.2rem; margin: 0; }
     .summary-box { margin-top: -10px; padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,0.08); }
@@ -950,7 +950,7 @@ ${JSON.stringify(graph, null, 2)}
     .docs-table { width: 100%; border-collapse: collapse; margin-top: 6px; }
     .docs-table th, .docs-table td { padding: 8px 12px; vertical-align: top; border-top: 1px solid var(--line); text-align: left; }
     .docs-table tbody th { white-space: nowrap; padding-right: 20px; font-weight: 600; }
-    .docs-table tbody th a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .docs-table tbody th a { color: var(--accent); text-decoration: underline; font-weight: 600; }
     .docs-table tbody th a:hover, .docs-table tbody th a:focus-visible { color: var(--secondary); text-decoration: underline; }
     .docs-table td { color: var(--foreground); font-size: 0.93rem; }
     @media (max-width: 580px) { .docs-table tr { display: block; border-top: 1px solid var(--line); padding: 10px 0; } .docs-table th, .docs-table td { display: block; padding: 4px 0; border-top: none; } .docs-table tbody th { white-space: normal; } }
