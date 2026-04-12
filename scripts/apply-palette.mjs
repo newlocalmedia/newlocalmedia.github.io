@@ -92,6 +92,7 @@ function swap(content) {
 const files = [
   ...globSync('**/*.html', { cwd: root, ignore: ['**/palette-preview.html', '**/node_modules/**'] }),
   'scripts/build-project-pages.mjs',
+  'assets/styles.css',
 ].map(f => resolve(root, f));
 
 let updated = 0;
