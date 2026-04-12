@@ -5,6 +5,7 @@ Audit type: **structured gap audit**, not a certification.
 Reference checklist:
 
 - `/Users/danknauss/Developer/GitHub/newlocalmedia.github.io/WCAG-GAP-AUDIT-CHECKLIST.md`
+- Remediation plan: `/Users/danknauss/Developer/GitHub/newlocalmedia.github.io/.planning/WCAG-REMEDIATION-PLAN-2026-04-12.md`
 
 Reviewed artifacts:
 
