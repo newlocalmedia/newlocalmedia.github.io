@@ -1,5 +1,5 @@
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageChops
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / 'assets'
@@ -31,8 +31,27 @@ def rounded_logo(size=160):
     logo = Image.open(LOGO).convert('RGBA').resize((size, size), Image.LANCZOS)
     mask = Image.new('L', (size, size), 0)
     ImageDraw.Draw(mask).rounded_rectangle((0, 0, size, size), radius=int(size * 0.22), fill=255)
-    logo.putalpha(mask)
+    # Multiply original alpha with mask so the ring's transparency is preserved —
+    # putalpha() alone replaces alpha entirely, making transparent pixels opaque (noise).
+    r, g, b, a = logo.split()
+    logo.putalpha(ImageChops.multiply(a, mask))
     return logo
+
+
+def wrap_text(draw, text, font, max_width):
+    words = text.split()
+    lines, current = [], ''
+    for word in words:
+        test = word if not current else f'{current} {word}'
+        if draw.textlength(test, font=font) <= max_width:
+            current = test
+        else:
+            if current:
+                lines.append(current)
+            current = word
+    if current:
+        lines.append(current)
+    return lines
 
 
 def make_og():
@@ -42,7 +61,7 @@ def make_og():
     # layered gradients / glows
     glow = Image.new('RGBA', img.size, (0, 0, 0, 0))
     gd = ImageDraw.Draw(glow)
-    gd.ellipse((-120, -120, 520, 420), fill=(129, 130, 255, 70))
+    gd.ellipse((-120, -120, 520, 420), fill=(41, 171, 224, 70))   # Deep Current primary blue
     gd.ellipse((760, -60, 1260, 440), fill=(255, 255, 255, 28))
     gd.ellipse((820, 260, 1240, 700), fill=(116, 212, 163, 25))
     glow = glow.filter(ImageFilter.GaussianBlur(48))
@@ -51,7 +70,7 @@ def make_og():
     # panel
     panel = Image.new('RGBA', img.size, (0, 0, 0, 0))
     pd = ImageDraw.Draw(panel)
-    pd.rounded_rectangle((56, 56, 1144, 574), radius=36, fill=(39, 41, 56, 220), outline=(255, 255, 255, 26), width=2)
+    pd.rounded_rectangle((56, 56, 1144, 574), radius=36, fill=(14, 27, 42, 220), outline=(255, 255, 255, 26), width=2)
     img.alpha_composite(panel)
 
     lg = rounded_logo(150)
@@ -59,13 +78,20 @@ def make_og():
 
     eyebrow = font(FONT_BOLD, 26)
     title = font(FONT_BOLD, 78)
-    subtitle = font(FONT_REG, 30)
+    subtitle = font(FONT_REG, 26)
     footer = font(FONT_REG, 22)
 
     draw.text((268, 106), 'NEW LOCAL MEDIA', fill=FOREGROUND, font=eyebrow)
     draw.text((92, 288), 'Work in Progress', fill=WHITE, font=title)
-    draw.text((92, 392), 'Open projects from New Local Media and Dan Knauss.', fill=FOREGROUND, font=subtitle)
-    draw.text((92, 438), 'WordPress security, technical docs, identity, automation, and experiments.', fill=FOREGROUND, font=subtitle)
+
+    # Subtitle — wrap within panel content area (x: 92 → 1108)
+    sub = ('Open projects from New Local Media and Dan Knauss. '
+           'WordPress security, technical docs, identity, automation, and experiments.')
+    sub_lines = wrap_text(draw, sub, subtitle, 1108 - 92)
+    y = 392
+    for line in sub_lines:
+        draw.text((92, y), line, fill=FOREGROUND, font=subtitle)
+        y += 36
 
     # badges
     badge_font = font(FONT_BOLD, 22)
