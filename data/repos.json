@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-13T03:53:53.663Z",
+  "generated_at": "2026-04-13T06:34:14.418Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,24 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1165510944,
+          "name": "the-drafting-table",
+          "full_name": "dknauss/the-drafting-table",
+          "html_url": "https://github.com/dknauss/the-drafting-table",
+          "description": "A Frank Lloyd Wright-era architect's notebook FSE block theme for WordPress — aged parchment, dot-grid overlays, blueprint borders, and refined architectural typography.",
+          "homepage": null,
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-04-13T06:28:49Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1154983208,
           "name": "wp-sudo",
           "full_name": "dknauss/wp-sudo",
@@ -95,24 +113,6 @@
           "stargazers_count": 0,
           "language": "JavaScript",
           "updated_at": "2026-04-09T02:12:50Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1165510944,
-          "name": "the-drafting-table",
-          "full_name": "dknauss/the-drafting-table",
-          "html_url": "https://github.com/dknauss/the-drafting-table",
-          "description": "A Frank Lloyd Wright-era architect's notebook FSE block theme for WordPress — aged parchment, dot-grid overlays, blueprint borders, and refined architectural typography.",
-          "homepage": null,
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-04-08T23:51:51Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -269,15 +269,15 @@
       "total_repos": 12,
       "total_stars": 53,
       "latest_repo": {
-        "id": 1154983208,
-        "name": "wp-sudo",
-        "full_name": "dknauss/wp-sudo",
-        "html_url": "https://github.com/dknauss/wp-sudo",
-        "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
-        "homepage": "https://github.com/dknauss/wp-sudo",
-        "stargazers_count": 41,
+        "id": 1165510944,
+        "name": "the-drafting-table",
+        "full_name": "dknauss/the-drafting-table",
+        "html_url": "https://github.com/dknauss/the-drafting-table",
+        "description": "A Frank Lloyd Wright-era architect's notebook FSE block theme for WordPress — aged parchment, dot-grid overlays, blueprint borders, and refined architectural typography.",
+        "homepage": null,
+        "stargazers_count": 0,
         "language": "PHP",
-        "updated_at": "2026-04-12T04:11:23Z",
+        "updated_at": "2026-04-13T06:28:49Z",
         "fork": false,
         "archived": false,
         "owner": {
