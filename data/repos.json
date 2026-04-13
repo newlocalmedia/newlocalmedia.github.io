@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-13T08:24:01.500Z",
+  "generated_at": "2026-04-13T14:09:50.454Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,24 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1170971819,
+          "name": "ai-assisted-docs",
+          "full_name": "dknauss/ai-assisted-docs",
+          "html_url": "https://github.com/dknauss/ai-assisted-docs",
+          "description": "Methodology and process documentation for AI-assisted technical writing and review — a practical exploration.",
+          "homepage": "https://github.com/dknauss/ai-assisted-docs",
+          "stargazers_count": 3,
+          "language": "Shell",
+          "updated_at": "2026-04-13T08:35:16Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1165510944,
           "name": "the-drafting-table",
           "full_name": "dknauss/the-drafting-table",
@@ -77,24 +95,6 @@
           "stargazers_count": 41,
           "language": "PHP",
           "updated_at": "2026-04-12T04:11:23Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1170971819,
-          "name": "ai-assisted-docs",
-          "full_name": "dknauss/ai-assisted-docs",
-          "html_url": "https://github.com/dknauss/ai-assisted-docs",
-          "description": "Methodology and process documentation for AI-assisted technical writing and review — a practical exploration.",
-          "homepage": "https://github.com/dknauss/ai-assisted-docs",
-          "stargazers_count": 2,
-          "language": "Shell",
-          "updated_at": "2026-04-09T06:03:04Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -267,17 +267,17 @@
         }
       ],
       "total_repos": 12,
-      "total_stars": 53,
+      "total_stars": 54,
       "latest_repo": {
-        "id": 1165510944,
-        "name": "the-drafting-table",
-        "full_name": "dknauss/the-drafting-table",
-        "html_url": "https://github.com/dknauss/the-drafting-table",
-        "description": "A Frank Lloyd Wright-era architect's notebook FSE block theme for WordPress — aged parchment, dot-grid overlays, blueprint borders, and refined architectural typography.",
-        "homepage": null,
-        "stargazers_count": 0,
-        "language": "PHP",
-        "updated_at": "2026-04-13T06:28:49Z",
+        "id": 1170971819,
+        "name": "ai-assisted-docs",
+        "full_name": "dknauss/ai-assisted-docs",
+        "html_url": "https://github.com/dknauss/ai-assisted-docs",
+        "description": "Methodology and process documentation for AI-assisted technical writing and review — a practical exploration.",
+        "homepage": "https://github.com/dknauss/ai-assisted-docs",
+        "stargazers_count": 3,
+        "language": "Shell",
+        "updated_at": "2026-04-13T08:35:16Z",
         "fork": false,
         "archived": false,
         "owner": {
