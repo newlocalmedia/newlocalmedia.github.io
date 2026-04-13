@@ -466,7 +466,7 @@ export const PROJECT_META = {
     release: { tag: 'v0.6.1', url: 'https://github.com/dknauss/the-drafting-table/releases/tag/v0.6.1' },
     tests: 'Playwright smoke, PHPUnit coverage',
     license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/the-drafting-table/blob/main/LICENSE' },
-    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/the-drafting-table/main/playground/blueprint.json',
+    playground: 'https://playground.wordpress.net/?blueprint-url=https%3A%2F%2Fraw.githubusercontent.com%2Fdknauss%2Fthe-drafting-table%2Fmain%2Fplayground%2Fblueprint.json%3Fv%3D5e40e52',
     seoDescription: 'WordPress block theme with parchment textures, blueprint framing, refined typography, and portfolio-ready full-site editing patterns.',
     whyHeading: 'Build an Architect\u2019s Notebook in WordPress',
     relatedProjects: [
