@@ -405,7 +405,7 @@ function homeSpotlightCard(repo) {
   const imageAlt = escapeHtml(primaryImage?.alt || `${displayTitle(repo)} preview image.`);
   return `
       <article class="spotlight-card">
-        ${primaryImage ? `<figure class="spotlight-media${homeImageClass(repo) ? ` ${homeImageClass(repo)}` : ""}"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(displayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</button></figure>` : ''}
+        ${primaryImage ? `<figure class="spotlight-media${homeImageClass(repo) ? ` ${homeImageClass(repo)}` : ""}"><a href="${projectPath(repo.full_name)}" aria-label="Open project page for ${escapeHtml(displayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</a></figure>` : ''}
         <div class="repo-top">
           <div>
             <h3>${titleLinkMarkup(repo)}</h3>
@@ -438,7 +438,7 @@ function homeLeadMarkup(repo) {
         </div>
       </div>
       <aside class="feature-side" aria-label="${escapeHtml(displayTitle(repo))} details">
-        ${primaryImage ? `<figure class="feature-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(displayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</button></figure>` : ''}
+        ${primaryImage ? `<figure class="feature-media"><a href="${projectPath(repo.full_name)}" aria-label="Open project page for ${escapeHtml(displayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</a></figure>` : ''}
         <p class="feature-note"><strong>Gate &amp; Log Dangerous Actions</strong> When a user attempts a gated action, Sudo intercepts the request at <code>admin_init</code>.</p>
         <p class="feature-note"><strong>Protects Every Surface</strong> WordPress reauthentication and risky-action gating with support across REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.</p>
       </aside>
