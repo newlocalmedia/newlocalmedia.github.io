@@ -28,7 +28,7 @@ const projectsRoot = resolve(root, 'projects');
 const defaultOgImageUrl = `${SITE_URL}/assets/og-image.png`;
 const iconUrl = `${SITE_URL}/assets/icon-512.png`;
 const REPO_ICON_SVGS = {
-  'dknauss/wp-sudo': '<svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-2.8 8.3-7 10-4.2-1.7-7-5.5-7-10V6z"/><path d="M9.5 12l1.7 1.7L15.5 9.5"/></svg>',
+  'dknauss/Sudo': '<svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-2.8 8.3-7 10-4.2-1.7-7-5.5-7-10V6z"/><path d="M9.5 12l1.7 1.7L15.5 9.5"/></svg>',
   'dknauss/ai-assisted-docs': '<svg viewBox="0 0 24 24"><path d="M7 4h7l5 5v11H7z"/><path d="M14 4v5h5"/><path d="M10 13h6"/><path d="M10 17h4"/></svg>',
   'dknauss/wordpress-runbook-template': '<svg viewBox="0 0 24 24"><path d="M6 5.5A2.5 2.5 0 0 1 8.5 3H19v16H8.5A2.5 2.5 0 0 0 6 21z"/><path d="M6 5.5V21"/><path d="M10 8h5"/><path d="M10 11h4"/><path d="M13.5 15.5l3-3"/><path d="M15 14l1.5 1.5"/><path d="M12.5 16.5l-1 2 2-1"/></svg>',
   'dknauss/wp-security-hardening-guide': '<svg viewBox="0 0 24 24"><rect x="6" y="11" width="12" height="9" rx="2"/><path d="M9 11V8a3 3 0 1 1 6 0v3"/><path d="M12 15h.01"/></svg>',
@@ -39,7 +39,7 @@ const REPO_ICON_SVGS = {
   'dknauss/fedibots': '<svg viewBox="0 0 24 24"><rect x="7" y="8" width="10" height="9" rx="2"/><path d="M10 8V6"/><path d="M14 8V6"/><path d="M10 12h.01"/><path d="M14 12h.01"/><path d="M5 11H3"/><path d="M21 11h-2"/></svg>',
   'dknauss/wordpress-2fa-ecosystem': '<svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="10" rx="2"/><path d="M8 12h.01"/><path d="M11 12h.01"/><path d="M14 12h.01"/><path d="M17 12h.01"/><path d="M9 17v2"/><path d="M15 17v2"/></svg>',
   'dknauss/the-drafting-table': '<svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16l8-8 2 2-8 8H7z"/><path d="M14 7l2 2"/></svg>',
-  'dknauss/wp-bibliography-block': '<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8"/><path d="M8 12h8"/><path d="M8 15h5"/><path d="M4 4v16"/><path d="M7 4v16"/></svg>'
+  'dknauss/Bibliography-Builder': '<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8"/><path d="M8 12h8"/><path d="M8 15h5"/><path d="M4 4v16"/><path d="M7 4v16"/></svg>'
 };
 const DEFAULT_REPO_ICON_SVG = '<svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>';
 const UI_ICON_SVGS = {
@@ -52,6 +52,13 @@ const UI_ICON_SVGS = {
 
 function ownerPath(owner) {
   return `/projects/${encodeURIComponent(owner)}/`;
+}
+
+function legacyProjectPaths(fullName) {
+  const [owner] = fullName.split('/');
+  return (PROJECT_META[fullName]?.legacySlugs || []).map(
+    (slug) => `/projects/${encodeURIComponent(owner)}/${encodeURIComponent(slug)}/`
+  );
 }
 
 function pictureMarkup(url, alt, { loading = 'lazy' } = {}) {
@@ -452,13 +459,31 @@ function accountCardMarkup(account) {
         </div>
         <div class="meta">
           <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(account.total_stars)} total stars</span>
-          ${latest ? `<span class="pill">Latest: ${escapeHtml(latest.name)}</span>` : ''}
+          ${latest ? `<span class="pill">Latest: ${escapeHtml(displayTitle(latest))}</span>` : ''}
         </div>
         <div class="account-actions">
           <a class="repo-link" href="https://github.com/${account.user}?tab=repositories">Browse repos →</a>
         </div>
       </article>
     `.trim();
+}
+
+function renderRedirectPage(targetPath) {
+  const targetUrl = `${SITE_URL}${targetPath}`;
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <meta http-equiv="refresh" content="0; url=${targetUrl}">
+  <link rel="canonical" href="${targetUrl}">
+  <meta name="robots" content="noindex">
+</head>
+<body>
+  <p>Redirecting to <a href="${targetUrl}">${targetUrl}</a>.</p>
+</body>
+</html>
+`;
 }
 
 
@@ -491,7 +516,7 @@ function renderForksCard() {
           <p>There are a few oldies but goodies among the community and canonical plugins for WordPress that I&rsquo;m exploring to scratch some old itches.</p>
           <p><a href="https://github.com/dknauss/authorship">Authorship</a> has a well-architected approach to multi-author attribution. I&rsquo;m modernizing it and adding an adapter layer for it in <a href="https://github.com/dknauss/author-identity/tree/main/byline-feed">Byline Feeds</a> so every author has and is included in semantically rich metadata.</p>
           <p><a href="https://github.com/dknauss/comment-popularity">Comment Popularity</a> is a simple plugin that lets users rate comments. I&rsquo;ve added a simple, tried, and true method using those ratings predictively to automate which comments get promoted or moderated.</p>
-          <p><a href="https://github.com/dknauss/two-factor">Two-Factor</a> is vital to WordPress core and my <a href="https://github.com/dknauss/wp-sudo">Sudo</a> plugin, so I have been studying it and trying to contribute where I can. There are a lot of good docs in my security repos, including the most current and comprehensive overview of <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/wordpress-core-authentication.md">how user sessions and authentication work today in WordPress</a>.</p>
+          <p><a href="https://github.com/dknauss/two-factor">Two-Factor</a> is vital to WordPress core and my <a href="https://github.com/dknauss/Sudo">Sudo</a> plugin, so I have been studying it and trying to contribute where I can. There are a lot of good docs in my security repos, including the most current and comprehensive overview of <a href="https://github.com/dknauss/Sudo/blob/main/docs/wordpress-core-authentication.md">how user sessions and authentication work today in WordPress</a>.</p>
           <p>Agentic tools are part of my research, development, and writing/editing workflows, thanks to others&rsquo; efforts I&rsquo;ve built on and shared: <a href="https://github.com/dknauss/agent-skills">agent-skills</a>, <a href="https://github.com/dknauss/claude-wordpress-skills">Claude WordPress skills</a>, and <a href="https://github.com/dknauss/skills">general skills</a>. I&rsquo;ve used some of these sources within and alongside my own agent and skill files. For example, check out my <a href="https://github.com/dknauss/ai-assisted-docs">AI-assisted docs</a> project for writing and maintaining technical documentation.</p>
           <p>You&rsquo;ll also see some learning-oriented projects in my forked repos for workshops with the Edmonton WordPress Meetup, including a <a href="https://github.com/dknauss/Headless-WordPress-SvelteKit-Site">Headless WordPress SvelteKit Site</a>. These are open for anyone to fork, use, and improve.</p>
         </div>
@@ -1576,6 +1601,11 @@ for (const fullName of CURATED_REPOS) {
   const filepath = resolve(root, `.${projectPath(fullName)}`, 'index.html');
   mkdirSync(dirname(filepath), { recursive: true });
   writeFileSync(filepath, renderPage(repo, lookup));
+  for (const legacyPath of legacyProjectPaths(fullName)) {
+    const legacyFilepath = resolve(root, `.${legacyPath}`, 'index.html');
+    mkdirSync(dirname(legacyFilepath), { recursive: true });
+    writeFileSync(legacyFilepath, renderRedirectPage(projectPath(fullName)));
+  }
 }
 
 const reposByOwner = new Map();

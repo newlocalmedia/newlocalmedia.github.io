@@ -48,8 +48,23 @@ async function fetchJson(url) {
   return response.json();
 }
 
+async function fetchAllPages(urlBase) {
+  const items = [];
+  let page = 1;
+  while (true) {
+    const separator = urlBase.includes('?') ? '&' : '?';
+    const pageItems = await fetchJson(`${urlBase}${separator}per_page=100&page=${page}`);
+    items.push(...pageItems);
+    if (pageItems.length < 100) {
+      break;
+    }
+    page += 1;
+  }
+  return items;
+}
+
 async function fetchAccount(user) {
-  const repos = await fetchJson(`${API_BASE}/users/${user}/repos?per_page=100&sort=updated`);
+  const repos = await fetchAllPages(`${API_BASE}/users/${user}/repos?sort=updated`);
   const filtered = repos.filter((repo) => isEligibleRepo(user, repo)).map(simplifyRepo);
   const totalStars = filtered.reduce((sum, repo) => sum + repo.stargazers_count, 0);
   return {

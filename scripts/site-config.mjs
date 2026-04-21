@@ -7,7 +7,7 @@ export const HOME_TITLE = `${SITE_NAME} | ${ORGANIZATION_NAME}`;
 export const HOME_DESCRIPTION = 'Curated open-source projects from New Local Media and Dan Knauss on WordPress security, technical docs, identity, automation, and experiments.';
 export const PROJECTS_INDEX_DESCRIPTION = 'Browse project directories and curated pages from New Local Media and Dan Knauss, including WordPress security, docs, identity, automation, and experiments.';
 
-export const LEAD_REPO = 'dknauss/wp-sudo';
+export const LEAD_REPO = 'dknauss/Sudo';
 export const AI_DOCS_GROUP = [
   'dknauss/ai-assisted-docs',
   'dknauss/wordpress-runbook-template',
@@ -25,7 +25,7 @@ export const SELECTED = [
   'dknauss/the-drafting-table'
 ];
 export const BLOCKS_SHOWCASE = [
-  'dknauss/wp-bibliography-block'
+  'dknauss/Bibliography-Builder'
 ];
 
 export const CURATED_REPOS = [LEAD_REPO, ...AI_DOCS_GROUP, ...SPOTLIGHT, ...SELECTED, ...BLOCKS_SHOWCASE];
@@ -66,14 +66,15 @@ export const SECTION_META = {
 };
 
 export const PROJECT_META = {
-  'dknauss/wp-sudo': {
+  'dknauss/Sudo': {
     displayTitle: 'Sudo',
     pageTitle: 'Sudo \u26E9\uFE0F',
+    slug: 'wp-sudo',
     schemaType: 'SoftwareSourceCode',
-    release: { tag: 'v2.14.0', url: 'https://github.com/dknauss/wp-sudo/releases/tag/v2.14.0' },
+    release: { tag: 'v2.14.0', url: 'https://github.com/dknauss/Sudo/releases/tag/v2.14.0' },
     tests: 'PHPUnit + Playwright e2e',
-    license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/wp-sudo/blob/main/LICENSE' },
-    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/wp-sudo/main/blueprint.json',
+    license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/Sudo/blob/main/LICENSE' },
+    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Sudo/main/blueprint.json',
     seoDescription: 'WordPress risky-action gating with reauthentication, 2FA support, time-bounded sessions, rate limiting, and policy controls across WordPress surfaces.',
     summary: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.',
     summaryHtml: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across <code>wp-admin</code>, <code>REST</code>, <code>WP-CLI</code>, <code>Cron</code>, <code>WPGraphQL</code>, and <code>XML-RPC</code>.',
@@ -82,7 +83,7 @@ export const PROJECT_META = {
     narrative: 'When a user attempts a gated action, Sudo intercepts the request at `admin_init`. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.',
     narrativeHtml: [
       'When a user attempts a gated action, Sudo intercepts the request at <code>admin_init</code>. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.',
-      'Key docs worth reading here include the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/security-model.md">Security Model</a>, the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/developer-reference.md">Developer Reference</a>, the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/two-factor-integration.md">Two-Factor Integration</a> guide, and the <a href="https://github.com/dknauss/wp-sudo/blob/main/docs/sudo-architecture-comparison-matrix.md">Sudo Architecture Comparison Matrix</a>.',
+      'Key docs worth reading here include the <a href="https://github.com/dknauss/Sudo/blob/main/docs/security-model.md">Security Model</a>, the <a href="https://github.com/dknauss/Sudo/blob/main/docs/developer-reference.md">Developer Reference</a>, the <a href="https://github.com/dknauss/Sudo/blob/main/docs/two-factor-integration.md">Two-Factor Integration</a> guide, and the <a href="https://github.com/dknauss/Sudo/blob/main/docs/sudo-architecture-comparison-matrix.md">Sudo Architecture Comparison Matrix</a>.',
       '<strong>Related Repo:</strong> <a href="https://newlocalmedia.github.io/projects/dknauss/wordpress-2fa-ecosystem/">WordPress 2FA Ecosystem Documentation</a>.'
     ],
     whyInsetHtml: [
@@ -98,23 +99,23 @@ export const PROJECT_META = {
     subfocus: 'Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate.',
     subfocusHtml: 'Risky actions \u2014 activating plugins, deleting users, changing key settings \u2014 are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for <code>REST</code>, <code>WP-CLI</code>, <code>Cron</code>, <code>WPGraphQL</code>, and <code>XML-RPC</code>. No role escalation, no new permissions \u2014 just a gate.',
     docs: [
-      { label: 'WordPress Core Authentication', description: 'How WordPress authentication works \u2014 request flow, session handling, cookies, and the nonce system.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/wordpress-core-authentication.md' },
-      { label: 'Two-Factor Authentication Flow', description: 'The full 2FA request lifecycle with a flowchart \u2014 and where Sudo intercepts.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/two-factor-authentication-flow.md' },
-      { label: 'Security Model', description: 'Threat model and design decisions behind Sudo\u2019s reauthentication architecture.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/security-model.md' },
-      { label: 'Developer Reference', description: 'Hooks, filters, API surface, and integration patterns for building on Sudo.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/developer-reference.md' },
-      { label: 'Two-Factor Integration', description: 'Bridging Sudo with WP 2FA, Wordfence, AIOS, and other plugins for delegated code verification.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/two-factor-integration.md' },
-      { label: 'Architecture Comparison Matrix', description: 'How Sudo compares to other re-auth and session-gating approaches.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/sudo-architecture-comparison-matrix.md' },
-      { label: 'README', description: 'Installation, configuration, and usage overview.', url: 'https://github.com/dknauss/wp-sudo/blob/main/readme.md' },
-      { label: 'FAQ', description: 'Answers to common questions about configuration, behavior, and edge cases.', url: 'https://github.com/dknauss/wp-sudo/blob/main/docs/FAQ.md' }
+      { label: 'WordPress Core Authentication', description: 'How WordPress authentication works \u2014 request flow, session handling, cookies, and the nonce system.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/wordpress-core-authentication.md' },
+      { label: 'Two-Factor Authentication Flow', description: 'The full 2FA request lifecycle with a flowchart \u2014 and where Sudo intercepts.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/two-factor-authentication-flow.md' },
+      { label: 'Security Model', description: 'Threat model and design decisions behind Sudo\u2019s reauthentication architecture.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/security-model.md' },
+      { label: 'Developer Reference', description: 'Hooks, filters, API surface, and integration patterns for building on Sudo.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/developer-reference.md' },
+      { label: 'Two-Factor Integration', description: 'Bridging Sudo with WP 2FA, Wordfence, AIOS, and other plugins for delegated code verification.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/two-factor-integration.md' },
+      { label: 'Architecture Comparison Matrix', description: 'How Sudo compares to other re-auth and session-gating approaches.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/sudo-architecture-comparison-matrix.md' },
+      { label: 'README', description: 'Installation, configuration, and usage overview.', url: 'https://github.com/dknauss/Sudo/blob/main/readme.md' },
+      { label: 'FAQ', description: 'Answers to common questions about configuration, behavior, and edge cases.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/FAQ.md' }
     ],
     screenshots: [
-      { url: 'https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-1.png', alt: 'Sudo challenge page showing the reauthentication interstitial with password field.', caption: 'Challenge page — reauthentication interstitial with password field.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-2.png', alt: 'Sudo two-factor authentication step after password confirmation.', caption: 'Two-factor authentication — after password confirmation, users with 2FA enabled enter their authentication code.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-3.png', alt: 'Sudo settings page with session duration and entry point policies.', caption: 'Settings page — configure session duration and entry point policies.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-4.png', alt: 'Sudo gate notice on the plugins page when no sudo session is active.', caption: 'Gate notice (plugins) — when no sudo session is active, a persistent notice links to the challenge page.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-5.png', alt: 'Sudo gate notice on the themes page.', caption: 'Gate notice (themes) — the same gating notice appears on the themes page.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-6.png', alt: 'Sudo settings page listing all gated actions with categories and surfaces.', caption: 'Gated actions — the settings page lists all gated operations with their categories and surfaces.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/wp-sudo/main/assets/screenshot-7.png', alt: 'WordPress admin bar showing an active Sudo session with a green countdown timer.', caption: 'Active sudo session — the admin bar shows a green countdown timer.' }
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-1.png', alt: 'Sudo challenge page showing the reauthentication interstitial with password field.', caption: 'Challenge page — reauthentication interstitial with password field.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-2.png', alt: 'Sudo two-factor authentication step after password confirmation.', caption: 'Two-factor authentication — after password confirmation, users with 2FA enabled enter their authentication code.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-3.png', alt: 'Sudo settings page with session duration and entry point policies.', caption: 'Settings page — configure session duration and entry point policies.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-4.png', alt: 'Sudo gate notice on the plugins page when no sudo session is active.', caption: 'Gate notice (plugins) — when no sudo session is active, a persistent notice links to the challenge page.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-5.png', alt: 'Sudo gate notice on the themes page.', caption: 'Gate notice (themes) — the same gating notice appears on the themes page.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-6.png', alt: 'Sudo settings page listing all gated actions with categories and surfaces.', caption: 'Gated actions — the settings page lists all gated operations with their categories and surfaces.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-7.png', alt: 'WordPress admin bar showing an active Sudo session with a green countdown timer.', caption: 'Active sudo session — the admin bar shows a green countdown timer.' }
     ],
     relatedProjects: [
       {
@@ -388,9 +389,9 @@ export const PROJECT_META = {
     ],
     relatedProjects: [
       {
-        fullName: 'dknauss/wp-bibliography-block',
-        label: 'Bibliography Block',
-        description: 'WordPress block plugin that converts DOI and BibTeX citations into semantically rich, auto-sorted bibliography lists — a natural companion for structured content authorship.'
+        fullName: 'dknauss/Bibliography-Builder',
+        label: 'Bibliography Builder',
+        description: 'WordPress block plugin that transforms DOI, BibTeX, and supported formatted citations into semantically rich, auto-sorted bibliographies — a natural companion for structured content authorship.'
       }
     ],
     narrativeHtml: [
@@ -442,7 +443,7 @@ export const PROJECT_META = {
     whyHeading: 'Bridge the WordPress 2FA Plugin Maze',
     relatedProjects: [
       {
-        fullName: 'dknauss/wp-sudo',
+        fullName: 'dknauss/Sudo',
         label: 'Sudo',
         description: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls.'
       }
@@ -471,9 +472,9 @@ export const PROJECT_META = {
     whyHeading: 'Build an Architect\u2019s Notebook in WordPress',
     relatedProjects: [
       {
-        fullName: 'dknauss/wp-bibliography-block',
-        label: 'Bibliography Block',
-        description: 'WordPress block plugin for structured DOI and BibTeX citations — semantic, auto-sorted bibliography lists for the block editor.'
+        fullName: 'dknauss/Bibliography-Builder',
+        label: 'Bibliography Builder',
+        description: 'WordPress block plugin for structured DOI, BibTeX, and formatted citations — semantic, auto-sorted bibliographies for the block editor.'
       }
     ],
     narrativeHtml: [
@@ -491,33 +492,35 @@ export const PROJECT_META = {
     focus: 'An Architect’s Notebook as a WordPress Theme',
     subfocus: 'A full-site editing theme with parchment textures, blueprint framing, strong typography, and portfolio-ready patterns.'
   },
-  'dknauss/wp-bibliography-block': {
-    displayTitle: 'Bibliography Block',
+  'dknauss/Bibliography-Builder': {
+    displayTitle: 'Bibliography Builder',
+    slug: 'bibliography-builder',
+    legacySlugs: ['wp-bibliography-block'],
     schemaType: 'SoftwareSourceCode',
-    release: { tag: 'v1.0.0', url: 'https://github.com/dknauss/wp-bibliography-block/releases/tag/v1.0.0' },
+    release: { tag: 'v1.0.0', url: 'https://github.com/dknauss/Bibliography-Builder/releases/tag/v1.0.0' },
     tests: 'Playwright smoke, PHP/WP runtime matrix',
-    license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/wp-bibliography-block/blob/main/LICENSE' },
-    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/playground/blueprint.json',
-    summary: 'WordPress block plugin that converts DOI and BibTeX citations into semantically rich, auto-sorted bibliography lists.',
+    license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/Bibliography-Builder/blob/main/LICENSE' },
+    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Bibliography-Builder/main/playground/blueprint.json',
+    summary: 'WordPress block plugin that transforms DOI, BibTeX, and supported formatted citations into semantically rich, auto-sorted bibliographies.',
     whyHeading: 'Structured Citations in the Block Editor',
     narrativeHtml: [
-      'The Bibliography Block plugin brings proper academic and reference citations to the WordPress block editor — converting DOI lookups and BibTeX entries into clean, auto-sorted bibliography lists with semantic HTML.',
-      'It extends WordPress content authorship with structured, reusable citations that hold up to scrutiny in research, journalism, and technical writing contexts.'
+      'Bibliography Builder brings proper academic and reference citations to the WordPress block editor — turning DOI lookups, BibTeX entries, and supported formatted citations into clean, auto-sorted bibliographies with semantic HTML and static saved output.',
+      'It extends WordPress content authorship with structured, reusable citations that hold up in research, journalism, and technical writing contexts, while also supporting export to CSL-JSON, BibTeX, and RIS.'
     ],
     omitGenericNarrative: true,
     omitRelatedNarrative: true,
     primaryImage: {
-      url: 'https://newlocalmedia.github.io/assets/wp-bibliography-block-brand.svg',
-      alt: 'Bibliography brand graphic showing three books on a shelf with the subtitle Scholarly references for WordPress.',
+      url: 'https://newlocalmedia.github.io/assets/bibliography-builder-brand.svg',
+      alt: 'Bibliography Builder brand graphic showing three books on a gold shelf beside the subtitle Scholarly references for WordPress.',
       width: 1200,
       height: 630
     },
     screenshots: [
-      { url: 'https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-1.png', alt: 'Bibliography block shown in the WordPress block inserter.', caption: 'Discover the Bibliography block in the inserter.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-2.png', alt: 'Bibliography default import form with DOI, BibTeX, and citation text input.', caption: 'Paste DOI, BibTeX, or supported citation text into the default import form.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-3.png', alt: 'Bibliography manual entry interface with Publication Type and structured fields.', caption: 'Use Manual Entry to build a citation with Publication Type and structured fields.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-4.png', alt: 'Bibliography block settings sidebar with citation style, metadata output, and export actions.', caption: 'Configure citation style, metadata output, and export actions in the block settings sidebar.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/wp-bibliography-block/main/.wordpress-org/screenshot-5.png', alt: 'Rendered Bibliography block on the front end with linked URLs and semantic output.', caption: 'View the rendered bibliography on the site front end with linked URLs and semantic output.' }
+      { url: 'https://raw.githubusercontent.com/dknauss/Bibliography-Builder/main/.wordpress-org/screenshot-1.png', alt: 'Bibliography Builder shown in the WordPress block inserter.', caption: 'Discover Bibliography Builder in the inserter.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Bibliography-Builder/main/.wordpress-org/screenshot-2.png', alt: 'Bibliography Builder import form with DOI, BibTeX, and citation text input.', caption: 'Paste DOI, BibTeX, or supported citation text into the import form.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Bibliography-Builder/main/.wordpress-org/screenshot-3.png', alt: 'Bibliography Builder manual entry interface with publication type and structured fields.', caption: 'Use Manual Entry to build a citation with publication type and structured fields.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Bibliography-Builder/main/.wordpress-org/screenshot-4.png', alt: 'Bibliography Builder settings sidebar with citation style, metadata output, and export actions.', caption: 'Configure citation style, metadata output, and export actions in the block settings sidebar.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Bibliography-Builder/main/.wordpress-org/screenshot-5.png', alt: 'Rendered Bibliography Builder output on the front end with linked URLs and semantic markup.', caption: 'View the rendered bibliography on the site front end with linked URLs and semantic output.' }
     ],
     relatedProjects: [
       {
@@ -527,7 +530,7 @@ export const PROJECT_META = {
       }
     ],
     focus: 'Academic Citations in the Block Editor',
-    subfocus: 'DOI lookups and BibTeX input converted to semantically rich, auto-sorted bibliography lists — structured citations that travel with the work.'
+    subfocus: 'DOI lookups, BibTeX input, and formatted citations converted to semantically rich, auto-sorted bibliographies — structured references that travel with the work.'
   }
 };
 
@@ -542,7 +545,8 @@ export function sectionForRepo(fullName) {
 
 export function projectPath(fullName) {
   const [owner, name] = fullName.split('/');
-  return `/projects/${encodeURIComponent(owner)}/${encodeURIComponent(name)}/`;
+  const slug = PROJECT_META[fullName]?.slug || name;
+  return `/projects/${encodeURIComponent(owner)}/${encodeURIComponent(slug)}/`;
 }
 
 export function projectUrl(fullName) {
