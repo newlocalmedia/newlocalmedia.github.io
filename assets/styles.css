@@ -487,6 +487,13 @@
       margin: 0;
     }
 
+    .spotlight-media > a,
+    .feature-media > a {
+      display: block;
+      border-radius: 16px;
+      text-decoration: none;
+    }
+
     .image-trigger {
       display: block;
       width: 100%;
@@ -508,18 +515,26 @@
       background: rgba(13,27,42,0.82);
     }
 
+    .spotlight-media--banner > a,
+    .spotlight-media--capm-banner > a,
     .spotlight-media--banner .image-trigger,
     .spotlight-media--capm-banner .image-trigger {
-      padding: 12px;
+      padding: 18px 20px;
+      background: rgba(255,253,249,0.98);
+      border: 1px solid var(--line);
     }
 
+    .spotlight-media--banner > a img,
+    .spotlight-media--capm-banner > a img,
     .spotlight-media--banner .image-trigger img,
     .spotlight-media--capm-banner .image-trigger img {
       width: 100%;
       aspect-ratio: 1014 / 426;
       object-fit: contain;
+      object-position: center;
       margin: 0 auto;
-      background: rgba(255,253,249,0.98);
+      background: transparent;
+      border: 0;
     }
 
     .image-modal[hidden] {
