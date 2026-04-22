@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T19:39:05.254Z",
+  "generated_at": "2026-04-22T03:43:44.647Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,15 +50,15 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
-          "id": 1159560867,
-          "name": "wp-security-benchmark",
-          "full_name": "dknauss/wp-security-benchmark",
-          "html_url": "https://github.com/dknauss/wp-security-benchmark",
-          "description": "WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on Linux.",
-          "homepage": "https://github.com/dknauss/wp-security-benchmark",
+          "id": 1159682753,
+          "name": "wp-security-hardening-guide",
+          "full_name": "dknauss/wp-security-hardening-guide",
+          "html_url": "https://github.com/dknauss/wp-security-hardening-guide",
+          "description": "WordPress security architecture and hardening guide: enterprise practices for threat mitigation, authentication, and supply chain defense.",
+          "homepage": "https://github.com/dknauss/wp-security-hardening-guide",
           "stargazers_count": 3,
           "language": null,
-          "updated_at": "2026-04-21T11:01:34Z",
+          "updated_at": "2026-04-21T20:25:38Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -68,15 +68,15 @@
           }
         },
         {
-          "id": 1159682753,
-          "name": "wp-security-hardening-guide",
-          "full_name": "dknauss/wp-security-hardening-guide",
-          "html_url": "https://github.com/dknauss/wp-security-hardening-guide",
-          "description": "WordPress security architecture and hardening guide: enterprise practices for threat mitigation, authentication, and supply chain defense.",
-          "homepage": "https://github.com/dknauss/wp-security-hardening-guide",
+          "id": 1159560867,
+          "name": "wp-security-benchmark",
+          "full_name": "dknauss/wp-security-benchmark",
+          "html_url": "https://github.com/dknauss/wp-security-benchmark",
+          "description": "WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on Linux.",
+          "homepage": "https://github.com/dknauss/wp-security-benchmark",
           "stargazers_count": 3,
           "language": null,
-          "updated_at": "2026-04-21T11:00:34Z",
+          "updated_at": "2026-04-21T11:01:34Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -269,15 +269,15 @@
       "total_repos": 12,
       "total_stars": 57,
       "latest_repo": {
-        "id": 1159560867,
-        "name": "wp-security-benchmark",
-        "full_name": "dknauss/wp-security-benchmark",
-        "html_url": "https://github.com/dknauss/wp-security-benchmark",
-        "description": "WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on Linux.",
-        "homepage": "https://github.com/dknauss/wp-security-benchmark",
+        "id": 1159682753,
+        "name": "wp-security-hardening-guide",
+        "full_name": "dknauss/wp-security-hardening-guide",
+        "html_url": "https://github.com/dknauss/wp-security-hardening-guide",
+        "description": "WordPress security architecture and hardening guide: enterprise practices for threat mitigation, authentication, and supply chain defense.",
+        "homepage": "https://github.com/dknauss/wp-security-hardening-guide",
         "stargazers_count": 3,
         "language": null,
-        "updated_at": "2026-04-21T11:01:34Z",
+        "updated_at": "2026-04-21T20:25:38Z",
         "fork": false,
         "archived": false,
         "owner": {
