@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-22T19:40:06.831Z",
+  "generated_at": "2026-04-23T03:48:36.936Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,24 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1203393463,
+          "name": "Bibliography-Builder",
+          "full_name": "dknauss/Bibliography-Builder",
+          "html_url": "https://github.com/dknauss/Bibliography-Builder",
+          "description": "WordPress block plugin: DOI/BibTeX to semantically rich, auto-sorted bibliography.",
+          "homepage": "https://newlocalmedia.github.io/projects/dknauss/bibliography-builder/",
+          "stargazers_count": 2,
+          "language": "JavaScript",
+          "updated_at": "2026-04-23T01:36:50Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1160457512,
           "name": "wordpress-runbook-template",
           "full_name": "dknauss/wordpress-runbook-template",
@@ -95,24 +113,6 @@
           "stargazers_count": 3,
           "language": null,
           "updated_at": "2026-04-21T11:01:34Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1203393463,
-          "name": "Bibliography-Builder",
-          "full_name": "dknauss/Bibliography-Builder",
-          "html_url": "https://github.com/dknauss/Bibliography-Builder",
-          "description": "WordPress block plugin: DOI/BibTeX to semantically rich, auto-sorted bibliography.",
-          "homepage": "https://newlocalmedia.github.io/projects/dknauss/bibliography-builder/",
-          "stargazers_count": 1,
-          "language": "JavaScript",
-          "updated_at": "2026-04-21T05:56:31Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -267,17 +267,17 @@
         }
       ],
       "total_repos": 12,
-      "total_stars": 57,
+      "total_stars": 58,
       "latest_repo": {
-        "id": 1160457512,
-        "name": "wordpress-runbook-template",
-        "full_name": "dknauss/wordpress-runbook-template",
-        "html_url": "https://github.com/dknauss/wordpress-runbook-template",
-        "description": "WordPress operations runbook template: production procedures for deployment, maintenance, backup, incident response, and recovery.",
-        "homepage": "https://github.com/dknauss/wordpress-runbook-template",
-        "stargazers_count": 3,
-        "language": null,
-        "updated_at": "2026-04-22T04:45:42Z",
+        "id": 1203393463,
+        "name": "Bibliography-Builder",
+        "full_name": "dknauss/Bibliography-Builder",
+        "html_url": "https://github.com/dknauss/Bibliography-Builder",
+        "description": "WordPress block plugin: DOI/BibTeX to semantically rich, auto-sorted bibliography.",
+        "homepage": "https://newlocalmedia.github.io/projects/dknauss/bibliography-builder/",
+        "stargazers_count": 2,
+        "language": "JavaScript",
+        "updated_at": "2026-04-23T01:36:50Z",
         "fork": false,
         "archived": false,
         "owner": {
