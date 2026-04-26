@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://newlocalmedia.github.io/</loc>
-    <lastmod>2026-04-26T07:55:16.360Z</lastmod>
+    <lastmod>2026-04-26T13:42:03.240Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/</loc>
-    <lastmod>2026-04-25T23:43:05Z</lastmod>
+    <lastmod>2026-04-26T10:27:01Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/</loc>
-    <lastmod>2026-04-25T23:43:05Z</lastmod>
+    <lastmod>2026-04-26T10:27:01Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -92,7 +92,7 @@
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/bibliography-builder/</loc>
-    <lastmod>2026-04-25T23:43:05Z</lastmod>
+    <lastmod>2026-04-26T10:27:01Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
