@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-26T19:14:40.623Z",
+  "generated_at": "2026-04-27T04:01:17.338Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,24 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1203393463,
+          "name": "Bibliography-Builder",
+          "full_name": "dknauss/Bibliography-Builder",
+          "html_url": "https://github.com/dknauss/Bibliography-Builder",
+          "description": "WordPress block plugin: DOI/BibTeX to semantically rich, auto-sorted bibliography.",
+          "homepage": "https://newlocalmedia.github.io/projects/dknauss/bibliography-builder/",
+          "stargazers_count": 1,
+          "language": "JavaScript",
+          "updated_at": "2026-04-27T03:16:59Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1221783215,
           "name": "code-design-review-skills",
           "full_name": "dknauss/code-design-review-skills",
@@ -77,24 +95,6 @@
           "stargazers_count": 41,
           "language": "PHP",
           "updated_at": "2026-04-26T17:14:43Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1203393463,
-          "name": "Bibliography-Builder",
-          "full_name": "dknauss/Bibliography-Builder",
-          "html_url": "https://github.com/dknauss/Bibliography-Builder",
-          "description": "WordPress block plugin: DOI/BibTeX to semantically rich, auto-sorted bibliography.",
-          "homepage": "https://newlocalmedia.github.io/projects/dknauss/bibliography-builder/",
-          "stargazers_count": 2,
-          "language": "JavaScript",
-          "updated_at": "2026-04-26T10:27:01Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -285,17 +285,17 @@
         }
       ],
       "total_repos": 13,
-      "total_stars": 58,
+      "total_stars": 57,
       "latest_repo": {
-        "id": 1221783215,
-        "name": "code-design-review-skills",
-        "full_name": "dknauss/code-design-review-skills",
-        "html_url": "https://github.com/dknauss/code-design-review-skills",
-        "description": "AI mentoring and philosophy review skills for simplicity-first software design.",
-        "homepage": "https://github.com/dknauss/code-design-review-skills",
-        "stargazers_count": 0,
-        "language": null,
-        "updated_at": "2026-04-26T17:29:08Z",
+        "id": 1203393463,
+        "name": "Bibliography-Builder",
+        "full_name": "dknauss/Bibliography-Builder",
+        "html_url": "https://github.com/dknauss/Bibliography-Builder",
+        "description": "WordPress block plugin: DOI/BibTeX to semantically rich, auto-sorted bibliography.",
+        "homepage": "https://newlocalmedia.github.io/projects/dknauss/bibliography-builder/",
+        "stargazers_count": 1,
+        "language": "JavaScript",
+        "updated_at": "2026-04-27T03:16:59Z",
         "fork": false,
         "archived": false,
         "owner": {
