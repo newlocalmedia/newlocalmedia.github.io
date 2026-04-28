@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T08:40:14.513Z",
+  "generated_at": "2026-04-28T19:57:24.246Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,24 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1154983208,
+          "name": "Sudo",
+          "full_name": "dknauss/Sudo",
+          "html_url": "https://github.com/dknauss/Sudo",
+          "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
+          "homepage": "https://github.com/dknauss/wp-sudo",
+          "stargazers_count": 42,
+          "language": "PHP",
+          "updated_at": "2026-04-28T15:02:19Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1203393463,
           "name": "Bibliography-Builder",
           "full_name": "dknauss/Bibliography-Builder",
@@ -77,24 +95,6 @@
           "stargazers_count": 0,
           "language": null,
           "updated_at": "2026-04-26T17:29:08Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1154983208,
-          "name": "Sudo",
-          "full_name": "dknauss/Sudo",
-          "html_url": "https://github.com/dknauss/Sudo",
-          "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
-          "homepage": "https://github.com/dknauss/wp-sudo",
-          "stargazers_count": 41,
-          "language": "PHP",
-          "updated_at": "2026-04-26T17:14:43Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -285,17 +285,17 @@
         }
       ],
       "total_repos": 13,
-      "total_stars": 57,
+      "total_stars": 58,
       "latest_repo": {
-        "id": 1203393463,
-        "name": "Bibliography-Builder",
-        "full_name": "dknauss/Bibliography-Builder",
-        "html_url": "https://github.com/dknauss/Bibliography-Builder",
-        "description": "WordPress block plugin: DOI/BibTeX to semantically rich, auto-sorted bibliography.",
-        "homepage": "https://newlocalmedia.github.io/projects/dknauss/bibliography-builder/",
-        "stargazers_count": 1,
-        "language": "JavaScript",
-        "updated_at": "2026-04-28T07:30:37Z",
+        "id": 1154983208,
+        "name": "Sudo",
+        "full_name": "dknauss/Sudo",
+        "html_url": "https://github.com/dknauss/Sudo",
+        "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
+        "homepage": "https://github.com/dknauss/wp-sudo",
+        "stargazers_count": 42,
+        "language": "PHP",
+        "updated_at": "2026-04-28T15:02:19Z",
         "fork": false,
         "archived": false,
         "owner": {
