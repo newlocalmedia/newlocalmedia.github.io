@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T14:31:53.619Z",
+  "generated_at": "2026-04-29T19:55:07.010Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -58,7 +58,7 @@
           "homepage": "https://newlocalmedia.github.io/projects/dknauss/bibliography-builder/",
           "stargazers_count": 1,
           "language": "JavaScript",
-          "updated_at": "2026-04-28T23:39:57Z",
+          "updated_at": "2026-04-29T16:13:26Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -295,7 +295,7 @@
         "homepage": "https://newlocalmedia.github.io/projects/dknauss/bibliography-builder/",
         "stargazers_count": 1,
         "language": "JavaScript",
-        "updated_at": "2026-04-28T23:39:57Z",
+        "updated_at": "2026-04-29T16:13:26Z",
         "fork": false,
         "archived": false,
         "owner": {
