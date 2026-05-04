@@ -505,7 +505,7 @@ export const PROJECT_META = {
     playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json',
     detailLinksLabel: 'WordPress.org',
     extraLinks: [
-      { label: 'WordPress.org', url: 'https://wordpress.org/plugins/borges-bibliography-builder/' }
+      { label: 'WordPress.org', heroLabel: '🔌 WordPress.org', heroAfterRelease: true, url: 'https://wordpress.org/plugins/borges-bibliography-builder/' }
     ],
     seoDescription: 'WordPress bibliography block that turns DOI, BibTeX, and citation input into static, semantically rich, reference-manager friendly bibliographies.',
     summary: 'WordPress bibliography block that transforms DOI, BibTeX, and citation input into static, semantically rich, reference-manager friendly bibliographies.',
