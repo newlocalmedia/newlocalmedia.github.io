@@ -497,10 +497,16 @@ export const PROJECT_META = {
     slug: 'borges-bibliography-builder',
     legacySlugs: ['bibliography-builder', 'wp-bibliography-block'],
     schemaType: 'SoftwareSourceCode',
+    homepage: 'https://wordpress.org/plugins/borges-bibliography-builder/',
+    homepageLabel: 'WordPress.org',
     release: { tag: 'v1.0.0', url: 'https://github.com/dknauss/borges-bibliography-builder/releases/tag/v1.0.0' },
     tests: 'Playwright smoke, PHP/WP runtime matrix',
     license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/borges-bibliography-builder/blob/main/LICENSE' },
     playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json',
+    detailLinksLabel: 'WordPress.org',
+    extraLinks: [
+      { label: 'WordPress.org', url: 'https://wordpress.org/plugins/borges-bibliography-builder/' }
+    ],
     seoDescription: 'WordPress bibliography block that turns DOI, BibTeX, and citation input into static, semantically rich, reference-manager friendly bibliographies.',
     summary: 'WordPress bibliography block that transforms DOI, BibTeX, and citation input into static, semantically rich, reference-manager friendly bibliographies.',
     whyHeading: 'Build Scholarly References That Travel',

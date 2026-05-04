@@ -576,7 +576,7 @@ function detailItems(repo) {
   const detailExtraLinks = meta.extraLinks?.filter((link) => !String(link.url || '').startsWith('#')) || [];
   if (detailExtraLinks.length) {
     items.push({
-      term: 'Apps',
+      term: meta.detailLinksLabel || (detailExtraLinks.length > 1 ? 'Apps' : 'Link'),
       value: detailExtraLinks.map((link) => `<a href="${link.url}">${escapeHtml(link.label)}</a>`).join(' · ')
     });
   }
