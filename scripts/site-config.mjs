@@ -25,7 +25,7 @@ export const SELECTED = [
   'dknauss/the-drafting-table'
 ];
 export const BLOCKS_SHOWCASE = [
-  'dknauss/Bibliography-Builder'
+  'dknauss/borges-bibliography-builder'
 ];
 
 export const CURATED_REPOS = [LEAD_REPO, ...AI_DOCS_GROUP, ...SPOTLIGHT, ...SELECTED, ...BLOCKS_SHOWCASE];
@@ -389,9 +389,9 @@ export const PROJECT_META = {
     ],
     relatedProjects: [
       {
-        fullName: 'dknauss/Bibliography-Builder',
-        label: 'Bibliography Builder',
-        description: 'WordPress block plugin that transforms DOI, BibTeX, and supported formatted citations into semantically rich, auto-sorted bibliographies — a natural companion for structured content authorship.'
+        fullName: 'dknauss/borges-bibliography-builder',
+        label: 'Borges Bibliography Builder',
+        description: 'WordPress block plugin that transforms DOI, BibTeX, and supported formatted citations into semantically rich, reference-manager friendly bibliographies — a natural companion for structured content authorship.'
       }
     ],
     narrativeHtml: [
@@ -472,9 +472,9 @@ export const PROJECT_META = {
     whyHeading: 'Build an Architect\u2019s Notebook in WordPress',
     relatedProjects: [
       {
-        fullName: 'dknauss/Bibliography-Builder',
-        label: 'Bibliography Builder',
-        description: 'WordPress block plugin for structured DOI, BibTeX, and formatted citations — semantic, auto-sorted bibliographies for the block editor.'
+        fullName: 'dknauss/borges-bibliography-builder',
+        label: 'Borges Bibliography Builder',
+        description: 'WordPress block plugin for structured DOI, BibTeX, and citation input — static, semantic bibliographies for the block editor.'
       }
     ],
     narrativeHtml: [
@@ -492,35 +492,37 @@ export const PROJECT_META = {
     focus: 'An Architect’s Notebook as a WordPress Theme',
     subfocus: 'A full-site editing theme with parchment textures, blueprint framing, strong typography, and portfolio-ready patterns.'
   },
-  'dknauss/Bibliography-Builder': {
-    displayTitle: 'Bibliography Builder',
-    slug: 'bibliography-builder',
-    legacySlugs: ['wp-bibliography-block'],
+  'dknauss/borges-bibliography-builder': {
+    displayTitle: 'Borges Bibliography Builder',
+    slug: 'borges-bibliography-builder',
+    legacySlugs: ['bibliography-builder', 'wp-bibliography-block'],
     schemaType: 'SoftwareSourceCode',
-    release: { tag: 'v1.0.0', url: 'https://github.com/dknauss/Bibliography-Builder/releases/tag/v1.0.0' },
+    release: { tag: 'v1.0.0', url: 'https://github.com/dknauss/borges-bibliography-builder/releases/tag/v1.0.0' },
     tests: 'Playwright smoke, PHP/WP runtime matrix',
-    license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/Bibliography-Builder/blob/main/LICENSE' },
-    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Bibliography-Builder/main/playground/blueprint.json',
-    summary: 'WordPress block plugin that transforms DOI, BibTeX, and supported formatted citations into semantically rich, auto-sorted bibliographies.',
-    whyHeading: 'Structured Citations in the Block Editor',
+    license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/borges-bibliography-builder/blob/main/LICENSE' },
+    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json',
+    seoDescription: 'WordPress bibliography block that turns DOI, BibTeX, and citation input into static, semantically rich, reference-manager friendly bibliographies.',
+    summary: 'WordPress bibliography block that transforms DOI, BibTeX, and citation input into static, semantically rich, reference-manager friendly bibliographies.',
+    whyHeading: 'Build Scholarly References That Travel',
     narrativeHtml: [
-      'Bibliography Builder brings proper academic and reference citations to the WordPress block editor — turning DOI lookups, BibTeX entries, and supported formatted citations into clean, auto-sorted bibliographies with semantic HTML and static saved output.',
-      'It extends WordPress content authorship with structured, reusable citations that hold up in research, journalism, and technical writing contexts, while also supporting export to CSL-JSON, BibTeX, and RIS.'
+      'Named for Jorge Luis Borges, Borges Bibliography Builder brings order to scholarly references in WordPress — turning pasted DOI(s), BibTeX entries, and supported citations into clean, auto-sorted reference lists with semantic HTML and static saved output.',
+      'It is reference-manager friendly by design, with portable outputs including CSL-JSON, BibTeX, RIS, DOI links, Schema.org JSON-LD, and optional COinS metadata for Zotero, Mendeley, EndNote, and related workflows.'
     ],
     omitGenericNarrative: true,
     omitRelatedNarrative: true,
+    homeImageClass: 'spotlight-media--banner',
     primaryImage: {
-      url: 'https://newlocalmedia.github.io/assets/bibliography-builder-brand.svg',
-      alt: 'Bibliography Builder brand graphic showing three books on a gold shelf beside the subtitle Scholarly references for WordPress.',
-      width: 1200,
-      height: 630
+      url: 'https://newlocalmedia.github.io/assets/borges-bibliography-builder-banner.png',
+      alt: 'Borges Bibliography Builder banner graphic with stacked books, the project title, scholarly citation features, and a Borges quote.',
+      width: 1544,
+      height: 500
     },
     screenshots: [
-      { url: 'https://raw.githubusercontent.com/dknauss/Bibliography-Builder/main/.wordpress-org/screenshot-1.png', alt: 'Bibliography Builder shown in the WordPress block inserter.', caption: 'Discover Bibliography Builder in the inserter.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Bibliography-Builder/main/.wordpress-org/screenshot-2.png', alt: 'Bibliography Builder import form with DOI, BibTeX, and citation text input.', caption: 'Paste DOI, BibTeX, or supported citation text into the import form.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Bibliography-Builder/main/.wordpress-org/screenshot-3.png', alt: 'Bibliography Builder manual entry interface with publication type and structured fields.', caption: 'Use Manual Entry to build a citation with publication type and structured fields.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Bibliography-Builder/main/.wordpress-org/screenshot-4.png', alt: 'Bibliography Builder settings sidebar with citation style, metadata output, and export actions.', caption: 'Configure citation style, metadata output, and export actions in the block settings sidebar.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Bibliography-Builder/main/.wordpress-org/screenshot-5.png', alt: 'Rendered Bibliography Builder output on the front end with linked URLs and semantic markup.', caption: 'View the rendered bibliography on the site front end with linked URLs and semantic output.' }
+      { url: 'https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/.wordpress-org/screenshot-1.png', alt: 'Borges Bibliography Builder shown in the WordPress block inserter.', caption: 'Discover Borges Bibliography Builder in the inserter.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/.wordpress-org/screenshot-2.png', alt: 'Borges Bibliography Builder import form with DOI, BibTeX, and citation text input.', caption: 'Paste DOI, BibTeX, or supported citation text into the import form.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/.wordpress-org/screenshot-3.png', alt: 'Borges Bibliography Builder manual entry interface with publication type and structured fields.', caption: 'Use Manual Entry to build a citation with publication type and structured fields.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/.wordpress-org/screenshot-4.png', alt: 'Borges Bibliography Builder settings sidebar with citation style, metadata output, and export actions.', caption: 'Configure citation style, metadata output, and export actions in the block settings sidebar.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/.wordpress-org/screenshot-5.png', alt: 'Rendered Borges Bibliography Builder output on the front end with linked URLs and semantic markup.', caption: 'View the rendered bibliography on the site front end with linked URLs and semantic output.' }
     ],
     relatedProjects: [
       {
@@ -529,8 +531,8 @@ export const PROJECT_META = {
         description: 'A WordPress block theme with architectural design motifs — parchment textures, blueprint borders, and refined typography for portfolio and editorial work.'
       }
     ],
-    focus: 'Academic Citations in the Block Editor',
-    subfocus: 'DOI lookups, BibTeX input, and formatted citations converted to semantically rich, auto-sorted bibliographies — structured references that travel with the work.'
+    focus: 'Scholarly References in the Block Editor',
+    subfocus: 'DOI lookups, BibTeX input, and citation text converted to static, semantically rich bibliographies with portable outputs for research and publishing workflows.'
   }
 };
 

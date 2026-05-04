@@ -8,6 +8,7 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
   const SPOTLIGHT = HOME_CONFIG.spotlight || [];
   const SELECTED = HOME_CONFIG.selected || [];
   const BLOCKS_SHOWCASE = HOME_CONFIG.blocksShowcase || [];
+  const PROJECT_PATHS = HOME_CONFIG.projectPaths || {};
   const PROJECT_PAGE_SET = new Set([
     LEAD_REPO,
     ...AI_DOCS_GROUP,
@@ -162,10 +163,7 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
 
   function projectPageUrl(repo) {
     const key = repo.full_name.toLowerCase();
-    if (!PROJECT_PAGE_SET.has(key)) {
-      return null;
-    }
-    return `projects/${encodeURIComponent(repo.owner.login)}/${encodeURIComponent(repo.name)}/`;
+    return PROJECT_PAGE_SET.has(key) ? (PROJECT_PATHS[key] || null) : null;
   }
 
   function titleLinkMarkup(repo) {
@@ -257,9 +255,10 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
   function renderSpotlightCard(repo) {
     const primaryImage = repoPrimaryImage(repo);
     const imageAlt = escapeHtml(primaryImage?.alt || `${repoDisplayTitle(repo)} preview image.`);
+    const details = projectPageUrl(repo);
     return `
       <article class="spotlight-card">
-        ${primaryImage ? `<figure class="spotlight-media${repoHomeImageClass(repo) ? ` ${repoHomeImageClass(repo)}` : ''}"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(repoDisplayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</button></figure>` : ''}
+        ${primaryImage ? `<figure class="spotlight-media${repoHomeImageClass(repo) ? ` ${repoHomeImageClass(repo)}` : ''}">${details ? `<a href="${details}" aria-label="Open project page for ${escapeHtml(repoDisplayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</a>` : `<button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(repoDisplayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</button>`}</figure>` : ''}
         <div class="repo-top">
           <div>
             <h3>${titleLinkMarkup(repo)}</h3>
@@ -305,7 +304,7 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
         </div>
       </div>
       <aside class="feature-side" aria-label="${escapeHtml(repoDisplayTitle(repo))} details">
-        ${primaryImage ? `<figure class="feature-media"><button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(repoDisplayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</button></figure>` : ''}
+        ${primaryImage ? `<figure class="feature-media">${details ? `<a href="${details}" aria-label="Open project page for ${escapeHtml(repoDisplayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</a>` : `<button class="image-trigger" type="button" data-modal-image="${primaryImage.url}" data-modal-alt="${imageAlt}" aria-label="Open larger image for ${escapeHtml(repoDisplayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</button>`}</figure>` : ''}
         <p class="feature-note"><strong>Gate &amp; Log Dangerous Actions</strong> When a user attempts a gated action, Sudo intercepts the request at <code>admin_init</code>.</p>
         <p class="feature-note"><strong>Protects Every Surface</strong> WordPress reauthentication and risky-action gating with support across REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.</p>
       </aside>

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-04T04:11:19.592Z",
+  "generated_at": "2026-05-04T07:05:37.658Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -51,14 +51,14 @@
       "repos": [
         {
           "id": 1203393463,
-          "name": "Bibliography-Builder",
-          "full_name": "dknauss/Bibliography-Builder",
-          "html_url": "https://github.com/dknauss/Bibliography-Builder",
-          "description": "WordPress block plugin: DOI/BibTeX to semantically rich, auto-sorted bibliography.",
-          "homepage": "https://newlocalmedia.github.io/projects/dknauss/bibliography-builder/",
+          "name": "borges-bibliography-builder",
+          "full_name": "dknauss/borges-bibliography-builder",
+          "html_url": "https://github.com/dknauss/borges-bibliography-builder",
+          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
           "stargazers_count": 1,
           "language": "JavaScript",
-          "updated_at": "2026-05-04T01:49:27Z",
+          "updated_at": "2026-05-04T06:44:20Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -288,14 +288,14 @@
       "total_stars": 58,
       "latest_repo": {
         "id": 1203393463,
-        "name": "Bibliography-Builder",
-        "full_name": "dknauss/Bibliography-Builder",
-        "html_url": "https://github.com/dknauss/Bibliography-Builder",
-        "description": "WordPress block plugin: DOI/BibTeX to semantically rich, auto-sorted bibliography.",
-        "homepage": "https://newlocalmedia.github.io/projects/dknauss/bibliography-builder/",
+        "name": "borges-bibliography-builder",
+        "full_name": "dknauss/borges-bibliography-builder",
+        "html_url": "https://github.com/dknauss/borges-bibliography-builder",
+        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
         "stargazers_count": 1,
         "language": "JavaScript",
-        "updated_at": "2026-05-04T01:49:27Z",
+        "updated_at": "2026-05-04T06:44:20Z",
         "fork": false,
         "archived": false,
         "owner": {
