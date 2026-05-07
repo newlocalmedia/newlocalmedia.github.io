@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-07T15:05:20.161Z",
+  "generated_at": "2026-05-07T19:55:41.815Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -58,7 +58,115 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
           "stargazers_count": 1,
           "language": "JavaScript",
-          "updated_at": "2026-05-05T16:46:51Z",
+          "updated_at": "2026-05-07T19:44:31Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1159501867,
+          "name": "wordpress-2fa-ecosystem",
+          "full_name": "dknauss/wordpress-2fa-ecosystem",
+          "html_url": "https://github.com/dknauss/wordpress-2fa-ecosystem",
+          "description": "Developer reference: how major WordPress 2FA plugins store secrets, detect users, and validate codes. Includes Sudo bridge examples for WP 2FA, Wordfence, and AIOS.",
+          "homepage": "https://github.com/dknauss/wordpress-2fa-ecosystem",
+          "stargazers_count": 1,
+          "language": "PHP",
+          "updated_at": "2026-05-07T15:27:56Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1159682753,
+          "name": "wp-security-hardening-guide",
+          "full_name": "dknauss/wp-security-hardening-guide",
+          "html_url": "https://github.com/dknauss/wp-security-hardening-guide",
+          "description": "WordPress security architecture and hardening guide: enterprise practices for threat mitigation, authentication, and supply chain defense.",
+          "homepage": "https://github.com/dknauss/wp-security-hardening-guide",
+          "stargazers_count": 3,
+          "language": null,
+          "updated_at": "2026-05-07T15:27:13Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1170971819,
+          "name": "ai-assisted-docs",
+          "full_name": "dknauss/ai-assisted-docs",
+          "html_url": "https://github.com/dknauss/ai-assisted-docs",
+          "description": "Methodology and process documentation for AI-assisted technical writing and review — a practical exploration.",
+          "homepage": "https://github.com/dknauss/ai-assisted-docs",
+          "stargazers_count": 3,
+          "language": "Shell",
+          "updated_at": "2026-05-07T15:26:20Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1159560835,
+          "name": "wp-security-style-guide",
+          "full_name": "dknauss/wp-security-style-guide",
+          "html_url": "https://github.com/dknauss/wp-security-style-guide",
+          "description": "WordPress security style guide: terminology, voice, and editorial standards for accurate security communication.",
+          "homepage": "https://github.com/dknauss/wp-security-style-guide",
+          "stargazers_count": 1,
+          "language": null,
+          "updated_at": "2026-05-07T15:23:48Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1160457512,
+          "name": "wordpress-runbook-template",
+          "full_name": "dknauss/wordpress-runbook-template",
+          "html_url": "https://github.com/dknauss/wordpress-runbook-template",
+          "description": "WordPress operations runbook template: production procedures for deployment, maintenance, backup, incident response, and recovery.",
+          "homepage": "https://github.com/dknauss/wordpress-runbook-template",
+          "stargazers_count": 3,
+          "language": null,
+          "updated_at": "2026-05-07T15:23:47Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1159560867,
+          "name": "wp-security-benchmark",
+          "full_name": "dknauss/wp-security-benchmark",
+          "html_url": "https://github.com/dknauss/wp-security-benchmark",
+          "description": "WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on Linux.",
+          "homepage": "https://github.com/dknauss/wp-security-benchmark",
+          "stargazers_count": 3,
+          "language": null,
+          "updated_at": "2026-05-07T15:23:40Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -104,60 +212,6 @@
           }
         },
         {
-          "id": 1160457512,
-          "name": "wordpress-runbook-template",
-          "full_name": "dknauss/wordpress-runbook-template",
-          "html_url": "https://github.com/dknauss/wordpress-runbook-template",
-          "description": "WordPress operations runbook template: production procedures for deployment, maintenance, backup, incident response, and recovery.",
-          "homepage": "https://github.com/dknauss/wordpress-runbook-template",
-          "stargazers_count": 3,
-          "language": null,
-          "updated_at": "2026-04-22T04:45:42Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1159682753,
-          "name": "wp-security-hardening-guide",
-          "full_name": "dknauss/wp-security-hardening-guide",
-          "html_url": "https://github.com/dknauss/wp-security-hardening-guide",
-          "description": "WordPress security architecture and hardening guide: enterprise practices for threat mitigation, authentication, and supply chain defense.",
-          "homepage": "https://github.com/dknauss/wp-security-hardening-guide",
-          "stargazers_count": 3,
-          "language": null,
-          "updated_at": "2026-04-21T20:25:38Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1159560867,
-          "name": "wp-security-benchmark",
-          "full_name": "dknauss/wp-security-benchmark",
-          "html_url": "https://github.com/dknauss/wp-security-benchmark",
-          "description": "WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on Linux.",
-          "homepage": "https://github.com/dknauss/wp-security-benchmark",
-          "stargazers_count": 3,
-          "language": null,
-          "updated_at": "2026-04-21T11:01:34Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
           "id": 1165510944,
           "name": "the-drafting-table",
           "full_name": "dknauss/the-drafting-table",
@@ -176,42 +230,6 @@
           }
         },
         {
-          "id": 1159560835,
-          "name": "wp-security-style-guide",
-          "full_name": "dknauss/wp-security-style-guide",
-          "html_url": "https://github.com/dknauss/wp-security-style-guide",
-          "description": "WordPress security style guide: terminology, voice, and editorial standards for accurate security communication.",
-          "homepage": "https://github.com/dknauss/wp-security-style-guide",
-          "stargazers_count": 1,
-          "language": null,
-          "updated_at": "2026-04-13T15:56:08Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1170971819,
-          "name": "ai-assisted-docs",
-          "full_name": "dknauss/ai-assisted-docs",
-          "html_url": "https://github.com/dknauss/ai-assisted-docs",
-          "description": "Methodology and process documentation for AI-assisted technical writing and review — a practical exploration.",
-          "homepage": "https://github.com/dknauss/ai-assisted-docs",
-          "stargazers_count": 3,
-          "language": "Shell",
-          "updated_at": "2026-04-13T08:35:16Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
           "id": 1175597908,
           "name": "author-identity",
           "full_name": "dknauss/author-identity",
@@ -221,24 +239,6 @@
           "stargazers_count": 0,
           "language": "PHP",
           "updated_at": "2026-04-08T23:51:39Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1159501867,
-          "name": "wordpress-2fa-ecosystem",
-          "full_name": "dknauss/wordpress-2fa-ecosystem",
-          "html_url": "https://github.com/dknauss/wordpress-2fa-ecosystem",
-          "description": "Developer reference: how major WordPress 2FA plugins store secrets, detect users, and validate codes. Includes Sudo bridge examples for WP 2FA, Wordfence, and AIOS.",
-          "homepage": "https://github.com/dknauss/wordpress-2fa-ecosystem",
-          "stargazers_count": 1,
-          "language": "PHP",
-          "updated_at": "2026-04-08T21:13:19Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -295,7 +295,7 @@
         "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
         "stargazers_count": 1,
         "language": "JavaScript",
-        "updated_at": "2026-05-05T16:46:51Z",
+        "updated_at": "2026-05-07T19:44:31Z",
         "fork": false,
         "archived": false,
         "owner": {
