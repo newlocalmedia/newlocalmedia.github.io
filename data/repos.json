@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-12T15:09:24.588Z",
+  "generated_at": "2026-05-12T20:10:36.590Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -56,9 +56,9 @@
           "html_url": "https://github.com/dknauss/borges-bibliography-builder",
           "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-          "stargazers_count": 1,
+          "stargazers_count": 2,
           "language": "JavaScript",
-          "updated_at": "2026-05-11T14:31:27Z",
+          "updated_at": "2026-05-12T19:45:20Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -285,7 +285,7 @@
         }
       ],
       "total_repos": 13,
-      "total_stars": 58,
+      "total_stars": 59,
       "latest_repo": {
         "id": 1203393463,
         "name": "borges-bibliography-builder",
@@ -293,9 +293,9 @@
         "html_url": "https://github.com/dknauss/borges-bibliography-builder",
         "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
         "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-        "stargazers_count": 1,
+        "stargazers_count": 2,
         "language": "JavaScript",
-        "updated_at": "2026-05-11T14:31:27Z",
+        "updated_at": "2026-05-12T19:45:20Z",
         "fork": false,
         "archived": false,
         "owner": {
