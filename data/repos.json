@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-10T16:09:35.044Z",
+  "generated_at": "2026-06-10T20:45:38.313Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -56,9 +56,9 @@
           "html_url": "https://github.com/dknauss/Sudo",
           "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
           "homepage": "https://github.com/dknauss/wp-sudo",
-          "stargazers_count": 43,
+          "stargazers_count": 42,
           "language": "PHP",
-          "updated_at": "2026-06-08T22:57:22Z",
+          "updated_at": "2026-06-10T20:09:44Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -285,7 +285,7 @@
         }
       ],
       "total_repos": 13,
-      "total_stars": 60,
+      "total_stars": 59,
       "latest_repo": {
         "id": 1154983208,
         "name": "Sudo",
@@ -293,9 +293,9 @@
         "html_url": "https://github.com/dknauss/Sudo",
         "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
         "homepage": "https://github.com/dknauss/wp-sudo",
-        "stargazers_count": 43,
+        "stargazers_count": 42,
         "language": "PHP",
-        "updated_at": "2026-06-08T22:57:22Z",
+        "updated_at": "2026-06-10T20:09:44Z",
         "fork": false,
         "archived": false,
         "owner": {
