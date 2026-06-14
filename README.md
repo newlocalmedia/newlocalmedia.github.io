@@ -1,6 +1,6 @@
 # Work in Progress
 
-[![Site Quality](https://github.com/newlocalmedia/newlocalmedia.github.io/actions/workflows/site-quality.yml/badge.svg)](https://github.com/newlocalmedia/newlocalmedia.github.io/actions/workflows/site-quality.yml)
+[![Site Quality](https://github.com/newlocalmedia/newlocalmedia.github.io/actions/workflows/site-quality.yml/badge.svg)](https://github.com/newlocalmedia/newlocalmedia.github.io/actions/workflows/site-quality.yml) [![Security Policy](https://img.shields.io/badge/security-policy-4c1)](SECURITY.md)
 [![Update Repo Data Snapshot](https://github.com/newlocalmedia/newlocalmedia.github.io/actions/workflows/update-repo-data.yml/badge.svg)](https://github.com/newlocalmedia/newlocalmedia.github.io/actions/workflows/update-repo-data.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Live Site](https://img.shields.io/badge/site-live-29ABE0)](https://newlocalmedia.github.io/)
