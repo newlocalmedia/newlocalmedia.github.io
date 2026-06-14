@@ -110,13 +110,13 @@ export const PROJECT_META = {
       { label: 'FAQ', description: 'Answers to common questions about configuration, behavior, and edge cases.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/FAQ.md' }
     ],
     screenshots: [
-      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-1.png', alt: 'Sudo challenge page showing the reauthentication interstitial with password field.', caption: 'Challenge page — reauthentication interstitial with password field.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-2.png', alt: 'Sudo two-factor authentication step after password confirmation.', caption: 'Two-factor authentication — after password confirmation, users with 2FA enabled enter their authentication code.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-3.png', alt: 'Sudo settings page with session duration and entry point policies.', caption: 'Settings page — configure session duration and entry point policies.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-4.png', alt: 'Sudo gate notice on the plugins page when no sudo session is active.', caption: 'Gate notice (plugins) — when no sudo session is active, a persistent notice links to the challenge page.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-5.png', alt: 'Sudo gate notice on the themes page.', caption: 'Gate notice (themes) — the same gating notice appears on the themes page.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-6.png', alt: 'Sudo settings page listing all gated actions with categories and surfaces.', caption: 'Gated actions — the settings page lists all gated operations with their categories and surfaces.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-7.png', alt: 'WordPress admin bar showing an active Sudo session with a green countdown timer.', caption: 'Active sudo session — the admin bar shows a green countdown timer.' }
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-1.png', alt: 'WP Sudo challenge page asking the current user to confirm their identity with a password.', caption: 'Challenge page — reauthentication interstitial with password field.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-2.png', alt: 'Settings tab with policy presets, session settings, and the active sudo timer in the admin bar.', caption: 'Settings tab — policy presets, session settings, and active sudo timer.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-3.png', alt: 'Gated Actions tab showing protected operations and the surfaces where each rule applies.', caption: 'Gated Actions tab — protected operations with rule IDs and covered surfaces.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-4.png', alt: 'Rule Tester tab evaluating a representative admin request without executing it.', caption: 'Rule Tester tab — evaluate representative request shapes without executing them.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-5.png', alt: 'Access tab for managing dedicated WP Sudo governance capabilities.', caption: 'Access tab — manage dedicated Sudo governance capabilities and revoke sessions.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-6.png', alt: 'Dashboard widget with active sudo sessions, policy summary, and recent privilege-action events.', caption: 'Dashboard widget — active sessions, policy summary, and recent privilege-action events.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-7.png', alt: 'Break-glass recovery mode notice on the Sudo settings screen.', caption: 'Break-glass recovery notice — visible warning while WP_SUDO_RECOVERY_MODE is active.' }
     ],
     relatedProjects: [
       {
@@ -564,6 +564,12 @@ export const PROJECT_META = {
       width: 1544,
       height: 500
     },
+    screenshots: [
+      { url: 'https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/.wordpress-org/screenshot-1.png', alt: 'Admin Menu Maestro in edit mode with the Posts menu item selected and the shared controls panel open.', caption: 'Edit mode with the Posts menu item selected and the shared controls panel open.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/.wordpress-org/screenshot-2.png', alt: 'Admin Menu Maestro searchable icon picker with Dashicons and Bootstrap Icons tabs.', caption: 'Searchable icon picker with Dashicons and Bootstrap Icons tabs.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/.wordpress-org/screenshot-3.png', alt: 'Admin Menu Maestro per-role visibility picker for hiding a menu item from selected roles.', caption: 'Per-role visibility picker for hiding a menu item from selected roles.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/.wordpress-org/screenshot-4.png', alt: 'A renamed WordPress admin menu item in Admin Menu Maestro saved through debounced autosave.', caption: 'A renamed menu item saved through debounced autosave.' }
+    ],
     focus: 'A Live Editor for the WordPress Admin Menu',
     subfocus: 'Rename, reorder, restyle, and hide admin-menu items in place — with role-aware visibility controls and a hosted Playground demo for fast testing.',
     relatedProjects: [
