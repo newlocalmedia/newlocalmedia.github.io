@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-14T14:59:29.847Z",
+  "generated_at": "2026-06-14T19:59:20.698Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -14,7 +14,7 @@
           "homepage": null,
           "stargazers_count": 1,
           "language": "HTML",
-          "updated_at": "2026-05-07T14:13:23Z",
+          "updated_at": "2026-06-14T15:38:30Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -35,7 +35,7 @@
         "homepage": null,
         "stargazers_count": 1,
         "language": "HTML",
-        "updated_at": "2026-05-07T14:13:23Z",
+        "updated_at": "2026-06-14T15:38:30Z",
         "fork": false,
         "archived": false,
         "owner": {
@@ -50,150 +50,6 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
-          "id": 1264131469,
-          "name": "Maestro",
-          "full_name": "dknauss/Maestro",
-          "html_url": "https://github.com/dknauss/Maestro",
-          "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/playground/blueprint-hosted.json",
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-06-14T14:47:52Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1154983208,
-          "name": "Sudo",
-          "full_name": "dknauss/Sudo",
-          "html_url": "https://github.com/dknauss/Sudo",
-          "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
-          "homepage": "https://github.com/dknauss/wp-sudo",
-          "stargazers_count": 42,
-          "language": "PHP",
-          "updated_at": "2026-06-14T14:24:49Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1203393463,
-          "name": "Borges",
-          "full_name": "dknauss/Borges",
-          "html_url": "https://github.com/dknauss/Borges",
-          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-          "stargazers_count": 2,
-          "language": "JavaScript",
-          "updated_at": "2026-06-14T13:52:48Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1165510944,
-          "name": "the-drafting-table",
-          "full_name": "dknauss/the-drafting-table",
-          "html_url": "https://github.com/dknauss/the-drafting-table",
-          "description": "A Frank Lloyd Wright-era architect's notebook FSE block theme for WordPress — aged parchment, dot-grid overlays, blueprint borders, and refined architectural typography.",
-          "homepage": null,
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-06-04T16:28:52Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1175597908,
-          "name": "author-identity",
-          "full_name": "dknauss/author-identity",
-          "html_url": "https://github.com/dknauss/author-identity",
-          "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
-          "homepage": "https://dan.knauss.ca",
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-06-04T16:01:11Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1159501867,
-          "name": "wordpress-2fa-ecosystem",
-          "full_name": "dknauss/wordpress-2fa-ecosystem",
-          "html_url": "https://github.com/dknauss/wordpress-2fa-ecosystem",
-          "description": "Developer reference: how major WordPress 2FA plugins store secrets, detect users, and validate codes. Includes Sudo bridge examples for WP 2FA, Wordfence, and AIOS.",
-          "homepage": "https://github.com/dknauss/wordpress-2fa-ecosystem",
-          "stargazers_count": 1,
-          "language": "PHP",
-          "updated_at": "2026-05-07T15:27:56Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1159682753,
-          "name": "wp-security-hardening-guide",
-          "full_name": "dknauss/wp-security-hardening-guide",
-          "html_url": "https://github.com/dknauss/wp-security-hardening-guide",
-          "description": "WordPress security architecture and hardening guide: enterprise practices for threat mitigation, authentication, and supply chain defense.",
-          "homepage": "https://github.com/dknauss/wp-security-hardening-guide",
-          "stargazers_count": 3,
-          "language": null,
-          "updated_at": "2026-05-07T15:27:13Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1170971819,
-          "name": "ai-assisted-docs",
-          "full_name": "dknauss/ai-assisted-docs",
-          "html_url": "https://github.com/dknauss/ai-assisted-docs",
-          "description": "Methodology and process documentation for AI-assisted technical writing and review — a practical exploration.",
-          "homepage": "https://github.com/dknauss/ai-assisted-docs",
-          "stargazers_count": 3,
-          "language": "Shell",
-          "updated_at": "2026-05-07T15:26:20Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
           "id": 1159560835,
           "name": "wp-security-style-guide",
           "full_name": "dknauss/wp-security-style-guide",
@@ -202,7 +58,7 @@
           "homepage": "https://github.com/dknauss/wp-security-style-guide",
           "stargazers_count": 1,
           "language": null,
-          "updated_at": "2026-05-07T15:23:48Z",
+          "updated_at": "2026-06-14T19:00:45Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -220,7 +76,25 @@
           "homepage": "https://github.com/dknauss/wordpress-runbook-template",
           "stargazers_count": 3,
           "language": null,
-          "updated_at": "2026-05-07T15:23:47Z",
+          "updated_at": "2026-06-14T19:00:31Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1159682753,
+          "name": "wp-security-hardening-guide",
+          "full_name": "dknauss/wp-security-hardening-guide",
+          "html_url": "https://github.com/dknauss/wp-security-hardening-guide",
+          "description": "WordPress security architecture and hardening guide: enterprise practices for threat mitigation, authentication, and supply chain defense.",
+          "homepage": "https://github.com/dknauss/wp-security-hardening-guide",
+          "stargazers_count": 3,
+          "language": null,
+          "updated_at": "2026-06-14T19:00:20Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -238,7 +112,61 @@
           "homepage": "https://github.com/dknauss/wp-security-benchmark",
           "stargazers_count": 3,
           "language": null,
-          "updated_at": "2026-05-07T15:23:40Z",
+          "updated_at": "2026-06-14T19:00:02Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1203393463,
+          "name": "Borges",
+          "full_name": "dknauss/Borges",
+          "html_url": "https://github.com/dknauss/Borges",
+          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
+          "stargazers_count": 2,
+          "language": "JavaScript",
+          "updated_at": "2026-06-14T17:08:51Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1170971819,
+          "name": "ai-assisted-docs",
+          "full_name": "dknauss/ai-assisted-docs",
+          "html_url": "https://github.com/dknauss/ai-assisted-docs",
+          "description": "Methodology and process documentation for AI-assisted technical writing and review — a practical exploration.",
+          "homepage": "https://github.com/dknauss/ai-assisted-docs",
+          "stargazers_count": 3,
+          "language": "Shell",
+          "updated_at": "2026-06-14T16:56:47Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1154983208,
+          "name": "Sudo",
+          "full_name": "dknauss/Sudo",
+          "html_url": "https://github.com/dknauss/Sudo",
+          "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
+          "homepage": "https://github.com/dknauss/wp-sudo",
+          "stargazers_count": 42,
+          "language": "PHP",
+          "updated_at": "2026-06-14T16:51:52Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -256,7 +184,79 @@
           "homepage": "https://github.com/dknauss/code-design-review-skills",
           "stargazers_count": 0,
           "language": null,
-          "updated_at": "2026-04-26T17:29:08Z",
+          "updated_at": "2026-06-14T16:51:48Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1165510944,
+          "name": "the-drafting-table",
+          "full_name": "dknauss/the-drafting-table",
+          "html_url": "https://github.com/dknauss/the-drafting-table",
+          "description": "A Frank Lloyd Wright-era architect's notebook FSE block theme for WordPress — aged parchment, dot-grid overlays, blueprint borders, and refined architectural typography.",
+          "homepage": null,
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-06-14T16:51:35Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1264131469,
+          "name": "Maestro",
+          "full_name": "dknauss/Maestro",
+          "html_url": "https://github.com/dknauss/Maestro",
+          "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/playground/blueprint-hosted.json",
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-06-14T16:51:26Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1175597908,
+          "name": "author-identity",
+          "full_name": "dknauss/author-identity",
+          "html_url": "https://github.com/dknauss/author-identity",
+          "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
+          "homepage": "https://dan.knauss.ca",
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-06-14T16:51:07Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1159501867,
+          "name": "wordpress-2fa-ecosystem",
+          "full_name": "dknauss/wordpress-2fa-ecosystem",
+          "html_url": "https://github.com/dknauss/wordpress-2fa-ecosystem",
+          "description": "Developer reference: how major WordPress 2FA plugins store secrets, detect users, and validate codes. Includes Sudo bridge examples for WP 2FA, Wordfence, and AIOS.",
+          "homepage": "https://github.com/dknauss/wordpress-2fa-ecosystem",
+          "stargazers_count": 1,
+          "language": "PHP",
+          "updated_at": "2026-06-14T15:42:21Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -274,7 +274,7 @@
           "homepage": "https://github.com/dknauss/fedibots",
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-04-05T20:19:38Z",
+          "updated_at": "2026-06-14T15:38:00Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -305,15 +305,15 @@
       "total_repos": 14,
       "total_stars": 59,
       "latest_repo": {
-        "id": 1264131469,
-        "name": "Maestro",
-        "full_name": "dknauss/Maestro",
-        "html_url": "https://github.com/dknauss/Maestro",
-        "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/playground/blueprint-hosted.json",
-        "stargazers_count": 0,
-        "language": "PHP",
-        "updated_at": "2026-06-14T14:47:52Z",
+        "id": 1159560835,
+        "name": "wp-security-style-guide",
+        "full_name": "dknauss/wp-security-style-guide",
+        "html_url": "https://github.com/dknauss/wp-security-style-guide",
+        "description": "WordPress security style guide: terminology, voice, and editorial standards for accurate security communication.",
+        "homepage": "https://github.com/dknauss/wp-security-style-guide",
+        "stargazers_count": 1,
+        "language": null,
+        "updated_at": "2026-06-14T19:00:45Z",
         "fork": false,
         "archived": false,
         "owner": {
