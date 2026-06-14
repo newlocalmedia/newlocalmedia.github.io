@@ -842,7 +842,7 @@ ${JSON.stringify(graph, null, 2)}
     .hero-top-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
     .breadcrumbs { display: flex; gap: 8px; align-items: center; flex-shrink: 0; font-size: 0.82rem; }
     .brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
-    .brand img { width: 56px; height: 56px; border-radius: 18px; background: rgba(255,255,255,0.06); }
+    .brand img { width: 56px; height: 56px; border-radius: 18px; background: transparent; }
     .brand-copy { display: grid; gap: 2px; }
     .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--foreground); }
     .muted, .lede, .breadcrumbs a, .breadcrumbs span, .section p, .detail-list dt { color: var(--foreground); }
@@ -1342,7 +1342,7 @@ ${JSON.stringify(graph, null, 2)}
     .topbar, .breadcrumbs { display: flex; gap: 12px; flex-wrap: wrap; }
     .topbar { justify-content: space-between; align-items: center; }
     .brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
-    .brand img { width: 56px; height: 56px; border-radius: 18px; background: rgba(255,255,255,0.06); }
+    .brand img { width: 56px; height: 56px; border-radius: 18px; background: transparent; }
     .brand-copy { display: grid; gap: 2px; }
     .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--foreground); }
     .muted, .breadcrumbs a, .breadcrumbs span, .lede { color: var(--foreground); }
@@ -1514,7 +1514,7 @@ ${JSON.stringify(graph, null, 2)}
     .topbar, .hero, .section { padding: 24px; }
     .topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
     .brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
-    .brand img { width: 56px; height: 56px; border-radius: 18px; background: rgba(255,255,255,0.06); }
+    .brand img { width: 56px; height: 56px; border-radius: 18px; background: transparent; }
     .brand-copy { display: grid; gap: 2px; }
     .eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--foreground); }
     .muted, .lede { color: var(--foreground); }
