@@ -39,8 +39,8 @@ const REPO_ICON_SVGS = {
   'dknauss/fedibots': '<svg viewBox="0 0 24 24"><rect x="7" y="8" width="10" height="9" rx="2"/><path d="M10 8V6"/><path d="M14 8V6"/><path d="M10 12h.01"/><path d="M14 12h.01"/><path d="M5 11H3"/><path d="M21 11h-2"/></svg>',
   'dknauss/wordpress-2fa-ecosystem': '<svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="10" rx="2"/><path d="M8 12h.01"/><path d="M11 12h.01"/><path d="M14 12h.01"/><path d="M17 12h.01"/><path d="M9 17v2"/><path d="M15 17v2"/></svg>',
   'dknauss/the-drafting-table': '<svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16l8-8 2 2-8 8H7z"/><path d="M14 7l2 2"/></svg>',
-  'dknauss/borges-bibliography-builder': '<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8"/><path d="M8 12h8"/><path d="M8 15h5"/><path d="M4 4v16"/><path d="M7 4v16"/></svg>',
-  'dknauss/admin-menu-maestro': '<svg viewBox="0 0 24 24"><path d="M5 7h8"/><path d="M5 12h8"/><path d="M5 17h12"/><path d="M14 6l4 4"/><path d="M13 11l5-5"/><path d="M17.5 4.5l2 2"/></svg>'
+  'dknauss/Borges': '<svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M8 9h8"/><path d="M8 12h8"/><path d="M8 15h5"/><path d="M4 4v16"/><path d="M7 4v16"/></svg>',
+  'dknauss/Maestro': '<svg viewBox="0 0 24 24"><path d="M5 7h8"/><path d="M5 12h8"/><path d="M5 17h12"/><path d="M14 6l4 4"/><path d="M13 11l5-5"/><path d="M17.5 4.5l2 2"/></svg>'
 };
 const DEFAULT_REPO_ICON_SVG = '<svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg>';
 const UI_ICON_SVGS = {

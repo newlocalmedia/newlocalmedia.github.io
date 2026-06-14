@@ -25,8 +25,8 @@ export const SELECTED = [
   'dknauss/the-drafting-table'
 ];
 export const BLOCKS_SHOWCASE = [
-  'dknauss/borges-bibliography-builder',
-  'dknauss/admin-menu-maestro'
+  'dknauss/Borges',
+  'dknauss/Maestro'
 ];
 
 export const CURATED_REPOS = [LEAD_REPO, ...AI_DOCS_GROUP, ...SPOTLIGHT, ...SELECTED, ...BLOCKS_SHOWCASE];
@@ -390,7 +390,7 @@ export const PROJECT_META = {
     ],
     relatedProjects: [
       {
-        fullName: 'dknauss/borges-bibliography-builder',
+        fullName: 'dknauss/Borges',
         label: 'Borges Bibliography Builder',
         description: 'WordPress block plugin that transforms DOI, BibTeX, and supported formatted citations into semantically rich, reference-manager friendly bibliographies — a natural companion for structured content authorship.'
       }
@@ -473,7 +473,7 @@ export const PROJECT_META = {
     whyHeading: 'Build an Architect\u2019s Notebook in WordPress',
     relatedProjects: [
       {
-        fullName: 'dknauss/borges-bibliography-builder',
+        fullName: 'dknauss/Borges',
         label: 'Borges Bibliography Builder',
         description: 'WordPress block plugin for structured DOI, BibTeX, and citation input — static, semantic bibliographies for the block editor.'
       }
@@ -493,17 +493,17 @@ export const PROJECT_META = {
     focus: 'An Architect’s Notebook as a WordPress Theme',
     subfocus: 'A full-site editing theme with parchment textures, blueprint framing, strong typography, and portfolio-ready patterns.'
   },
-  'dknauss/borges-bibliography-builder': {
+  'dknauss/Borges': {
     displayTitle: 'Borges Bibliography Builder',
     slug: 'borges-bibliography-builder',
     legacySlugs: ['bibliography-builder', 'wp-bibliography-block'],
     schemaType: 'SoftwareSourceCode',
     homepage: 'https://wordpress.org/plugins/borges-bibliography-builder/',
     homepageLabel: 'WordPress.org',
-    release: { tag: 'v1.0.0', url: 'https://github.com/dknauss/borges-bibliography-builder/releases/tag/v1.0.0' },
+    release: { tag: 'v1.0.0', url: 'https://github.com/dknauss/Borges/releases/tag/v1.0.0' },
     tests: 'Playwright smoke, PHP/WP runtime matrix',
-    license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/borges-bibliography-builder/blob/main/LICENSE' },
-    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json',
+    license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/Borges/blob/main/LICENSE' },
+    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Borges/main/playground/blueprint.json',
     detailLinksLabel: 'WordPress.org',
     extraLinks: [
       { label: 'WordPress.org', heroLabel: '🔌 WordPress.org', heroAfterRelease: true, url: 'https://wordpress.org/plugins/borges-bibliography-builder/' }
@@ -525,11 +525,11 @@ export const PROJECT_META = {
       height: 500
     },
     screenshots: [
-      { url: 'https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/.wordpress-org/screenshot-1.png', alt: 'Borges Bibliography Builder shown in the WordPress block inserter.', caption: 'Discover Borges Bibliography Builder in the inserter.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/.wordpress-org/screenshot-2.png', alt: 'Borges Bibliography Builder import form with DOI, BibTeX, and citation text input.', caption: 'Paste DOI, BibTeX, or supported citation text into the import form.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/.wordpress-org/screenshot-3.png', alt: 'Borges Bibliography Builder manual entry interface with publication type and structured fields.', caption: 'Use Manual Entry to build a citation with publication type and structured fields.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/.wordpress-org/screenshot-4.png', alt: 'Borges Bibliography Builder settings sidebar with citation style, metadata output, and export actions.', caption: 'Configure citation style, metadata output, and export actions in the block settings sidebar.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/.wordpress-org/screenshot-5.png', alt: 'Rendered Borges Bibliography Builder output on the front end with linked URLs and semantic markup.', caption: 'View the rendered bibliography on the site front end with linked URLs and semantic output.' }
+      { url: 'https://raw.githubusercontent.com/dknauss/Borges/main/.wordpress-org/screenshot-1.png', alt: 'Borges Bibliography Builder shown in the WordPress block inserter.', caption: 'Discover Borges Bibliography Builder in the inserter.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Borges/main/.wordpress-org/screenshot-2.png', alt: 'Borges Bibliography Builder import form with DOI, BibTeX, and citation text input.', caption: 'Paste DOI, BibTeX, or supported citation text into the import form.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Borges/main/.wordpress-org/screenshot-3.png', alt: 'Borges Bibliography Builder manual entry interface with publication type and structured fields.', caption: 'Use Manual Entry to build a citation with publication type and structured fields.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Borges/main/.wordpress-org/screenshot-4.png', alt: 'Borges Bibliography Builder settings sidebar with citation style, metadata output, and export actions.', caption: 'Configure citation style, metadata output, and export actions in the block settings sidebar.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Borges/main/.wordpress-org/screenshot-5.png', alt: 'Rendered Borges Bibliography Builder output on the front end with linked URLs and semantic markup.', caption: 'View the rendered bibliography on the site front end with linked URLs and semantic output.' }
     ],
     relatedProjects: [
       {
@@ -541,14 +541,14 @@ export const PROJECT_META = {
     focus: 'Scholarly References in the Block Editor',
     subfocus: 'DOI lookups, BibTeX input, and citation text converted to static, semantically rich bibliographies with portable outputs for research and publishing workflows.'
   },
-  'dknauss/admin-menu-maestro': {
+  'dknauss/Maestro': {
     displayTitle: 'Admin Menu Maestro',
     slug: 'admin-menu-maestro',
     schemaType: 'SoftwareSourceCode',
     version: '1.0.0',
     tests: 'PHP unit/integration tests + Playwright E2E',
-    license: { label: 'GPL-2.0-or-later', url: 'https://github.com/dknauss/admin-menu-maestro/blob/main/LICENSE' },
-    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/playground/blueprint-hosted.json',
+    license: { label: 'GPL-2.0-or-later', url: 'https://github.com/dknauss/Maestro/blob/main/LICENSE' },
+    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-hosted.json',
     seoDescription: 'WordPress admin menu editor for renaming, reordering, icon swapping, and per-role visibility — edited directly on the menu itself.',
     summary: 'Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.',
     whyHeading: 'Edit WordPress Admin Menus In Place',
@@ -565,26 +565,26 @@ export const PROJECT_META = {
       height: 500
     },
     screenshots: [
-      { url: 'https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/.wordpress-org/screenshot-1.png', alt: 'Admin Menu Maestro in edit mode with the Posts menu item selected and the shared controls panel open.', caption: 'Edit mode with the Posts menu item selected and the shared controls panel open.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/.wordpress-org/screenshot-2.png', alt: 'Admin Menu Maestro searchable icon picker with Dashicons and Bootstrap Icons tabs.', caption: 'Searchable icon picker with Dashicons and Bootstrap Icons tabs.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/.wordpress-org/screenshot-3.png', alt: 'Admin Menu Maestro per-role visibility picker for hiding a menu item from selected roles.', caption: 'Per-role visibility picker for hiding a menu item from selected roles.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/.wordpress-org/screenshot-4.png', alt: 'A renamed WordPress admin menu item in Admin Menu Maestro saved through debounced autosave.', caption: 'A renamed menu item saved through debounced autosave.' }
+      { url: 'https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-1.png', alt: 'Admin Menu Maestro in edit mode with the Posts menu item selected and the shared controls panel open.', caption: 'Edit mode with the Posts menu item selected and the shared controls panel open.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-2.png', alt: 'Admin Menu Maestro searchable icon picker with Dashicons and Bootstrap Icons tabs.', caption: 'Searchable icon picker with Dashicons and Bootstrap Icons tabs.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-3.png', alt: 'Admin Menu Maestro per-role visibility picker for hiding a menu item from selected roles.', caption: 'Per-role visibility picker for hiding a menu item from selected roles.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-4.png', alt: 'A renamed WordPress admin menu item in Admin Menu Maestro saved through debounced autosave.', caption: 'A renamed menu item saved through debounced autosave.' }
     ],
     focus: 'A Live Editor for the WordPress Admin Menu',
     subfocus: 'Rename, reorder, restyle, and hide admin-menu items in place — with role-aware visibility controls and a hosted Playground demo for fast testing.',
     relatedProjects: [
       {
-        fullName: 'dknauss/borges-bibliography-builder',
+        fullName: 'dknauss/Borges',
         label: 'Borges Bibliography Builder',
         description: 'Another WordPress plugin with strong editorial UX and a hosted Playground demo, but aimed at structured citations instead of admin menus.'
       }
     ],
     docs: [
-      { label: 'README', description: 'Repository overview, feature summary, install steps, Playground demo, and development workflow.', url: 'https://github.com/dknauss/admin-menu-maestro/blob/main/README.md' },
-      { label: 'WordPress Readme', description: 'Plugin-directory style readme with usage notes, architecture summary, known limits, and changelog.', url: 'https://github.com/dknauss/admin-menu-maestro/blob/main/readme.txt' },
-      { label: 'SPEC', description: 'Durable specification for the plugin behavior, editor model, and data design.', url: 'https://github.com/dknauss/admin-menu-maestro/blob/main/SPEC.md' },
-      { label: 'Testing', description: 'How to run the unit, integration, Playground, and Playwright test layers.', url: 'https://github.com/dknauss/admin-menu-maestro/blob/main/TESTING.md' },
-      { label: 'FIXES', description: 'Resolved punch list and implementation notes for the v1 editor and autosave model.', url: 'https://github.com/dknauss/admin-menu-maestro/blob/main/FIXES.md' }
+      { label: 'README', description: 'Repository overview, feature summary, install steps, Playground demo, and development workflow.', url: 'https://github.com/dknauss/Maestro/blob/main/README.md' },
+      { label: 'WordPress Readme', description: 'Plugin-directory style readme with usage notes, architecture summary, known limits, and changelog.', url: 'https://github.com/dknauss/Maestro/blob/main/readme.txt' },
+      { label: 'SPEC', description: 'Durable specification for the plugin behavior, editor model, and data design.', url: 'https://github.com/dknauss/Maestro/blob/main/SPEC.md' },
+      { label: 'Testing', description: 'How to run the unit, integration, Playground, and Playwright test layers.', url: 'https://github.com/dknauss/Maestro/blob/main/TESTING.md' },
+      { label: 'FIXES', description: 'Resolved punch list and implementation notes for the v1 editor and autosave model.', url: 'https://github.com/dknauss/Maestro/blob/main/FIXES.md' }
     ]
   }
 };
