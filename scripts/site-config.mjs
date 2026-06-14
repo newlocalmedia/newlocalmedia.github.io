@@ -25,7 +25,8 @@ export const SELECTED = [
   'dknauss/the-drafting-table'
 ];
 export const BLOCKS_SHOWCASE = [
-  'dknauss/borges-bibliography-builder'
+  'dknauss/borges-bibliography-builder',
+  'dknauss/admin-menu-maestro'
 ];
 
 export const CURATED_REPOS = [LEAD_REPO, ...AI_DOCS_GROUP, ...SPOTLIGHT, ...SELECTED, ...BLOCKS_SHOWCASE];
@@ -539,6 +540,46 @@ export const PROJECT_META = {
     ],
     focus: 'Scholarly References in the Block Editor',
     subfocus: 'DOI lookups, BibTeX input, and citation text converted to static, semantically rich bibliographies with portable outputs for research and publishing workflows.'
+  },
+  'dknauss/admin-menu-maestro': {
+    displayTitle: 'Admin Menu Maestro',
+    slug: 'admin-menu-maestro',
+    schemaType: 'SoftwareSourceCode',
+    version: '1.0.0',
+    tests: 'PHP unit/integration tests + Playwright E2E',
+    license: { label: 'GPL-2.0-or-later', url: 'https://github.com/dknauss/admin-menu-maestro/blob/main/LICENSE' },
+    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/playground/blueprint-hosted.json',
+    seoDescription: 'WordPress admin menu editor for renaming, reordering, icon swapping, and per-role visibility — edited directly on the menu itself.',
+    summary: 'Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.',
+    whyHeading: 'Edit WordPress Admin Menus In Place',
+    narrativeHtml: [
+      'Admin Menu Maestro turns the WordPress admin menu itself into the editor: toggle <em>Edit Menu</em> from the admin bar, then rename items, drag them into a new order, swap top-level icons, and hide items for selected roles without leaving the menu.',
+      'The configuration is global and sparse — a delta layered over the menu WordPress already builds each load — with debounced autosave, no separate settings screen, and a clear warning that per-role hiding is cosmetic menu decluttering, not access control.'
+    ],
+    omitGenericNarrative: true,
+    homeImageClass: 'spotlight-media--banner',
+    primaryImage: {
+      url: 'https://newlocalmedia.github.io/assets/admin-menu-maestro-banner.png',
+      alt: 'Admin Menu Maestro banner with a stylized WordPress admin menu, conducting baton, and the tagline Orchestrate your menu in place, inside the dashboard.',
+      width: 1544,
+      height: 500
+    },
+    focus: 'A Live Editor for the WordPress Admin Menu',
+    subfocus: 'Rename, reorder, restyle, and hide admin-menu items in place — with role-aware visibility controls and a hosted Playground demo for fast testing.',
+    relatedProjects: [
+      {
+        fullName: 'dknauss/borges-bibliography-builder',
+        label: 'Borges Bibliography Builder',
+        description: 'Another WordPress plugin with strong editorial UX and a hosted Playground demo, but aimed at structured citations instead of admin menus.'
+      }
+    ],
+    docs: [
+      { label: 'README', description: 'Repository overview, feature summary, install steps, Playground demo, and development workflow.', url: 'https://github.com/dknauss/admin-menu-maestro/blob/main/README.md' },
+      { label: 'WordPress Readme', description: 'Plugin-directory style readme with usage notes, architecture summary, known limits, and changelog.', url: 'https://github.com/dknauss/admin-menu-maestro/blob/main/readme.txt' },
+      { label: 'SPEC', description: 'Durable specification for the plugin behavior, editor model, and data design.', url: 'https://github.com/dknauss/admin-menu-maestro/blob/main/SPEC.md' },
+      { label: 'Testing', description: 'How to run the unit, integration, Playground, and Playwright test layers.', url: 'https://github.com/dknauss/admin-menu-maestro/blob/main/TESTING.md' },
+      { label: 'FIXES', description: 'Resolved punch list and implementation notes for the v1 editor and autosave model.', url: 'https://github.com/dknauss/admin-menu-maestro/blob/main/FIXES.md' }
+    ]
   }
 };
 
