@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://newlocalmedia.github.io/</loc>
-    <lastmod>2026-06-14T19:59:20.698Z</lastmod>
+    <lastmod>2026-06-15T05:29:23.846Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/</loc>
-    <lastmod>2026-06-14T19:00:45Z</lastmod>
+    <lastmod>2026-06-15T03:24:40Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/</loc>
-    <lastmod>2026-06-14T19:00:45Z</lastmod>
+    <lastmod>2026-06-15T03:24:40Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -32,13 +32,13 @@
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/ai-assisted-docs/</loc>
-    <lastmod>2026-06-14T16:56:47Z</lastmod>
+    <lastmod>2026-06-14T21:29:44Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/wordpress-runbook-template/</loc>
-    <lastmod>2026-06-14T19:00:31Z</lastmod>
+    <lastmod>2026-06-15T03:24:40Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
