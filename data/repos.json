@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T16:06:35.987Z",
+  "generated_at": "2026-06-17T20:30:29.009Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,24 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1264131469,
+          "name": "Maestro",
+          "full_name": "dknauss/Maestro",
+          "html_url": "https://github.com/dknauss/Maestro",
+          "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/playground/blueprint-hosted.json",
+          "stargazers_count": 1,
+          "language": "PHP",
+          "updated_at": "2026-06-17T18:42:52Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1269513041,
           "name": "wp-perfopt-guide",
           "full_name": "dknauss/wp-perfopt-guide",
@@ -58,7 +76,7 @@
           "homepage": null,
           "stargazers_count": 0,
           "language": null,
-          "updated_at": "2026-06-17T16:06:20Z",
+          "updated_at": "2026-06-17T16:40:08Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -76,43 +94,7 @@
           "homepage": "https://github.com/dknauss/wp-security-style-guide",
           "stargazers_count": 1,
           "language": null,
-          "updated_at": "2026-06-17T16:06:17Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1159682753,
-          "name": "wp-security-hardening-guide",
-          "full_name": "dknauss/wp-security-hardening-guide",
-          "html_url": "https://github.com/dknauss/wp-security-hardening-guide",
-          "description": "WordPress security architecture and hardening guide: enterprise practices for threat mitigation, authentication, and supply chain defense.",
-          "homepage": "https://github.com/dknauss/wp-security-hardening-guide",
-          "stargazers_count": 3,
-          "language": null,
-          "updated_at": "2026-06-17T16:06:13Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1159560867,
-          "name": "wp-security-benchmark",
-          "full_name": "dknauss/wp-security-benchmark",
-          "html_url": "https://github.com/dknauss/wp-security-benchmark",
-          "description": "WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on Linux.",
-          "homepage": "https://github.com/dknauss/wp-security-benchmark",
-          "stargazers_count": 3,
-          "language": null,
-          "updated_at": "2026-06-17T16:06:10Z",
+          "updated_at": "2026-06-17T16:40:05Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -130,7 +112,7 @@
           "homepage": "https://github.com/dknauss/wordpress-runbook-template",
           "stargazers_count": 3,
           "language": null,
-          "updated_at": "2026-06-17T15:56:27Z",
+          "updated_at": "2026-06-17T16:40:04Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -140,15 +122,51 @@
           }
         },
         {
-          "id": 1264131469,
-          "name": "Maestro",
-          "full_name": "dknauss/Maestro",
-          "html_url": "https://github.com/dknauss/Maestro",
-          "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/playground/blueprint-hosted.json",
-          "stargazers_count": 1,
-          "language": "PHP",
-          "updated_at": "2026-06-17T14:55:41Z",
+          "id": 1159682753,
+          "name": "wp-security-hardening-guide",
+          "full_name": "dknauss/wp-security-hardening-guide",
+          "html_url": "https://github.com/dknauss/wp-security-hardening-guide",
+          "description": "WordPress security architecture and hardening guide: enterprise practices for threat mitigation, authentication, and supply chain defense.",
+          "homepage": "https://github.com/dknauss/wp-security-hardening-guide",
+          "stargazers_count": 3,
+          "language": null,
+          "updated_at": "2026-06-17T16:40:02Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1159560867,
+          "name": "wp-security-benchmark",
+          "full_name": "dknauss/wp-security-benchmark",
+          "html_url": "https://github.com/dknauss/wp-security-benchmark",
+          "description": "WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on Linux.",
+          "homepage": "https://github.com/dknauss/wp-security-benchmark",
+          "stargazers_count": 3,
+          "language": null,
+          "updated_at": "2026-06-17T16:40:00Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1170971819,
+          "name": "ai-assisted-docs",
+          "full_name": "dknauss/ai-assisted-docs",
+          "html_url": "https://github.com/dknauss/ai-assisted-docs",
+          "description": "Methodology and process documentation for AI-assisted technical writing and review — a practical exploration.",
+          "homepage": "https://github.com/dknauss/ai-assisted-docs",
+          "stargazers_count": 3,
+          "language": "Shell",
+          "updated_at": "2026-06-17T16:36:38Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -185,24 +203,6 @@
           "stargazers_count": 42,
           "language": "PHP",
           "updated_at": "2026-06-16T06:10:44Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1170971819,
-          "name": "ai-assisted-docs",
-          "full_name": "dknauss/ai-assisted-docs",
-          "html_url": "https://github.com/dknauss/ai-assisted-docs",
-          "description": "Methodology and process documentation for AI-assisted technical writing and review — a practical exploration.",
-          "homepage": "https://github.com/dknauss/ai-assisted-docs",
-          "stargazers_count": 3,
-          "language": "Shell",
-          "updated_at": "2026-06-14T21:29:44Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -323,15 +323,15 @@
       "total_repos": 15,
       "total_stars": 60,
       "latest_repo": {
-        "id": 1269513041,
-        "name": "wp-perfopt-guide",
-        "full_name": "dknauss/wp-perfopt-guide",
-        "html_url": "https://github.com/dknauss/wp-perfopt-guide",
-        "description": "WordPress performance optimization guidance for developers, technical leads, SREs, and enterprise operators.",
-        "homepage": null,
-        "stargazers_count": 0,
-        "language": null,
-        "updated_at": "2026-06-17T16:06:20Z",
+        "id": 1264131469,
+        "name": "Maestro",
+        "full_name": "dknauss/Maestro",
+        "html_url": "https://github.com/dknauss/Maestro",
+        "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/admin-menu-maestro/main/playground/blueprint-hosted.json",
+        "stargazers_count": 1,
+        "language": "PHP",
+        "updated_at": "2026-06-17T18:42:52Z",
         "fork": false,
         "archived": false,
         "owner": {
