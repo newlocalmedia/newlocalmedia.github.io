@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-18T15:53:54.757Z",
+  "generated_at": "2026-06-18T20:39:09.298Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -49,6 +49,24 @@
       "user": "dknauss",
       "profile_url": "https://github.com/dknauss",
       "repos": [
+        {
+          "id": 1273660935,
+          "name": "dirtbag",
+          "full_name": "dknauss/dirtbag",
+          "html_url": "https://github.com/dknauss/dirtbag",
+          "description": "A super-simple, HTML-only WordPress block theme built on good bones and road grit.",
+          "homepage": "",
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-06-18T20:23:30Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
         {
           "id": 1203393463,
           "name": "Borges",
@@ -320,18 +338,18 @@
           }
         }
       ],
-      "total_repos": 15,
+      "total_repos": 16,
       "total_stars": 60,
       "latest_repo": {
-        "id": 1203393463,
-        "name": "Borges",
-        "full_name": "dknauss/Borges",
-        "html_url": "https://github.com/dknauss/Borges",
-        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-        "stargazers_count": 2,
-        "language": "JavaScript",
-        "updated_at": "2026-06-17T22:26:45Z",
+        "id": 1273660935,
+        "name": "dirtbag",
+        "full_name": "dknauss/dirtbag",
+        "html_url": "https://github.com/dknauss/dirtbag",
+        "description": "A super-simple, HTML-only WordPress block theme built on good bones and road grit.",
+        "homepage": "",
+        "stargazers_count": 0,
+        "language": "PHP",
+        "updated_at": "2026-06-18T20:23:30Z",
         "fork": false,
         "archived": false,
         "owner": {
