@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T05:26:34.955Z",
+  "generated_at": "2026-06-19T10:57:56.962Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -54,11 +54,11 @@
           "name": "dirtbag",
           "full_name": "dknauss/dirtbag",
           "html_url": "https://github.com/dknauss/dirtbag",
-          "description": "A super-simple, HTML-only WordPress block theme built on good bones and road grit.",
+          "description": "Dirtbag is a super-simple, WordPress block theme built on good bones and road grit. It's a lean utility vehicle designed for tinkering and practical self-education.",
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/dirtbag/main/playground/blueprint-stable.json",
           "stargazers_count": 1,
-          "language": "PHP",
-          "updated_at": "2026-06-19T02:23:41Z",
+          "language": "HTML",
+          "updated_at": "2026-06-19T07:28:30Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -345,11 +345,11 @@
         "name": "dirtbag",
         "full_name": "dknauss/dirtbag",
         "html_url": "https://github.com/dknauss/dirtbag",
-        "description": "A super-simple, HTML-only WordPress block theme built on good bones and road grit.",
+        "description": "Dirtbag is a super-simple, WordPress block theme built on good bones and road grit. It's a lean utility vehicle designed for tinkering and practical self-education.",
         "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/dirtbag/main/playground/blueprint-stable.json",
         "stargazers_count": 1,
-        "language": "PHP",
-        "updated_at": "2026-06-19T02:23:41Z",
+        "language": "HTML",
+        "updated_at": "2026-06-19T07:28:30Z",
         "fork": false,
         "archived": false,
         "owner": {
