@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://newlocalmedia.github.io/</loc>
-    <lastmod>2026-06-23T20:23:38.240Z</lastmod>
+    <lastmod>2026-06-24T04:38:13.803Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/</loc>
-    <lastmod>2026-06-23T17:41:03Z</lastmod>
+    <lastmod>2026-06-23T21:49:06Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/</loc>
-    <lastmod>2026-06-23T17:41:03Z</lastmod>
+    <lastmod>2026-06-23T21:49:06Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/wp-sudo/</loc>
-    <lastmod>2026-06-23T13:32:32Z</lastmod>
+    <lastmod>2026-06-23T21:49:06Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
