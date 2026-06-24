@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-24T09:51:12.501Z",
+  "generated_at": "2026-06-24T15:09:39.377Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,24 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1279310601,
+          "name": "wp-pullquote-aside",
+          "full_name": "dknauss/wp-pullquote-aside",
+          "html_url": "https://github.com/dknauss/wp-pullquote-aside",
+          "description": "Render the WordPress core Pullquote block as a semantically correct <aside> instead of a <blockquote>. A pull quote is paratextual, not a quotation. See Gutenberg #11610.",
+          "homepage": null,
+          "stargazers_count": 0,
+          "language": null,
+          "updated_at": "2026-06-24T15:09:36Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1273660935,
           "name": "dirtbag",
           "full_name": "dknauss/dirtbag",
@@ -58,7 +76,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/dirtbag/main/playground/blueprint-stable.json",
           "stargazers_count": 3,
           "language": "PHP",
-          "updated_at": "2026-06-24T07:48:59Z",
+          "updated_at": "2026-06-24T15:08:54Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -76,7 +94,7 @@
           "homepage": "https://github.com/dknauss/wp-sudo",
           "stargazers_count": 42,
           "language": "PHP",
-          "updated_at": "2026-06-23T21:49:06Z",
+          "updated_at": "2026-06-24T14:18:03Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -356,18 +374,18 @@
           }
         }
       ],
-      "total_repos": 17,
+      "total_repos": 18,
       "total_stars": 63,
       "latest_repo": {
-        "id": 1273660935,
-        "name": "dirtbag",
-        "full_name": "dknauss/dirtbag",
-        "html_url": "https://github.com/dknauss/dirtbag",
-        "description": "Dirtbag is a super-simple, WordPress block theme built on good bones and road grit. It's a lean utility vehicle designed for tinkering and practical self-education.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/dirtbag/main/playground/blueprint-stable.json",
-        "stargazers_count": 3,
-        "language": "PHP",
-        "updated_at": "2026-06-24T07:48:59Z",
+        "id": 1279310601,
+        "name": "wp-pullquote-aside",
+        "full_name": "dknauss/wp-pullquote-aside",
+        "html_url": "https://github.com/dknauss/wp-pullquote-aside",
+        "description": "Render the WordPress core Pullquote block as a semantically correct <aside> instead of a <blockquote>. A pull quote is paratextual, not a quotation. See Gutenberg #11610.",
+        "homepage": null,
+        "stargazers_count": 0,
+        "language": null,
+        "updated_at": "2026-06-24T15:09:36Z",
         "fork": false,
         "archived": false,
         "owner": {
