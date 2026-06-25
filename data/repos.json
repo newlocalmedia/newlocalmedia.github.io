@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T09:45:33.659Z",
+  "generated_at": "2026-06-25T15:17:40.238Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -58,7 +58,7 @@
           "homepage": "https://github.com/dknauss/wp-sudo",
           "stargazers_count": 42,
           "language": "PHP",
-          "updated_at": "2026-06-24T19:18:24Z",
+          "updated_at": "2026-06-25T14:14:59Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -385,7 +385,7 @@
         "homepage": "https://github.com/dknauss/wp-sudo",
         "stargazers_count": 42,
         "language": "PHP",
-        "updated_at": "2026-06-24T19:18:24Z",
+        "updated_at": "2026-06-25T14:14:59Z",
         "fork": false,
         "archived": false,
         "owner": {
