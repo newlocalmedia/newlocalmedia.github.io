@@ -9,6 +9,6 @@
     "check:seo": "node scripts/check-site.mjs"
   },
   "devDependencies": {
-    "html-validate": "^11.5.1"
+    "html-validate": "^11.5.4"
   }
 }
