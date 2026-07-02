@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T09:33:34.575Z",
+  "generated_at": "2026-07-02T14:30:17.451Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,60 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1273660935,
+          "name": "dirtbag",
+          "full_name": "dknauss/dirtbag",
+          "html_url": "https://github.com/dknauss/dirtbag",
+          "description": "Dirtbag is a super-simple, WordPress block theme built on good bones and road grit. It's a lean utility vehicle designed for tinkering and practical self-education.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/dirtbag/main/playground/blueprint-stable.json",
+          "stargazers_count": 4,
+          "language": "PHP",
+          "updated_at": "2026-07-02T14:25:45Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1264131469,
+          "name": "Maestro",
+          "full_name": "dknauss/Maestro",
+          "html_url": "https://github.com/dknauss/Maestro",
+          "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
+          "stargazers_count": 1,
+          "language": "PHP",
+          "updated_at": "2026-07-02T14:19:14Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1175597908,
+          "name": "author-identity",
+          "full_name": "dknauss/author-identity",
+          "html_url": "https://github.com/dknauss/author-identity",
+          "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
+          "homepage": "https://dan.knauss.ca",
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-07-02T14:18:05Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1154983208,
           "name": "Sudo",
           "full_name": "dknauss/Sudo",
@@ -58,7 +112,7 @@
           "homepage": "https://github.com/dknauss/wp-sudo",
           "stargazers_count": 42,
           "language": "PHP",
-          "updated_at": "2026-07-02T06:17:24Z",
+          "updated_at": "2026-07-02T14:04:55Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -77,42 +131,6 @@
           "stargazers_count": 1,
           "language": "PHP",
           "updated_at": "2026-06-30T21:32:32Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1264131469,
-          "name": "Maestro",
-          "full_name": "dknauss/Maestro",
-          "html_url": "https://github.com/dknauss/Maestro",
-          "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
-          "stargazers_count": 1,
-          "language": "PHP",
-          "updated_at": "2026-06-30T08:43:28Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1273660935,
-          "name": "dirtbag",
-          "full_name": "dknauss/dirtbag",
-          "html_url": "https://github.com/dknauss/dirtbag",
-          "description": "Dirtbag is a super-simple, WordPress block theme built on good bones and road grit. It's a lean utility vehicle designed for tinkering and practical self-education.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/dirtbag/main/playground/blueprint-stable.json",
-          "stargazers_count": 4,
-          "language": "PHP",
-          "updated_at": "2026-06-26T14:45:49Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -320,24 +338,6 @@
           }
         },
         {
-          "id": 1175597908,
-          "name": "author-identity",
-          "full_name": "dknauss/author-identity",
-          "html_url": "https://github.com/dknauss/author-identity",
-          "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
-          "homepage": "https://dan.knauss.ca",
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-06-14T16:51:07Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
           "id": 1159501867,
           "name": "wordpress-2fa-ecosystem",
           "full_name": "dknauss/wordpress-2fa-ecosystem",
@@ -395,15 +395,15 @@
       "total_repos": 19,
       "total_stars": 65,
       "latest_repo": {
-        "id": 1154983208,
-        "name": "Sudo",
-        "full_name": "dknauss/Sudo",
-        "html_url": "https://github.com/dknauss/Sudo",
-        "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
-        "homepage": "https://github.com/dknauss/wp-sudo",
-        "stargazers_count": 42,
+        "id": 1273660935,
+        "name": "dirtbag",
+        "full_name": "dknauss/dirtbag",
+        "html_url": "https://github.com/dknauss/dirtbag",
+        "description": "Dirtbag is a super-simple, WordPress block theme built on good bones and road grit. It's a lean utility vehicle designed for tinkering and practical self-education.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/dirtbag/main/playground/blueprint-stable.json",
+        "stargazers_count": 4,
         "language": "PHP",
-        "updated_at": "2026-07-02T06:17:24Z",
+        "updated_at": "2026-07-02T14:25:45Z",
         "fork": false,
         "archived": false,
         "owner": {
