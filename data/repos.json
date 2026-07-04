@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T04:03:20.255Z",
+  "generated_at": "2026-07-04T09:01:41.636Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,15 +50,15 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
-          "id": 1264131469,
-          "name": "Maestro",
-          "full_name": "dknauss/Maestro",
-          "html_url": "https://github.com/dknauss/Maestro",
-          "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
+          "id": 1284532495,
+          "name": "Require-Email-2FA",
+          "full_name": "dknauss/Require-Email-2FA",
+          "html_url": "https://github.com/dknauss/Require-Email-2FA",
+          "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
           "stargazers_count": 1,
           "language": "PHP",
-          "updated_at": "2026-07-04T04:01:48Z",
+          "updated_at": "2026-07-04T05:09:45Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -68,15 +68,15 @@
           }
         },
         {
-          "id": 1284532495,
-          "name": "Require-Email-2FA",
-          "full_name": "dknauss/Require-Email-2FA",
-          "html_url": "https://github.com/dknauss/Require-Email-2FA",
-          "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
+          "id": 1264131469,
+          "name": "Maestro",
+          "full_name": "dknauss/Maestro",
+          "html_url": "https://github.com/dknauss/Maestro",
+          "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
           "stargazers_count": 1,
           "language": "PHP",
-          "updated_at": "2026-07-03T19:20:57Z",
+          "updated_at": "2026-07-04T04:01:48Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -395,15 +395,15 @@
       "total_repos": 19,
       "total_stars": 65,
       "latest_repo": {
-        "id": 1264131469,
-        "name": "Maestro",
-        "full_name": "dknauss/Maestro",
-        "html_url": "https://github.com/dknauss/Maestro",
-        "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
+        "id": 1284532495,
+        "name": "Require-Email-2FA",
+        "full_name": "dknauss/Require-Email-2FA",
+        "html_url": "https://github.com/dknauss/Require-Email-2FA",
+        "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
         "stargazers_count": 1,
         "language": "PHP",
-        "updated_at": "2026-07-04T04:01:48Z",
+        "updated_at": "2026-07-04T05:09:45Z",
         "fork": false,
         "archived": false,
         "owner": {
