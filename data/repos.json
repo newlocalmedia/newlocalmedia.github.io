@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-03T19:51:13.350Z",
+  "generated_at": "2026-07-04T04:03:20.255Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -49,6 +49,24 @@
       "user": "dknauss",
       "profile_url": "https://github.com/dknauss",
       "repos": [
+        {
+          "id": 1264131469,
+          "name": "Maestro",
+          "full_name": "dknauss/Maestro",
+          "html_url": "https://github.com/dknauss/Maestro",
+          "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
+          "stargazers_count": 1,
+          "language": "PHP",
+          "updated_at": "2026-07-04T04:01:48Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
         {
           "id": 1284532495,
           "name": "Require-Email-2FA",
@@ -230,24 +248,6 @@
           }
         },
         {
-          "id": 1264131469,
-          "name": "Maestro",
-          "full_name": "dknauss/Maestro",
-          "html_url": "https://github.com/dknauss/Maestro",
-          "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
-          "stargazers_count": 1,
-          "language": "PHP",
-          "updated_at": "2026-07-03T03:21:03Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
           "id": 1182666119,
           "name": "fedibots",
           "full_name": "dknauss/fedibots",
@@ -395,15 +395,15 @@
       "total_repos": 19,
       "total_stars": 65,
       "latest_repo": {
-        "id": 1284532495,
-        "name": "Require-Email-2FA",
-        "full_name": "dknauss/Require-Email-2FA",
-        "html_url": "https://github.com/dknauss/Require-Email-2FA",
-        "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
+        "id": 1264131469,
+        "name": "Maestro",
+        "full_name": "dknauss/Maestro",
+        "html_url": "https://github.com/dknauss/Maestro",
+        "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
         "stargazers_count": 1,
         "language": "PHP",
-        "updated_at": "2026-07-03T19:20:57Z",
+        "updated_at": "2026-07-04T04:01:48Z",
         "fork": false,
         "archived": false,
         "owner": {
