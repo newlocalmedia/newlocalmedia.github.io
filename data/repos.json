@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T19:38:53.573Z",
+  "generated_at": "2026-07-05T04:31:10.501Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,15 +50,15 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
-          "id": 1284532495,
-          "name": "Require-Email-2FA",
-          "full_name": "dknauss/Require-Email-2FA",
-          "html_url": "https://github.com/dknauss/Require-Email-2FA",
-          "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
-          "stargazers_count": 1,
+          "id": 1154983208,
+          "name": "Sudo",
+          "full_name": "dknauss/Sudo",
+          "html_url": "https://github.com/dknauss/Sudo",
+          "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
+          "homepage": "https://github.com/dknauss/wp-sudo",
+          "stargazers_count": 42,
           "language": "PHP",
-          "updated_at": "2026-07-04T18:47:25Z",
+          "updated_at": "2026-07-05T03:30:18Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -68,15 +68,15 @@
           }
         },
         {
-          "id": 1154983208,
-          "name": "Sudo",
-          "full_name": "dknauss/Sudo",
-          "html_url": "https://github.com/dknauss/Sudo",
-          "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
-          "homepage": "https://github.com/dknauss/wp-sudo",
-          "stargazers_count": 42,
+          "id": 1284532495,
+          "name": "Require-Email-2FA",
+          "full_name": "dknauss/Require-Email-2FA",
+          "html_url": "https://github.com/dknauss/Require-Email-2FA",
+          "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
+          "stargazers_count": 1,
           "language": "PHP",
-          "updated_at": "2026-07-04T18:21:00Z",
+          "updated_at": "2026-07-05T03:07:56Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -94,7 +94,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
           "stargazers_count": 1,
           "language": "PHP",
-          "updated_at": "2026-07-04T04:01:48Z",
+          "updated_at": "2026-07-04T23:13:53Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -112,7 +112,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/dirtbag/main/playground/blueprint-stable.json",
           "stargazers_count": 4,
           "language": "PHP",
-          "updated_at": "2026-07-03T08:49:26Z",
+          "updated_at": "2026-07-04T21:59:37Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -395,15 +395,15 @@
       "total_repos": 19,
       "total_stars": 65,
       "latest_repo": {
-        "id": 1284532495,
-        "name": "Require-Email-2FA",
-        "full_name": "dknauss/Require-Email-2FA",
-        "html_url": "https://github.com/dknauss/Require-Email-2FA",
-        "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
-        "stargazers_count": 1,
+        "id": 1154983208,
+        "name": "Sudo",
+        "full_name": "dknauss/Sudo",
+        "html_url": "https://github.com/dknauss/Sudo",
+        "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
+        "homepage": "https://github.com/dknauss/wp-sudo",
+        "stargazers_count": 42,
         "language": "PHP",
-        "updated_at": "2026-07-04T18:47:25Z",
+        "updated_at": "2026-07-05T03:30:18Z",
         "fork": false,
         "archived": false,
         "owner": {
