@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-06T11:04:51.772Z",
+  "generated_at": "2026-07-06T15:55:18.334Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,24 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1284532495,
+          "name": "Require-Email-2FA",
+          "full_name": "dknauss/Require-Email-2FA",
+          "html_url": "https://github.com/dknauss/Require-Email-2FA",
+          "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
+          "stargazers_count": 1,
+          "language": "PHP",
+          "updated_at": "2026-07-06T15:43:36Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1154983208,
           "name": "Sudo",
           "full_name": "dknauss/Sudo",
@@ -58,7 +76,7 @@
           "homepage": "https://github.com/dknauss/wp-sudo",
           "stargazers_count": 42,
           "language": "PHP",
-          "updated_at": "2026-07-06T08:31:56Z",
+          "updated_at": "2026-07-06T15:37:14Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -95,24 +113,6 @@
           "stargazers_count": 2,
           "language": "JavaScript",
           "updated_at": "2026-07-06T01:00:56Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1284532495,
-          "name": "Require-Email-2FA",
-          "full_name": "dknauss/Require-Email-2FA",
-          "html_url": "https://github.com/dknauss/Require-Email-2FA",
-          "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
-          "stargazers_count": 1,
-          "language": "PHP",
-          "updated_at": "2026-07-05T03:07:56Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -395,15 +395,15 @@
       "total_repos": 19,
       "total_stars": 66,
       "latest_repo": {
-        "id": 1154983208,
-        "name": "Sudo",
-        "full_name": "dknauss/Sudo",
-        "html_url": "https://github.com/dknauss/Sudo",
-        "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
-        "homepage": "https://github.com/dknauss/wp-sudo",
-        "stargazers_count": 42,
+        "id": 1284532495,
+        "name": "Require-Email-2FA",
+        "full_name": "dknauss/Require-Email-2FA",
+        "html_url": "https://github.com/dknauss/Require-Email-2FA",
+        "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
+        "stargazers_count": 1,
         "language": "PHP",
-        "updated_at": "2026-07-06T08:31:56Z",
+        "updated_at": "2026-07-06T15:43:36Z",
         "fork": false,
         "archived": false,
         "owner": {
