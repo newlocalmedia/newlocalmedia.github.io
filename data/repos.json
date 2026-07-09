@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T19:55:55.866Z",
+  "generated_at": "2026-07-09T04:19:47.400Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -58,7 +58,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
           "stargazers_count": 1,
           "language": "PHP",
-          "updated_at": "2026-07-08T14:57:22Z",
+          "updated_at": "2026-07-09T03:06:27Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -403,7 +403,7 @@
         "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
         "stargazers_count": 1,
         "language": "PHP",
-        "updated_at": "2026-07-08T14:57:22Z",
+        "updated_at": "2026-07-09T03:06:27Z",
         "fork": false,
         "archived": false,
         "owner": {
