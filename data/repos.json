@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T04:16:16.574Z",
+  "generated_at": "2026-07-10T09:53:41.870Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -49,6 +49,24 @@
       "user": "dknauss",
       "profile_url": "https://github.com/dknauss",
       "repos": [
+        {
+          "id": 1296118307,
+          "name": "consequential-actions",
+          "full_name": "dknauss/consequential-actions",
+          "html_url": "https://github.com/dknauss/consequential-actions",
+          "description": "Reauth MVP + Playground demo: a named registry of consequential actions plus actor-password step-up. A wedge for a WordPress core primitive (Trac #20140).",
+          "homepage": null,
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-07-10T06:30:53Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
         {
           "id": 1284532495,
           "name": "Require-Email-2FA",
@@ -392,18 +410,18 @@
           }
         }
       ],
-      "total_repos": 19,
+      "total_repos": 20,
       "total_stars": 66,
       "latest_repo": {
-        "id": 1284532495,
-        "name": "Require-Email-2FA",
-        "full_name": "dknauss/Require-Email-2FA",
-        "html_url": "https://github.com/dknauss/Require-Email-2FA",
-        "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
-        "stargazers_count": 1,
+        "id": 1296118307,
+        "name": "consequential-actions",
+        "full_name": "dknauss/consequential-actions",
+        "html_url": "https://github.com/dknauss/consequential-actions",
+        "description": "Reauth MVP + Playground demo: a named registry of consequential actions plus actor-password step-up. A wedge for a WordPress core primitive (Trac #20140).",
+        "homepage": null,
+        "stargazers_count": 0,
         "language": "PHP",
-        "updated_at": "2026-07-09T07:17:14Z",
+        "updated_at": "2026-07-10T06:30:53Z",
         "fork": false,
         "archived": false,
         "owner": {
