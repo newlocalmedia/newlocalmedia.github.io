@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-11T19:33:03.185Z",
+  "generated_at": "2026-07-12T03:59:40.715Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -49,6 +49,42 @@
       "user": "dknauss",
       "profile_url": "https://github.com/dknauss",
       "repos": [
+        {
+          "id": 1203393463,
+          "name": "Borges",
+          "full_name": "dknauss/Borges",
+          "html_url": "https://github.com/dknauss/Borges",
+          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
+          "stargazers_count": 2,
+          "language": "JavaScript",
+          "updated_at": "2026-07-12T03:07:15Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1160457512,
+          "name": "wordpress-runbook-template",
+          "full_name": "dknauss/wordpress-runbook-template",
+          "html_url": "https://github.com/dknauss/wordpress-runbook-template",
+          "description": "WordPress operations runbook template: production procedures for deployment, maintenance, backup, incident response, and recovery.",
+          "homepage": "https://github.com/dknauss/wordpress-runbook-template",
+          "stargazers_count": 4,
+          "language": null,
+          "updated_at": "2026-07-12T01:07:12Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
         {
           "id": 1296118307,
           "name": "consequential-actions",
@@ -113,24 +149,6 @@
           "stargazers_count": 2,
           "language": "PHP",
           "updated_at": "2026-07-06T02:19:01Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1203393463,
-          "name": "Borges",
-          "full_name": "dknauss/Borges",
-          "html_url": "https://github.com/dknauss/Borges",
-          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-          "stargazers_count": 2,
-          "language": "JavaScript",
-          "updated_at": "2026-07-06T01:00:56Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -221,24 +239,6 @@
           "stargazers_count": 3,
           "language": null,
           "updated_at": "2026-07-03T06:19:41Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1160457512,
-          "name": "wordpress-runbook-template",
-          "full_name": "dknauss/wordpress-runbook-template",
-          "html_url": "https://github.com/dknauss/wordpress-runbook-template",
-          "description": "WordPress operations runbook template: production procedures for deployment, maintenance, backup, incident response, and recovery.",
-          "homepage": "https://github.com/dknauss/wordpress-runbook-template",
-          "stargazers_count": 3,
-          "language": null,
-          "updated_at": "2026-07-03T06:19:36Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -411,17 +411,17 @@
         }
       ],
       "total_repos": 20,
-      "total_stars": 66,
+      "total_stars": 67,
       "latest_repo": {
-        "id": 1296118307,
-        "name": "consequential-actions",
-        "full_name": "dknauss/consequential-actions",
-        "html_url": "https://github.com/dknauss/consequential-actions",
-        "description": "Reauth MVP + Playground demo: a named registry of consequential actions plus actor-password step-up. A wedge for a WordPress core primitive (Trac #20140).",
-        "homepage": null,
-        "stargazers_count": 0,
-        "language": "PHP",
-        "updated_at": "2026-07-10T14:50:34Z",
+        "id": 1203393463,
+        "name": "Borges",
+        "full_name": "dknauss/Borges",
+        "html_url": "https://github.com/dknauss/Borges",
+        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
+        "stargazers_count": 2,
+        "language": "JavaScript",
+        "updated_at": "2026-07-12T03:07:15Z",
         "fork": false,
         "archived": false,
         "owner": {
