@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-13T15:12:31.695Z",
+  "generated_at": "2026-07-13T19:50:58.919Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -49,6 +49,24 @@
       "user": "dknauss",
       "profile_url": "https://github.com/dknauss",
       "repos": [
+        {
+          "id": 1165510944,
+          "name": "the-drafting-table",
+          "full_name": "dknauss/the-drafting-table",
+          "html_url": "https://github.com/dknauss/the-drafting-table",
+          "description": "A Frank Lloyd Wright-era architect's notebook FSE block theme for WordPress — aged parchment, dot-grid overlays, blueprint borders, and refined architectural typography.",
+          "homepage": null,
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-07-13T19:30:33Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
         {
           "id": 1203393463,
           "name": "Borges",
@@ -284,24 +302,6 @@
           }
         },
         {
-          "id": 1165510944,
-          "name": "the-drafting-table",
-          "full_name": "dknauss/the-drafting-table",
-          "html_url": "https://github.com/dknauss/the-drafting-table",
-          "description": "A Frank Lloyd Wright-era architect's notebook FSE block theme for WordPress — aged parchment, dot-grid overlays, blueprint borders, and refined architectural typography.",
-          "homepage": null,
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-07-02T23:35:38Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
           "id": 1279310601,
           "name": "wp-pullquote-aside",
           "full_name": "dknauss/wp-pullquote-aside",
@@ -413,15 +413,15 @@
       "total_repos": 20,
       "total_stars": 67,
       "latest_repo": {
-        "id": 1203393463,
-        "name": "Borges",
-        "full_name": "dknauss/Borges",
-        "html_url": "https://github.com/dknauss/Borges",
-        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-        "stargazers_count": 2,
-        "language": "JavaScript",
-        "updated_at": "2026-07-12T03:07:15Z",
+        "id": 1165510944,
+        "name": "the-drafting-table",
+        "full_name": "dknauss/the-drafting-table",
+        "html_url": "https://github.com/dknauss/the-drafting-table",
+        "description": "A Frank Lloyd Wright-era architect's notebook FSE block theme for WordPress — aged parchment, dot-grid overlays, blueprint borders, and refined architectural typography.",
+        "homepage": null,
+        "stargazers_count": 0,
+        "language": "PHP",
+        "updated_at": "2026-07-13T19:30:33Z",
         "fork": false,
         "archived": false,
         "owner": {
