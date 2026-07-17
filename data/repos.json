@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-16T19:34:37.288Z",
+  "generated_at": "2026-07-17T03:39:47.435Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,24 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1303201605,
+          "name": "wp-plugin-evaluator",
+          "full_name": "dknauss/wp-plugin-evaluator",
+          "html_url": "https://github.com/dknauss/wp-plugin-evaluator",
+          "description": "Interactive WordPress plugin evaluation scorecard — weighted go/no-go scoring for picking or rejecting plugins.",
+          "homepage": null,
+          "stargazers_count": 0,
+          "language": "HTML",
+          "updated_at": "2026-07-16T20:44:36Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1154983208,
           "name": "Sudo",
           "full_name": "dknauss/Sudo",
@@ -58,7 +76,7 @@
           "homepage": "https://github.com/dknauss/wp-sudo",
           "stargazers_count": 42,
           "language": "PHP",
-          "updated_at": "2026-07-16T19:28:18Z",
+          "updated_at": "2026-07-16T19:46:27Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -410,18 +428,18 @@
           }
         }
       ],
-      "total_repos": 20,
+      "total_repos": 21,
       "total_stars": 67,
       "latest_repo": {
-        "id": 1154983208,
-        "name": "Sudo",
-        "full_name": "dknauss/Sudo",
-        "html_url": "https://github.com/dknauss/Sudo",
-        "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
-        "homepage": "https://github.com/dknauss/wp-sudo",
-        "stargazers_count": 42,
-        "language": "PHP",
-        "updated_at": "2026-07-16T19:28:18Z",
+        "id": 1303201605,
+        "name": "wp-plugin-evaluator",
+        "full_name": "dknauss/wp-plugin-evaluator",
+        "html_url": "https://github.com/dknauss/wp-plugin-evaluator",
+        "description": "Interactive WordPress plugin evaluation scorecard — weighted go/no-go scoring for picking or rejecting plugins.",
+        "homepage": null,
+        "stargazers_count": 0,
+        "language": "HTML",
+        "updated_at": "2026-07-16T20:44:36Z",
         "fork": false,
         "archived": false,
         "owner": {
