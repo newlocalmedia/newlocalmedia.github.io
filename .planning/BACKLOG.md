@@ -83,6 +83,94 @@ Items here are scoped, not scheduled. Move to a phase plan when ready to act.
 
 ---
 
+## Accessibility Remediation Tracker — post-audit intake
+
+Use this section **after** the manual WCAG pass to group confirmed issues into small, fixable batches.
+
+Source docs:
+
+- `.planning/WCAG-MANUAL-TEST-SCRIPT-2026-07-18.md`
+- `.planning/WCAG-MANUAL-FINDINGS-2026-07-18.md`
+- `WCAG-GAP-AUDIT-CHECKLIST.md`
+
+Rules:
+
+- Only move **confirmed** findings here.
+- Record finding IDs from the manual findings doc.
+- Split urgent P0/P1 fixes from grouped P2/P3 cleanup.
+- Convert a bucket into a standalone backlog item or phase plan if it becomes large enough.
+
+### A11Y-R1 — Keyboard, focus, and modal behavior
+
+**Likely scope:**
+- skip link visibility/behavior
+- focus order
+- visible focus treatment
+- modal focus trap / Escape / focus return
+
+**Finding IDs:** 
+
+**Severity mix:** 
+
+**Status:** not started
+
+### A11Y-R2 — Reflow, zoom, and responsive layout fixes
+
+**Likely scope:**
+- 320px clipping
+- 200% / 400% zoom issues
+- overlapping text
+- narrow-width table/card overflow
+
+**Finding IDs:** 
+
+**Severity mix:** 
+
+**Status:** not started
+
+### A11Y-R3 — Accessible names and interactive label consistency
+
+**Likely scope:**
+- ambiguous link/button labels
+- icon-only or emoji-adjacent naming issues
+- repeated control naming inconsistencies
+
+**Finding IDs:** 
+
+**Severity mix:** 
+
+**Status:** not started
+
+### A11Y-R4 — Structural semantics and reading order
+
+**Likely scope:**
+- heading hierarchy
+- landmark clarity
+- list/table semantics
+- split-layout or aside reading-order problems
+
+**Finding IDs:** 
+
+**Severity mix:** 
+
+**Status:** not started
+
+### A11Y-R5 — Contrast and non-color cues
+
+**Likely scope:**
+- text contrast
+- focus-indicator contrast
+- link distinguishability
+- meaning conveyed by color alone
+
+**Finding IDs:** 
+
+**Severity mix:** 
+
+**Status:** not started
+
+---
+
 ## B-005 — Live Post-Deploy QA Checklist
 
 **What:** Create and run a repeatable post-deploy QA pass for the live GitHub Pages site after structural changes.

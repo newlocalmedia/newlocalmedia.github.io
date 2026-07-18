@@ -184,13 +184,15 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     return `<span class="pill" title="Last updated ${escapeHtml(formatted)}"><span class="sr-only">Last updated </span><time datetime="${escapeHtml(value)}">${escapeHtml(formatted)}</time></span>`;
   }
 
-  function projectLinkMarkup(href, label = 'Project', showIcon = true) {
+  function projectLinkMarkup(href, label = 'Project', showIcon = true, accessibleSuffix = '') {
     const withIcon = showIcon && label !== 'Docs';
-    return `<a class="repo-link primary" href="${href}"><span>${escapeHtml(label)}</span></a>`;
+    const srText = accessibleSuffix ? `<span class="sr-only"> ${escapeHtml(accessibleSuffix)}</span>` : '';
+    return `<a class="repo-link primary" href="${href}"><span>${escapeHtml(label)}${srText}</span></a>`;
   }
 
-  function githubLinkMarkup(href) {
-    return `<a class="repo-link" href="${href}">GitHub →</a>`;
+  function githubLinkMarkup(href, accessibleSuffix = '') {
+    const srText = accessibleSuffix ? `<span class="sr-only"> ${escapeHtml(accessibleSuffix)}</span>` : '';
+    return `<a class="repo-link" href="${href}">GitHub${srText} →</a>`;
   }
 
   function statusMarkup(message, className = 'empty') {
@@ -215,11 +217,13 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
     } = options;
     const homepage = includeHomepage ? repoHomepage(repo) : null;
     const details = projectPageUrl(repo);
+    const contextualLabels = new Set(['learn more', 'project', 'docs', 'app']);
+    const accessibleSuffix = contextualLabels.has(label.toLowerCase()) ? `for ${repoDisplayTitle(repo)}` : '';
     return `
       <div class="repo-actions">
-        ${details ? projectLinkMarkup(details, label, showProjectIcon) : ''}
-        ${includeGithub ? githubLinkMarkup(repo.html_url) : ''}
-        ${homepage ? `<a class="repo-link alt" href="${homepage}">${escapeHtml(repoHomepageLabel(repo))} →</a>` : ''}
+        ${details ? projectLinkMarkup(details, label, showProjectIcon, accessibleSuffix) : ''}
+        ${includeGithub ? githubLinkMarkup(repo.html_url, `for ${repoDisplayTitle(repo)}`) : ''}
+        ${homepage ? `<a class="repo-link alt" href="${homepage}">${escapeHtml(repoHomepageLabel(repo))}<span class="sr-only"> for ${escapeHtml(repoDisplayTitle(repo))}</span> →</a>` : ''}
       </div>
     `;
   }
@@ -299,8 +303,8 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
           <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
           ${updatedPill(repo.updated_at)}
           ${details ? projectLinkMarkup(details) : ''}
-          ${githubLinkMarkup(repo.html_url)}
-          ${repoHomepage(repo) ? `<a class="repo-link alt" href="${repoHomepage(repo)}">${escapeHtml(repoHomepageLabel(repo))} →</a>` : ''}
+          ${githubLinkMarkup(repo.html_url, `for ${repoDisplayTitle(repo)}`)}
+          ${repoHomepage(repo) ? `<a class="repo-link alt" href="${repoHomepage(repo)}">${escapeHtml(repoHomepageLabel(repo))}<span class="sr-only"> for ${escapeHtml(repoDisplayTitle(repo))}</span> →</a>` : ''}
         </div>
       </div>
       <aside class="feature-side" aria-label="${escapeHtml(repoDisplayTitle(repo))} details">

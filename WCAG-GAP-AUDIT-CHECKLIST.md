@@ -70,6 +70,20 @@ Record for every failure:
 
 ---
 
+## Current audit note — 2026-07-18
+
+An assisted local pass was completed on **July 18, 2026** and documented in:
+
+- `/Users/danknauss/Developer/GitHub/newlocalmedia.github.io/.planning/WCAG-MANUAL-FINDINGS-2026-07-18.md`
+
+That pass confirmed a clean structural baseline across the sampled page set and
+found one homepage link-label clarity issue, which was fixed locally the same
+day. This checklist is still intentionally conservative and should not be marked
+complete until keyboard-only, visible-focus, Escape-close, VoiceOver, and
+320px/200%/400% reflow checks are completed manually.
+
+---
+
 ## Page inventory
 
 ### Core pages

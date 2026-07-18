@@ -364,13 +364,15 @@ function heroLinkLabel(link) {
   return link.heroLabel || link.label;
 }
 
-function projectLinkMarkup(href, label = 'Project', showIcon = true) {
+function projectLinkMarkup(href, label = 'Project', showIcon = true, accessibleSuffix = '') {
   const withIcon = showIcon && label !== 'Docs';
-  return `<a class="repo-link primary" href="${href}"><span>${escapeHtml(label)}</span></a>`;
+  const srText = accessibleSuffix ? `<span class="sr-only"> ${escapeHtml(accessibleSuffix)}</span>` : '';
+  return `<a class="repo-link primary" href="${href}"><span>${escapeHtml(label)}${srText}</span></a>`;
 }
 
-function githubLinkMarkup(href) {
-  return `<a class="repo-link" href="${href}">GitHub →</a>`;
+function githubLinkMarkup(href, accessibleSuffix = '') {
+  const srText = accessibleSuffix ? `<span class="sr-only"> ${escapeHtml(accessibleSuffix)}</span>` : '';
+  return `<a class="repo-link" href="${href}">GitHub${srText} →</a>`;
 }
 
 function repoMetaMarkup(repo, extraClass = '') {
@@ -385,7 +387,9 @@ function repoActionsMarkup(repo, options = {}) {
     includeHomepage = true
   } = options;
   const homepage = includeHomepage ? repoHomepage(repo) : null;
-  return `<div class="repo-actions">${projectLinkMarkup(projectPath(repo.full_name), label, showProjectIcon)}${includeGithub ? githubLinkMarkup(repo.html_url) : ''}${homepage ? `<a class="repo-link alt" href="${homepage}">${escapeHtml(homepageLabel(repo))} →</a>` : ''}</div>`;
+  const contextualLabels = new Set(['learn more', 'project', 'docs', 'app']);
+  const accessibleSuffix = contextualLabels.has(label.toLowerCase()) ? `for ${displayTitle(repo)}` : '';
+  return `<div class="repo-actions">${projectLinkMarkup(projectPath(repo.full_name), label, showProjectIcon, accessibleSuffix)}${includeGithub ? githubLinkMarkup(repo.html_url, `for ${displayTitle(repo)}`) : ''}${homepage ? `<a class="repo-link alt" href="${homepage}">${escapeHtml(homepageLabel(repo))}<span class="sr-only"> for ${escapeHtml(displayTitle(repo))}</span> →</a>` : ''}</div>`;
 }
 
 function homeRepoCard(repo, options = {}) {
@@ -439,8 +443,8 @@ function homeLeadMarkup(repo) {
           <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
           ${updatedPillMarkup(repo.updated_at)}
           ${projectLinkMarkup(projectPath(repo.full_name))}
-          ${githubLinkMarkup(repo.html_url)}
-          ${homepage ? `<a class="repo-link alt" href="${homepage}">${escapeHtml(homepageLabel(repo))} →</a>` : ''}
+          ${githubLinkMarkup(repo.html_url, `for ${displayTitle(repo)}`)}
+          ${homepage ? `<a class="repo-link alt" href="${homepage}">${escapeHtml(homepageLabel(repo))}<span class="sr-only"> for ${escapeHtml(displayTitle(repo))}</span> →</a>` : ''}
         </div>
       </div>
       <aside class="feature-side" aria-label="${escapeHtml(displayTitle(repo))} details">
@@ -840,7 +844,9 @@ ${JSON.stringify(graph, null, 2)}
     .topbar, .meta, .actions, .section-head { display: flex; gap: 12px; flex-wrap: wrap; }
     .topbar, .section-head { justify-content: space-between; align-items: center; }
     .hero-top-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-    .breadcrumbs { display: flex; gap: 8px; align-items: center; flex-shrink: 0; font-size: 0.82rem; }
+    .hero-top-row > * { min-width: 0; }
+    .breadcrumbs { display: flex; gap: 8px; align-items: center; flex-shrink: 1; flex-wrap: wrap; min-width: 0; font-size: 0.82rem; }
+    .breadcrumbs a, .breadcrumbs span { overflow-wrap: anywhere; }
     .brand { display: inline-flex; align-items: center; gap: 14px; text-decoration: none; }
     .brand img { width: 56px; height: 56px; border-radius: 18px; background: transparent; }
     .brand-copy { display: grid; gap: 2px; }
@@ -1034,7 +1040,7 @@ ${JSON.stringify(graph, null, 2)}
             <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${escapeHtml(String(repo.stargazers_count))}</span>
             <span class="pill" title="Last updated ${escapeHtml(formatDate(repo.updated_at))}"><span class="sr-only">Last updated </span>${escapeHtml(formatDate(repo.updated_at))}</span>
             <span class="meta-sep" aria-hidden="true"></span>
-            <a class="button primary" href="${repo.html_url}"><svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>View Source</a>
+            <a class="button primary" href="${repo.html_url}"><svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>View Source<span class="sr-only"> for ${escapeHtml(meta.pageTitle || label)}</span></a>
             ${meta.extraLinks?.some((link) => !link.heroAfterRelease)
               ? meta.extraLinks.filter((link) => !link.heroAfterRelease).map((link) => `<a class="button" href="${link.url}">${escapeHtml(heroLinkLabel(link))}</a>`).join('\n            ')
               : ''}

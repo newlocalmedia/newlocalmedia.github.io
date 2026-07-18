@@ -283,6 +283,10 @@
       margin-top: 20px;
     }
 
+    .stack > * {
+      min-width: 0;
+    }
+
     .section-head {
       align-items: end;
       margin-bottom: 18px;
