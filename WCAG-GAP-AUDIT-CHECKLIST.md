@@ -78,9 +78,11 @@ An assisted local pass was completed on **July 18, 2026** and documented in:
 
 That pass confirmed a clean structural baseline across the sampled page set and
 found one homepage link-label clarity issue, which was fixed locally the same
-day. This checklist is still intentionally conservative and should not be marked
-complete until keyboard-only, visible-focus, Escape-close, VoiceOver, and
-320px/200%/400% reflow checks are completed manually.
+day. Follow-up assisted passes also verified skip-link behavior, visible focus
+spot checks, Escape-close modal behavior, footer presence, sampled 320px/640px
+reflow, and approximate contrast checks on key text/button treatments. This
+checklist is still intentionally conservative and should not be marked complete
+until VoiceOver and true browser-zoom checks are completed manually.
 
 ---
 
@@ -88,18 +90,18 @@ complete until keyboard-only, visible-focus, Escape-close, VoiceOver, and
 
 ### Core pages
 
-- [ ] Home `/`
-- [ ] Projects index `/projects/`
-- [ ] Owner index `/projects/dknauss/`
-- [ ] Owner index `/projects/newlocalmedia/`
+- [x] Home `/`
+- [x] Projects index `/projects/`
+- [x] Owner index `/projects/dknauss/`
+- [x] Owner index `/projects/newlocalmedia/`
 
 ### Generated project pages
 
-- [ ] Software project sample
-- [ ] Documentation project sample
-- [ ] Page with image modal
-- [ ] Page with docs table
-- [ ] Page with split inset / quote / aside treatment
+- [x] Software project sample
+- [x] Documentation project sample
+- [x] Page with image modal
+- [x] Page with docs table
+- [x] Page with split inset / quote / aside treatment
 
 ---
 
@@ -107,11 +109,11 @@ complete until keyboard-only, visible-focus, Escape-close, VoiceOver, and
 
 ### 1.1 Text alternatives
 
-- [ ] Informative images have meaningful `alt` text
-- [ ] Decorative images/icons are hidden from assistive tech
-- [ ] Linked images describe destination or content
-- [ ] Modal preview images retain meaningful alt text
-- [ ] SVG icons used only as decoration have `aria-hidden="true"`
+- [x] Informative images have meaningful `alt` text
+- [~] Decorative images/icons are hidden from assistive tech
+- [x] Linked images describe destination or content
+- [x] Modal preview images retain meaningful alt text
+- [~] SVG icons used only as decoration have `aria-hidden="true"`
 
 ### 1.2 Time-based media
 
@@ -120,24 +122,24 @@ complete until keyboard-only, visible-focus, Escape-close, VoiceOver, and
 
 ### 1.3 Adaptable
 
-- [ ] Page structure uses meaningful headings in order
-- [ ] Each page has exactly one `h1`
-- [ ] Landmark structure is present and understandable
-- [ ] Lists are marked up as lists
-- [ ] Tables are real tables, not div grids
-- [ ] Docs tables expose row/column relationships to AT
-- [ ] Reading order remains logical in responsive layouts
-- [ ] Meaning does not depend only on visual position
+- [~] Page structure uses meaningful headings in order
+- [x] Each page has exactly one `h1`
+- [x] Landmark structure is present and understandable
+- [~] Lists are marked up as lists
+- [x] Tables are real tables, not div grids
+- [x] Docs tables expose row/column relationships to AT
+- [~] Reading order remains logical in responsive layouts
+- [~] Meaning does not depend only on visual position
 
 ### 1.4 Distinguishable
 
-- [ ] Text contrast meets AA
-- [ ] UI component and focus-indicator contrast meets AA
-- [ ] Color is not the only way meaning is conveyed
-- [ ] Text can resize to 200% without loss of content/function
-- [ ] Reflow works at 320 CSS px / 400% zoom
-- [ ] Hover/focus states remain readable
-- [ ] Images of text are avoided unless essential
+- [~] Text contrast meets AA
+- [~] UI component and focus-indicator contrast meets AA
+- [~] Color is not the only way meaning is conveyed
+- [~] Text can resize to 200% without loss of content/function
+- [~] Reflow works at 320 CSS px / 400% zoom
+- [~] Hover/focus states remain readable
+- [x] Images of text are avoided unless essential
 - [ ] Spacing override test passes:
   - line height 1.5
   - paragraph spacing 2x font size
@@ -150,12 +152,12 @@ complete until keyboard-only, visible-focus, Escape-close, VoiceOver, and
 
 ### 2.1 Keyboard accessible
 
-- [ ] All interactive elements are reachable by keyboard
-- [ ] No keyboard traps
-- [ ] Skip link works and is visible on focus
-- [ ] Modal opens, traps focus, and closes with Escape
-- [ ] Focus returns to invoking control after closing modal
-- [ ] No interaction depends on pointer hover only
+- [~] All interactive elements are reachable by keyboard
+- [~] No keyboard traps
+- [x] Skip link works and is visible on focus
+- [~] Modal opens, traps focus, and closes with Escape
+- [x] Focus returns to invoking control after closing modal
+- [~] No interaction depends on pointer hover only
 
 ### 2.2 Enough time
 
@@ -164,24 +166,24 @@ complete until keyboard-only, visible-focus, Escape-close, VoiceOver, and
 
 ### 2.3 Seizures and physical reactions
 
-- [ ] No flashing content above threshold
+- [~] No flashing content above threshold
 
 ### 2.4 Navigable
 
-- [ ] Page titles are unique and descriptive
-- [ ] Focus order is logical
-- [ ] Link text is descriptive out of context
-- [ ] Repeated navigation can be bypassed
-- [ ] Headings and labels describe topic/purpose
-- [ ] Focus is visible everywhere
-- [ ] Focus is not obscured by sticky or overlay UI
+- [~] Page titles are unique and descriptive
+- [~] Focus order is logical
+- [~] Link text is descriptive out of context
+- [x] Repeated navigation can be bypassed
+- [~] Headings and labels describe topic/purpose
+- [~] Focus is visible everywhere
+- [~] Focus is not obscured by sticky or overlay UI
 
 ### 2.5 Input modalities
 
-- [ ] Click/tap targets are large enough
-- [ ] Pointer interactions do not require complex gestures
-- [ ] Controls do not rely on dragging
-- [ ] Buttons/links have clear visible labels matching accessible names
+- [~] Click/tap targets are large enough
+- [x] Pointer interactions do not require complex gestures
+- [x] Controls do not rely on dragging
+- [~] Buttons/links have clear visible labels matching accessible names
 
 ---
 
@@ -189,16 +191,16 @@ complete until keyboard-only, visible-focus, Escape-close, VoiceOver, and
 
 ### 3.1 Readable
 
-- [ ] Document language is set correctly
-- [ ] Unusual abbreviations or jargon are explained where needed
-- [ ] Instructions are clear and concise
+- [x] Document language is set correctly
+- [~] Unusual abbreviations or jargon are explained where needed
+- [~] Instructions are clear and concise
 
 ### 3.2 Predictable
 
-- [ ] Navigation is consistent across pages
-- [ ] Repeated UI patterns use consistent labels
-- [ ] Focus does not trigger unexpected context changes
-- [ ] Controls behave as expected
+- [x] Navigation is consistent across pages
+- [x] Repeated UI patterns use consistent labels
+- [~] Focus does not trigger unexpected context changes
+- [~] Controls behave as expected
 
 ### 3.3 Input assistance
 
@@ -212,12 +214,12 @@ complete until keyboard-only, visible-focus, Escape-close, VoiceOver, and
 
 ### 4.1 Compatible
 
-- [ ] HTML validates without critical structural issues
-- [ ] Interactive controls have correct semantics
-- [ ] ARIA is valid and not overused
-- [ ] Accessible names exist for links, buttons, and modal controls
+- [x] HTML validates without critical structural issues
+- [~] Interactive controls have correct semantics
+- [~] ARIA is valid and not overused
+- [~] Accessible names exist for links, buttons, and modal controls
 - [ ] Dynamic updates are announced appropriately
-- [ ] Hidden text uses a screen-reader-safe pattern
+- [x] Hidden text uses a screen-reader-safe pattern
 
 ---
 
@@ -227,34 +229,34 @@ Audit these shared patterns once, then spot-check across pages.
 
 ### Global layout
 
-- [ ] Skip link
-- [ ] Header / nav landmarks
-- [ ] Footer landmark
-- [ ] Main landmark
+- [x] Skip link
+- [x] Header / nav landmarks
+- [x] Footer landmark
+- [x] Main landmark
 
 ### Cards and link groups
 
-- [ ] Project cards
-- [ ] Spotlight cards
-- [ ] Account cards
-- [ ] Meta pills
-- [ ] Action buttons / links
+- [x] Project cards
+- [x] Spotlight cards
+- [~] Account cards
+- [~] Meta pills
+- [x] Action buttons / links
 
 ### Project page patterns
 
-- [ ] Hero action row
-- [ ] Repository details list
-- [ ] Documentation table
-- [ ] Related project list
-- [ ] Quote / aside / inset box patterns
+- [x] Hero action row
+- [x] Repository details list
+- [x] Documentation table
+- [~] Related project list
+- [x] Quote / aside / inset box patterns
 
 ### Media / dialogs
 
-- [ ] Click-to-expand image trigger
-- [ ] Modal dialog wrapper
-- [ ] Modal close button
-- [ ] Focus trap
-- [ ] Focus restore
+- [x] Click-to-expand image trigger
+- [x] Modal dialog wrapper
+- [x] Modal close button
+- [~] Focus trap
+- [x] Focus restore
 
 ---
 

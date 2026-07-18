@@ -15,9 +15,9 @@ And to sync outcomes back into:
 - **Date:** 2026-07-18
 - **Auditor:** Codex assisted pass
 - **Environment:** local
-- **Browsers tested:** Codex in-app browser
+- **Browsers tested:** Codex in-app browser; local headless Chrome via Playwright using the installed Google Chrome binary
 - **Assistive tech tested:** none yet
-- **Viewport set:** 1280 only in this assisted pass
+- **Viewport set:** 320, 640, and 1280 in this assisted pass
 - **Build checked first:** yes
 - **Commit or deploy under review:** local build on 2026-07-18
 
@@ -69,9 +69,18 @@ hardening guide page because the breadcrumb row did not shrink/wrap. Both now
 pass the sampled 320px reflow check on `/`, `/projects/dknauss/wp-sudo/`, and
 `/projects/dknauss/wp-security-hardening-guide/`.
 
+An additional automated spot-check pass in local headless Chrome also confirmed
+that those same sampled pages pass a 640px-width reflow proxy check with no
+horizontal overflow. Approximate contrast checks on sampled homepage and
+project-page text/components also passed, including the skip link, hero/body
+text, pills, and primary/secondary/demo/download button treatments. Because the
+contrast pass used computed colors plus ancestor background approximation rather
+than a dedicated browser contrast tool, it should be treated as strong
+supporting evidence rather than the final word for every state on every page.
+
 This site can not yet be described as fully manually WCAG-audited. It can be
 described only as having completed an assisted structural pass plus targeted
-keyboard, focus, modal, and 320px reflow verification on sampled pages.
+keyboard, focus, modal, sampled reflow, and sampled contrast verification.
 ```
 
 ### Severity totals
@@ -100,7 +109,7 @@ keyboard, focus, modal, and 320px reflow verification on sampled pages.
 
 - [x] Skip link
 - [x] Global header / nav landmarks
-- [ ] Footer / contentinfo
+- [x] Footer / contentinfo
 - [x] Hero button groups
 - [x] Repo details grid
 - [x] Docs tables
@@ -284,8 +293,9 @@ Initial repeated generic homepage action labels were remediated locally with
 screen-reader-only contextual text so card actions now expose distinct
 accessible names. Skip-link behavior was confirmed functionally, visible focus
 was spot-checked successfully, and the homepage now passes the sampled 320px
-reflow check after a min-width fix. VoiceOver link-list quality and true
-browser zoom checks still need manual confirmation.
+and 640px reflow checks after a min-width fix. Approximate automated contrast
+checks passed on sampled homepage text and button treatments. VoiceOver
+link-list quality and true browser zoom checks still need manual confirmation.
 ```
 
 ---
