@@ -4,11 +4,14 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build-project-pages.mjs",
-    "check": "npm run build && npm run check:html && npm run check:seo",
+    "check": "npm run build && npm run check:html && npm run check:seo && npm run check:a11y",
+    "check:a11y": "node scripts/check-a11y.mjs",
     "check:html": "html-validate index.html projects/*/*/index.html",
     "check:seo": "node scripts/check-site.mjs"
   },
   "devDependencies": {
-    "html-validate": "^11.5.4"
+    "@axe-core/playwright": "^4.12.1",
+    "html-validate": "^11.5.4",
+    "playwright": "^1.61.1"
   }
 }
