@@ -28,21 +28,53 @@ python3 -m http.server 8000
 
 Then open [http://localhost:8000](http://localhost:8000).
 
+For non-macOS local runs, or when Google Chrome is not available at the default
+macOS path, install a Playwright browser once before running the accessibility
+smoke checks:
+
+```bash
+npx playwright install chromium
+```
+
 ## Available scripts
 
 ```bash
 npm run build
 npm run check
+npm run check:a11y
 ```
 
 ### What they do
 
 - `npm run build` regenerates project pages and the sitemap from `/data/repos.json`
-- `npm run check` rebuilds generated files, validates HTML, and checks required SEO/site metadata
+- `npm run check` rebuilds generated files, validates HTML, checks required SEO/site metadata, and runs accessibility smoke checks
+- `npm run check:a11y` runs the lightweight accessibility smoke suite (landmarks, link/button names, alt text, modal behavior, and sampled reflow checks)
 
 ## Audit docs
 
 - Accessibility gap checklist: [WCAG-GAP-AUDIT-CHECKLIST.md](WCAG-GAP-AUDIT-CHECKLIST.md)
+- Accessibility disclosure: [accessibility.txt](accessibility.txt)
+
+## Accessibility and QA
+
+This repo includes a lightweight automated accessibility smoke pass in CI. It
+is intentionally narrower than a full manual WCAG audit and is designed to
+catch obvious regressions quickly.
+
+Current automated coverage includes:
+
+- sampled landmark and heading checks
+- missing `alt` and unnamed control detection
+- selected axe-core smoke rules
+- image modal Escape-close and focus-restore verification
+- sampled 320px and 640px reflow checks on key pages
+
+Manual checks still matter, especially for:
+
+- VoiceOver and rotor navigation
+- 200% and 400% zoom behavior
+- text-spacing overrides
+- broad visual contrast review across all states and pages
 
 ## Repository structure
 

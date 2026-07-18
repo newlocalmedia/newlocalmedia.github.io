@@ -1,0 +1,32 @@
+# Accessibility Conformance
+
+Site: Work in Progress
+URL: https://newlocalmedia.github.io/
+Standard target: WCAG 2.2 AA
+
+Current status:
+- Assisted structural and smoke-check pass completed on July 18, 2026.
+- HTML, metadata, generated-output, and accessibility smoke checks run in CI.
+
+Automated smoke-check coverage:
+- one `main` landmark and one `h1` on sampled pages
+- footer landmark presence on sampled pages
+- skip-link presence
+- missing `alt` detection
+- unnamed link and button detection
+- selected axe-core smoke rules (heading, landmark, image-alt, link-name, button-name, region)
+- image modal Escape-close and focus-restore behavior on the Sudo project page
+- sampled 320px and 640px reflow checks on the homepage and key project pages
+
+Manual verification still recommended:
+- VoiceOver rotor and screen-reader reading order
+- 200% and 400% browser zoom checks
+- text-spacing override checks
+- broad page-by-page contrast review beyond sampled component checks
+
+Working audit docs:
+- /WCAG-GAP-AUDIT-CHECKLIST.md
+- /.planning/WCAG-MANUAL-FINDINGS-2026-07-18.md
+
+Contact:
+https://newlocalmedia.com/
