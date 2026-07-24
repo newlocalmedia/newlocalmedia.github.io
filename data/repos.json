@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-24T08:43:35.950Z",
+  "generated_at": "2026-07-24T14:14:14.878Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,15 +50,15 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
-          "id": 1154983208,
-          "name": "Sudo",
-          "full_name": "dknauss/Sudo",
-          "html_url": "https://github.com/dknauss/Sudo",
-          "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
-          "homepage": "https://github.com/dknauss/wp-sudo",
-          "stargazers_count": 42,
+          "id": 1296118307,
+          "name": "consequential-actions",
+          "full_name": "dknauss/consequential-actions",
+          "html_url": "https://github.com/dknauss/consequential-actions",
+          "description": "Reauth MVP + Playground demo: a named registry of consequential actions plus actor-password step-up. A wedge for a WordPress core primitive (Trac #20140).",
+          "homepage": null,
+          "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-07-24T04:12:30Z",
+          "updated_at": "2026-07-24T13:46:46Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -68,15 +68,15 @@
           }
         },
         {
-          "id": 1296118307,
-          "name": "consequential-actions",
-          "full_name": "dknauss/consequential-actions",
-          "html_url": "https://github.com/dknauss/consequential-actions",
-          "description": "Reauth MVP + Playground demo: a named registry of consequential actions plus actor-password step-up. A wedge for a WordPress core primitive (Trac #20140).",
-          "homepage": null,
-          "stargazers_count": 0,
+          "id": 1154983208,
+          "name": "Sudo",
+          "full_name": "dknauss/Sudo",
+          "html_url": "https://github.com/dknauss/Sudo",
+          "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
+          "homepage": "https://github.com/dknauss/wp-sudo",
+          "stargazers_count": 42,
           "language": "PHP",
-          "updated_at": "2026-07-23T16:00:56Z",
+          "updated_at": "2026-07-24T13:00:19Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -431,15 +431,15 @@
       "total_repos": 21,
       "total_stars": 67,
       "latest_repo": {
-        "id": 1154983208,
-        "name": "Sudo",
-        "full_name": "dknauss/Sudo",
-        "html_url": "https://github.com/dknauss/Sudo",
-        "description": "Sudo for WordPress! 🥪 Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate. ⛩️",
-        "homepage": "https://github.com/dknauss/wp-sudo",
-        "stargazers_count": 42,
+        "id": 1296118307,
+        "name": "consequential-actions",
+        "full_name": "dknauss/consequential-actions",
+        "html_url": "https://github.com/dknauss/consequential-actions",
+        "description": "Reauth MVP + Playground demo: a named registry of consequential actions plus actor-password step-up. A wedge for a WordPress core primitive (Trac #20140).",
+        "homepage": null,
+        "stargazers_count": 0,
         "language": "PHP",
-        "updated_at": "2026-07-24T04:12:30Z",
+        "updated_at": "2026-07-24T13:46:46Z",
         "fork": false,
         "archived": false,
         "owner": {
