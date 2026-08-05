@@ -83,7 +83,7 @@ export const PROJECT_META = {
     leadKicker: 'What if a fresh WordPress install just started out sensible?',
     leadNotes: [
       { title: 'Off Means Off', text: 'Disabling comments also stops <code>get_comments()</code> returning them and the comment feed answering — not just the presentation layer.' },
-      { title: 'One Switch Each', text: '37 defaults across security, updates, privacy, UX, and performance, every one individually toggleable under <strong>Settings &rarr; Keel</strong>.' },
+      { title: 'One Switch Each', text: 'All 37 defaults sit on a single screen at Settings &rarr; Keel, spanning security, updates, privacy, UX, and performance, and every one of them can be switched off on its own.' },
       { title: 'Reports Its Own Posture', text: 'Site Health lists every default and its current state, and flags when another plugin is contesting the same setting.' }
     ],
     whyHeading: 'Defaults You Can See and Switch Off',

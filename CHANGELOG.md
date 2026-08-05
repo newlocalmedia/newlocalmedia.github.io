@@ -14,8 +14,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - GitHub issue and pull request templates
 - dependency update configuration
 
+### Fixed
+
+- horizontal overflow below 320px that had failed the site-quality reflow check
+  on every run since the accessibility smoke checks landed: card header rows
+  could not wrap, so their min-content width held the page above the viewport
+
 ### Changed
 
+- moved the featured repo's banner from the sidebar into the main column
 - demoted Sudo from the lead feature to More Projects, rewritten as a postmortem
   of its concluded research prototype and marked with a Concluded badge
 - kept curated repos in the data snapshot after they are archived, so an archived

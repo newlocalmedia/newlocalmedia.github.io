@@ -449,6 +449,7 @@ function homeLeadMarkup(repo) {
         <h2 id="lead-feature-title">${titleLinkMarkup(repo)}</h2>
         <p class="feature-summary">${homeDescriptionHtml(repo)}</p>
         ${homeLeadExtraHtml(repo) ? `<p class="feature-summary feature-summary-secondary">${homeLeadExtraHtml(repo)}</p>` : ''}
+        ${primaryImage ? `<figure class="feature-media"><a href="${projectPath(repo.full_name)}" aria-label="Open project page for ${escapeHtml(displayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</a></figure>` : ''}
         <div class="meta feature-meta">
           <span class="pill"><span class="star-icon" aria-hidden="true">★</span>${formatNumber(repo.stargazers_count)}</span>
           ${updatedPillMarkup(repo.updated_at)}
@@ -458,7 +459,6 @@ function homeLeadMarkup(repo) {
         </div>
       </div>
       <aside class="feature-side" aria-label="${escapeHtml(displayTitle(repo))} details">
-        ${primaryImage ? `<figure class="feature-media"><a href="${projectPath(repo.full_name)}" aria-label="Open project page for ${escapeHtml(displayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</a></figure>` : ''}
         ${homeLeadNotes(repo).map((note) => `<p class="feature-note"><strong>${note.title}</strong> ${note.text}</p>`).join('\n        ')}
       </aside>
     `.trim();

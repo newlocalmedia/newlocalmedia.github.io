@@ -690,6 +690,21 @@
     .repo-top {
       align-items: start;
       justify-content: space-between;
+      /* Let the badge drop below the title on narrow screens. Without this the
+         row keeps its min-content width (longest title word + gap + badge) and
+         forces the whole page wider than the viewport at ~320px. */
+      flex-wrap: wrap;
+    }
+
+    .repo-top > * {
+      min-width: 0;
+    }
+
+    h1, h2, h3, h4,
+    p, li, dt, dd, figcaption, blockquote {
+      /* Only applies when a word would otherwise overflow its container, which
+         is what pushed narrow viewports past the 320px reflow threshold. */
+      overflow-wrap: break-word;
     }
 
     .repo-desc {
