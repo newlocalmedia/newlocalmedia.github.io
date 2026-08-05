@@ -52,9 +52,9 @@ export const SECTION_META = {
     narrative: 'This project sits in the AI-assisted docs block, where the focus is on documentation systems, editorial standards, and durable operations guidance that can still benefit from AI-assisted workflows.'
   },
   spotlight: {
-    title: 'Spotlight Projects',
-    description: 'Two projects I especially want to foreground right now.',
-    narrative: 'This project sits in the spotlight section because it opens up a broader line of product, pricing, or identity work beyond the core WordPress security and documentation track.'
+    title: 'Experiments',
+    description: 'Open-ended work on product, pricing, and identity questions.',
+    narrative: 'This project sits in the experiments section because it is an open-ended exploration of product, pricing, or identity questions rather than a finished tool.'
   },
   selected: {
     title: 'More Projects!',
@@ -155,13 +155,13 @@ export const PROJECT_META = {
       { label: 'README', description: 'The conclusion in full \u2014 result, honest scope, and acknowledgements.', url: 'https://github.com/dknauss/Sudo/blob/main/readme.md' }
     ],
     screenshots: [
-      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-1.png', alt: 'WP Sudo challenge page asking the current user to confirm their identity with a password.', caption: 'Challenge page — reauthentication interstitial with password field.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-2.png', alt: 'Settings tab with policy presets, session settings, and the active sudo timer in the admin bar.', caption: 'Settings tab — policy presets, session settings, and active sudo timer.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-3.png', alt: 'Gated Actions tab showing protected operations and the surfaces where each rule applies.', caption: 'Gated Actions tab — protected operations with rule IDs and covered surfaces.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-4.png', alt: 'Rule Tester tab evaluating a representative admin request without executing it.', caption: 'Rule Tester tab — evaluate representative request shapes without executing them.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-5.png', alt: 'Access tab for managing dedicated WP Sudo governance capabilities.', caption: 'Access tab — manage dedicated Sudo governance capabilities and revoke sessions.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-6.png', alt: 'Dashboard widget with active sudo sessions, policy summary, and recent privilege-action events.', caption: 'Dashboard widget — active sessions, policy summary, and recent privilege-action events.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-7.png', alt: 'Break-glass recovery mode notice on the Sudo settings screen.', caption: 'Break-glass recovery notice — visible warning while WP_SUDO_RECOVERY_MODE is active.' }
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/.wordpress-org/screenshot-1.png', alt: 'Sudo challenge page titled Confirm Your Identity, asking the current user for their password before a sudo session starts.', caption: 'Challenge page — the reauthentication interstitial shown before a gated action proceeds.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/.wordpress-org/screenshot-2.png', alt: 'WordPress Plugins screen with a Sudo notice explaining that installing, activating, updating, and deleting require an active sudo session.', caption: 'Plugins screen — the gate announcing itself before plugin management is attempted.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/.wordpress-org/screenshot-3.png', alt: 'Sudo Settings tab showing the optional MU-plugin early gate, quick policy presets, session duration, and entry point policies for REST, WP-CLI, Cron, and XML-RPC.', caption: 'Settings tab — early-gate status, policy presets, session duration, and per-surface entry-point policies.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/.wordpress-org/screenshot-4.png', alt: 'Gated Actions tab listing plugin, theme, user, editor, options, update, and tools operations with rule identifiers and the admin, AJAX, and REST surfaces each covers.', caption: 'Gated Actions tab — every gated operation with its rule ID and covered surfaces.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/.wordpress-org/screenshot-5.png', alt: 'Rule Tester tab with surface, method, URL, context, and REST parameter fields for evaluating a representative request.', caption: 'Rule Tester tab — evaluate a representative request shape without executing it.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/.wordpress-org/screenshot-6.png', alt: 'Access tab listing administrators holding Sudo governance capabilities, with grant and revoke controls.', caption: 'Access tab — grant and revoke the dedicated Sudo governance capabilities.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/.wordpress-org/screenshot-7.png', alt: 'Sudo Session Activity dashboard widget showing active sessions with time remaining, a policy summary, and a table of recent revoked and replayed events.', caption: 'Dashboard widget — active sessions, policy summary, and recent privilege-action events.' }
     ],
     relatedProjects: [
       {
@@ -653,6 +653,7 @@ export const PROJECT_META = {
       'The constraints are the curriculum. <strong>No build step</strong> — edit files, run the package check, ship. <strong>No theme-authored JavaScript</strong> — core blocks may still load WordPress’s own Interactivity API, each with a plain-HTML fallback. <strong>No enqueued theme stylesheet</strong> — <code>style.css</code> carries the theme header and is otherwise empty, with styling handled through <code>theme.json</code>. WordPress core already prints global styles, layout, block styles, and the scripts core blocks need; Dirtbag avoids redoing what core or the browser does for you.'
     ],
     omitGenericNarrative: true,
+    omitRelatedNarrative: true,
     primaryImage: {
       url: 'https://newlocalmedia.github.io/assets/dirtbag-preview.png',
       alt: 'Dirtbag theme card — the Dirtbag wordmark, a line-drawn pickup truck, and the tagline “Nothing but good bones and road grit.” over a list reading no build step, no theme JavaScript, web-safe fonts, style variations, core blocks first.'
