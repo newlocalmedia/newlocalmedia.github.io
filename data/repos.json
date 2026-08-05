@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T01:55:14.485Z",
+  "generated_at": "2026-08-05T03:34:33.469Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -49,6 +49,24 @@
       "user": "dknauss",
       "profile_url": "https://github.com/dknauss",
       "repos": [
+        {
+          "id": 1154983208,
+          "name": "Sudo",
+          "full_name": "dknauss/Sudo",
+          "html_url": "https://github.com/dknauss/Sudo",
+          "description": "Concluded research prototype — do not install. Final finding: github.com/dknauss/Sudo/blob/main/docs/finding.md",
+          "homepage": "https://github.com/dknauss/wp-sudo",
+          "stargazers_count": 42,
+          "language": "PHP",
+          "updated_at": "2026-08-05T03:15:26Z",
+          "fork": false,
+          "archived": true,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
         {
           "id": 1264131469,
           "name": "Maestro",
@@ -115,24 +133,6 @@
           "updated_at": "2026-08-05T00:07:35Z",
           "fork": false,
           "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1154983208,
-          "name": "Sudo",
-          "full_name": "dknauss/Sudo",
-          "html_url": "https://github.com/dknauss/Sudo",
-          "description": "Concluded research prototype — do not install. Final finding: github.com/dknauss/Sudo/blob/main/docs/finding.md",
-          "homepage": "https://github.com/dknauss/wp-sudo",
-          "stargazers_count": 42,
-          "language": "PHP",
-          "updated_at": "2026-08-04T10:41:50Z",
-          "fork": false,
-          "archived": true,
           "owner": {
             "login": "dknauss",
             "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
