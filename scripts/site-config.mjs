@@ -23,7 +23,9 @@ export const SELECTED = [
   'dknauss/Sudo',
   'dknauss/fedibots',
   'dknauss/wordpress-2fa-ecosystem',
-  'dknauss/the-drafting-table',
+  'dknauss/the-drafting-table'
+];
+export const SHOWCASE = [
   'dknauss/Dirtbag'
 ];
 export const BLOCKS_SHOWCASE = [
@@ -31,7 +33,7 @@ export const BLOCKS_SHOWCASE = [
   'dknauss/Maestro'
 ];
 
-export const CURATED_REPOS = [LEAD_REPO, ...AI_DOCS_GROUP, ...SPOTLIGHT, ...SELECTED, ...BLOCKS_SHOWCASE];
+export const CURATED_REPOS = [LEAD_REPO, ...AI_DOCS_GROUP, ...SHOWCASE, ...SPOTLIGHT, ...SELECTED, ...BLOCKS_SHOWCASE];
 
 export function ownerArchiveDescription(owner) {
   if (owner === 'newlocalmedia') {
@@ -45,6 +47,11 @@ export const SECTION_META = {
     title: 'Featured Repo',
     description: 'The lead feature on Work in Progress.',
     narrative: 'This project leads the collection because it turns a long tail of WordPress hardening advice into defaults you can actually ship — each one individually toggleable, none of them assumed.'
+  },
+  showcase: {
+    title: 'Showcase',
+    description: 'A project given room to explain itself.',
+    narrative: 'This project gets a showcase slot because it is best understood by reading it end to end rather than by a one-line summary.'
   },
   ai_docs: {
     title: 'AI-Assisted Docs and Related Work',
@@ -120,14 +127,16 @@ export const PROJECT_META = {
     badgeLabel: 'Concluded',
     license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/Sudo/blob/main/LICENSE' },
     seoDescription: 'A concluded WordPress research prototype on action-gated reauthentication, archived read-only with seven verified high-severity bypasses documented rather than fixed.',
-    summary: 'A concluded research prototype on action-gated reauthentication in WordPress. An adversarial audit found seven high-severity bypasses of the plugin’s own central claim; they are documented rather than fixed, because they are the result. Archived read-only — not for installation.',
-    summaryHtml: 'A concluded research prototype on action-gated reauthentication in WordPress. An adversarial audit found seven high-severity bypasses of the plugin’s own central claim; they are documented rather than fixed, <em>because they are the result</em>. Archived read-only — not for installation.',
+    summary: 'A finished experiment in making WordPress ask for your password again before something dangerous happens. It did not work, and the seven ways around it are written up rather than patched, because the write-up is the point. Archived read-only — not for installation.',
+    summaryHtml: 'A finished experiment in making WordPress ask for your password again before something dangerous happens. It did not work, and the seven ways around it are written up rather than patched, <em>because the write-up is the point</em>. Archived read-only — not for installation.',
     whyHeading: 'A Negative Result, Fully Documented',
-    narrative: 'Sudo asked whether a plugin could require a fresh proof of intent before consequential WordPress operations, regardless of role. The answer it arrived at is no — not through route enumeration and post-submission interception — and the evidence for that answer is the project’s actual output.',
+    narrative: 'Sudo asked whether a plugin could make WordPress demand your password again right before something dangerous happens, no matter who you are. After building it and auditing it adversarially, the answer came back no — not the way this plugin went about it — and the evidence for that answer is what the project actually produced.',
     narrativeHtml: [
-      'Sudo asked whether a plugin could require a fresh proof of intent before consequential WordPress operations, regardless of role. The answer it arrived at is <strong>no</strong> — not through route enumeration and post-submission interception — and the evidence for that answer is the project’s actual output.',
-      'Route matching drifts from core. An adversarial audit found seven high-severity bypasses across six independent axes — REST route case, HTTP method set, <code>$_POST</code> versus <code>$_REQUEST</code>, action-name derivation, matcher evaluation order, and surface coverage — each a total bypass, all verified against WordPress 7.0 source. The defect is not an incomplete rule list: the plugin’s matching predicate and the predicate core dispatches on are two independently maintained things that drift, with nothing able to detect the drift.',
-      'The instructive part is why the tests did not catch it. 1,308 unit tests, 243 integration tests, 112 E2E tests, PHPStan level 6, Psalm, and a mandatory adversarial review gate detected none of the seven — they could not have, because every test asserts the plugin against its own model of a request, so a wrong predicate produces a wrong test that passes. All six axes were found by reading core and the matcher side by side.',
+      'Sudo asked a simple question: could a plugin make WordPress demand your password again, right before something dangerous happens — deleting a user, installing a plugin, changing a critical setting — no matter who you are? After building it, testing it hard, and then auditing it adversarially, the answer came back <strong>no</strong>. Not the way this plugin went about it. The evidence for that answer is what the project actually produced.',
+      'Here is the idea that failed, in plain terms. To stop a dangerous request, the plugin first has to <em>recognise</em> one. So it asked a yes-or-no question about every incoming request — is this the delete-a-user request? That yes-or-no question is what the write-up calls a <strong>predicate</strong>: a test that looks at the request and answers true or false. WordPress core asks its own version of the same question to decide what the request actually does. Two separate questions, written by two different people, in two different places, both supposed to mean the same thing.',
+      'They did not mean the same thing. The audit found seven ways to slip past the gate, and each one is the same story: core asked its question slightly differently than the plugin asked its own. Core matched a web address while <em>ignoring</em> capital letters; the plugin matched while <em>respecting</em> them, so changing one letter to uppercase walked straight through. Core accepted a value from either the form data or the address bar; the plugin only looked at the form data, so moving it to the address bar made the gate blind. Core treated a save as "any POST request at all"; the plugin waited for a specific action name that never came. Neither side is wrong on its own — they simply drifted apart, and nothing in the system could notice they had.',
+      'The genuinely instructive part is why an enormous test suite never caught it. There were 1,308 unit tests, 243 integration tests, 112 end-to-end tests, PHPStan at level 6, Psalm, and a mandatory adversarial review before release. None of them found any of the seven, and — this is the point — none of them <em>could</em> have. A test looks something like <em>build a fake request that means "delete a user", hand it to the gate, assert the gate stops it.</em> But the fake request is built from the plugin’s own idea of what that request looks like. If that idea is wrong, the test builds the wrong request, hands it to a matching wrong gate, and passes — confidently, in green, forever. The test and the code under test were reading from the same incorrect script. Every one of the six problems was found only by opening WordPress core and the plugin’s matcher next to each other and reading them line by line.',
+      'The lesson generalises past this plugin: a test suite can only check that code agrees with your model of the world. When the model itself is wrong, more tests just means more confident wrongness. Nothing short of comparing your assumptions against the real thing will surface it.',
       'Start with <a href="https://github.com/dknauss/Sudo/blob/main/docs/sudo-architecture-history.md">the architecture history</a> for a plain-language walk through every approach the project tried, then <a href="https://github.com/dknauss/Sudo/blob/main/docs/finding.md">the finding</a> for the technical result and the narrow core primitive it argues for.',
       '<strong>Related Repo:</strong> <a href="https://newlocalmedia.github.io/projects/dknauss/wordpress-2fa-ecosystem/">WordPress 2FA Ecosystem Documentation</a>.'
     ],
@@ -673,6 +682,7 @@ export const PROJECT_META = {
 
 export function sectionForRepo(fullName) {
   if (fullName === LEAD_REPO) return 'lead';
+  if (SHOWCASE.includes(fullName)) return 'showcase';
   if (AI_DOCS_GROUP.includes(fullName)) return 'ai_docs';
   if (SPOTLIGHT.includes(fullName)) return 'spotlight';
   if (SELECTED.includes(fullName)) return 'selected';

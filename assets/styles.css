@@ -856,20 +856,58 @@
       text-decoration: underline;
     }
 
-    .forks-card {
+    .showcase-card {
       grid-column: span 3;
       min-height: 300px;
       align-content: start;
     }
 
-    .forks-card h2 {
+    .showcase-card h2 {
       margin: 0;
       font-size: 1.55rem;
       letter-spacing: -0.03em;
     }
 
-    .forks-card .prose-block {
+    .showcase-card .prose-block {
       max-width: none;
+    }
+
+    .showcase-card {
+      display: grid;
+      grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .showcase-media {
+      margin: 0;
+    }
+
+    .showcase-media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+    }
+
+    .showcase-body {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      min-width: 0;
+    }
+
+    .showcase-card h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    @media (max-width: 720px) {
+      .showcase-card {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 1080px) {
@@ -877,7 +915,7 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .forks-card {
+      .showcase-card {
         grid-column: span 2;
       }
     }
@@ -914,19 +952,31 @@
       .account-card,
       .feature-card,
       .spotlight-card,
-      .forks-card {
+      .showcase-card {
         border-width: 2px;
       }
     }
 
     @media (max-width: 860px) {
+      /* Pills and link buttons are nowrap by default, so a long one such as
+         "Latest: Borges Bibliography Builder" sets a min-content width the page
+         cannot shrink below and overflows narrow viewports. Let them wrap here. */
+      .pill,
+      .repo-link {
+        white-space: normal;
+        height: auto;
+        min-height: 34px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+      }
+
       .stats,
       .account-grid,
       .spotlight-grid { grid-template-columns: 1fr; }
       .ai-docs-grid,
       .repo-grid,
       .feature-grid { grid-template-columns: 1fr; }
-      .forks-card { grid-column: span 1; }
+      .showcase-card { grid-column: span 1; }
       .shell { width: min(calc(100% - 18px), var(--max)); }
       .hero,
       .section,

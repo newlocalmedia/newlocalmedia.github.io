@@ -9,6 +9,7 @@ import {
   PROJECT_META,
   PROJECTS_INDEX_DESCRIPTION,
   SELECTED,
+  SHOWCASE,
   SECTION_META,
   SITE_URL,
   SPOTLIGHT,
@@ -306,7 +307,7 @@ function homepageLabel(repo) {
   return 'Homepage';
 }
 
-function homeRuntimeConfig() {
+function homeRuntimeConfig(lookup) {
   const repoOverrides = Object.fromEntries(
     CURATED_REPOS.map((fullName) => {
       const meta = PROJECT_META[fullName] || {};
@@ -343,6 +344,7 @@ function homeRuntimeConfig() {
     repoOverrides,
     repoIcons: REPO_ICON_SVGS,
     uiIcons: UI_ICON_SVGS,
+    showcaseCardHtml: SHOWCASE.map((fullName) => renderShowcaseCard(lookup.get(fullName))).join('\n'),
     blocksPlaceholderHtml: renderBlocksPlaceholderCard()
   };
 }
@@ -528,6 +530,27 @@ function renderBlocksPlaceholderCard() {
 }
 
 
+function renderShowcaseCard(repo) {
+  if (!repo) return '';
+  const meta = PROJECT_META[repo.full_name] || {};
+  const primaryImage = homePrimaryImage(repo);
+  const imageAlt = escapeHtml(primaryImage?.alt || `${displayTitle(repo)} preview image.`);
+  const body = (meta.narrativeHtml || []).slice(0, 2).map((html) => `<p>${html}</p>`).join('\n          ');
+  return `
+      <article class="repo-card showcase-card">
+        ${primaryImage ? `<figure class="showcase-media"><a href="${projectPath(repo.full_name)}" aria-label="Open project page for ${escapeHtml(displayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</a></figure>` : ''}
+        <div class="showcase-body">
+          <h3>${titleLinkMarkup(repo)}</h3>
+          <div class="prose-block">
+          ${body}
+          </div>
+          ${repoMetaMarkup(repo)}
+          ${repoActionsMarkup(repo)}
+        </div>
+      </article>
+    `.trim();
+}
+
 function homeSectionHeadMarkup(sectionKey) {
   const section = SECTION_META[sectionKey];
   if (!section) throw new Error(`Unknown home section: ${sectionKey}`);
@@ -559,9 +582,9 @@ function renderHomePage(snapshot, lookup) {
   html = replaceGeneratedRegion(html, 'SELECTED_COUNT', String(CURATED_REPOS.length));
   html = replaceGeneratedRegion(html, 'SELECTED_STARS', formatNumber(totalStars));
   html = replaceGeneratedRegion(html, 'LAST_REFRESH', formatSnapshotTimestamp(snapshot.generated_at));
-  html = replaceGeneratedRegion(html, 'HOME_CONFIG', `\n${JSON.stringify(homeRuntimeConfig(), null, 2)}\n`);
+  html = replaceGeneratedRegion(html, 'HOME_CONFIG', `\n${JSON.stringify(homeRuntimeConfig(lookup), null, 2)}\n`);
   html = replaceGeneratedRegion(html, 'LEAD_FEATURE', `\n${homeLeadMarkup(lookup.get(LEAD_REPO))}\n        `);
-  html = replaceGeneratedRegion(html, 'AI_DOCS', `\n${AI_DOCS_GROUP.map((fullName) => homeRepoCard(lookup.get(fullName), { actionLabel: 'Learn More', showProjectIcon: false })).join('\n')}\n        `);
+  html = replaceGeneratedRegion(html, 'AI_DOCS', `\n${AI_DOCS_GROUP.map((fullName) => homeRepoCard(lookup.get(fullName), { actionLabel: 'Learn More', showProjectIcon: false })).join('\n')}\n${SHOWCASE.map((fullName) => renderShowcaseCard(lookup.get(fullName))).join('\n')}\n        `);
   html = replaceGeneratedRegion(html, 'SPOTLIGHT', `\n${SPOTLIGHT.map((fullName) => homeSpotlightCard(lookup.get(fullName), { badgeLabel: 'Experiment' })).join('\n')}\n        `);
   html = replaceGeneratedRegion(html, 'BLOCKS', `\n${BLOCKS_SHOWCASE.map((fullName) => homeSpotlightCard(lookup.get(fullName), { badgeLabel: 'Block Plugin' })).join('\n')}${renderBlocksPlaceholderCard() ? `\n${renderBlocksPlaceholderCard()}` : ''}\n        `);
   html = replaceGeneratedRegion(html, 'SELECTED', `\n${SELECTED.map((fullName) => homeRepoCard(lookup.get(fullName), { badgeLabel: PROJECT_META[fullName]?.badgeLabel || '' })).join('\n')}\n        `);
