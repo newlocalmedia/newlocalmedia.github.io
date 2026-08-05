@@ -8,10 +8,12 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
   const SPOTLIGHT = HOME_CONFIG.spotlight || [];
   const SELECTED = HOME_CONFIG.selected || [];
   const BLOCKS_SHOWCASE = HOME_CONFIG.blocksShowcase || [];
+  const SHOWCASE = HOME_CONFIG.showcase || [];
   const PROJECT_PATHS = HOME_CONFIG.projectPaths || {};
   const PROJECT_PAGE_SET = new Set([
     LEAD_REPO,
     ...AI_DOCS_GROUP,
+    ...SHOWCASE,
     ...SPOTLIGHT,
     ...SELECTED,
     ...BLOCKS_SHOWCASE
@@ -372,12 +374,14 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
   function renderShowcase() {
     const target = document.getElementById('showcase-grid');
     if (!target) return;
-    if (target.children.length) {
-      setBusyState('showcase-grid', false);
-      return;
+    // Count these toward the header stats even though the markup is prebuilt,
+    // otherwise the repo and star totals silently omit the showcase entries.
+    reposFor(SHOWCASE).forEach(countRepo);
+    if (!target.children.length) {
+      target.innerHTML = SHOWCASE_CARD_HTML;
     }
-    target.innerHTML = SHOWCASE_CARD_HTML;
     setBusyState('showcase-grid', false);
+    updateStats();
   }
 
   function renderSpotlight() {

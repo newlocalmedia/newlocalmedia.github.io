@@ -341,6 +341,7 @@ function homeRuntimeConfig(lookup) {
     spotlight: SPOTLIGHT,
     selected: SELECTED,
     blocksShowcase: BLOCKS_SHOWCASE,
+    showcase: SHOWCASE,
     projectPaths: Object.fromEntries(CURATED_REPOS.map((fullName) => [fullName.toLowerCase(), projectPath(fullName)])),
     repoOverrides,
     repoIcons: REPO_ICON_SVGS,
