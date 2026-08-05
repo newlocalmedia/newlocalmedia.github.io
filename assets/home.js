@@ -365,9 +365,19 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
       targetId: 'ai-docs-grid',
       fullNames: AI_DOCS_GROUP,
       renderer: (repo) => repoCard(repo, { actionLabel: 'Learn More', showProjectIcon: false }),
-      suffixHtml: SHOWCASE_CARD_HTML,
       preserveServerMarkup: true
     });
+  }
+
+  function renderShowcase() {
+    const target = document.getElementById('showcase-grid');
+    if (!target) return;
+    if (target.children.length) {
+      setBusyState('showcase-grid', false);
+      return;
+    }
+    target.innerHTML = SHOWCASE_CARD_HTML;
+    setBusyState('showcase-grid', false);
   }
 
   function renderSpotlight() {
@@ -508,6 +518,7 @@ const rawHomeConfig = document.getElementById('home-config')?.textContent || '{}
 
       renderLead(state.get(LEAD_REPO.toLowerCase()));
       renderAiDocs();
+      renderShowcase();
       renderSpotlight();
       renderBlocks();
       renderList(SELECTED, 'selected-grid', false);

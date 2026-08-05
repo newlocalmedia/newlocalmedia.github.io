@@ -49,9 +49,9 @@ export const SECTION_META = {
     narrative: 'This project leads the collection because it turns a long tail of WordPress hardening advice into defaults you can actually ship — each one individually toggleable, none of them assumed.'
   },
   showcase: {
-    title: 'Showcase',
-    description: 'A project given room to explain itself.',
-    narrative: 'This project gets a showcase slot because it is best understood by reading it end to end rather than by a one-line summary.'
+    title: 'WordPress Block Themes',
+    description: 'Block themes built on core blocks and plain HTML, with no build step standing between you and the markup.',
+    narrative: 'This project sits in the block themes section, where the emphasis is on doing more with native WordPress and less with front-end machinery.'
   },
   ai_docs: {
     title: 'AI-Assisted Docs and Related Work',
