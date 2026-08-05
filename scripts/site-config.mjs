@@ -7,7 +7,7 @@ export const HOME_TITLE = `${SITE_NAME} | ${ORGANIZATION_NAME}`;
 export const HOME_DESCRIPTION = 'Curated open-source projects from New Local Media and Dan Knauss on WordPress security, technical docs, identity, automation, and experiments.';
 export const PROJECTS_INDEX_DESCRIPTION = 'Browse project directories and curated pages from New Local Media and Dan Knauss, including WordPress security, docs, identity, automation, and experiments.';
 
-export const LEAD_REPO = 'dknauss/Sudo';
+export const LEAD_REPO = 'dknauss/Keel';
 export const AI_DOCS_GROUP = [
   'dknauss/ai-assisted-docs',
   'dknauss/wordpress-runbook-template',
@@ -20,9 +20,11 @@ export const SPOTLIGHT = [
   'dknauss/author-identity'
 ];
 export const SELECTED = [
+  'dknauss/Sudo',
   'dknauss/fedibots',
   'dknauss/wordpress-2fa-ecosystem',
-  'dknauss/the-drafting-table'
+  'dknauss/the-drafting-table',
+  'dknauss/Dirtbag'
 ];
 export const BLOCKS_SHOWCASE = [
   'dknauss/Borges',
@@ -42,7 +44,7 @@ export const SECTION_META = {
   lead: {
     title: 'Featured Repo',
     description: 'The lead feature on Work in Progress.',
-    narrative: 'This project leads the collection because it shows the clearest intersection of WordPress security architecture, risky-action gating, and careful operational design.'
+    narrative: 'This project leads the collection because it turns a long tail of WordPress hardening advice into defaults you can actually ship — each one individually toggleable, none of them assumed.'
   },
   ai_docs: {
     title: 'AI-Assisted Docs and Related Work',
@@ -67,28 +69,71 @@ export const SECTION_META = {
 };
 
 export const PROJECT_META = {
+  'dknauss/Keel': {
+    displayTitle: 'Keel',
+    pageTitle: 'Keel ⚓',
+    schemaType: 'SoftwareSourceCode',
+    release: { tag: 'v0.1.0-dev', url: 'https://github.com/dknauss/Keel/releases/tag/v0.1.0-dev' },
+    license: { label: 'GPL-2.0-or-later', url: 'https://github.com/dknauss/Keel/blob/main/LICENSE' },
+    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Keel/main/.wordpress-org/blueprints/blueprint.json',
+    seoDescription: 'Sane, individually-toggleable WordPress defaults for security, updates, privacy, UX, and performance — 37 switches under one settings screen, with Site Health reporting and collision detection.',
+    summary: 'Sane, individually-toggleable WordPress defaults across security, updates, privacy, UX, and performance — 37 switches in one place, nothing hidden and nothing all-or-nothing.',
+    summaryHtml: 'Sane, individually-toggleable WordPress defaults across security, updates, privacy, UX, and performance — 37 switches in one place, nothing hidden and nothing all-or-nothing.',
+    homeLeadExtraHtml: 'Most “disable it” plugins close the front door and leave a side one open. Measured against nine of the most-installed alternatives on wordpress.org — every cell a live HTTP or PHP probe rather than a readme claim — Keel is the only one in the field where <em>comments are off</em> holds below the presentation layer: <code>get_comments()</code> still returns approved comments on the others, and zero on Keel.',
+    leadKicker: 'What if a fresh WordPress install just started out sensible?',
+    leadNotes: [
+      { title: 'Off Means Off', text: 'Disabling comments also stops <code>get_comments()</code> returning them and the comment feed answering — not just the presentation layer.' },
+      { title: 'One Switch Each', text: '37 defaults across security, updates, privacy, UX, and performance, every one individually toggleable under <strong>Settings &rarr; Keel</strong>.' },
+      { title: 'Reports Its Own Posture', text: 'Site Health lists every default and its current state, and flags when another plugin is contesting the same setting.' }
+    ],
+    whyHeading: 'Defaults You Can See and Switch Off',
+    narrative: 'Keel flips a menu of sensible security, update, privacy, UX, and performance defaults onto any WordPress install — each one a switch under Settings → Keel. Nothing is hidden and nothing is all-or-nothing: you can see exactly what the plugin does to your site, in one place, and turn any piece off.',
+    narrativeHtml: [
+      'Keel flips a menu of sensible security, update, privacy, UX, and performance defaults onto any WordPress install — each one a switch under <strong>Settings → Keel</strong>. Nothing is hidden and nothing is all-or-nothing: you can see exactly what the plugin does to your site, in one place, and turn any piece off.',
+      'The consistency is the point. Closing the REST API also removes the discovery link that advertises it; disabling comments also stops the comment feed answering. Where a trade is deliberate it is documented rather than papered over — oEmbed stays reachable when the REST gate is closed, alone among the four measured plugins that close REST outright, so other sites can still embed your posts instead of silently degrading them to bare links.',
+      'One array — <code>keel_defaults_schema()</code> — is the single source of truth, driving both the settings screen and the bootstrap that wires each enabled default to its WordPress hook. Adding a default is one array entry plus one <code>if</code>-block; there is no new settings-page code to write.',
+      'Two things it does that a settings screen usually does not: <strong>Site Health reports the posture</strong> read-only, so the site’s actual configuration is legible without clicking through tabs; and it <strong>notices when another plugin is setting the same defaults</strong>. Two plugins can both set a session length, WordPress keeps whichever ran last, and the loser’s settings screen goes on displaying a value the site does not use with no error anywhere. Keel reports the collision and names what is contesting what — it does not tell you which plugin to keep, because a plugin answering that is arguing for its own retention.'
+    ],
+    omitGenericNarrative: true,
+    omitRelatedNarrative: true,
+    primaryImage: {
+      url: 'https://newlocalmedia.github.io/assets/keel-preview.png',
+      alt: 'Keel banner — a sailboat and keel mark beside the Keel wordmark and the tagline “Sensible defaults for steady sites.” on a dark navy field.'
+    },
+    focus: 'Keel for WordPress ⚓',
+    subfocus: 'Pre-release (0.1.0-dev) and feature-complete for review: 37 defaults, the Site Health surface, and multisite-aware seeding are all in. What remains before a wordpress.org submission is packaging and verification, not features.',
+    subfocusHtml: 'Pre-release (<code>0.1.0-dev</code>) and feature-complete for review: 37 defaults, the Site Health surface, and multisite-aware seeding are all in. What remains before a wordpress.org submission is packaging and verification, not features.',
+    docs: [
+      { label: 'README', description: 'What Keel does, how it is built, and how it compares to the alternatives.', url: 'https://github.com/dknauss/Keel/blob/main/README.md' },
+      { label: 'Competitive Teardown Matrix', description: 'Nine of the most-installed “disable it” plugins measured by live HTTP and PHP probes rather than readme claims — including where Keel makes a deliberate trade.', url: 'https://github.com/dknauss/Keel/blob/main/docs/competitive-teardown-matrix.md' },
+      { label: 'WordPress Default Settings', description: 'Every default Keel can set, what WordPress does without it, and why the opinion is worth having.', url: 'https://github.com/dknauss/Keel/blob/main/docs/wordpress-default-settings.md' },
+      { label: 'Environment Detection', description: 'How Keel decides what is safe to seed on a given install, including multisite-aware behaviour.', url: 'https://github.com/dknauss/Keel/blob/main/docs/environment-detection.md' },
+      { label: 'Roadmap', description: 'Milestones between the current pre-release and a wordpress.org submission.', url: 'https://github.com/dknauss/Keel/blob/main/ROADMAP.md' }
+    ]
+  },
   'dknauss/Sudo': {
     displayTitle: 'Sudo',
     pageTitle: 'Sudo \u26E9\uFE0F',
     slug: 'wp-sudo',
     schemaType: 'SoftwareSourceCode',
-    release: { tag: 'v2.14.0', url: 'https://github.com/dknauss/Sudo/releases/tag/v2.14.0' },
-    tests: 'PHPUnit + Playwright e2e',
+    archived: true,
+    badgeLabel: 'Concluded',
     license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/Sudo/blob/main/LICENSE' },
-    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Sudo/main/blueprint.json',
-    seoDescription: 'WordPress risky-action gating with reauthentication, 2FA support, time-bounded sessions, rate limiting, and policy controls across WordPress surfaces.',
-    summary: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across wp-admin, REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.',
-    summaryHtml: 'WordPress risky-action gating with mandatory reauthentication, time-bounded sessions, 2FA support, rate limiting, and policy controls across <code>wp-admin</code>, <code>REST</code>, <code>WP-CLI</code>, <code>Cron</code>, <code>WPGraphQL</code>, and <code>XML-RPC</code>.',
-    homeLeadExtraHtml: 'Patchstack reported Broken Access Control as 57% of real-world WordPress exploitation attempts in 2026, with privilege escalation and broken authentication pushing that risk concentration even higher. Sudo is built for the moment after prevention fails: when an attacker already has a session and tries to install plugins, create admins, or change settings, it forces reauthentication before the damage can happen.',
-    whyHeading: 'Gate Any Privileged Action',
-    narrative: 'When a user attempts a gated action, Sudo intercepts the request at `admin_init`. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.',
+    seoDescription: 'A concluded WordPress research prototype on action-gated reauthentication, archived read-only with seven verified high-severity bypasses documented rather than fixed.',
+    summary: 'A concluded research prototype on action-gated reauthentication in WordPress. An adversarial audit found seven high-severity bypasses of the plugin’s own central claim; they are documented rather than fixed, because they are the result. Archived read-only — not for installation.',
+    summaryHtml: 'A concluded research prototype on action-gated reauthentication in WordPress. An adversarial audit found seven high-severity bypasses of the plugin’s own central claim; they are documented rather than fixed, <em>because they are the result</em>. Archived read-only — not for installation.',
+    whyHeading: 'A Negative Result, Fully Documented',
+    narrative: 'Sudo asked whether a plugin could require a fresh proof of intent before consequential WordPress operations, regardless of role. The answer it arrived at is no — not through route enumeration and post-submission interception — and the evidence for that answer is the project’s actual output.',
     narrativeHtml: [
-      'When a user attempts a gated action, Sudo intercepts the request at <code>admin_init</code>. It is the clearest expression of the security work in this collection: no role escalation, no new permissions, just a deliberate gate in front of dangerous actions.',
-      'Key docs worth reading here include the <a href="https://github.com/dknauss/Sudo/blob/main/docs/security-model.md">Security Model</a>, the <a href="https://github.com/dknauss/Sudo/blob/main/docs/developer-reference.md">Developer Reference</a>, the <a href="https://github.com/dknauss/Sudo/blob/main/docs/two-factor-integration.md">Two-Factor Integration</a> guide, and the <a href="https://github.com/dknauss/Sudo/blob/main/docs/sudo-architecture-comparison-matrix.md">Sudo Architecture Comparison Matrix</a>.',
+      'Sudo asked whether a plugin could require a fresh proof of intent before consequential WordPress operations, regardless of role. The answer it arrived at is <strong>no</strong> — not through route enumeration and post-submission interception — and the evidence for that answer is the project’s actual output.',
+      'Route matching drifts from core. An adversarial audit found seven high-severity bypasses across six independent axes — REST route case, HTTP method set, <code>$_POST</code> versus <code>$_REQUEST</code>, action-name derivation, matcher evaluation order, and surface coverage — each a total bypass, all verified against WordPress 7.0 source. The defect is not an incomplete rule list: the plugin’s matching predicate and the predicate core dispatches on are two independently maintained things that drift, with nothing able to detect the drift.',
+      'The instructive part is why the tests did not catch it. 1,308 unit tests, 243 integration tests, 112 E2E tests, PHPStan level 6, Psalm, and a mandatory adversarial review gate detected none of the seven — they could not have, because every test asserts the plugin against its own model of a request, so a wrong predicate produces a wrong test that passes. All six axes were found by reading core and the matcher side by side.',
+      'Start with <a href="https://github.com/dknauss/Sudo/blob/main/docs/sudo-architecture-history.md">the architecture history</a> for a plain-language walk through every approach the project tried, then <a href="https://github.com/dknauss/Sudo/blob/main/docs/finding.md">the finding</a> for the technical result and the narrow core primitive it argues for.',
       '<strong>Related Repo:</strong> <a href="https://newlocalmedia.github.io/projects/dknauss/wordpress-2fa-ecosystem/">WordPress 2FA Ecosystem Documentation</a>.'
     ],
     whyInsetHtml: [
-      '<blockquote class="pull-quote pull-quote--poem"><p>So full of cracks,<br>the barrier gatehouse of Fuwa<br>lets both rain and moonlight in&mdash;<br>quietly exposed, yet enduring.</p><cite>Abatsu-ni, <em>Diary of the Waning Moon</em></cite></blockquote>'
+      '<blockquote class="pull-quote pull-quote--poem"><p>So full of cracks,<br>the barrier gatehouse of Fuwa<br>lets both rain and moonlight in&mdash;<br>quietly exposed, yet enduring.</p><cite>Abutsu-ni, <em>Diary of the Waning Moon</em></cite></blockquote>',
+      '<p>The verse was chosen at the start of the project, for the gate metaphor. It turned out to be the finding: this barrier had cracks too &mdash; seven of them, verified &mdash; and what endures is not the gate but the record of where the light came through.</p>'
     ],
     omitGenericNarrative: true,
     omitRelatedNarrative: true,
@@ -96,18 +141,18 @@ export const PROJECT_META = {
       url: 'https://newlocalmedia.github.io/assets/wp-sudo-preview.png',
       alt: 'Sudo for WordPress preview image using the Fuwa no Seki graphic.'
     },
-    focus: 'Sudo for WordPress! 🥪',
-    subfocus: 'Risky actions — activating plugins, deleting users, changing key settings — are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for REST, WP-CLI, Cron, WPGraphQL, & XML-RPC. No role escalation, no new permissions — just a gate.',
-    subfocusHtml: 'Risky actions \u2014 activating plugins, deleting users, changing key settings \u2014 are gated by a required reauthentication step, regardless of user role. Time-bounded sessions, 2FA support, rate limiting, and configurable policies for <code>REST</code>, <code>WP-CLI</code>, <code>Cron</code>, <code>WPGraphQL</code>, and <code>XML-RPC</code>. No role escalation, no new permissions \u2014 just a gate.',
+    focus: 'Sudo for WordPress — concluded ⛩️',
+    subfocus: 'Do not install this plugin. It contains seven verified high-severity bypasses of its own central claim, left documented rather than fixed because they are the finding. The implementation and test suites are retained read-only as the evidence those findings rest on — deleting them would leave assertions nobody could reproduce, which is the failure mode this project exists to document.',
+    subfocusHtml: '<strong>Do not install this plugin.</strong> It contains seven verified high-severity bypasses of its own central claim, left documented rather than fixed because they <em>are</em> the finding. The implementation and test suites are retained read-only as the evidence those findings rest on \u2014 deleting them would leave assertions nobody could reproduce, which is the failure mode this project exists to document.',
     docs: [
-      { label: 'WordPress Core Authentication', description: 'How WordPress authentication works \u2014 request flow, session handling, cookies, and the nonce system.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/wordpress-core-authentication.md' },
-      { label: 'Two-Factor Authentication Flow', description: 'The full 2FA request lifecycle with a flowchart \u2014 and where Sudo intercepts.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/two-factor-authentication-flow.md' },
-      { label: 'Security Model', description: 'Threat model and design decisions behind Sudo\u2019s reauthentication architecture.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/security-model.md' },
-      { label: 'Developer Reference', description: 'Hooks, filters, API surface, and integration patterns for building on Sudo.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/developer-reference.md' },
-      { label: 'Two-Factor Integration', description: 'Bridging Sudo with WP 2FA, Wordfence, AIOS, and other plugins for delegated code verification.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/two-factor-integration.md' },
-      { label: 'Architecture Comparison Matrix', description: 'How Sudo compares to other re-auth and session-gating approaches.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/sudo-architecture-comparison-matrix.md' },
-      { label: 'README', description: 'Installation, configuration, and usage overview.', url: 'https://github.com/dknauss/Sudo/blob/main/readme.md' },
-      { label: 'FAQ', description: 'Answers to common questions about configuration, behavior, and edge cases.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/FAQ.md' }
+      { label: 'Architecture History', description: 'Start here \u2014 a short, plain-language walk through every approach the project tried, what each attempted, and where each ran out.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/sudo-architecture-history.md' },
+      { label: 'The Finding', description: 'The technical result, the six axes of predicate drift, and the narrow WordPress core primitive it argues for.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/finding.md' },
+      { label: 'Audit Verification Record', description: 'Independent verification of all seven high-severity bypasses against WordPress 7.0 source.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/audit-verification-record.md' },
+      { label: 'Post-Mortem', description: 'How a heavily tested project failed to see what it had already diagnosed \u2014 1,663 tests that could not catch a wrong predicate.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/post-mortem.md' },
+      { label: 'Security Model', description: 'Threat model and the boundaries the prototype never claimed to cover.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/security-model.md' },
+      { label: 'Upstream Sources', description: 'Every third-party claim, with enclosing symbol, machine-checked.', url: 'https://github.com/dknauss/Sudo/blob/main/docs/upstream-sources.md' },
+      { label: 'Project Status', description: 'The research-prototype classification and why it exists.', url: 'https://github.com/dknauss/Sudo/blob/main/PROJECT-STATUS.md' },
+      { label: 'README', description: 'The conclusion in full \u2014 result, honest scope, and acknowledgements.', url: 'https://github.com/dknauss/Sudo/blob/main/readme.md' }
     ],
     screenshots: [
       { url: 'https://raw.githubusercontent.com/dknauss/Sudo/main/assets/screenshot-1.png', alt: 'WP Sudo challenge page asking the current user to confirm their identity with a password.', caption: 'Challenge page — reauthentication interstitial with password field.' },
@@ -585,6 +630,42 @@ export const PROJECT_META = {
       { label: 'SPEC', description: 'Durable specification for the plugin behavior, editor model, and data design.', url: 'https://github.com/dknauss/Maestro/blob/main/SPEC.md' },
       { label: 'Testing', description: 'How to run the unit, integration, Playground, and Playwright test layers.', url: 'https://github.com/dknauss/Maestro/blob/main/TESTING.md' },
       { label: 'FIXES', description: 'Resolved punch list and implementation notes for the v1 editor and autosave model.', url: 'https://github.com/dknauss/Maestro/blob/main/FIXES.md' }
+    ]
+  },
+  'dknauss/Dirtbag': {
+    displayTitle: 'Dirtbag',
+    pageTitle: 'Dirtbag 🛻',
+    schemaType: 'SoftwareSourceCode',
+    release: { tag: 'v0.1.17', url: 'https://github.com/dknauss/Dirtbag/releases/tag/v0.1.17' },
+    license: { label: 'GPL-2.0-or-later', url: 'https://github.com/dknauss/Dirtbag/blob/main/LICENSE' },
+    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Dirtbag/main/playground/blueprint-stable.json',
+    detailLinksLabel: 'WordPress.org',
+    extraLinks: [
+      { label: 'WordPress.org', heroLabel: '🎨 WordPress.org', heroAfterRelease: true, url: 'https://wordpress.org/themes/dirtbag/' },
+      { label: 'Live Demo', url: 'https://dknauss.github.io/Dirtbag/' }
+    ],
+    seoDescription: 'A small WordPress block theme built on core blocks, web-safe fonts, and no build step — six style variations and a plain-HTML, view-source foundation for learning theme development.',
+    summary: 'A super-simple WordPress block theme built on good bones and road grit — a lean utility vehicle for tinkering and practical self-education.',
+    whyHeading: 'Do More With Less',
+    narrativeHtml: [
+      'Dirtbag is for people who want to learn WordPress theme design and front-end development by stripping down to fundamentals and building up from there. It favours plain HTML markup, as little CSS and JS as possible, core WordPress blocks, the fonts everyone already has, visible feeds, and old open-web habits over front-end machinery.',
+      'Out of the box it is a plain, unstyled, brutalist foundation with a 1990s view-source feel, packaged with Web 1.0-inspired page templates, block patterns, and six global styles: Amber CRT, Blueprint (or BSOD), Hi-vis (No-Name), Minimalist, Newspaper, and Terminal. Unlike the default no-style style, those variations open the door to the full powers of the site editor if you want to go there.',
+      'The constraints are the curriculum. <strong>No build step</strong> — edit files, run the package check, ship. <strong>No theme-authored JavaScript</strong> — core blocks may still load WordPress’s own Interactivity API, each with a plain-HTML fallback. <strong>No enqueued theme stylesheet</strong> — <code>style.css</code> carries the theme header and is otherwise empty, with styling handled through <code>theme.json</code>. WordPress core already prints global styles, layout, block styles, and the scripts core blocks need; Dirtbag avoids redoing what core or the browser does for you.'
+    ],
+    omitGenericNarrative: true,
+    primaryImage: {
+      url: 'https://newlocalmedia.github.io/assets/dirtbag-preview.png',
+      alt: 'Dirtbag theme card — the Dirtbag wordmark, a line-drawn pickup truck, and the tagline “Nothing but good bones and road grit.” over a list reading no build step, no theme JavaScript, web-safe fonts, style variations, core blocks first.'
+    },
+    focus: 'A WordPress Block Theme for Tinkering',
+    subfocus: 'Small, simple, durable, accessible, and understandable — a block theme you can read end to end, listed in the WordPress.org theme directory with a live static demo and Playground blueprints.',
+    docs: [
+      { label: 'README', description: 'What the theme is, what it refuses to do, and how to get it running.', url: 'https://github.com/dknauss/Dirtbag/blob/main/README.md' },
+      { label: 'Style Variations', description: 'The six global styles — Amber CRT, Blueprint, Hi-vis, Minimalist, Newspaper, and Terminal — and how they are built.', url: 'https://github.com/dknauss/Dirtbag/blob/main/docs/style-variations.md' },
+      { label: 'Philosophy Audit', description: 'The theme measured against its own stated principles, with the places it falls short named.', url: 'https://github.com/dknauss/Dirtbag/blob/main/docs/philosophy-audit.md' },
+      { label: 'Open-Web Site Files', description: 'Templates and docs for RSS, OPML, XFN, h-card, rel=me, now pages, and plain-text site-root files.', url: 'https://github.com/dknauss/Dirtbag/blob/main/docs/site-root-open-web-files.md' },
+      { label: 'Static Export to GitHub Pages', description: 'How the backend-free demo site is crawled from WordPress and deployed as static files.', url: 'https://github.com/dknauss/Dirtbag/blob/main/docs/github-pages-static-export.md' },
+      { label: 'Development', description: 'Local setup, the package check, and the contribution workflow.', url: 'https://github.com/dknauss/Dirtbag/blob/main/docs/development.md' }
     ]
   }
 };

@@ -1,5 +1,5 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
-import { ACCOUNT_ORDER } from './site-config.mjs';
+import { ACCOUNT_ORDER, CURATED_REPOS } from './site-config.mjs';
 
 const API_BASE = 'https://api.github.com';
 const OUTFILE = new URL('../data/repos.json', import.meta.url);
@@ -14,8 +14,15 @@ if (token) {
   headers.Authorization = `Bearer ${token}`;
 }
 
+const CURATED = new Set(CURATED_REPOS);
+
 function isEligibleRepo(user, repo) {
-  return !repo.fork && !repo.archived && repo.name !== '.github' && repo.name !== `${user}.github.io`;
+  if (repo.fork || repo.name === '.github' || repo.name === `${user}.github.io`) {
+    return false;
+  }
+  // Curated repos stay in the snapshot after they are archived so their project
+  // pages keep building; uncurated repos drop out once archived.
+  return !repo.archived || CURATED.has(repo.full_name);
 }
 
 function simplifyRepo(repo) {
@@ -73,7 +80,9 @@ async function fetchAccount(user) {
     repos: filtered,
     total_repos: filtered.length,
     total_stars: totalStars,
-    latest_repo: filtered.slice().sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))[0] ?? null,
+    latest_repo: filtered
+      .filter((repo) => !repo.archived)
+      .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))[0] ?? null,
   };
 }
 

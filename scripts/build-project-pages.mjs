@@ -283,6 +283,16 @@ function homeLeadExtraHtml(repo) {
   return meta.homeLeadExtraHtml || '';
 }
 
+function homeLeadKicker(repo) {
+  const meta = PROJECT_META[repo.full_name] || {};
+  return meta.leadKicker || '';
+}
+
+function homeLeadNotes(repo) {
+  const meta = PROJECT_META[repo.full_name] || {};
+  return meta.leadNotes || [];
+}
+
 function homeImageClass(repo) {
   const meta = PROJECT_META[repo.full_name] || {};
   return meta.homeImageClass || '';
@@ -435,7 +445,7 @@ function homeLeadMarkup(repo) {
   return `
       <div class="feature-main">
         <span class="feature-label">Featured Repo</span>
-        <div class="feature-kicker"><strong>What if WordPress had a Linux-like sudo mode?</strong></div>
+        ${homeLeadKicker(repo) ? `<div class="feature-kicker"><strong>${homeLeadKicker(repo)}</strong></div>` : ''}
         <h2 id="lead-feature-title">${titleLinkMarkup(repo)}</h2>
         <p class="feature-summary">${homeDescriptionHtml(repo)}</p>
         ${homeLeadExtraHtml(repo) ? `<p class="feature-summary feature-summary-secondary">${homeLeadExtraHtml(repo)}</p>` : ''}
@@ -449,8 +459,7 @@ function homeLeadMarkup(repo) {
       </div>
       <aside class="feature-side" aria-label="${escapeHtml(displayTitle(repo))} details">
         ${primaryImage ? `<figure class="feature-media"><a href="${projectPath(repo.full_name)}" aria-label="Open project page for ${escapeHtml(displayTitle(repo))}">${pictureMarkup(primaryImage.url, imageAlt)}</a></figure>` : ''}
-        <p class="feature-note"><strong>Gate &amp; Log Dangerous Actions</strong> When a user attempts a gated action, Sudo intercepts the request at <code>admin_init</code>.</p>
-        <p class="feature-note"><strong>Protects Every Surface</strong> WordPress reauthentication and risky-action gating with support across REST, WP-CLI, Cron, WPGraphQL, and XML-RPC.</p>
+        ${homeLeadNotes(repo).map((note) => `<p class="feature-note"><strong>${note.title}</strong> ${note.text}</p>`).join('\n        ')}
       </aside>
     `.trim();
 }
@@ -571,7 +580,7 @@ function renderHomePage(snapshot, lookup) {
   html = replaceGeneratedRegion(html, 'AI_DOCS', `\n${AI_DOCS_GROUP.map((fullName) => homeRepoCard(lookup.get(fullName), { actionLabel: 'Learn More', showProjectIcon: false })).join('\n')}\n${renderForksCard()}\n        `);
   html = replaceGeneratedRegion(html, 'SPOTLIGHT', `\n${SPOTLIGHT.map((fullName) => homeSpotlightCard(lookup.get(fullName))).join('\n')}\n        `);
   html = replaceGeneratedRegion(html, 'BLOCKS', `\n${BLOCKS_SHOWCASE.map((fullName) => homeSpotlightCard(lookup.get(fullName))).join('\n')}${renderBlocksPlaceholderCard() ? `\n${renderBlocksPlaceholderCard()}` : ''}\n        `);
-  html = replaceGeneratedRegion(html, 'SELECTED', `\n${SELECTED.map((fullName) => homeRepoCard(lookup.get(fullName))).join('\n')}\n        `);
+  html = replaceGeneratedRegion(html, 'SELECTED', `\n${SELECTED.map((fullName) => homeRepoCard(lookup.get(fullName), { badgeLabel: PROJECT_META[fullName]?.badgeLabel || '' })).join('\n')}\n        `);
   html = replaceGeneratedRegion(html, 'ACCOUNTS', `\n${ACCOUNT_ORDER.map((user) => accountsByUser.get(user)).filter(Boolean).map((account) => accountCardMarkup(account)).join('\n')}\n        `);
   return html;
 }
