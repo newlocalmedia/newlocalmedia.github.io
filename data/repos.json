@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T02:35:39.800Z",
+  "generated_at": "2026-08-10T08:05:14.121Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,15 +50,15 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
-          "id": 1319788156,
-          "name": "Keel",
-          "full_name": "dknauss/Keel",
-          "html_url": "https://github.com/dknauss/Keel",
-          "description": "Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
+          "id": 1329411208,
+          "name": "two-factor-enrollment",
+          "full_name": "dknauss/two-factor-enrollment",
+          "html_url": "https://github.com/dknauss/two-factor-enrollment",
+          "description": "Two-factor enrollment onboarding for the WordPress Two Factor plugin. Enrolls covered users during login, before an auth cookie exists. Owns no policy.",
           "homepage": null,
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-08-10T02:33:18Z",
+          "updated_at": "2026-08-10T07:43:16Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -76,7 +76,25 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
           "stargazers_count": 2,
           "language": "PHP",
-          "updated_at": "2026-08-10T02:04:32Z",
+          "updated_at": "2026-08-10T07:33:03Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1319788156,
+          "name": "Keel",
+          "full_name": "dknauss/Keel",
+          "html_url": "https://github.com/dknauss/Keel",
+          "description": "Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
+          "homepage": null,
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-08-10T06:25:41Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -446,18 +464,18 @@
           }
         }
       ],
-      "total_repos": 22,
+      "total_repos": 23,
       "total_stars": 67,
       "latest_repo": {
-        "id": 1319788156,
-        "name": "Keel",
-        "full_name": "dknauss/Keel",
-        "html_url": "https://github.com/dknauss/Keel",
-        "description": "Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
+        "id": 1329411208,
+        "name": "two-factor-enrollment",
+        "full_name": "dknauss/two-factor-enrollment",
+        "html_url": "https://github.com/dknauss/two-factor-enrollment",
+        "description": "Two-factor enrollment onboarding for the WordPress Two Factor plugin. Enrolls covered users during login, before an auth cookie exists. Owns no policy.",
         "homepage": null,
         "stargazers_count": 0,
         "language": "PHP",
-        "updated_at": "2026-08-10T02:33:18Z",
+        "updated_at": "2026-08-10T07:43:16Z",
         "fork": false,
         "archived": false,
         "owner": {
