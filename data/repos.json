@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T07:53:27.039Z",
+  "generated_at": "2026-08-12T13:49:37.987Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,24 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1319788156,
+          "name": "Keel",
+          "full_name": "dknauss/Keel",
+          "html_url": "https://github.com/dknauss/Keel",
+          "description": "Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
+          "homepage": null,
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-08-12T13:18:01Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1264131469,
           "name": "Maestro",
           "full_name": "dknauss/Maestro",
@@ -77,24 +95,6 @@
           "stargazers_count": 0,
           "language": "PHP",
           "updated_at": "2026-08-10T15:28:49Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1319788156,
-          "name": "Keel",
-          "full_name": "dknauss/Keel",
-          "html_url": "https://github.com/dknauss/Keel",
-          "description": "Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
-          "homepage": null,
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-08-10T06:25:41Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -467,15 +467,15 @@
       "total_repos": 23,
       "total_stars": 67,
       "latest_repo": {
-        "id": 1264131469,
-        "name": "Maestro",
-        "full_name": "dknauss/Maestro",
-        "html_url": "https://github.com/dknauss/Maestro",
-        "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
-        "stargazers_count": 2,
+        "id": 1319788156,
+        "name": "Keel",
+        "full_name": "dknauss/Keel",
+        "html_url": "https://github.com/dknauss/Keel",
+        "description": "Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
+        "homepage": null,
+        "stargazers_count": 0,
         "language": "PHP",
-        "updated_at": "2026-08-12T04:42:50Z",
+        "updated_at": "2026-08-12T13:18:01Z",
         "fork": false,
         "archived": false,
         "owner": {
