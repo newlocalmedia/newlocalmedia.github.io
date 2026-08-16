@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T13:01:48.355Z",
+  "generated_at": "2026-08-16T18:47:43.776Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -49,6 +49,42 @@
       "user": "dknauss",
       "profile_url": "https://github.com/dknauss",
       "repos": [
+        {
+          "id": 1175597908,
+          "name": "author-identity",
+          "full_name": "dknauss/author-identity",
+          "html_url": "https://github.com/dknauss/author-identity",
+          "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
+          "homepage": "https://dan.knauss.ca",
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-08-16T15:50:28Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1165510944,
+          "name": "the-drafting-table",
+          "full_name": "dknauss/the-drafting-table",
+          "html_url": "https://github.com/dknauss/the-drafting-table",
+          "description": "A Frank Lloyd Wright-era architect's notebook FSE block theme for WordPress — aged parchment, dot-grid overlays, blueprint borders, and refined architectural typography.",
+          "homepage": null,
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-08-16T15:48:19Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
         {
           "id": 1264131469,
           "name": "Maestro",
@@ -230,24 +266,6 @@
           }
         },
         {
-          "id": 1165510944,
-          "name": "the-drafting-table",
-          "full_name": "dknauss/the-drafting-table",
-          "html_url": "https://github.com/dknauss/the-drafting-table",
-          "description": "A Frank Lloyd Wright-era architect's notebook FSE block theme for WordPress — aged parchment, dot-grid overlays, blueprint borders, and refined architectural typography.",
-          "homepage": null,
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-07-13T19:30:33Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
           "id": 1160457512,
           "name": "wordpress-runbook-template",
           "full_name": "dknauss/wordpress-runbook-template",
@@ -257,24 +275,6 @@
           "stargazers_count": 4,
           "language": null,
           "updated_at": "2026-07-12T01:07:12Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1175597908,
-          "name": "author-identity",
-          "full_name": "dknauss/author-identity",
-          "html_url": "https://github.com/dknauss/author-identity",
-          "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
-          "homepage": "https://dan.knauss.ca",
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-07-03T06:49:46Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -467,15 +467,15 @@
       "total_repos": 23,
       "total_stars": 67,
       "latest_repo": {
-        "id": 1264131469,
-        "name": "Maestro",
-        "full_name": "dknauss/Maestro",
-        "html_url": "https://github.com/dknauss/Maestro",
-        "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
-        "stargazers_count": 2,
+        "id": 1175597908,
+        "name": "author-identity",
+        "full_name": "dknauss/author-identity",
+        "html_url": "https://github.com/dknauss/author-identity",
+        "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
+        "homepage": "https://dan.knauss.ca",
+        "stargazers_count": 0,
         "language": "PHP",
-        "updated_at": "2026-08-12T14:27:15Z",
+        "updated_at": "2026-08-16T15:50:28Z",
         "fork": false,
         "archived": false,
         "owner": {
