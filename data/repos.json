@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T18:57:32.013Z",
+  "generated_at": "2026-08-19T01:54:10.051Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,42 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1264131469,
+          "name": "Maestro",
+          "full_name": "dknauss/Maestro",
+          "html_url": "https://github.com/dknauss/Maestro",
+          "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
+          "stargazers_count": 2,
+          "language": "PHP",
+          "updated_at": "2026-08-19T01:16:51Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1203393463,
+          "name": "Borges",
+          "full_name": "dknauss/Borges",
+          "html_url": "https://github.com/dknauss/Borges",
+          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
+          "stargazers_count": 2,
+          "language": "JavaScript",
+          "updated_at": "2026-08-19T01:15:30Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1175597908,
           "name": "author-identity",
           "full_name": "dknauss/author-identity",
@@ -77,24 +113,6 @@
           "stargazers_count": 0,
           "language": "PHP",
           "updated_at": "2026-08-18T17:09:18Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1264131469,
-          "name": "Maestro",
-          "full_name": "dknauss/Maestro",
-          "html_url": "https://github.com/dknauss/Maestro",
-          "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
-          "stargazers_count": 2,
-          "language": "PHP",
-          "updated_at": "2026-08-18T16:17:20Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -167,24 +185,6 @@
           "stargazers_count": 0,
           "language": "PHP",
           "updated_at": "2026-08-08T13:29:00Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1203393463,
-          "name": "Borges",
-          "full_name": "dknauss/Borges",
-          "html_url": "https://github.com/dknauss/Borges",
-          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-          "stargazers_count": 2,
-          "language": "JavaScript",
-          "updated_at": "2026-08-05T01:11:38Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -467,15 +467,15 @@
       "total_repos": 23,
       "total_stars": 67,
       "latest_repo": {
-        "id": 1175597908,
-        "name": "author-identity",
-        "full_name": "dknauss/author-identity",
-        "html_url": "https://github.com/dknauss/author-identity",
-        "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
-        "homepage": "https://dan.knauss.ca",
-        "stargazers_count": 0,
+        "id": 1264131469,
+        "name": "Maestro",
+        "full_name": "dknauss/Maestro",
+        "html_url": "https://github.com/dknauss/Maestro",
+        "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
+        "stargazers_count": 2,
         "language": "PHP",
-        "updated_at": "2026-08-18T17:15:21Z",
+        "updated_at": "2026-08-19T01:16:51Z",
         "fork": false,
         "archived": false,
         "owner": {
