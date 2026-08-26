@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T01:59:31.436Z",
+  "generated_at": "2026-08-26T07:09:57.690Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -54,11 +54,11 @@
           "name": "Keel",
           "full_name": "dknauss/Keel",
           "html_url": "https://github.com/dknauss/Keel",
-          "description": "Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
-          "homepage": null,
+          "description": "🔘 Please do not push this button again! Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
+          "homepage": "",
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-08-26T01:42:03Z",
+          "updated_at": "2026-08-26T06:46:25Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -471,11 +471,11 @@
         "name": "Keel",
         "full_name": "dknauss/Keel",
         "html_url": "https://github.com/dknauss/Keel",
-        "description": "Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
-        "homepage": null,
+        "description": "🔘 Please do not push this button again! Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
+        "homepage": "",
         "stargazers_count": 0,
         "language": "PHP",
-        "updated_at": "2026-08-26T01:42:03Z",
+        "updated_at": "2026-08-26T06:46:25Z",
         "fork": false,
         "archived": false,
         "owner": {
