@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T21:09:23.709Z",
+  "generated_at": "2026-08-31T05:40:13.147Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,42 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1175597908,
+          "name": "author-identity",
+          "full_name": "dknauss/author-identity",
+          "html_url": "https://github.com/dknauss/author-identity",
+          "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
+          "homepage": "https://dan.knauss.ca",
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-08-31T02:51:21Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1284532495,
+          "name": "Require-Email-2FA",
+          "full_name": "dknauss/Require-Email-2FA",
+          "html_url": "https://github.com/dknauss/Require-Email-2FA",
+          "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
+          "stargazers_count": 1,
+          "language": "PHP",
+          "updated_at": "2026-08-31T01:37:16Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1319788156,
           "name": "Keel",
           "full_name": "dknauss/Keel",
@@ -58,7 +94,7 @@
           "homepage": "",
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-08-30T20:32:33Z",
+          "updated_at": "2026-08-31T00:33:11Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -140,24 +176,6 @@
           }
         },
         {
-          "id": 1175597908,
-          "name": "author-identity",
-          "full_name": "dknauss/author-identity",
-          "html_url": "https://github.com/dknauss/author-identity",
-          "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
-          "homepage": "https://dan.knauss.ca",
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-08-18T17:15:21Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
           "id": 1329411208,
           "name": "two-factor-enrollment",
           "full_name": "dknauss/two-factor-enrollment",
@@ -203,24 +221,6 @@
           "stargazers_count": 0,
           "language": "PHP",
           "updated_at": "2026-08-08T13:29:00Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1284532495,
-          "name": "Require-Email-2FA",
-          "full_name": "dknauss/Require-Email-2FA",
-          "html_url": "https://github.com/dknauss/Require-Email-2FA",
-          "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
-          "stargazers_count": 1,
-          "language": "PHP",
-          "updated_at": "2026-07-22T02:23:51Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -467,15 +467,15 @@
       "total_repos": 23,
       "total_stars": 67,
       "latest_repo": {
-        "id": 1319788156,
-        "name": "Keel",
-        "full_name": "dknauss/Keel",
-        "html_url": "https://github.com/dknauss/Keel",
-        "description": "🔘 Please do not push this button again! Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
-        "homepage": "",
+        "id": 1175597908,
+        "name": "author-identity",
+        "full_name": "dknauss/author-identity",
+        "html_url": "https://github.com/dknauss/author-identity",
+        "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
+        "homepage": "https://dan.knauss.ca",
         "stargazers_count": 0,
         "language": "PHP",
-        "updated_at": "2026-08-30T20:32:33Z",
+        "updated_at": "2026-08-31T02:51:21Z",
         "fork": false,
         "archived": false,
         "owner": {
