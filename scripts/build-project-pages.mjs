@@ -194,7 +194,7 @@ function softwareSchema(repo, pageUrl) {
   if (homepage) {
     entity.targetProduct = {
       '@type': 'WebApplication',
-      url: homepage,
+      url: PROJECT_META[repo.full_name]?.targetProduct || homepage,
       name: label
     };
     entity.sameAs.push(homepage);

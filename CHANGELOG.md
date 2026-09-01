@@ -22,6 +22,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- updated the Keel feature and project pages for the current 0.6 release line: 39 defaults,
+  current Settings and Playground links, WordPress.org availability, the same-line
+  security-patch workflow, live-matrix coverage, and the four release screenshots
 - moved the featured repo's banner from the sidebar into the main column
 - demoted Sudo from the lead feature to More Projects, rewritten as a postmortem
   of its concluded research prototype and marked with a Concluded badge
