@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-01T11:42:00.999Z",
+  "generated_at": "2026-09-01T14:36:26.942Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -54,11 +54,11 @@
           "name": "Keel",
           "full_name": "dknauss/Keel",
           "html_url": "https://github.com/dknauss/Keel",
-          "description": "🔘 Please do not push this button again! Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
-          "homepage": "",
+          "description": "Sane WordPress defaults with actionable Site Health reporting for security, privacy, performance, and core updates — including the same-line security patches your Updates screen may not show.",
+          "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-09-01T05:43:58Z",
+          "updated_at": "2026-09-01T13:59:45Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -471,11 +471,11 @@
         "name": "Keel",
         "full_name": "dknauss/Keel",
         "html_url": "https://github.com/dknauss/Keel",
-        "description": "🔘 Please do not push this button again! Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
-        "homepage": "",
+        "description": "Sane WordPress defaults with actionable Site Health reporting for security, privacy, performance, and core updates — including the same-line security patches your Updates screen may not show.",
+        "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
         "stargazers_count": 0,
         "language": "PHP",
-        "updated_at": "2026-09-01T05:43:58Z",
+        "updated_at": "2026-09-01T13:59:45Z",
         "fork": false,
         "archived": false,
         "owner": {
