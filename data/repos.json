@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T22:52:55.844Z",
+  "generated_at": "2026-09-01T05:13:52.354Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,24 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1319788156,
+          "name": "Keel",
+          "full_name": "dknauss/Keel",
+          "html_url": "https://github.com/dknauss/Keel",
+          "description": "🔘 Please do not push this button again! Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
+          "homepage": "",
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-09-01T05:09:09Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1175597908,
           "name": "author-identity",
           "full_name": "dknauss/author-identity",
@@ -77,24 +95,6 @@
           "stargazers_count": 1,
           "language": "PHP",
           "updated_at": "2026-08-31T01:37:16Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1319788156,
-          "name": "Keel",
-          "full_name": "dknauss/Keel",
-          "html_url": "https://github.com/dknauss/Keel",
-          "description": "🔘 Please do not push this button again! Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
-          "homepage": "",
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-08-31T00:33:11Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -467,15 +467,15 @@
       "total_repos": 23,
       "total_stars": 67,
       "latest_repo": {
-        "id": 1175597908,
-        "name": "author-identity",
-        "full_name": "dknauss/author-identity",
-        "html_url": "https://github.com/dknauss/author-identity",
-        "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
-        "homepage": "https://dan.knauss.ca",
+        "id": 1319788156,
+        "name": "Keel",
+        "full_name": "dknauss/Keel",
+        "html_url": "https://github.com/dknauss/Keel",
+        "description": "🔘 Please do not push this button again! Sane, individually-toggleable WordPress defaults — security, updates, privacy, UX, performance.",
+        "homepage": "",
         "stargazers_count": 0,
         "language": "PHP",
-        "updated_at": "2026-08-31T02:51:21Z",
+        "updated_at": "2026-09-01T05:09:09Z",
         "fork": false,
         "archived": false,
         "owner": {
