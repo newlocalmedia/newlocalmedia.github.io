@@ -114,8 +114,8 @@ export const PROJECT_META = {
     omitGenericNarrative: true,
     omitRelatedNarrative: true,
     primaryImage: {
-      url: 'https://newlocalmedia.github.io/assets/keel-preview-v0.6.5.png',
-      alt: 'Keel banner with a racing yacht and blue fin keel beside the Keel wordmark and the tagline “Keeps your site upright with sensible defaults.”'
+      url: 'https://newlocalmedia.github.io/assets/keel-preview.png',
+      alt: 'Reverse Keel banner for a dark background, with a white sailboat and wordmark, blue fin keel, and the tagline “Sensible defaults for steady sites.”'
     },
     focus: 'Keel for WordPress ⚓',
     subfocus: 'Version 0.6.5: 39 individually switchable defaults, actionable Site Health reporting, multisite policy, and deliberate installation of same-line WordPress security patches.',
