@@ -100,8 +100,11 @@ function formatSnapshotTimestamp(value) {
 
 function repoHomepage(repo) {
   const meta = PROJECT_META[repo.full_name] || {};
-  if (meta.extraLinks?.length) {
-    return meta.extraLinks[0].url || null;
+  const primaryExtraLink = meta.extraLinks?.find(
+    (link) => link.url && !String(link.url).startsWith('#')
+  );
+  if (primaryExtraLink) {
+    return primaryExtraLink.url;
   }
   if (Object.prototype.hasOwnProperty.call(meta, 'homepage')) {
     const h = meta.homepage || meta.playground;
@@ -302,6 +305,10 @@ function homeImageClass(repo) {
 function homepageLabel(repo) {
   const meta = PROJECT_META[repo.full_name] || {};
   if (meta.homepageLabel) return meta.homepageLabel;
+  const primaryExtraLink = meta.extraLinks?.find(
+    (link) => link.url && !String(link.url).startsWith('#')
+  );
+  if (primaryExtraLink?.label) return primaryExtraLink.label;
   if (meta.playground && (!Object.prototype.hasOwnProperty.call(meta, 'homepage') || !meta.homepage)) {
     return '🛝 Playground Demo';
   }
@@ -312,6 +319,7 @@ function homeRuntimeConfig(lookup) {
   const repoOverrides = Object.fromEntries(
     CURATED_REPOS.map((fullName) => {
       const meta = PROJECT_META[fullName] || {};
+      const repo = lookup.get(fullName);
       const override = {};
       if (meta.displayTitle) override.displayTitle = meta.displayTitle;
       if (meta.homeDescriptionHtml) {
@@ -319,13 +327,10 @@ function homeRuntimeConfig(lookup) {
       } else if (meta.summaryHtml) {
         override.descriptionHtml = meta.summaryHtml;
       }
-      if (Object.prototype.hasOwnProperty.call(meta, 'homepage')) {
-        override.homepage = meta.homepage || meta.playground || null;
-      } else if (meta.playground) {
-        override.homepage = meta.playground;
+      if (repo) {
+        override.homepage = repoHomepage(repo);
+        if (override.homepage) override.homepageLabel = homepageLabel(repo);
       }
-      if (meta.homepageLabel) override.homepageLabel = meta.homepageLabel;
-      else if (meta.playground) override.homepageLabel = '🛝 Playground Demo';
       if (meta.homePrimaryImage) override.primaryImage = meta.homePrimaryImage;
       else if (meta.primaryImage) override.primaryImage = meta.primaryImage;
       if (meta.homeImageClass) override.homeImageClass = meta.homeImageClass;

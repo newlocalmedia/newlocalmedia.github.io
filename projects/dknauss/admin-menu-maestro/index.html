@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin Menu Maestro | Work in Progress</title>
-  <meta name="description" content="WordPress admin menu editor for renaming, reordering, icon swapping, and per-role visibility — edited directly on the menu itself.">
+  <meta name="description" content="Inline WordPress admin menu editor for renaming, reordering, icon swapping, and cosmetic visibility by role or named person.">
   <meta name="author" content="Dan Knauss">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta name="color-scheme" content="dark">
@@ -18,7 +18,7 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="New Local Media">
   <meta property="og:title" content="Admin Menu Maestro | Work in Progress">
-  <meta property="og:description" content="WordPress admin menu editor for renaming, reordering, icon swapping, and per-role visibility — edited directly on the menu itself.">
+  <meta property="og:description" content="Inline WordPress admin menu editor for renaming, reordering, icon swapping, and cosmetic visibility by role or named person.">
   <meta property="og:url" content="https://newlocalmedia.github.io/projects/dknauss/admin-menu-maestro/">
   <meta property="og:image" content="https://newlocalmedia.github.io/assets/admin-menu-maestro-banner.png">
   <meta property="og:image:secure_url" content="https://newlocalmedia.github.io/assets/admin-menu-maestro-banner.png">
@@ -28,7 +28,7 @@
   <meta property="og:image:alt" content="Admin Menu Maestro banner with a stylized WordPress admin menu, conducting baton, and the tagline Orchestrate your menu in place, inside the dashboard.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Admin Menu Maestro | Work in Progress">
-  <meta name="twitter:description" content="WordPress admin menu editor for renaming, reordering, icon swapping, and per-role visibility — edited directly on the menu itself.">
+  <meta name="twitter:description" content="Inline WordPress admin menu editor for renaming, reordering, icon swapping, and cosmetic visibility by role or named person.">
   <meta name="twitter:image" content="https://newlocalmedia.github.io/assets/admin-menu-maestro-banner.png">
   <meta name="twitter:image:alt" content="Admin Menu Maestro banner with a stylized WordPress admin menu, conducting baton, and the tagline Orchestrate your menu in place, inside the dashboard.">
   <script type="application/ld+json">
@@ -86,7 +86,7 @@
       "@id": "https://newlocalmedia.github.io/projects/dknauss/admin-menu-maestro/#webpage",
       "url": "https://newlocalmedia.github.io/projects/dknauss/admin-menu-maestro/",
       "name": "Admin Menu Maestro | Work in Progress",
-      "description": "WordPress admin menu editor for renaming, reordering, icon swapping, and per-role visibility — edited directly on the menu itself.",
+      "description": "Inline WordPress admin menu editor for renaming, reordering, icon swapping, and cosmetic visibility by role or named person.",
       "isPartOf": {
         "@id": "https://newlocalmedia.github.io/#website"
       },
@@ -106,7 +106,7 @@
       "@type": "SoftwareSourceCode",
       "@id": "https://newlocalmedia.github.io/projects/dknauss/admin-menu-maestro/#primary",
       "name": "Admin Menu Maestro",
-      "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
+      "description": "Orchestrate your WordPress admin menus in place: rename and reorder items, swap icons, and hide items or sub-items from roles or named people.",
       "url": "https://newlocalmedia.github.io/projects/dknauss/admin-menu-maestro/",
       "isPartOf": {
         "@id": "https://newlocalmedia.github.io/#website"
@@ -117,11 +117,11 @@
       "publisher": {
         "@id": "https://newlocalmedia.com/#organization"
       },
-      "dateModified": "2026-08-25T00:35:02Z",
+      "dateModified": "2026-09-03T06:30:49Z",
       "codeRepository": "https://github.com/dknauss/Maestro",
       "sameAs": [
         "https://github.com/dknauss/Maestro",
-        "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-hosted.json"
+        "https://wordpress.org/plugins/maestro-menu-editor/"
       ],
       "keywords": [
         "WordPress Block Plugins",
@@ -132,7 +132,7 @@
       "programmingLanguage": "PHP",
       "targetProduct": {
         "@type": "WebApplication",
-        "url": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-hosted.json",
+        "url": "https://wordpress.org/plugins/maestro-menu-editor/",
         "name": "Admin Menu Maestro"
       }
     }
@@ -371,16 +371,16 @@
             </nav>
           </div>
           <h1>Admin Menu Maestro</h1>
-          <p class="lede">Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.</p>
+          <p class="lede">Orchestrate your WordPress admin menus in place: rename and reorder items, swap icons, and hide items or sub-items from roles or named people.</p>
           <div class="meta">
             <span class="pill"><span class="star-icon" aria-hidden="true">★</span>2</span>
-            <span class="pill" title="Last updated Aug 25, 2026"><span class="sr-only">Last updated </span>Aug 25, 2026</span>
+            <span class="pill" title="Last updated Sep 3, 2026"><span class="sr-only">Last updated </span>Sep 3, 2026</span>
             <span class="meta-sep" aria-hidden="true"></span>
             <a class="button primary" href="https://github.com/dknauss/Maestro"><svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>View Source<span class="sr-only"> for Admin Menu Maestro</span></a>
 
-
-
-            <a class="button demo-btn" href="https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-hosted.json"><span class="button-emoji" aria-hidden="true">🛝</span>Playground Demo</a>
+            <a class="button release-btn" href="https://github.com/dknauss/Maestro/releases/tag/v1.5.3">Download v1.5.3</a>
+            <a class="button" href="https://wordpress.org/plugins/maestro-menu-editor/">🔌 WordPress.org</a>
+            <a class="button demo-btn" href="https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json"><span class="button-emoji" aria-hidden="true">🛝</span>Playground Demo</a>
 
           </div>
         </div>
@@ -394,8 +394,8 @@
         </div>
         <div class="section-copy">
           <div class="section-copy-main">
-        <p>Admin Menu Maestro turns the WordPress admin menu itself into the editor: toggle <em>Edit Menu</em> from the admin bar, then rename items, drag them into a new order, swap top-level icons, and hide items for selected roles without leaving the menu.</p>
-        <p>The configuration is global and sparse — a delta layered over the menu WordPress already builds each load — with debounced autosave, no separate settings screen, and a clear warning that per-role hiding is cosmetic menu decluttering, not access control.</p>
+        <p>Admin Menu Maestro turns the WordPress admin menu itself into the editor: toggle <em>Edit Menu</em> from the admin bar, then rename items, drag or keyboard-reorder them, swap top-level icons, and hide items or their sub-items from selected roles or named people without leaving the menu.</p>
+        <p>Version 1.5.3 supports WordPress 7.1 and smooths the editor across narrow screens, the post editor, and the site editor. The configuration remains global and sparse — a delta layered over the menu WordPress already builds — with debounced autosave, no separate settings screen, and a clear boundary: hiding is cosmetic decluttering, never access control.</p>
         <p>Related projects in this same part of the collection include Borges Bibliography Builder.</p>
           </div>
 
@@ -413,7 +413,7 @@
         <div class="details-grid">
           <div>
             <dl class="detail-list">
-              <dt>Owner</dt><dd><a href="/projects/dknauss/">@dknauss</a></dd><dt>Source</dt><dd><a href="https://github.com/dknauss/Maestro">dknauss/Maestro</a></dd><dt>Version</dt><dd>1.0.0</dd><dt>CI</dt><dd><a href="https://github.com/dknauss/Maestro/actions">GitHub Actions</a></dd><dt>Tests</dt><dd>PHP unit/integration tests + Playwright E2E</dd><dt>License</dt><dd><a href="https://github.com/dknauss/Maestro/blob/main/LICENSE">GPL-2.0-or-later</a></dd><dt class="detail-highlight">Try It! →</dt><dd><a href="https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-hosted.json"><strong>🛝 WordPress Playground</strong></a></dd><dt>Last updated</dt><dd><time datetime="2026-08-25T00:35:02Z">Aug 25, 2026</time></dd><dt>Primary language</dt><dd>PHP</dd><dt>Stars</dt><dd><span class="star-icon" aria-hidden="true">★</span>2</dd>
+              <dt>Owner</dt><dd><a href="/projects/dknauss/">@dknauss</a></dd><dt>Source</dt><dd><a href="https://github.com/dknauss/Maestro">dknauss/Maestro</a></dd><dt>WordPress.org</dt><dd><a href="https://wordpress.org/plugins/maestro-menu-editor/">WordPress.org</a></dd><dt>Latest release</dt><dd><a href="https://github.com/dknauss/Maestro/releases/tag/v1.5.3">v1.5.3</a></dd><dt>CI</dt><dd><a href="https://github.com/dknauss/Maestro/actions">GitHub Actions</a></dd><dt>Tests</dt><dd>PHP unit/integration, JavaScript unit, Playwright E2E, PHPStan, PHPCS, and Plugin Check</dd><dt>License</dt><dd><a href="https://github.com/dknauss/Maestro/blob/main/LICENSE">GPL-2.0-or-later</a></dd><dt class="detail-highlight">Try It! →</dt><dd><a href="https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json"><strong>🛝 WordPress Playground</strong></a></dd><dt>Last updated</dt><dd><time datetime="2026-09-03T06:30:49Z">Sep 3, 2026</time></dd><dt>Primary language</dt><dd>PHP</dd><dt>Stars</dt><dd><span class="star-icon" aria-hidden="true">★</span>2</dd>
             </dl>
 
 
@@ -421,8 +421,8 @@
           <div class="summary-box">
             <figure class="summary-box-media"><button class="image-trigger" type="button" data-modal-image="https://newlocalmedia.github.io/assets/admin-menu-maestro-banner.png" data-modal-alt="Admin Menu Maestro banner with a stylized WordPress admin menu, conducting baton, and the tagline Orchestrate your menu in place, inside the dashboard." aria-label="Open larger image for Admin Menu Maestro"><picture><source srcset="https://newlocalmedia.github.io/assets/admin-menu-maestro-banner.webp" type="image/webp"><img src="https://newlocalmedia.github.io/assets/admin-menu-maestro-banner.png" alt="Admin Menu Maestro banner with a stylized WordPress admin menu, conducting baton, and the tagline Orchestrate your menu in place, inside the dashboard." loading="eager" decoding="async"></picture></button></figure>
             <strong>A Live Editor for the WordPress Admin Menu</strong>
-            <p>Rename, reorder, restyle, and hide admin-menu items in place — with role-aware visibility controls and a hosted Playground demo for fast testing.</p>
-
+            <p>Version 1.5.3: rename, reorder, restyle, and hide admin-menu items or sub-items in place — by role or named person, with an install-free Playground demo.</p>
+            <p><a href="https://wordpress.org/plugins/maestro-menu-editor/">WordPress.org</a></p>
 
           </div>
         </div>
@@ -439,7 +439,7 @@
           </div>
         </div>
         <div class="screenshot-grid">
-          <figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-1.png" data-modal-alt="Admin Menu Maestro in edit mode with the Posts menu item selected and the shared controls panel open." aria-label="Open larger image for Edit mode with the Posts menu item selected and the shared controls panel open."><img src="https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-1.png" alt="Admin Menu Maestro in edit mode with the Posts menu item selected and the shared controls panel open." loading="lazy" decoding="async"></button><figcaption>Edit mode with the Posts menu item selected and the shared controls panel open.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-2.png" data-modal-alt="Admin Menu Maestro searchable icon picker with Dashicons and Bootstrap Icons tabs." aria-label="Open larger image for Searchable icon picker with Dashicons and Bootstrap Icons tabs."><img src="https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-2.png" alt="Admin Menu Maestro searchable icon picker with Dashicons and Bootstrap Icons tabs." loading="lazy" decoding="async"></button><figcaption>Searchable icon picker with Dashicons and Bootstrap Icons tabs.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-3.png" data-modal-alt="Admin Menu Maestro per-role visibility picker for hiding a menu item from selected roles." aria-label="Open larger image for Per-role visibility picker for hiding a menu item from selected roles."><img src="https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-3.png" alt="Admin Menu Maestro per-role visibility picker for hiding a menu item from selected roles." loading="lazy" decoding="async"></button><figcaption>Per-role visibility picker for hiding a menu item from selected roles.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-4.png" data-modal-alt="A renamed WordPress admin menu item in Admin Menu Maestro saved through debounced autosave." aria-label="Open larger image for A renamed menu item saved through debounced autosave."><img src="https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-4.png" alt="A renamed WordPress admin menu item in Admin Menu Maestro saved through debounced autosave." loading="lazy" decoding="async"></button><figcaption>A renamed menu item saved through debounced autosave.</figcaption></figure>
+          <figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-1.png" data-modal-alt="Admin Menu Maestro inline editor with a menu item selected and the wp-admin-native toolbar and controls panel open." aria-label="Open larger image for Select any menu item to rename it, change its icon or visibility, reset it, or enter a new position."><img src="https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-1.png" alt="Admin Menu Maestro inline editor with a menu item selected and the wp-admin-native toolbar and controls panel open." loading="lazy" decoding="async"></button><figcaption>Select any menu item to rename it, change its icon or visibility, reset it, or enter a new position.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-2.png" data-modal-alt="Admin Menu Maestro searchable icon picker with Dashicons and Bootstrap Icons tabs." aria-label="Open larger image for Search Dashicons and bundled Bootstrap Icons to change a top-level menu icon."><img src="https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-2.png" alt="Admin Menu Maestro searchable icon picker with Dashicons and Bootstrap Icons tabs." loading="lazy" decoding="async"></button><figcaption>Search Dashicons and bundled Bootstrap Icons to change a top-level menu icon.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-3.png" data-modal-alt="Admin Menu Maestro visibility picker with controls for roles, named people, and a parent item’s sub-items." aria-label="Open larger image for Hide items or sub-items from selected roles or named people; visibility remains cosmetic."><img src="https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-3.png" alt="Admin Menu Maestro visibility picker with controls for roles, named people, and a parent item’s sub-items." loading="lazy" decoding="async"></button><figcaption>Hide items or sub-items from selected roles or named people; visibility remains cosmetic.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-4.png" data-modal-alt="A renamed WordPress admin menu item in Admin Menu Maestro showing the transient Saved state." aria-label="Open larger image for Changes autosave after a short pause and the confirmation clears once the save settles."><img src="https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-4.png" alt="A renamed WordPress admin menu item in Admin Menu Maestro showing the transient Saved state." loading="lazy" decoding="async"></button><figcaption>Changes autosave after a short pause and the confirmation clears once the save settles.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-5.png" data-modal-alt="Admin Menu Maestro reordering a top-level menu group by dragging with a live sortable helper." aria-label="Open larger image for Drag top-level groups or submenu items to reorder them in place."><img src="https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-5.png" alt="Admin Menu Maestro reordering a top-level menu group by dragging with a live sortable helper." loading="lazy" decoding="async"></button><figcaption>Drag top-level groups or submenu items to reorder them in place.</figcaption></figure><figure class="screenshot-card"><button class="image-trigger" type="button" data-modal-image="https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-6.png" data-modal-alt="Admin Menu Maestro moving a submenu item with the keyboard-accessible up and down controls." aria-label="Open larger image for Use the move controls or Alt+Arrow keys for an accessible, operating-system-independent reorder path."><img src="https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-6.png" alt="Admin Menu Maestro moving a submenu item with the keyboard-accessible up and down controls." loading="lazy" decoding="async"></button><figcaption>Use the move controls or Alt+Arrow keys for an accessible, operating-system-independent reorder path.</figcaption></figure>
         </div>
       </section>
 
@@ -457,9 +457,10 @@
           <tbody>
             <tr><th scope="row"><a href="https://github.com/dknauss/Maestro/blob/main/README.md">README</a></th><td>Repository overview, feature summary, install steps, Playground demo, and development workflow.</td></tr>
             <tr><th scope="row"><a href="https://github.com/dknauss/Maestro/blob/main/readme.txt">WordPress Readme</a></th><td>Plugin-directory style readme with usage notes, architecture summary, known limits, and changelog.</td></tr>
+            <tr><th scope="row"><a href="https://github.com/dknauss/Maestro/blob/main/docs/user-guide.md">User Guide</a></th><td>Longer walkthrough of edit mode, keyboard reordering, icons, visibility, autosave, and reset behaviour.</td></tr>
             <tr><th scope="row"><a href="https://github.com/dknauss/Maestro/blob/main/SPEC.md">SPEC</a></th><td>Durable specification for the plugin behavior, editor model, and data design.</td></tr>
             <tr><th scope="row"><a href="https://github.com/dknauss/Maestro/blob/main/TESTING.md">Testing</a></th><td>How to run the unit, integration, Playground, and Playwright test layers.</td></tr>
-            <tr><th scope="row"><a href="https://github.com/dknauss/Maestro/blob/main/FIXES.md">FIXES</a></th><td>Resolved punch list and implementation notes for the v1 editor and autosave model.</td></tr>
+            <tr><th scope="row"><a href="https://github.com/dknauss/Maestro/blob/main/docs/performance/config-size-and-page-load.md">Performance</a></th><td>Measured configuration-size and page-load costs, including the zero-query front-end design.</td></tr>
           </tbody>
         </table>
       </section>

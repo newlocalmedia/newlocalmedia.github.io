@@ -80,8 +80,8 @@ export const PROJECT_META = {
     displayTitle: 'Keel',
     pageTitle: 'Keel ⚓',
     schemaType: 'SoftwareSourceCode',
-    release: { tag: 'v0.6.1', url: 'https://github.com/dknauss/Keel/releases/tag/v0.6.1' },
-    tests: 'PHP 7.4–8.5 CI and live WordPress rollback/forward matrix',
+    release: { tag: 'v0.6.5', url: 'https://github.com/dknauss/Keel/releases/tag/v0.6.5' },
+    tests: 'PHP 7.4–8.5 CI; live WordPress 6.4–7.2-alpha single-site, multisite, and installer matrices',
     license: { label: 'GPL-2.0-or-later', url: 'https://github.com/dknauss/Keel/blob/main/LICENSE' },
     homepage: 'https://wordpress.org/plugins/keel-defaults/',
     homepageLabel: 'WordPress.org',
@@ -114,17 +114,17 @@ export const PROJECT_META = {
     omitGenericNarrative: true,
     omitRelatedNarrative: true,
     primaryImage: {
-      url: 'https://newlocalmedia.github.io/assets/keel-preview.png',
-      alt: 'Keel banner — a sailboat and keel mark beside the Keel wordmark and the tagline “Sensible defaults for steady sites.” on a dark navy field.'
+      url: 'https://newlocalmedia.github.io/assets/keel-preview-v0.6.5.png',
+      alt: 'Keel banner with a racing yacht and blue fin keel beside the Keel wordmark and the tagline “Keeps your site upright with sensible defaults.”'
     },
     focus: 'Keel for WordPress ⚓',
-    subfocus: 'Version 0.6.1: 39 individually switchable defaults, actionable Site Health reporting, multisite policy, and deliberate installation of same-line WordPress security patches.',
-    subfocusHtml: '<strong>Version 0.6.1:</strong> 39 individually switchable defaults, actionable Site Health reporting, multisite policy, and deliberate installation of same-line WordPress security patches.',
+    subfocus: 'Version 0.6.5: 39 individually switchable defaults, actionable Site Health reporting, multisite policy, and deliberate installation of same-line WordPress security patches.',
+    subfocusHtml: '<strong>Version 0.6.5:</strong> 39 individually switchable defaults, actionable Site Health reporting, multisite policy, and deliberate installation of same-line WordPress security patches.',
     screenshots: [
-      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.6.1/.wordpress-org/screenshot-1.png', alt: 'Site Health reports WordPress 6.9.5 as vulnerable, names 6.9.7 as its same-line patch, shows the offered release ladder, and offers to install the patch.', caption: 'See whether the installed WordPress release is vulnerable, which same-line release fixes it, what core would choose, and whether Keel can install the patch.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.6.1/.wordpress-org/screenshot-4.png', alt: 'Settings → Site Defaults showing Keel defaults as individual switches with an explanation beside each one.', caption: 'Inspect and independently switch every default under Settings → Site Defaults.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.6.1/.wordpress-org/screenshot-2.png', alt: 'The Keel Passwords help tab explains password length and breach screening without composition rules.', caption: 'Read the exact privacy and failure behaviour of password breach screening.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.6.1/.wordpress-org/screenshot-3.png', alt: 'Site Health Info lists every Keel default and its current state, grouped by category.', caption: 'Copy or review the site’s complete Keel posture from Site Health Info.' }
+      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.6.5/.wordpress-org/screenshot-1.png', alt: 'Site Health reports WordPress 6.9.5 as vulnerable, names 6.9.7 as its same-line patch, shows the offered release ladder, and offers to install the patch.', caption: 'See whether the installed WordPress release is vulnerable, which same-line release fixes it, what core would choose, and whether Keel can install the patch.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.6.5/.wordpress-org/screenshot-4.png', alt: 'Settings → Site Defaults showing Keel defaults as individual switches with an explanation beside each one.', caption: 'Inspect and independently switch every default under Settings → Site Defaults.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.6.5/.wordpress-org/screenshot-2.png', alt: 'The Keel Passwords help tab explains password length and breach screening without composition rules.', caption: 'Read the exact privacy and failure behaviour of password breach screening.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.6.5/.wordpress-org/screenshot-3.png', alt: 'Site Health Info lists every Keel default and its current state, grouped by category.', caption: 'Copy or review the site’s complete Keel posture from Site Health Info.' }
     ],
     docs: [
       { label: 'README', description: 'What Keel does, how it is built, and how it compares to the alternatives.', url: 'https://github.com/dknauss/Keel/blob/main/README.md' },
@@ -233,7 +233,7 @@ export const PROJECT_META = {
   'dknauss/wordpress-runbook-template': {
     displayTitle: 'WordPress Runbook Template',
     schemaType: 'TechArticle',
-    release: { tag: 'v3.1.0', url: 'https://github.com/dknauss/wordpress-runbook-template/releases/tag/v3.1.0' },
+    release: { tag: 'v3.1.1', url: 'https://github.com/dknauss/wordpress-runbook-template/releases/tag/v3.1.1' },
     license: { label: 'CC BY-SA 4.0', url: 'https://github.com/dknauss/wordpress-runbook-template/blob/main/LICENSE' },
     downloadCta: 'Get the Runbook \uD83C\uDFC3',
     whyHeading: 'Run WordPress with a Playbook',
@@ -291,7 +291,7 @@ export const PROJECT_META = {
   'dknauss/wp-security-hardening-guide': {
     displayTitle: 'WordPress Security Hardening Guide',
     schemaType: 'TechArticle',
-    release: { tag: 'v1.1.0', url: 'https://github.com/dknauss/wp-security-hardening-guide/releases/tag/v1.1.0' },
+    release: { tag: 'v1.1.1', url: 'https://github.com/dknauss/wp-security-hardening-guide/releases/tag/v1.1.1' },
     license: { label: 'CC BY-SA 4.0', url: 'https://github.com/dknauss/wp-security-hardening-guide/blob/main/LICENSE' },
     downloadCta: 'Get the Guide 📘',
     whyHeading: 'Design a Defensible WordPress Stack',
@@ -331,7 +331,7 @@ export const PROJECT_META = {
   'dknauss/wp-security-benchmark': {
     displayTitle: 'WordPress Security Benchmark',
     schemaType: 'TechArticle',
-    release: { tag: 'v1.1.0', url: 'https://github.com/dknauss/wp-security-benchmark/releases/tag/v1.1.0' },
+    release: { tag: 'v1.1.1', url: 'https://github.com/dknauss/wp-security-benchmark/releases/tag/v1.1.1' },
     license: { label: 'CC BY-SA 4.0', url: 'https://github.com/dknauss/wp-security-benchmark/blob/main/LICENSE' },
     downloadCta: '📏 Get the Benchmark',
     summary: 'WordPress security benchmark: prescriptive full-stack hardening controls for current supported WordPress releases on the LEMP/LAMP stack.',
@@ -359,7 +359,7 @@ export const PROJECT_META = {
   'dknauss/wp-security-style-guide': {
     displayTitle: 'WordPress Security Style Guide',
     schemaType: 'TechArticle',
-    release: { tag: 'v1.1.0', url: 'https://github.com/dknauss/wp-security-style-guide/releases/tag/v1.1.0' },
+    release: { tag: 'v1.2.1', url: 'https://github.com/dknauss/wp-security-style-guide/releases/tag/v1.2.1' },
     license: { label: 'CC BY-SA 4.0', url: 'https://github.com/dknauss/wp-security-style-guide/blob/main/LICENSE' },
     whyHeading: 'Write About Security Without FUD',
     narrativeHtml: [
@@ -570,7 +570,7 @@ export const PROJECT_META = {
     schemaType: 'SoftwareSourceCode',
     homepage: 'https://wordpress.org/plugins/borges-bibliography-builder/',
     homepageLabel: 'WordPress.org',
-    release: { tag: 'v1.0.0', url: 'https://github.com/dknauss/Borges/releases/tag/v1.0.0' },
+    release: { tag: 'v1.5.1', url: 'https://github.com/dknauss/Borges/releases/tag/v1.5.1' },
     tests: 'Playwright smoke, PHP/WP runtime matrix',
     license: { label: 'GPL-2.0', url: 'https://github.com/dknauss/Borges/blob/main/LICENSE' },
     playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Borges/main/playground/blueprint.json',
@@ -615,16 +615,20 @@ export const PROJECT_META = {
     displayTitle: 'Admin Menu Maestro',
     slug: 'admin-menu-maestro',
     schemaType: 'SoftwareSourceCode',
-    version: '1.0.0',
-    tests: 'PHP unit/integration tests + Playwright E2E',
+    release: { tag: 'v1.5.3', url: 'https://github.com/dknauss/Maestro/releases/tag/v1.5.3' },
+    tests: 'PHP unit/integration, JavaScript unit, Playwright E2E, PHPStan, PHPCS, and Plugin Check',
     license: { label: 'GPL-2.0-or-later', url: 'https://github.com/dknauss/Maestro/blob/main/LICENSE' },
-    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-hosted.json',
-    seoDescription: 'WordPress admin menu editor for renaming, reordering, icon swapping, and per-role visibility — edited directly on the menu itself.',
-    summary: 'Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.',
+    playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json',
+    extraLinks: [
+      { label: 'WordPress.org', heroLabel: '🔌 WordPress.org', heroAfterRelease: true, url: 'https://wordpress.org/plugins/maestro-menu-editor/' }
+    ],
+    detailLinksLabel: 'WordPress.org',
+    seoDescription: 'Inline WordPress admin menu editor for renaming, reordering, icon swapping, and cosmetic visibility by role or named person.',
+    summary: 'Orchestrate your WordPress admin menus in place: rename and reorder items, swap icons, and hide items or sub-items from roles or named people.',
     whyHeading: 'Edit WordPress Admin Menus In Place',
     narrativeHtml: [
-      'Admin Menu Maestro turns the WordPress admin menu itself into the editor: toggle <em>Edit Menu</em> from the admin bar, then rename items, drag them into a new order, swap top-level icons, and hide items for selected roles without leaving the menu.',
-      'The configuration is global and sparse — a delta layered over the menu WordPress already builds each load — with debounced autosave, no separate settings screen, and a clear warning that per-role hiding is cosmetic menu decluttering, not access control.'
+      'Admin Menu Maestro turns the WordPress admin menu itself into the editor: toggle <em>Edit Menu</em> from the admin bar, then rename items, drag or keyboard-reorder them, swap top-level icons, and hide items or their sub-items from selected roles or named people without leaving the menu.',
+      'Version 1.5.3 supports WordPress 7.1 and smooths the editor across narrow screens, the post editor, and the site editor. The configuration remains global and sparse — a delta layered over the menu WordPress already builds — with debounced autosave, no separate settings screen, and a clear boundary: hiding is cosmetic decluttering, never access control.'
     ],
     omitGenericNarrative: true,
     homeImageClass: 'spotlight-media--banner',
@@ -635,13 +639,15 @@ export const PROJECT_META = {
       height: 500
     },
     screenshots: [
-      { url: 'https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-1.png', alt: 'Admin Menu Maestro in edit mode with the Posts menu item selected and the shared controls panel open.', caption: 'Edit mode with the Posts menu item selected and the shared controls panel open.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-2.png', alt: 'Admin Menu Maestro searchable icon picker with Dashicons and Bootstrap Icons tabs.', caption: 'Searchable icon picker with Dashicons and Bootstrap Icons tabs.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-3.png', alt: 'Admin Menu Maestro per-role visibility picker for hiding a menu item from selected roles.', caption: 'Per-role visibility picker for hiding a menu item from selected roles.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Maestro/main/.wordpress-org/screenshot-4.png', alt: 'A renamed WordPress admin menu item in Admin Menu Maestro saved through debounced autosave.', caption: 'A renamed menu item saved through debounced autosave.' }
+      { url: 'https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-1.png', alt: 'Admin Menu Maestro inline editor with a menu item selected and the wp-admin-native toolbar and controls panel open.', caption: 'Select any menu item to rename it, change its icon or visibility, reset it, or enter a new position.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-2.png', alt: 'Admin Menu Maestro searchable icon picker with Dashicons and Bootstrap Icons tabs.', caption: 'Search Dashicons and bundled Bootstrap Icons to change a top-level menu icon.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-3.png', alt: 'Admin Menu Maestro visibility picker with controls for roles, named people, and a parent item’s sub-items.', caption: 'Hide items or sub-items from selected roles or named people; visibility remains cosmetic.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-4.png', alt: 'A renamed WordPress admin menu item in Admin Menu Maestro showing the transient Saved state.', caption: 'Changes autosave after a short pause and the confirmation clears once the save settles.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-5.png', alt: 'Admin Menu Maestro reordering a top-level menu group by dragging with a live sortable helper.', caption: 'Drag top-level groups or submenu items to reorder them in place.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Maestro/v1.5.3/.wordpress-org/screenshot-6.png', alt: 'Admin Menu Maestro moving a submenu item with the keyboard-accessible up and down controls.', caption: 'Use the move controls or Alt+Arrow keys for an accessible, operating-system-independent reorder path.' }
     ],
     focus: 'A Live Editor for the WordPress Admin Menu',
-    subfocus: 'Rename, reorder, restyle, and hide admin-menu items in place — with role-aware visibility controls and a hosted Playground demo for fast testing.',
+    subfocus: 'Version 1.5.3: rename, reorder, restyle, and hide admin-menu items or sub-items in place — by role or named person, with an install-free Playground demo.',
     relatedProjects: [
       {
         fullName: 'dknauss/Borges',
@@ -652,16 +658,17 @@ export const PROJECT_META = {
     docs: [
       { label: 'README', description: 'Repository overview, feature summary, install steps, Playground demo, and development workflow.', url: 'https://github.com/dknauss/Maestro/blob/main/README.md' },
       { label: 'WordPress Readme', description: 'Plugin-directory style readme with usage notes, architecture summary, known limits, and changelog.', url: 'https://github.com/dknauss/Maestro/blob/main/readme.txt' },
+      { label: 'User Guide', description: 'Longer walkthrough of edit mode, keyboard reordering, icons, visibility, autosave, and reset behaviour.', url: 'https://github.com/dknauss/Maestro/blob/main/docs/user-guide.md' },
       { label: 'SPEC', description: 'Durable specification for the plugin behavior, editor model, and data design.', url: 'https://github.com/dknauss/Maestro/blob/main/SPEC.md' },
       { label: 'Testing', description: 'How to run the unit, integration, Playground, and Playwright test layers.', url: 'https://github.com/dknauss/Maestro/blob/main/TESTING.md' },
-      { label: 'FIXES', description: 'Resolved punch list and implementation notes for the v1 editor and autosave model.', url: 'https://github.com/dknauss/Maestro/blob/main/FIXES.md' }
+      { label: 'Performance', description: 'Measured configuration-size and page-load costs, including the zero-query front-end design.', url: 'https://github.com/dknauss/Maestro/blob/main/docs/performance/config-size-and-page-load.md' }
     ]
   },
   'dknauss/Dirtbag': {
     displayTitle: 'Dirtbag',
     pageTitle: 'Dirtbag 🛻',
     schemaType: 'SoftwareSourceCode',
-    release: { tag: 'v0.1.17', url: 'https://github.com/dknauss/Dirtbag/releases/tag/v0.1.17' },
+    release: { tag: 'v0.1.18', url: 'https://github.com/dknauss/Dirtbag/releases/tag/v0.1.18' },
     license: { label: 'GPL-2.0-or-later', url: 'https://github.com/dknauss/Dirtbag/blob/main/LICENSE' },
     playground: 'https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Dirtbag/main/playground/blueprint-stable.json',
     detailLinksLabel: 'WordPress.org',

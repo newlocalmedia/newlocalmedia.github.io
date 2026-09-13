@@ -35,7 +35,10 @@ function simplifyRepo(repo) {
     homepage: repo.homepage,
     stargazers_count: repo.stargazers_count,
     language: repo.language,
-    updated_at: repo.updated_at,
+    // GitHub's `updated_at` can lag behind code activity. Use the newer of
+    // repository metadata activity and the latest push for the site's
+    // human-facing "Last updated" date and sitemap timestamps.
+    updated_at: [repo.updated_at, repo.pushed_at].filter(Boolean).sort().at(-1),
     fork: repo.fork,
     archived: repo.archived,
     owner: {
