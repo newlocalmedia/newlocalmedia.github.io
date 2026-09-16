@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T17:01:07.569Z",
+  "generated_at": "2026-09-16T21:20:32.863Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -58,7 +58,7 @@
           "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
           "stargazers_count": 1,
           "language": "PHP",
-          "updated_at": "2026-09-16T05:37:59Z",
+          "updated_at": "2026-09-16T18:01:29Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -467,15 +467,15 @@
       "total_repos": 23,
       "total_stars": 69,
       "latest_repo": {
-        "id": 1273660935,
-        "name": "Dirtbag",
-        "full_name": "dknauss/Dirtbag",
-        "html_url": "https://github.com/dknauss/Dirtbag",
-        "description": "Dirtbag is a super-simple, WordPress block theme built on good bones and road grit. It's a lean utility vehicle designed for tinkering and practical self-education.",
-        "homepage": "https://dknauss.github.io/Dirtbag/",
-        "stargazers_count": 4,
+        "id": 1319788156,
+        "name": "Keel",
+        "full_name": "dknauss/Keel",
+        "html_url": "https://github.com/dknauss/Keel",
+        "description": "Sane WordPress defaults with actionable Site Health reporting for security, privacy, performance, and core updates — including the same-line security patches your Updates screen may not show.",
+        "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
+        "stargazers_count": 1,
         "language": "PHP",
-        "updated_at": "2026-09-16T05:42:37Z",
+        "updated_at": "2026-09-16T18:01:29Z",
         "fork": false,
         "archived": false,
         "owner": {
