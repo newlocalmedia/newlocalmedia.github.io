@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T21:33:03.162Z",
+  "generated_at": "2026-09-25T05:00:57.844Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -58,7 +58,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
           "stargazers_count": 3,
           "language": "JavaScript",
-          "updated_at": "2026-09-24T21:25:01Z",
+          "updated_at": "2026-09-25T03:20:50Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -475,7 +475,7 @@
         "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
         "stargazers_count": 3,
         "language": "JavaScript",
-        "updated_at": "2026-09-24T21:25:01Z",
+        "updated_at": "2026-09-25T03:20:50Z",
         "fork": false,
         "archived": false,
         "owner": {
