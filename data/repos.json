@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T14:00:50.466Z",
+  "generated_at": "2026-09-28T23:18:32.962Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -130,7 +130,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
           "stargazers_count": 2,
           "language": "PHP",
-          "updated_at": "2026-09-24T17:19:43Z",
+          "updated_at": "2026-09-28T16:36:41Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -467,15 +467,15 @@
       "total_repos": 23,
       "total_stars": 69,
       "latest_repo": {
-        "id": 1273660935,
-        "name": "Dirtbag",
-        "full_name": "dknauss/Dirtbag",
-        "html_url": "https://github.com/dknauss/Dirtbag",
-        "description": "Dirtbag is a super-simple, WordPress block theme built on good bones and road grit. It's a lean utility vehicle designed for tinkering and practical self-education.",
-        "homepage": "https://dknauss.github.io/Dirtbag/",
-        "stargazers_count": 4,
+        "id": 1264131469,
+        "name": "Maestro",
+        "full_name": "dknauss/Maestro",
+        "html_url": "https://github.com/dknauss/Maestro",
+        "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
+        "stargazers_count": 2,
         "language": "PHP",
-        "updated_at": "2026-09-27T17:14:59Z",
+        "updated_at": "2026-09-28T16:36:41Z",
         "fork": false,
         "archived": false,
         "owner": {

@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://newlocalmedia.github.io/</loc>
-    <lastmod>2026-09-28T14:00:50.466Z</lastmod>
+    <lastmod>2026-09-28T23:18:32.962Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/</loc>
-    <lastmod>2026-09-28T05:10:59Z</lastmod>
+    <lastmod>2026-09-28T16:36:41Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/</loc>
-    <lastmod>2026-09-28T05:10:59Z</lastmod>
+    <lastmod>2026-09-28T16:36:41Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -110,7 +110,7 @@
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/admin-menu-maestro/</loc>
-    <lastmod>2026-09-24T17:19:43Z</lastmod>
+    <lastmod>2026-09-28T16:36:41Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
