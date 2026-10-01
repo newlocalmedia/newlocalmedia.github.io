@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T22:18:32.638Z",
+  "generated_at": "2026-10-01T06:00:26.265Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -184,7 +184,7 @@
           "homepage": "https://dan.knauss.ca",
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-09-19T06:14:38Z",
+          "updated_at": "2026-10-01T04:44:41Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -467,15 +467,15 @@
       "total_repos": 23,
       "total_stars": 69,
       "latest_repo": {
-        "id": 1203393463,
-        "name": "Borges",
-        "full_name": "dknauss/Borges",
-        "html_url": "https://github.com/dknauss/Borges",
-        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-        "stargazers_count": 3,
-        "language": "JavaScript",
-        "updated_at": "2026-09-29T17:10:12Z",
+        "id": 1175597908,
+        "name": "author-identity",
+        "full_name": "dknauss/author-identity",
+        "html_url": "https://github.com/dknauss/author-identity",
+        "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
+        "homepage": "https://dan.knauss.ca",
+        "stargazers_count": 0,
+        "language": "PHP",
+        "updated_at": "2026-10-01T04:44:41Z",
         "fork": false,
         "archived": false,
         "owner": {
