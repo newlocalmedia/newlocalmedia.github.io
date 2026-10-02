@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T22:43:14.106Z",
+  "generated_at": "2026-10-02T05:42:44.800Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -202,7 +202,7 @@
           "homepage": null,
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-09-03T04:21:10Z",
+          "updated_at": "2026-10-02T00:46:24Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -467,15 +467,15 @@
       "total_repos": 23,
       "total_stars": 69,
       "latest_repo": {
-        "id": 1175597908,
-        "name": "author-identity",
-        "full_name": "dknauss/author-identity",
-        "html_url": "https://github.com/dknauss/author-identity",
-        "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
-        "homepage": "https://dan.knauss.ca",
+        "id": 1329411208,
+        "name": "two-factor-enrollment",
+        "full_name": "dknauss/two-factor-enrollment",
+        "html_url": "https://github.com/dknauss/two-factor-enrollment",
+        "description": "Two-factor enrollment onboarding for the WordPress Two Factor plugin. Enrolls covered users during login, before an auth cookie exists. Owns no policy.",
+        "homepage": null,
         "stargazers_count": 0,
         "language": "PHP",
-        "updated_at": "2026-10-01T04:44:41Z",
+        "updated_at": "2026-10-02T00:46:24Z",
         "fork": false,
         "archived": false,
         "owner": {
