@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T14:46:11.931Z",
+  "generated_at": "2026-10-06T00:05:24.239Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,24 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1203393463,
+          "name": "Borges",
+          "full_name": "dknauss/Borges",
+          "html_url": "https://github.com/dknauss/Borges",
+          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
+          "stargazers_count": 3,
+          "language": "JavaScript",
+          "updated_at": "2026-10-05T22:10:23Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1154983208,
           "name": "Sudo",
           "full_name": "dknauss/Sudo",
@@ -95,24 +113,6 @@
           "stargazers_count": 1,
           "language": "PHP",
           "updated_at": "2026-09-27T03:24:28Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1203393463,
-          "name": "Borges",
-          "full_name": "dknauss/Borges",
-          "html_url": "https://github.com/dknauss/Borges",
-          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-          "stargazers_count": 3,
-          "language": "JavaScript",
-          "updated_at": "2026-09-29T17:10:12Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -467,15 +467,15 @@
       "total_repos": 23,
       "total_stars": 69,
       "latest_repo": {
-        "id": 1329411208,
-        "name": "two-factor-enrollment",
-        "full_name": "dknauss/two-factor-enrollment",
-        "html_url": "https://github.com/dknauss/two-factor-enrollment",
-        "description": "Two-factor enrollment onboarding for the WordPress Two Factor plugin. Enrolls covered users during login, before an auth cookie exists. Owns no policy.",
-        "homepage": null,
-        "stargazers_count": 0,
-        "language": "PHP",
-        "updated_at": "2026-10-02T00:46:24Z",
+        "id": 1203393463,
+        "name": "Borges",
+        "full_name": "dknauss/Borges",
+        "html_url": "https://github.com/dknauss/Borges",
+        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
+        "stargazers_count": 3,
+        "language": "JavaScript",
+        "updated_at": "2026-10-05T22:10:23Z",
         "fork": false,
         "archived": false,
         "owner": {
