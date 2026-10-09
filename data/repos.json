@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T23:23:29.472Z",
+  "generated_at": "2026-10-09T06:13:31.224Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -58,7 +58,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
           "stargazers_count": 3,
           "language": "JavaScript",
-          "updated_at": "2026-10-08T23:11:12Z",
+          "updated_at": "2026-10-09T01:35:08Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -184,7 +184,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
           "stargazers_count": 2,
           "language": "PHP",
-          "updated_at": "2026-10-07T21:46:43Z",
+          "updated_at": "2026-10-09T03:00:13Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -467,15 +467,15 @@
       "total_repos": 23,
       "total_stars": 69,
       "latest_repo": {
-        "id": 1203393463,
-        "name": "Borges",
-        "full_name": "dknauss/Borges",
-        "html_url": "https://github.com/dknauss/Borges",
-        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-        "stargazers_count": 3,
-        "language": "JavaScript",
-        "updated_at": "2026-10-08T23:11:12Z",
+        "id": 1264131469,
+        "name": "Maestro",
+        "full_name": "dknauss/Maestro",
+        "html_url": "https://github.com/dknauss/Maestro",
+        "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
+        "stargazers_count": 2,
+        "language": "PHP",
+        "updated_at": "2026-10-09T03:00:13Z",
         "fork": false,
         "archived": false,
         "owner": {
