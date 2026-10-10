@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T05:56:51.971Z",
+  "generated_at": "2026-10-10T12:36:23.840Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,6 +50,24 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
+          "id": 1413001152,
+          "name": "pullquote-demo",
+          "full_name": "dknauss/pullquote-demo",
+          "html_url": "https://github.com/dknauss/pullquote-demo",
+          "description": "An experimental WordPress Article Extract block, Gutenberg proposal, and self-contained Playground demo.",
+          "homepage": null,
+          "stargazers_count": 0,
+          "language": "JavaScript",
+          "updated_at": "2026-10-10T09:28:37Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
           "id": 1203393463,
           "name": "Borges",
           "full_name": "dknauss/Borges",
@@ -58,7 +76,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
           "stargazers_count": 3,
           "language": "JavaScript",
-          "updated_at": "2026-10-09T21:05:27Z",
+          "updated_at": "2026-10-10T07:46:02Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -464,18 +482,18 @@
           }
         }
       ],
-      "total_repos": 23,
+      "total_repos": 24,
       "total_stars": 69,
       "latest_repo": {
-        "id": 1203393463,
-        "name": "Borges",
-        "full_name": "dknauss/Borges",
-        "html_url": "https://github.com/dknauss/Borges",
-        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-        "stargazers_count": 3,
+        "id": 1413001152,
+        "name": "pullquote-demo",
+        "full_name": "dknauss/pullquote-demo",
+        "html_url": "https://github.com/dknauss/pullquote-demo",
+        "description": "An experimental WordPress Article Extract block, Gutenberg proposal, and self-contained Playground demo.",
+        "homepage": null,
+        "stargazers_count": 0,
         "language": "JavaScript",
-        "updated_at": "2026-10-09T21:05:27Z",
+        "updated_at": "2026-10-10T09:28:37Z",
         "fork": false,
         "archived": false,
         "owner": {
