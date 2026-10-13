@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T14:16:19.813Z",
+  "generated_at": "2026-10-13T22:47:52.071Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,15 +50,33 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
-          "id": 1319788156,
-          "name": "Keel",
-          "full_name": "dknauss/Keel",
-          "html_url": "https://github.com/dknauss/Keel",
-          "description": "Sane WordPress defaults with actionable Site Health reporting for security, privacy, performance, and core updates — including the same-line security patches your Updates screen may not show.",
-          "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
-          "stargazers_count": 1,
-          "language": "PHP",
-          "updated_at": "2026-10-12T22:38:54Z",
+          "id": 1417756787,
+          "name": "cmt-gene-table",
+          "full_name": "dknauss/cmt-gene-table",
+          "html_url": "https://github.com/dknauss/cmt-gene-table",
+          "description": "Open table of genes linked to Charcot-Marie-Tooth disease and related inherited neuropathies, built from ClinGen and MONDO",
+          "homepage": "https://cmt.blog",
+          "stargazers_count": 0,
+          "language": "Python",
+          "updated_at": "2026-10-13T22:16:39Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1203393463,
+          "name": "Borges",
+          "full_name": "dknauss/Borges",
+          "html_url": "https://github.com/dknauss/Borges",
+          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
+          "stargazers_count": 3,
+          "language": "JavaScript",
+          "updated_at": "2026-10-13T20:51:10Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -76,7 +94,25 @@
           "homepage": "https://dan.knauss.ca",
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-10-12T17:10:32Z",
+          "updated_at": "2026-10-13T18:55:35Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1319788156,
+          "name": "Keel",
+          "full_name": "dknauss/Keel",
+          "html_url": "https://github.com/dknauss/Keel",
+          "description": "Sane WordPress defaults with actionable Site Health reporting for security, privacy, performance, and core updates — including the same-line security patches your Updates screen may not show.",
+          "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
+          "stargazers_count": 1,
+          "language": "PHP",
+          "updated_at": "2026-10-13T22:11:06Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -112,25 +148,7 @@
           "homepage": null,
           "stargazers_count": 0,
           "language": "JavaScript",
-          "updated_at": "2026-10-10T15:49:32Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1203393463,
-          "name": "Borges",
-          "full_name": "dknauss/Borges",
-          "html_url": "https://github.com/dknauss/Borges",
-          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-          "stargazers_count": 3,
-          "language": "JavaScript",
-          "updated_at": "2026-10-10T07:46:02Z",
+          "updated_at": "2026-10-13T19:02:12Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -256,7 +274,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
           "stargazers_count": 2,
           "language": "PHP",
-          "updated_at": "2026-10-09T14:14:12Z",
+          "updated_at": "2026-10-13T20:19:33Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -292,7 +310,7 @@
           "homepage": "https://dknauss.github.io/Dirtbag/",
           "stargazers_count": 4,
           "language": "PHP",
-          "updated_at": "2026-09-27T17:14:59Z",
+          "updated_at": "2026-10-13T19:02:03Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -482,18 +500,18 @@
           }
         }
       ],
-      "total_repos": 24,
+      "total_repos": 25,
       "total_stars": 69,
       "latest_repo": {
-        "id": 1319788156,
-        "name": "Keel",
-        "full_name": "dknauss/Keel",
-        "html_url": "https://github.com/dknauss/Keel",
-        "description": "Sane WordPress defaults with actionable Site Health reporting for security, privacy, performance, and core updates — including the same-line security patches your Updates screen may not show.",
-        "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
-        "stargazers_count": 1,
-        "language": "PHP",
-        "updated_at": "2026-10-12T22:38:54Z",
+        "id": 1417756787,
+        "name": "cmt-gene-table",
+        "full_name": "dknauss/cmt-gene-table",
+        "html_url": "https://github.com/dknauss/cmt-gene-table",
+        "description": "Open table of genes linked to Charcot-Marie-Tooth disease and related inherited neuropathies, built from ClinGen and MONDO",
+        "homepage": "https://cmt.blog",
+        "stargazers_count": 0,
+        "language": "Python",
+        "updated_at": "2026-10-13T22:16:39Z",
         "fork": false,
         "archived": false,
         "owner": {
