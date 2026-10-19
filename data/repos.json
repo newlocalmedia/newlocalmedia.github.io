@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T13:23:28.639Z",
+  "generated_at": "2026-10-19T22:23:12.709Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,15 +50,15 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
-          "id": 1319788156,
-          "name": "Keel",
-          "full_name": "dknauss/Keel",
-          "html_url": "https://github.com/dknauss/Keel",
-          "description": "Sane WordPress defaults with actionable Site Health reporting for security, privacy, performance, and core updates — including the same-line security patches your Updates screen may not show.",
-          "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
-          "stargazers_count": 2,
-          "language": "PHP",
-          "updated_at": "2026-10-17T14:27:45Z",
+          "id": 1203393463,
+          "name": "Borges",
+          "full_name": "dknauss/Borges",
+          "html_url": "https://github.com/dknauss/Borges",
+          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
+          "stargazers_count": 3,
+          "language": "JavaScript",
+          "updated_at": "2026-10-19T21:33:51Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -68,15 +68,87 @@
           }
         },
         {
-          "id": 1203393463,
-          "name": "Borges",
-          "full_name": "dknauss/Borges",
-          "html_url": "https://github.com/dknauss/Borges",
-          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-          "stargazers_count": 3,
-          "language": "JavaScript",
-          "updated_at": "2026-10-16T16:24:49Z",
+          "id": 1165510944,
+          "name": "the-drafting-table",
+          "full_name": "dknauss/the-drafting-table",
+          "html_url": "https://github.com/dknauss/the-drafting-table",
+          "description": "A Frank Lloyd Wright-era architect's notebook FSE block theme for WordPress — aged parchment, dot-grid overlays, blueprint borders, and refined architectural typography.",
+          "homepage": null,
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-10-19T21:17:42Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1154983208,
+          "name": "Sudo",
+          "full_name": "dknauss/Sudo",
+          "html_url": "https://github.com/dknauss/Sudo",
+          "description": "Concluded research prototype — do not install. Final finding: github.com/dknauss/Sudo/blob/main/docs/finding.md",
+          "homepage": "https://github.com/dknauss/wp-sudo",
+          "stargazers_count": 42,
+          "language": "PHP",
+          "updated_at": "2026-10-19T20:57:59Z",
+          "fork": false,
+          "archived": true,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1275800644,
+          "name": "wp-texturize-inline-quote-fix",
+          "full_name": "dknauss/wp-texturize-inline-quote-fix",
+          "html_url": "https://github.com/dknauss/wp-texturize-inline-quote-fix",
+          "description": "Stopgap mu-plugin for WordPress core Trac #18549 — fixes quotes/apostrophes wptexturize() curls the wrong way after a closing inline tag. Remove once core lands the fix.",
+          "homepage": null,
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-10-19T20:22:06Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1273660935,
+          "name": "Dirtbag",
+          "full_name": "dknauss/Dirtbag",
+          "html_url": "https://github.com/dknauss/Dirtbag",
+          "description": "Dirtbag is a super-simple, WordPress block theme built on good bones and road grit. It's a lean utility vehicle designed for tinkering and practical self-education.",
+          "homepage": "https://dknauss.github.io/Dirtbag/",
+          "stargazers_count": 5,
+          "language": "PHP",
+          "updated_at": "2026-10-19T20:14:21Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1319788156,
+          "name": "Keel",
+          "full_name": "dknauss/Keel",
+          "html_url": "https://github.com/dknauss/Keel",
+          "description": "Sane WordPress defaults with actionable Site Health reporting for security, privacy, performance, and core updates — including the same-line security patches your Updates screen may not show.",
+          "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
+          "stargazers_count": 2,
+          "language": "PHP",
+          "updated_at": "2026-10-19T16:47:52Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -113,42 +185,6 @@
           "stargazers_count": 0,
           "language": "Python",
           "updated_at": "2026-10-14T16:34:12Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1273660935,
-          "name": "Dirtbag",
-          "full_name": "dknauss/Dirtbag",
-          "html_url": "https://github.com/dknauss/Dirtbag",
-          "description": "Dirtbag is a super-simple, WordPress block theme built on good bones and road grit. It's a lean utility vehicle designed for tinkering and practical self-education.",
-          "homepage": "https://dknauss.github.io/Dirtbag/",
-          "stargazers_count": 5,
-          "language": "PHP",
-          "updated_at": "2026-10-14T02:42:33Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1165510944,
-          "name": "the-drafting-table",
-          "full_name": "dknauss/the-drafting-table",
-          "html_url": "https://github.com/dknauss/the-drafting-table",
-          "description": "A Frank Lloyd Wright-era architect's notebook FSE block theme for WordPress — aged parchment, dot-grid overlays, blueprint borders, and refined architectural typography.",
-          "homepage": null,
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-10-14T02:42:41Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -292,27 +328,9 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
           "stargazers_count": 2,
           "language": "PHP",
-          "updated_at": "2026-10-13T20:19:33Z",
+          "updated_at": "2026-10-19T16:35:29Z",
           "fork": false,
           "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1154983208,
-          "name": "Sudo",
-          "full_name": "dknauss/Sudo",
-          "html_url": "https://github.com/dknauss/Sudo",
-          "description": "Concluded research prototype — do not install. Final finding: github.com/dknauss/Sudo/blob/main/docs/finding.md",
-          "homepage": "https://github.com/dknauss/wp-sudo",
-          "stargazers_count": 42,
-          "language": "PHP",
-          "updated_at": "2026-09-28T05:10:59Z",
-          "fork": false,
-          "archived": true,
           "owner": {
             "login": "dknauss",
             "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
@@ -428,24 +446,6 @@
           }
         },
         {
-          "id": 1275800644,
-          "name": "wp-texturize-inline-quote-fix",
-          "full_name": "dknauss/wp-texturize-inline-quote-fix",
-          "html_url": "https://github.com/dknauss/wp-texturize-inline-quote-fix",
-          "description": "Stopgap mu-plugin for WordPress core Trac #18549 — fixes quotes/apostrophes wptexturize() curls the wrong way after a closing inline tag. Remove once core lands the fix.",
-          "homepage": null,
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-06-21T16:33:35Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
           "id": 1269513041,
           "name": "wp-perfopt-guide",
           "full_name": "dknauss/wp-perfopt-guide",
@@ -503,15 +503,15 @@
       "total_repos": 25,
       "total_stars": 71,
       "latest_repo": {
-        "id": 1319788156,
-        "name": "Keel",
-        "full_name": "dknauss/Keel",
-        "html_url": "https://github.com/dknauss/Keel",
-        "description": "Sane WordPress defaults with actionable Site Health reporting for security, privacy, performance, and core updates — including the same-line security patches your Updates screen may not show.",
-        "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
-        "stargazers_count": 2,
-        "language": "PHP",
-        "updated_at": "2026-10-17T14:27:45Z",
+        "id": 1203393463,
+        "name": "Borges",
+        "full_name": "dknauss/Borges",
+        "html_url": "https://github.com/dknauss/Borges",
+        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
+        "stargazers_count": 3,
+        "language": "JavaScript",
+        "updated_at": "2026-10-19T21:33:51Z",
         "fork": false,
         "archived": false,
         "owner": {
