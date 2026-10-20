@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T22:23:12.709Z",
+  "generated_at": "2026-10-20T04:55:15.805Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -148,7 +148,7 @@
           "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
           "stargazers_count": 2,
           "language": "PHP",
-          "updated_at": "2026-10-19T16:47:52Z",
+          "updated_at": "2026-10-19T23:28:59Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -503,15 +503,15 @@
       "total_repos": 25,
       "total_stars": 71,
       "latest_repo": {
-        "id": 1203393463,
-        "name": "Borges",
-        "full_name": "dknauss/Borges",
-        "html_url": "https://github.com/dknauss/Borges",
-        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-        "stargazers_count": 3,
-        "language": "JavaScript",
-        "updated_at": "2026-10-19T21:33:51Z",
+        "id": 1319788156,
+        "name": "Keel",
+        "full_name": "dknauss/Keel",
+        "html_url": "https://github.com/dknauss/Keel",
+        "description": "Sane WordPress defaults with actionable Site Health reporting for security, privacy, performance, and core updates — including the same-line security patches your Updates screen may not show.",
+        "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
+        "stargazers_count": 2,
+        "language": "PHP",
+        "updated_at": "2026-10-19T23:28:59Z",
         "fork": false,
         "archived": false,
         "owner": {
