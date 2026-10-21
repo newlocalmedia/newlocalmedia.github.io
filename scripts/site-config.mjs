@@ -78,9 +78,9 @@ export const SECTION_META = {
 export const PROJECT_META = {
   'dknauss/Keel': {
     displayTitle: 'Keel',
-    pageTitle: 'Keel ⚓',
+    pageTitle: 'Keel ⛵',
     schemaType: 'SoftwareSourceCode',
-    release: { tag: 'v0.6.5', url: 'https://github.com/dknauss/Keel/releases/tag/v0.6.5' },
+    release: { tag: 'v0.8.0', url: 'https://github.com/dknauss/Keel/releases/tag/v0.8.0' },
     tests: 'PHP 7.4–8.5 CI; live WordPress 6.4–7.2-alpha single-site, multisite, and installer matrices',
     license: { label: 'GPL-2.0-or-later', url: 'https://github.com/dknauss/Keel/blob/main/LICENSE' },
     homepage: 'https://wordpress.org/plugins/keel-defaults/',
@@ -100,38 +100,41 @@ export const PROJECT_META = {
     leadNotes: [
       { title: 'Finds the Patch Core Does Not Show', text: 'Site Health names and can deliberately install the patched tip of the site’s own WordPress release line without requiring a major-version jump.' },
       { title: 'Off Means Off', text: 'Disabling comments also stops <code>get_comments()</code> returning them and the comment feed answering — not just the presentation layer.' },
-      { title: 'One Switch Each', text: 'All 39 defaults sit under Settings &rarr; Site Defaults, and each can be switched off independently.' },
+      { title: 'Every Setting in One Place', text: 'All 42 settings sit under Settings &rarr; Site Defaults. Some depend on others, and configuration or network policy can lock them centrally — visibly.' },
       { title: 'Reports Its Own Posture', text: 'Site Health lists every default and its effective state, reports security-update status, and flags when another plugin controls the same setting.' }
     ],
     whyHeading: 'Defaults That Explain Themselves',
-    narrative: 'Keel adds 39 sane WordPress defaults for security, updates, privacy, content, media, email, UX, and performance. Each one is visible under Settings → Site Defaults, independently switchable, and reported through Site Health.',
+    narrative: 'Keel provides 42 configurable WordPress settings for security, updates, privacy, content, media, email, UX, and performance. Each one is visible under Settings → Site Defaults and reported through Site Health.',
     narrativeHtml: [
-      'Keel adds 39 sane WordPress defaults for security, updates, privacy, content, media, email, UX, and performance — each one visible under <strong>Settings → Site Defaults</strong> and independently switchable. Nothing is hidden and deactivation returns WordPress to its prior behaviour.',
-      '<strong>The 0.6 release line closes a gap in WordPress core-update reporting.</strong> Keel asks WordPress.org whether the installed release is known to be vulnerable, names the patched tip on the site’s own release line, shows every offered release and marks the one core would choose. An authorized administrator can deliberately install the same-line patch through WordPress’s own upgrader with rollback enabled. The target and compatibility checks run again on the server, and nothing installs without a click.',
+      'Keel provides 42 configurable WordPress settings for security, updates, privacy, content, media, email, UX, and performance — each one visible under <strong>Settings → Site Defaults</strong>. Some depend on others; configuration or network policy can manage them centrally, and locked settings say so. Nothing is hidden and deactivation returns WordPress to its prior behaviour.',
+      '<strong>Keel closes a gap in WordPress core-update reporting.</strong> Keel asks WordPress.org whether the installed release is known to be vulnerable, names the patched tip on the site’s own release line, shows every offered release and marks the one core would choose. An authorized administrator can deliberately install the same-line patch through WordPress’s own upgrader with rollback enabled. The target and compatibility checks run again on the server, and nothing installs without a click.',
       'The consistency is the point. Closing the REST API also removes the discovery link that advertises it; disabling comments also stops the comment feed and direct <code>get_comments()</code> queries. Where a trade is deliberate, Keel documents it instead of making a broader claim than the code can support.',
-      '<strong>Site Health reports the posture</strong> read-only: every default and its effective state, update operability, service failures, and traceable policy overlaps. If another plugin controls the same setting, Keel names the evidence it can establish and labels what it cannot attribute instead of guessing.'
+      '<strong>Site Health reports the posture</strong> read-only: every default and its effective state, update operability, service failures, and traceable policy overlaps. If another plugin controls the same setting, Keel names the evidence it can establish and labels what it cannot attribute instead of guessing.',
+      '<strong>0.7 and 0.8 extend the same approach.</strong> Password-protected posts stay out of searches by people who cannot open them, and leftover shortcode tags are hidden from readers without changing stored content. Site Health now names the largest autoloaded options and the most overdue or frequent cron events with a probable owner and an explicit confidence level — option values and event arguments never enter the report, and nothing is deleted or rescheduled.'
     ],
     omitGenericNarrative: true,
     omitRelatedNarrative: true,
     primaryImage: {
       url: 'https://newlocalmedia.github.io/assets/keel-preview.png',
-      alt: 'Reverse Keel banner for a dark background, with a white sailboat and wordmark and the tagline “Balanced defaults for steady sites.”'
+      alt: 'Keel banner on a dark background: a white racing yacht with grey sails and a steel-blue fin keel, the KEEL wordmark, and the tagline “Keeps your site upright with balanced defaults.”'
     },
-    focus: 'Keel for WordPress ⚓',
-    subfocus: 'Version 0.6.5: 39 individually switchable defaults, actionable Site Health reporting, multisite policy, and deliberate installation of same-line WordPress security patches.',
-    subfocusHtml: '<strong>Version 0.6.5:</strong> 39 individually switchable defaults, actionable Site Health reporting, multisite policy, and deliberate installation of same-line WordPress security patches.',
+    focus: 'Keel for WordPress ⛵',
+    subfocus: 'Version 0.8.0: 42 configurable settings, Site Health reports that attribute autoload and cron pressure, multisite policy, and deliberate installation of same-line WordPress security patches.',
+    subfocusHtml: '<strong>Version 0.8.0:</strong> 42 configurable settings, Site Health reports that attribute autoload and cron pressure, multisite policy, and deliberate installation of same-line WordPress security patches.',
     screenshots: [
-      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.6.5/.wordpress-org/screenshot-1.png', alt: 'Site Health reports WordPress 6.9.5 as vulnerable, names 6.9.7 as its same-line patch, shows the offered release ladder, and offers to install the patch.', caption: 'See whether the installed WordPress release is vulnerable, which same-line release fixes it, what core would choose, and whether Keel can install the patch.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.6.5/.wordpress-org/screenshot-4.png', alt: 'Settings → Site Defaults showing Keel defaults as individual switches with an explanation beside each one.', caption: 'Inspect and independently switch every default under Settings → Site Defaults.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.6.5/.wordpress-org/screenshot-2.png', alt: 'The Keel Passwords help tab explains password length and breach screening without composition rules.', caption: 'Read the exact privacy and failure behaviour of password breach screening.' },
-      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.6.5/.wordpress-org/screenshot-3.png', alt: 'Site Health Info lists every Keel default and its current state, grouped by category.', caption: 'Copy or review the site’s complete Keel posture from Site Health Info.' }
+      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.8.0/.wordpress-org/screenshot-1.png', alt: 'Site Health reports WordPress 6.9.6 as insecure, names 6.9.10 as the fix on its own line, lists the three offered releases with the one WordPress would install, and offers to install 6.9.10.', caption: 'See whether the installed WordPress release is vulnerable, which same-line release fixes it, what core would choose, and whether Keel can install the patch.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.8.0/docs/review/autoload-attribution-2026-10-21.png', alt: 'Site Health table of the ten largest observed autoloaded options with byte sizes, probable owners and confidence, collected without option values.', caption: 'New in 0.8.0: find the largest autoloaded options, a probable owner and how confident that attribution is.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.8.0/.wordpress-org/screenshot-4.png', alt: 'Settings → Site Defaults showing each Keel setting with an explanation beside it.', caption: 'Review and adjust every setting under Settings → Site Defaults.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.8.0/.wordpress-org/screenshot-5.png', alt: 'Network Admin policy screen where a Super Admin decides selected Keel settings for every site, with a summary of settings locked by wp-config.php.', caption: 'Decide selected settings for a whole multisite network; lifting the policy restores each site’s own choice.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.8.0/.wordpress-org/screenshot-2.png', alt: 'The Keel Passwords help tab explains password length and breach screening without composition rules.', caption: 'Read the exact privacy and failure behaviour of password breach screening.' },
+      { url: 'https://raw.githubusercontent.com/dknauss/Keel/v0.8.0/.wordpress-org/screenshot-3.png', alt: 'Site Health Info lists every Keel setting and its current state, grouped by category.', caption: 'Copy or review the site’s complete Keel posture from Site Health Info.' }
     ],
     docs: [
       { label: 'README', description: 'What Keel does, how it is built, and how it compares to the alternatives.', url: 'https://github.com/dknauss/Keel/blob/main/README.md' },
       { label: 'Competitive Teardown Matrix', description: 'Nine of the most-installed “disable it” plugins measured by live HTTP and PHP probes rather than readme claims — including where Keel makes a deliberate trade.', url: 'https://github.com/dknauss/Keel/blob/main/docs/competitive-teardown-matrix.md' },
       { label: 'WordPress Default Settings', description: 'Every default Keel can set, what WordPress does without it, and why the opinion is worth having.', url: 'https://github.com/dknauss/Keel/blob/main/docs/wordpress-default-settings.md' },
       { label: 'Environment Detection', description: 'How Keel decides what is safe to seed on a given install, including multisite-aware behaviour.', url: 'https://github.com/dknauss/Keel/blob/main/docs/environment-detection.md' },
-      { label: 'Roadmap', description: 'Planned privacy, content-integrity, performance-observability, and update-operations releases.', url: 'https://github.com/dknauss/Keel/blob/main/ROADMAP.md' }
+      { label: 'Roadmap', description: 'Shipped and planned releases, and what has to be true before each step.', url: 'https://github.com/dknauss/Keel/blob/main/ROADMAP.md' }
     ]
   },
   'dknauss/Sudo': {
