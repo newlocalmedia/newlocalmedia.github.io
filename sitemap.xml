@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://newlocalmedia.github.io/</loc>
-    <lastmod>2026-10-21T11:54:42.931Z</lastmod>
+    <lastmod>2026-10-21T17:15:20.111Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/</loc>
-    <lastmod>2026-10-21T00:20:38Z</lastmod>
+    <lastmod>2026-10-21T16:50:26Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/</loc>
-    <lastmod>2026-10-21T00:20:38Z</lastmod>
+    <lastmod>2026-10-21T16:50:26Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/Dirtbag/</loc>
-    <lastmod>2026-10-19T20:14:21Z</lastmod>
+    <lastmod>2026-10-21T16:50:08Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/author-identity/</loc>
-    <lastmod>2026-10-14T20:50:04Z</lastmod>
+    <lastmod>2026-10-21T16:50:18Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -98,19 +98,19 @@
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/the-drafting-table/</loc>
-    <lastmod>2026-10-19T21:17:42Z</lastmod>
+    <lastmod>2026-10-21T16:50:21Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/borges-bibliography-builder/</loc>
-    <lastmod>2026-10-21T00:18:52Z</lastmod>
+    <lastmod>2026-10-21T16:50:26Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/admin-menu-maestro/</loc>
-    <lastmod>2026-10-19T16:35:29Z</lastmod>
+    <lastmod>2026-10-21T16:50:10Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

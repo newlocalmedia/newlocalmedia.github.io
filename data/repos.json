@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T11:54:42.931Z",
+  "generated_at": "2026-10-21T17:15:20.111Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -76,7 +76,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
           "stargazers_count": 3,
           "language": "JavaScript",
-          "updated_at": "2026-10-21T00:18:52Z",
+          "updated_at": "2026-10-21T16:50:26Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -94,7 +94,7 @@
           "homepage": null,
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-10-19T21:17:42Z",
+          "updated_at": "2026-10-21T16:50:21Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -148,7 +148,7 @@
           "homepage": "https://dknauss.github.io/Dirtbag/",
           "stargazers_count": 5,
           "language": "PHP",
-          "updated_at": "2026-10-19T20:14:21Z",
+          "updated_at": "2026-10-21T16:50:08Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -166,7 +166,7 @@
           "homepage": "https://dan.knauss.ca",
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-10-14T20:50:04Z",
+          "updated_at": "2026-10-21T16:50:18Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -310,7 +310,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
           "stargazers_count": 1,
           "language": "PHP",
-          "updated_at": "2026-10-14T17:42:01Z",
+          "updated_at": "2026-10-21T16:50:14Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -328,7 +328,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
           "stargazers_count": 2,
           "language": "PHP",
-          "updated_at": "2026-10-19T16:35:29Z",
+          "updated_at": "2026-10-21T16:50:10Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -346,7 +346,7 @@
           "homepage": null,
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-10-02T00:46:24Z",
+          "updated_at": "2026-10-21T16:50:23Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -503,15 +503,15 @@
       "total_repos": 25,
       "total_stars": 71,
       "latest_repo": {
-        "id": 1319788156,
-        "name": "Keel",
-        "full_name": "dknauss/Keel",
-        "html_url": "https://github.com/dknauss/Keel",
-        "description": "Sane WordPress defaults with actionable Site Health reporting for security, privacy, performance, and core updates — including the same-line security patches your Updates screen may not show.",
-        "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
-        "stargazers_count": 2,
-        "language": "PHP",
-        "updated_at": "2026-10-21T00:20:38Z",
+        "id": 1203393463,
+        "name": "Borges",
+        "full_name": "dknauss/Borges",
+        "html_url": "https://github.com/dknauss/Borges",
+        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
+        "stargazers_count": 3,
+        "language": "JavaScript",
+        "updated_at": "2026-10-21T16:50:26Z",
         "fork": false,
         "archived": false,
         "owner": {
