@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T17:13:35.690Z",
+  "generated_at": "2026-10-22T21:39:20.357Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,15 +50,15 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
-          "id": 1319788156,
-          "name": "Keel",
-          "full_name": "dknauss/Keel",
-          "html_url": "https://github.com/dknauss/Keel",
-          "description": "Surface and set smart WordPress defaults with actionable Site Health reporting for security, privacy, performance, and core updates — including the same-line security patches your Updates screen may not show.",
-          "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
-          "stargazers_count": 2,
+          "id": 1175597908,
+          "name": "author-identity",
+          "full_name": "dknauss/author-identity",
+          "html_url": "https://github.com/dknauss/author-identity",
+          "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
+          "homepage": "https://dan.knauss.ca",
+          "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-10-22T14:24:00Z",
+          "updated_at": "2026-10-22T21:27:37Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -76,7 +76,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
           "stargazers_count": 2,
           "language": "PHP",
-          "updated_at": "2026-10-22T17:07:27Z",
+          "updated_at": "2026-10-22T21:38:32Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -86,15 +86,15 @@
           }
         },
         {
-          "id": 1175597908,
-          "name": "author-identity",
-          "full_name": "dknauss/author-identity",
-          "html_url": "https://github.com/dknauss/author-identity",
-          "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
-          "homepage": "https://dan.knauss.ca",
-          "stargazers_count": 0,
+          "id": 1319788156,
+          "name": "Keel",
+          "full_name": "dknauss/Keel",
+          "html_url": "https://github.com/dknauss/Keel",
+          "description": "Surface and set smart WordPress defaults with actionable Site Health reporting for security, privacy, performance, and core updates — including the same-line security patches your Updates screen may not show.",
+          "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
+          "stargazers_count": 2,
           "language": "PHP",
-          "updated_at": "2026-10-22T14:00:16Z",
+          "updated_at": "2026-10-22T21:13:55Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -112,7 +112,25 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
           "stargazers_count": 3,
           "language": "JavaScript",
-          "updated_at": "2026-10-22T17:12:56Z",
+          "updated_at": "2026-10-22T20:32:38Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1275800644,
+          "name": "wp-texturize-inline-quote-fix",
+          "full_name": "dknauss/wp-texturize-inline-quote-fix",
+          "html_url": "https://github.com/dknauss/wp-texturize-inline-quote-fix",
+          "description": "Stopgap mu-plugin for WordPress core Trac #18549 — fixes quotes/apostrophes wptexturize() curls the wrong way after a closing inline tag. ",
+          "homepage": "",
+          "stargazers_count": 0,
+          "language": "PHP",
+          "updated_at": "2026-10-22T19:20:33Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -205,24 +223,6 @@
           "updated_at": "2026-10-19T20:57:59Z",
           "fork": false,
           "archived": true,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1275800644,
-          "name": "wp-texturize-inline-quote-fix",
-          "full_name": "dknauss/wp-texturize-inline-quote-fix",
-          "html_url": "https://github.com/dknauss/wp-texturize-inline-quote-fix",
-          "description": "Stopgap mu-plugin for WordPress core Trac #18549 — fixes quotes/apostrophes wptexturize() curls the wrong way after a closing inline tag. Remove once core lands the fix.",
-          "homepage": null,
-          "stargazers_count": 0,
-          "language": "PHP",
-          "updated_at": "2026-10-19T20:22:06Z",
-          "fork": false,
-          "archived": false,
           "owner": {
             "login": "dknauss",
             "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
@@ -503,15 +503,15 @@
       "total_repos": 25,
       "total_stars": 71,
       "latest_repo": {
-        "id": 1203393463,
-        "name": "Borges",
-        "full_name": "dknauss/Borges",
-        "html_url": "https://github.com/dknauss/Borges",
-        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-        "stargazers_count": 3,
-        "language": "JavaScript",
-        "updated_at": "2026-10-22T17:12:56Z",
+        "id": 1264131469,
+        "name": "Maestro",
+        "full_name": "dknauss/Maestro",
+        "html_url": "https://github.com/dknauss/Maestro",
+        "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
+        "stargazers_count": 2,
+        "language": "PHP",
+        "updated_at": "2026-10-22T21:38:32Z",
         "fork": false,
         "archived": false,
         "owner": {
