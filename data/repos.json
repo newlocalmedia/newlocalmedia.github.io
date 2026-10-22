@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T21:45:27.224Z",
+  "generated_at": "2026-10-22T04:53:48.430Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -58,25 +58,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
           "stargazers_count": 3,
           "language": "JavaScript",
-          "updated_at": "2026-10-21T21:45:18Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1264131469,
-          "name": "Maestro",
-          "full_name": "dknauss/Maestro",
-          "html_url": "https://github.com/dknauss/Maestro",
-          "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
-          "stargazers_count": 2,
-          "language": "PHP",
-          "updated_at": "2026-10-21T21:42:44Z",
+          "updated_at": "2026-10-22T00:37:18Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -94,7 +76,25 @@
           "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
           "stargazers_count": 2,
           "language": "PHP",
-          "updated_at": "2026-10-21T21:35:52Z",
+          "updated_at": "2026-10-22T00:37:32Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1264131469,
+          "name": "Maestro",
+          "full_name": "dknauss/Maestro",
+          "html_url": "https://github.com/dknauss/Maestro",
+          "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
+          "stargazers_count": 2,
+          "language": "PHP",
+          "updated_at": "2026-10-22T00:24:58Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -256,7 +256,7 @@
           "homepage": null,
           "stargazers_count": 0,
           "language": "JavaScript",
-          "updated_at": "2026-10-13T19:02:12Z",
+          "updated_at": "2026-10-22T04:37:52Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -503,15 +503,15 @@
       "total_repos": 25,
       "total_stars": 71,
       "latest_repo": {
-        "id": 1203393463,
-        "name": "Borges",
-        "full_name": "dknauss/Borges",
-        "html_url": "https://github.com/dknauss/Borges",
-        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-        "stargazers_count": 3,
+        "id": 1413001152,
+        "name": "pullquote-demo",
+        "full_name": "dknauss/pullquote-demo",
+        "html_url": "https://github.com/dknauss/pullquote-demo",
+        "description": "An experimental WordPress Article Extract block, Gutenberg proposal, and self-contained Playground demo.",
+        "homepage": null,
+        "stargazers_count": 0,
         "language": "JavaScript",
-        "updated_at": "2026-10-21T21:45:18Z",
+        "updated_at": "2026-10-22T04:37:52Z",
         "fork": false,
         "archived": false,
         "owner": {
