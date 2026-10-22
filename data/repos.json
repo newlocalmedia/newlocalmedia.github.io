@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T11:57:45.759Z",
+  "generated_at": "2026-10-22T17:13:35.690Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -50,24 +50,6 @@
       "profile_url": "https://github.com/dknauss",
       "repos": [
         {
-          "id": 1203393463,
-          "name": "Borges",
-          "full_name": "dknauss/Borges",
-          "html_url": "https://github.com/dknauss/Borges",
-          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-          "stargazers_count": 3,
-          "language": "JavaScript",
-          "updated_at": "2026-10-22T00:37:18Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
           "id": 1319788156,
           "name": "Keel",
           "full_name": "dknauss/Keel",
@@ -76,7 +58,7 @@
           "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
           "stargazers_count": 2,
           "language": "PHP",
-          "updated_at": "2026-10-22T00:37:32Z",
+          "updated_at": "2026-10-22T14:24:00Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -94,7 +76,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
           "stargazers_count": 2,
           "language": "PHP",
-          "updated_at": "2026-10-22T00:24:58Z",
+          "updated_at": "2026-10-22T17:07:27Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -112,7 +94,25 @@
           "homepage": "https://dan.knauss.ca",
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-10-21T20:50:56Z",
+          "updated_at": "2026-10-22T14:00:16Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
+        {
+          "id": 1203393463,
+          "name": "Borges",
+          "full_name": "dknauss/Borges",
+          "html_url": "https://github.com/dknauss/Borges",
+          "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
+          "stargazers_count": 3,
+          "language": "JavaScript",
+          "updated_at": "2026-10-22T17:12:56Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -503,15 +503,15 @@
       "total_repos": 25,
       "total_stars": 71,
       "latest_repo": {
-        "id": 1413001152,
-        "name": "pullquote-demo",
-        "full_name": "dknauss/pullquote-demo",
-        "html_url": "https://github.com/dknauss/pullquote-demo",
-        "description": "An experimental WordPress Article Extract block, Gutenberg proposal, and self-contained Playground demo.",
-        "homepage": null,
-        "stargazers_count": 0,
+        "id": 1203393463,
+        "name": "Borges",
+        "full_name": "dknauss/Borges",
+        "html_url": "https://github.com/dknauss/Borges",
+        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
+        "stargazers_count": 3,
         "language": "JavaScript",
-        "updated_at": "2026-10-22T04:37:52Z",
+        "updated_at": "2026-10-22T17:12:56Z",
         "fork": false,
         "archived": false,
         "owner": {
