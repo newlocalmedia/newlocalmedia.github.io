@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://newlocalmedia.github.io/</loc>
-    <lastmod>2026-10-23T11:43:16.107Z</lastmod>
+    <lastmod>2026-10-23T17:11:39.878Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/</loc>
-    <lastmod>2026-10-23T07:34:42Z</lastmod>
+    <lastmod>2026-10-23T16:57:40Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/</loc>
-    <lastmod>2026-10-23T07:34:42Z</lastmod>
+    <lastmod>2026-10-23T16:57:40Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/Keel/</loc>
-    <lastmod>2026-10-23T07:24:26Z</lastmod>
+    <lastmod>2026-10-23T16:43:42Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/Dirtbag/</loc>
-    <lastmod>2026-10-23T07:34:42Z</lastmod>
+    <lastmod>2026-10-23T16:57:40Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -104,7 +104,7 @@
   </url>
   <url>
     <loc>https://newlocalmedia.github.io/projects/dknauss/borges-bibliography-builder/</loc>
-    <lastmod>2026-10-23T01:55:37Z</lastmod>
+    <lastmod>2026-10-23T16:18:24Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
