@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26T04:52:04.403Z",
+  "generated_at": "2026-10-26T13:09:21.172Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -49,6 +49,24 @@
       "user": "dknauss",
       "profile_url": "https://github.com/dknauss",
       "repos": [
+        {
+          "id": 1284532495,
+          "name": "Require-Email-2FA",
+          "full_name": "dknauss/Require-Email-2FA",
+          "html_url": "https://github.com/dknauss/Require-Email-2FA",
+          "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
+          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
+          "stargazers_count": 2,
+          "language": "PHP",
+          "updated_at": "2026-10-26T08:25:08Z",
+          "fork": false,
+          "archived": false,
+          "owner": {
+            "login": "dknauss",
+            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
+            "html_url": "https://github.com/dknauss"
+          }
+        },
         {
           "id": 1203393463,
           "name": "Borges",
@@ -167,24 +185,6 @@
           "stargazers_count": 0,
           "language": "PHP",
           "updated_at": "2026-10-21T19:20:31Z",
-          "fork": false,
-          "archived": false,
-          "owner": {
-            "login": "dknauss",
-            "avatar_url": "https://avatars.githubusercontent.com/u/273554?v=4",
-            "html_url": "https://github.com/dknauss"
-          }
-        },
-        {
-          "id": 1284532495,
-          "name": "Require-Email-2FA",
-          "full_name": "dknauss/Require-Email-2FA",
-          "html_url": "https://github.com/dknauss/Require-Email-2FA",
-          "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
-          "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
-          "stargazers_count": 1,
-          "language": "PHP",
-          "updated_at": "2026-10-21T19:25:12Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -501,17 +501,17 @@
         }
       ],
       "total_repos": 25,
-      "total_stars": 72,
+      "total_stars": 73,
       "latest_repo": {
-        "id": 1203393463,
-        "name": "Borges",
-        "full_name": "dknauss/Borges",
-        "html_url": "https://github.com/dknauss/Borges",
-        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
-        "stargazers_count": 3,
-        "language": "JavaScript",
-        "updated_at": "2026-10-25T23:30:47Z",
+        "id": 1284532495,
+        "name": "Require-Email-2FA",
+        "full_name": "dknauss/Require-Email-2FA",
+        "html_url": "https://github.com/dknauss/Require-Email-2FA",
+        "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
+        "stargazers_count": 2,
+        "language": "PHP",
+        "updated_at": "2026-10-26T08:25:08Z",
         "fork": false,
         "archived": false,
         "owner": {
