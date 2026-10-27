@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Try the Maestro Prototype | New Local Media</title>
+  <meta name="description" content="How to try the Maestro admin menu editor prototype in WordPress Playground and send feedback.">
+  <meta name="author" content="New Local Media and Dan Knauss">
+  <meta name="robots" content="index,follow">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="canonical" href="https://newlocalmedia.github.io/guides/maestro-prototype-testing/">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="New Local Media">
+  <meta property="og:title" content="Try the Maestro Prototype">
+  <meta property="og:description" content="How to try the Maestro admin menu editor prototype in WordPress Playground and send feedback.">
+  <meta property="og:url" content="https://newlocalmedia.github.io/guides/maestro-prototype-testing/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Sans+Condensed:wght@600&amp;display=swap">
+  <style>
+/* Layout: one reading column; a dark admin-menu sample sits beside the intro on wide screens and stacks on phones. */
+:root {
+	--bg: #f6f7f8;
+	--surface: #ffffff;
+	--fg: #1d2327;
+	--muted: #50575e;
+	--line: #dcdfe3;
+	--accent: #2271b1;
+	--accent-fg: #ffffff;
+	--menu: #1d2327;
+	--menu-fg: #f0f0f1;
+	--menu-sel: #2271b1;
+	--font-display: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+	--font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme="light"]) {
+		--bg: #15181b; --surface: #1d2125; --fg: #e8eaec; --muted: #a7aeb5; --line: #2f353b;
+		--accent: #72aee6; --accent-fg: #0f1b26; --menu: #0e1013; --menu-fg: #e8eaec; --menu-sel: #2a6fb0;
+		color-scheme: dark;
+	}
+}
+:root[data-theme="dark"] {
+	--bg: #15181b; --surface: #1d2125; --fg: #e8eaec; --muted: #a7aeb5; --line: #2f353b;
+	--accent: #72aee6; --accent-fg: #0f1b26; --menu: #0e1013; --menu-fg: #e8eaec; --menu-sel: #2a6fb0;
+	color-scheme: dark;
+}
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--fg);
+	font-family: var(--font-body);
+	font-size: 16px;
+	line-height: 1.6;
+}
+.wrap {
+	max-width: 760px;
+	margin: 0 auto;
+	padding-block: 40px 64px;
+	padding-left: max(16px, env(safe-area-inset-left, 0px));
+	padding-right: max(16px, env(safe-area-inset-right, 0px));
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+h1, h2 {
+	font-family: var(--font-display);
+	font-weight: 600;
+	line-height: 1.15;
+	text-wrap: balance;
+	margin: 0;
+}
+h1 { font-size: clamp(30px, 6vw, 42px); }
+h2 { font-size: 22px; }
+p { margin: 0; max-width: 65ch; }
+.eyebrow {
+	font-size: 13px;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+.intro {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 200px;
+	gap: 32px;
+	align-items: start;
+}
+.intro-text { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+@media (max-width: 620px) { .intro { grid-template-columns: minmax(0, 1fr); } }
+.cta {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	align-self: flex-start;
+	padding: 12px 20px;
+	border-radius: 3px;
+	background: var(--accent);
+	color: var(--accent-fg);
+	font-weight: 600;
+	text-decoration: none;
+}
+.cta:hover { filter: brightness(1.08); }
+.cta:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.note { color: var(--muted); font-size: 15px; }
+
+/* A small, static picture of the selected row, drawn like the real admin menu. */
+.sample {
+	background: var(--menu);
+	color: var(--menu-fg);
+	border-radius: 4px;
+	padding: 6px 0;
+	font-size: 14px;
+	line-height: 1.3;
+	user-select: none;
+}
+.sample .row { display: flex; align-items: center; gap: 10px; padding: 8px 12px; }
+.sample .row.sel { background: var(--menu-sel); box-shadow: inset 3px 0 0 #fff; }
+.sample .glyph { width: 20px; height: 20px; display: inline-grid; place-items: center; opacity: 0.85; }
+.sample .row.sel .glyph { outline: 1px dashed currentColor; outline-offset: 3px; }
+.sample .strip { display: flex; gap: 4px; padding: 4px 8px 10px; background: var(--menu-sel); }
+.sample .strip span {
+	width: 32px; height: 32px; display: inline-grid; place-items: center;
+	border: 1px solid currentColor; border-radius: 2px; font-size: 15px;
+}
+.sample .sub { padding: 6px 12px 6px 42px; opacity: 0.8; }
+.sample-cap { margin-top: 8px; font-size: 13px; color: var(--muted); }
+
+section { display: flex; flex-direction: column; gap: 14px; }
+ul, ol { margin: 0; padding-left: 1.3em; display: flex; flex-direction: column; gap: 8px; max-width: 65ch; }
+li::marker { color: var(--muted); }
+.tasks { counter-reset: task; list-style: none; padding: 0; gap: 0; border-top: 1px solid var(--line); }
+.tasks li {
+	counter-increment: task;
+	display: grid;
+	grid-template-columns: 32px minmax(0, 1fr);
+	gap: 4px 12px;
+	padding: 14px 0;
+	border-bottom: 1px solid var(--line);
+}
+.tasks li::before {
+	content: counter(task);
+	font-family: var(--font-display);
+	font-weight: 600;
+	font-size: 18px;
+	color: var(--accent);
+	font-variant-numeric: tabular-nums;
+}
+.tasks b { font-weight: 600; }
+.tasks .opt { color: var(--muted); }
+kbd {
+	font-family: var(--font-body);
+	font-size: 13px;
+	padding: 1px 6px;
+	border: 1px solid var(--line);
+	border-bottom-width: 2px;
+	border-radius: 3px;
+	background: var(--surface);
+}
+.send {
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+a { color: var(--accent); }
+.skip-link {
+	position: absolute;
+	left: 8px;
+	top: -48px;
+	padding: 8px 12px;
+	background: var(--surface);
+	color: var(--fg);
+	border: 2px solid var(--accent);
+	z-index: 10;
+}
+.skip-link:focus { top: 8px; }
+.site-footer {
+	max-width: 760px;
+	margin: 0 auto;
+	padding-block: 0 40px;
+	padding-left: max(16px, env(safe-area-inset-left, 0px));
+	padding-right: max(16px, env(safe-area-inset-right, 0px));
+	color: var(--muted);
+	font-size: 14px;
+}
+@media (prefers-reduced-motion: no-preference) { .cta { transition: filter 0.15s; } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<main id="main-content">
+<div class="wrap">
+	<div class="intro">
+		<div class="intro-text">
+			<span class="eyebrow">Maestro · prototype feedback</span>
+			<h1>Try the new menu editing controls</h1>
+			<p>Maestro lets you edit the WordPress admin menu right where it sits: rename items, reorder them, change their icons and hide them from some people. We're testing a new way to do that, and we'd like your opinion.</p>
+			<a class="cta" href="https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/proto/selected-row-controls/playground/blueprint-row-controls.json">Open the test site</a>
+			<p class="note">It runs in your browser in WordPress Playground. Nothing is installed, nothing you do touches a real site, and it resets when you close the tab. The menu editor is already on. The first load takes about a minute.</p>
+		</div>
+		<div>
+			<div class="sample" role="img" aria-label="A picked menu item, Posts, with a row of four buttons under it: rename, move up, move down and more.">
+				<div class="row"><span class="glyph">◐</span>Dashboard</div>
+				<div class="row sel"><span class="glyph">✎</span>Posts</div>
+				<div class="strip"><span>✎</span><span>▲</span><span>▼</span><span>⋯</span></div>
+				<div class="sub">All Posts</div>
+				<div class="sub">Add Post</div>
+				<div class="row"><span class="glyph">▣</span>Media</div>
+			</div>
+			<p class="sample-cap">A picked item and its buttons</p>
+		</div>
+	</div>
+
+	<section>
+		<h2>What's new</h2>
+		<p>Today, when you pick a menu item, its controls appear in a toolbar along the bottom of the screen. In this version they appear on the menu item itself.</p>
+		<ul>
+			<li>A row of buttons sits right under the item: <b>rename</b> (pencil), <b>move up</b>, <b>move down</b> and <b>more</b> (⋯).</li>
+			<li><b>More</b> holds Visibility (who can see the item), Reset item and Add separator below.</li>
+			<li>Once an item is picked, its <b>icon</b> becomes a button for choosing a new icon.</li>
+			<li>On a phone, More's options stay in the bottom toolbar, because four buttons wouldn't fit.</li>
+		</ul>
+		<p>The bottom toolbar still holds the settings for the whole menu.</p>
+	</section>
+
+	<section>
+		<h2>Things to try</h2>
+		<p>Spend five or ten minutes on whichever of these you can. You don't need to do them all.</p>
+		<ol class="tasks">
+			<li><span><b>Rename an item.</b> Click a menu item, then the pencil. Type a new name and press <kbd>Enter</kbd>, or click somewhere else. Press <kbd>Esc</kbd> to cancel.</span></li>
+			<li><span><b>Reorder.</b> Move an item with the up and down arrows. Then try dragging an item instead.</span></li>
+			<li><span><b>Change an icon.</b> Pick a top-level item such as Posts, then click its icon.</span></li>
+			<li><span><b>Hide an item.</b> Pick an item, open More, choose Visibility and tick a role.</span></li>
+			<li><span><b>Add and remove a separator.</b> Open More and choose Add separator below. Then pick the new line and use its trash button.</span></li>
+			<li><span><b>On a phone, held upright,</b> rename an item and move it.</span></li>
+			<li><span><b>On a phone, held sideways,</b> rename an item. The name field should appear just above the keyboard.</span></li>
+			<li><span><b>With the keyboard only,</b> use <kbd>Tab</kbd> to reach the menu. Press <kbd>Enter</kbd> on an item to pick it, then Tab through its buttons. Press <kbd>Enter</kbd> again (or <kbd>F2</kbd>) to rename it.</span></li>
+			<li><span class="opt"><b>Optional:</b> use a screen reader (VoiceOver, NVDA or TalkBack), or set your WordPress profile to a right-to-left language such as Arabic.</span></li>
+		</ol>
+	</section>
+
+	<section>
+		<h2>What we'd like to hear</h2>
+		<ul>
+			<li>Was it clear what each button does?</li>
+			<li>Did anything get in your way, cover something up, or behave in a way you didn't expect?</li>
+			<li>Does this feel better or worse than a toolbar along the bottom, and why?</li>
+			<li>If something went wrong, your device, browser and screen size.</li>
+			<li>A screenshot is very welcome.</li>
+		</ul>
+	</section>
+
+	<div class="send">
+		<h2>Where to send it</h2>
+		<p>Use the short feedback form on GitHub. Only the first question is required, and short notes are fine. You'll need a free GitHub account.</p>
+		<a class="cta" href="https://github.com/dknauss/Maestro/issues/new?template=03-prototype-feedback.yml">Leave feedback</a>
+	</div>
+</div>
+</main>
+<footer class="site-footer">
+	<a href="https://newlocalmedia.github.io/">New Local Media projects</a> · <a href="https://github.com/dknauss/Maestro">Maestro on GitHub</a>
+</footer>
+</body>
+</html>

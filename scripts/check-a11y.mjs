@@ -29,13 +29,15 @@ const STRUCTURAL_PAGES = [
   { path: '/projects/dknauss/', label: 'dknauss owner archive' },
   { path: '/projects/newlocalmedia/', label: 'newlocalmedia owner archive' },
   { path: '/projects/dknauss/wp-sudo/', label: 'Sudo project page' },
-  { path: '/projects/dknauss/wp-security-hardening-guide/', label: 'Hardening guide project page' }
+  { path: '/projects/dknauss/wp-security-hardening-guide/', label: 'Hardening guide project page' },
+  { path: '/guides/maestro-prototype-testing/', label: 'Maestro prototype tester guide' }
 ];
 
 const REFLOW_PAGES = [
   { path: '/', label: 'Home' },
   { path: '/projects/dknauss/wp-sudo/', label: 'Sudo project page' },
-  { path: '/projects/dknauss/wp-security-hardening-guide/', label: 'Hardening guide project page' }
+  { path: '/projects/dknauss/wp-security-hardening-guide/', label: 'Hardening guide project page' },
+  { path: '/guides/maestro-prototype-testing/', label: 'Maestro prototype tester guide' }
 ];
 
 const AXE_RULES = [
