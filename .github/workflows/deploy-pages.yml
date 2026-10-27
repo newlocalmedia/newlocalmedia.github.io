@@ -8,6 +8,7 @@ on:
       - 'index.html'
       - 'assets/**'
       - 'projects/**'
+      - 'guides/**'
       - 'data/repos.json'
       - 'site.webmanifest'
       - 'robots.txt'
