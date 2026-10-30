@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T05:53:51.155Z",
+  "generated_at": "2026-10-30T12:59:59.984Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -148,7 +148,7 @@
           "homepage": "https://dan.knauss.ca",
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-10-28T00:50:56Z",
+          "updated_at": "2026-10-30T10:27:30Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -503,15 +503,15 @@
       "total_repos": 25,
       "total_stars": 74,
       "latest_repo": {
-        "id": 1319788156,
-        "name": "Keel",
-        "full_name": "dknauss/Keel",
-        "html_url": "https://github.com/dknauss/Keel",
-        "description": "Surface and set smart WordPress defaults with actionable Site Health reporting for security, privacy, performance, and core updates — including the same-line security patches your Updates screen may not show.",
-        "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
-        "stargazers_count": 3,
+        "id": 1175597908,
+        "name": "author-identity",
+        "full_name": "dknauss/author-identity",
+        "html_url": "https://github.com/dknauss/author-identity",
+        "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
+        "homepage": "https://dan.knauss.ca",
+        "stargazers_count": 0,
         "language": "PHP",
-        "updated_at": "2026-10-30T05:05:39Z",
+        "updated_at": "2026-10-30T10:27:30Z",
         "fork": false,
         "archived": false,
         "owner": {
