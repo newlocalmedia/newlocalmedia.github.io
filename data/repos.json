@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T01:00:45.903Z",
+  "generated_at": "2026-11-03T14:20:54.052Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -220,7 +220,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
           "stargazers_count": 2,
           "language": "PHP",
-          "updated_at": "2026-10-27T12:28:00Z",
+          "updated_at": "2026-11-03T12:24:17Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -503,15 +503,15 @@
       "total_repos": 25,
       "total_stars": 74,
       "latest_repo": {
-        "id": 1175597908,
-        "name": "author-identity",
-        "full_name": "dknauss/author-identity",
-        "html_url": "https://github.com/dknauss/author-identity",
-        "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
-        "homepage": "https://dan.knauss.ca",
-        "stargazers_count": 0,
+        "id": 1284532495,
+        "name": "Require-Email-2FA",
+        "full_name": "dknauss/Require-Email-2FA",
+        "html_url": "https://github.com/dknauss/Require-Email-2FA",
+        "description": "Make two-factor mandatory for all WordPress users (emailed-code floor, per-role exclusions) and lock the XML-RPC/REST API-login path to an allowlist. Optional must-use mode.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Require-Email-2FA/main/playground/demo-blueprint.json",
+        "stargazers_count": 2,
         "language": "PHP",
-        "updated_at": "2026-11-02T21:38:44Z",
+        "updated_at": "2026-11-03T12:24:17Z",
         "fork": false,
         "archived": false,
         "owner": {
