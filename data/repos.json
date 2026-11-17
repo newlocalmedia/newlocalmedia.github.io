@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T22:09:01.852Z",
+  "generated_at": "2026-11-17T07:58:34.981Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -238,7 +238,7 @@
           "homepage": "https://dan.knauss.ca",
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-11-16T17:34:12Z",
+          "updated_at": "2026-11-17T00:07:21Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -292,7 +292,7 @@
           "homepage": null,
           "stargazers_count": 0,
           "language": "PHP",
-          "updated_at": "2026-11-16T22:03:02Z",
+          "updated_at": "2026-11-17T00:00:11Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -503,15 +503,15 @@
       "total_repos": 25,
       "total_stars": 79,
       "latest_repo": {
-        "id": 1165510944,
-        "name": "the-drafting-table",
-        "full_name": "dknauss/the-drafting-table",
-        "html_url": "https://github.com/dknauss/the-drafting-table",
-        "description": "A Frank Lloyd Wright-era architect's notebook FSE block theme for WordPress — aged parchment, dot-grid overlays, blueprint borders, and refined architectural typography.",
-        "homepage": null,
+        "id": 1175597908,
+        "name": "author-identity",
+        "full_name": "dknauss/author-identity",
+        "html_url": "https://github.com/dknauss/author-identity",
+        "description": "Structured author identity that travels with the work — across feeds, search, the fediverse, and AI — from one source of truth in WordPress.",
+        "homepage": "https://dan.knauss.ca",
         "stargazers_count": 0,
         "language": "PHP",
-        "updated_at": "2026-11-16T22:03:02Z",
+        "updated_at": "2026-11-17T00:07:21Z",
         "fork": false,
         "archived": false,
         "owner": {
