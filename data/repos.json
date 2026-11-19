@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T20:36:02.909Z",
+  "generated_at": "2026-11-19T07:30:11.793Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -58,7 +58,7 @@
           "homepage": "https://dknauss.github.io/cmt-gene-table/",
           "stargazers_count": 0,
           "language": "HTML",
-          "updated_at": "2026-11-17T17:58:26Z",
+          "updated_at": "2026-11-19T00:00:36Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -184,7 +184,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
           "stargazers_count": 4,
           "language": "JavaScript",
-          "updated_at": "2026-11-18T02:26:05Z",
+          "updated_at": "2026-11-19T05:39:06Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -511,7 +511,7 @@
         "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
         "stargazers_count": 4,
         "language": "JavaScript",
-        "updated_at": "2026-11-18T02:26:05Z",
+        "updated_at": "2026-11-19T05:39:06Z",
         "fork": false,
         "archived": false,
         "owner": {
