@@ -10,7 +10,7 @@
     "check:seo": "node scripts/check-site.mjs"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.12.1",
+    "@axe-core/playwright": "^4.14.0",
     "html-validate": "^11.16.2",
     "playwright": "^1.64.0"
   }
