@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T21:44:36.732Z",
+  "generated_at": "2026-11-26T08:25:44.187Z",
   "accounts": [
     {
       "user": "newlocalmedia",
@@ -58,7 +58,7 @@
           "homepage": "https://newlocalmedia.github.io/projects/dknauss/Keel/",
           "stargazers_count": 3,
           "language": "PHP",
-          "updated_at": "2026-11-25T17:30:59Z",
+          "updated_at": "2026-11-26T07:47:18Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -76,7 +76,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
           "stargazers_count": 3,
           "language": "JavaScript",
-          "updated_at": "2026-11-25T17:33:01Z",
+          "updated_at": "2026-11-26T08:04:46Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -130,7 +130,7 @@
           "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
           "stargazers_count": 3,
           "language": "PHP",
-          "updated_at": "2026-11-25T21:31:54Z",
+          "updated_at": "2026-11-26T04:11:49Z",
           "fork": false,
           "archived": false,
           "owner": {
@@ -503,15 +503,15 @@
       "total_repos": 25,
       "total_stars": 76,
       "latest_repo": {
-        "id": 1264131469,
-        "name": "Maestro",
-        "full_name": "dknauss/Maestro",
-        "html_url": "https://github.com/dknauss/Maestro",
-        "description": "Orchestrate your WordPress admin menus by editing them in place. Rename, reorder, swap icons, and hide items per role, right on the menu.",
-        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/Maestro/main/playground/blueprint-stable.json",
+        "id": 1203393463,
+        "name": "Borges",
+        "full_name": "dknauss/Borges",
+        "html_url": "https://github.com/dknauss/Borges",
+        "description": "WordPress bibliography block: DOI/BibTeX to static, reference-manager friendly bibliographies.",
+        "homepage": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/dknauss/borges-bibliography-builder/main/playground/blueprint.json",
         "stargazers_count": 3,
-        "language": "PHP",
-        "updated_at": "2026-11-25T21:31:54Z",
+        "language": "JavaScript",
+        "updated_at": "2026-11-26T08:04:46Z",
         "fork": false,
         "archived": false,
         "owner": {
